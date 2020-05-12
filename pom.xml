@@ -19,12 +19,6 @@
     </license>
   </licenses>
 
-  <scm>
-    <connection>scm:git:git@github.com:cygri/pubby.git</connection>
-    <developerConnection>scm:git:git@github.com:cygri/pubby.git</developerConnection>
-    <url>https://github.com/cygri/pubby/tree/master/</url>
-  </scm>
-
   <developers>
     <developer>
       <id>cygri</id>
@@ -44,12 +38,7 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.5</version>
-      <scope>test</scope>
-    </dependency>
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
