@@ -1,0 +1,29 @@
+include:
+  - template: SAST.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: License-Management.gitlab-ci.yml
+
+image: maven:3-jdk-8
+
+stages:
+  - deploy
+  - test
+  - build
+
+build:
+  stage: build
+  script:
+   - "mvn clean install -Dmaven.test.skip=true"
+  artifacts:
+    when: on_success
+    paths:
+    - target/*.jar
+
+pages:
+  stage: deploy
+  script:
+  - cp -r docs/* public/
+  - 'mvn deploy -s ci_settings.xml'
+  artifacts:
+    paths:
+    - public
