@@ -14,15 +14,8 @@ build:
   stage: build
   script:
    - "mvn clean install -Dmaven.test.skip=true"
+  - 'mvn deploy -s ci_settings.xml'
   artifacts:
     when: on_success
     paths:
     - target/*.jar
-
-pages:
-  stage: deploy
-  script:
-  - 'mvn deploy -s ci_settings.xml'
-  artifacts:
-    paths:
-    - public
