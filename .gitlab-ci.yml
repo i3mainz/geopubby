@@ -6,9 +6,9 @@ include:
 image: maven:3-jdk-8
 
 stages:
-  - deploy
   - test
   - build
+  - deploy
 
 build:
   stage: build
@@ -22,7 +22,6 @@ build:
 pages:
   stage: deploy
   script:
-  - cp -r docs/* public/
   - 'mvn deploy -s ci_settings.xml'
   artifacts:
     paths:
