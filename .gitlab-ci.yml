@@ -6,8 +6,8 @@ include:
 image: maven:3-jdk-8
 
 stages:
-  - test
   - build
+  - test
   - deploy
 
 build:
