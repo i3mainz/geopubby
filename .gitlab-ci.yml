@@ -13,7 +13,7 @@ stages:
 build:
   stage: build
   script:
-   - "mvn clean install -Dmaven.test.skip=true"
+   - "mvn clean install -DskipTests -Dmaven.javadoc.skip=true -Dmaven.test.skip=true"
    - 'mvn deploy -s ci_settings.xml'
   artifacts:
     when: on_success
