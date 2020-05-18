@@ -63,7 +63,7 @@
 # URIs on the Web:             http://localhost:8080/resource/*
     conf:dataset [
         # SPARQL endpoint URL of the dataset
-        conf:sparqlEndpoint <http://geosparql.i3mainz.intern.hs-mainz.de/repositories/poirepo>;
+        conf:sparqlEndpoint <http://geosparql.i3mainz.hs-mainz.de/repositories/poirepo>;
         # Default graph name to query (not necessary for most endpoints)
         conf:sparqlDefaultGraph <http://ld.gdi-de.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
