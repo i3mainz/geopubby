@@ -67,7 +67,7 @@
         # Default graph name to query (not necessary for most endpoints)
         conf:sparqlDefaultGraph <http://ld.gdi-de.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
-        conf:datasetBase <http://dbpedia.org/resource/>;
+        conf:datasetBase <http://ld.gdi-de.org/>;
         # Fixes an issue with the server running behind an Apache proxy;
         # can be disabled otherwise
         conf:fixUnescapedCharacters "(),'!$&*+;=@";
