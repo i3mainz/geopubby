@@ -9,7 +9,7 @@
 #if (!$geoms.isEmpty())
 <a name="geo"></a>
 <h2>Geographic location</h2>
-<div id="map" style="height:500px">
+<div id="map" style="height:300px">
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
@@ -35,15 +35,20 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
 	imperial: false
 	}).addTo(mymap);
 	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
-	#set($x = 0)
         #foreach($i in $geoms)
-            #if($x == 0)
-                ${i}
-                //map.setCenter(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection ),10);
-            #end
-            ${i}
-            markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection)));
-            #set($x = $x+1)
+              var wkt_geom = "${i}";
+			  var wicket = new Wkt.Wkt();
+              wicket.read(wkt_geom);
+              props={}
+              #set($x = 0)
+              #foreach ($property in $properties)
+                  #if($x < 10)
+                     props[${property.BrowsableURL}]="${property.label}"
+                  #end
+                  #set($x = $x+1)
+              #end
+			  var feature = { "type": "Feature", 'properties': properties, "geometry": wkt.toJson() };
+              L.geoJson(feature).addTo(map)
         #end
         /*map = new OpenLayers.Map('map',
                 {
