@@ -35,6 +35,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	imperial: false
 	}).addTo(map);
 	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
+	var bounds = L.latLngBounds([]);
         #foreach($i in $geoms)
               var wkt_geom = "${i}";
 			  var wicket = new Wkt.Wkt();
@@ -48,8 +49,20 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                   #set($x = $x+1)
               #end
 			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
-              L.geoJson(feature).addTo(map)
+              layerr=L.geoJson(feature,{
+              onEachFeature: function (feature, layer) {
+              		var popup="<b>$title</b><br/><ul>"
+                    for prop in feature.properties:
+                        popup+="<li>"+prop+" - "+feature.properties.prop+"</li>"
+                    popup+="</ul>"
+                    layer.bindPopup(popup)
+              }
+              })
+              layerr.addTo(map)
+              var layerBounds = layerr.getBounds();
+              bounds.extend(layerBounds);
         #end
+        map.fitBounds(bounds);
 </script>
 #end
 </div>
