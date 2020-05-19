@@ -1,5 +1,5 @@
 #parse("header.vm")
-
+<div class="row-fluid">
 #if ($image)
     <div class="image"><img src="$image" alt="Depiction of $title" /></div>
 #end
@@ -56,7 +56,7 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
         */
 </script>
 #end
-
+</div>
 #if ($comment)
     <p class="comment">$comment</p>
 #end
@@ -68,12 +68,14 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
 #end
 
 #if ($metadata)
+<div class="row-fluid">
 	<a name="meta"></a>
 	<h2>Metadata</h2>
 	<div id="metadata-tables">
 	#parse("metadatatable.vm")
 	</div>
 	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
+</div>
 #end
 
 
