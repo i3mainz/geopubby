@@ -22,7 +22,7 @@ public class GeoJSONWriter implements ModelWriter {
 	@Override
 	public void write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it=model.
-				listResourcesWithProperty(model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
+		listResourcesWithProperty(model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
 		JSONObject geojson=new JSONObject();
 		geojson.put("type","FeatureCollection");
 		JSONArray features=new JSONArray();
@@ -32,6 +32,7 @@ public class GeoJSONWriter implements ModelWriter {
 			StmtIterator it2 = ind.listProperties();
 			JSONObject curfeature=new JSONObject();
 			features.put(curfeature);
+			curfeature.put("id",ind.getURI());
 			JSONObject properties=new JSONObject();
 			curfeature.put("properties",properties);
 			while(it2.hasNext()) {
