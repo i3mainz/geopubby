@@ -5,7 +5,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jena.rdf.model.Resource;
 import org.apache.velocity.context.Context;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
