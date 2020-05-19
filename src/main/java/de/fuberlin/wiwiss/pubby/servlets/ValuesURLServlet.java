@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.velocity.context.Context;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Property;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;

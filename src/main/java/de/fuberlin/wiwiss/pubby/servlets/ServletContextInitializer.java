@@ -6,9 +6,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.shared.JenaException;
-import com.hp.hpl.jena.util.FileManager;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.shared.JenaException;
+import org.apache.jena.util.FileManager;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.ConfigurationException;

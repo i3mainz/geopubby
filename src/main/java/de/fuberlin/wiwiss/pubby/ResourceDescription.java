@@ -13,20 +13,28 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.hp.hpl.jena.graph.Node;
-import com.hp.hpl.jena.rdf.model.Literal;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.shared.PrefixMapping;
-import com.hp.hpl.jena.shared.impl.PrefixMappingImpl;
-import com.hp.hpl.jena.vocabulary.RDF;
-import com.hp.hpl.jena.vocabulary.XSD;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKTReader;
+
+import org.apache.jena.graph.Node;
+import org.apache.jena.rdf.model.Literal;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.shared.PrefixMapping;
+import org.apache.jena.shared.impl.PrefixMappingImpl;
+import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.XSD;
 
 import de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection;
+import de.fuberlin.wiwiss.pubby.servlets.GeoProvider;
+import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * A convenient interface to an RDF description of a resource.
@@ -46,11 +54,64 @@ public class ResourceDescription {
 	private final Map<Property, Integer> highOutdegreeProperties;
 	private PrefixMapping prefixes = null;
 	private List<ResourceProperty> properties = null;
+	private List<Geometry> geoms;
+	private WKTReader reader=new WKTReader();
+    private GeometryFactory fac=new GeometryFactory();
 	
 	public ResourceDescription(HypermediaControls controller, Model model, 
 			Configuration config) {
 		this(controller, model, null, null, config, false);
    	}
+	
+	 private void addPoint(final Resource r) {
+	        final Statement lngS = r.getProperty(GEO.P_LONG);
+	        final Statement latS = r.getProperty(GEO.P_LAT);
+
+	        if ( lngS != null || latS != null ) {
+	        	geoms.add(fac.createPoint(new Coordinate(lngS.getObject().asLiteral().getDouble(),
+	        			latS.getObject().asLiteral().getDouble())));
+	        }
+	    }
+	 
+	 private void addGeometry(final Resource r) {
+	        final Statement wkt = r.getProperty(GEO.ASWKT);
+	        if(wkt!=null) {
+	        	Geometry geom;
+				try {
+					geom = this.reader.read(wkt.getObject().asLiteral().getString());
+		        	geoms.add(geom);
+				} catch (ParseException e) {
+				}
+	        }
+	    }
+	 
+	 private void addAllGeoms(GeoProvider p) {
+	        StmtIterator it= resource.listProperties(GEO.LOCATION);
+	        while(it.hasNext()) {
+	            Statement s = it.nextStatement();
+	            if ( !s.getObject().isAnon() ) {
+	                addPoint(p.get(s.getObject().asResource().getURI()));
+	            }
+	        }
+	        it.close();
+	        it= resource.listProperties(GEO.HASGEOMETRY);
+	        while(it.hasNext()) {
+	            Statement s = it.nextStatement();
+	            if(s.getObject().isURIResource()) {
+	            	addGeometry(p.get(s.getObject().asResource().getURI()));
+	            }
+	        }
+	        it.close();
+	        addPoint(resource);
+	    }
+	 
+	 public List<Geometry> getGeoms(GeoProvider p) {
+	        if (geoms == null) {
+	            geoms = new ArrayList<Geometry>();
+	            addAllGeoms(p);
+	        }
+	        return geoms;
+	    }
 
 	public ResourceDescription(HypermediaControls controller, Model model, 
 			Map<Property, Integer> highIndegreeProperties,
@@ -248,7 +309,7 @@ public class ResourceDescription {
 		Collection<RDFNode> results = new ArrayList<RDFNode>();
 		Iterator<Property> it = properties.iterator();
 		while (it.hasNext()) {
-			com.hp.hpl.jena.rdf.model.Property property = (com.hp.hpl.jena.rdf.model.Property) it.next();
+			org.apache.jena.rdf.model.Property property = (org.apache.jena.rdf.model.Property) it.next();
 			StmtIterator labelIt = resource.listProperties(property);
 			while (labelIt.hasNext()) {
 				RDFNode label = labelIt.nextStatement().getObject();

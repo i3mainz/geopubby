@@ -18,17 +18,17 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFLanguages;
 import org.apache.jena.riot.WebContent;
 
-import com.hp.hpl.jena.query.QueryException;
-import com.hp.hpl.jena.query.QuerySolution;
-import com.hp.hpl.jena.query.ResultSet;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ResourceFactory;
-import com.hp.hpl.jena.sparql.engine.http.HttpQuery;
-import com.hp.hpl.jena.sparql.engine.http.QueryEngineHTTP;
+import org.apache.jena.query.QueryException;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.sparql.engine.http.HttpQuery;
+import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 
 import de.fuberlin.wiwiss.pubby.ConfigurationException;
 import de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection;
@@ -269,7 +269,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 
 		// Try to select language appropriately here based on the model content
 		// type
-		Lang lang = WebContent.contentTypeToLang(actualContentType);
+		Lang lang = WebContent.contentTypeToLangResultSet(actualContentType);
 		if (!RDFLanguages.isTriples(lang))
 			throw new QueryException("Endpoint <" + endpointURL + 
 					"> returned Content Type: " + actualContentType

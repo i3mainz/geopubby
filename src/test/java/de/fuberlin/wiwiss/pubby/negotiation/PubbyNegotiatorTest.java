@@ -24,6 +24,11 @@ public class PubbyNegotiatorTest extends TestCase {
 				negotiator.getBestMatch("application/xhtml+xml").getMediaType());
 	}
 	
+	public void testAcceptJSON() {
+		assertEquals("application/json",
+				negotiator.getBestMatch("application/json").getMediaType());
+	}
+	
 	public void testGetTurtle() {
 		assertEquals("application/x-turtle",
 				negotiator.getBestMatch("application/x-turtle").getMediaType());

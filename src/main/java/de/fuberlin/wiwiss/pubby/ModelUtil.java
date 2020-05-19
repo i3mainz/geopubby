@@ -1,8 +1,8 @@
 package de.fuberlin.wiwiss.pubby;
 
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.shared.PrefixMapping;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.shared.PrefixMapping;
 
 public class ModelUtil {
 	public final static Model EMPTY_MODEL = ModelFactory.createDefaultModel();

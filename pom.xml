@@ -52,10 +52,21 @@
       <version>2.4</version>
       <scope>provided</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.locationtech.jts/jts-core -->
+<dependency>
+    <groupId>org.locationtech.jts</groupId>
+    <artifactId>jts-core</artifactId>
+    <version>1.16.1</version>
+</dependency>
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-core</artifactId>
+      <version>3.14.0</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>2.11.0</version>
+      <version>3.14.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.velocity</groupId>
