@@ -5,7 +5,8 @@
       <a href="$rdf_link?output=xml">As RDF/XML</a> |
       <a href="$rdf_link?output=json">As JSON-LD</a> |
       <a href="$rdf_link?output=trig">As TriG</a> |
-      <a href="$rdf_link?output=trix">As TriX</a>
+      <a href="$rdf_link?output=trix">As TriX</a> |
+      <a href="$rdf_link?output=geojson">As (Geo)JSON</a> 
 #end
     </div>
   </body>

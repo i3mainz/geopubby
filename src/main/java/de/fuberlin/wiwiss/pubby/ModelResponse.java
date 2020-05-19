@@ -11,6 +11,8 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFWriter;
 import org.apache.jena.shared.JenaException;
 
+import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriter;
+import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
 import de.fuberlin.wiwiss.pubby.negotiation.PubbyNegotiator;
@@ -68,7 +70,7 @@ public class ModelResponse {
 			response.setContentType("text/plain");
 			ServletOutputStream out = response.getOutputStream();
 			out.println("406 Not Acceptable: The requested data format is not supported.");
-			out.println("Supported formats are RDF/XML, JSON-LD, Turtle, N3, and N-Triples.");
+			out.println("Supported formats are RDF/XML, JSON-LD, TriX, TriG, Turtle, N3, and N-Triples.");
 			return;
 		}
 		response.setContentType(bestMatch.getMediaType());
@@ -82,6 +84,9 @@ public class ModelResponse {
 		}
 		if ("application/json".equals(mediaType)) {
 			return new JSONWriter();
+		}
+		if ("application/geojson".equals(mediaType)) {
+			return new GeoJSONWriter();
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new TrigWriter();
@@ -98,9 +103,6 @@ public class ModelResponse {
 		return new NTriplesWriter();
 	}
 	
-	private interface ModelWriter {
-		void write(Model model, HttpServletResponse response) throws IOException;
-	}
 	
 	private class NTriplesWriter implements ModelWriter {
 		public void write(Model model, HttpServletResponse response) throws IOException {

@@ -23,7 +23,7 @@
 	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
 #end
 
-#if (!$geoms.isEmpty() && $geoms!=null)
+#if (!$geoms.isEmpty())
 <a name="geo"></a>
 <h2>Geographic location</h2>
 <div id="map">

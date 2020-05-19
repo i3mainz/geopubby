@@ -102,6 +102,14 @@ public class ResourceDescription {
 	            }
 	        }
 	        it.close();
+	        it= resource.listProperties(GEO.P_GEOMETRY);
+	        while(it.hasNext()) {
+	            Statement s = it.nextStatement();
+	            if(s.getObject().isURIResource()) {
+	            	addGeometry(s.getObject().asResource());
+	            }
+	        }
+	        it.close();
 	        addPoint(resource);
 	    }
 	 

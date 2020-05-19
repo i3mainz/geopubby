@@ -16,6 +16,8 @@ public class GEO {
 	
 	public static final Property P_LAT = model.createProperty( WGS84GEONS + "lat" );
 	
+	public static final Property P_GEOMETRY = model.createProperty( WGS84GEONS + "geometry" );
+	
 	public static final Property LOCATION = model.createProperty( WGS84GEONS + "location" );
 	
 	public static final Property HASGEOMETRY = model.createProperty( GEOSPARQLNS + "hasGeometry" );
