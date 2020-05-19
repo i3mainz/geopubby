@@ -36,6 +36,16 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
 	imperial: false
 	}).addTo(mymap);
 	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
+	#set($x = 0)
+        #foreach($i in $geoms)
+            #if($x == 0)
+                ${i.toText}
+                //map.setCenter(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection ),10);
+            #end
+            ${i.toText}
+            markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection)));
+            #set($x = $x+1)
+        #end
         /*map = new OpenLayers.Map('map',
                 {
                     controls: [new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar(), new OpenLayers.Control.Attribution(),
