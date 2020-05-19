@@ -70,7 +70,7 @@ public class ModelResponse {
 			response.setContentType("text/plain");
 			ServletOutputStream out = response.getOutputStream();
 			out.println("406 Not Acceptable: The requested data format is not supported.");
-			out.println("Supported formats are RDF/XML, JSON-LD, TriX, TriG, Turtle, N3, and N-Triples.");
+			out.println("Supported formats are RDF/XML, JSON-LD, GeoJSON, TriX, TriG, Turtle, N3, and N-Triples.");
 			return;
 		}
 		response.setContentType(bestMatch.getMediaType());

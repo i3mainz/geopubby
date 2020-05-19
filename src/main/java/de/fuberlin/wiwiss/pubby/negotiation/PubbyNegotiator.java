@@ -44,7 +44,8 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("application/x-turtle;q=0.95")
 				.addAliasMediaType("application/turtle;q=0.8")
 				.addAliasMediaType("text/turtle;q=0.5");
-		pubbyNegotiator.addVariant("application/geojson;q=0.95");
+		pubbyNegotiator.addVariant("application/geojson;q=0.95")
+				.addAliasMediaType("text/geojson;q=0.8");
 		pubbyNegotiator.addVariant("text/plain;q=0.2");
 
 		dataNegotiator = new ContentTypeNegotiator();
@@ -64,7 +65,8 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/json;q=0.76")
 				.addAliasMediaType("application/json-ld;q=0.76")
 				.addAliasMediaType("text/json-ld;q=0.76");
-		dataNegotiator.addVariant("application/geojson;q=0.95");
+		dataNegotiator.addVariant("application/geojson;q=0.95")
+				.addAliasMediaType("text/geojson;q=0.8");
 		dataNegotiator.addVariant("application/x-turtle;q=0.99")
 				.addAliasMediaType("application/turtle;q=0.8")
 				.addAliasMediaType("text/turtle;q=0.5");
