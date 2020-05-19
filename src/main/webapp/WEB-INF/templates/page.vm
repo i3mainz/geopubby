@@ -43,7 +43,7 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
               #set($x = 0)
               #foreach ($property in $properties)
                   #if($x < 10)
-                     props[${property.BrowsableURL}]="${property.label}"
+                     props["${property.BrowsableURL}"]="${property.label}"
                   #end
                   #set($x = $x+1)
               #end
