@@ -50,15 +50,15 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
               layerr=L.geoJson(feature,{
               onEachFeature: function (feature, layer) {
-              		var popup="<b><a href="$uri" target="_blank">$title</a></b><br/><ul>"
+              		var popup="<b><a href=\"$uri\" target=\"_blank\">$title</a></b><br/><ul>"
                     for(prop in feature.properties){
                         if((typeof prop !== 'undefined') && prop.includes("http")){
-                        	popup+="<li><a href=\""+prop+"\" target="_blank">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
+                        	popup+="<li><a href=\""+prop+"\" target=\"_blank\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
                         }else{
                         	popup+="<li>"+prop+" - "
                         }
                         if((typeof feature.properties.prop !== 'undefined') && feature.properties.prop.includes("http")){
-                        	popup+="<a href=\""+feature.properties.prop+"\" target="_blank">"+prop.substring(feature.properties.prop.lastIndexOf('/')+1)+"</a></li>"
+                        	popup+="<a href=\""+feature.properties.prop+"\" target=\"_blank\">"+prop.substring(feature.properties.prop.lastIndexOf('/')+1)+"</a></li>"
                         }else{
                         	popup+=feature.properties.prop+"</li>"
                         }
