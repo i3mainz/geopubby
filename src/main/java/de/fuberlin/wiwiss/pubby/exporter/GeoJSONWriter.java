@@ -45,6 +45,7 @@ public class GeoJSONWriter implements ModelWriter {
 		}
 		try {
 			response.getWriter().write(geojson.toString(2));
+			response.getWriter().close();
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
