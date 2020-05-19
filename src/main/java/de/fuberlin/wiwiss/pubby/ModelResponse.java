@@ -84,7 +84,10 @@ public class ModelResponse {
 			return new JSONWriter();
 		}
 		if ("application/trig".equals(mediaType)) {
-			return new JSONWriter();
+			return new TrigWriter();
+		}
+		if ("application/trix".equals(mediaType)) {
+			return new TrixWriter();
 		}
 		if ("application/x-turtle".equals(mediaType)) {
 			return new TurtleWriter();
@@ -108,6 +111,18 @@ public class ModelResponse {
 	private class JSONWriter implements ModelWriter {
 		public void write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("JSON-LD").write(model, response.getOutputStream(), null);
+		}
+	}
+	
+	private class TrigWriter implements ModelWriter {
+		public void write(Model model, HttpServletResponse response) throws IOException {
+			model.getWriter("TriG").write(model, response.getOutputStream(), null);
+		}
+	}
+	
+	private class TrixWriter implements ModelWriter {
+		public void write(Model model, HttpServletResponse response) throws IOException {
+			model.getWriter("TriX").write(model, response.getOutputStream(), null);
 		}
 	}
 	
