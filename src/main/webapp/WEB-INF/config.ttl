@@ -39,23 +39,23 @@
 # Server configuration section
 <> a conf:Configuration;
     # Project name for display in page titles
-    conf:projectName "Pubby Test";
+    conf:projectName "DBpedia.org";
     # Homepage with description of the project for the link in the page header
-    # conf:projectHomepage <http://docker.i3mainz.intern.hs-mainz.de:2444>;
+    conf:projectHomepage <http://docker.i3mainz.intern.hs-mainz.de:2444>;
     # The Pubby root, where the webapp is running inside the servlet container.
-    conf:webBase <http://docker.i3mainz.intern.hs-mainz.de:2444/pubby/>;
+    conf:webBase <http://docker.i3mainz.intern.hs-mainz.de:2444/>;
     # URL of an RDF file whose prefix mapping is to be used by the
     # server; defaults to <>, which is *this* file.
-    # conf:usePrefixesFrom <>;
+    conf:usePrefixesFrom <>;
     # If labels and descriptions are available in multiple languages,
     # prefer this one.
-    # conf:defaultLanguage "en";
+    conf:defaultLanguage "en";
     # When the homepage of the server is accessed, this resource will
     # be shown.
-    # conf:indexResource <http://docker.i3mainz.intern.hs-mainz.de:2444/repositories/poirepo?uri=http://ld.gdi-de.org/id/de.bund.bkg.poi/022cdeee-e829-4740-9d75-7912dcf55fb0>;
+    conf:indexResource <http://docker.i3mainz.intern.hs-mainz.de:2444/repositories/poirepo?uri=http://ld.gdi-de.org/id/de.bund.bkg.poi/022cdeee-e829-4740-9d75-7912dcf55fb0>;
     # Will be appended to the conf:webBase to form the public
     # resource URIs; if not present, defaults to ""
-    # conf:webResourcePrefix "resource/";
+    conf:webResourcePrefix "resource/";
 
 # Dataset configuration section (for DBpedia resources)
 #
@@ -63,11 +63,11 @@
 # URIs on the Web:             http://localhost:8080/resource/*
     conf:dataset [
         # SPARQL endpoint URL of the dataset
-        conf:sparqlEndpoint <http://geosparql.i3mainz.hs-mainz.de/repositories/poirepo>;
+        conf:sparqlEndpoint <http://dbpedia.org/sparql>;
         # Default graph name to query (not necessary for most endpoints)
-        # conf:sparqlDefaultGraph <http://ld.gdi-de.org>;
+        conf:sparqlDefaultGraph <http://dbpedia.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
-        conf:datasetBase <http://ld.gdi-de.org/>;
+        conf:datasetBase <http://dbpedia.org/resource/>;
         # Fixes an issue with the server running behind an Apache proxy;
         # can be disabled otherwise
         conf:fixUnescapedCharacters "(),'!$&*+;=@";
