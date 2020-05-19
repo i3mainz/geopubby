@@ -29,12 +29,12 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
     "BKG": wmsLayer,
         "OSM": layer
 	};
-	baseMaps["BKG"].addTo(mymap);
+	baseMaps["BKG"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
-	}).addTo(mymap);
-	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(mymap);
+	}).addTo(map);
+	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
         #foreach($i in $geoms)
               var wkt_geom = "${i}";
 			  var wicket = new Wkt.Wkt();
