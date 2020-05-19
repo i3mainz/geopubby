@@ -47,7 +47,7 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
                   #end
                   #set($x = $x+1)
               #end
-			  var feature = { "type": "Feature", 'properties': properties, "geometry": wkt.toJson() };
+			  var feature = { "type": "Feature", 'properties': props, "geometry": wkt.toJson() };
               L.geoJson(feature).addTo(map)
         #end
         /*map = new OpenLayers.Map('map',
