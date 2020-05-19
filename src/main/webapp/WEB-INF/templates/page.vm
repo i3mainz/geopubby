@@ -26,13 +26,13 @@
 #if (!$geoms.isEmpty())
 <a name="geo"></a>
 <h2>Geographic location</h2>
-<div id="map">
+<div id="map" style="width:500px">
 </div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
 <script type="text/javascript">
-var mymap = L.map('mapid',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
+var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
 	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	});
