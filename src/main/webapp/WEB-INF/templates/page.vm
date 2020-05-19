@@ -8,7 +8,6 @@
 
 #if (!$geoms.isEmpty())
 <a name="geo"></a>
-<h2>Geographic location</h2>
 <div id="map" style="height:500px">
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
