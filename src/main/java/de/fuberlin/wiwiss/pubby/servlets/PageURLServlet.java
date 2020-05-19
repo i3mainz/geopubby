@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jena.rdf.model.Resource;
 import org.apache.velocity.context.Context;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
@@ -20,9 +21,9 @@ public class PageURLServlet extends BaseServlet {
 	public boolean doGet(String relativeURI,
 			HttpServletRequest request,
 			HttpServletResponse response,
-			Configuration config) throws ServletException, IOException {
+			final Configuration config) throws ServletException, IOException {
 
-		HypermediaControls controller = config.getControls(relativeURI, false);
+		final HypermediaControls controller = config.getControls(relativeURI, false);
 		if (controller == null) return false;
 		ResourceDescription description = controller.getResourceDescription();
 		if (description == null) return false;
@@ -39,7 +40,7 @@ public class PageURLServlet extends BaseServlet {
 		context.put("image", description.getImageURL());
 		context.put("properties", description.getProperties());
 		context.put("showLabels", config.showLabels());
-
+		context.put("geoms",description.getGeoms());
 		addPageMetadata(context, controller, description.getModel());
 	
 		template.renderXHTML("page.vm");

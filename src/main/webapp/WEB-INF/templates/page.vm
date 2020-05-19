@@ -23,7 +23,7 @@
 	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
 #end
 
-#if (!$geoPoints.isEmpty())
+#if (!$geoms.isEmpty() && $geoms!=null)
 <a name="geo"></a>
 <h2>Geographic location</h2>
 <div id="map">
@@ -64,7 +64,7 @@ var mymap = L.map('mapid',{fullscreenControl: true,fullscreenControlOptions: {po
         markers=new OpenLayers.Layer.Markers( "Markers" );
         map.addLayers([new OpenLayers.Layer.OSM(),markers]);
         #set($x = 0)
-        #foreach($i in $geoPoints)
+        #foreach($i in $geoms)
             #if($x == 0)
                 map.setCenter(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection ),10);
             #end

@@ -85,12 +85,12 @@ public class ResourceDescription {
 	        }
 	    }
 	 
-	 private void addAllGeoms(GeoProvider p) {
+	 private void addAllGeoms() {
 	        StmtIterator it= resource.listProperties(GEO.LOCATION);
 	        while(it.hasNext()) {
 	            Statement s = it.nextStatement();
 	            if ( !s.getObject().isAnon() ) {
-	                addPoint(p.get(s.getObject().asResource().getURI()));
+	                addPoint(s.getObject().asResource());
 	            }
 	        }
 	        it.close();
@@ -98,17 +98,17 @@ public class ResourceDescription {
 	        while(it.hasNext()) {
 	            Statement s = it.nextStatement();
 	            if(s.getObject().isURIResource()) {
-	            	addGeometry(p.get(s.getObject().asResource().getURI()));
+	            	addGeometry(s.getObject().asResource());
 	            }
 	        }
 	        it.close();
 	        addPoint(resource);
 	    }
 	 
-	 public List<Geometry> getGeoms(GeoProvider p) {
+	 public List<Geometry> getGeoms() {
 	        if (geoms == null) {
 	            geoms = new ArrayList<Geometry>();
-	            addAllGeoms(p);
+	            addAllGeoms();
 	        }
 	        return geoms;
 	    }
