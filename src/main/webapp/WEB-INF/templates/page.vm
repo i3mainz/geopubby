@@ -52,8 +52,9 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               layerr=L.geoJson(feature,{
               onEachFeature: function (feature, layer) {
               		var popup="<b>$title</b><br/><ul>"
-                    for prop in feature.properties:
+                    for(prop in feature.properties){
                         popup+="<li>"+prop+" - "+feature.properties.prop+"</li>"
+                    }
                     popup+="</ul>"
                     layer.bindPopup(popup)
               }
