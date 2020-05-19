@@ -7,7 +7,7 @@
 #if (!$geoms.isEmpty())
 <a name="geo"></a>
 <h2>Geographic location</h2>
-<div id="map" style="width:500px">
+<div id="map" style="height:500px">
 </div>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
