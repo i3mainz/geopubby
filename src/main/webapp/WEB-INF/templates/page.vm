@@ -11,7 +11,6 @@
 <h2>Geographic location</h2>
 <div id="map" style="height:500px">
 </div>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
 <script type="text/javascript">
@@ -39,10 +38,10 @@ var mymap = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {posi
 	#set($x = 0)
         #foreach($i in $geoms)
             #if($x == 0)
-                ${i.toText}
+                ${i}
                 //map.setCenter(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection ),10);
             #end
-            ${i.toText}
+            ${i}
             markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(${i.lng},${i.lat}).transform( fromProjection, toProjection)));
             #set($x = $x+1)
         #end
