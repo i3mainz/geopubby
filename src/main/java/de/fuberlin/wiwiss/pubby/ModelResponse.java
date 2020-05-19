@@ -68,7 +68,7 @@ public class ModelResponse {
 			response.setContentType("text/plain");
 			ServletOutputStream out = response.getOutputStream();
 			out.println("406 Not Acceptable: The requested data format is not supported.");
-			out.println("Supported formats are RDF/XML, Turtle, N3, and N-Triples.");
+			out.println("Supported formats are RDF/XML, JSON-LD, Turtle, N3, and N-Triples.");
 			return;
 		}
 		response.setContentType(bestMatch.getMediaType());
@@ -79,6 +79,12 @@ public class ModelResponse {
 	private ModelWriter getWriter(String mediaType) {
 		if ("application/rdf+xml".equals(mediaType)) {
 			return new RDFXMLWriter();
+		}
+		if ("application/json".equals(mediaType)) {
+			return new JSONWriter();
+		}
+		if ("application/trig".equals(mediaType)) {
+			return new JSONWriter();
 		}
 		if ("application/x-turtle".equals(mediaType)) {
 			return new TurtleWriter();
@@ -96,6 +102,12 @@ public class ModelResponse {
 	private class NTriplesWriter implements ModelWriter {
 		public void write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("N-TRIPLES").write(model, response.getOutputStream(), null);
+		}
+	}
+	
+	private class JSONWriter implements ModelWriter {
+		public void write(Model model, HttpServletResponse response) throws IOException {
+			model.getWriter("JSON-LD").write(model, response.getOutputStream(), null);
 		}
 	}
 	

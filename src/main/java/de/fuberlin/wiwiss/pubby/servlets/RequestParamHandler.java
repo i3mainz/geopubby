@@ -32,6 +32,8 @@ public class RequestParamHandler {
 		// Turtle.
 		mimeTypes.put("ttl", "text/rdf+n3;charset=utf-8");
 		mimeTypes.put("turtle", "text/rdf+n3;charset=utf-8");
+		mimeTypes.put("json", "application/json");
+		mimeTypes.put("json", "text/json");
 //		mimeTypes.put("turtle", "application/x-turtle");
 //		mimeTypes.put("ttl", "application/x-turtle");
 		mimeTypes.put("n3", "text/rdf+n3;charset=utf-8");
