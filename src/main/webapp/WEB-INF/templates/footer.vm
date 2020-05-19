@@ -1,5 +1,6 @@
 #set ($has_text = false)
     <div id="footer">
+     <div class="container ">
 #if ($rdf_link)
       <a href="$rdf_link?output=ttl">As Turtle</a> |
       <a href="$rdf_link?output=xml">As RDF/XML</a> |
@@ -8,6 +9,7 @@
       <a href="$rdf_link?output=trix">As TriX</a> |
       <a href="$rdf_link?output=geojson">As (Geo)JSON</a> 
 #end
+</div>
     </div>
   </body>
 </html>
