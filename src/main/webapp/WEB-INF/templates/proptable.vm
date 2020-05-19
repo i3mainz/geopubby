@@ -13,9 +13,10 @@
 #end
       <tr class="$odd_even">
         <td class="property">
+  
 #parse("property-name.vm")
         </td>
-        <td>
+        <td class="wrapword">
 #if ($property.hasOnlySimpleValues())
 #parse("values.vm")
 #else

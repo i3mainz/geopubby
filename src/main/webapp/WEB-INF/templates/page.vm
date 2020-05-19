@@ -1,7 +1,9 @@
 #parse("header.vm")
 <div class="row-fluid">
 #if ($image)
-    <div class="image"><img src="$image" alt="Depiction of $title" /></div>
+    <div class="image">
+    <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
+    </div>
 #end
 
 #if (!$geoms.isEmpty())
