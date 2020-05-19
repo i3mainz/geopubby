@@ -9,7 +9,7 @@
 #if (!$geoms.isEmpty())
 <a name="geo"></a>
 <h2>Geographic location</h2>
-<div id="map" style="height:300px">
+<div id="map" style="height:500px">
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
@@ -53,7 +53,16 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               onEachFeature: function (feature, layer) {
               		var popup="<b>$title</b><br/><ul>"
                     for(prop in feature.properties){
-                        popup+="<li>"+prop+" - "+feature.properties.prop+"</li>"
+                        if(prop.includes("http")){
+                        	popup+="<li><a href=\""+prop+"\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
+                        }else{
+                        	popup+="<li>"+prop+" - "
+                        }
+                        if(feature.properties.prop.includes("http")){
+                        	popup+="<a href=\""+feature.properties.prop+"\">"+prop.substring(feature.properties.prop.lastIndexOf('/')+1)+"</a></li>"
+                        }else{
+                        	popup+=feature.properties.prop+"</li>"
+                        }
                     }
                     popup+="</ul>"
                     layer.bindPopup(popup)
