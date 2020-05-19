@@ -2,7 +2,8 @@
     <div id="footer">
 #if ($rdf_link)
       <a href="$rdf_link?output=ttl">As Turtle</a> |
-      <a href="$rdf_link?output=xml">As RDF/XML</a>
+      <a href="$rdf_link?output=xml">As RDF/XML</a> |
+      <a href="$rdf_link?output=xml">As JSON-LD</a>
 #end
     </div>
   </body>
