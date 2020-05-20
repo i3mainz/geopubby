@@ -41,9 +41,9 @@
     # Project name for display in page titles
     conf:projectName "DBpedia.org";
     # Homepage with description of the project for the link in the page header
-    conf:projectHomepage <http://docker.i3mainz.intern.hs-mainz.de:2444>;
+    conf:projectHomepage <https://www.i3mainz.de/projekte/bkg/geopubby/>;
     # The Pubby root, where the webapp is running inside the servlet container.
-    conf:webBase <http://www.i3mainz.de/projekte/bkg/geopubby/>;
+    conf:webBase <https://www.i3mainz.de/projekte/bkg/geopubby/>;
     # URL of an RDF file whose prefix mapping is to be used by the
     # server; defaults to <>, which is *this* file.
     # conf:usePrefixesFrom <>;
