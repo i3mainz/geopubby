@@ -39,6 +39,14 @@ public class GeoJSONWriterr implements ModelWriter {
 			it=model.listResourcesWithProperty(GEO.HASGEOMETRY);
 		}
 		if(!it.hasNext()) {
+			it.close();
+			it=model.listResourcesWithProperty(GEO.GEORSSPOINT);
+		}
+		if(!it.hasNext()) {
+			it.close();
+			it=model.listResourcesWithProperty(GEO.P625);
+		}
+		if(!it.hasNext()) {
 			it=model.listResourcesWithProperty(model.createProperty("http://www.w3.org/2000/01/rdf-schema#label"));
 			while(it.hasNext()) {
 				Resource ind=it.next();
@@ -58,13 +66,16 @@ public class GeoJSONWriterr implements ModelWriter {
 				JSONObject curfeature=new JSONObject();
 				features.put(curfeature);
 				curfeature.put("id",ind.getURI());
+				curfeature.put("type","Feature");
 				JSONObject properties=new JSONObject();
 				curfeature.put("properties",properties);
 				Double lat=null,lon=null;
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
 					if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) || 
-							GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())) {
+							GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
+							|| 
+							GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 						try {
 							Geometry geom=reader.read(curst.getObject().asLiteral().getValue().toString());
 							 GeoJSONWriter writer = new GeoJSONWriter();
