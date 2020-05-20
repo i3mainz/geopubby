@@ -8,6 +8,11 @@
       <a href="$rdf_link?output=trig">As TriG</a> |
       <a href="$rdf_link?output=trix">As TriX</a> |
       <a href="$rdf_link?output=geojson">As (Geo)JSON</a> 
+      #if (!$geoms.isEmpty())
+        | <a href="$rdf_link?output=geouri">As GeoURI</a> 
+      	| <a href="$rdf_link?output=kml">As KML</a> 
+      	| <a href="$rdf_link?output=kml">As GML</a> 
+      #end
 #end
 </div>
     </div>

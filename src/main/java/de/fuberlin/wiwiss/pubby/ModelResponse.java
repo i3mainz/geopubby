@@ -11,8 +11,10 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFWriter;
 import org.apache.jena.shared.JenaException;
 
+import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
+import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
@@ -91,6 +93,12 @@ public class ModelResponse {
 		}
 		if ("application/geouri".equals(mediaType)) {
 			return new GeoURIWriter();
+		}
+		if ("application/gml".equals(mediaType)) {
+			return new GMLWriter();
+		}
+		if ("application/kml".equals(mediaType)) {
+			return new KMLWriter();
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new TrigWriter();

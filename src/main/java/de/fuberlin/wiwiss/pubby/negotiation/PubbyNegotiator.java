@@ -46,6 +46,10 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/turtle;q=0.5");
 		pubbyNegotiator.addVariant("application/geojson;q=0.95")
 				.addAliasMediaType("text/geojson;q=0.8");
+		pubbyNegotiator.addVariant("application/kml;q=0.95")
+				.addAliasMediaType("text/kml;q=0.8");
+		pubbyNegotiator.addVariant("application/gml;q=0.95")
+				.addAliasMediaType("text/gml;q=0.8");
 		pubbyNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		pubbyNegotiator.addVariant("text/plain;q=0.2");
@@ -69,6 +73,10 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/json-ld;q=0.76");
 		dataNegotiator.addVariant("application/geojson;q=0.95")
 				.addAliasMediaType("text/geojson;q=0.8");
+		dataNegotiator.addVariant("application/kml;q=0.95")
+				.addAliasMediaType("text/kml;q=0.8");
+		dataNegotiator.addVariant("application/gml;q=0.95")
+				.addAliasMediaType("text/gml;q=0.8");
 		dataNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		dataNegotiator.addVariant("application/x-turtle;q=0.99")
