@@ -102,7 +102,7 @@ public class GMLWriter implements ModelWriter {
 										try {
 											Geometry geom=reader.read(curst.getObject().asLiteral().getValue().toString());
 											writer.writeStartElement("http://www.opengis.net/gml",geom.getGeometryType());
-											writer.writeStartElement("http://www.opengis.net/gml","coordinates");
+											writer.writeStartElement("http://www.opengis.net/gml","posList");
 											writer.writeCharacters(lat+" "+lon);
 											writer.writeEndElement();
 											writer.writeEndElement();
@@ -122,17 +122,25 @@ public class GMLWriter implements ModelWriter {
 										String last=curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/')+1);
 										if(ns.containsKey(namespace)) {
 											writer.writeStartElement(namespace,last);
-											writer.writeCharacters(curst.getObject().toString());
+											if(curst.getObject().toString().contains("^^")) {
+												writer.writeCharacters(curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+											}else {
+												writer.writeCharacters(curst.getObject().toString());
+											}
 											writer.writeEndElement();	
 										}else {
 											writer.writeStartElement(curst.getPredicate().toString());
-											writer.writeCharacters(curst.getObject().toString());
+											if(curst.getObject().toString().contains("^^")) {
+												writer.writeCharacters(curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+											}else {
+												writer.writeCharacters(curst.getObject().toString());
+											}
 											writer.writeEndElement();	
 										}
 									}
 									if(lon!=null && lat!=null) {
 										writer.writeStartElement("http://www.opengis.net/gml","Point");
-										writer.writeStartElement("http://www.opengis.net/gml","coordinates");
+										writer.writeStartElement("http://www.opengis.net/gml","posList");
 										writer.writeCharacters(lat+" "+lon);
 										writer.writeEndElement();
 										writer.writeEndElement();
