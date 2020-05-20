@@ -67,8 +67,8 @@ public class GMLWriter implements ModelWriter {
 						try {
 						XMLStreamWriter writer=new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 						writer.writeStartDocument();
-						writer.writeStartElement("gml","Feature");
 						writer.setPrefix("gml","http://www.opengis.net/gml");
+						writer.writeStartElement("gml","Feature");
 						writer.writeNamespace("gml","http://www.opengis.net/gml");
 						Map<String,String> ns=new TreeMap<String,String>();
 						while(it.hasNext()) {
