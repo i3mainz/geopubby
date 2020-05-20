@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
@@ -17,7 +16,6 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 import org.wololo.geojson.GeoJSON;
-import org.wololo.jts2geojson.GeoJSONReader;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
@@ -64,6 +62,7 @@ public class GeoJSONWriterr implements ModelWriter {
 				JSONObject geometry=new JSONObject();
 				curfeature.put("geometry",geometry);
 				curfeature.put("properties",properties);
+				Double lat=null,lon=null;
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
 					if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) || 
@@ -78,8 +77,20 @@ public class GeoJSONWriterr implements ModelWriter {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+					}else if(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){
+						lat=curst.getObject().asLiteral().getDouble();
+					}else if(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){
+						lat=curst.getObject().asLiteral().getDouble();
 					}else {
 						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+					}
+					if(lon!=null && lat!=null) {
+						JSONObject geeo=new JSONObject();
+						geeo.put("type","Point");
+						geeo.put("coordinates",new JSONArray());
+						geeo.getJSONArray("coordinates").put(lat);
+						geeo.getJSONArray("coordinates").put(lon);
+						geometry.put("geometry",geeo);
 					}
 				}
 			}

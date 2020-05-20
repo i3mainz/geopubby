@@ -31,6 +31,8 @@ public class GEO {
 	
 	public static final Property P625 = model.createProperty( WIKIDATANS + "P625" );
 	
+	public static final Property GEORSSPOINT= model.createProperty("http://www.georss.org/georss/point");
+	
 	public static List<Property> geomprops=Arrays.asList(new Property[] {P_LONG,P_LAT,P_GEOMETRY,LOCATION,HASGEOMETRY,ASWKT,P625});
 	
 }
