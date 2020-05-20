@@ -1,0 +1,11 @@
+<map id="Configuration" name="Configuration">
+<area shape="rect" id="node2" href="$a00282.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1436,49,1556,76"/>
+<area shape="rect" id="node9" href="$a00386.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,233,1400,274"/>
+<area shape="rect" id="node7" href="$a00382.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1649,320,1768,347"/>
+<area shape="rect" id="node10" href="$a00398.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,313,1389,354"/>
+<area shape="rect" id="node11" href="$a00390.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,318,1016,359"/>
+<area shape="rect" id="node12" href="$a00390.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,364,629,391"/>
+<area shape="rect" id="node18" href="$a00390.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,391,1016,433"/>
+<area shape="rect" id="node17" href="$a00394.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,395,1383,437"/>
+<area shape="rect" id="node19" href="$a00338.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,468,1337,495"/>
+</map>
