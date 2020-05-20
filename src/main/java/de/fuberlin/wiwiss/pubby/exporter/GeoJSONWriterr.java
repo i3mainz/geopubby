@@ -39,7 +39,7 @@ public class GeoJSONWriterr implements ModelWriter {
 			it=model.listResourcesWithProperty(GEO.HASGEOMETRY);
 		}
 		if(!it.hasNext()) {
-			it=model.listResourcesWithProperty(model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
+			it=model.listResourcesWithProperty(model.createProperty("http://www.w3.org/2000/01/rdf-schema#label"));
 			while(it.hasNext()) {
 				Resource ind=it.next();
 				StmtIterator it2 = ind.listProperties();
