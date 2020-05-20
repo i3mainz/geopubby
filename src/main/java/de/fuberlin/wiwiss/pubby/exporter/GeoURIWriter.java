@@ -71,7 +71,7 @@ public class GeoURIWriter implements ModelWriter {
 						}
 					}	
 				try {
-					if(geojson.isEmpty()) {
+					if(lat==null || lon==null) {
 						response.getWriter().write("");
 						response.getWriter().close();
 					}else {
