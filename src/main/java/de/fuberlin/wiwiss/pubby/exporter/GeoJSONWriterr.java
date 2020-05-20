@@ -59,8 +59,6 @@ public class GeoJSONWriterr implements ModelWriter {
 				features.put(curfeature);
 				curfeature.put("id",ind.getURI());
 				JSONObject properties=new JSONObject();
-				JSONObject geometry=new JSONObject();
-				curfeature.put("geometry",geometry);
 				curfeature.put("properties",properties);
 				Double lat=null,lon=null;
 				while(it2.hasNext()) {
@@ -80,7 +78,10 @@ public class GeoJSONWriterr implements ModelWriter {
 					}else if(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){
 						lat=curst.getObject().asLiteral().getDouble();
 					}else if(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){
-						lat=curst.getObject().asLiteral().getDouble();
+						lon=curst.getObject().asLiteral().getDouble();
+					}else if(GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())){
+						lat=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
+						lon=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
 					}else {
 						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
 					}
