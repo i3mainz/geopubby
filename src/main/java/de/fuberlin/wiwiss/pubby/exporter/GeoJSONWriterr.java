@@ -94,7 +94,17 @@ public class GeoJSONWriterr implements ModelWriter {
 						lat=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
 						lon=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
 					}else {
-						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+						if(properties.has(curst.getPredicate().toString())) {
+							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
+								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
+							}else {
+								JSONArray arr=new JSONArray();
+								arr.put(curst.getObject().toString());
+								properties.put(curst.getPredicate().toString(),arr);
+							}
+						}else {
+						   properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+						}					
 					}
 					if(lon!=null && lat!=null) {
 						JSONObject geeo=new JSONObject();
