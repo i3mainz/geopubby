@@ -74,7 +74,7 @@ public class GMLWriter implements ModelWriter {
 						while(it.hasNext()) {
 							Resource ind=it.next();
 							StmtIterator it2 = ind.listProperties();
-							Double lat=null,lon=null;
+
 							int nscounter=1;
 							while(it2.hasNext()) {
 								Statement curst=it2.next();
