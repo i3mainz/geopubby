@@ -58,6 +58,12 @@
     <artifactId>jts-core</artifactId>
     <version>1.16.1</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.sun.xml.txw2/txw2 -->
+<dependency>
+    <groupId>com.sun.xml.txw2</groupId>
+    <artifactId>txw2</artifactId>
+    <version>20110809</version>
+</dependency>
 <dependency>
     <groupId>org.wololo</groupId>
     <artifactId>jts2geojson</artifactId>
