@@ -101,8 +101,8 @@ public class GMLWriter implements ModelWriter {
 											GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 										try {
 											Geometry geom=reader.read(curst.getObject().asLiteral().getValue().toString());
-											writer.writeStartElement("gml",geom.getGeometryType());
-											writer.writeStartElement("gml","coordinates");
+											writer.writeStartElement("http://www.opengis.net/gml",geom.getGeometryType());
+											writer.writeStartElement("http://www.opengis.net/gml","coordinates");
 											writer.writeCharacters(lat+" "+lon);
 											writer.writeEndElement();
 											writer.writeEndElement();
@@ -121,7 +121,7 @@ public class GMLWriter implements ModelWriter {
 										String namespace=curst.getPredicate().toString().substring(0,curst.getPredicate().toString().lastIndexOf('/'));
 										String last=curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/')+1);
 										if(ns.containsKey(namespace)) {
-											writer.writeStartElement(ns.get(namespace),last);
+											writer.writeStartElement(namespace,last);
 											writer.writeCharacters(curst.getObject().toString());
 											writer.writeEndElement();	
 										}else {
@@ -131,8 +131,8 @@ public class GMLWriter implements ModelWriter {
 										}
 									}
 									if(lon!=null && lat!=null) {
-										writer.writeStartElement("gml","Point");
-										writer.writeStartElement("gml","coordinates");
+										writer.writeStartElement("http://www.opengis.net/gml","Point");
+										writer.writeStartElement("http://www.opengis.net/gml","coordinates");
 										writer.writeCharacters(lat+" "+lon);
 										writer.writeEndElement();
 										writer.writeEndElement();
