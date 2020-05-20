@@ -53,7 +53,17 @@ public class GeoJSONWriterr implements ModelWriter {
 				StmtIterator it2 = ind.listProperties();
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
-					geojson.put(curst.getPredicate().toString(),curst.getObject().toString());
+					if(geojson.has(curst.getPredicate().toString())) {
+						if(geojson.optJSONArray(curst.getPredicate().toString())!=null) {
+							geojson.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
+						}else {
+							JSONArray arr=new JSONArray();
+							arr.put(curst.getObject().toString());
+							geojson.put(curst.getPredicate().toString(),arr);
+						}
+					}else {
+						geojson.put(curst.getPredicate().toString(),curst.getObject().toString());
+					}	
 				}
 			}
 		}else {
