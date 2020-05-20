@@ -72,7 +72,7 @@ public class GeoJSONWriterr implements ModelWriter {
 							 GeoJSONWriter writer = new GeoJSONWriter();
 					            GeoJSON json = writer.write(geom);
 					            String jsonstring = json.toString();
-					            geometry.put("geometry",new JSONObject(jsonstring));
+					            curfeature.put("geometry",new JSONObject(jsonstring));
 						} catch (ParseException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -90,7 +90,7 @@ public class GeoJSONWriterr implements ModelWriter {
 						geeo.put("coordinates",new JSONArray());
 						geeo.getJSONArray("coordinates").put(lat);
 						geeo.getJSONArray("coordinates").put(lon);
-						geometry.put("geometry",geeo);
+						curfeature.put("geometry",geeo);
 					}
 				}
 			}
