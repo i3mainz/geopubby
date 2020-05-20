@@ -12,6 +12,7 @@ import org.apache.jena.rdf.model.RDFWriter;
 import org.apache.jena.shared.JenaException;
 
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
+import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
@@ -70,7 +71,7 @@ public class ModelResponse {
 			response.setContentType("text/plain");
 			ServletOutputStream out = response.getOutputStream();
 			out.println("406 Not Acceptable: The requested data format is not supported.");
-			out.println("Supported formats are RDF/XML, JSON-LD, GeoJSON, TriX, TriG, Turtle, N3, and N-Triples.");
+			out.println("Supported formats are RDF/XML, JSON-LD, GeoJSON, GeoURI, TriX, TriG, Turtle, N3, and N-Triples.");
 			return;
 		}
 		response.setContentType(bestMatch.getMediaType());
@@ -87,6 +88,9 @@ public class ModelResponse {
 		}
 		if ("application/geojson".equals(mediaType)) {
 			return new GeoJSONWriterr();
+		}
+		if ("application/geouri".equals(mediaType)) {
+			return new GeoURIWriter();
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new TrigWriter();

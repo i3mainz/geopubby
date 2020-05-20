@@ -36,6 +36,8 @@ public class RequestParamHandler {
 		mimeTypes.put("json", "text/json");
 		mimeTypes.put("geojson", "application/geojson");
 		mimeTypes.put("geojson", "text/geojson");
+		mimeTypes.put("geouri", "application/geouri");
+		mimeTypes.put("geouri", "text/geouri");
 //		mimeTypes.put("turtle", "application/x-turtle");
 //		mimeTypes.put("ttl", "application/x-turtle");
 		mimeTypes.put("n3", "text/rdf+n3;charset=utf-8");
