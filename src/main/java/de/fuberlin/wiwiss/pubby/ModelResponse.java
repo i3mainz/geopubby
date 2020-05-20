@@ -11,7 +11,7 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFWriter;
 import org.apache.jena.shared.JenaException;
 
-import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriter;
+import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
@@ -86,7 +86,7 @@ public class ModelResponse {
 			return new JSONWriter();
 		}
 		if ("application/geojson".equals(mediaType)) {
-			return new GeoJSONWriter();
+			return new GeoJSONWriterr();
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new TrigWriter();

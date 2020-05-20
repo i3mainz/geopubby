@@ -13,12 +13,20 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKTReader;
+import org.wololo.geojson.GeoJSON;
+import org.wololo.jts2geojson.GeoJSONReader;
+import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class GeoJSONWriter implements ModelWriter {
+public class GeoJSONWriterr implements ModelWriter {
 
 
+	WKTReader reader=new WKTReader();
+	
 	@Override
 	public void write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it=model.
@@ -33,6 +41,7 @@ public class GeoJSONWriter implements ModelWriter {
 			it=model.listResourcesWithProperty(GEO.HASGEOMETRY);
 		}
 		if(!it.hasNext()) {
+			it=model.listResourcesWithProperty(model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
 			while(it.hasNext()) {
 				Resource ind=it.next();
 				StmtIterator it2 = ind.listProperties();
@@ -52,11 +61,23 @@ public class GeoJSONWriter implements ModelWriter {
 				features.put(curfeature);
 				curfeature.put("id",ind.getURI());
 				JSONObject properties=new JSONObject();
+				JSONObject geometry=new JSONObject();
+				curfeature.put("geometry",geometry);
 				curfeature.put("properties",properties);
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
-					if(GEO.HASGEOMETRY.equals(curst.getPredicate().getURI().toString())) {
-						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+					if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) || 
+							GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())) {
+						try {
+							Geometry geom=reader.read(curst.getObject().asLiteral().getValue().toString());
+							 GeoJSONWriter writer = new GeoJSONWriter();
+					            GeoJSON json = writer.write(geom);
+					            String jsonstring = json.toString();
+					            geometry.put("geometry",new JSONObject(jsonstring));
+						} catch (ParseException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}else {
 						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
 					}
