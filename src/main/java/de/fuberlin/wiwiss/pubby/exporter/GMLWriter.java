@@ -67,6 +67,7 @@ public class GMLWriter implements ModelWriter {
 						try {
 						XMLStreamWriter writer=new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 						writer.writeStartDocument();
+						writer.writeStartElement("gml","Feature");
 						writer.setPrefix("gml","http://www.opengis.net/gml");
 						writer.writeNamespace("gml","http://www.opengis.net/gml");
 						Map<String,String> ns=new TreeMap<String,String>();
@@ -87,7 +88,7 @@ public class GMLWriter implements ModelWriter {
 						}
 						it.close();
 						it=model.listResourcesWithProperty(usedProperty);
-						writer.writeStartElement("gml","Feature");
+
 							while(it.hasNext()) {
 								Resource ind=it.next();
 								StmtIterator it2 = ind.listProperties();
