@@ -10,7 +10,6 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
@@ -25,7 +24,6 @@ public class GeoURIWriter implements ModelWriter {
 	public void write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it=model.
 				listResourcesWithProperty(GEO.HASGEOMETRY);
-				JSONObject geojson=new JSONObject();
 				if(!it.hasNext()) {
 					it.close();
 					it=model.listResourcesWithProperty(GEO.P_LAT);
