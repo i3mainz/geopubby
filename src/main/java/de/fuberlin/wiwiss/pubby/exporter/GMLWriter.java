@@ -62,6 +62,13 @@ public class GMLWriter implements ModelWriter {
 						response.getWriter().write("");
 						response.getWriter().close();	
 					}else {
+						XMLOutputFactory factory = XMLOutputFactory.newInstance();
+						StringWriter strwriter=new StringWriter();
+						try {
+						XMLStreamWriter writer=new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
+						writer.writeStartDocument();
+						writer.setPrefix("gml","http://www.opengis.net/gml");
+						writer.writeNamespace("gml","http://www.opengis.net/gml");
 						Map<String,String> ns=new TreeMap<String,String>();
 						while(it.hasNext()) {
 							Resource ind=it.next();
@@ -72,18 +79,15 @@ public class GMLWriter implements ModelWriter {
 								Statement curst=it2.next();
 								String nss=curst.getPredicate().getURI().toString().substring(0,curst.getPredicate().getURI().toString().lastIndexOf('/'));
 								if(!ns.containsKey(nss)) {
+									writer.setPrefix("ns"+nscounter, nss);
+									writer.writeNamespace("ns"+nscounter, nss);
 									ns.put(nss,"ns"+nscounter++);
 								}
 							}
 						}
 						it.close();
 						it=model.listResourcesWithProperty(usedProperty);
-						XMLOutputFactory factory = XMLOutputFactory.newInstance();
-						StringWriter strwriter=new StringWriter();
-						try {
-						XMLStreamWriter writer=new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
-						writer.writeStartDocument();
-						writer.writeStartElement("Feature");
+						writer.writeStartElement("gml","Feature");
 							while(it.hasNext()) {
 								Resource ind=it.next();
 								StmtIterator it2 = ind.listProperties();
