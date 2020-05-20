@@ -90,6 +90,8 @@ public class GMLWriter implements ModelWriter {
 							writer.writeCharacters(lat+" "+lon);
 							writer.writeEndElement();
 							writer.writeEndElement();
+							lat=null;
+							lon=null;
 						}
 					}
 				}	
