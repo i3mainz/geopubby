@@ -3,7 +3,7 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: License-Management.gitlab-ci.yml
 
-image: maven:3-jdk-8
+image: maven:3-jdk-10
 
 stages:
   - build
