@@ -22,28 +22,47 @@ public class GeoJSONWriter implements ModelWriter {
 	@Override
 	public void write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it=model.
-		listResourcesWithProperty(model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type"));
+		listResourcesWithProperty(GEO.HASGEOMETRY);
 		JSONObject geojson=new JSONObject();
-		geojson.put("type","FeatureCollection");
-		JSONArray features=new JSONArray();
-		geojson.put("features",features);
-		while(it.hasNext()) {
-			Resource ind=it.next();
-			StmtIterator it2 = ind.listProperties();
-			JSONObject curfeature=new JSONObject();
-			features.put(curfeature);
-			curfeature.put("id",ind.getURI());
-			JSONObject properties=new JSONObject();
-			curfeature.put("properties",properties);
-			while(it2.hasNext()) {
-				Statement curst=it2.next();
-				if(GEO.HASGEOMETRY.equals(curst.getPredicate().getURI().toString())) {
-					properties.put(curst.getPredicate().toString(),curst.getObject().toString());
-				}else {
-					properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+		if(!it.hasNext()) {
+			it.close();
+			it=model.listResourcesWithProperty(GEO.P_LAT);
+		}
+		if(!it.hasNext()) {
+			it.close();
+			it=model.listResourcesWithProperty(GEO.HASGEOMETRY);
+		}
+		if(!it.hasNext()) {
+			while(it.hasNext()) {
+				Resource ind=it.next();
+				StmtIterator it2 = ind.listProperties();
+				while(it2.hasNext()) {
+					Statement curst=it2.next();
+					geojson.put(curst.getPredicate().toString(),curst.getObject().toString());
 				}
 			}
-		}
+		}else {
+			geojson.put("type","FeatureCollection");
+			JSONArray features=new JSONArray();
+			geojson.put("features",features);
+			while(it.hasNext()) {
+				Resource ind=it.next();
+				StmtIterator it2 = ind.listProperties();
+				JSONObject curfeature=new JSONObject();
+				features.put(curfeature);
+				curfeature.put("id",ind.getURI());
+				JSONObject properties=new JSONObject();
+				curfeature.put("properties",properties);
+				while(it2.hasNext()) {
+					Statement curst=it2.next();
+					if(GEO.HASGEOMETRY.equals(curst.getPredicate().getURI().toString())) {
+						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+					}else {
+						properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+					}
+				}
+			}
+		}	
 		try {
 			response.getWriter().write(geojson.toString(2));
 			response.getWriter().close();
