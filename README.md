@@ -4,3 +4,5 @@ store.
 
 See [the Pubby website](http://www4.wiwiss.fu-berlin.de/pubby/)
 for details and instructions.
+
+In addition to Pubby, GeoPubby supports serving of several geospatial data formats for export.
