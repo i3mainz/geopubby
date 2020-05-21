@@ -37,9 +37,16 @@ public class ServletContextInitializer implements ServletContextListener {
 				Configuration conf = Configuration.create(m);
 				context.setAttribute(SERVER_CONFIGURATION, conf);
 			} catch (JenaException ex) {
+			    if(ex.getCause()!=null){
+			        				throw new ConfigurationException(
+						"Error parsing configuration file <" + url + ">: " + 
+						ex.getMessage()+"\nCause: "+ex.getCause().getMessage());
+			    }else{
 				throw new ConfigurationException(
 						"Error parsing configuration file <" + url + ">: " + 
-						ex.getMessage());
+						ex.getMessage());			        
+			    }
+
 			}
 		} catch (ConfigurationException ex) {
 			log(ex, context);
