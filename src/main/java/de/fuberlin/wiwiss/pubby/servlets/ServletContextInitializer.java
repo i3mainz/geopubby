@@ -1,6 +1,8 @@
 package de.fuberlin.wiwiss.pubby.servlets;
 
 import java.io.File;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -19,7 +21,7 @@ public class ServletContextInitializer implements ServletContextListener {
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
 	
-	public static void initConfiguration(ServletContext context){
+	public static boolean initConfiguration(ServletContext context){
 	    try {
 			String configFileName = context.getInitParameter("config-file");
 			if (configFileName == null) {
@@ -48,14 +50,27 @@ public class ServletContextInitializer implements ServletContextListener {
 			}
 		} catch (ConfigurationException ex) {
 			log(ex, context);
+			return false;
 		}
+		return true;
 	}
 	
 	
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		ServletContext context = sce.getServletContext();
-		ServletContextInitializer.initConfiguration(context);
+		final Timer timer = new Timer();
+        final TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                Boolean result=ServletContextInitializer.initConfiguration(context);
+                if(result){
+                        timer.cancel();
+                        timer.purge();
+                }
+            }
+        };
+        timer.schedule(task, 300000);
 		/*
 		try {
 			String configFileName = context.getInitParameter("config-file");
