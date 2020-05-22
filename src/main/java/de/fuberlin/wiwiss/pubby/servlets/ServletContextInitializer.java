@@ -19,7 +19,7 @@ public class ServletContextInitializer implements ServletContextListener {
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
 	
-	public static initConfiguration(ServletContext context){
+	public static void initConfiguration(ServletContext context){
 	    try {
 			String configFileName = context.getInitParameter("config-file");
 			if (configFileName == null) {
