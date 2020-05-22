@@ -60,17 +60,20 @@ public class ServletContextInitializer implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
 		final Timer timer = new Timer();
-        final TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                Boolean result=ServletContextInitializer.initConfiguration(context);
-                if(result){
+		Boolean result=ServletContextInitializer.initConfiguration(context);
+		if(!result){
+            final TimerTask task = new TimerTask() {
+                @Override
+                public void run() {
+                    Boolean result=ServletContextInitializer.initConfiguration(context);
+                    if(result){
                         timer.cancel();
                         timer.purge();
+                    }
                 }
-            }
-        };
-        timer.schedule(task, 300000);
+            };
+            timer.schedule(task, 300000);
+		}
 		/*
 		try {
 			String configFileName = context.getInitParameter("config-file");
