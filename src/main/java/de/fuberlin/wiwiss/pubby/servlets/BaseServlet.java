@@ -37,8 +37,13 @@ public abstract class BaseServlet extends HttpServlet {
 		config = (Configuration) getServletContext().getAttribute(
 				ServletContextInitializer.SERVER_CONFIGURATION);
 		if (config == null) {
-			initError = (String) getServletContext().getAttribute(
+		    ServletContextInitializer.initConfiguration(getServletContext());
+		    config = (Configuration) getServletContext().getAttribute(
+				ServletContextInitializer.SERVER_CONFIGURATION);
+			if(config==null){
+			    initError = (String) getServletContext().getAttribute(
 					ServletContextInitializer.ERROR_MESSAGE);
+			}
 		}
 	}
 	
