@@ -36,15 +36,10 @@ public abstract class BaseServlet extends HttpServlet {
 	public void init() throws ServletException {
 		config = (Configuration) getServletContext().getAttribute(
 				ServletContextInitializer.SERVER_CONFIGURATION);
-		if (config == null) {
-		    ServletContextInitializer.initConfiguration(getServletContext());
-		    config = (Configuration) getServletContext().getAttribute(
-				ServletContextInitializer.SERVER_CONFIGURATION);
 			if(config==null){
 			    initError = (String) getServletContext().getAttribute(
 					ServletContextInitializer.ERROR_MESSAGE);
 			}
-		}
 	}
 	
 	// TODO: This should be somewhere else, doesn't fit here
