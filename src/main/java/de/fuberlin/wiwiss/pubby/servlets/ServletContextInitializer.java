@@ -1,6 +1,8 @@
 package de.fuberlin.wiwiss.pubby.servlets;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -42,9 +44,12 @@ public class ServletContextInitializer implements ServletContextListener {
 						"Error parsing configuration file <" + url + ">: " + 
 						ex.getMessage()+"\nCause: "+ex.getCause().getMessage());
 			    }else{
+			        StringWriter sw = new StringWriter();
+                    PrintWriter pw = new PrintWriter(sw);
+                    ex.printStackTrace(pw);
 				throw new ConfigurationException(
 						"Error parsing configuration file <" + url + ">: " + 
-						ex.getMessage());			        
+						ex.getMessage()+"\n"+sw.toString());			        
 			    }
 
 			}
@@ -72,7 +77,7 @@ public class ServletContextInitializer implements ServletContextListener {
                     }
                 }
             };
-            timer.schedule(task, 300000);
+            timer.schedule(task, 30000);
 		}
 		/*
 		try {
