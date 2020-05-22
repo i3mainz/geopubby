@@ -3,7 +3,7 @@ var hierarchy =
     [ "ContentTypeNegotiator.AcceptHeaderOverride", "a00250.html", null ],
     [ "AllTests", "a00402.html", null ],
     [ "VocabularyStore.CachedPropertyCollection", "a00386.html", null ],
-    [ "Comparable", "a00910.html", [
+    [ "Comparable", "a00918.html", [
       [ "ResourceDescription.ResourceProperty", "a00270.html", null ],
       [ "ResourceDescription.Value", "a00278.html", null ]
     ] ],
@@ -50,7 +50,7 @@ var hierarchy =
       [ "Dataset", "a00166.html", null ],
       [ "MetadataConfiguration", "a00202.html", null ]
     ] ],
-    [ "RuntimeException", "a00914.html", [
+    [ "RuntimeException", "a00922.html", [
       [ "ConfigurationException", "a00162.html", null ]
     ] ],
     [ "URIPrefixer", "a00366.html", null ],
