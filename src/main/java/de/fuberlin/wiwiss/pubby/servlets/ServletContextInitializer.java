@@ -58,7 +58,7 @@ public class ServletContextInitializer implements ServletContextListener {
 	
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		ServletContext context = sce.getServletContext();
+		final ServletContext context = sce.getServletContext();
 		final Timer timer = new Timer();
         final TimerTask task = new TimerTask() {
             @Override
