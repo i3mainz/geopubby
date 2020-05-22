@@ -19,10 +19,8 @@ public class ServletContextInitializer implements ServletContextListener {
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
 	
-	@Override
-	public void contextInitialized(ServletContextEvent sce) {
-		ServletContext context = sce.getServletContext();
-		try {
+	public static initConfiguration(ServletContext context){
+	    try {
 			String configFileName = context.getInitParameter("config-file");
 			if (configFileName == null) {
 				throw new ConfigurationException("Missing context parameter \"config-file\" in /WEB-INF/web.xml");
@@ -51,6 +49,43 @@ public class ServletContextInitializer implements ServletContextListener {
 		} catch (ConfigurationException ex) {
 			log(ex, context);
 		}
+	}
+	
+	
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+		ServletContext context = sce.getServletContext();
+		ServletContextInitializer.initConfiguration(context);
+		/*
+		try {
+			String configFileName = context.getInitParameter("config-file");
+			if (configFileName == null) {
+				throw new ConfigurationException("Missing context parameter \"config-file\" in /WEB-INF/web.xml");
+			}
+			File configFile = new File(configFileName);
+			if (!configFile.isAbsolute()) {
+				configFile = new File(context.getRealPath("/") + "/WEB-INF/" + configFileName);
+			}
+			String url = configFile.getAbsoluteFile().toURI().toString();
+			try {
+				Model m = FileManager.get().loadModel(url);
+				Configuration conf = Configuration.create(m);
+				context.setAttribute(SERVER_CONFIGURATION, conf);
+			} catch (JenaException ex) {
+			    if(ex.getCause()!=null){
+			        				throw new ConfigurationException(
+						"Error parsing configuration file <" + url + ">: " + 
+						ex.getMessage()+"\nCause: "+ex.getCause().getMessage());
+			    }else{
+				throw new ConfigurationException(
+						"Error parsing configuration file <" + url + ">: " + 
+						ex.getMessage());			        
+			    }
+
+			}
+		} catch (ConfigurationException ex) {
+			log(ex, context);
+		}*/
 	}
 
 	@Override
