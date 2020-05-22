@@ -47,7 +47,7 @@ public class ServletContextInitializer implements ServletContextListener {
 
 			}
 		} catch (ConfigurationException ex) {
-			log(ex, context);
+			context.log(ex, context);
 		}
 	}
 	
