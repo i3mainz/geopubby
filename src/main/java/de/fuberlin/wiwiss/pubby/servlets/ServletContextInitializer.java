@@ -47,7 +47,7 @@ public class ServletContextInitializer implements ServletContextListener {
 
 			}
 		} catch (ConfigurationException ex) {
-			context.log(ex, context);
+			log(ex, context);
 		}
 	}
 	
@@ -93,7 +93,7 @@ public class ServletContextInitializer implements ServletContextListener {
 		// Do nothing special.
 	}
 	
-	private void log(Exception ex, ServletContext context) {
+	private static void log(Exception ex, ServletContext context) {
 		context.log("######## PUBBY CONFIGURATION ERROR ######## ");
 		context.log(ex.getMessage());
 		context.log("########################################### ");
