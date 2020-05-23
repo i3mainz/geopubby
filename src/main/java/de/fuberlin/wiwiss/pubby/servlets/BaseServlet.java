@@ -88,11 +88,22 @@ public abstract class BaseServlet extends HttpServlet {
 		}
 	}
 	
-	protected abstract boolean doGet(
+	protected boolean doGet(
 			String relativeURI,
 			HttpServletRequest request,
 			HttpServletResponse response,
-			Configuration config) throws IOException, ServletException;
+			Configuration config) throws IOException, ServletException{
+		Boolean returned=false;
+		if(config==null) {
+			returned=ServletContextInitializer.initConfiguration(getServletContext());
+		}
+		if(config!=null) {
+			initError=null;
+		}
+		config = (Configuration) getServletContext().getAttribute(
+				ServletContextInitializer.SERVER_CONFIGURATION);
+		return returned;
+	}
 	
 	public void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {

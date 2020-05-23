@@ -24,11 +24,7 @@ public class RootServlet extends BaseServlet {
 			Configuration config)
 			throws IOException, ServletException {
 		
-		if(config==null) {
-			ServletContextInitializer.initConfiguration(getServletContext());
-		}
-		config = (Configuration) getServletContext().getAttribute(
-				ServletContextInitializer.SERVER_CONFIGURATION);
+		super.doGet(relativeURI, request, response, config);
 		
 		// static/ directory handled by default servlet
 		if (relativeURI.startsWith("static/")) {

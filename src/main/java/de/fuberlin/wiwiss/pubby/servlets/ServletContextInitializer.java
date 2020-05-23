@@ -68,7 +68,7 @@ public class ServletContextInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
-		//Boolean result=ServletContextInitializer.initConfiguration(context);
+		Boolean result=ServletContextInitializer.initConfiguration(context);
 		/*if(!result) {
 			Configuration config=(Configuration) context.getAttribute(SERVER_CONFIGURATION);
 			String error=context.getAttribute(ERROR_MESSAGE).toString();

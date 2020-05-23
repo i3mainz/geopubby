@@ -22,6 +22,8 @@ public class PageURLServlet extends BaseServlet {
 			HttpServletResponse response,
 			final Configuration config) throws ServletException, IOException {
 
+		super.doGet(relativeURI, request, response, config);
+		
 		final HypermediaControls controller = config.getControls(relativeURI, false);
 		if (controller == null) return false;
 		ResourceDescription description = controller.getResourceDescription();
