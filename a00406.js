@@ -1,24 +1,7 @@
 var a00406 =
 [
-    [ "setUp", "a00406.html#a63326a1b70b6e3f070e51687798e02de", null ],
-    [ "testAcceptAlias", "a00406.html#a6a9508944ed52b911eef2cc00ab8dfd5", null ],
-    [ "testDefaultToHigherQuality", "a00406.html#af0fb802ab7acf142fdaf1f4254466ec1", null ],
-    [ "testEmptyHeader", "a00406.html#ac7ccde7f210ef3d918c0896536ba393d", null ],
-    [ "testEmptyHeaderPickBestQuality", "a00406.html#ad3b5f1df7382cc77122f941e2c6c77ac", null ],
-    [ "testMatchSimple", "a00406.html#a5fd4c6c44b176ca920db9fc0a758168e", null ],
-    [ "testNoMatch", "a00406.html#ae34df46446904c48f2e595239dc25c51", null ],
-    [ "testNoMatchIfBestEqualsZero", "a00406.html#a01b22832236e08e2a5e5a0ec084ba451", null ],
-    [ "testNoVariantOnServer", "a00406.html#a9ac05091536c70427d6531779b868428", null ],
-    [ "testPickCorrectMatchSimple", "a00406.html#a516ae895aabd9d1df0ef4594ecd1955b", null ],
-    [ "testPickCorrectMatchWithClientQuality", "a00406.html#aaed8c772bd5fda6148554e0024136191", null ],
-    [ "testPickCorrectMatchWithServerQuality1", "a00406.html#a5796314bd106989db42affeb97b278e8", null ],
-    [ "testPickCorrectMatchWithServerQuality2", "a00406.html#a76b72f9f3a971c6896e40bee18c71ada", null ],
-    [ "testPickFirstIfTwoEqualOptions", "a00406.html#a2af55214ea1673967d78dcc1c712b4f9", null ],
-    [ "testQualityMultiplication", "a00406.html#a542fd21591ce4070bb2326983b954066", null ],
-    [ "testSpecifyDefaultAccept", "a00406.html#a31c732585f8e5e7f58d98dedc22bf434", null ],
-    [ "testUseAliasQuality", "a00406.html#a0d651c4c78c3165c3c1273dfa3574169", null ],
-    [ "testUseDefaultIfNoMatch", "a00406.html#aac73430ed66cf65635f6f7b8c9d14391", null ],
-    [ "testUseDefaultIfTwoEqualOptions", "a00406.html#acd4f7efa63d94c9a0a34628340ab3a46", null ],
-    [ "testUserAgentOverrideSimple", "a00406.html#a91224c27c3b20b52fdac952010fab8e8", null ],
-    [ "negotiator", "a00406.html#a2e2f4626c40eeebd96e11b4ed1f6273b", null ]
+    [ "IntegerValueCache", "a00406.html#ae46ea980eabeebe463df56625f7b4e75", null ],
+    [ "get", "a00406.html#a1a984f4cb4d41188c130813c505063fb", null ],
+    [ "getCached", "a00406.html#a083d9b50ef29b03d5520218df8bf4870", null ],
+    [ "pickBestValue", "a00406.html#a1b88e6006962be301e6e3feb2219fd61", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: GEO Class Reference</title>
+<title>GeoPubby: Reloader Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,56 +61,134 @@ $(document).ready(function(){initNavTree('a00374.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pac-attribs">Package Attributes</a> &#124;
 <a href="a00371.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GEO Class Reference</div>  </div>
+<div class="title">Reloader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for GEO:</div>
+Inheritance diagram for Reloader:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00372.png" border="0" usemap="#GEO_coll__map" alt="Collaboration graph"/></div>
-<map name="GEO_coll__map" id="GEO_coll__map">
+<div class="center"><img src="a00373.png" border="0" usemap="#Reloader_inherit__map" alt="Inheritance graph"/></div>
+<map name="Reloader_inherit__map" id="Reloader_inherit__map">
+<area shape="rect" id="node2" href="a00938.html" title="Runnable" alt="" coords="5,5,83,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Reloader:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00372.png" border="0" usemap="#Reloader_coll__map" alt="Collaboration graph"/></div>
+<map name="Reloader_coll__map" id="Reloader_coll__map">
+<area shape="rect" id="node2" href="a00938.html" title="Runnable" alt="" coords="2045,5,2123,32"/>
+<area shape="rect" id="node10" href="a00390.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1649,313,1768,340"/>
+<area shape="rect" id="node4" href="a00162.html" title="The server&#39;s configuration. " alt="" coords="2035,280,2133,307"/>
+<area shape="rect" id="node5" href="a00286.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1436,135,1556,161"/>
+<area shape="rect" id="node11" href="a00394.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,177,1400,218"/>
+<area shape="rect" id="node12" href="a00406.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,323,1389,365"/>
+<area shape="rect" id="node13" href="a00398.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,326,1016,367"/>
+<area shape="rect" id="node14" href="a00398.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,368,629,395"/>
+<area shape="rect" id="node20" href="a00398.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,394,1016,435"/>
+<area shape="rect" id="node19" href="a00402.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,395,1383,437"/>
+<area shape="rect" id="node21" href="a00342.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,488,1337,515"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a865c2f23c5f3e96bffeddce013aa3686"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> = &quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;</td></tr>
-<tr class="separator:a865c2f23c5f3e96bffeddce013aa3686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a399a835e5c9fc32beccc0c6d26f5e"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a76a399a835e5c9fc32beccc0c6d26f5e">GEOSPARQLNS</a> = &quot;http://www.opengis.net/ont/geosparql#&quot;</td></tr>
-<tr class="separator:a76a399a835e5c9fc32beccc0c6d26f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7115477c03eb53090f3108e6200995c"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ac7115477c03eb53090f3108e6200995c">WIKIDATANS</a> = &quot;http://www.wikidata.org/prop/direct/&quot;</td></tr>
-<tr class="separator:ac7115477c03eb53090f3108e6200995c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97406cbf998cb21121e9c3f2f1921dc0"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a97406cbf998cb21121e9c3f2f1921dc0">P_LONG</a> = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;long&quot; )</td></tr>
-<tr class="separator:a97406cbf998cb21121e9c3f2f1921dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1d650cd10e326f285fa7cc36e1d737"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a6c1d650cd10e326f285fa7cc36e1d737">P_LAT</a> = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;lat&quot; )</td></tr>
-<tr class="separator:a6c1d650cd10e326f285fa7cc36e1d737"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac127f8cb1d116ba2de06695bc81c7fbc"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ac127f8cb1d116ba2de06695bc81c7fbc">P_GEOMETRY</a> = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;geometry&quot; )</td></tr>
-<tr class="separator:ac127f8cb1d116ba2de06695bc81c7fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac973fdf327e4b9497009c967f65b2d58"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ac973fdf327e4b9497009c967f65b2d58">LOCATION</a> = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;location&quot; )</td></tr>
-<tr class="separator:ac973fdf327e4b9497009c967f65b2d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad238c371d9268c3e6498a5e4bf386b9c"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ad238c371d9268c3e6498a5e4bf386b9c">HASGEOMETRY</a> = model.createProperty( <a class="el" href="a00374.html#a76a399a835e5c9fc32beccc0c6d26f5e">GEOSPARQLNS</a> + &quot;hasGeometry&quot; )</td></tr>
-<tr class="separator:ad238c371d9268c3e6498a5e4bf386b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3b39bf8d8c41f1b00a9c91c00034c73"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#af3b39bf8d8c41f1b00a9c91c00034c73">ASWKT</a> = model.createProperty( <a class="el" href="a00374.html#a76a399a835e5c9fc32beccc0c6d26f5e">GEOSPARQLNS</a> + &quot;asWKT&quot; )</td></tr>
-<tr class="separator:af3b39bf8d8c41f1b00a9c91c00034c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6737d980017fe22829716d5e08b2c3e4"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a6737d980017fe22829716d5e08b2c3e4">P625</a> = model.createProperty( <a class="el" href="a00374.html#ac7115477c03eb53090f3108e6200995c">WIKIDATANS</a> + &quot;P625&quot; )</td></tr>
-<tr class="separator:a6737d980017fe22829716d5e08b2c3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace73ca6834d4f47bc77ff88053a09cfa"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#ace73ca6834d4f47bc77ff88053a09cfa">GEORSSPOINT</a> = model.createProperty(&quot;http://www.georss.org/georss/point&quot;)</td></tr>
-<tr class="separator:ace73ca6834d4f47bc77ff88053a09cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7167f6b3f9027d7dcc0f4135a9c2346d"><td class="memItemLeft" align="right" valign="top">static List&lt; Property &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a7167f6b3f9027d7dcc0f4135a9c2346d">geomprops</a> =Arrays.asList(new Property[] {<a class="el" href="a00374.html#a97406cbf998cb21121e9c3f2f1921dc0">P_LONG</a>,<a class="el" href="a00374.html#a6c1d650cd10e326f285fa7cc36e1d737">P_LAT</a>,<a class="el" href="a00374.html#ac127f8cb1d116ba2de06695bc81c7fbc">P_GEOMETRY</a>,<a class="el" href="a00374.html#ac973fdf327e4b9497009c967f65b2d58">LOCATION</a>,<a class="el" href="a00374.html#ad238c371d9268c3e6498a5e4bf386b9c">HASGEOMETRY</a>,<a class="el" href="a00374.html#af3b39bf8d8c41f1b00a9c91c00034c73">ASWKT</a>,<a class="el" href="a00374.html#a6737d980017fe22829716d5e08b2c3e4">P625</a>})</td></tr>
-<tr class="separator:a7167f6b3f9027d7dcc0f4135a9c2346d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa76b66b3cf4d762c3dc96209e48eaa06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader</a> (<a class="el" href="a00162.html">Configuration</a> <a class="el" href="a00374.html#a0910717551963df697d192900a7f4f59">config</a>, String <a class="el" href="a00374.html#af44443f87d7b66dff07b3d884445dca1">error</a>, String <a class="el" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>, String realpath)</td></tr>
+<tr class="separator:aa76b66b3cf4d762c3dc96209e48eaa06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a43e6d814de94978c515cb084873b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a13a43e6d814de94978c515cb084873b1">run</a> ()</td></tr>
+<tr class="separator:a13a43e6d814de94978c515cb084873b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:aa7373a131d63421e546eaa40689df69d"><td class="memItemLeft" align="right" valign="top">static Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#aa7373a131d63421e546eaa40689df69d">model</a> = ModelFactory.createDefaultModel()</td></tr>
-<tr class="separator:aa7373a131d63421e546eaa40689df69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
+Package Attributes</h2></td></tr>
+<tr class="memitem:a0910717551963df697d192900a7f4f59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00162.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a0910717551963df697d192900a7f4f59">config</a></td></tr>
+<tr class="separator:a0910717551963df697d192900a7f4f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8bcf282d889b7993d6c9d7a3c230d0"><td class="memItemLeft" align="right" valign="top">ServletContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a2c8bcf282d889b7993d6c9d7a3c230d0">context</a></td></tr>
+<tr class="separator:a2c8bcf282d889b7993d6c9d7a3c230d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b641c81adb45d9bc216ffb0fe84c25a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a></td></tr>
+<tr class="separator:a7b641c81adb45d9bc216ffb0fe84c25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc2df2fea9860ab6f4782d2e1575ed0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#a4bc2df2fea9860ab6f4782d2e1575ed0">realPath</a></td></tr>
+<tr class="separator:a4bc2df2fea9860ab6f4782d2e1575ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44443f87d7b66dff07b3d884445dca1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00374.html#af44443f87d7b66dff07b3d884445dca1">error</a></td></tr>
+<tr class="separator:af44443f87d7b66dff07b3d884445dca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa76b66b3cf4d762c3dc96209e48eaa06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76b66b3cf4d762c3dc96209e48eaa06">&#9670;&nbsp;</a></span>Reloader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00374.html">Reloader</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00162.html">Configuration</a>&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>configfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>realpath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00374.html#a0910717551963df697d192900a7f4f59">Reloader.config</a>, <a class="el" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">Reloader.configfile</a>, and <a class="el" href="a00374.html#af44443f87d7b66dff07b3d884445dca1">Reloader.error</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                             {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                this.<a class="code" href="a00374.html#a0910717551963df697d192900a7f4f59">config</a>=<a class="code" href="a00374.html#a0910717551963df697d192900a7f4f59">config</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                this.<a class="code" href="a00374.html#af44443f87d7b66dff07b3d884445dca1">error</a>=<a class="code" href="a00374.html#af44443f87d7b66dff07b3d884445dca1">error</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                this.<a class="code" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>=<a class="code" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                this.<a class="code" href="a00374.html#a4bc2df2fea9860ab6f4782d2e1575ed0">realPath</a>=realpath;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="a00374_html_a7b641c81adb45d9bc216ffb0fe84c25a"><div class="ttname"><a href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">de.fuberlin.wiwiss.pubby.util.Reloader.configfile</a></div><div class="ttdeci">String configfile</div><div class="ttdef"><b>Definition:</b> Reloader.java:22</div></div>
+<div class="ttc" id="a00374_html_a4bc2df2fea9860ab6f4782d2e1575ed0"><div class="ttname"><a href="a00374.html#a4bc2df2fea9860ab6f4782d2e1575ed0">de.fuberlin.wiwiss.pubby.util.Reloader.realPath</a></div><div class="ttdeci">String realPath</div><div class="ttdef"><b>Definition:</b> Reloader.java:24</div></div>
+<div class="ttc" id="a00374_html_a0910717551963df697d192900a7f4f59"><div class="ttname"><a href="a00374.html#a0910717551963df697d192900a7f4f59">de.fuberlin.wiwiss.pubby.util.Reloader.config</a></div><div class="ttdeci">Configuration config</div><div class="ttdef"><b>Definition:</b> Reloader.java:18</div></div>
+<div class="ttc" id="a00374_html_af44443f87d7b66dff07b3d884445dca1"><div class="ttname"><a href="a00374.html#af44443f87d7b66dff07b3d884445dca1">de.fuberlin.wiwiss.pubby.util.Reloader.error</a></div><div class="ttdeci">String error</div><div class="ttdef"><b>Definition:</b> Reloader.java:26</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a13a43e6d814de94978c515cb084873b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a43e6d814de94978c515cb084873b1">&#9670;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">Reloader.configfile</a>, and <a class="el" href="a00162.html#a3b5db867479f0dffeee2f31b99272a2d">Configuration.create()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                          {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00374.html#a0910717551963df697d192900a7f4f59">config</a>==null) {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                String configFileName = this.<a class="code" href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                <span class="keywordflow">if</span> (configFileName == null) {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(<span class="stringliteral">&quot;Missing context parameter \&quot;config-file\&quot; in /WEB-INF/web.xml&quot;</span>);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                File configFile = <span class="keyword">new</span> File(configFileName);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                <span class="keywordflow">if</span> (!configFile.isAbsolute()) {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                        configFile = <span class="keyword">new</span> File(this.<a class="code" href="a00374.html#a4bc2df2fea9860ab6f4782d2e1575ed0">realPath</a> + <span class="stringliteral">&quot;/WEB-INF/&quot;</span> + configFileName);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                }</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                String url = configFile.getAbsoluteFile().toURI().toString();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        Model m = FileManager.get().loadModel(url);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        Configuration conf = Configuration.create(m);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        this.<a class="code" href="a00374.html#a0910717551963df697d192900a7f4f59">config</a>=conf;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                } <span class="keywordflow">catch</span> (JenaException ex) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                    <span class="keywordflow">if</span>(ex.getCause()!=null){</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                        <span class="stringliteral">&quot;Error parsing configuration file &lt;&quot;</span> + url + <span class="stringliteral">&quot;&gt;: &quot;</span> + </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                        ex.getMessage()+<span class="stringliteral">&quot;\nCause: &quot;</span>+ex.getCause().getMessage());</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                    }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                        StringWriter sw = <span class="keyword">new</span> StringWriter();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                            PrintWriter pw = <span class="keyword">new</span> PrintWriter(sw);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                            ex.printStackTrace(pw);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                        <span class="stringliteral">&quot;Error parsing configuration file &lt;&quot;</span> + url + <span class="stringliteral">&quot;&gt;: &quot;</span> + </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                        ex.getMessage()+<span class="stringliteral">&quot;\n&quot;</span>+sw.toString());                            </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                    }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                }</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        } <span class="keywordflow">catch</span> (ConfigurationException ex) {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                <a class="code" href="a00374.html#af44443f87d7b66dff07b3d884445dca1">error</a>=ex.getMessage();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }               </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="a00374_html_a7b641c81adb45d9bc216ffb0fe84c25a"><div class="ttname"><a href="a00374.html#a7b641c81adb45d9bc216ffb0fe84c25a">de.fuberlin.wiwiss.pubby.util.Reloader.configfile</a></div><div class="ttdeci">String configfile</div><div class="ttdef"><b>Definition:</b> Reloader.java:22</div></div>
+<div class="ttc" id="a00374_html_a4bc2df2fea9860ab6f4782d2e1575ed0"><div class="ttname"><a href="a00374.html#a4bc2df2fea9860ab6f4782d2e1575ed0">de.fuberlin.wiwiss.pubby.util.Reloader.realPath</a></div><div class="ttdeci">String realPath</div><div class="ttdef"><b>Definition:</b> Reloader.java:24</div></div>
+<div class="ttc" id="a00374_html_a0910717551963df697d192900a7f4f59"><div class="ttname"><a href="a00374.html#a0910717551963df697d192900a7f4f59">de.fuberlin.wiwiss.pubby.util.Reloader.config</a></div><div class="ttdeci">Configuration config</div><div class="ttdef"><b>Definition:</b> Reloader.java:18</div></div>
+<div class="ttc" id="a00374_html_af44443f87d7b66dff07b3d884445dca1"><div class="ttname"><a href="a00374.html#af44443f87d7b66dff07b3d884445dca1">de.fuberlin.wiwiss.pubby.util.Reloader.error</a></div><div class="ttdeci">String error</div><div class="ttdef"><b>Definition:</b> Reloader.java:26</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af3b39bf8d8c41f1b00a9c91c00034c73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3b39bf8d8c41f1b00a9c91c00034c73">&#9670;&nbsp;</a></span>ASWKT</h2>
+<a id="a0910717551963df697d192900a7f4f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0910717551963df697d192900a7f4f59">&#9670;&nbsp;</a></span>config</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,22 +197,22 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Property ASWKT = model.createProperty( <a class="el" href="a00374.html#a76a399a835e5c9fc32beccc0c6d26f5e">GEOSPARQLNS</a> + &quot;asWKT&quot; )</td>
+          <td class="memname"><a class="el" href="a00162.html">Configuration</a> config</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00266.html#a07c99e8a554c0ceb1f65e2c936dfd7f4">ResourceDescription.addGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00374.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader.Reloader()</a>.</p>
 
 </div>
 </div>
-<a id="a7167f6b3f9027d7dcc0f4135a9c2346d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7167f6b3f9027d7dcc0f4135a9c2346d">&#9670;&nbsp;</a></span>geomprops</h2>
+<a id="a7b641c81adb45d9bc216ffb0fe84c25a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b641c81adb45d9bc216ffb0fe84c25a">&#9670;&nbsp;</a></span>configfile</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,20 +221,22 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;Property&gt; geomprops =Arrays.asList(new Property[] {<a class="el" href="a00374.html#a97406cbf998cb21121e9c3f2f1921dc0">P_LONG</a>,<a class="el" href="a00374.html#a6c1d650cd10e326f285fa7cc36e1d737">P_LAT</a>,<a class="el" href="a00374.html#ac127f8cb1d116ba2de06695bc81c7fbc">P_GEOMETRY</a>,<a class="el" href="a00374.html#ac973fdf327e4b9497009c967f65b2d58">LOCATION</a>,<a class="el" href="a00374.html#ad238c371d9268c3e6498a5e4bf386b9c">HASGEOMETRY</a>,<a class="el" href="a00374.html#af3b39bf8d8c41f1b00a9c91c00034c73">ASWKT</a>,<a class="el" href="a00374.html#a6737d980017fe22829716d5e08b2c3e4">P625</a>})</td>
+          <td class="memname">String configfile</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="a00374.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader.Reloader()</a>, and <a class="el" href="a00374.html#a13a43e6d814de94978c515cb084873b1">Reloader.run()</a>.</p>
+
 </div>
 </div>
-<a id="ace73ca6834d4f47bc77ff88053a09cfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace73ca6834d4f47bc77ff88053a09cfa">&#9670;&nbsp;</a></span>GEORSSPOINT</h2>
+<a id="a2c8bcf282d889b7993d6c9d7a3c230d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8bcf282d889b7993d6c9d7a3c230d0">&#9670;&nbsp;</a></span>context</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,44 +245,20 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Property GEORSSPOINT = model.createProperty(&quot;http://www.georss.org/georss/point&quot;)</td>
+          <td class="memname">ServletContext context</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00174.html#a8891059a6986f902a67dbcb9814a8874">GeoURIWriter.write()</a>, <a class="el" href="a00170.html#a8891059a6986f902a67dbcb9814a8874">GeoJSONWriterr.write()</a>, <a class="el" href="a00182.html#a8891059a6986f902a67dbcb9814a8874">KMLWriter.write()</a>, and <a class="el" href="a00178.html#a8891059a6986f902a67dbcb9814a8874">GMLWriter.write()</a>.</p>
-
-</div>
-</div>
-<a id="a76a399a835e5c9fc32beccc0c6d26f5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76a399a835e5c9fc32beccc0c6d26f5e">&#9670;&nbsp;</a></span>GEOSPARQLNS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final String GEOSPARQLNS = &quot;http://www.opengis.net/ont/geosparql#&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad238c371d9268c3e6498a5e4bf386b9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad238c371d9268c3e6498a5e4bf386b9c">&#9670;&nbsp;</a></span>HASGEOMETRY</h2>
+<a id="af44443f87d7b66dff07b3d884445dca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af44443f87d7b66dff07b3d884445dca1">&#9670;&nbsp;</a></span>error</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,22 +267,22 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Property HASGEOMETRY = model.createProperty( <a class="el" href="a00374.html#a76a399a835e5c9fc32beccc0c6d26f5e">GEOSPARQLNS</a> + &quot;hasGeometry&quot; )</td>
+          <td class="memname">String error</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00266.html#a3aaaabc3a8201ca440b9691726f6b705">ResourceDescription.addAllGeoms()</a>, <a class="el" href="a00174.html#a8891059a6986f902a67dbcb9814a8874">GeoURIWriter.write()</a>, <a class="el" href="a00170.html#a8891059a6986f902a67dbcb9814a8874">GeoJSONWriterr.write()</a>, <a class="el" href="a00182.html#a8891059a6986f902a67dbcb9814a8874">KMLWriter.write()</a>, and <a class="el" href="a00178.html#a8891059a6986f902a67dbcb9814a8874">GMLWriter.write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00374.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader.Reloader()</a>.</p>
 
 </div>
 </div>
-<a id="ac973fdf327e4b9497009c967f65b2d58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac973fdf327e4b9497009c967f65b2d58">&#9670;&nbsp;</a></span>LOCATION</h2>
+<a id="a4bc2df2fea9860ab6f4782d2e1575ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc2df2fea9860ab6f4782d2e1575ed0">&#9670;&nbsp;</a></span>realPath</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -235,176 +291,12 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Property LOCATION = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;location&quot; )</td>
+          <td class="memname">String realPath</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00266.html#a3aaaabc3a8201ca440b9691726f6b705">ResourceDescription.addAllGeoms()</a>.</p>
-
-</div>
-</div>
-<a id="aa7373a131d63421e546eaa40689df69d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7373a131d63421e546eaa40689df69d">&#9670;&nbsp;</a></span>model</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Model model = ModelFactory.createDefaultModel()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6737d980017fe22829716d5e08b2c3e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6737d980017fe22829716d5e08b2c3e4">&#9670;&nbsp;</a></span>P625</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final Property P625 = model.createProperty( <a class="el" href="a00374.html#ac7115477c03eb53090f3108e6200995c">WIKIDATANS</a> + &quot;P625&quot; )</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00174.html#a8891059a6986f902a67dbcb9814a8874">GeoURIWriter.write()</a>, <a class="el" href="a00170.html#a8891059a6986f902a67dbcb9814a8874">GeoJSONWriterr.write()</a>, <a class="el" href="a00182.html#a8891059a6986f902a67dbcb9814a8874">KMLWriter.write()</a>, and <a class="el" href="a00178.html#a8891059a6986f902a67dbcb9814a8874">GMLWriter.write()</a>.</p>
-
-</div>
-</div>
-<a id="ac127f8cb1d116ba2de06695bc81c7fbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac127f8cb1d116ba2de06695bc81c7fbc">&#9670;&nbsp;</a></span>P_GEOMETRY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final Property P_GEOMETRY = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;geometry&quot; )</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00266.html#a3aaaabc3a8201ca440b9691726f6b705">ResourceDescription.addAllGeoms()</a>, <a class="el" href="a00174.html#a8891059a6986f902a67dbcb9814a8874">GeoURIWriter.write()</a>, <a class="el" href="a00170.html#a8891059a6986f902a67dbcb9814a8874">GeoJSONWriterr.write()</a>, <a class="el" href="a00182.html#a8891059a6986f902a67dbcb9814a8874">KMLWriter.write()</a>, and <a class="el" href="a00178.html#a8891059a6986f902a67dbcb9814a8874">GMLWriter.write()</a>.</p>
-
-</div>
-</div>
-<a id="a6c1d650cd10e326f285fa7cc36e1d737"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c1d650cd10e326f285fa7cc36e1d737">&#9670;&nbsp;</a></span>P_LAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final Property P_LAT = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;lat&quot; )</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00266.html#acfa908262c5651fd3f7e3aa68a926e96">ResourceDescription.addPoint()</a>, <a class="el" href="a00174.html#a8891059a6986f902a67dbcb9814a8874">GeoURIWriter.write()</a>, <a class="el" href="a00170.html#a8891059a6986f902a67dbcb9814a8874">GeoJSONWriterr.write()</a>, <a class="el" href="a00182.html#a8891059a6986f902a67dbcb9814a8874">KMLWriter.write()</a>, and <a class="el" href="a00178.html#a8891059a6986f902a67dbcb9814a8874">GMLWriter.write()</a>.</p>
-
-</div>
-</div>
-<a id="a97406cbf998cb21121e9c3f2f1921dc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97406cbf998cb21121e9c3f2f1921dc0">&#9670;&nbsp;</a></span>P_LONG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final Property P_LONG = model.createProperty( <a class="el" href="a00374.html#a865c2f23c5f3e96bffeddce013aa3686">WGS84GEONS</a> + &quot;long&quot; )</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00266.html#acfa908262c5651fd3f7e3aa68a926e96">ResourceDescription.addPoint()</a>, <a class="el" href="a00174.html#a8891059a6986f902a67dbcb9814a8874">GeoURIWriter.write()</a>, <a class="el" href="a00170.html#a8891059a6986f902a67dbcb9814a8874">GeoJSONWriterr.write()</a>, <a class="el" href="a00182.html#a8891059a6986f902a67dbcb9814a8874">KMLWriter.write()</a>, and <a class="el" href="a00178.html#a8891059a6986f902a67dbcb9814a8874">GMLWriter.write()</a>.</p>
-
-</div>
-</div>
-<a id="a865c2f23c5f3e96bffeddce013aa3686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a865c2f23c5f3e96bffeddce013aa3686">&#9670;&nbsp;</a></span>WGS84GEONS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final String WGS84GEONS = &quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac7115477c03eb53090f3108e6200995c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7115477c03eb53090f3108e6200995c">&#9670;&nbsp;</a></span>WIKIDATANS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final String WIKIDATANS = &quot;http://www.wikidata.org/prop/direct/&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -417,7 +309,7 @@ Static Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00147.html">de</a></li><li class="navelem"><a class="el" href="a00148.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00149.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00146.html">pubby</a></li><li class="navelem"><a class="el" href="a00154.html">vocab</a></li><li class="navelem"><a class="el" href="a00374.html">GEO</a></li>
+    <li class="navelem"><a class="el" href="a00150.html">de</a></li><li class="navelem"><a class="el" href="a00151.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00152.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00149.html">pubby</a></li><li class="navelem"><a class="el" href="a00157.html">util</a></li><li class="navelem"><a class="el" href="a00374.html">Reloader</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

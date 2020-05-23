@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: ModelResponse.RDFXMLWriter Class Reference</title>
+<title>GeoPubby: ModelResponse.TurtleWriter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,29 +64,29 @@ $(document).ready(function(){initNavTree('a00230.html','');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="a00227.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ModelResponse.RDFXMLWriter Class Reference</div>  </div>
+<div class="title">ModelResponse.TurtleWriter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for ModelResponse.RDFXMLWriter:</div>
+Inheritance diagram for ModelResponse.TurtleWriter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00229.png" border="0" usemap="#ModelResponse_8RDFXMLWriter_inherit__map" alt="Inheritance graph"/></div>
-<map name="ModelResponse_8RDFXMLWriter_inherit__map" id="ModelResponse_8RDFXMLWriter_inherit__map">
-<area shape="rect" id="node2" href="a00186.html" title="ModelWriter" alt="" coords="65,5,157,32"/>
+<div class="center"><img src="a00229.png" border="0" usemap="#ModelResponse_8TurtleWriter_inherit__map" alt="Inheritance graph"/></div>
+<map name="ModelResponse_8TurtleWriter_inherit__map" id="ModelResponse_8TurtleWriter_inherit__map">
+<area shape="rect" id="node2" href="a00190.html" title="ModelWriter" alt="" coords="53,5,145,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ModelResponse.RDFXMLWriter:</div>
+Collaboration diagram for ModelResponse.TurtleWriter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00228.png" border="0" usemap="#ModelResponse_8RDFXMLWriter_coll__map" alt="Collaboration graph"/></div>
-<map name="ModelResponse_8RDFXMLWriter_coll__map" id="ModelResponse_8RDFXMLWriter_coll__map">
-<area shape="rect" id="node2" href="a00186.html" title="ModelWriter" alt="" coords="65,5,157,32"/>
+<div class="center"><img src="a00228.png" border="0" usemap="#ModelResponse_8TurtleWriter_coll__map" alt="Collaboration graph"/></div>
+<map name="ModelResponse_8TurtleWriter_coll__map" id="ModelResponse_8TurtleWriter_coll__map">
+<area shape="rect" id="node2" href="a00190.html" title="ModelWriter" alt="" coords="53,5,145,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8891059a6986f902a67dbcb9814a8874"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00230.html#a8891059a6986f902a67dbcb9814a8874">write</a> (Model <a class="el" href="a00206.html#a356df7b1948e33881b8730f379d137a8">model</a>, HttpServletResponse <a class="el" href="a00206.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>)  throws IOException </td></tr>
+<tr class="memitem:a8891059a6986f902a67dbcb9814a8874"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00230.html#a8891059a6986f902a67dbcb9814a8874">write</a> (Model <a class="el" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a>, HttpServletResponse <a class="el" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>)  throws IOException </td></tr>
 <tr class="separator:a8891059a6986f902a67dbcb9814a8874"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -116,9 +116,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="a00186.html#a8891059a6986f902a67dbcb9814a8874">ModelWriter</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                                                                {</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        RDFWriter writer = <a class="code" href="a00206.html#a356df7b1948e33881b8730f379d137a8">model</a>.getWriter(<span class="stringliteral">&quot;RDF/XML-ABBREV&quot;</span>);</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                        writer.setProperty(<span class="stringliteral">&quot;showXmlDeclaration&quot;</span>, <span class="stringliteral">&quot;true&quot;</span>);</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        <span class="comment">// From Joseki -- workaround for the j.cook.up bug.</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        writer.setProperty(<span class="stringliteral">&quot;blockRules&quot;</span>, <span class="stringliteral">&quot;propertyAttr&quot;</span>);</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        writer.write(<a class="code" href="a00206.html#a356df7b1948e33881b8730f379d137a8">model</a>, </div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                        <span class="keyword">new</span> OutputStreamWriter(<a class="code" href="a00206.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.getOutputStream(), <span class="stringliteral">&quot;utf-8&quot;</span>), null);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                }</div><div class="ttc" id="a00206_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00206.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:33</div></div>
-<div class="ttc" id="a00206_html_a356df7b1948e33881b8730f379d137a8"><div class="ttname"><a href="a00206.html#a356df7b1948e33881b8730f379d137a8">de.fuberlin.wiwiss.pubby.ModelResponse.model</a></div><div class="ttdeci">final Model model</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:31</div></div>
+<p>Implements <a class="el" href="a00190.html#a8891059a6986f902a67dbcb9814a8874">ModelWriter</a>.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                                                                                {</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <a class="code" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a>.getWriter(<span class="stringliteral">&quot;TURTLE&quot;</span>).write(<a class="code" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a>, <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.getOutputStream(), null);</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                }</div><div class="ttc" id="a00210_html_a356df7b1948e33881b8730f379d137a8"><div class="ttname"><a href="a00210.html#a356df7b1948e33881b8730f379d137a8">de.fuberlin.wiwiss.pubby.ModelResponse.model</a></div><div class="ttdeci">final Model model</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:31</div></div>
+<div class="ttc" id="a00210_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -128,7 +128,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00147.html">de</a></li><li class="navelem"><a class="el" href="a00148.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00149.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00146.html">pubby</a></li><li class="navelem"><a class="el" href="a00206.html">ModelResponse</a></li><li class="navelem"><a class="el" href="a00230.html">RDFXMLWriter</a></li>
+    <li class="navelem"><a class="el" href="a00150.html">de</a></li><li class="navelem"><a class="el" href="a00151.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00152.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00149.html">pubby</a></li><li class="navelem"><a class="el" href="a00210.html">ModelResponse</a></li><li class="navelem"><a class="el" href="a00230.html">TurtleWriter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

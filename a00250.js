@@ -1,9 +1,13 @@
 var a00250 =
 [
-    [ "AcceptHeaderOverride", "a00250.html#a62333c819d60f37ab4dc43ff61a210ea", null ],
-    [ "getReplacement", "a00250.html#aef70f59ac6bf685a9ee32f37974a54a0", null ],
-    [ "matches", "a00250.html#a1905bdfe7c1f4050f8e1d04863fd0888", null ],
-    [ "original", "a00250.html#a0d33ec58c7bf400ec61051437a714b85", null ],
-    [ "replacement", "a00250.html#a46c8449d068cc9b8900701670be47fc9", null ],
-    [ "userAgentPattern", "a00250.html#ac3f835bd8ebc7ac5294b67abe18ec5fe", null ]
+    [ "Negotiation", "a00250.html#a07cf8563f3d617fcc378cea627bec93d", null ],
+    [ "evaluateDefaultVariant", "a00250.html#a6e3cb856b5772e59fbda260b38fd9267", null ],
+    [ "evaluateVariant", "a00250.html#ad8b9b3527769ba910de6b103877a01ba", null ],
+    [ "evaluateVariantAlias", "a00250.html#a2946761eb1cc8725338bc684127724cd", null ],
+    [ "negotiate", "a00250.html#a81c339d431e6afa30777976323689228", null ],
+    [ "bestDefaultQuality", "a00250.html#a2d8e397f715337f4f78d8df0bd7eb81a", null ],
+    [ "bestDefaultVariant", "a00250.html#ab54b85225e3b7767ce8389ce1220ac1f", null ],
+    [ "bestMatchingQuality", "a00250.html#a44fff2fe4c48a826cd563ae86b408da2", null ],
+    [ "bestMatchingVariant", "a00250.html#a714cbc1a784570f4c22a73b8469082f9", null ],
+    [ "ranges", "a00250.html#a0e7a133ea71f749c23cd6a4f895121a1", null ]
 ];

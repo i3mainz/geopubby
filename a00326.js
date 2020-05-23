@@ -6,6 +6,7 @@ var a00326 =
     [ "doGet", "a00326.html#a4c69ab4acf538f0dc8fb8f7482629e85", null ],
     [ "doGet", "a00326.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
     [ "doGet", "a00326.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "getDocumentTitle", "a00326.html#aa1df04443bd820828a9657c7417dca74", null ],
     [ "init", "a00326.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
     [ "send404", "a00326.html#a3208dcc642a59d12778ba619395eec47", null ],
     [ "sendInitialization500", "a00326.html#a37f74add6038c113368344fbb9210f8e", null ],
