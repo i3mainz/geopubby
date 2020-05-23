@@ -3,8 +3,9 @@ package de.fuberlin.wiwiss.pubby.servlets;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -16,12 +17,15 @@ import org.apache.jena.util.FileManager;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.ConfigurationException;
+import de.fuberlin.wiwiss.pubby.util.Reloader;
 
 public class ServletContextInitializer implements ServletContextListener {
 	public final static String SERVER_CONFIGURATION =
 			ServletContextInitializer.class.getName() + ".serverConfiguration";
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
+	
+	private ScheduledExecutorService scheduler;
 	
 	public static boolean initConfiguration(ServletContext context){
 	    try {
@@ -64,51 +68,13 @@ public class ServletContextInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
-		final Timer timer = new Timer();
 		Boolean result=ServletContextInitializer.initConfiguration(context);
-		if(!result){
-            final TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    Boolean result=ServletContextInitializer.initConfiguration(context);
-                    if(result){
-                        timer.cancel();
-                        timer.purge();
-                    }
-                }
-            };
-            timer.schedule(task, 30000);
+		if(!result) {
+			Configuration config=(Configuration) context.getAttribute(SERVER_CONFIGURATION);
+			String error=context.getAttribute(ERROR_MESSAGE).toString();
+			scheduler=Executors.newSingleThreadScheduledExecutor();
+			scheduler.scheduleAtFixedRate(new Reloader(config,error,context.getInitParameter("config-file"),context.getRealPath("/")), 3000, 30000, TimeUnit.SECONDS);			
 		}
-		/*
-		try {
-			String configFileName = context.getInitParameter("config-file");
-			if (configFileName == null) {
-				throw new ConfigurationException("Missing context parameter \"config-file\" in /WEB-INF/web.xml");
-			}
-			File configFile = new File(configFileName);
-			if (!configFile.isAbsolute()) {
-				configFile = new File(context.getRealPath("/") + "/WEB-INF/" + configFileName);
-			}
-			String url = configFile.getAbsoluteFile().toURI().toString();
-			try {
-				Model m = FileManager.get().loadModel(url);
-				Configuration conf = Configuration.create(m);
-				context.setAttribute(SERVER_CONFIGURATION, conf);
-			} catch (JenaException ex) {
-			    if(ex.getCause()!=null){
-			        				throw new ConfigurationException(
-						"Error parsing configuration file <" + url + ">: " + 
-						ex.getMessage()+"\nCause: "+ex.getCause().getMessage());
-			    }else{
-				throw new ConfigurationException(
-						"Error parsing configuration file <" + url + ">: " + 
-						ex.getMessage());			        
-			    }
-
-			}
-		} catch (ConfigurationException ex) {
-			log(ex, context);
-		}*/
 	}
 
 	@Override
