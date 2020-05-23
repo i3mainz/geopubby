@@ -98,6 +98,11 @@ public abstract class BaseServlet extends HttpServlet {
 			HttpServletResponse response) throws IOException, ServletException {
 		if (initError != null) {
 			sendInitialization500(response, initError);
+			if(config==null) {
+				ServletContextInitializer.initConfiguration(getServletContext());
+			}
+			config = (Configuration) getServletContext().getAttribute(
+					ServletContextInitializer.SERVER_CONFIGURATION);
 			return;
 		}
 		String relativeURI = request.getRequestURI().substring(
@@ -109,6 +114,8 @@ public abstract class BaseServlet extends HttpServlet {
 		if (!doGet(relativeURI, request, response, config)) {
 			send404(response, null);
 		}
+
+
 	}
 	
 	protected void send404(HttpServletResponse response, String resourceURI) throws IOException {

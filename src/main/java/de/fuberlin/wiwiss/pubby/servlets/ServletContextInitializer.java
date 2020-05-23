@@ -69,12 +69,12 @@ public class ServletContextInitializer implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
 		Boolean result=ServletContextInitializer.initConfiguration(context);
-		if(!result) {
+		/*if(!result) {
 			Configuration config=(Configuration) context.getAttribute(SERVER_CONFIGURATION);
 			String error=context.getAttribute(ERROR_MESSAGE).toString();
 			scheduler=Executors.newSingleThreadScheduledExecutor();
 			scheduler.scheduleAtFixedRate(new Reloader(config,error,context.getInitParameter("config-file"),context.getRealPath("/")), 3000, 30000, TimeUnit.SECONDS);			
-		}
+		}*/
 	}
 
 	@Override
