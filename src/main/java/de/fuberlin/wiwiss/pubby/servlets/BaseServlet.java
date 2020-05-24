@@ -88,34 +88,27 @@ public abstract class BaseServlet extends HttpServlet {
 		}
 	}
 	
-	protected boolean doGet(
+	protected abstract boolean doGet(
 			String relativeURI,
 			HttpServletRequest request,
 			HttpServletResponse response,
-			Configuration config) throws IOException, ServletException{
-		Boolean returned=false;
-		if(config==null) {
-			returned=ServletContextInitializer.initConfiguration(getServletContext());
-		}
-		if(config!=null) {
-			initError=null;
-		}
-		config = (Configuration) getServletContext().getAttribute(
-				ServletContextInitializer.SERVER_CONFIGURATION);
-		return returned;
-	}
+			Configuration config) throws IOException, ServletException;
 	
 	public void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 		if (initError != null) {
-			sendInitialization500(response, initError);
 			if(config==null) {
 				System.out.println("Calling initConfiguration from BaseServlet!");
 				Boolean res=ServletContextInitializer.initConfiguration(getServletContext());
+				if(res)
+					initError=null;
 				System.out.println("Successful result? "+res.toString());
 			}
 			config = (Configuration) getServletContext().getAttribute(
 					ServletContextInitializer.SERVER_CONFIGURATION);
+		}
+		if(initError!=null) {
+			sendInitialization500(response, initError);
 			return;
 		}
 		String relativeURI = request.getRequestURI().substring(

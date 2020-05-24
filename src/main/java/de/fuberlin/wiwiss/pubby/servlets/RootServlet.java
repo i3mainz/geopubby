@@ -24,8 +24,6 @@ public class RootServlet extends BaseServlet {
 			Configuration config)
 			throws IOException, ServletException {
 		
-		super.doGet(relativeURI, request, response, config);
-		
 		// static/ directory handled by default servlet
 		if (relativeURI.startsWith("static/")) {
 			getServletContext().getNamedDispatcher("default").forward(request, response);
