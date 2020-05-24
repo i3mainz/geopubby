@@ -41,6 +41,7 @@ public class ServletContextInitializer implements ServletContextListener {
 			String url = configFile.getAbsoluteFile().toURI().toString();
 			System.out.println("SPARQL Endpoint: "+url);
 			try {
+				FileManager.get().resetCache();
 				Model m = FileManager.get().loadModel(url);
 				Configuration conf = Configuration.create(m);
 				context.setAttribute(SERVER_CONFIGURATION, conf);
