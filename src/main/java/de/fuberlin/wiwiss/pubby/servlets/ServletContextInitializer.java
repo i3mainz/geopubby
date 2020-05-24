@@ -39,6 +39,7 @@ public class ServletContextInitializer implements ServletContextListener {
 				configFile = new File(context.getRealPath("/") + "/WEB-INF/" + configFileName);
 			}
 			String url = configFile.getAbsoluteFile().toURI().toString();
+			System.out.println("SPARQL Endpoint: "+url);
 			try {
 				Model m = FileManager.get().loadModel(url);
 				Configuration conf = Configuration.create(m);
@@ -59,6 +60,7 @@ public class ServletContextInitializer implements ServletContextListener {
 
 			}
 		} catch (ConfigurationException ex) {
+			System.out.println(ex.getMessage());
 			log(ex, context);
 			return false;
 		}
