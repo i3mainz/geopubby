@@ -9,6 +9,7 @@ var a00270 =
     [ "ResourceDescription", "a00270.html#ae00184efbaafb4fb2cd91f83cd2f4416", null ],
     [ "addAllGeoms", "a00270.html#a3aaaabc3a8201ca440b9691726f6b705", null ],
     [ "addGeometry", "a00270.html#a07c99e8a554c0ceb1f65e2c936dfd7f4", null ],
+    [ "addGeometry2", "a00270.html#ab4c997d66e5ed4afa4f7f91d6b9fa7ca", null ],
     [ "addPoint", "a00270.html#acfa908262c5651fd3f7e3aa68a926e96", null ],
     [ "buildProperties", "a00270.html#af16bca6fe717296244b425c638ac6fb9", null ],
     [ "getBestLanguageMatch", "a00270.html#a6fc1b98b9b5f363999ea5d6184876f76", null ],
