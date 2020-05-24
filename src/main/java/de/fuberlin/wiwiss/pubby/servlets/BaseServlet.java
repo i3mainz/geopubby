@@ -102,6 +102,9 @@ public abstract class BaseServlet extends HttpServlet {
 				Boolean res=ServletContextInitializer.initConfiguration(getServletContext());
 				if(res)
 					initError=null;
+				else {
+					initError=getServletContext().getAttribute(ServletContextInitializer.ERROR_MESSAGE).toString();
+				}
 				System.out.println("Successful result? "+res.toString());
 			}
 			config = (Configuration) getServletContext().getAttribute(
