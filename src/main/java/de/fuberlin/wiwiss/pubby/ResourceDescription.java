@@ -72,6 +72,25 @@ public class ResourceDescription {
 	        			latS.getObject().asLiteral().getDouble())));
 	        }
 	    }
+
+	 private void addGeometry2(final Literal literall) {
+		 		String literal=literall.getValue().toString();
+	        	Geometry geom;
+				try {
+					String epsgcode="";
+					if(literal.startsWith("<")) {
+						epsgcode=literal.substring(literal.indexOf('<'),literal.lastIndexOf('>')).trim();
+						epsgcode=epsgcode.substring(epsgcode.lastIndexOf('/')+1);
+						literal=literal.substring(literal.lastIndexOf('>')+1).trim();
+					}
+					geom = this.reader.read(literal);
+					if(!epsgcode.isEmpty())
+						geom.setSRID(Integer.valueOf(epsgcode));
+		        	geoms.add(geom);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+	    }
 	 
 	 private void addGeometry(final Resource r) {
 	        final Statement wkt = r.getProperty(GEO.ASWKT);
@@ -96,7 +115,15 @@ public class ResourceDescription {
 	    }
 	 
 	 private void addAllGeoms() {
-	        StmtIterator it= resource.listProperties(GEO.LOCATION);
+	        StmtIterator it= resource.listProperties(GEO.ASWKT);
+	        while(it.hasNext()) {
+	            Statement s = it.nextStatement();
+	            if ( !s.getObject().isAnon() ) {
+	                addGeometry2(s.getObject().asLiteral());
+	            }
+	        }
+	        it.close();
+		 	it= resource.listProperties(GEO.LOCATION);
 	        while(it.hasNext()) {
 	            Statement s = it.nextStatement();
 	            if ( !s.getObject().isAnon() ) {
