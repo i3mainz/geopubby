@@ -78,9 +78,19 @@ public class ResourceDescription {
 	        if(wkt!=null) {
 	        	Geometry geom;
 				try {
-					geom = this.reader.read(wkt.getObject().asLiteral().getString());
+					String literal=wkt.getObject().asLiteral().getString().trim();
+					String epsgcode="";
+					if(literal.startsWith("<")) {
+						epsgcode=literal.substring(literal.indexOf('<'),literal.lastIndexOf('>')).trim();
+						epsgcode=epsgcode.substring(epsgcode.lastIndexOf('/')+1);
+						literal=literal.substring(literal.lastIndexOf('>')+1).trim();
+					}
+					geom = this.reader.read(literal);
+					if(!epsgcode.isEmpty())
+						geom.setSRID(Integer.valueOf(epsgcode));
 		        	geoms.add(geom);
 				} catch (ParseException e) {
+					e.printStackTrace();
 				}
 	        }
 	    }
