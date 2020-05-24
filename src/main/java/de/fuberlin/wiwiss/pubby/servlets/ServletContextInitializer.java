@@ -28,6 +28,7 @@ public class ServletContextInitializer implements ServletContextListener {
 	private ScheduledExecutorService scheduler;
 	
 	public static boolean initConfiguration(ServletContext context){
+		System.out.println("Called init configuration!");
 	    try {
 			String configFileName = context.getInitParameter("config-file");
 			if (configFileName == null) {

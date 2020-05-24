@@ -110,7 +110,9 @@ public abstract class BaseServlet extends HttpServlet {
 		if (initError != null) {
 			sendInitialization500(response, initError);
 			if(config==null) {
-				ServletContextInitializer.initConfiguration(getServletContext());
+				System.out.println("Calling initConfiguration from BaseServlet!");
+				Boolean res=ServletContextInitializer.initConfiguration(getServletContext());
+				System.out.println("Successful result? "+res.toString());
 			}
 			config = (Configuration) getServletContext().getAttribute(
 					ServletContextInitializer.SERVER_CONFIGURATION);
