@@ -74,7 +74,8 @@ public class ResourceDescription {
 	    }
 
 	 private void addGeometry2(final Literal literall) {
-		 		String literal=literall.getValue().toString();
+		 		String literal=literall.getString();
+		 		System.out.println("Geometry2: "+literal);
 	        	Geometry geom;
 				try {
 					String epsgcode="";
