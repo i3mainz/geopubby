@@ -112,6 +112,20 @@ public abstract class BaseServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
 		if (initError != null) {
+			if(config==null) {
+				System.out.println("Calling initConfiguration from BaseServlet!");
+				Boolean res=ServletContextInitializer.initConfiguration(getServletContext());
+				if(res)
+					initError=null;
+				else {
+					initError=getServletContext().getAttribute(ServletContextInitializer.ERROR_MESSAGE).toString();
+				}
+				System.out.println("Successful result? "+res.toString());
+			}
+			config = (Configuration) getServletContext().getAttribute(
+					ServletContextInitializer.SERVER_CONFIGURATION);
+		}
+		if(initError!=null) {
 			sendInitialization500(response, initError);
 			return;
 		}
@@ -124,6 +138,8 @@ public abstract class BaseServlet extends HttpServlet {
 		if (!doGet(relativeURI, request, response, config)) {
 			send404(response, null);
 		}
+
+
 	}
 	
 	protected void send404(HttpServletResponse response, String resourceURI) throws IOException {

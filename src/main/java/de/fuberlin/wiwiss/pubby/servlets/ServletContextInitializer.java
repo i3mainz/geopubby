@@ -3,8 +3,9 @@ package de.fuberlin.wiwiss.pubby.servlets;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -16,6 +17,7 @@ import org.apache.jena.util.FileManager;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.ConfigurationException;
+import de.fuberlin.wiwiss.pubby.util.Reloader;
 
 public class ServletContextInitializer implements ServletContextListener {
 	public final static String SERVER_CONFIGURATION =
@@ -25,8 +27,10 @@ public class ServletContextInitializer implements ServletContextListener {
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
 	
+	private ScheduledExecutorService scheduler;
+	
 	public static boolean initConfiguration(ServletContext context){
-		context.setAttribute(INITPROCESS, true);
+		System.out.println("Called init configuration!");
 	    try {
 			String configFileName = context.getInitParameter("config-file");
 			if (configFileName == null) {
@@ -37,7 +41,9 @@ public class ServletContextInitializer implements ServletContextListener {
 				configFile = new File(context.getRealPath("/") + "/WEB-INF/" + configFileName);
 			}
 			String url = configFile.getAbsoluteFile().toURI().toString();
+			System.out.println("SPARQL Endpoint: "+url);
 			try {
+				FileManager.get().resetCache();
 				Model m = FileManager.get().loadModel(url);
 				Configuration conf = Configuration.create(m);
 				context.setAttribute(SERVER_CONFIGURATION, conf);
@@ -57,6 +63,7 @@ public class ServletContextInitializer implements ServletContextListener {
 
 			}
 		} catch (ConfigurationException ex) {
+			System.out.println(ex.getMessage());
 			log(ex, context);
 			context.setAttribute(INITPROCESS, false);
 			return false;
@@ -69,51 +76,7 @@ public class ServletContextInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
-		//final Timer timer = new Timer();
-		ServletContextInitializer.initConfiguration(context);
-		/*if(!result){
-            final TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    Boolean result=ServletContextInitializer.initConfiguration(context);
-                    if(result){
-                        timer.cancel();
-                        timer.purge();
-                    }
-                }
-            };
-            timer.schedule(task, 30000);
-		}*/
-		/*
-		try {
-			String configFileName = context.getInitParameter("config-file");
-			if (configFileName == null) {
-				throw new ConfigurationException("Missing context parameter \"config-file\" in /WEB-INF/web.xml");
-			}
-			File configFile = new File(configFileName);
-			if (!configFile.isAbsolute()) {
-				configFile = new File(context.getRealPath("/") + "/WEB-INF/" + configFileName);
-			}
-			String url = configFile.getAbsoluteFile().toURI().toString();
-			try {
-				Model m = FileManager.get().loadModel(url);
-				Configuration conf = Configuration.create(m);
-				context.setAttribute(SERVER_CONFIGURATION, conf);
-			} catch (JenaException ex) {
-			    if(ex.getCause()!=null){
-			        				throw new ConfigurationException(
-						"Error parsing configuration file <" + url + ">: " + 
-						ex.getMessage()+"\nCause: "+ex.getCause().getMessage());
-			    }else{
-				throw new ConfigurationException(
-						"Error parsing configuration file <" + url + ">: " + 
-						ex.getMessage());			        
-			    }
 
-			}
-		} catch (ConfigurationException ex) {
-			log(ex, context);
-		}*/
 	}
 
 	@Override
