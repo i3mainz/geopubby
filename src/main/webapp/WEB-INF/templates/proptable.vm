@@ -27,7 +27,7 @@
 #set ($text = "$property.ValueCount values")
 #end
 #if ($property.ValuesPageURL)
-            [<a href="$property.ValuesPageURL">$text</a>]
+            [<a href="$property.ValuesPageURL" target="_blank">$text</a>]
 #else
             [$text]
 #end
