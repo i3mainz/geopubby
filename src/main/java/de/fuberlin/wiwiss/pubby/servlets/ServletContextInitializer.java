@@ -20,10 +20,13 @@ import de.fuberlin.wiwiss.pubby.ConfigurationException;
 public class ServletContextInitializer implements ServletContextListener {
 	public final static String SERVER_CONFIGURATION =
 			ServletContextInitializer.class.getName() + ".serverConfiguration";
+	public final static String INITPROCESS =
+			ServletContextInitializer.class.getName() + ".initProcess";
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
 	
 	public static boolean initConfiguration(ServletContext context){
+		context.setAttribute(INITPROCESS, true);
 	    try {
 			String configFileName = context.getInitParameter("config-file");
 			if (configFileName == null) {
@@ -55,8 +58,10 @@ public class ServletContextInitializer implements ServletContextListener {
 			}
 		} catch (ConfigurationException ex) {
 			log(ex, context);
+			context.setAttribute(INITPROCESS, false);
 			return false;
 		}
+		context.setAttribute(INITPROCESS, false);
 		return true;
 	}
 	
@@ -64,9 +69,9 @@ public class ServletContextInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
-		final Timer timer = new Timer();
-		Boolean result=ServletContextInitializer.initConfiguration(context);
-		if(!result){
+		//final Timer timer = new Timer();
+		ServletContextInitializer.initConfiguration(context);
+		/*if(!result){
             final TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
@@ -78,7 +83,7 @@ public class ServletContextInitializer implements ServletContextListener {
                 }
             };
             timer.schedule(task, 30000);
-		}
+		}*/
 		/*
 		try {
 			String configFileName = context.getInitParameter("config-file");

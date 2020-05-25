@@ -160,7 +160,7 @@ public class Configuration extends ResourceReader {
 		}
 		return result;
 	}
-
+	
 	/**
 	 * A composite {@link DataSource} representing the merge of all datasets.
 	 */
