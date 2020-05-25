@@ -43,9 +43,9 @@
         <h1 id="title">$title</h1>
 #if ($project_name)
 #if ($project_link)
-        <div id="homelink">at <a href="$project_link">$project_name</a></div>
+        <div id="homelink">at <a href="$project_link" target="_blank">$project_name</a></div>
 #else
-        <div id="homelink">at <a href="$server_base">$project_name</a></div>
+        <div id="homelink">at <a href="$server_base" target="_blank">$project_name</a></div>
 #end
 #end
       </div>
