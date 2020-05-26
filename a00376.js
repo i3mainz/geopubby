@@ -24,6 +24,7 @@ var a00376 =
     [ "anonPropertyQueries", "a00376.html#aa7c5714e40c5a704ccba34a1407928e3", null ],
     [ "contentType", "a00376.html#ab2b2a5577c93f69a6b42cf7796dae9a5", null ],
     [ "defaultGraphURI", "a00376.html#a18468e3c19d543973eccfee390db0471", null ],
+    [ "endpoint", "a00376.html#a8f473c3ab938666fcbc20509d57f537f", null ],
     [ "endpointURL", "a00376.html#ab855e1e781b1ce51d772f4b0c0e7da53", null ],
     [ "highIndegreeProperties", "a00376.html#aa1674a400811a34dd2bf7a6aa6746212", null ],
     [ "highOutdegreeProperties", "a00376.html#a68337f44a9dc14be853f21f6baa4dec3", null ],
