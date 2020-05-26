@@ -216,9 +216,10 @@ public class RemoteSPARQLDataSource implements DataSource {
 				"} LIMIT " + DataSource.MAX_INDEX_SIZE);
 		while (rs.hasNext()) {
 			Resource s=rs.next().getResource("s");
-			System.out.println(s.toString());
+			System.out.println("1. "+s.toString());
 			result.add(s);
 		}
+		System.out.println("Attempting second query");
 		if (result.size() < DataSource.MAX_INDEX_SIZE) {
 			rs = execQuerySelect(
 					"SELECT DISTINCT ?o { " +
@@ -227,7 +228,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 					"} LIMIT " + (DataSource.MAX_INDEX_SIZE - result.size()));
 			while (rs.hasNext()) {
 				Resource s=rs.next().getResource("o");
-				System.out.println(s.toString());
+				System.out.println("2. "+s.toString());
 				result.add(s);
 			}
 		}
