@@ -19,6 +19,8 @@
 	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="${server_base}static/script.js"></script>
+    <script type="text/javascript" src="${server_base}static/proj4.js"></script>
+    <script type="text/javascript" src="${server_base}static/epsg.js"></script>
     <script type="text/javascript" src="${server_base}static/wicket.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
   <style type="text/css">

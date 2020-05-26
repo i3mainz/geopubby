@@ -215,7 +215,9 @@ public class RemoteSPARQLDataSource implements DataSource {
 				"FILTER (isURI(?s)) " +
 				"} LIMIT " + DataSource.MAX_INDEX_SIZE);
 		while (rs.hasNext()) {
-			result.add(rs.next().getResource("s"));
+			Resource s=rs.next().getResource("s");
+			System.out.println(s.toString());
+			result.add(s);
 		}
 		if (result.size() < DataSource.MAX_INDEX_SIZE) {
 			rs = execQuerySelect(
@@ -224,9 +226,12 @@ public class RemoteSPARQLDataSource implements DataSource {
 					"FILTER (isURI(?o)) " +
 					"} LIMIT " + (DataSource.MAX_INDEX_SIZE - result.size()));
 			while (rs.hasNext()) {
-				result.add(rs.next().getResource("o"));
+				Resource s=rs.next().getResource("o");
+				System.out.println(s.toString());
+				result.add(s);
 			}
 		}
+		System.out.println(result.size()+" - "+result.isEmpty());
 		return result;
 	}
 

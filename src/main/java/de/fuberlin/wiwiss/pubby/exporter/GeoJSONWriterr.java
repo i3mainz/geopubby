@@ -82,17 +82,12 @@ public class GeoJSONWriterr implements ModelWriter {
 				Double lat=null,lon=null;
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
-					if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) ||
+					if(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||
 							GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
 							|| 
 							GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 						try {
-							Geometry geom=null;
-							if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString())) {
-								geom=reader.read(curst.getObject().asResource().getProperty(GEO.ASWKT).getObject().asLiteral().getString());
-							}else {
-								geom=reader.read(curst.getObject().asLiteral().getString());
-							}		
+							Geometry geom=reader.read(curst.getObject().asLiteral().getString());		
 							 GeoJSONWriter writer = new GeoJSONWriter();
 					            GeoJSON json = writer.write(geom);
 					            String jsonstring = json.toString();

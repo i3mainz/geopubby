@@ -22,8 +22,6 @@ import de.fuberlin.wiwiss.pubby.util.Reloader;
 public class ServletContextInitializer implements ServletContextListener {
 	public final static String SERVER_CONFIGURATION =
 			ServletContextInitializer.class.getName() + ".serverConfiguration";
-	public final static String INITPROCESS =
-			ServletContextInitializer.class.getName() + ".initProcess";
 	public final static String ERROR_MESSAGE =
 			ServletContextInitializer.class.getName() + ".errorMessage";
 	
@@ -65,10 +63,8 @@ public class ServletContextInitializer implements ServletContextListener {
 		} catch (ConfigurationException ex) {
 			System.out.println(ex.getMessage());
 			log(ex, context);
-			context.setAttribute(INITPROCESS, false);
 			return false;
 		}
-		context.setAttribute(INITPROCESS, false);
 		return true;
 	}
 	
@@ -76,7 +72,13 @@ public class ServletContextInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		final ServletContext context = sce.getServletContext();
-
+		Boolean result=ServletContextInitializer.initConfiguration(context);
+		/*if(!result) {
+			Configuration config=(Configuration) context.getAttribute(SERVER_CONFIGURATION);
+			String error=context.getAttribute(ERROR_MESSAGE).toString();
+			scheduler=Executors.newSingleThreadScheduledExecutor();
+			scheduler.scheduleAtFixedRate(new Reloader(config,error,context.getInitParameter("config-file"),context.getRealPath("/")), 3000, 30000, TimeUnit.SECONDS);			
+		}*/
 	}
 
 	@Override

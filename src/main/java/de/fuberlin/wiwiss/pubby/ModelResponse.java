@@ -57,6 +57,7 @@ public class ModelResponse {
 				response.sendError(
 						HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
 						"JenaException: " + jEx.getMessage());
+				jEx.printStackTrace();
             } catch (IOException e) {
             	throw new RuntimeException(e);
             }

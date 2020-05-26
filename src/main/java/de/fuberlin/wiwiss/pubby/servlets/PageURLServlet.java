@@ -40,6 +40,7 @@ public class PageURLServlet extends BaseServlet {
 		context.put("properties", description.getProperties());
 		context.put("showLabels", config.showLabels());
 		context.put("geoms",description.getGeoms());
+		context.put("epsg",description.getEPSG());
 		addPageMetadata(context, controller, description.getModel());
 	
 		template.renderXHTML("page.vm");

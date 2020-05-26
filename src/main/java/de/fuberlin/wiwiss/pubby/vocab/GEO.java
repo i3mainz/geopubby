@@ -29,6 +29,8 @@ public class GEO {
 	
 	public static final Property ASWKT = model.createProperty( GEOSPARQLNS + "asWKT" );
 	
+	public static final Property EPSG = model.createProperty( GEOSPARQLNS + "epsg" );
+	
 	public static final Property P625 = model.createProperty( WIKIDATANS + "P625" );
 	
 	public static final Property GEORSSPOINT= model.createProperty("http://www.georss.org/georss/point");
