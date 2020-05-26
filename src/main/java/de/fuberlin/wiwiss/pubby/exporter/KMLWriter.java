@@ -75,13 +75,17 @@ public class KMLWriter implements ModelWriter {
 			StmtIterator it2 = ind.listProperties();
 			while(it2.hasNext()) {
 				Statement curst=it2.next();
-				if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) || 
+				if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) ||
 						GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
 						|| 
 						GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 					try {
-						Geometry geom=reader.read(curst.getObject().asLiteral().getValue().toString());
-						lat=geom.getCentroid().getCoordinate().getY();
+						Geometry geom=null;
+						if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString())) {
+							geom=reader.read(curst.getObject().asResource().getProperty(GEO.ASWKT).getObject().asLiteral().getString());
+						}else {
+							geom=reader.read(curst.getObject().asLiteral().getString());
+						}								lat=geom.getCentroid().getCoordinate().getY();
 						lon=geom.getCentroid().getCoordinate().getX();
 					} catch (ParseException e) {
 						// TODO Auto-generated catch block
