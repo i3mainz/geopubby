@@ -41,6 +41,8 @@ public class RemoteSPARQLDataSource implements DataSource {
 	private final String endpointURL;
 	private final String defaultGraphURI;
 	private final boolean supportsSPARQL11;
+	
+	QueryEngineHTTP endpoint;
 
 	private final Set<String> resourceQueries;
 	private final Set<String> propertyQueries;
@@ -294,7 +296,10 @@ public class RemoteSPARQLDataSource implements DataSource {
 	}
 	
 	private ResultSet execQuerySelect(String query) {
-		QueryEngineHTTP endpoint = new QueryEngineHTTP(endpointURL, query);
+		if(this.endpoint!=null && !this.endpoint.isClosed()) {
+			this.endpoint.close();
+		}
+		this.endpoint = new QueryEngineHTTP(endpointURL, query);
 		if (defaultGraphURI != null) {
 			endpoint.setDefaultGraphURIs(Collections.singletonList(defaultGraphURI));
 		}
