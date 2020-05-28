@@ -114,6 +114,11 @@
 	</repositories>
 	<distributionManagement>
 		<repository>
+     		<id>github</id>
+     		<name>GitHub</name>
+     		<url>https://maven.pkg.github.com/i3mainz/geopubby</url>
+   		</repository>
+		<repository>
 			<id>gitlab-maven</id>
 			<url>https://gitlab.rlp.net/api/v4/projects/11531/packages/maven</url>
 		</repository>
