@@ -25,10 +25,10 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
 		});
 	var baseMaps = {
-        "OSM": layer,
-         "BKG": wmsLayer
+    "BKG": wmsLayer,
+        "OSM": layer
 	};
-	baseMaps["OSM"].addTo(map);
+	baseMaps["BKG"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
@@ -36,7 +36,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	var bounds = L.latLngBounds([]);
         #foreach($i in $geoms)
-			  var wkt_geom = "${i}";
+              var wkt_geom = "${i}";
               var sridepsg="${i.getSRID()}";
               var globalepsg="${epsg}";
               var espg="EPSG:4326";
@@ -51,11 +51,24 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               #set($x = 0)
               #foreach ($property in $properties)
                   #if($x < 10)
-                     props["${property.BrowsableURL}"]="${property.SimpleValues}"
+                     props["${property.BrowsableURL}"]=[
+                     #foreach ($propval in $property.SimpleValues)
+                        #if ($propval.Node.isURI())
+                            "${propval.BrowsableURL}"
+                        #elseif ($propval.Node.isLiteral())
+                            "${propval.Node.LiteralLexicalForm}"
+                        #end
+                        #if( $foreach.hasNext ),#end
+                     #end
+                    ]
                   #end
                   #set($x = $x+1)
               #end
 			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
+			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
+	            feature=convertGeoJSON(feature,epsgdefs[epsg])
+	            console.log(feature);
+              }
               layerr=L.geoJson(feature,{
               onEachFeature: function (feature, layer) {
               		var popup="<b><a href=\"$uri\" target=\"_blank\">$title</a></b><br/><ul>"
@@ -65,10 +78,23 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                         }else{
                         	popup+="<li>"+prop+" - "
                         }
-                        if((typeof feature.properties.prop !== 'undefined') && feature.properties.prop.includes("http")){
-                        	popup+="<a href=\""+feature.properties.prop+"\" target=\"_blank\">"+prop.substring(feature.properties.prop.lastIndexOf('/')+1)+"</a></li>"
+                        if(feature.properties[prop].length<=1){
+                            if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0].includes("http")){
+                        	        popup+="<a href=\""+feature.properties[prop][0]+"\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a></li>"
+                            }else{
+                        	        popup+=feature.properties[prop][0]+"</li>"
+                            }
                         }else{
-                        	popup+=feature.properties.prop+"</li>"
+                            popup+="<ul>"
+                            for(val in feature.properties[prop]){
+                                popup+="<li>"
+                                if((typeof feature.properties[prop][val] !== 'undefined') && feature.properties[prop][val].includes("http")){
+                        	        popup+="<a href=\""+feature.properties[prop][val]+"\" target=\"_blank\">"+feature.properties[prop][val].substring(feature.properties[prop][val].lastIndexOf('/')+1)+"</a></li>"
+                                }else{
+                        	        popup+=feature.properties[prop][val]+"</li>"
+                                }
+                            }
+                            popup+="</ul></li>"
                         }
                     }
                     popup+="</ul>"
