@@ -25,10 +25,10 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
 		});
 	var baseMaps = {
-    "BKG": wmsLayer,
-        "OSM": layer
+        "OSM": layer,
+         "BKG": wmsLayer
 	};
-	baseMaps["BKG"].addTo(map);
+	baseMaps["OSM"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
