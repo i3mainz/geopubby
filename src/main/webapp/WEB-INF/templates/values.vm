@@ -4,11 +4,23 @@
   <li>
 #if ($value.Node.isURI())
 #if ($showLabels && $value.label)
-    <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank">$value.label</a>
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI">$value.label</a>
+    #else
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank">$value.label</a>
+    #end
 #elseif ($value.hasPrefix())
-    <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank"><small>$value.Prefix:</small>$value.LocalName</a>
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI"><small>$value.Prefix:</small>$value.LocalName</a>
+    #else
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank"><small>$value.Prefix:</small>$value.LocalName</a>
+    #end
 #else
-    <small>&lt;</small><a class="uri" href="$value.BrowsableURL">$value.Node.URI</a><small>&gt;</small>
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <small>&lt;</small><a class="uri" href="$value.BrowsableURL">$value.Node.URI</a><small>&gt;</small>
+    #else
+        <small>&lt;</small><a class="uri" href="$value.BrowsableURL" target="_blank">$value.Node.URI</a><small>&gt;</small>
+    #end
 #end
 #elseif ($value.Node.isLiteral())
     <span class="literal">$value.Node.LiteralLexicalForm
