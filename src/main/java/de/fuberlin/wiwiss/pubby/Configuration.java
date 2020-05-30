@@ -108,6 +108,9 @@ public class Configuration extends ResourceReader {
 		// have syntactic sugar in Turtle.
 		ModelUtil.addNSIfUndefined(prefixes, "rdf", RDF.getURI());
 		ModelUtil.addNSIfUndefined(prefixes, "xsd", XSD.getURI());
+		ModelUtil.addNSIfUndefined(prefixes, "rdfs", RDFS.getURI());
+		ModelUtil.addNSIfUndefined(prefixes, "owl", "http://www.w3.org/2002/07/owl#");
+		ModelUtil.addNSIfUndefined(prefixes, "pubby", webBase);
 		dataSource = buildDataSource();
 
 		// Vocabulary data source contains our normal data sources plus
