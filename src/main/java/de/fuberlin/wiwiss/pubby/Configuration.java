@@ -90,7 +90,7 @@ public class Configuration extends ResourceReader {
 		imageProperties = getProperties(CONF.imageProperty);
 		if (imageProperties.isEmpty()) {
 			imageProperties.add(FOAF.depiction);
-			imageProperties.add("http://www.wikidata.org/prop/direct/P18");
+			imageProperties.add(CONF.wdImage);
 		}
 
 		prefixes = new PrefixMappingImpl();
