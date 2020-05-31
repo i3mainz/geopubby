@@ -37,6 +37,7 @@ var a00392 =
     [ "supportsIRIs", "a00392.html#a583c3a70391341dd0702dfe03ae37b20", null ],
     [ "supportsSPARQL11", "a00392.html#a46b57b258f3ecc7242b769de1b68e7a9", null ],
     [ "usePrefixesFrom", "a00392.html#a7176fe842415ee011516ad29c94069c1", null ],
+    [ "wdImage", "a00392.html#a135ea87637552167be0e25e7f4112684", null ],
     [ "webBase", "a00392.html#a62bb5390bdafd875b80ffe03b0ef9411", null ],
     [ "webResourcePrefix", "a00392.html#aa173f09e1f8a8da7890c1740de9beabe", null ],
     [ "weight", "a00392.html#ae2f4cc43a6ff51dbe876bc5f0e1500c5", null ]
