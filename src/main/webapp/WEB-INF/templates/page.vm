@@ -93,9 +93,9 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                             if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0].startsWith("http")){
                         	        popup+="<a href=\""+feature.properties[prop][0]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a></li>"
                             }else if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0].startsWith("www.")){
-                                    popup+="<a href=\"http://"+feature.properties[prop][0]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a></li>"
+                                    popup+="<a href=\"http://"+feature.properties[prop][0]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][0]+"</a></li>"
                             }else if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0].includes("@")){
-                                    popup+="<a href=\"mailto:"+feature.properties[prop][0]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][0].substring(feature.properties[prop][0].lastIndexOf('/')+1)+"</a></li>"
+                                    popup+="<a href=\"mailto:"+feature.properties[prop][0]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][0]+"</a></li>"
                             }else{
                         	        popup+=feature.properties[prop][0]+"</li>"
                             }
@@ -106,9 +106,9 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                                 if((typeof feature.properties[prop][val] !== 'undefined') && feature.properties[prop][val].startsWith("http")){
                         	        popup+="<a href=\""+feature.properties[prop][val]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][val].substring(feature.properties[prop][val].lastIndexOf('/')+1)+"</a></li>"
                                 }else if((typeof feature.properties[prop][val] !== 'undefined') && feature.properties[prop][val].startsWith("www.")){
-                                    popup+="<a href=\"http://"+feature.properties[prop][val]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][val].substring(feature.properties[prop][val].lastIndexOf('/')+1)+"</a></li>"
+                                    popup+="<a href=\"http://"+feature.properties[prop][val]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][val]+"</a></li>"
                                 }else if((typeof feature.properties[prop][val] !== 'undefined') && feature.properties[prop][val].includes("@")){
-                                    popup+="<a href=\"mailto:"+feature.properties[prop][val]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][val].substring(feature.properties[prop][val].lastIndexOf('/')+1)+"</a></li>"
+                                    popup+="<a href=\"mailto:"+feature.properties[prop][val]+"\" class=\"uri\" target=\"_blank\">"+feature.properties[prop][val]+"</a></li>"
                                 }else{
                         	        popup+=feature.properties[prop][val]+"</li>"
                                 }
