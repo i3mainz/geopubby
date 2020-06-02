@@ -28,7 +28,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
     "BKG": wmsLayer,
         "OSM": layer
 	};
-	baseMaps["BKG"].addTo(map);
+	baseMaps["OSM"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
