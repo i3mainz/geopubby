@@ -4,6 +4,7 @@ var a00296 =
     [ "compareTo", "a00296.html#a2c0340adadb986fd837f7941b165c5b7", null ],
     [ "getBrowsableURL", "a00296.html#a838b3f0aaa81b845dda27dd94108e50f", null ],
     [ "getDatatypeLabel", "a00296.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8", null ],
+    [ "getDatatypeURI", "a00296.html#aff522d91494da4e73ded9723d9063e8c", null ],
     [ "getDescription", "a00296.html#ac7feffb7a33f63504ff1f87f19e2d2d8", null ],
     [ "getLabel", "a00296.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
     [ "getLocalName", "a00296.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
