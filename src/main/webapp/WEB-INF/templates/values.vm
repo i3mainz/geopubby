@@ -25,7 +25,11 @@
 #elseif ($value.Node.isLiteral())
     <span class="literal">$value.Node.LiteralLexicalForm
 #if ($value.DatatypeLabel)
-      <small> ($value.DatatypeLabel)</small>
+    #if ($value.DatatypeURI.toString().contains($server_base.toString()))
+      <small><a href="$value.DatatypeURI" style="color: #666;">($value.DatatypeLabel)</a></small>
+    #else
+      <small><a href="$value.DatatypeURI" style="color: #666;" target="_blank">($value.DatatypeLabel)</a></small> 
+    #end 
 #end
 #if ($value.Node.LiteralLanguage != "")
       <small> ($value.Node.LiteralLanguage)</small>
