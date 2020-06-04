@@ -602,6 +602,14 @@ public class ResourceDescription {
 				return "?:" + datatypePrefixer.getLocalName();
 			}
 		}
+		
+		public String getDatatypeURI() {
+			if (!node.isLiteral()) return null;
+			String uri = ((Literal) node.as(Literal.class)).getDatatypeURI();
+			if (uri == null) return null;
+			return uri;
+		}
+		
 		public boolean isType() {
 			return predicate.equals(RDF.type);
 		}
