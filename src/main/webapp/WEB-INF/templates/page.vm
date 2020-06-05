@@ -113,7 +113,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                         }else{
                         	popup+="<li>"+prop+" - "
                         }
-                        if(feature.properties[prop].length<=1){
+                        if(feature.properties[prop].length==1){
                             if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("http")){
                         	        popup+="<a href=\""+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
                                     if("vallabel" in feature.properties[prop][0]){
