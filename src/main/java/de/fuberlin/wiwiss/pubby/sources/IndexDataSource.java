@@ -12,6 +12,10 @@ import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.vocabulary.RDFS;
 
+import com.miguelfonseca.completely.AutocompleteEngine;
+
+import de.fuberlin.wiwiss.pubby.util.SearchRecord;
+
 /**
  * A {@link DataSource} that wraps another data source and adds an
  * index of the resources in that data source.
@@ -88,4 +92,11 @@ public class IndexDataSource implements DataSource {
 		// empty dataset into a non-empty one. 
 		return wrapped.getIndex();
 	}
+
+	@Override
+	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
+		return wrapped.getLabelIndex();
+	}
+	
+	
 }

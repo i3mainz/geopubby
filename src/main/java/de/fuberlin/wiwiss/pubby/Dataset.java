@@ -17,6 +17,8 @@ import de.fuberlin.wiwiss.pubby.sources.FilteredDataSource;
 import de.fuberlin.wiwiss.pubby.sources.ModelDataSource;
 import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
 import de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource;
+import de.fuberlin.wiwiss.pubby.util.AutocompleteEngine;
+import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 import de.fuberlin.wiwiss.pubby.vocab.CONF;
 
 /**
@@ -136,6 +138,12 @@ public class Dataset extends ResourceReader {
 				public boolean canDescribe(String absoluteIRI) {
 					return pattern.matcher(absoluteIRI).find();
 				}
+
+				@Override
+				public AutocompleteEngine<SearchRecord> getLabelIndex() {
+					// TODO Auto-generated method stub
+					return null;
+				}
 			};
 		}
 		
@@ -177,6 +185,12 @@ public class Dataset extends ResourceReader {
 						if (absoluteIRI.startsWith(namespace)) return true;
 					}
 					return false;
+				}
+
+				@Override
+				public AutocompleteEngine<SearchRecord> getLabelIndex() {
+					// TODO Auto-generated method stub
+					return null;
 				}
 			};
 		}

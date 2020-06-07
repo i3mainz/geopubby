@@ -80,7 +80,11 @@
     <artifactId>json</artifactId>
     <version>20190722</version>
 </dependency>
-    
+ <dependency>
+  <groupId>com.miguelfonseca.completely</groupId>
+  <artifactId>completely-core</artifactId>
+  <version>0.9.0</version>
+</dependency>
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
@@ -107,6 +111,10 @@
     </plugins>
   </build>
   <repositories>
+  		<repository>
+  		<id>sonatype</id>
+  		<url>https://oss.sonatype.org/content/repositories/releases/</url>
+  		</repository>
 		<repository>
 			<id>gitlab-maven</id>
 			<url>https://gitlab.rlp.net/api/v4/projects/11531/packages/maven</url>

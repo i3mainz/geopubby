@@ -12,7 +12,10 @@ import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 
+import com.miguelfonseca.completely.AutocompleteEngine;
+
 import de.fuberlin.wiwiss.pubby.ModelUtil;
+import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
  * A data source backed by a Jena model.
@@ -70,5 +73,11 @@ public class ModelDataSource implements DataSource {
 			result.add(o.asResource());
 		}
 		return result;
+	}
+
+	@Override
+	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

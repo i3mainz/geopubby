@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
@@ -219,9 +220,11 @@ public class VocabularyStore {
 //	}
 
 	private class I18nStringValueCache extends ValueCache<Collection<Literal>> {
+		
 		I18nStringValueCache(Property p, boolean inverse) {
 			super (p, inverse);
 		}
+		
 		Literal get(String iri, String preferredLang) {
 			return getBestMatch(get(iri), preferredLang);
 		}

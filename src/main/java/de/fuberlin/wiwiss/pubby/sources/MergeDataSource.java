@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -14,7 +15,10 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.shared.PrefixMapping;
 import org.apache.jena.shared.impl.PrefixMappingImpl;
 
+import com.miguelfonseca.completely.AutocompleteEngine;
+
 import de.fuberlin.wiwiss.pubby.ModelUtil;
+import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
  * A {@link DataSource} that presents an RDF merge of multiple other
@@ -115,5 +119,15 @@ public class MergeDataSource implements DataSource {
 			map1.put(key, map1.containsKey(key) ? map1.get(key) + value : value);
 		}
 		return map1;
+	}
+
+	@Override
+	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
+		Map<String,Resource> result = new TreeMap<String,Resource>();
+		for (DataSource source: sources) {
+			return source.getLabelIndex();
+		}
+		//TODO Merging indizes to be fixed
+		return null;
 	}
 }

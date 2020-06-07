@@ -7,6 +7,10 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 
+import com.miguelfonseca.completely.AutocompleteEngine;
+
+import de.fuberlin.wiwiss.pubby.util.SearchRecord;
+
 /**
  * A source of RDF data intended for publication through
  * the server.
@@ -15,6 +19,7 @@ import org.apache.jena.rdf.model.Resource;
  */
 public interface DataSource {
 	static final int MAX_INDEX_SIZE = 100;
+	
 	
 	/**
 	 * Indicates whether this data source may have some information about
@@ -87,4 +92,7 @@ public interface DataSource {
 	 * to the number of resources returned.
 	 */
 	List<Resource> getIndex();
+	
+	de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex();
+	
 }
