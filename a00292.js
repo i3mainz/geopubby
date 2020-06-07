@@ -1,13 +1,18 @@
 var a00292 =
 [
-    [ "PropertyBuilder", "a00292.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
-    [ "addHighDegreeArcs", "a00292.html#a56093db616f5ec791e721da4b41bcb74", null ],
-    [ "addValue", "a00292.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
-    [ "toProperty", "a00292.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
-    [ "blankNodeDescriptions", "a00292.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
-    [ "highDegreeArcCount", "a00292.html#aa6574d553f74a485106af0677f2c8882", null ],
-    [ "isInverse", "a00292.html#a4556acebb4b8d61aab8f863143d163d6", null ],
-    [ "predicate", "a00292.html#aa9ef63e37d986c48ab7c19294531f962", null ],
-    [ "values", "a00292.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
-    [ "vocabularyStore", "a00292.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
+    [ "PubbyIRIEscaper", "a00292.html#af9c886a3751239a87e8cd82189b07d7a", null ],
+    [ "chain", "a00292.html#a52462d47ad21ab9cb767615af3408865", null ],
+    [ "createNamespaceBased", "a00292.html#a874bc2a710da29ab8a229940ac39d5c8", null ],
+    [ "escapeSpecialCharacters", "a00292.html#a03704caf9297e90ca6f94bd2f7eb0027", null ],
+    [ "rewrite", "a00292.html#ad231a3c3defc265966333ec5c96fc98a", null ],
+    [ "rewrite", "a00292.html#a9aa71f847262c020413d65ef96d23428", null ],
+    [ "rewrite", "a00292.html#a9dcf9e44886aea1d08614869ac6f45a5", null ],
+    [ "rewrite", "a00292.html#a98a5375f1da1bf709fe29231ed297276", null ],
+    [ "rewrite", "a00292.html#a02792897faa966eaeb7084a6ac10b3bb", null ],
+    [ "unescapeSpecialCharacters", "a00292.html#ac13705f826199959ca4668df479af23b", null ],
+    [ "unrewrite", "a00292.html#a0ac56882f3fb5afa390617ee8e0d9015", null ],
+    [ "unrewrite", "a00292.html#a6b7cd2d5390855d5b1047f03d316dd8b", null ],
+    [ "unrewrite", "a00292.html#addbb06d72792422729d7c550ee0cce03", null ],
+    [ "encodeURIsToIRIs", "a00292.html#acf74a0094f0e35f9949ae1c07c553dbe", null ],
+    [ "identity", "a00292.html#a932f921acd3dc33045ca5471398e8e9a", null ]
 ];

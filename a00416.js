@@ -1,11 +1,7 @@
 var a00416 =
 [
-    [ "I18nStringValueCache", "a00416.html#a5a7621c57d2b44b84c97d245068bb57e", null ],
-    [ "get", "a00416.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "get", "a00416.html#aaba80f598d3210ba4493a5854e98f5f8", null ],
-    [ "getBestMatch", "a00416.html#a890f5511eb1ae7cd4f54c9945df05a44", null ],
-    [ "getCached", "a00416.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "getCached", "a00416.html#ab4ff038935184bd1080b08388983e211", null ],
-    [ "getMatchLength", "a00416.html#acbeeee3d9843febb26b8cd03ee19ea4e", null ],
-    [ "pickBestValue", "a00416.html#a5a6385c9343184c17f0aa0d7960c6684", null ]
+    [ "get", "a00416.html#a9695d4a4855959f9b00390c9f08d9cd5", null ],
+    [ "put", "a00416.html#ad55ad95418061ae37fe65df7493e6e84", null ],
+    [ "remove", "a00416.html#a3dcd1ee780b50b35c60ef427449266bb", null ],
+    [ "index", "a00416.html#a4aeec757e2fc5d6bce4a2617b976858b", null ]
 ];

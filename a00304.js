@@ -1,14 +1,13 @@
 var a00304 =
 [
-    [ "addDocumentMetadata", "a00304.html#aafab682dd7935049291522510d9a62ba", null ],
-    [ "addPageMetadata", "a00304.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
-    [ "addQueryString", "a00304.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00304.html#a4ad25bb2cf64fb5919b4917103b3af29", null ],
-    [ "doGet", "a00304.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
-    [ "init", "a00304.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
-    [ "send404", "a00304.html#a3208dcc642a59d12778ba619395eec47", null ],
-    [ "sendInitialization500", "a00304.html#a37f74add6038c113368344fbb9210f8e", null ],
-    [ "config", "a00304.html#a0910717551963df697d192900a7f4f59", null ],
-    [ "initError", "a00304.html#a087abcd8848850044d1fa825aa50e01f", null ],
-    [ "serialVersionUID", "a00304.html#a3238d314ecdee14d2966760945d00c3b", null ]
+    [ "PropertyBuilder", "a00304.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
+    [ "addHighDegreeArcs", "a00304.html#a56093db616f5ec791e721da4b41bcb74", null ],
+    [ "addValue", "a00304.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
+    [ "toProperty", "a00304.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
+    [ "blankNodeDescriptions", "a00304.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
+    [ "highDegreeArcCount", "a00304.html#aa6574d553f74a485106af0677f2c8882", null ],
+    [ "isInverse", "a00304.html#a4556acebb4b8d61aab8f863143d163d6", null ],
+    [ "predicate", "a00304.html#aa9ef63e37d986c48ab7c19294531f962", null ],
+    [ "values", "a00304.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
+    [ "vocabularyStore", "a00304.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
 ];

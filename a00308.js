@@ -1,13 +1,19 @@
 var a00308 =
 [
-    [ "addDocumentMetadata", "a00308.html#aafab682dd7935049291522510d9a62ba", null ],
-    [ "addHighDegreePropertyLinks", "a00308.html#ac355651e23f62e5e76b524724a4646f2", null ],
-    [ "addPageMetadata", "a00308.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
-    [ "addQueryString", "a00308.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00308.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
-    [ "doGet", "a00308.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
-    [ "init", "a00308.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
-    [ "send404", "a00308.html#a3208dcc642a59d12778ba619395eec47", null ],
-    [ "sendInitialization500", "a00308.html#a37f74add6038c113368344fbb9210f8e", null ],
-    [ "serialVersionUID", "a00308.html#a3238d314ecdee14d2966760945d00c3b", null ]
+    [ "Value", "a00308.html#a00b619f435fb3a11e837a7b4d925cdc1", null ],
+    [ "compareTo", "a00308.html#a2c0340adadb986fd837f7941b165c5b7", null ],
+    [ "getBrowsableURL", "a00308.html#a838b3f0aaa81b845dda27dd94108e50f", null ],
+    [ "getDatatypeLabel", "a00308.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8", null ],
+    [ "getDatatypeURI", "a00308.html#aff522d91494da4e73ded9723d9063e8c", null ],
+    [ "getDescription", "a00308.html#ac7feffb7a33f63504ff1f87f19e2d2d8", null ],
+    [ "getLabel", "a00308.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
+    [ "getLocalName", "a00308.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
+    [ "getNode", "a00308.html#ae54e73a602cdba03485c90dc824c4f6c", null ],
+    [ "getPrefix", "a00308.html#a5b9a69b246225ec2eca3637f32437a16", null ],
+    [ "hasPrefix", "a00308.html#aab0bab54f99e36cce47bbbbc1c59cc52", null ],
+    [ "isType", "a00308.html#a43e3cfcd45f3d223c3b1d377bef1f2f7", null ],
+    [ "node", "a00308.html#aa4138f776a750c373e5b2e158a214086", null ],
+    [ "predicate", "a00308.html#a25acea555f18c3370e38a27f28dcafa7", null ],
+    [ "prefixer", "a00308.html#af4c43282873f7bac7949d5c412623b0c", null ],
+    [ "vocabularyStore", "a00308.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
 ];

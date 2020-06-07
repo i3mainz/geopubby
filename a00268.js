@@ -1,9 +1,15 @@
 var a00268 =
 [
-    [ "AcceptHeaderOverride", "a00268.html#a62333c819d60f37ab4dc43ff61a210ea", null ],
-    [ "getReplacement", "a00268.html#aef70f59ac6bf685a9ee32f37974a54a0", null ],
-    [ "matches", "a00268.html#a1905bdfe7c1f4050f8e1d04863fd0888", null ],
-    [ "original", "a00268.html#a0d33ec58c7bf400ec61051437a714b85", null ],
-    [ "replacement", "a00268.html#a46c8449d068cc9b8900701670be47fc9", null ],
-    [ "userAgentPattern", "a00268.html#ac3f835bd8ebc7ac5294b67abe18ec5fe", null ]
+    [ "AcceptHeaderOverride", "a00280.html", "a00280" ],
+    [ "Negotiation", "a00276.html", "a00276" ],
+    [ "VariantSpec", "a00272.html", "a00272" ],
+    [ "addUserAgentOverride", "a00268.html#af83bf4d6bf77cdd31256ecc83186a558", null ],
+    [ "addVariant", "a00268.html#a3953da5ad43555a9edc37e48b7f6e4ab", null ],
+    [ "getBestMatch", "a00268.html#ab23b79e631120fc8ce51d40c7c314e62", null ],
+    [ "getBestMatch", "a00268.html#a1afbe15fddec9b99e5780a94774044c7", null ],
+    [ "setDefaultAccept", "a00268.html#a7652b7c00c4cf54490dfe3535cc70cf2", null ],
+    [ "toAcceptRanges", "a00268.html#a37345f6b468bd509ef8896b6c546e1ac", null ],
+    [ "defaultAcceptRanges", "a00268.html#a9d851118500a4017a2591587200cd953", null ],
+    [ "userAgentOverrides", "a00268.html#a248e951c7087641970d6701f1b7ec536", null ],
+    [ "variantSpecs", "a00268.html#a2391e088d7d831c6b5bd35986487becf", null ]
 ];

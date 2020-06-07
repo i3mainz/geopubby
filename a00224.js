@@ -1,16 +1,14 @@
 var a00224 =
 [
-    [ "JSONWriter", "a00232.html", "a00232" ],
-    [ "NTriplesWriter", "a00228.html", "a00228" ],
-    [ "RDFXMLWriter", "a00248.html", "a00248" ],
-    [ "TrigWriter", "a00236.html", "a00236" ],
-    [ "TrixWriter", "a00240.html", "a00240" ],
-    [ "TurtleWriter", "a00244.html", "a00244" ],
-    [ "ModelResponse", "a00224.html#af9fec765daa76a2aff37534d00fe0e31", null ],
-    [ "doResponseModel", "a00224.html#ad11c019b4ed835885005ab44cd318c25", null ],
-    [ "getWriter", "a00224.html#a73103da09cb7aaa7b2b3a15d9b66ad06", null ],
-    [ "serve", "a00224.html#a09a9d9145624e027a1ad3cbe85580acc", null ],
-    [ "model", "a00224.html#a356df7b1948e33881b8730f379d137a8", null ],
-    [ "request", "a00224.html#ad632242c9a97c676da2987811ea46e83", null ],
-    [ "response", "a00224.html#a8acf5478a5097f4a2ccb8021c167dd8f", null ]
+    [ "chain", "a00224.html#a52462d47ad21ab9cb767615af3408865", null ],
+    [ "createNamespaceBased", "a00224.html#a874bc2a710da29ab8a229940ac39d5c8", null ],
+    [ "rewrite", "a00224.html#a488db3c932657da03922439fc9826601", null ],
+    [ "rewrite", "a00224.html#a9aa71f847262c020413d65ef96d23428", null ],
+    [ "rewrite", "a00224.html#a9dcf9e44886aea1d08614869ac6f45a5", null ],
+    [ "rewrite", "a00224.html#a98a5375f1da1bf709fe29231ed297276", null ],
+    [ "rewrite", "a00224.html#a02792897faa966eaeb7084a6ac10b3bb", null ],
+    [ "unrewrite", "a00224.html#ab6b24538e5ab86fb7ef86b7f86500816", null ],
+    [ "unrewrite", "a00224.html#a6b7cd2d5390855d5b1047f03d316dd8b", null ],
+    [ "unrewrite", "a00224.html#addbb06d72792422729d7c550ee0cce03", null ],
+    [ "identity", "a00224.html#a932f921acd3dc33045ca5471398e8e9a", null ]
 ];

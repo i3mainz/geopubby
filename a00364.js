@@ -1,15 +1,12 @@
 var a00364 =
 [
-    [ "IndexDataSource", "a00364.html#a0a636d916caafddba3d8927d5e8c7395", null ],
-    [ "canDescribe", "a00364.html#a1681b51a4d9b94752fc6668c82729236", null ],
-    [ "describeResource", "a00364.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
-    [ "getHighIndegreeProperties", "a00364.html#afd50c79b6d45d0fed770638879c7359e", null ],
-    [ "getHighOutdegreeProperties", "a00364.html#acbe9e94afdedf6be6979247520906444", null ],
-    [ "getIndex", "a00364.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "listPropertyValues", "a00364.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
-    [ "indexIRI", "a00364.html#a46ccf3d3cc14002ea252d960b3a9b95a", null ],
-    [ "MAX_INDEX_SIZE", "a00364.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
-    [ "SIOC_NS", "a00364.html#a50553be5572548a1ddda089e2392557b", null ],
-    [ "siocContainerOf", "a00364.html#ae47ed8d5d5ece30da541b5a67c0d8031", null ],
-    [ "wrapped", "a00364.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
+    [ "VelocityHelper", "a00364.html#a6120510d2c825e1e46ee0ec9421e5707", null ],
+    [ "createVelocityEngine", "a00364.html#a256b4176d50a0e3f2b75b6d00850ad23", null ],
+    [ "getVelocityContext", "a00364.html#ad0c6ccb2a7adcb1d17a3b9c9947dc3c9", null ],
+    [ "getVelocityEngine", "a00364.html#af554a6cb839ba7b2a7367a426449c960", null ],
+    [ "renderXHTML", "a00364.html#ab6d266ba78c974acced0c9a85de40cc2", null ],
+    [ "response", "a00364.html#a8acf5478a5097f4a2ccb8021c167dd8f", null ],
+    [ "servletContext", "a00364.html#aaeef38191b1fac970b38c3096b3ee4cc", null ],
+    [ "VELOCITY_ENGINE", "a00364.html#afe9f95303c6c0305ddef9638242941de", null ],
+    [ "velocityContext", "a00364.html#abc996a08fa1c3b75373cf0fff1af2976", null ]
 ];
