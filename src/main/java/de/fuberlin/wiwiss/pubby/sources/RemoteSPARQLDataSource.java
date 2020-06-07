@@ -258,15 +258,19 @@ public class RemoteSPARQLDataSource implements DataSource {
 		            .setIndex(new SearchAdapter())
 		            .setAnalyzers(new LowerCaseTransformer(), new WordTokenizer())
 		            .build();
+			System.out.println("Building Label Index....");
 			ResultSet rs = execQuerySelect(
-					"SELECT DISTINCT ?s ?label { " +
+					"SELECT DISTINCT ?s ?label WHERE { " +
 					"?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . " +
+					"FILTER (isURI(?s)) " +
 					"} LIMIT " + DataSource.MAX_INDEX_SIZE*2);
-
+			Integer i=0;
 			while (rs.hasNext()) {
+				i++;
 				QuerySolution st=rs.next();
 	            engine.add(new SearchRecord(st.getLiteral("label").getString(),st.getResource("s")));
 			}
+			System.out.println("Got "+i+" labels!");
 		}
 		return Collections.singletonList(engine);
 	}

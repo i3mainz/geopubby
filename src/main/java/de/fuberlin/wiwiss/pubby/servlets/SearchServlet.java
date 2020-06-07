@@ -1,6 +1,7 @@
 package de.fuberlin.wiwiss.pubby.servlets;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -22,8 +23,13 @@ public class SearchServlet extends BaseServlet {
 	@Override
 	protected boolean doGet(String relativeURI, HttpServletRequest request, HttpServletResponse response,
 			Configuration config) throws IOException, ServletException {
-		String query=request.getAttribute("search").toString();
-		Object limitt=request.getAttribute("limit");
+		System.out.println("Search Servlet");
+		String query=null;
+		if(request.getParameter("search")!=null) {
+			query=request.getParameter("search").toString();
+		}
+		System.out.println("Query: "+query);
+		Object limitt=request.getParameter("limit");
 		Integer limit=null;
 		if(limitt!=null) {
 			try {
@@ -32,12 +38,21 @@ public class SearchServlet extends BaseServlet {
 			
 			}
 		}
-		List<SearchRecord> res;
+		System.out.println("Limit: "+limit);
+		if(query!=null) {
+		List<SearchRecord> res=new LinkedList<SearchRecord>();
 		if(limit!=null) {
-			res=config.getDataSource().getLabelIndex().search(query,limit);			
+			for(de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> rec:config.getDataSource().getLabelIndex()) {
+				res.addAll(rec.search(query,limit));
+			}		
 		}else {
-			res=config.getDataSource().getLabelIndex().search(query);
+			for(de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> rec:config.getDataSource().getLabelIndex()) {
+				res.addAll(rec.search(query));
+			}
+			System.out.println(config.getDataSource());
+			System.out.println(config.getDataSource().getLabelIndex());
 		}
+		System.out.println("Results: "+res.size());
 		JSONObject result=new JSONObject();
 		for(SearchRecord rec:res) {
 			result.put(rec.getLabel(), rec.getResource().getURI());			
@@ -45,6 +60,7 @@ public class SearchServlet extends BaseServlet {
 		response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
 	    response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
 	    response.getWriter().write(result.toString(2));
+		}
 		return true;
 	}
 

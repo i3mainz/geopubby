@@ -1,6 +1,7 @@
 package de.fuberlin.wiwiss.pubby;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -140,7 +141,7 @@ public class Dataset extends ResourceReader {
 				}
 
 				@Override
-				public AutocompleteEngine<SearchRecord> getLabelIndex() {
+				public List<AutocompleteEngine<SearchRecord>> getLabelIndex() {
 					// TODO Auto-generated method stub
 					return null;
 				}
@@ -188,7 +189,7 @@ public class Dataset extends ResourceReader {
 				}
 
 				@Override
-				public AutocompleteEngine<SearchRecord> getLabelIndex() {
+				public List<AutocompleteEngine<SearchRecord>> getLabelIndex() {
 					// TODO Auto-generated method stub
 					return null;
 				}

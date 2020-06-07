@@ -78,9 +78,9 @@
 
         # Queries for describing a resource denoted by "?__this__".
         # Multiple queries can be specified, results will be merged.
-		conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { ?__this__ ?p ?o }";
+		conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o . ?p <http://www.w3.org/2000/01/rdf-schema#label> ?label . ?o <http://www.w3.org/2000/01/rdf-schema#label> ?olabel .} WHERE { ?__this__ ?p ?o . OPTIONAL {?p  <http://www.w3.org/2000/01/rdf-schema#label> ?label . } OPTIONAL {?o  <http://www.w3.org/2000/01/rdf-schema#label> ?olabel . } }";
         conf:resourceDescriptionQuery "CONSTRUCT { ?s ?p ?__this__ } WHERE { ?s ?p ?__this__ }";
-        conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { VALUES ?p { <http://www.opengis.net/ont/geosparql#asWKT> <http://www.opengis.net/ont/geosparql#epsg> <http://www.opengis.net/ont/geosparql#asGML> } . ?__this__ <http://www.opengis.net/ont/geosparql#hasGeometry> ?geo . ?geo ?p ?o . }";
+        conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o . ?p  <http://www.w3.org/2000/01/rdf-schema#label> ?label . } WHERE { VALUES ?p { <http://www.opengis.net/ont/geosparql#asWKT> <http://www.opengis.net/ont/geosparql#epsg> <http://www.opengis.net/ont/geosparql#asGML> } . ?__this__ <http://www.opengis.net/ont/geosparql#hasGeometry> ?geo . ?geo ?p ?o . OPTIONAL {?p  <http://www.w3.org/2000/01/rdf-schema#label> ?label . } }";
 
 		      
         # Queries for describing the blank nodes related to a given resource via a given property.

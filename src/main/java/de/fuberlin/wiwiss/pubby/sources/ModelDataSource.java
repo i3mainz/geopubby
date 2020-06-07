@@ -1,9 +1,13 @@
 package de.fuberlin.wiwiss.pubby.sources;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.NodeIterator;
 import org.apache.jena.rdf.model.Property;
@@ -11,10 +15,15 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.vocabulary.RDFS;
 
-import com.miguelfonseca.completely.AutocompleteEngine;
+import com.miguelfonseca.completely.text.analyze.tokenize.WordTokenizer;
+import com.miguelfonseca.completely.text.analyze.transform.LowerCaseTransformer;
 
 import de.fuberlin.wiwiss.pubby.ModelUtil;
+import de.fuberlin.wiwiss.pubby.util.AutocompleteEngine;
+import de.fuberlin.wiwiss.pubby.util.SearchAdapter;
 import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
@@ -22,6 +31,8 @@ import de.fuberlin.wiwiss.pubby.util.SearchRecord;
  */
 public class ModelDataSource implements DataSource {
 	private Model model;
+	
+	private AutocompleteEngine<SearchRecord> engine;
 
 	public ModelDataSource(Model model) {
 		this.model = model;
@@ -77,7 +88,26 @@ public class ModelDataSource implements DataSource {
 
 	@Override
 	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Get Label Index!!!!");
+		if(engine==null) {
+			engine= new AutocompleteEngine.Builder<SearchRecord>()
+		            .setIndex(new SearchAdapter())
+		            .setAnalyzers(new LowerCaseTransformer(), new WordTokenizer())
+		            .build();
+			System.out.println("Building Label Index....");
+			List<Resource> result = new ArrayList<Resource>();
+			ResIterator subjects = model.listSubjects();
+			while (subjects.hasNext() && result.size() < DataSource.MAX_INDEX_SIZE) {
+				Resource r = subjects.next();
+				if (r.isAnon()) continue;
+				StmtIterator st = r.listProperties(RDFS.label);
+				while(st.hasNext()) {
+					Literal lit=st.next().getObject().asLiteral();
+					String label=lit.getString();
+					engine.add(new SearchRecord(label,r));
+				}
+			}
+		}
+		return Collections.singletonList(engine);
 	}
 }
