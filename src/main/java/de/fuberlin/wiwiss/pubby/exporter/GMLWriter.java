@@ -74,7 +74,6 @@ public class GMLWriter implements ModelWriter {
 						while(it.hasNext()) {
 							Resource ind=it.next();
 							StmtIterator it2 = ind.listProperties();
-
 							int nscounter=1;
 							while(it2.hasNext()) {
 								Statement curst=it2.next();
@@ -95,13 +94,12 @@ public class GMLWriter implements ModelWriter {
 								Double lat=null,lon=null;
 								while(it2.hasNext()) {
 									Statement curst=it2.next();
-									if(GEO.HASGEOMETRY.getURI().equals(curst.getPredicate().getURI().toString()) || 
+									if(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||
 											GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
 											|| 
 											GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 										try {
-											Geometry geom=reader.read(curst.getObject().asLiteral().getValue().toString());
-											writer.writeStartElement("http://www.opengis.net/gml",geom.getGeometryType());
+											Geometry geom=reader.read(curst.getObject().asLiteral().getString());													writer.writeStartElement("http://www.opengis.net/gml",geom.getGeometryType());
 											writer.writeStartElement("http://www.opengis.net/gml","posList");
 											writer.writeCharacters(lat+" "+lon);
 											writer.writeEndElement();

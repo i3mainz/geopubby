@@ -74,7 +74,8 @@ public class ResourceDescription {
 	    }
 
 	 private void addGeometry2(final Literal literall) {
-		 		String literal=literall.getValue().toString();
+		 		String literal=literall.getString();
+		 		System.out.println("Geometry2: "+literal);
 	        	Geometry geom;
 				try {
 					String epsgcode="";
@@ -93,28 +94,12 @@ public class ResourceDescription {
 	    }
 	 
 	 private void addGeometry(final Resource r) {
-	        final Statement wkt = r.getProperty(GEO.ASWKT);
-	        if(wkt!=null) {
-	        	Geometry geom;
-				try {
-					String literal=wkt.getObject().asLiteral().getString().trim();
-					String epsgcode="";
-					if(r.getProperty(GEO.EPSG)!=null) {
-						epsgcode=r.getProperty(GEO.EPSG).getString();
-					}else if(literal.startsWith("<")) {
-						epsgcode=literal.substring(literal.indexOf('<'),literal.lastIndexOf('>')).trim();
-						epsgcode=epsgcode.substring(epsgcode.lastIndexOf('/')+1);
-						literal=literal.substring(literal.lastIndexOf('>')+1).trim();
-					}
-					geom = this.reader.read(literal);
-					if(!epsgcode.isEmpty())
-						geom.setSRID(Integer.valueOf(epsgcode));
-		        	geoms.add(geom);
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
+	        StmtIterator it= resource.listProperties(GEO.ASWKT);
+	        while(it.hasNext()) {
+	            addGeometry2(it.next().getObject().asLiteral());
 	        }
-	    }
+	        it.close();
+	 }
 	 
 	 private void addAllGeoms() {
 	        StmtIterator it= resource.listProperties(GEO.ASWKT);
@@ -159,6 +144,15 @@ public class ResourceDescription {
 	        }
 	        return geoms;
 	    }
+	    
+	public String getEPSG(){
+	    StmtIterator it= resource.listProperties(GEO.EPSG);
+	    if(it.hasNext()){
+	        Statement s = it.nextStatement();
+	        return s.getObject().asLiteral().getString();
+	    }
+	    return "";
+	}
 
 	public ResourceDescription(HypermediaControls controller, Model model, 
 			Map<Property, Integer> highIndegreeProperties,
@@ -608,6 +602,14 @@ public class ResourceDescription {
 				return "?:" + datatypePrefixer.getLocalName();
 			}
 		}
+		
+		public String getDatatypeURI() {
+			if (!node.isLiteral()) return null;
+			String uri = ((Literal) node.as(Literal.class)).getDatatypeURI();
+			if (uri == null) return null;
+			return uri;
+		}
+		
 		public boolean isType() {
 			return predicate.equals(RDF.type);
 		}

@@ -49,6 +49,8 @@ public class RemoteSPARQLDataSource implements DataSource {
 	private final String endpointURL;
 	private final String defaultGraphURI;
 	private final boolean supportsSPARQL11;
+	
+	QueryEngineHTTP endpoint;
 
 	private final Set<String> resourceQueries;
 	private final Set<String> propertyQueries;
@@ -227,8 +229,11 @@ public class RemoteSPARQLDataSource implements DataSource {
 				"?s ?p ?o " +
 				"} LIMIT " + DataSource.MAX_INDEX_SIZE);
 		while (rs.hasNext()) {
-			result.add(rs.next().getResource("s"));
+			Resource s=rs.next().getResource("s");
+			System.out.println("1. "+s.toString());
+			result.add(s);
 		}
+		System.out.println("Attempting second query");
 		if (result.size() < DataSource.MAX_INDEX_SIZE) {
 			rs = execQuerySelect(
 					"SELECT DISTINCT ?o { " +
@@ -236,9 +241,12 @@ public class RemoteSPARQLDataSource implements DataSource {
 					"FILTER (isURI(?o)) " +
 					"} LIMIT " + (DataSource.MAX_INDEX_SIZE - result.size()));
 			while (rs.hasNext()) {
-				result.add(rs.next().getResource("o"));
+				Resource s=rs.next().getResource("o");
+				System.out.println("2. "+s.toString());
+				result.add(s);
 			}
 		}
+		System.out.println(result.size()+" - "+result.isEmpty());
 		return result;
 	}
 	
@@ -320,7 +328,10 @@ public class RemoteSPARQLDataSource implements DataSource {
 	}
 	
 	private ResultSet execQuerySelect(String query) {
-		QueryEngineHTTP endpoint = new QueryEngineHTTP(endpointURL, query);
+		if(this.endpoint!=null && !this.endpoint.isClosed()) {
+			this.endpoint.close();
+		}
+		this.endpoint = new QueryEngineHTTP(endpointURL, query);
 		if (defaultGraphURI != null) {
 			endpoint.setDefaultGraphURIs(Collections.singletonList(defaultGraphURI));
 		}

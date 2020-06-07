@@ -52,6 +52,7 @@ public class CONF {
 	public static final Property browsableNamespace = m.createProperty(NS + "browsableNamespace");
 	public static final Property queryParamSelect = m.createProperty(NS + "queryParamSelect");
 	public static final Property queryParamGraph = m.createProperty(NS + "queryParamGraph");
+	public static final Property wdImage=m.createProperty("http://www.wikidata.org/prop/direct/P18");
 	
 	// Terms to annotate vocabulary
 	public static final Property weight = m.createProperty(NS + "weight");

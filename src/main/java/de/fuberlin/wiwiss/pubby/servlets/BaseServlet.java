@@ -1,5 +1,6 @@
 package de.fuberlin.wiwiss.pubby.servlets;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,13 +16,17 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.shared.PrefixMapping;
 import org.apache.jena.sparql.vocabulary.FOAF;
+import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDFS;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
+import de.fuberlin.wiwiss.pubby.MappedResource;
 import de.fuberlin.wiwiss.pubby.MetadataConfiguration;
 import de.fuberlin.wiwiss.pubby.ModelUtil;
+import de.fuberlin.wiwiss.pubby.servlets.ServletContextInitializer;
+import de.fuberlin.wiwiss.pubby.servlets.VelocityHelper;
 
 /**
  * An abstract base servlet for servlets that manage a namespace of resources.
@@ -37,7 +42,7 @@ public abstract class BaseServlet extends HttpServlet {
 		config = (Configuration) getServletContext().getAttribute(
 				ServletContextInitializer.SERVER_CONFIGURATION);
 			if(config==null){
-			    initError = (String) getServletContext().getAttribute(
+					initError = (String) getServletContext().getAttribute(
 					ServletContextInitializer.ERROR_MESSAGE);
 			}
 	}
@@ -62,6 +67,7 @@ public abstract class BaseServlet extends HttpServlet {
 		}
 	}
 
+	
 	// TODO: This should be somewhere else, doesn't fit here
 	protected void addPageMetadata(Context context, 
 			HypermediaControls controller, PrefixMapping prefixes) {

@@ -18,7 +18,7 @@ import de.fuberlin.wiwiss.pubby.util.SearchRecord;
  * TODO: describeResource and getHighXxxdegreeProperties should be combined into a single method with a complex result so that implementations can better mess with the high-degree stuff while keeping responses consistent between methods
  */
 public interface DataSource {
-	static final int MAX_INDEX_SIZE = 100;
+	static final int MAX_INDEX_SIZE = 1000000;
 	
 	
 	/**
