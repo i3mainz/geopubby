@@ -251,7 +251,8 @@ public class RemoteSPARQLDataSource implements DataSource {
 		return result;
 	}
 	
-	public AutocompleteEngine<SearchRecord> getLabelIndex(){
+	public List<AutocompleteEngine<SearchRecord>> getLabelIndex(){
+		System.out.println("Get Label Index!!!!");
 		if(engine==null) {
 			engine= new AutocompleteEngine.Builder<SearchRecord>()
 		            .setIndex(new SearchAdapter())
@@ -267,8 +268,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 	            engine.add(new SearchRecord(st.getLiteral("label").getString(),st.getResource("s")));
 			}
 		}
-
-		return engine;
+		return Collections.singletonList(engine);
 	}
 
 	public String getPreviousDescribeQuery() {

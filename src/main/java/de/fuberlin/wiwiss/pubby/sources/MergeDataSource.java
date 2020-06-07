@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -122,12 +123,12 @@ public class MergeDataSource implements DataSource {
 	}
 
 	@Override
-	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
-		Map<String,Resource> result = new TreeMap<String,Resource>();
+	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
+		List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> result = new LinkedList<>();
 		for (DataSource source: sources) {
-			return source.getLabelIndex();
+			if(source.getLabelIndex()!=null)
+				result.addAll(source.getLabelIndex());
 		}
-		//TODO Merging indizes to be fixed
-		return null;
+		return result;
 	}
 }

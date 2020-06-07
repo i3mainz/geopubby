@@ -148,8 +148,7 @@ public class RewrittenDataSource implements DataSource {
 	}
 
 	@Override
-	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
-		de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> originalIndex = original.getLabelIndex();
-		return originalIndex;
+	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
+		return original.getLabelIndex();
 	}
 }

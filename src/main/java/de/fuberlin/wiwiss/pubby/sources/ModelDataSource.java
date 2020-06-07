@@ -76,7 +76,7 @@ public class ModelDataSource implements DataSource {
 	}
 
 	@Override
-	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
+	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
 		// TODO Auto-generated method stub
 		return null;
 	}

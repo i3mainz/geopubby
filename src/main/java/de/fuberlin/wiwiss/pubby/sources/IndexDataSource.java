@@ -94,7 +94,7 @@ public class IndexDataSource implements DataSource {
 	}
 
 	@Override
-	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
+	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
 		return wrapped.getLabelIndex();
 	}
 	
