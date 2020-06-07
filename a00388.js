@@ -6,8 +6,9 @@ var a00388 =
     [ "getHighIndegreeProperties", "a00388.html#a73de8154ca0a0f9528cf8e2632e40868", null ],
     [ "getHighOutdegreeProperties", "a00388.html#adee4ed3932a18a60beea0c5e234fe5fc", null ],
     [ "getIndex", "a00388.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "getLabelIndex", "a00388.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
+    [ "getLabelIndex", "a00388.html#a95bb11e41c19f55f0ca37ae0689fd798", null ],
     [ "listPropertyValues", "a00388.html#a660b961c4b18f651d595cfd867143f79", null ],
+    [ "engine", "a00388.html#a4ca40e85c7ac7b0956e57235172f94fe", null ],
     [ "MAX_INDEX_SIZE", "a00388.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
     [ "model", "a00388.html#aa7373a131d63421e546eaa40689df69d", null ]
 ];

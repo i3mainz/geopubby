@@ -85,7 +85,10 @@ Collaboration diagram for ModelDataSource:</div>
 <div class="dyncontent">
 <div class="center"><img src="a00386.png" border="0" usemap="#ModelDataSource_coll__map" alt="Collaboration graph"/></div>
 <map name="ModelDataSource_coll__map" id="ModelDataSource_coll__map">
-<area shape="rect" id="node2" href="a00372.html" title="A source of RDF data intended for publication through the server. " alt="" coords="10,95,101,121"/>
+<area shape="rect" id="node2" href="a00372.html" title="A source of RDF data intended for publication through the server. " alt="" coords="92,347,183,373"/>
+<area shape="rect" id="node5" href="a00404.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="289,332,492,388"/>
+<area shape="rect" id="node6" href="a00404.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="309,213,473,255"/>
+<area shape="rect" id="node13" href="a00976.html" title="Indexable" alt="" coords="538,102,617,129"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -111,8 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af0b2ac78c4b45ecc590342abe84c24af"><td class="memItemLeft" align="right" valign="top">List&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00388.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a> ()</td></tr>
 <tr class="memdesc:af0b2ac78c4b45ecc590342abe84c24af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of IRI resources described in this data source.  <a href="#af0b2ac78c4b45ecc590342abe84c24af">More...</a><br /></td></tr>
 <tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f6bc3de3dd60e86da9296226cecd8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00404.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt; <a class="el" href="a00420.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00388.html#ae8f6bc3de3dd60e86da9296226cecd8c">getLabelIndex</a> ()</td></tr>
-<tr class="separator:ae8f6bc3de3dd60e86da9296226cecd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00404.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt; <a class="el" href="a00420.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00388.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a> ()</td></tr>
+<tr class="separator:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -123,6 +126,8 @@ Static Public Attributes</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa7373a131d63421e546eaa40689df69d"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a></td></tr>
 <tr class="separator:aa7373a131d63421e546eaa40689df69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca40e85c7ac7b0956e57235172f94fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00404.html">AutocompleteEngine</a>&lt; <a class="el" href="a00420.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00388.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a></td></tr>
+<tr class="separator:a4ca40e85c7ac7b0956e57235172f94fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A data source backed by a Jena model. </p>
@@ -144,7 +149,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">References <a class="el" href="a00388.html#aa7373a131d63421e546eaa40689df69d">ModelDataSource.model</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                            {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                this.<a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a> = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:24</div></div>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                            {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                this.<a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a> = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -177,7 +182,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if this data source might have something about it </dd></dl>
 
 <p>Implements <a class="el" href="a00372.html#a1681b51a4d9b94752fc6668c82729236">DataSource</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                       {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                       {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="ab894bdc30c94ed2c7df302b41c4d3f42"></a>
@@ -208,7 +213,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="a00372.html#ab085365476c05945218492b31028610a">DataSource</a>.</p>
 
 <p class="reference">References <a class="el" href="a00264.html#af6ba6db7e4d4a66e0970adb9b4f40bfd">ModelUtil.EMPTY_MODEL</a>, and <a class="el" href="a00388.html#aa7373a131d63421e546eaa40689df69d">ModelDataSource.model</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                          {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                Resource r = ResourceFactory.createResource(resourceURI);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.contains(r, null, (RDFNode) null) || <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.contains(null, null, r)) {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> ModelUtil.EMPTY_MODEL;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:24</div></div>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                          {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                Resource r = ResourceFactory.createResource(resourceURI);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.contains(r, null, (RDFNode) null) || <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.contains(null, null, r)) {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> ModelUtil.EMPTY_MODEL;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -238,7 +243,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
 
 <p>Implements <a class="el" href="a00372.html#afd50c79b6d45d0fed770638879c7359e">DataSource</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                                                    {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                                                    {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="adee4ed3932a18a60beea0c5e234fe5fc"></a>
@@ -267,7 +272,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
 
 <p>Implements <a class="el" href="a00372.html#acbe9e94afdedf6be6979247520906444">DataSource</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                                                     {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                                                     {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="af0b2ac78c4b45ecc590342abe84c24af"></a>
@@ -291,18 +296,18 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="a00372.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource</a>.</p>
 
 <p class="reference">References <a class="el" href="a00372.html#a5d100ac468e8e0551f96450f5bbba1b2">DataSource.MAX_INDEX_SIZE</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                         {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                List&lt;Resource&gt; result = <span class="keyword">new</span> ArrayList&lt;Resource&gt;();</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                ResIterator subjects = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.listSubjects();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">while</span> (subjects.hasNext() &amp;&amp; result.size() &lt; DataSource.MAX_INDEX_SIZE) {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        Resource r = subjects.next();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <span class="keywordflow">if</span> (r.isAnon()) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        result.add(r);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                NodeIterator objects = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.listObjects();</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">while</span> (objects.hasNext() &amp;&amp; result.size() &lt; DataSource.MAX_INDEX_SIZE) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        RDFNode o = objects.next();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordflow">if</span> (!o.isURIResource()) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        result.add(o.asResource());</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:24</div></div>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                         {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                List&lt;Resource&gt; result = <span class="keyword">new</span> ArrayList&lt;Resource&gt;();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                ResIterator subjects = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.listSubjects();</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">while</span> (subjects.hasNext() &amp;&amp; result.size() &lt; DataSource.MAX_INDEX_SIZE) {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        Resource r = subjects.next();</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="keywordflow">if</span> (r.isAnon()) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        result.add(r);</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                NodeIterator objects = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.listObjects();</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">while</span> (objects.hasNext() &amp;&amp; result.size() &lt; DataSource.MAX_INDEX_SIZE) {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        RDFNode o = objects.next();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="keywordflow">if</span> (!o.isURIResource()) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        result.add(o.asResource());</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ae8f6bc3de3dd60e86da9296226cecd8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8f6bc3de3dd60e86da9296226cecd8c">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
+<a id="a95bb11e41c19f55f0ca37ae0689fd798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95bb11e41c19f55f0ca37ae0689fd798">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00404.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt;<a class="el" href="a00420.html">SearchRecord</a>&gt; getLabelIndex </td>
+          <td class="memname">List&lt;<a class="el" href="a00404.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt;<a class="el" href="a00420.html">SearchRecord</a>&gt; &gt; getLabelIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -310,8 +315,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="a00372.html#ae8f6bc3de3dd60e86da9296226cecd8c">DataSource</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                                                              {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// TODO Auto-generated method stub</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div></div><!-- fragment -->
+<p>Implements <a class="el" href="a00372.html#a95bb11e41c19f55f0ca37ae0689fd798">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00404.html#a2e4d243958874ed92e4705efd514ec8a">AutocompleteEngine&lt; T extends Indexable &gt;.add()</a>, and <a class="el" href="a00372.html#a5d100ac468e8e0551f96450f5bbba1b2">DataSource.MAX_INDEX_SIZE</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                                                                    {</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                System.out.println(<span class="stringliteral">&quot;Get Label Index!!!!&quot;</span>);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00388.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>==null) {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        <a class="code" href="a00388.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>= <span class="keyword">new</span> AutocompleteEngine.Builder&lt;SearchRecord&gt;()</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                            .setIndex(<span class="keyword">new</span> SearchAdapter())</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                            .setAnalyzers(<span class="keyword">new</span> LowerCaseTransformer(), <span class="keyword">new</span> WordTokenizer())</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                            .build();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        System.out.println(<span class="stringliteral">&quot;Building Label Index....&quot;</span>);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        List&lt;Resource&gt; result = <span class="keyword">new</span> ArrayList&lt;Resource&gt;();</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        ResIterator subjects = <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>.listSubjects();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        <span class="keywordflow">while</span> (subjects.hasNext() &amp;&amp; result.size() &lt; DataSource.MAX_INDEX_SIZE) {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                Resource r = subjects.next();</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                <span class="keywordflow">if</span> (r.isAnon()) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                StmtIterator st = r.listProperties(RDFS.label);</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                <span class="keywordflow">while</span>(st.hasNext()) {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                        Literal lit=st.next().getObject().asLiteral();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                        String label=lit.getString();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                        <a class="code" href="a00388.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>.add(<span class="keyword">new</span> SearchRecord(label,r));</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                }</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        }</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                }</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">return</span> Collections.singletonList(<a class="code" href="a00388.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:33</div></div>
+<div class="ttc" id="a00388_html_a4ca40e85c7ac7b0956e57235172f94fe"><div class="ttname"><a href="a00388.html#a4ca40e85c7ac7b0956e57235172f94fe">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.engine</a></div><div class="ttdeci">AutocompleteEngine&lt; SearchRecord &gt; engine</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:35</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a660b961c4b18f651d595cfd867143f79"></a>
@@ -360,11 +369,33 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="a00372.html#a24260bc730afdd0c68fa8f7f5e0b600f">DataSource</a>.</p>
 
 <p class="reference">References <a class="el" href="a00388.html#aa7373a131d63421e546eaa40689df69d">ModelDataSource.model</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                           {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:24</div></div>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                           {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00388.html#aa7373a131d63421e546eaa40689df69d">model</a>;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div><div class="ttc" id="a00388_html_aa7373a131d63421e546eaa40689df69d"><div class="ttname"><a href="a00388.html#aa7373a131d63421e546eaa40689df69d">de.fuberlin.wiwiss.pubby.sources.ModelDataSource.model</a></div><div class="ttdeci">Model model</div><div class="ttdef"><b>Definition:</b> ModelDataSource.java:33</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4ca40e85c7ac7b0956e57235172f94fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca40e85c7ac7b0956e57235172f94fe">&#9670;&nbsp;</a></span>engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00404.html">AutocompleteEngine</a>&lt;<a class="el" href="a00420.html">SearchRecord</a>&gt; engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a5d100ac468e8e0551f96450f5bbba1b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d100ac468e8e0551f96450f5bbba1b2">&#9670;&nbsp;</a></span>MAX_INDEX_SIZE</h2>
 
@@ -385,7 +416,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00388.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00392.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, and <a class="el" href="a00392.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00388.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00392.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, <a class="el" href="a00388.html#a95bb11e41c19f55f0ca37ae0689fd798">ModelDataSource.getLabelIndex()</a>, and <a class="el" href="a00392.html#aa89379d3ca3d561141fa020c1c285851">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
 
 </div>
 </div>

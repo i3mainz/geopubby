@@ -12,7 +12,7 @@ var a00392 =
     [ "getHighIndegreeProperties", "a00392.html#a73de8154ca0a0f9528cf8e2632e40868", null ],
     [ "getHighOutdegreeProperties", "a00392.html#adee4ed3932a18a60beea0c5e234fe5fc", null ],
     [ "getIndex", "a00392.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "getLabelIndex", "a00392.html#a2dbc188988204c9931d77a3f36128e50", null ],
+    [ "getLabelIndex", "a00392.html#aa89379d3ca3d561141fa020c1c285851", null ],
     [ "getPreviousDescribeQuery", "a00392.html#a3b1de34ae677a9929de4412c7f4ae83a", null ],
     [ "listPropertyValues", "a00392.html#a660b961c4b18f651d595cfd867143f79", null ],
     [ "parseQueryParam", "a00392.html#a2cb853afc49e783e7a59a2481118618c", null ],
