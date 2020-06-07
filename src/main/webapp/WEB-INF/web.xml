@@ -68,7 +68,6 @@
   <servlet>
     <servlet-name>SearchServlet</servlet-name>
     <servlet-class>de.fuberlin.wiwiss.pubby.servlets.SearchServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>

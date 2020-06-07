@@ -227,10 +227,11 @@ public class RemoteSPARQLDataSource implements DataSource {
 		ResultSet rs = execQuerySelect(
 				"SELECT DISTINCT ?s { " +
 				"?s ?p ?o " +
+				"FILTER (isURI(?s)) " +
 				"} LIMIT " + DataSource.MAX_INDEX_SIZE);
 		while (rs.hasNext()) {
 			Resource s=rs.next().getResource("s");
-			System.out.println("1. "+s.toString());
+			//System.out.println("1. "+s.toString());
 			result.add(s);
 		}
 		System.out.println("Attempting second query");
@@ -242,7 +243,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 					"} LIMIT " + (DataSource.MAX_INDEX_SIZE - result.size()));
 			while (rs.hasNext()) {
 				Resource s=rs.next().getResource("o");
-				System.out.println("2. "+s.toString());
+				//System.out.println("2. "+s.toString());
 				result.add(s);
 			}
 		}
