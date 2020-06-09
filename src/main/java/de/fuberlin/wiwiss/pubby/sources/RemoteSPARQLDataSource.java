@@ -78,10 +78,6 @@ public class RemoteSPARQLDataSource implements DataSource {
 			Set<String> anonPropertyQueries, Set<String> anonInversePropertyQueries,
 			CachedPropertyCollection highIndegreeProperties, CachedPropertyCollection highOutdegreeProperties) {
 		this.endpointURL = endpointURL;
-		this.engine = new AutocompleteEngine.Builder<SearchRecord>()
-	            .setIndex(new SearchAdapter())
-	            .setAnalyzers(new LowerCaseTransformer(), new WordTokenizer())
-	            .build();
 		this.defaultGraphURI = defaultGraphURI;
 		this.supportsSPARQL11 = supportsSPARQL11;
 		if (resourceQueries == null || resourceQueries.isEmpty()) {
