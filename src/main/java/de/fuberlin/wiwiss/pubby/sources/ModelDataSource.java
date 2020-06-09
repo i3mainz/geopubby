@@ -88,7 +88,7 @@ public class ModelDataSource implements DataSource {
 
 	@Override
 	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
-		System.out.println("Get Label Index!!!!");
+		System.out.println("ModelDataSource: Get Label Index!!!!");
 		if(engine==null) {
 			engine= new AutocompleteEngine.Builder<SearchRecord>()
 		            .setIndex(new SearchAdapter())
@@ -109,5 +109,11 @@ public class ModelDataSource implements DataSource {
 			}
 		}
 		return Collections.singletonList(engine);
+	}
+
+	@Override
+	public Model describeResource(String absoluteIRI, String language) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

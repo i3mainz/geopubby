@@ -223,6 +223,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 	
 	@Override
 	public List<Resource> getIndex() {
+		System.out.println("Index SPARQL Query");
 		List<Resource> result = new ArrayList<Resource>();
 		ResultSet rs = execQuerySelect(
 				"SELECT DISTINCT ?s { " +
@@ -251,8 +252,9 @@ public class RemoteSPARQLDataSource implements DataSource {
 		return result;
 	}
 	
+	@Override
 	public List<AutocompleteEngine<SearchRecord>> getLabelIndex(){
-		System.out.println("Get Label Index!!!!");
+		System.out.println("SPARQL Datasource: Get Label Index!!!!");
 		if(engine==null) {
 			engine= new AutocompleteEngine.Builder<SearchRecord>()
 		            .setIndex(new SearchAdapter())
@@ -402,5 +404,11 @@ public class RemoteSPARQLDataSource implements DataSource {
 		}
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public Model describeResource(String absoluteIRI, String language) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

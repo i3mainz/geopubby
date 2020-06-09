@@ -134,14 +134,15 @@ public class Dataset extends ResourceReader {
 		// If conf:datasetURIPattern is set, then filter the dataset accordingly.
 		if (hasProperty(CONF.datasetURIPattern)) {
 			final Pattern pattern = Pattern.compile(getString(CONF.datasetURIPattern));
-			result = new FilteredDataSource(result) {
+			final DataSource fresult=result;
+			result = new FilteredDataSource(fresult) {
 				@Override
 				public boolean canDescribe(String absoluteIRI) {
 					return pattern.matcher(absoluteIRI).find();
 				}
 
 				@Override
-				public List<AutocompleteEngine<SearchRecord>> getLabelIndex() {
+				public Model describeResource(String absoluteIRI, String language) {
 					// TODO Auto-generated method stub
 					return null;
 				}
@@ -179,7 +180,8 @@ public class Dataset extends ResourceReader {
 		// Filter the dataset to keep only those resources in the datasetBase
 		// and in browsable namespaces, unless it's an annotation provider
 		if (!hasType(CONF.AnnotationProvider)) {
-			result = new FilteredDataSource(result) {
+			final DataSource fresult=result;
+			result = new FilteredDataSource(fresult) {
 				@Override
 				public boolean canDescribe(String absoluteIRI) {
 					for (String namespace: browsableNamespaces) {
@@ -189,7 +191,7 @@ public class Dataset extends ResourceReader {
 				}
 
 				@Override
-				public List<AutocompleteEngine<SearchRecord>> getLabelIndex() {
+				public Model describeResource(String absoluteIRI, String language) {
 					// TODO Auto-generated method stub
 					return null;
 				}

@@ -9,6 +9,8 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 
 import de.fuberlin.wiwiss.pubby.ModelUtil;
+import de.fuberlin.wiwiss.pubby.util.AutocompleteEngine;
+import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
  * A {@link DataSource} that wraps another data source in such a way
@@ -67,5 +69,10 @@ public abstract class FilteredDataSource implements DataSource {
 			}
 		}
 		return result;
+	}
+	
+	@Override
+	public List<AutocompleteEngine<SearchRecord>> getLabelIndex() {
+		return wrapped.getLabelIndex();
 	}
 }

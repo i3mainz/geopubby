@@ -50,6 +50,18 @@ public interface DataSource {
 	Model describeResource(String absoluteIRI);
 
 	/**
+	 * Returns a subgraph of the data source describing one resource.
+	 * This should include both incoming and outgoing triples. However,
+	 * it should exclude outgoing arcs where the property is a
+	 * high-outdegree property, and it should exclude incoming arcs where
+	 * the property is a high-indegree property. If labels for other
+	 * resources are included in the result, then they will be used.
+	 * @param absoluteIRI The IRI of the resource to be described
+	 * @return A subgraph of the data source describing the resource.
+	 */
+	Model describeResource(String absoluteIRI,String language);
+	
+	/**
 	 * If {@link #describeResource(String)} omits properties of
 	 * high indegree, then those properties must be returned here with
 	 * the count of arcs. If high-indegree properties are not omitted,
