@@ -117,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00404.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt; <a class="el" href="a00420.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a> ()</td></tr>
 <tr class="separator:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00396.html#ad4ae7f7efd26ae80f56a0223be0324c8">describeResource</a> (String absoluteIRI, String language)</td></tr>
+<tr class="memdesc:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ad4ae7f7efd26ae80f56a0223be0324c8">More...</a><br /></td></tr>
+<tr class="separator:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -298,7 +301,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a88ba0769e10f0ece3e983e61e031dbbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88ba0769e10f0ece3e983e61e031dbbc">&#9670;&nbsp;</a></span>describeResource()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ba0769e10f0ece3e983e61e031dbbc">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,6 +337,45 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="a00396_html_a104e75039d657862cd3cf0541b5ca61f"><div class="ttname"><a href="a00396.html#a104e75039d657862cd3cf0541b5ca61f">de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource.rewriter</a></div><div class="ttdeci">final IRIRewriter rewriter</div><div class="ttdef"><b>Definition:</b> RewrittenDataSource.java:30</div></div>
 <div class="ttc" id="a00372_html_ab085365476c05945218492b31028610a"><div class="ttname"><a href="a00372.html#ab085365476c05945218492b31028610a">de.fuberlin.wiwiss.pubby.sources.DataSource.describeResource</a></div><div class="ttdeci">Model describeResource(String absoluteIRI)</div><div class="ttdoc">Returns a subgraph of the data source describing one resource. </div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="ad4ae7f7efd26ae80f56a0223be0324c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ae7f7efd26ae80f56a0223be0324c8">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>language</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implements <a class="el" href="a00372.html#ad4ae7f7efd26ae80f56a0223be0324c8">DataSource</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                                                           {</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="comment">// TODO Auto-generated method stub</span></div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a id="afd50c79b6d45d0fed770638879c7359e"></a>
@@ -456,7 +498,7 @@ Private Attributes</h2></td></tr>
 <p>Implements <a class="el" href="a00372.html#a95bb11e41c19f55f0ca37ae0689fd798">DataSource</a>.</p>
 
 <p class="reference">References <a class="el" href="a00372.html#a95bb11e41c19f55f0ca37ae0689fd798">DataSource.getLabelIndex()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                                                                    {</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00396.html#a1223cdf19f3440a10d8bde8a96e68504">original</a>.<a class="code" href="a00372.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a>();</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div><div class="ttc" id="a00396_html_a1223cdf19f3440a10d8bde8a96e68504"><div class="ttname"><a href="a00396.html#a1223cdf19f3440a10d8bde8a96e68504">de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource.original</a></div><div class="ttdeci">final DataSource original</div><div class="ttdef"><b>Definition:</b> RewrittenDataSource.java:29</div></div>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                                                                    {</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                System.out.println(<span class="stringliteral">&quot;RewrittenDataSource: GetLabelIndex()&quot;</span>);</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00396.html#a1223cdf19f3440a10d8bde8a96e68504">original</a>.<a class="code" href="a00372.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a>();</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div><div class="ttc" id="a00396_html_a1223cdf19f3440a10d8bde8a96e68504"><div class="ttname"><a href="a00396.html#a1223cdf19f3440a10d8bde8a96e68504">de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource.original</a></div><div class="ttdeci">final DataSource original</div><div class="ttdef"><b>Definition:</b> RewrittenDataSource.java:29</div></div>
 <div class="ttc" id="a00372_html_a95bb11e41c19f55f0ca37ae0689fd798"><div class="ttname"><a href="a00372.html#a95bb11e41c19f55f0ca37ae0689fd798">de.fuberlin.wiwiss.pubby.sources.DataSource.getLabelIndex</a></div><div class="ttdeci">List&lt; de.fuberlin.wiwiss.pubby.util.AutocompleteEngine&lt; SearchRecord &gt; &gt; getLabelIndex()</div></div>
 </div><!-- fragment -->
 </div>

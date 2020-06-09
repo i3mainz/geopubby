@@ -3,6 +3,7 @@ var a00380 =
     [ "IndexDataSource", "a00380.html#a0a636d916caafddba3d8927d5e8c7395", null ],
     [ "canDescribe", "a00380.html#a1681b51a4d9b94752fc6668c82729236", null ],
     [ "describeResource", "a00380.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "describeResource", "a00380.html#aee8a51772d6673be0a741b47678df946", null ],
     [ "getHighIndegreeProperties", "a00380.html#afd50c79b6d45d0fed770638879c7359e", null ],
     [ "getHighOutdegreeProperties", "a00380.html#acbe9e94afdedf6be6979247520906444", null ],
     [ "getIndex", "a00380.html#af0b2ac78c4b45ecc590342abe84c24af", null ],

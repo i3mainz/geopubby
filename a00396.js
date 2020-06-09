@@ -5,6 +5,7 @@ var a00396 =
     [ "addSameAsStatement", "a00396.html#a8a3fcd0431a11b0718d57c494e080b31", null ],
     [ "canDescribe", "a00396.html#a1681b51a4d9b94752fc6668c82729236", null ],
     [ "describeResource", "a00396.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "describeResource", "a00396.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
     [ "getHighIndegreeProperties", "a00396.html#afd50c79b6d45d0fed770638879c7359e", null ],
     [ "getHighOutdegreeProperties", "a00396.html#acbe9e94afdedf6be6979247520906444", null ],
     [ "getIndex", "a00396.html#af0b2ac78c4b45ecc590342abe84c24af", null ],

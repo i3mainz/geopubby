@@ -100,6 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab085365476c05945218492b31028610a"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00372.html#ab085365476c05945218492b31028610a">describeResource</a> (String absoluteIRI)</td></tr>
 <tr class="memdesc:ab085365476c05945218492b31028610a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ab085365476c05945218492b31028610a">More...</a><br /></td></tr>
 <tr class="separator:ab085365476c05945218492b31028610a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00372.html#ad4ae7f7efd26ae80f56a0223be0324c8">describeResource</a> (String absoluteIRI, String language)</td></tr>
+<tr class="memdesc:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ad4ae7f7efd26ae80f56a0223be0324c8">More...</a><br /></td></tr>
+<tr class="separator:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd50c79b6d45d0fed770638879c7359e"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00372.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a> (String resourceIRI)</td></tr>
 <tr class="memdesc:afd50c79b6d45d0fed770638879c7359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00372.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs.  <a href="#afd50c79b6d45d0fed770638879c7359e">More...</a><br /></td></tr>
 <tr class="separator:afd50c79b6d45d0fed770638879c7359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,7 +161,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ab085365476c05945218492b31028610a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab085365476c05945218492b31028610a">&#9670;&nbsp;</a></span>describeResource()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab085365476c05945218492b31028610a">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,9 +185,48 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
 
-<p>Implemented in <a class="el" href="a00392.html#ab894bdc30c94ed2c7df302b41c4d3f42">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource</a>, <a class="el" href="a00384.html#a88ba0769e10f0ece3e983e61e031dbbc">MergeDataSource</a>, <a class="el" href="a00388.html#ab894bdc30c94ed2c7df302b41c4d3f42">ModelDataSource</a>, <a class="el" href="a00380.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource</a>, and <a class="el" href="a00376.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource</a>.</p>
+<p>Implemented in <a class="el" href="a00392.html#ab894bdc30c94ed2c7df302b41c4d3f42">RemoteSPARQLDataSource</a>, <a class="el" href="a00384.html#a88ba0769e10f0ece3e983e61e031dbbc">MergeDataSource</a>, <a class="el" href="a00396.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource</a>, <a class="el" href="a00388.html#ab894bdc30c94ed2c7df302b41c4d3f42">ModelDataSource</a>, <a class="el" href="a00376.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource</a>, and <a class="el" href="a00380.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="a00180.html#ab53ea1dc8508fc4b3ba182b0af9e27a7">Configuration.buildDataSource()</a>, <a class="el" href="a00180.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00376.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource.describeResource()</a>, <a class="el" href="a00380.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, <a class="el" href="a00396.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource.describeResource()</a>, <a class="el" href="a00444.html#a1a984f4cb4d41188c130813c505063fb">VocabularyStore.ValueCache&lt; Integer &gt;.get()</a>, <a class="el" href="a00212.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>, and <a class="el" href="a00396.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00180.html#ab53ea1dc8508fc4b3ba182b0af9e27a7">Configuration.buildDataSource()</a>, <a class="el" href="a00180.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00380.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, <a class="el" href="a00376.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource.describeResource()</a>, <a class="el" href="a00396.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource.describeResource()</a>, <a class="el" href="a00444.html#a1a984f4cb4d41188c130813c505063fb">VocabularyStore.ValueCache&lt; Integer &gt;.get()</a>, <a class="el" href="a00212.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>, and <a class="el" href="a00396.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
+
+</div>
+</div>
+<a id="ad4ae7f7efd26ae80f56a0223be0324c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ae7f7efd26ae80f56a0223be0324c8">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>language</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implemented in <a class="el" href="a00392.html#ad4ae7f7efd26ae80f56a0223be0324c8">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#ad4ae7f7efd26ae80f56a0223be0324c8">RewrittenDataSource</a>, <a class="el" href="a00388.html#ad4ae7f7efd26ae80f56a0223be0324c8">ModelDataSource</a>, <a class="el" href="a00384.html#aee8a51772d6673be0a741b47678df946">MergeDataSource</a>, and <a class="el" href="a00380.html#aee8a51772d6673be0a741b47678df946">IndexDataSource</a>.</p>
 
 </div>
 </div>
@@ -213,7 +255,7 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
 
-<p>Implemented in <a class="el" href="a00392.html#a73de8154ca0a0f9528cf8e2632e40868">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource</a>, <a class="el" href="a00384.html#afd50c79b6d45d0fed770638879c7359e">MergeDataSource</a>, <a class="el" href="a00380.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource</a>, <a class="el" href="a00388.html#a73de8154ca0a0f9528cf8e2632e40868">ModelDataSource</a>, and <a class="el" href="a00376.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource</a>.</p>
+<p>Implemented in <a class="el" href="a00392.html#a73de8154ca0a0f9528cf8e2632e40868">RemoteSPARQLDataSource</a>, <a class="el" href="a00384.html#afd50c79b6d45d0fed770638879c7359e">MergeDataSource</a>, <a class="el" href="a00396.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource</a>, <a class="el" href="a00380.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource</a>, <a class="el" href="a00388.html#a73de8154ca0a0f9528cf8e2632e40868">ModelDataSource</a>, and <a class="el" href="a00376.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="a00376.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00380.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00396.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource.getHighIndegreeProperties()</a>, and <a class="el" href="a00212.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>.</p>
 
@@ -244,7 +286,7 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
 
-<p>Implemented in <a class="el" href="a00392.html#adee4ed3932a18a60beea0c5e234fe5fc">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource</a>, <a class="el" href="a00384.html#acbe9e94afdedf6be6979247520906444">MergeDataSource</a>, <a class="el" href="a00380.html#acbe9e94afdedf6be6979247520906444">IndexDataSource</a>, <a class="el" href="a00388.html#adee4ed3932a18a60beea0c5e234fe5fc">ModelDataSource</a>, and <a class="el" href="a00376.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource</a>.</p>
+<p>Implemented in <a class="el" href="a00392.html#adee4ed3932a18a60beea0c5e234fe5fc">RemoteSPARQLDataSource</a>, <a class="el" href="a00384.html#acbe9e94afdedf6be6979247520906444">MergeDataSource</a>, <a class="el" href="a00396.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource</a>, <a class="el" href="a00380.html#acbe9e94afdedf6be6979247520906444">IndexDataSource</a>, <a class="el" href="a00388.html#adee4ed3932a18a60beea0c5e234fe5fc">ModelDataSource</a>, and <a class="el" href="a00376.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="a00376.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00380.html#acbe9e94afdedf6be6979247520906444">IndexDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00396.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource.getHighOutdegreeProperties()</a>, and <a class="el" href="a00212.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>.</p>
 
@@ -289,9 +331,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="a00392.html#aa89379d3ca3d561141fa020c1c285851">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#a95bb11e41c19f55f0ca37ae0689fd798">RewrittenDataSource</a>, <a class="el" href="a00384.html#a95bb11e41c19f55f0ca37ae0689fd798">MergeDataSource</a>, <a class="el" href="a00380.html#a95bb11e41c19f55f0ca37ae0689fd798">IndexDataSource</a>, and <a class="el" href="a00388.html#a95bb11e41c19f55f0ca37ae0689fd798">ModelDataSource</a>.</p>
+<p>Implemented in <a class="el" href="a00392.html#aa89379d3ca3d561141fa020c1c285851">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#a95bb11e41c19f55f0ca37ae0689fd798">RewrittenDataSource</a>, <a class="el" href="a00384.html#a95bb11e41c19f55f0ca37ae0689fd798">MergeDataSource</a>, <a class="el" href="a00380.html#a95bb11e41c19f55f0ca37ae0689fd798">IndexDataSource</a>, <a class="el" href="a00388.html#a95bb11e41c19f55f0ca37ae0689fd798">ModelDataSource</a>, and <a class="el" href="a00376.html#aa89379d3ca3d561141fa020c1c285851">FilteredDataSource</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="a00180.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00344.html#ade0f373e0ee60161c36c160bd5a04a9c">SearchServlet.doGet()</a>, <a class="el" href="a00380.html#a95bb11e41c19f55f0ca37ae0689fd798">IndexDataSource.getLabelIndex()</a>, and <a class="el" href="a00396.html#a95bb11e41c19f55f0ca37ae0689fd798">RewrittenDataSource.getLabelIndex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00180.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00344.html#ade0f373e0ee60161c36c160bd5a04a9c">SearchServlet.doGet()</a>, <a class="el" href="a00376.html#aa89379d3ca3d561141fa020c1c285851">FilteredDataSource.getLabelIndex()</a>, <a class="el" href="a00380.html#a95bb11e41c19f55f0ca37ae0689fd798">IndexDataSource.getLabelIndex()</a>, and <a class="el" href="a00396.html#a95bb11e41c19f55f0ca37ae0689fd798">RewrittenDataSource.getLabelIndex()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +380,7 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source. </dd></dl>
 
-<p>Implemented in <a class="el" href="a00392.html#a660b961c4b18f651d595cfd867143f79">RemoteSPARQLDataSource</a>, <a class="el" href="a00396.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource</a>, <a class="el" href="a00384.html#a24260bc730afdd0c68fa8f7f5e0b600f">MergeDataSource</a>, <a class="el" href="a00380.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource</a>, <a class="el" href="a00388.html#a660b961c4b18f651d595cfd867143f79">ModelDataSource</a>, and <a class="el" href="a00376.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource</a>.</p>
+<p>Implemented in <a class="el" href="a00392.html#a660b961c4b18f651d595cfd867143f79">RemoteSPARQLDataSource</a>, <a class="el" href="a00384.html#a24260bc730afdd0c68fa8f7f5e0b600f">MergeDataSource</a>, <a class="el" href="a00396.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource</a>, <a class="el" href="a00380.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource</a>, <a class="el" href="a00388.html#a660b961c4b18f651d595cfd867143f79">ModelDataSource</a>, and <a class="el" href="a00376.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="a00356.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesDataURLServlet.doGet()</a>, <a class="el" href="a00360.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesURLServlet.doGet()</a>, <a class="el" href="a00440.html#a1c247553b46f28035a0d8cd5173a165a">VocabularyStore.CachedPropertyCollection.get()</a>, <a class="el" href="a00376.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource.listPropertyValues()</a>, <a class="el" href="a00380.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource.listPropertyValues()</a>, and <a class="el" href="a00396.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
 

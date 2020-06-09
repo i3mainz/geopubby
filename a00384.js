@@ -5,6 +5,7 @@ var a00384 =
     [ "MergeDataSource", "a00384.html#ac3df88e80e7f98ac638de9e1ef351824", null ],
     [ "addIntegerMaps", "a00384.html#af53abc20ddd2cc1f91869175d013a2b1", null ],
     [ "canDescribe", "a00384.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "describeResource", "a00384.html#aee8a51772d6673be0a741b47678df946", null ],
     [ "describeResource", "a00384.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
     [ "getHighIndegreeProperties", "a00384.html#afd50c79b6d45d0fed770638879c7359e", null ],
     [ "getHighOutdegreeProperties", "a00384.html#acbe9e94afdedf6be6979247520906444", null ],

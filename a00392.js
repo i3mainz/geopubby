@@ -6,6 +6,7 @@ var a00392 =
     [ "addSelectQueryParam", "a00392.html#a858637aeb66d844b6a923144035a171d", null ],
     [ "canDescribe", "a00392.html#a1681b51a4d9b94752fc6668c82729236", null ],
     [ "describeResource", "a00392.html#ab894bdc30c94ed2c7df302b41c4d3f42", null ],
+    [ "describeResource", "a00392.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
     [ "execQueryGraph", "a00392.html#a5fe455235efdbdfd2d8c27ecdb3a9633", null ],
     [ "execQuerySelect", "a00392.html#ac283733a76a14d96f362610f53f82cfe", null ],
     [ "getHighDegreeProperties", "a00392.html#a2afca3709d37ee9264be03d81dccf655", null ],

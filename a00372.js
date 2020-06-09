@@ -2,6 +2,7 @@ var a00372 =
 [
     [ "canDescribe", "a00372.html#a1681b51a4d9b94752fc6668c82729236", null ],
     [ "describeResource", "a00372.html#ab085365476c05945218492b31028610a", null ],
+    [ "describeResource", "a00372.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
     [ "getHighIndegreeProperties", "a00372.html#afd50c79b6d45d0fed770638879c7359e", null ],
     [ "getHighOutdegreeProperties", "a00372.html#acbe9e94afdedf6be6979247520906444", null ],
     [ "getIndex", "a00372.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
