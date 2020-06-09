@@ -121,7 +121,7 @@ public class Configuration extends ResourceReader {
 				new ModelDataSource(getModel()), getDataSource());
 		vocabularyStore.setDataSource(vocabularyDataSource);
 		vocabularyStore.setDefaultLanguage(getDefaultLanguage());
-        dataSoruce.getLabelIndex();
+        dataSource.getLabelIndex();
 		// Sanity check to spot typical configuration problem
 		if (dataSource.getIndex().isEmpty()) {
 			throw new ConfigurationException("The index is empty. " + 
