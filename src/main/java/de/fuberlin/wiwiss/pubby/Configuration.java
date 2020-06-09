@@ -112,6 +112,7 @@ public class Configuration extends ResourceReader {
 		ModelUtil.addNSIfUndefined(prefixes, "rdfs", RDFS.getURI());
 		ModelUtil.addNSIfUndefined(prefixes, "owl", "http://www.w3.org/2002/07/owl#");
 		ModelUtil.addNSIfUndefined(prefixes, "pubby", webBase);
+		System.out.println("Building datasource");
 		dataSource = buildDataSource();
 
 		// Vocabulary data source contains our normal data sources plus
@@ -121,7 +122,6 @@ public class Configuration extends ResourceReader {
 				new ModelDataSource(getModel()), getDataSource());
 		vocabularyStore.setDataSource(vocabularyDataSource);
 		vocabularyStore.setDefaultLanguage(getDefaultLanguage());
-
 		// Sanity check to spot typical configuration problem
 		if (dataSource.getIndex().isEmpty()) {
 			throw new ConfigurationException("The index is empty. " + 
@@ -129,6 +129,7 @@ public class Configuration extends ResourceReader {
 					"check any conf:datasetURIPatterns, " + 
 					"and check that all data sources actually contain data.");
 		}
+		System.out.println("Datasource index: "+dataSource.getLabelIndex());
 		String resourceBase = getWebApplicationBaseURI() + getWebResourcePrefix();
 		if (hasProperty(CONF.indexResource)) {
 			indexIRI = getIRI(CONF.indexResource);
