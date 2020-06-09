@@ -266,6 +266,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 			while (rs.hasNext()) {
 				i++;
 				QuerySolution st=rs.next();
+				System.out.println(st.getLiteral("label").getString());
 	            engine.add(new SearchRecord(st.getLiteral("label").getString(),st.getResource("s")));
 			}
 			System.out.println("Got "+i+" labels!");
