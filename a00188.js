@@ -24,6 +24,7 @@ var a00188 =
     [ "requireExactlyOneOf", "a00188.html#adf26b0b91cec0117f511bf59481b523c", null ],
     [ "supportsIRIs", "a00188.html#a62c2cba212d66711b9a23cf4a6f486ac", null ],
     [ "supportsSPARQL11", "a00188.html#a5b131deaed4ebf24c5787ef7879ceafc", null ],
+    [ "datasetBase", "a00188.html#a97806fc09c1400cee4edd69ae19d5a4b", null ],
     [ "dataSource", "a00188.html#a0565026296eb9b83b087cce11898ff08", null ],
     [ "metadata", "a00188.html#a290a08c1de1d99d5ae29f8c659c58ef3", null ],
     [ "sparqlDataSource", "a00188.html#a7257c75d74e2c392e2517c0ed3af938a", null ]
