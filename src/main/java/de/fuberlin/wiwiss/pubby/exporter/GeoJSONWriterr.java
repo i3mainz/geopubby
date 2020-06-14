@@ -96,6 +96,9 @@ public class GeoJSONWriterr implements ModelWriter {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+					}else if(GEO.ASGEOJSON.getURI().equals(curst.getPredicate().getURI().toString())){
+					     if(curst.getObject().asLiteral().getString()!=null)
+						    curfeature.put("geometry",new JSONObject(curst.getObject().asLiteral().getString()));
 					}else if(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){
 						lat=curst.getObject().asLiteral().getDouble();
 					}else if(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){
