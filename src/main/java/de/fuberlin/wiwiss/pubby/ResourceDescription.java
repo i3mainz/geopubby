@@ -104,7 +104,7 @@ public class ResourceDescription {
 	 			try {
 	 			Geometry geom=reader.read(literal);
 	 			geoms.add(geom);
-	 			}catch(NullPointerException e) {
+	 			}catch(RuntimeException e) {
 	 				e.printStackTrace();
 	 			}
 	 		}
