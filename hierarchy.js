@@ -6,7 +6,7 @@ var hierarchy =
     [ "AutocompleteEngine< de.fuberlin.wiwiss.pubby.util.SearchRecord >", "a00404.html", null ],
     [ "AutocompleteEngine< T extends Indexable >.Builder< T extends Indexable >", "a00408.html", null ],
     [ "VocabularyStore.CachedPropertyCollection", "a00440.html", null ],
-    [ "Comparable", "a01084.html", [
+    [ "Comparable", "a01092.html", [
       [ "ResourceDescription.ResourceProperty", "a00300.html", null ],
       [ "ResourceDescription.Value", "a00308.html", null ]
     ] ],
@@ -55,10 +55,10 @@ var hierarchy =
       [ "Dataset", "a00188.html", null ],
       [ "MetadataConfiguration", "a00232.html", null ]
     ] ],
-    [ "Runnable", "a01088.html", [
+    [ "Runnable", "a01096.html", [
       [ "Reloader", "a00412.html", null ]
     ] ],
-    [ "RuntimeException", "a01092.html", [
+    [ "RuntimeException", "a01100.html", [
       [ "ConfigurationException", "a00184.html", null ]
     ] ],
     [ "URIPrefixer", "a00400.html", null ],
@@ -88,11 +88,11 @@ var hierarchy =
     [ "HttpServletRequestWrapper", null, [
       [ "RequestParamHandler.WrappedRequest", "a00336.html", null ]
     ] ],
-    [ "Indexable", "a00976.html", null ],
+    [ "Indexable", "a00984.html", null ],
+    [ "Indexable", "a00984.html", null ],
     [ "Indexable", null, [
       [ "SearchRecord", "a00420.html", null ]
     ] ],
-    [ "Indexable", "a00976.html", null ],
     [ "IndexAdapter", null, [
       [ "SearchAdapter", "a00416.html", null ]
     ] ],

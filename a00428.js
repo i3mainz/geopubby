@@ -1,5 +1,7 @@
 var a00428 =
 [
+    [ "ASGEOJSON", "a00428.html#afc6375b31a4b188e127ee01b9ee0a544", null ],
+    [ "ASGML", "a00428.html#a7d05011f10f73bdb11355876136c7957", null ],
     [ "ASWKT", "a00428.html#af3b39bf8d8c41f1b00a9c91c00034c73", null ],
     [ "EPSG", "a00428.html#a0fc2d65d7e1c8d618abd44757c1f5f70", null ],
     [ "geomprops", "a00428.html#a7167f6b3f9027d7dcc0f4135a9c2346d", null ],
