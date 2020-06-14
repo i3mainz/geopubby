@@ -99,9 +99,11 @@ public class ResourceDescription {
 	 private void addGeometryGeoJSON(final Literal literall) {
 	 		String literal=literall.getString();
 	 		System.out.println("GeometryGeoJSON: "+literal);
-	 		GeoJSONReader reader=new GeoJSONReader(); 		
-	 		Geometry geom=reader.read(literal);
-	 		geoms.add(geom);
+	 		GeoJSONReader reader=new GeoJSONReader(); 	
+	 		if(literal!=null) {
+	 		    Geometry geom=reader.read(literal);
+	 		    geoms.add(geom);
+	 		}
 	 }
 	 
 	 private void addGeometry(final Resource r) {
