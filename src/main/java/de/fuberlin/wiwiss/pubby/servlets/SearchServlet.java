@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.vocabulary.RDF;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -60,6 +62,12 @@ public class SearchServlet extends BaseServlet {
 		for(SearchRecord rec:res) {
 			JSONObject instance=new JSONObject();
 			instance.put("label",rec.getLabel());
+			instance.put("classes",new JSONArray());
+			StmtIterator st = rec.getResource().listProperties(RDF.type);
+			while(st.hasNext()) {
+				instance.getJSONArray("classes").put(st.next().getObject().asResource().getURI().toString());
+			}
+			st.close();
 			String val=rec.getResource().getURI();
 			for(Dataset ds:config.getDatasets()) {	
 				System.out.println(ds.datasetBase+" - "+config.getWebApplicationBaseURI());
@@ -69,7 +77,7 @@ public class SearchServlet extends BaseServlet {
 			instance.put("id",rec.getResource().getURI());
 			result.put(instance);			
 		}
-		response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
+		response.setContentType("application/json; charset=UTF-8");  // Set content type of the response so that jQuery knows what it can expect.
 	    response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
 	    response.getWriter().write(result.toString(2));
 		}

@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -18,8 +19,9 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
-
+import org.wololo.jts2geojson.GeoJSONReader;
 import org.apache.jena.graph.Node;
+import org.apache.jena.graph.impl.LiteralLabel;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
@@ -30,6 +32,7 @@ import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.shared.PrefixMapping;
 import org.apache.jena.shared.impl.PrefixMappingImpl;
 import org.apache.jena.vocabulary.RDF;
+import org.apache.jena.vocabulary.RDFS;
 import org.apache.jena.vocabulary.XSD;
 
 import de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection;
@@ -93,6 +96,14 @@ public class ResourceDescription {
 				}
 	    }
 	 
+	 private void addGeometryGeoJSON(final Literal literall) {
+	 		String literal=literall.getString();
+	 		System.out.println("GeometryGeoJSON: "+literal);
+	 		GeoJSONReader reader=new GeoJSONReader(); 		
+	 		Geometry geom=reader.read(literal);
+	 		geoms.add(geom);
+	 }
+	 
 	 private void addGeometry(final Resource r) {
 	        StmtIterator it= resource.listProperties(GEO.ASWKT);
 	        while(it.hasNext()) {
@@ -107,6 +118,14 @@ public class ResourceDescription {
 	            Statement s = it.nextStatement();
 	            if ( !s.getObject().isAnon() ) {
 	                addGeometry2(s.getObject().asLiteral());
+	            }
+	        }
+	        it.close();
+	        it= resource.listProperties(GEO.ASGEOJSON);
+	        while(it.hasNext()) {
+	            Statement s = it.nextStatement();
+	            if ( !s.getObject().isAnon() ) {
+	                addGeometryGeoJSON(s.getObject().asLiteral());
 	            }
 	        }
 	        it.close();
@@ -310,6 +329,7 @@ public class ResourceDescription {
 			PropertyBuilder propertyBuilder = (PropertyBuilder) it2.next();
 			results.add(propertyBuilder.toProperty());
 		}
+		System.out.println("Build properties finished!");
 		Collections.sort(results);
 		return results;
 	}
@@ -421,8 +441,19 @@ public class ResourceDescription {
 			return getLabel(isMultiValued());
 		}
 		public String getLabel(boolean preferPlural) {
+			System.out.println("Getting label (plural)? "+predicate.getURI());
 			Literal label = vocabularyStore.getLabel(predicate.getURI(), preferPlural);
-			if (label == null) return null;
+			System.out.println("Found label: "+label);
+			if (label == null) {
+				StmtIterator iter=predicate.listProperties(RDFS.label);
+				if(iter.hasNext()) {
+					String labelprop=iter.next().getObject().asLiteral().getString();
+					System.out.println("Got Label for Prop: "+labelprop);
+					return labelprop;
+				}else {
+					return null;
+				}
+			}			
 			return toTitleCase(label.getLexicalForm(), label.getLanguage());
 		}
 		public String getInverseLabel() {
@@ -503,6 +534,7 @@ public class ResourceDescription {
 	private class PropertyBuilder {
 		private final Property predicate;
 		private final boolean isInverse;
+		//private final List<LiteralLabel> labels;
 		private final List<Value> values = new ArrayList<Value>();
 		private final List<ResourceDescription> blankNodeDescriptions = 
 				new ArrayList<ResourceDescription>();
@@ -513,6 +545,7 @@ public class ResourceDescription {
 			this.isInverse = isInverse;
 			this.vocabularyStore = vocabularyStore;
 		}
+		
 		void addValue(RDFNode valueNode) {
 			if (valueNode.isAnon()) {
 				blankNodeDescriptions.add(new ResourceDescription(
@@ -570,7 +603,9 @@ public class ResourceDescription {
 			return prefixer.getLocalName();
 		}
 		public String getLabel() {
+			System.out.println("Getting label for "+node.toString());
 			if (!node.isResource()) return null;
+			System.out.println(node.toString()+" is a resource!");
 			Literal result = null;
 			if (node.isURIResource()) {
 				if (predicate.equals(RDF.type)) {
@@ -579,11 +614,13 @@ public class ResourceDescription {
 				} else if (node.isURIResource()) {
 					// If it's not a class, see if we happen to have a label cached
 					result = vocabularyStore.getCachedLabel(node.asResource().getURI(), false);
+					//System.out.println("HasCachedLabel? "+result.toString());
 				}
 			}
 			if (result == null) {
 				// Use any label that may be included in the description model
 				result = new ResourceDescription(node.asResource(), model, config).getLabel();
+				//System.out.println("Resource has label? "+result.toString());
 			}
 			if (result == null) return null;
 			return toTitleCase(result.getLexicalForm(), result.getLanguage());
@@ -613,6 +650,7 @@ public class ResourceDescription {
 		public boolean isType() {
 			return predicate.equals(RDF.type);
 		}
+		
 		public int compareTo(Value other) {
 			if (!(other instanceof Value)) {
 				return 0;
