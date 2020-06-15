@@ -38,7 +38,7 @@
     #end 
 #end
 #if ($value.Node.LiteralLanguage != "")
-      <small> ($value.Node.LiteralLanguage)</small>
+      <small><a href="http://www.fao.org/aims/aos/$value.Node.LiteralLanguage" target="_blank">($value.Node.LiteralLanguage)</a></small>
 #end
     </span>
 #end
