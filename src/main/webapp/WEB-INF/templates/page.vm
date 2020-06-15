@@ -108,7 +108,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               onEachFeature: function (feature, layer) {
               		var popup="<b><a href=\"$uri\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
                     for(prop in feature.properties){
-                        if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && feature.properties[prop][0]["proplabel"]!=='undefined'){
+                        if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && "proplabel" in feature.properties[prop][0] &&  feature.properties[prop][0]["proplabel"]!=='undefined'){
                             popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+feature.properties[prop][0]["proplabel"]+"</a> - "
                         }else if((typeof prop !== 'undefined') && prop.includes("http")){
                         	popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
@@ -116,7 +116,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                         	popup+="<li>"+prop+" - "
                         }
                         if(feature.properties[prop].length<=1){
-                            if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("http")){
+                            if((typeof feature.properties[prop][0] !== 'undefined') && "uri" in feature.properties[prop][0] && feature.properties[prop][0]["uri"].startsWith("http")){
                         	        popup+="<a href=\""+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
                                     if("vallabel" in feature.properties[prop][0]){
                                         popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
