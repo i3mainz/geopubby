@@ -8,9 +8,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.vocabulary.RDF;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
+import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 public class SearchServlet extends BaseServlet {
@@ -53,11 +57,27 @@ public class SearchServlet extends BaseServlet {
 			System.out.println(config.getDataSource().getLabelIndex());
 		}
 		System.out.println("Results: "+res.size());
-		JSONObject result=new JSONObject();
+		JSONArray result=new JSONArray();
+		
 		for(SearchRecord rec:res) {
-			result.put(rec.getLabel(), rec.getResource().getURI());			
+			JSONObject instance=new JSONObject();
+			instance.put("label",rec.getLabel());
+			instance.put("classes",new JSONArray());
+			StmtIterator st = rec.getResource().listProperties(RDF.type);
+			while(st.hasNext()) {
+				instance.getJSONArray("classes").put(st.next().getObject().asResource().getURI().toString());
+			}
+			st.close();
+			String val=rec.getResource().getURI();
+			for(Dataset ds:config.getDatasets()) {	
+				System.out.println(ds.datasetBase+" - "+config.getWebApplicationBaseURI());
+				val=val.replace(ds.datasetBase,config.getWebApplicationBaseURI());
+			}
+			instance.put("value",val);
+			instance.put("id",rec.getResource().getURI());
+			result.put(instance);			
 		}
-		response.setContentType("application/json");  // Set content type of the response so that jQuery knows what it can expect.
+		response.setContentType("application/json; charset=UTF-8");  // Set content type of the response so that jQuery knows what it can expect.
 	    response.setCharacterEncoding("UTF-8"); // You want world domination, huh?
 	    response.getWriter().write(result.toString(2));
 		}

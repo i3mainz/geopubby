@@ -8,10 +8,11 @@
 
 #if (!$geoms.isEmpty())
 <a name="geo"></a>
-<div id="map" style="height:500px">
+<div id="map" style="height:500px;z-index: 0;">
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+
 <script type="text/javascript">
 var overlayMaps={}
 var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
@@ -25,7 +26,6 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
 		});
 	var baseMaps = {
-    "BKG": wmsLayer,
         "OSM": layer
 	};
 	baseMaps["OSM"].addTo(map);
@@ -108,13 +108,15 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               onEachFeature: function (feature, layer) {
               		var popup="<b><a href=\"$uri\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
                     for(prop in feature.properties){
-                        if((typeof prop !== 'undefined') && prop.includes("http")){
+                        if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && feature.properties[prop].length>0 && "proplabel" in feature.properties[prop][0] &&  feature.properties[prop][0]["proplabel"]!=='undefined'){
+                            popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+feature.properties[prop][0]["proplabel"]+"</a> - "
+                        }else if((typeof prop !== 'undefined') && prop.includes("http")){
                         	popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
                         }else{
                         	popup+="<li>"+prop+" - "
                         }
                         if(feature.properties[prop].length==1){
-                            if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("http")){
+                            if((typeof feature.properties[prop][0] !== 'undefined') && "uri" in feature.properties[prop][0] && feature.properties[prop][0]["uri"].startsWith("http")){
                         	        popup+="<a href=\""+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
                                     if("vallabel" in feature.properties[prop][0]){
                                         popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
@@ -138,8 +140,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                             }else{
                         	        popup+=feature.properties[prop][0]["uri"]+"</li>"
                             }
-
-                        }else{
+                        }else if(feature.properties[prop].length>1){
                             popup+="<ul>"
                             for(val in feature.properties[prop]){
                                 popup+="<li>"
@@ -203,7 +204,5 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
 </div>
 #end
-
-
 
 #parse("footer.vm")

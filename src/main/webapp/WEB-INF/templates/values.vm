@@ -8,11 +8,11 @@
         <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI">$value.label
     #else
         <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank">$value.label
-        #if($value.hasPrefix())
-            (<small>$value.Prefix:</small>$value.LocalName)
-        #else
-            (<small>?:</small>$value.LocalName)
-        #end
+    #end
+    #if($value.hasPrefix())
+        (<small>$value.Prefix:</small>$value.LocalName)
+    #else
+        (<small>?:</small>$value.LocalName)
     #end
     </a>
 #elseif ($value.hasPrefix())
@@ -38,7 +38,7 @@
     #end 
 #end
 #if ($value.Node.LiteralLanguage != "")
-      <small> ($value.Node.LiteralLanguage)</small>
+      <small><a href="http://www.fao.org/aims/aos/$value.Node.LiteralLanguage" style="color: #666;" target="_blank">($value.Node.LiteralLanguage)</a></small>
 #end
     </span>
 #end

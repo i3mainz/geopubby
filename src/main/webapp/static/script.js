@@ -12,7 +12,7 @@ function init_long_literals() {
         var span = spans[i];
         var textNode = span.firstChild;
         var text = textNode.data;
-        if (text.length < 300) continue;
+         if ((typeof text === 'undefined') || text.length < 300) continue;
         var match = text.match(/([^\0]{150}[^\0]*? )([^\0]*)/);
         if (!match) continue;
         span.insertBefore(document.createTextNode(match[1] + ' ... '), span.firstChild);
