@@ -78,10 +78,6 @@ public class RemoteSPARQLDataSource implements DataSource {
 			Set<String> anonPropertyQueries, Set<String> anonInversePropertyQueries,
 			CachedPropertyCollection highIndegreeProperties, CachedPropertyCollection highOutdegreeProperties) {
 		this.endpointURL = endpointURL;
-		this.engine = new AutocompleteEngine.Builder<SearchRecord>()
-	            .setIndex(new SearchAdapter())
-	            .setAnalyzers(new LowerCaseTransformer(), new WordTokenizer())
-	            .build();
 		this.defaultGraphURI = defaultGraphURI;
 		this.supportsSPARQL11 = supportsSPARQL11;
 		if (resourceQueries == null || resourceQueries.isEmpty()) {
@@ -265,12 +261,13 @@ public class RemoteSPARQLDataSource implements DataSource {
 					"SELECT DISTINCT ?s ?label WHERE { " +
 					"?s <http://www.w3.org/2000/01/rdf-schema#label> ?label . " +
 					"FILTER (isURI(?s)) " +
-					"} LIMIT " + DataSource.MAX_INDEX_SIZE*2);
+					"} LIMIT " + DataSource.MAX_INDEX_SIZE*6);
 			Integer i=0;
 			while (rs.hasNext()) {
 				i++;
 				QuerySolution st=rs.next();
-	            engine.add(new SearchRecord(st.getLiteral("label").getString(),st.getResource("s")));
+				System.out.println(st.getLiteral("label").getString());
+				engine.add(new SearchRecord(st.getLiteral("label").getString(),st.getResource("s")));
 			}
 			System.out.println("Got "+i+" labels!");
 		}
