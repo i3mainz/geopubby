@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: RequestParamHandler Class Reference</title>
+<title>GeoPubby: ResourceDescription.PropertyBuilder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,103 +61,106 @@ $(document).ready(function(){initNavTree('a00332.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pac-static-methods">Static Package Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pac-methods">Package Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="a00329.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RequestParamHandler Class Reference</div>  </div>
+<div class="title">ResourceDescription.PropertyBuilder Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Analyzes an HttpServletRequest to check for the presence of an ?output=n3 or =ttl or =rdfxml request parameter in the URI.  
- <a href="a00332.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for RequestParamHandler:</div>
+Collaboration diagram for ResourceDescription.PropertyBuilder:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00330.png" border="0" usemap="#RequestParamHandler_coll__map" alt="Collaboration graph"/></div>
-<map name="RequestParamHandler_coll__map" id="RequestParamHandler_coll__map">
+<div class="center"><img src="a00330.png" border="0" usemap="#ResourceDescription_8PropertyBuilder_coll__map" alt="Collaboration graph"/></div>
+<map name="ResourceDescription_8PropertyBuilder_coll__map" id="ResourceDescription_8PropertyBuilder_coll__map">
+<area shape="rect" id="node13" href="a00472.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,253,629,279"/>
+<area shape="rect" id="node5" href="a00464.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1675,317,1794,343"/>
+<area shape="rect" id="node7" href="a00468.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,379,1400,420"/>
+<area shape="rect" id="node11" href="a00480.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,192,1389,233"/>
+<area shape="rect" id="node12" href="a00472.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,193,1016,235"/>
+<area shape="rect" id="node18" href="a00472.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,260,1016,301"/>
+<area shape="rect" id="node17" href="a00476.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,261,1383,303"/>
+<area shape="rect" id="node19" href="a00400.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,445,1337,471"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00336.html">WrappedRequest</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a78ddf90d954b28fddd8107d28222c31e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a78ddf90d954b28fddd8107d28222c31e">RequestParamHandler</a> (HttpServletRequest <a class="el" href="a00332.html#ad632242c9a97c676da2987811ea46e83">request</a>)</td></tr>
-<tr class="separator:a78ddf90d954b28fddd8107d28222c31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33a700fbc74b6d65d9f10230245f852f"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a33a700fbc74b6d65d9f10230245f852f">isMatchingRequest</a> ()</td></tr>
-<tr class="separator:a33a700fbc74b6d65d9f10230245f852f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a4a2fc72dd4dc4202f74244b5750ca9"><td class="memItemLeft" align="right" valign="top">HttpServletRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a8a4a2fc72dd4dc4202f74244b5750ca9">getModifiedRequest</a> ()</td></tr>
-<tr class="separator:a8a4a2fc72dd4dc4202f74244b5750ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aac8e0c252a2aa3a037e32b1c139da1d5"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#aac8e0c252a2aa3a037e32b1c139da1d5">removeOutputRequestParam</a> (String uri)</td></tr>
-<tr class="memdesc:aac8e0c252a2aa3a037e32b1c139da1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the "output=foobar" part of a URI if present.  <a href="#aac8e0c252a2aa3a037e32b1c139da1d5">More...</a><br /></td></tr>
-<tr class="separator:aac8e0c252a2aa3a037e32b1c139da1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-static-methods"></a>
-Static Package Functions</h2></td></tr>
-<tr class="memitem:a2e87c5ede6b7235170d287cd2e254454"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a2e87c5ede6b7235170d287cd2e254454">[static initializer]</a></td></tr>
-<tr class="separator:a2e87c5ede6b7235170d287cd2e254454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a787a7136420b59f91d860e9acda556b1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a787a7136420b59f91d860e9acda556b1">identifyRequestedType</a> (String parameterValue)</td></tr>
-<tr class="separator:a787a7136420b59f91d860e9acda556b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
+Package Functions</h2></td></tr>
+<tr class="memitem:ae0adae1e09e59e9cd8908d1a4754dabf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#ae0adae1e09e59e9cd8908d1a4754dabf">PropertyBuilder</a> (Property <a class="el" href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">predicate</a>, boolean <a class="el" href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">isInverse</a>, <a class="el" href="a00464.html">VocabularyStore</a> <a class="el" href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">vocabularyStore</a>)</td></tr>
+<tr class="separator:ae0adae1e09e59e9cd8908d1a4754dabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c7c671ab4ed298bc1953f546a71e04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a39c7c671ab4ed298bc1953f546a71e04">addValue</a> (RDFNode valueNode)</td></tr>
+<tr class="separator:a39c7c671ab4ed298bc1953f546a71e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56093db616f5ec791e721da4b41bcb74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a56093db616f5ec791e721da4b41bcb74">addHighDegreeArcs</a> (int count)</td></tr>
+<tr class="separator:a56093db616f5ec791e721da4b41bcb74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c56e4c4709f129f7a0205d6c867ad5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00328.html">ResourceProperty</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a2c56e4c4709f129f7a0205d6c867ad5f">toProperty</a> ()</td></tr>
+<tr class="separator:a2c56e4c4709f129f7a0205d6c867ad5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad632242c9a97c676da2987811ea46e83"><td class="memItemLeft" align="right" valign="top">final HttpServletRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#ad632242c9a97c676da2987811ea46e83">request</a></td></tr>
-<tr class="separator:ad632242c9a97c676da2987811ea46e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a053eb9bde998fd324ba1d3c9178b9d4c"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a></td></tr>
-<tr class="separator:a053eb9bde998fd324ba1d3c9178b9d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:ad985604e395e1ac08a77a4c2e2b2b267"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#ad985604e395e1ac08a77a4c2e2b2b267">ATTRIBUTE_NAME_IS_HANDLED</a></td></tr>
-<tr class="separator:ad985604e395e1ac08a77a4c2e2b2b267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a354bb05992ad3230abb0504d5b255d9e"><td class="memItemLeft" align="right" valign="top">static final Map&lt; String, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a354bb05992ad3230abb0504d5b255d9e">mimeTypes</a> = new HashMap&lt;String,String&gt;()</td></tr>
-<tr class="separator:a354bb05992ad3230abb0504d5b255d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ef63e37d986c48ab7c19294531f962"><td class="memItemLeft" align="right" valign="top">final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">predicate</a></td></tr>
+<tr class="separator:aa9ef63e37d986c48ab7c19294531f962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4556acebb4b8d61aab8f863143d163d6"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">isInverse</a></td></tr>
+<tr class="separator:a4556acebb4b8d61aab8f863143d163d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78978dc7828b1ff5932b3cb465e09ac7"><td class="memItemLeft" align="right" valign="top">final List&lt; <a class="el" href="a00336.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#a78978dc7828b1ff5932b3cb465e09ac7">values</a> = new ArrayList&lt;<a class="el" href="a00336.html">Value</a>&gt;()</td></tr>
+<tr class="separator:a78978dc7828b1ff5932b3cb465e09ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d12ed9691193b05643c24b1b10e3ee"><td class="memItemLeft" align="right" valign="top">final List&lt; <a class="el" href="a00324.html">ResourceDescription</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#af6d12ed9691193b05643c24b1b10e3ee">blankNodeDescriptions</a></td></tr>
+<tr class="separator:af6d12ed9691193b05643c24b1b10e3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6574d553f74a485106af0677f2c8882"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#aa6574d553f74a485106af0677f2c8882">highDegreeArcCount</a> = 0</td></tr>
+<tr class="separator:aa6574d553f74a485106af0677f2c8882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcedb82d4994dd55d8b1d513b0601a95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00464.html">VocabularyStore</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">vocabularyStore</a></td></tr>
+<tr class="separator:abcedb82d4994dd55d8b1d513b0601a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Analyzes an HttpServletRequest to check for the presence of an ?output=n3 or =ttl or =rdfxml request parameter in the URI. </p>
-<p>If present, returns a modified HttpServletRequest that has the appropriate MIME type in the Accept: header. This request can then be fed into the rest of our content negotiation based tooling. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a78ddf90d954b28fddd8107d28222c31e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78ddf90d954b28fddd8107d28222c31e">&#9670;&nbsp;</a></span>RequestParamHandler()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae0adae1e09e59e9cd8908d1a4754dabf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0adae1e09e59e9cd8908d1a4754dabf">&#9670;&nbsp;</a></span>PropertyBuilder()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00332.html">RequestParamHandler</a> </td>
+          <td class="memname"><a class="el" href="a00332.html">PropertyBuilder</a> </td>
           <td>(</td>
-          <td class="paramtype">HttpServletRequest&#160;</td>
-          <td class="paramname"><em>request</em></td><td>)</td>
+          <td class="paramtype">Property&#160;</td>
+          <td class="paramname"><em>predicate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isInverse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00464.html">VocabularyStore</a>&#160;</td>
+          <td class="paramname"><em>vocabularyStore</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00332.html#a787a7136420b59f91d860e9acda556b1">RequestParamHandler.identifyRequestedType()</a>, and <a class="el" href="a00332.html#ad632242c9a97c676da2987811ea46e83">RequestParamHandler.request</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                               {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                this.<a class="code" href="a00332.html#ad632242c9a97c676da2987811ea46e83">request</a> = <a class="code" href="a00332.html#ad632242c9a97c676da2987811ea46e83">request</a>;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="a00332.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a> = <a class="code" href="a00332.html#a787a7136420b59f91d860e9acda556b1">identifyRequestedType</a>(<a class="code" href="a00332.html#ad632242c9a97c676da2987811ea46e83">request</a>.getParameter(<span class="stringliteral">&quot;output&quot;</span>));</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="a00332_html_a787a7136420b59f91d860e9acda556b1"><div class="ttname"><a href="a00332.html#a787a7136420b59f91d860e9acda556b1">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.identifyRequestedType</a></div><div class="ttdeci">String identifyRequestedType(String parameterValue)</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:83</div></div>
-<div class="ttc" id="a00332_html_a053eb9bde998fd324ba1d3c9178b9d4c"><div class="ttname"><a href="a00332.html#a053eb9bde998fd324ba1d3c9178b9d4c">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.requestedType</a></div><div class="ttdeci">final String requestedType</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:65</div></div>
-<div class="ttc" id="a00332_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00332.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:64</div></div>
+<p class="reference">References <a class="el" href="a00328.html#abc5a1c326b4720a0f8108ade9cf78f50">ResourceDescription.ResourceProperty.isInverse()</a>, <a class="el" href="a00328.html#aa9ef63e37d986c48ab7c19294531f962">ResourceDescription.ResourceProperty.predicate</a>, and <a class="el" href="a00328.html#a93feb4ada3ad710e05a7b121b432ec9b">ResourceDescription.ResourceProperty.vocabularyStore</a>.</p>
+<div class="fragment"><div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                                                                                                        {</div><div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                        this.<a class="code" href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">predicate</a> = <a class="code" href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">predicate</a>;</div><div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                        this.<a class="code" href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">isInverse</a> = <a class="code" href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">isInverse</a>;</div><div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                        this.<a class="code" href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">vocabularyStore</a> = <a class="code" href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">vocabularyStore</a>;</div><div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                }</div><div class="ttc" id="a00332_html_abcedb82d4994dd55d8b1d513b0601a95"><div class="ttname"><a href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.vocabularyStore</a></div><div class="ttdeci">VocabularyStore vocabularyStore</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:548</div></div>
+<div class="ttc" id="a00332_html_aa9ef63e37d986c48ab7c19294531f962"><div class="ttname"><a href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.predicate</a></div><div class="ttdeci">final Property predicate</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:541</div></div>
+<div class="ttc" id="a00332_html_a4556acebb4b8d61aab8f863143d163d6"><div class="ttname"><a href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.isInverse</a></div><div class="ttdeci">final boolean isInverse</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:542</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2e87c5ede6b7235170d287cd2e254454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e87c5ede6b7235170d287cd2e254454">&#9670;&nbsp;</a></span>[static initializer]()</h2>
+<a id="a56093db616f5ec791e721da4b41bcb74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56093db616f5ec791e721da4b41bcb74">&#9670;&nbsp;</a></span>addHighDegreeArcs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,93 +169,25 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">[static initializer] </td>
+          <td class="memname">void addHighDegreeArcs </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8a4a2fc72dd4dc4202f74244b5750ca9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a4a2fc72dd4dc4202f74244b5750ca9">&#9670;&nbsp;</a></span>getModifiedRequest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">HttpServletRequest getModifiedRequest </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00236.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                       {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> WrappedRequest();</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div></div><!-- fragment -->
-</div>
-</div>
-<a id="a787a7136420b59f91d860e9acda556b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a787a7136420b59f91d860e9acda556b1">&#9670;&nbsp;</a></span>identifyRequestedType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String identifyRequestedType </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>parameterValue</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00332.html#a78ddf90d954b28fddd8107d28222c31e">RequestParamHandler.RequestParamHandler()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                                    {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00332.html#a354bb05992ad3230abb0504d5b255d9e">mimeTypes</a>.containsKey(parameterValue)) {</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        <span class="keywordflow">return</span> parameterValue;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div><div class="ttc" id="a00332_html_a354bb05992ad3230abb0504d5b255d9e"><div class="ttname"><a href="a00332.html#a354bb05992ad3230abb0504d5b255d9e">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.mimeTypes</a></div><div class="ttdeci">static final Map&lt; String, String &gt; mimeTypes</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:22</div></div>
+<div class="fragment"><div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                                                  {</div><div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                        <a class="code" href="a00332.html#aa6574d553f74a485106af0677f2c8882">highDegreeArcCount</a> += count;</div><div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                }</div><div class="ttc" id="a00332_html_aa6574d553f74a485106af0677f2c8882"><div class="ttname"><a href="a00332.html#aa6574d553f74a485106af0677f2c8882">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.highDegreeArcCount</a></div><div class="ttdeci">int highDegreeArcCount</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:547</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a33a700fbc74b6d65d9f10230245f852f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33a700fbc74b6d65d9f10230245f852f">&#9670;&nbsp;</a></span>isMatchingRequest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean isMatchingRequest </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00236.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                           {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.equals(<a class="code" href="a00332.html#ad632242c9a97c676da2987811ea46e83">request</a>.getAttribute(<a class="code" href="a00332.html#ad985604e395e1ac08a77a4c2e2b2b267">ATTRIBUTE_NAME_IS_HANDLED</a>))) {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                }</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00332.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a> != null;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div><div class="ttc" id="a00332_html_a053eb9bde998fd324ba1d3c9178b9d4c"><div class="ttname"><a href="a00332.html#a053eb9bde998fd324ba1d3c9178b9d4c">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.requestedType</a></div><div class="ttdeci">final String requestedType</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:65</div></div>
-<div class="ttc" id="a00332_html_ad985604e395e1ac08a77a4c2e2b2b267"><div class="ttname"><a href="a00332.html#ad985604e395e1ac08a77a4c2e2b2b267">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.ATTRIBUTE_NAME_IS_HANDLED</a></div><div class="ttdeci">static final String ATTRIBUTE_NAME_IS_HANDLED</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:20</div></div>
-<div class="ttc" id="a00332_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00332.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:64</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aac8e0c252a2aa3a037e32b1c139da1d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac8e0c252a2aa3a037e32b1c139da1d5">&#9670;&nbsp;</a></span>removeOutputRequestParam()</h2>
+<a id="a39c7c671ab4ed298bc1953f546a71e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c7c671ab4ed298bc1953f546a71e04">&#9670;&nbsp;</a></span>addValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,27 +196,69 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static String removeOutputRequestParam </td>
+          <td class="memname">void addValue </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>uri</em></td><td>)</td>
+          <td class="paramtype">RDFNode&#160;</td>
+          <td class="paramname"><em>valueNode</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Removes the "output=foobar" part of a URI if present. </p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                                  {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="comment">// Remove the param: output=[a-z0-9]*</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="comment">// There are two cases. The param can occur at the end of the URI,</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">// this is matched by the first part: [?&amp;]param$</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="comment">// Or it can occur elsewhere, then it&#39;s matched by param&amp; with a</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">// lookbehind that requires [?&amp;] to occur before the pattern.</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> uri.replaceFirst(<span class="stringliteral">&quot;([?&amp;]output=[a-z0-9]*$)|((?&lt;=[?&amp;])output=[a-z0-9]*&amp;)&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div></div><!-- fragment -->
+<p class="reference">References <a class="el" href="a00324.html#ae9dc406bdd1efad232eaf625a5714fc9">ResourceDescription.config</a>, <a class="el" href="a00324.html#a90a5d09b372ff559243f5e3a2e529ea7">ResourceDescription.getModel()</a>, and <a class="el" href="a00324.html#ab9bbaadfa51a07d481368d85f435e968">ResourceDescription.ResourceDescription()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                                                 {</div><div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                        <span class="keywordflow">if</span> (valueNode.isAnon()) {</div><div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                                <a class="code" href="a00332.html#af6d12ed9691193b05643c24b1b10e3ee">blankNodeDescriptions</a>.add(<span class="keyword">new</span> <a class="code" href="a00324.html#ab9bbaadfa51a07d481368d85f435e968">ResourceDescription</a>(</div><div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                                                valueNode.asResource(), <a class="code" href="a00324.html#a90a5d09b372ff559243f5e3a2e529ea7">getModel</a>(), <a class="code" href="a00324.html#ae9dc406bdd1efad232eaf625a5714fc9">config</a>));</div><div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                        }</div><div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                        <a class="code" href="a00332.html#a78978dc7828b1ff5932b3cb465e09ac7">values</a>.add(<span class="keyword">new</span> Value(valueNode, <a class="code" href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">predicate</a>, <a class="code" href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">vocabularyStore</a>));</div><div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                }</div><div class="ttc" id="a00332_html_abcedb82d4994dd55d8b1d513b0601a95"><div class="ttname"><a href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.vocabularyStore</a></div><div class="ttdeci">VocabularyStore vocabularyStore</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:548</div></div>
+<div class="ttc" id="a00332_html_aa9ef63e37d986c48ab7c19294531f962"><div class="ttname"><a href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.predicate</a></div><div class="ttdeci">final Property predicate</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:541</div></div>
+<div class="ttc" id="a00332_html_a78978dc7828b1ff5932b3cb465e09ac7"><div class="ttname"><a href="a00332.html#a78978dc7828b1ff5932b3cb465e09ac7">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.values</a></div><div class="ttdeci">final List&lt; Value &gt; values</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:544</div></div>
+<div class="ttc" id="a00324_html_ab9bbaadfa51a07d481368d85f435e968"><div class="ttname"><a href="a00324.html#ab9bbaadfa51a07d481368d85f435e968">de.fuberlin.wiwiss.pubby.ResourceDescription.ResourceDescription</a></div><div class="ttdeci">ResourceDescription(HypermediaControls controller, Model model, Configuration config)</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:64</div></div>
+<div class="ttc" id="a00332_html_af6d12ed9691193b05643c24b1b10e3ee"><div class="ttname"><a href="a00332.html#af6d12ed9691193b05643c24b1b10e3ee">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.blankNodeDescriptions</a></div><div class="ttdeci">final List&lt; ResourceDescription &gt; blankNodeDescriptions</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:545</div></div>
+<div class="ttc" id="a00324_html_ae9dc406bdd1efad232eaf625a5714fc9"><div class="ttname"><a href="a00324.html#ae9dc406bdd1efad232eaf625a5714fc9">de.fuberlin.wiwiss.pubby.ResourceDescription.config</a></div><div class="ttdeci">final Configuration config</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:55</div></div>
+<div class="ttc" id="a00324_html_a90a5d09b372ff559243f5e3a2e529ea7"><div class="ttname"><a href="a00324.html#a90a5d09b372ff559243f5e3a2e529ea7">de.fuberlin.wiwiss.pubby.ResourceDescription.getModel</a></div><div class="ttdeci">Model getModel()</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:220</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2c56e4c4709f129f7a0205d6c867ad5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c56e4c4709f129f7a0205d6c867ad5f">&#9670;&nbsp;</a></span>toProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00328.html">ResourceProperty</a> toProperty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00328.html#a686dac44ad83fbfc2036f4502ff61528">ResourceDescription.ResourceProperty.ResourceProperty()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00324.html#af16bca6fe717296244b425c638ac6fb9">ResourceDescription.buildProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                                              {</div><div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                        Collections.sort(<a class="code" href="a00332.html#a78978dc7828b1ff5932b3cb465e09ac7">values</a>);</div><div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> ResourceProperty(<a class="code" href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">predicate</a>, <a class="code" href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">isInverse</a>, <a class="code" href="a00332.html#a78978dc7828b1ff5932b3cb465e09ac7">values</a>, </div><div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                                        <a class="code" href="a00332.html#af6d12ed9691193b05643c24b1b10e3ee">blankNodeDescriptions</a>, <a class="code" href="a00332.html#aa6574d553f74a485106af0677f2c8882">highDegreeArcCount</a>, <a class="code" href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">vocabularyStore</a>);</div><div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                }</div><div class="ttc" id="a00332_html_abcedb82d4994dd55d8b1d513b0601a95"><div class="ttname"><a href="a00332.html#abcedb82d4994dd55d8b1d513b0601a95">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.vocabularyStore</a></div><div class="ttdeci">VocabularyStore vocabularyStore</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:548</div></div>
+<div class="ttc" id="a00332_html_aa6574d553f74a485106af0677f2c8882"><div class="ttname"><a href="a00332.html#aa6574d553f74a485106af0677f2c8882">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.highDegreeArcCount</a></div><div class="ttdeci">int highDegreeArcCount</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:547</div></div>
+<div class="ttc" id="a00332_html_aa9ef63e37d986c48ab7c19294531f962"><div class="ttname"><a href="a00332.html#aa9ef63e37d986c48ab7c19294531f962">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.predicate</a></div><div class="ttdeci">final Property predicate</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:541</div></div>
+<div class="ttc" id="a00332_html_a4556acebb4b8d61aab8f863143d163d6"><div class="ttname"><a href="a00332.html#a4556acebb4b8d61aab8f863143d163d6">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.isInverse</a></div><div class="ttdeci">final boolean isInverse</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:542</div></div>
+<div class="ttc" id="a00332_html_a78978dc7828b1ff5932b3cb465e09ac7"><div class="ttname"><a href="a00332.html#a78978dc7828b1ff5932b3cb465e09ac7">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.values</a></div><div class="ttdeci">final List&lt; Value &gt; values</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:544</div></div>
+<div class="ttc" id="a00332_html_af6d12ed9691193b05643c24b1b10e3ee"><div class="ttname"><a href="a00332.html#af6d12ed9691193b05643c24b1b10e3ee">de.fuberlin.wiwiss.pubby.ResourceDescription.PropertyBuilder.blankNodeDescriptions</a></div><div class="ttdeci">final List&lt; ResourceDescription &gt; blankNodeDescriptions</div><div class="ttdef"><b>Definition:</b> ResourceDescription.java:545</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad985604e395e1ac08a77a4c2e2b2b267"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad985604e395e1ac08a77a4c2e2b2b267">&#9670;&nbsp;</a></span>ATTRIBUTE_NAME_IS_HANDLED</h2>
+<a id="af6d12ed9691193b05643c24b1b10e3ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d12ed9691193b05643c24b1b10e3ee">&#9670;&nbsp;</a></span>blankNodeDescriptions</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,20 +267,20 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final String ATTRIBUTE_NAME_IS_HANDLED</td>
+          <td class="memname">final List&lt;<a class="el" href="a00324.html">ResourceDescription</a>&gt; blankNodeDescriptions</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">                <span class="stringliteral">&quot;OutputRequestParamHandler.isHandled&quot;</span></div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">                                <span class="keyword">new</span> ArrayList&lt;ResourceDescription&gt;()</div></div><!-- fragment -->
 </div>
 </div>
-<a id="a354bb05992ad3230abb0504d5b255d9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a354bb05992ad3230abb0504d5b255d9e">&#9670;&nbsp;</a></span>mimeTypes</h2>
+<a id="aa6574d553f74a485106af0677f2c8882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6574d553f74a485106af0677f2c8882">&#9670;&nbsp;</a></span>highDegreeArcCount</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,29 +289,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Map&lt;String,String&gt; mimeTypes = new HashMap&lt;String,String&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad632242c9a97c676da2987811ea46e83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad632242c9a97c676da2987811ea46e83">&#9670;&nbsp;</a></span>request</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final HttpServletRequest request</td>
+          <td class="memname">int highDegreeArcCount = 0</td>
         </tr>
       </table>
   </td>
@@ -344,12 +299,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00332.html#a78ddf90d954b28fddd8107d28222c31e">RequestParamHandler.RequestParamHandler()</a>.</p>
-
 </div>
 </div>
-<a id="a053eb9bde998fd324ba1d3c9178b9d4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a053eb9bde998fd324ba1d3c9178b9d4c">&#9670;&nbsp;</a></span>requestedType</h2>
+<a id="a4556acebb4b8d61aab8f863143d163d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4556acebb4b8d61aab8f863143d163d6">&#9670;&nbsp;</a></span>isInverse</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +311,73 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final String requestedType</td>
+          <td class="memname">final boolean isInverse</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9ef63e37d986c48ab7c19294531f962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ef63e37d986c48ab7c19294531f962">&#9670;&nbsp;</a></span>predicate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Property predicate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78978dc7828b1ff5932b3cb465e09ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78978dc7828b1ff5932b3cb465e09ac7">&#9670;&nbsp;</a></span>values</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final List&lt;<a class="el" href="a00336.html">Value</a>&gt; values = new ArrayList&lt;<a class="el" href="a00336.html">Value</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcedb82d4994dd55d8b1d513b0601a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcedb82d4994dd55d8b1d513b0601a95">&#9670;&nbsp;</a></span>vocabularyStore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00464.html">VocabularyStore</a> vocabularyStore</td>
         </tr>
       </table>
   </td>
@@ -376,7 +395,7 @@ Static Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00168.html">de</a></li><li class="navelem"><a class="el" href="a00169.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00170.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00167.html">pubby</a></li><li class="navelem"><a class="el" href="a00173.html">servlets</a></li><li class="navelem"><a class="el" href="a00332.html">RequestParamHandler</a></li>
+    <li class="navelem"><a class="el" href="a00180.html">de</a></li><li class="navelem"><a class="el" href="a00181.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00182.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00179.html">pubby</a></li><li class="navelem"><a class="el" href="a00324.html">ResourceDescription</a></li><li class="navelem"><a class="el" href="a00332.html">PropertyBuilder</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

@@ -1,12 +1,12 @@
 var a00400 =
 [
-    [ "URIPrefixer", "a00400.html#abebd08c86a66757c33787ad331c89ba7", null ],
-    [ "URIPrefixer", "a00400.html#ac6a7e4134557f6a0af45f334e5e917c6", null ],
-    [ "getLocalName", "a00400.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
-    [ "getPrefix", "a00400.html#a5b9a69b246225ec2eca3637f32437a16", null ],
-    [ "hasPrefix", "a00400.html#aab0bab54f99e36cce47bbbbc1c59cc52", null ],
-    [ "toTurtle", "a00400.html#a63af500e9606acd93d5b95c49d61efe9", null ],
-    [ "localName", "a00400.html#a8dac62958e49f5cdfac4a91262dbeacf", null ],
-    [ "prefix", "a00400.html#ab9aa80baa8113e20a123650a1e9d9a29", null ],
-    [ "resource", "a00400.html#a965b8a7998787959ad4196e807743f5d", null ]
+    [ "canDescribe", "a00400.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "describeResource", "a00400.html#ab085365476c05945218492b31028610a", null ],
+    [ "describeResource", "a00400.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
+    [ "getHighIndegreeProperties", "a00400.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00400.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00400.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00400.html#a95bb11e41c19f55f0ca37ae0689fd798", null ],
+    [ "listPropertyValues", "a00400.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "MAX_INDEX_SIZE", "a00400.html#a5d100ac468e8e0551f96450f5bbba1b2", null ]
 ];

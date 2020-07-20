@@ -1,11 +1,9 @@
 var a00448 =
 [
-    [ "I18nStringValueCache", "a00448.html#a5a7621c57d2b44b84c97d245068bb57e", null ],
-    [ "get", "a00448.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "get", "a00448.html#aaba80f598d3210ba4493a5854e98f5f8", null ],
-    [ "getBestMatch", "a00448.html#a890f5511eb1ae7cd4f54c9945df05a44", null ],
-    [ "getCached", "a00448.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "getCached", "a00448.html#ab4ff038935184bd1080b08388983e211", null ],
-    [ "getMatchLength", "a00448.html#acbeeee3d9843febb26b8cd03ee19ea4e", null ],
-    [ "pickBestValue", "a00448.html#a5a6385c9343184c17f0aa0d7960c6684", null ]
+    [ "SearchRecord", "a00448.html#a4ac7197cdb811ab9e27ad8b390355ce6", null ],
+    [ "getFields", "a00448.html#a0cce3babb743f2fc916f7c2bd20d965e", null ],
+    [ "getLabel", "a00448.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
+    [ "getResource", "a00448.html#afe4a3e88052dbc8b12e217669d8dac77", null ],
+    [ "label", "a00448.html#ac3f915eab3b535426bb9794989e9ea2e", null ],
+    [ "res", "a00448.html#a952d2a362956d26b604846d09847e970", null ]
 ];

@@ -1,5 +1,10 @@
 var a00186 =
 [
-    [ "write", "a00186.html#a8891059a6986f902a67dbcb9814a8874", null ],
-    [ "reader", "a00186.html#ae8b1e194dbc193fe759f7e517807e668", null ]
+    [ "DataSource", "a00400.html", "a00400" ],
+    [ "FilteredDataSource", "a00404.html", "a00404" ],
+    [ "IndexDataSource", "a00408.html", "a00408" ],
+    [ "MergeDataSource", "a00412.html", "a00412" ],
+    [ "ModelDataSource", "a00416.html", "a00416" ],
+    [ "RemoteSPARQLDataSource", "a00420.html", "a00420" ],
+    [ "RewrittenDataSource", "a00424.html", "a00424" ]
 ];

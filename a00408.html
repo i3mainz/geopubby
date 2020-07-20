@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt; Class Template Reference</title>
+<title>GeoPubby: IndexDataSource Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,94 +62,313 @@ $(document).ready(function(){initNavTree('a00408.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="a00405.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt; Class Template Reference</div>  </div>
+<div class="title">IndexDataSource Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="a00408.html" title="Builder for constructing AutocompleteEngine instances. ">Builder</a> for constructing <a class="el" href="a00404.html">AutocompleteEngine</a> instances.  
+<p>A <a class="el" href="a00400.html">DataSource</a> that wraps another data source and adds an index of the resources in that data source.  
  <a href="a00408.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;:</div>
+Inheritance diagram for IndexDataSource:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00407.png" border="0" usemap="#AutocompleteEngine_3_01T_01extends_01Indexable_01_4_8Builder_3_01T_01extends_01Indexable_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="AutocompleteEngine_3_01T_01extends_01Indexable_01_4_8Builder_3_01T_01extends_01Indexable_01_4_inherit__map" id="AutocompleteEngine_3_01T_01extends_01Indexable_01_4_8Builder_3_01T_01extends_01Indexable_01_4_inherit__map">
-<area shape="rect" id="node2" href="a00984.html" title="Indexable" alt="" coords="42,5,121,32"/>
+<div class="center"><img src="a00407.png" border="0" usemap="#IndexDataSource_inherit__map" alt="Inheritance graph"/></div>
+<map name="IndexDataSource_inherit__map" id="IndexDataSource_inherit__map">
+<area shape="rect" id="node2" href="a00400.html" title="A source of RDF data intended for publication through the server. " alt="" coords="21,5,112,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;:</div>
+Collaboration diagram for IndexDataSource:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00406.png" border="0" usemap="#AutocompleteEngine_3_01T_01extends_01Indexable_01_4_8Builder_3_01T_01extends_01Indexable_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="AutocompleteEngine_3_01T_01extends_01Indexable_01_4_8Builder_3_01T_01extends_01Indexable_01_4_coll__map" id="AutocompleteEngine_3_01T_01extends_01Indexable_01_4_8Builder_3_01T_01extends_01Indexable_01_4_coll__map">
-<area shape="rect" id="node7" href="a00984.html" title="Indexable" alt="" coords="463,102,542,129"/>
+<div class="center"><img src="a00406.png" border="0" usemap="#IndexDataSource_coll__map" alt="Collaboration graph"/></div>
+<map name="IndexDataSource_coll__map" id="IndexDataSource_coll__map">
+<area shape="rect" id="node2" href="a00400.html" title="A source of RDF data intended for publication through the server. " alt="" coords="10,95,101,121"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c5b1b5b658880619647b859000724fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a4c5b1b5b658880619647b859000724fc">Builder</a> ()</td></tr>
-<tr class="memdesc:a4c5b1b5b658880619647b859000724fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="a00408.html">AutocompleteEngine.Builder</a>.  <a href="#a4c5b1b5b658880619647b859000724fc">More...</a><br /></td></tr>
-<tr class="separator:a4c5b1b5b658880619647b859000724fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75be2b67c84e6582fc763413aa9c95bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00408.html">Builder</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a75be2b67c84e6582fc763413aa9c95bb">setAnalyzer</a> (Analyzer <a class="el" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a>)</td></tr>
-<tr class="memdesc:a75be2b67c84e6582fc763413aa9c95bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the analyzer.  <a href="#a75be2b67c84e6582fc763413aa9c95bb">More...</a><br /></td></tr>
-<tr class="separator:a75be2b67c84e6582fc763413aa9c95bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b046f779187f94e1d872748badcb092"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00408.html">Builder</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a5b046f779187f94e1d872748badcb092">setAnalyzers</a> (Analyzer... analyzers)</td></tr>
-<tr class="memdesc:a5b046f779187f94e1d872748badcb092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the analyzer.  <a href="#a5b046f779187f94e1d872748badcb092">More...</a><br /></td></tr>
-<tr class="separator:a5b046f779187f94e1d872748badcb092"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d4cfc5257a34d5573ee59eccfac025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00408.html">Builder</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a80d4cfc5257a34d5573ee59eccfac025">setComparator</a> (@Nullable Comparator&lt; ScoredObject&lt; T &gt;&gt; <a class="el" href="a00408.html#aac9e41375776a2145cdf5025fd4dd947">comparator</a>)</td></tr>
-<tr class="memdesc:a80d4cfc5257a34d5573ee59eccfac025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the comparator.  <a href="#a80d4cfc5257a34d5573ee59eccfac025">More...</a><br /></td></tr>
-<tr class="separator:a80d4cfc5257a34d5573ee59eccfac025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac67f216229a795a817b7136c9b7bc188"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00408.html">Builder</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#ac67f216229a795a817b7136c9b7bc188">setIndex</a> (IndexAdapter&lt; T &gt; <a class="el" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">index</a>)</td></tr>
-<tr class="memdesc:ac67f216229a795a817b7136c9b7bc188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the index.  <a href="#ac67f216229a795a817b7136c9b7bc188">More...</a><br /></td></tr>
-<tr class="separator:ac67f216229a795a817b7136c9b7bc188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e4fbf697357d25c5f3112daf2c9abee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00404.html">AutocompleteEngine</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a1e4fbf697357d25c5f3112daf2c9abee">build</a> ()</td></tr>
-<tr class="memdesc:a1e4fbf697357d25c5f3112daf2c9abee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="a00404.html">AutocompleteEngine</a> parameterized according to the builder.  <a href="#a1e4fbf697357d25c5f3112daf2c9abee">More...</a><br /></td></tr>
-<tr class="separator:a1e4fbf697357d25c5f3112daf2c9abee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a636d916caafddba3d8927d5e8c7395"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a0a636d916caafddba3d8927d5e8c7395">IndexDataSource</a> (String <a class="el" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>, <a class="el" href="a00400.html">DataSource</a> <a class="el" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>)</td></tr>
+<tr class="separator:a0a636d916caafddba3d8927d5e8c7395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1681b51a4d9b94752fc6668c82729236"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a1681b51a4d9b94752fc6668c82729236">canDescribe</a> (String absoluteIRI)</td></tr>
+<tr class="memdesc:a1681b51a4d9b94752fc6668c82729236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this data source may have some information about a given IRI.  <a href="#a1681b51a4d9b94752fc6668c82729236">More...</a><br /></td></tr>
+<tr class="separator:a1681b51a4d9b94752fc6668c82729236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ba0769e10f0ece3e983e61e031dbbc"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource</a> (String iri)</td></tr>
+<tr class="memdesc:a88ba0769e10f0ece3e983e61e031dbbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#a88ba0769e10f0ece3e983e61e031dbbc">More...</a><br /></td></tr>
+<tr class="separator:a88ba0769e10f0ece3e983e61e031dbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee8a51772d6673be0a741b47678df946"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#aee8a51772d6673be0a741b47678df946">describeResource</a> (String iri, String language)</td></tr>
+<tr class="memdesc:aee8a51772d6673be0a741b47678df946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#aee8a51772d6673be0a741b47678df946">More...</a><br /></td></tr>
+<tr class="separator:aee8a51772d6673be0a741b47678df946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd50c79b6d45d0fed770638879c7359e"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a> (String resourceIRI)</td></tr>
+<tr class="memdesc:afd50c79b6d45d0fed770638879c7359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs.  <a href="#afd50c79b6d45d0fed770638879c7359e">More...</a><br /></td></tr>
+<tr class="separator:afd50c79b6d45d0fed770638879c7359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe9e94afdedf6be6979247520906444"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#acbe9e94afdedf6be6979247520906444">getHighOutdegreeProperties</a> (String resourceIRI)</td></tr>
+<tr class="memdesc:acbe9e94afdedf6be6979247520906444"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs.  <a href="#acbe9e94afdedf6be6979247520906444">More...</a><br /></td></tr>
+<tr class="separator:acbe9e94afdedf6be6979247520906444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a24260bc730afdd0c68fa8f7f5e0b600f">listPropertyValues</a> (String resourceIRI, Property property, boolean isInverse)</td></tr>
+<tr class="memdesc:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describe the index resource, and extract all the statements that have our property and the right subject/object.  <a href="#a24260bc730afdd0c68fa8f7f5e0b600f">More...</a><br /></td></tr>
+<tr class="separator:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b2ac78c4b45ecc590342abe84c24af"><td class="memItemLeft" align="right" valign="top">List&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a> ()</td></tr>
+<tr class="memdesc:af0b2ac78c4b45ecc590342abe84c24af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of IRI resources described in this data source.  <a href="#af0b2ac78c4b45ecc590342abe84c24af">More...</a><br /></td></tr>
+<tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00432.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt; <a class="el" href="a00448.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a> ()</td></tr>
+<tr class="separator:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00400.html#a5d100ac468e8e0551f96450f5bbba1b2">MAX_INDEX_SIZE</a> = 1000000</td></tr>
+<tr class="separator:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab68f7dcfc065da0fd4295b518c820c87"><td class="memItemLeft" align="right" valign="top">Analyzer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a></td></tr>
-<tr class="separator:ab68f7dcfc065da0fd4295b518c820c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9e41375776a2145cdf5025fd4dd947"><td class="memItemLeft" align="right" valign="top">Comparator&lt; ScoredObject&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#aac9e41375776a2145cdf5025fd4dd947">comparator</a></td></tr>
-<tr class="separator:aac9e41375776a2145cdf5025fd4dd947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abce4b54107ea8e7233ebeb0a9a67383a"><td class="memItemLeft" align="right" valign="top">IndexAdapter&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">index</a></td></tr>
-<tr class="separator:abce4b54107ea8e7233ebeb0a9a67383a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ccf3d3cc14002ea252d960b3a9b95a"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a></td></tr>
+<tr class="separator:a46ccf3d3cc14002ea252d960b3a9b95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d718ee92a3e8f0141906f457e76e5e"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="a00400.html">DataSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a></td></tr>
+<tr class="separator:a47d718ee92a3e8f0141906f457e76e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a50553be5572548a1ddda089e2392557b"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#a50553be5572548a1ddda089e2392557b">SIOC_NS</a> = &quot;http://rdfs.org/sioc/ns#&quot;</td></tr>
+<tr class="separator:a50553be5572548a1ddda089e2392557b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47ed8d5d5ece30da541b5a67c0d8031"><td class="memItemLeft" align="right" valign="top">static final Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">siocContainerOf</a></td></tr>
+<tr class="separator:ae47ed8d5d5ece30da541b5a67c0d8031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="a00408.html" title="Builder for constructing AutocompleteEngine instances. ">Builder</a> for constructing <a class="el" href="a00404.html">AutocompleteEngine</a> instances. </p>
+<div class="textblock"><p>A <a class="el" href="a00400.html">DataSource</a> that wraps another data source and adds an index of the resources in that data source. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4c5b1b5b658880619647b859000724fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c5b1b5b658880619647b859000724fc">&#9670;&nbsp;</a></span>Builder()</h2>
+<a id="a0a636d916caafddba3d8927d5e8c7395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a636d916caafddba3d8927d5e8c7395">&#9670;&nbsp;</a></span>IndexDataSource()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00408.html">Builder</a> </td>
+          <td class="memname"><a class="el" href="a00408.html">IndexDataSource</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>indexIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="a00400.html">DataSource</a>&#160;</td>
+          <td class="paramname"><em>wrapped</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a new <a class="el" href="a00408.html">AutocompleteEngine.Builder</a>. </p>
-<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        {</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            this.<a class="code" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a> = <span class="keyword">new</span> Analyzer()</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                @Override</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keyword">public</span> Collection&lt;String&gt; apply(Collection&lt;String&gt; input)</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                {</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;(input);</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                }</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            };</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div><div class="ttc" id="a00408_html_ab68f7dcfc065da0fd4295b518c820c87"><div class="ttname"><a href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.analyzer</a></div><div class="ttdeci">Analyzer analyzer</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:189</div></div>
+<p class="reference">References <a class="el" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">IndexDataSource.indexIRI</a>, and <a class="el" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">IndexDataSource.wrapped</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                                    {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                this.<a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a> = <a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                this.<a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a> = <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00408_html_a46ccf3d3cc14002ea252d960b3a9b95a"><div class="ttname"><a href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.indexIRI</a></div><div class="ttdeci">final String indexIRI</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:24</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1e4fbf697357d25c5f3112daf2c9abee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e4fbf697357d25c5f3112daf2c9abee">&#9670;&nbsp;</a></span>build()</h2>
+<a id="a1681b51a4d9b94752fc6668c82729236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1681b51a4d9b94752fc6668c82729236">&#9670;&nbsp;</a></span>canDescribe()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00404.html">AutocompleteEngine</a>&lt;T&gt; build </td>
+          <td class="memname">boolean canDescribe </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether this data source may have some information about a given IRI. </p>
+<p>If this is <code>false</code>, a client should not bother to call <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a>. This method is to allow for optimizations and should respond very fast.</p>
+<p>It is also used by the UI to decide whether a click on a resource should go to a Pubby page (if <code>true</code>) or out to the Web (if <code>false</code>).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of a resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this data source might have something about it </dd></dl>
+
+<p>Implements <a class="el" href="a00400.html#a1681b51a4d9b94752fc6668c82729236">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00400.html#a1681b51a4d9b94752fc6668c82729236">DataSource.canDescribe()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                       {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>.equals(absoluteIRI) || <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#a1681b51a4d9b94752fc6668c82729236">canDescribe</a>(absoluteIRI);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00400_html_a1681b51a4d9b94752fc6668c82729236"><div class="ttname"><a href="a00400.html#a1681b51a4d9b94752fc6668c82729236">de.fuberlin.wiwiss.pubby.sources.DataSource.canDescribe</a></div><div class="ttdeci">boolean canDescribe(String absoluteIRI)</div><div class="ttdoc">Indicates whether this data source may have some information about a given IRI. </div></div>
+<div class="ttc" id="a00408_html_a46ccf3d3cc14002ea252d960b3a9b95a"><div class="ttname"><a href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.indexIRI</a></div><div class="ttdeci">final String indexIRI</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:24</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a88ba0769e10f0ece3e983e61e031dbbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ba0769e10f0ece3e983e61e031dbbc">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implements <a class="el" href="a00400.html#ab085365476c05945218492b31028610a">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00400.html#ab085365476c05945218492b31028610a">DataSource.describeResource()</a>, <a class="el" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource.getIndex()</a>, <a class="el" href="a00408.html#a50553be5572548a1ddda089e2392557b">IndexDataSource.SIOC_NS</a>, and <a class="el" href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">IndexDataSource.siocContainerOf</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00408.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource.listPropertyValues()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                  {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>.equals(iri)) <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#ab085365476c05945218492b31028610a">describeResource</a>(iri);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                Model result = ModelFactory.createDefaultModel();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                result.setNsPrefix(<span class="stringliteral">&quot;sioc&quot;</span>, <a class="code" href="a00408.html#a50553be5572548a1ddda089e2392557b">SIOC_NS</a>);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                result.setNsPrefix(<span class="stringliteral">&quot;rdfs&quot;</span>, RDFS.getURI());</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                Resource index = result.createResource(<a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="comment">// TODO: Get label from the vocabulary store, and make it i18nable</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                index.addProperty(RDFS.label, <span class="stringliteral">&quot;Index of Resources&quot;</span>, <span class="stringliteral">&quot;en&quot;</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">for</span> (Resource r: <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a>()) {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        index.addProperty(<a class="code" href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">siocContainerOf</a>, r);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                }</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00408_html_a50553be5572548a1ddda089e2392557b"><div class="ttname"><a href="a00408.html#a50553be5572548a1ddda089e2392557b">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.SIOC_NS</a></div><div class="ttdeci">static final String SIOC_NS</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:67</div></div>
+<div class="ttc" id="a00400_html_ab085365476c05945218492b31028610a"><div class="ttname"><a href="a00400.html#ab085365476c05945218492b31028610a">de.fuberlin.wiwiss.pubby.sources.DataSource.describeResource</a></div><div class="ttdeci">Model describeResource(String absoluteIRI)</div><div class="ttdoc">Returns a subgraph of the data source describing one resource. </div></div>
+<div class="ttc" id="a00408_html_a46ccf3d3cc14002ea252d960b3a9b95a"><div class="ttname"><a href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.indexIRI</a></div><div class="ttdeci">final String indexIRI</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:24</div></div>
+<div class="ttc" id="a00400_html_af0b2ac78c4b45ecc590342abe84c24af"><div class="ttname"><a href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">de.fuberlin.wiwiss.pubby.sources.DataSource.getIndex</a></div><div class="ttdeci">List&lt; Resource &gt; getIndex()</div><div class="ttdoc">A list of IRI resources described in this data source. </div></div>
+<div class="ttc" id="a00408_html_ae47ed8d5d5ece30da541b5a67c0d8031"><div class="ttname"><a href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.siocContainerOf</a></div><div class="ttdeci">static final Property siocContainerOf</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:68</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aee8a51772d6673be0a741b47678df946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee8a51772d6673be0a741b47678df946">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>language</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implements <a class="el" href="a00400.html#ad4ae7f7efd26ae80f56a0223be0324c8">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00400.html#ab085365476c05945218492b31028610a">DataSource.describeResource()</a>, <a class="el" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource.getIndex()</a>, <a class="el" href="a00408.html#a50553be5572548a1ddda089e2392557b">IndexDataSource.SIOC_NS</a>, and <a class="el" href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">IndexDataSource.siocContainerOf</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                  {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>.equals(iri)) <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#ab085365476c05945218492b31028610a">describeResource</a>(iri);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                Model result = ModelFactory.createDefaultModel();</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                result.setNsPrefix(<span class="stringliteral">&quot;sioc&quot;</span>, <a class="code" href="a00408.html#a50553be5572548a1ddda089e2392557b">SIOC_NS</a>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                result.setNsPrefix(<span class="stringliteral">&quot;rdfs&quot;</span>, RDFS.getURI());</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                Resource index = result.createResource(<a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="comment">// TODO: Get label from the vocabulary store, and make it i18nable</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                index.addProperty(RDFS.label, <span class="stringliteral">&quot;Index of Resources&quot;</span>, language);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">for</span> (Resource r: <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a>()) {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        index.addProperty(<a class="code" href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">siocContainerOf</a>, r);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00408_html_a50553be5572548a1ddda089e2392557b"><div class="ttname"><a href="a00408.html#a50553be5572548a1ddda089e2392557b">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.SIOC_NS</a></div><div class="ttdeci">static final String SIOC_NS</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:67</div></div>
+<div class="ttc" id="a00400_html_ab085365476c05945218492b31028610a"><div class="ttname"><a href="a00400.html#ab085365476c05945218492b31028610a">de.fuberlin.wiwiss.pubby.sources.DataSource.describeResource</a></div><div class="ttdeci">Model describeResource(String absoluteIRI)</div><div class="ttdoc">Returns a subgraph of the data source describing one resource. </div></div>
+<div class="ttc" id="a00408_html_a46ccf3d3cc14002ea252d960b3a9b95a"><div class="ttname"><a href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.indexIRI</a></div><div class="ttdeci">final String indexIRI</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:24</div></div>
+<div class="ttc" id="a00400_html_af0b2ac78c4b45ecc590342abe84c24af"><div class="ttname"><a href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">de.fuberlin.wiwiss.pubby.sources.DataSource.getIndex</a></div><div class="ttdeci">List&lt; Resource &gt; getIndex()</div><div class="ttdoc">A list of IRI resources described in this data source. </div></div>
+<div class="ttc" id="a00408_html_ae47ed8d5d5ece30da541b5a67c0d8031"><div class="ttname"><a href="a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.siocContainerOf</a></div><div class="ttdeci">static final Property siocContainerOf</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:68</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd50c79b6d45d0fed770638879c7359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd50c79b6d45d0fed770638879c7359e">&#9670;&nbsp;</a></span>getHighIndegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighIndegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-indegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implements <a class="el" href="a00400.html#afd50c79b6d45d0fed770638879c7359e">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00400.html#afd50c79b6d45d0fed770638879c7359e">DataSource.getHighIndegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                                                    {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a>(resourceIRI);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00400_html_afd50c79b6d45d0fed770638879c7359e"><div class="ttname"><a href="a00400.html#afd50c79b6d45d0fed770638879c7359e">de.fuberlin.wiwiss.pubby.sources.DataSource.getHighIndegreeProperties</a></div><div class="ttdeci">Map&lt; Property, Integer &gt; getHighIndegreeProperties(String resourceIRI)</div><div class="ttdoc">If describeResource(String) omits properties of high indegree, then those properties must be returned...</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acbe9e94afdedf6be6979247520906444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe9e94afdedf6be6979247520906444">&#9670;&nbsp;</a></span>getHighOutdegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighOutdegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-outdegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implements <a class="el" href="a00400.html#acbe9e94afdedf6be6979247520906444">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00400.html#acbe9e94afdedf6be6979247520906444">DataSource.getHighOutdegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                                     {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#acbe9e94afdedf6be6979247520906444">getHighOutdegreeProperties</a>(resourceIRI);</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div><div class="ttc" id="a00400_html_acbe9e94afdedf6be6979247520906444"><div class="ttname"><a href="a00400.html#acbe9e94afdedf6be6979247520906444">de.fuberlin.wiwiss.pubby.sources.DataSource.getHighOutdegreeProperties</a></div><div class="ttdeci">Map&lt; Property, Integer &gt; getHighOutdegreeProperties(String resourceIRI)</div><div class="ttdoc">If describeResource(String) omits properties of high outdegree, then those properties must be returne...</div></div>
+<div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af0b2ac78c4b45ecc590342abe84c24af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b2ac78c4b45ecc590342abe84c24af">&#9670;&nbsp;</a></span>getIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Resource&gt; getIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -157,111 +376,87 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a new <a class="el" href="a00404.html">AutocompleteEngine</a> parameterized according to the builder. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>if<div class="fragment"><div class="line"><a class="code" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a> </div></div><!-- fragment --> or<div class="fragment"><div class="line"><a class="code" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">index</a> </div></div><!-- fragment --> are null; </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        {</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            checkPointer(<a class="code" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a> != null);</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            checkPointer(<a class="code" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">index</a> != null);</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> AutocompleteEngine&lt;&gt;(<span class="keyword">this</span>);</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div><div class="ttc" id="a00408_html_ab68f7dcfc065da0fd4295b518c820c87"><div class="ttname"><a href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.analyzer</a></div><div class="ttdeci">Analyzer analyzer</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:189</div></div>
-<div class="ttc" id="a00408_html_abce4b54107ea8e7233ebeb0a9a67383a"><div class="ttname"><a href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.index</a></div><div class="ttdeci">IndexAdapter&lt; T &gt; index</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:191</div></div>
+<p>A list of IRI resources described in this data source. </p>
+<p>Ordering is implementation-defined. Usually a reasonable limit should be applied to the number of resources returned. </p>
+
+<p>Implements <a class="el" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource.getIndex()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                         {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="comment">// We could add the indexIRI as an additional resource here, but we</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="comment">// don&#39;t want it to show up in the list of resources generated in</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">// describeResource(), and we don&#39;t want it turn an otherwise</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="comment">// empty dataset into a non-empty one. </span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a>();</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00400_html_af0b2ac78c4b45ecc590342abe84c24af"><div class="ttname"><a href="a00400.html#af0b2ac78c4b45ecc590342abe84c24af">de.fuberlin.wiwiss.pubby.sources.DataSource.getIndex</a></div><div class="ttdeci">List&lt; Resource &gt; getIndex()</div><div class="ttdoc">A list of IRI resources described in this data source. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a75be2b67c84e6582fc763413aa9c95bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75be2b67c84e6582fc763413aa9c95bb">&#9670;&nbsp;</a></span>setAnalyzer()</h2>
+<a id="a95bb11e41c19f55f0ca37ae0689fd798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95bb11e41c19f55f0ca37ae0689fd798">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00408.html">Builder</a>&lt;T&gt; setAnalyzer </td>
+          <td class="memname">List&lt;<a class="el" href="a00432.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt;<a class="el" href="a00448.html">SearchRecord</a>&gt; &gt; getLabelIndex </td>
           <td>(</td>
-          <td class="paramtype">Analyzer&#160;</td>
-          <td class="paramname"><em>analyzer</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the analyzer. </p>
+<p>Implements <a class="el" href="a00400.html#a95bb11e41c19f55f0ca37ae0689fd798">DataSource</a>.</p>
 
-<p class="reference">References <a class="el" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;.analyzer</a>.</p>
-<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        {</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            this.<a class="code" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a> = <a class="code" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a>;</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div><div class="ttc" id="a00408_html_ab68f7dcfc065da0fd4295b518c820c87"><div class="ttname"><a href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.analyzer</a></div><div class="ttdeci">Analyzer analyzer</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:189</div></div>
+<p class="reference">References <a class="el" href="a00400.html#a95bb11e41c19f55f0ca37ae0689fd798">DataSource.getLabelIndex()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                                                                                    {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                System.out.println(<span class="stringliteral">&quot;IndexDataSource: GetLabelIndex()&quot;</span>);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a>();</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00400_html_a95bb11e41c19f55f0ca37ae0689fd798"><div class="ttname"><a href="a00400.html#a95bb11e41c19f55f0ca37ae0689fd798">de.fuberlin.wiwiss.pubby.sources.DataSource.getLabelIndex</a></div><div class="ttdeci">List&lt; de.fuberlin.wiwiss.pubby.util.AutocompleteEngine&lt; SearchRecord &gt; &gt; getLabelIndex()</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5b046f779187f94e1d872748badcb092"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b046f779187f94e1d872748badcb092">&#9670;&nbsp;</a></span>setAnalyzers()</h2>
+<a id="a24260bc730afdd0c68fa8f7f5e0b600f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24260bc730afdd0c68fa8f7f5e0b600f">&#9670;&nbsp;</a></span>listPropertyValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00408.html">Builder</a>&lt;T&gt; setAnalyzers </td>
+          <td class="memname">Model listPropertyValues </td>
           <td>(</td>
-          <td class="paramtype">Analyzer...&#160;</td>
-          <td class="paramname"><em>analyzers</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the analyzer. </p>
-<div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        {</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            this.<a class="code" href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">analyzer</a> = <span class="keyword">new</span> ChainedAnalyzer(analyzers);</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div><div class="ttc" id="a00408_html_ab68f7dcfc065da0fd4295b518c820c87"><div class="ttname"><a href="a00408.html#ab68f7dcfc065da0fd4295b518c820c87">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.analyzer</a></div><div class="ttdeci">Analyzer analyzer</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:189</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a80d4cfc5257a34d5573ee59eccfac025"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80d4cfc5257a34d5573ee59eccfac025">&#9670;&nbsp;</a></span>setComparator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00408.html">Builder</a>&lt;T&gt; setComparator </td>
-          <td>(</td>
-          <td class="paramtype">@Nullable Comparator&lt; ScoredObject&lt; T &gt;&gt;&#160;</td>
-          <td class="paramname"><em>comparator</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Property&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the comparator. </p>
-
-<p class="reference">References <a class="el" href="a00408.html#aac9e41375776a2145cdf5025fd4dd947">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;.comparator</a>.</p>
-<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        {</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            this.<a class="code" href="a00408.html#aac9e41375776a2145cdf5025fd4dd947">comparator</a> = <a class="code" href="a00408.html#aac9e41375776a2145cdf5025fd4dd947">comparator</a>;</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div><div class="ttc" id="a00408_html_aac9e41375776a2145cdf5025fd4dd947"><div class="ttname"><a href="a00408.html#aac9e41375776a2145cdf5025fd4dd947">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.comparator</a></div><div class="ttdeci">Comparator&lt; ScoredObject&lt; T &gt; &gt; comparator</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:190</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ac67f216229a795a817b7136c9b7bc188"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac67f216229a795a817b7136c9b7bc188">&#9670;&nbsp;</a></span>setIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00408.html">Builder</a>&lt;T&gt; setIndex </td>
-          <td>(</td>
-          <td class="paramtype">IndexAdapter&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isInverse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the index. </p>
+<p>Describe the index resource, and extract all the statements that have our property and the right subject/object. </p>
 
-<p class="reference">References <a class="el" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;.index</a>.</p>
-<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        {</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            this.<a class="code" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">index</a> = <a class="code" href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">index</a>;</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        }</div><div class="ttc" id="a00408_html_abce4b54107ea8e7233ebeb0a9a67383a"><div class="ttname"><a href="a00408.html#abce4b54107ea8e7233ebeb0a9a67383a">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine.Builder.index</a></div><div class="ttdeci">IndexAdapter&lt; T &gt; index</div><div class="ttdef"><b>Definition:</b> AutocompleteEngine.java:191</div></div>
+<p>Implements <a class="el" href="a00400.html#a24260bc730afdd0c68fa8f7f5e0b600f">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, and <a class="el" href="a00400.html#a24260bc730afdd0c68fa8f7f5e0b600f">DataSource.listPropertyValues()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                              {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">indexIRI</a>.equals(resourceIRI)) {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00400.html#a24260bc730afdd0c68fa8f7f5e0b600f">listPropertyValues</a>(resourceIRI, property, isInverse);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                Model all = <a class="code" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource</a>(resourceIRI);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                Resource r = all.getResource(resourceIRI);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                StmtIterator it = isInverse</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                ? all.listStatements(null, property, r)</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                : all.listStatements(r, property, (RDFNode) null);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                Model result = ModelFactory.createDefaultModel();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">while</span> (it.hasNext()) {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        result.add(it.next());</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                }</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div><div class="ttc" id="a00408_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00408.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:25</div></div>
+<div class="ttc" id="a00408_html_a46ccf3d3cc14002ea252d960b3a9b95a"><div class="ttname"><a href="a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.indexIRI</a></div><div class="ttdeci">final String indexIRI</div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:24</div></div>
+<div class="ttc" id="a00408_html_a88ba0769e10f0ece3e983e61e031dbbc"><div class="ttname"><a href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">de.fuberlin.wiwiss.pubby.sources.IndexDataSource.describeResource</a></div><div class="ttdeci">Model describeResource(String iri)</div><div class="ttdoc">Returns a subgraph of the data source describing one resource. </div><div class="ttdef"><b>Definition:</b> IndexDataSource.java:38</div></div>
+<div class="ttc" id="a00400_html_a24260bc730afdd0c68fa8f7f5e0b600f"><div class="ttname"><a href="a00400.html#a24260bc730afdd0c68fa8f7f5e0b600f">de.fuberlin.wiwiss.pubby.sources.DataSource.listPropertyValues</a></div><div class="ttdeci">Model listPropertyValues(String resourceIRI, Property property, boolean isInverse)</div><div class="ttdoc">Returns a subgraph of the data source. </div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab68f7dcfc065da0fd4295b518c820c87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab68f7dcfc065da0fd4295b518c820c87">&#9670;&nbsp;</a></span>analyzer</h2>
+<a id="a46ccf3d3cc14002ea252d960b3a9b95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ccf3d3cc14002ea252d960b3a9b95a">&#9670;&nbsp;</a></span>indexIRI</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +465,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Analyzer analyzer</td>
+          <td class="memname">final String indexIRI</td>
         </tr>
       </table>
   </td>
@@ -280,12 +475,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00408.html#a75be2b67c84e6582fc763413aa9c95bb">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;.setAnalyzer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00408.html#a0a636d916caafddba3d8927d5e8c7395">IndexDataSource.IndexDataSource()</a>.</p>
 
 </div>
 </div>
-<a id="aac9e41375776a2145cdf5025fd4dd947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac9e41375776a2145cdf5025fd4dd947">&#9670;&nbsp;</a></span>comparator</h2>
+<a id="a5d100ac468e8e0551f96450f5bbba1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d100ac468e8e0551f96450f5bbba1b2">&#9670;&nbsp;</a></span>MAX_INDEX_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +489,79 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Comparator&lt;ScoredObject&lt;T&gt; &gt; comparator</td>
+          <td class="memname">final int MAX_INDEX_SIZE = 1000000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00416.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00420.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, <a class="el" href="a00416.html#a95bb11e41c19f55f0ca37ae0689fd798">ModelDataSource.getLabelIndex()</a>, and <a class="el" href="a00420.html#aa89379d3ca3d561141fa020c1c285851">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
+
+</div>
+</div>
+<a id="a50553be5572548a1ddda089e2392557b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50553be5572548a1ddda089e2392557b">&#9670;&nbsp;</a></span>SIOC_NS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String SIOC_NS = &quot;http://rdfs.org/sioc/ns#&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>.</p>
+
+</div>
+</div>
+<a id="ae47ed8d5d5ece30da541b5a67c0d8031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47ed8d5d5ece30da541b5a67c0d8031">&#9670;&nbsp;</a></span>siocContainerOf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Property siocContainerOf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">                        ResourceFactory.createProperty(<a class="code" href="a00408.html#a50553be5572548a1ddda089e2392557b">SIOC_NS</a> + <span class="stringliteral">&quot;container_of&quot;</span>)</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="a00408.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>.</p>
+
+</div>
+</div>
+<a id="a47d718ee92a3e8f0141906f457e76e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d718ee92a3e8f0141906f457e76e5e">&#9670;&nbsp;</a></span>wrapped</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="a00400.html">DataSource</a> wrapped</td>
         </tr>
       </table>
   </td>
@@ -304,31 +571,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00408.html#a80d4cfc5257a34d5573ee59eccfac025">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;.setComparator()</a>.</p>
-
-</div>
-</div>
-<a id="abce4b54107ea8e7233ebeb0a9a67383a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abce4b54107ea8e7233ebeb0a9a67383a">&#9670;&nbsp;</a></span>index</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IndexAdapter&lt;T&gt; index</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00408.html#ac67f216229a795a817b7136c9b7bc188">AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;.setIndex()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00408.html#a0a636d916caafddba3d8927d5e8c7395">IndexDataSource.IndexDataSource()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +581,7 @@ Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00168.html">de</a></li><li class="navelem"><a class="el" href="a00169.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00170.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00167.html">pubby</a></li><li class="navelem"><a class="el" href="a00175.html">util</a></li><li class="navelem"><a class="el" href="a00404.html">AutocompleteEngine</a></li><li class="navelem"><a class="el" href="a00408.html">Builder</a></li>
+    <li class="navelem"><a class="el" href="a00180.html">de</a></li><li class="navelem"><a class="el" href="a00181.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00182.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00179.html">pubby</a></li><li class="navelem"><a class="el" href="a00186.html">sources</a></li><li class="navelem"><a class="el" href="a00408.html">IndexDataSource</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

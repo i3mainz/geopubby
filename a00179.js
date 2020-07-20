@@ -1,0 +1,25 @@
+var a00179 =
+[
+    [ "exporter", "a00183.html", "a00183" ],
+    [ "negotiation", "a00184.html", "a00184" ],
+    [ "servlets", "a00185.html", "a00185" ],
+    [ "sources", "a00186.html", "a00186" ],
+    [ "util", "a00187.html", "a00187" ],
+    [ "vocab", "a00188.html", "a00188" ],
+    [ "Configuration", "a00192.html", "a00192" ],
+    [ "ConfigurationException", "a00196.html", "a00196" ],
+    [ "Dataset", "a00200.html", "a00200" ],
+    [ "HypermediaControls", "a00240.html", "a00240" ],
+    [ "HypermediaResource", "a00244.html", "a00244" ],
+    [ "IRIEncoder", "a00248.html", "a00248" ],
+    [ "IRIRewriter", "a00252.html", "a00252" ],
+    [ "MappedResource", "a00256.html", "a00256" ],
+    [ "MetadataConfiguration", "a00260.html", "a00260" ],
+    [ "ModelResponse", "a00264.html", "a00264" ],
+    [ "ModelUtil", "a00292.html", "a00292" ],
+    [ "PubbyIRIEscaper", "a00320.html", "a00320" ],
+    [ "ResourceDescription", "a00324.html", "a00324" ],
+    [ "ResourceReader", "a00340.html", "a00340" ],
+    [ "URIPrefixer", "a00428.html", "a00428" ],
+    [ "VocabularyStore", "a00464.html", "a00464" ]
+];

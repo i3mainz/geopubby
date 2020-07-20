@@ -1,13 +1,14 @@
 var a00360 =
 [
-    [ "addDocumentMetadata", "a00360.html#aafab682dd7935049291522510d9a62ba", null ],
-    [ "addPageMetadata", "a00360.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
-    [ "addQueryString", "a00360.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00360.html#a4c69ab4acf538f0dc8fb8f7482629e85", null ],
-    [ "doGet", "a00360.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
-    [ "doGet", "a00360.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
-    [ "init", "a00360.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
-    [ "send404", "a00360.html#a3208dcc642a59d12778ba619395eec47", null ],
-    [ "sendInitialization500", "a00360.html#a37f74add6038c113368344fbb9210f8e", null ],
-    [ "serialVersionUID", "a00360.html#a3238d314ecdee14d2966760945d00c3b", null ]
+    [ "WrappedRequest", "a00364.html", "a00364" ],
+    [ "RequestParamHandler", "a00360.html#a78ddf90d954b28fddd8107d28222c31e", null ],
+    [ "[static initializer]", "a00360.html#a2e87c5ede6b7235170d287cd2e254454", null ],
+    [ "getModifiedRequest", "a00360.html#a8a4a2fc72dd4dc4202f74244b5750ca9", null ],
+    [ "identifyRequestedType", "a00360.html#a787a7136420b59f91d860e9acda556b1", null ],
+    [ "isMatchingRequest", "a00360.html#a33a700fbc74b6d65d9f10230245f852f", null ],
+    [ "removeOutputRequestParam", "a00360.html#aac8e0c252a2aa3a037e32b1c139da1d5", null ],
+    [ "ATTRIBUTE_NAME_IS_HANDLED", "a00360.html#ad985604e395e1ac08a77a4c2e2b2b267", null ],
+    [ "mimeTypes", "a00360.html#a354bb05992ad3230abb0504d5b255d9e", null ],
+    [ "request", "a00360.html#ad632242c9a97c676da2987811ea46e83", null ],
+    [ "requestedType", "a00360.html#a053eb9bde998fd324ba1d3c9178b9d4c", null ]
 ];
