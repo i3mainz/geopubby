@@ -41,6 +41,7 @@ var hierarchy =
       [ "GPXWriter", "a00220.html", null ],
       [ "KMLWriter", "a00224.html", null ],
       [ "OSMWriter", "a00232.html", null ],
+      [ "SVGWriter", "a00236.html", null ],
       [ "ModelResponse.JSONWriter", "a00272.html", null ],
       [ "ModelResponse.NTriplesWriter", "a00268.html", null ],
       [ "ModelResponse.RDFXMLWriter", "a00288.html", null ],
@@ -64,7 +65,6 @@ var hierarchy =
     [ "RuntimeException", "a01128.html", [
       [ "ConfigurationException", "a00196.html", null ]
     ] ],
-    [ "SVGWriter", "a00236.html", null ],
     [ "URIPrefixer", "a00428.html", null ],
     [ "VocabularyStore.ValueCache< K >", "a00472.html", null ],
     [ "VocabularyStore.ValueCache< Collection< Literal > >", "a00472.html", [

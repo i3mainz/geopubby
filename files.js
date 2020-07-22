@@ -168,7 +168,7 @@ var files =
       [ "ServletContextInitializer", "a00376.html", "a00376" ]
     ] ],
     [ "SVGWriter.java", "a00035.html", [
-      [ "SVGWriter", "a00236.html", null ]
+      [ "SVGWriter", "a00236.html", "a00236" ]
     ] ],
     [ "URIPrefixer.java", "a00140.html", [
       [ "URIPrefixer", "a00428.html", "a00428" ]

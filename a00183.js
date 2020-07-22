@@ -8,5 +8,5 @@ var a00183 =
     [ "KMLWriter", "a00224.html", "a00224" ],
     [ "ModelWriter", "a00228.html", "a00228" ],
     [ "OSMWriter", "a00232.html", "a00232" ],
-    [ "SVGWriter", "a00236.html", null ]
+    [ "SVGWriter", "a00236.html", "a00236" ]
 ];
