@@ -83,6 +83,7 @@ public class PubbyNegotiator {
 			.addAliasMediaType("application/svg;q=0.8");
 		dataNegotiator.addVariant("application/gml;q=0.95")
 				.addAliasMediaType("text/gml;q=0.8");
+		dataNegotiator.addVariant("application/osm+xml;q=0.95");
 		dataNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		dataNegotiator.addVariant("application/x-turtle;q=0.99")
