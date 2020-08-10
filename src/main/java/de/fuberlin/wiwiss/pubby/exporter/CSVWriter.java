@@ -137,12 +137,16 @@ public class CSVWriter implements ModelWriter {
 		GeoJSONReader reader=new GeoJSONReader();
 		for(int i=0;i<geojson.getJSONArray("features").length();i++) {
 			Geometry geom=reader.read(geojson.getJSONArray("features").getJSONObject(i).getJSONObject("geometry").toString());
-			csvresult.append(geom.toText());
+			csvresult.append(geom.toText()+",");
 			JSONObject props=geojson.getJSONArray("features").getJSONObject(i).getJSONObject("properties");
 			for(String key:props.keySet()) {
 				if(i==0)
 					csvresultheader.append(key+",");
-				csvresult.append(props.get(key)+",");
+				if(props.get(key).toString().contains("^^")) {
+					csvresult.append(props.get(key).toString().substring(props.get(key).toString().lastIndexOf("^^")+2)+",");
+				}else {
+					csvresult.append(props.get(key)+",");
+				}	
 			}
 			if((i+1)<geojson.getJSONArray("features").length())
 				csvresult.append(System.lineSeparator());
