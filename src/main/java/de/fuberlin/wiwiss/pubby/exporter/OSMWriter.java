@@ -89,6 +89,7 @@ public class OSMWriter implements ModelWriter {
 						it.close();
 						it=model.listResourcesWithProperty(usedProperty);
 						Map<String,String> tags=new TreeMap<>();
+						Integer countgeoms=0;
 							while(it.hasNext()) {
 								Resource ind=it.next();
 								StmtIterator it2 = ind.listProperties();
@@ -102,6 +103,8 @@ public class OSMWriter implements ModelWriter {
 										try {
 											Geometry geom=reader.read(curst.getObject().asLiteral().getString());
 											int nodecounter=1;
+											if(countgeoms==0) {
+												
 											if(geom.getGeometryType().equalsIgnoreCase("Point")) {
 												writer.writeStartElement("node");
 												writer.writeAttribute("lat", geom.getCentroid().getY()+"");
@@ -125,6 +128,7 @@ public class OSMWriter implements ModelWriter {
 												writer.writeAttribute("lon", geom.getCentroid().getX()+"");
 												writer.writeAttribute("id", "-"+nodecounter++);
 												writer.writeEndElement();
+											}
 											}
 										} catch (ParseException e) {
 											// TODO Auto-generated catch block
@@ -171,6 +175,7 @@ public class OSMWriter implements ModelWriter {
 										writer.writeAttribute("id", "-1");
 										lat=null;
 										lon=null;
+										countgeoms++;
 									}
 								}
 							}	
