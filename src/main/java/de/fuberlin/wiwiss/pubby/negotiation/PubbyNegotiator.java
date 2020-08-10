@@ -50,6 +50,10 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/kml;q=0.8");
 		pubbyNegotiator.addVariant("application/gml;q=0.95")
 				.addAliasMediaType("text/gml;q=0.8");
+		pubbyNegotiator.addVariant("application/osm+xml;q=0.95");
+		pubbyNegotiator.addVariant("text/gpx;q=0.95")
+			.addAliasMediaType("application/gpx;q=0.8");
+		pubbyNegotiator.addVariant("image/svg+xml;q=0.95");
 		pubbyNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		pubbyNegotiator.addVariant("text/plain;q=0.2");
