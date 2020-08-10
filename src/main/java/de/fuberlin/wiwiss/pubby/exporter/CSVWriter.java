@@ -16,6 +16,7 @@ import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 import org.wololo.geojson.GeoJSON;
+import org.wololo.jts2geojson.GeoJSONReader;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
@@ -130,8 +131,27 @@ public class CSVWriter implements ModelWriter {
 				}
 			}
 		}	
+		StringBuilder csvresult=new StringBuilder();
+		StringBuilder csvresultheader=new StringBuilder();
+		csvresultheader.append("the_geom,");
+		GeoJSONReader reader=new GeoJSONReader();
+		for(int i=0;i<geojson.getJSONArray("features").length();i++) {
+			Geometry geom=reader.read(geojson.getJSONArray("features").getJSONObject(i).getJSONObject("geometry").toString());
+			csvresult.append(geom.toText());
+			JSONObject props=geojson.getJSONArray("features").getJSONObject(i).getJSONObject("properties");
+			for(String key:props.keySet()) {
+				if(i==0)
+					csvresultheader.append(key+",");
+				csvresult.append(props.get(key)+",");
+			}
+			if((i+1)<geojson.getJSONArray("features").length())
+				csvresult.append(System.lineSeparator());
+			
+		}
+		csvresultheader.delete(csvresultheader.length()-1, csvresultheader.length());
+		csvresult.delete(csvresult.length()-1, csvresult.length());
 		try {
-			response.getWriter().write(geojson.toString(2));
+			response.getWriter().write(csvresultheader.toString()+System.lineSeparator()+csvresult.toString());
 			response.getWriter().close();
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
