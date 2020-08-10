@@ -93,10 +93,10 @@ var hierarchy =
       [ "RequestParamHandler.WrappedRequest", "a00364.html", null ]
     ] ],
     [ "Indexable", "a01012.html", null ],
-    [ "Indexable", "a01012.html", null ],
     [ "Indexable", null, [
       [ "SearchRecord", "a00448.html", null ]
     ] ],
+    [ "Indexable", "a01012.html", null ],
     [ "IndexAdapter", null, [
       [ "SearchAdapter", "a00444.html", null ]
     ] ],
