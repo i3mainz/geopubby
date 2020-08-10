@@ -87,7 +87,7 @@ public class OSMWriter implements ModelWriter {
 						}
 						it.close();
 						it=model.listResourcesWithProperty(usedProperty);
-
+						Map<String,String> tags=new TreeMap<>();
 							while(it.hasNext()) {
 								Resource ind=it.next();
 								StmtIterator it2 = ind.listProperties();
@@ -106,7 +106,6 @@ public class OSMWriter implements ModelWriter {
 												writer.writeAttribute("lat", geom.getCentroid().getY()+"");
 												writer.writeAttribute("lon", geom.getCentroid().getX()+"");
 												writer.writeAttribute("id", "-"+(nodecounter++));
-												writer.writeEndElement();
 											}else if(geom.getGeometryType().toLowerCase().contains("multi")){
 												for(int g=0;g<geom.getNumGeometries();g++) {
 													
@@ -117,14 +116,13 @@ public class OSMWriter implements ModelWriter {
 												writer.writeAttribute("id", "-"+(nodecounter++));
 												writer.writeEndElement();
 												writer.writeStartElement("relation");
-												writer.writeEndElement();
+												
 											}else {
 												writer.writeStartElement("way");
 												writer.writeStartElement("node");
 												writer.writeAttribute("lat", geom.getCentroid().getY()+"");
 												writer.writeAttribute("lon", geom.getCentroid().getX()+"");
 												writer.writeAttribute("id", "-"+nodecounter++);
-												writer.writeEndElement();
 												writer.writeEndElement();
 											}
 										} catch (ParseException e) {
@@ -142,23 +140,27 @@ public class OSMWriter implements ModelWriter {
 										String namespace=curst.getPredicate().toString().substring(0,curst.getPredicate().toString().lastIndexOf('/'));
 										String last=curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/')+1);
 										if(ns.containsKey(namespace)) {
-											writer.writeStartElement("tag");
-											writer.writeAttribute("k", last);
+											//writer.writeStartElement("tag");
+											//writer.writeAttribute("k", last);
 											if(curst.getObject().toString().contains("^^")) {
-												writer.writeAttribute("v", curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+												tags.put(last, curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+												//writer.writeAttribute("v", curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
 											}else {
-												writer.writeAttribute("v", curst.getObject().toString());
+												tags.put(last, curst.getObject().toString());
+											//	writer.writeAttribute("v", curst.getObject().toString());
 											}
-											writer.writeEndElement();	
+											//writer.writeEndElement();	
 										}else {
 											writer.writeStartElement("tag");
 											writer.writeAttribute("k",curst.getPredicate().toString());
 											if(curst.getObject().toString().contains("^^")) {
-												writer.writeAttribute("v", curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+												tags.put(curst.getPredicate().toString(), curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+												//writer.writeAttribute("v", curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
 											}else {
-												writer.writeAttribute("v", curst.getObject().toString());
+												tags.put(curst.getPredicate().toString(), curst.getObject().toString());
+												//writer.writeAttribute("v", curst.getObject().toString());
 											}
-											writer.writeEndElement();	
+											//writer.writeEndElement();	
 										}
 									}
 									if(lon!=null && lat!=null) {
@@ -172,6 +174,12 @@ public class OSMWriter implements ModelWriter {
 									}
 								}
 							}	
+						for(String key:tags.keySet()) {
+							writer.writeStartElement("tag");
+							writer.writeAttribute("k", key.toString());
+							writer.writeAttribute("v", tags.get(key));
+							writer.writeEndElement();
+						}
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndDocument();
