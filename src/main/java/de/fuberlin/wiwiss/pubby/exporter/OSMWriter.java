@@ -75,6 +75,7 @@ public class OSMWriter implements ModelWriter {
 							Resource ind=it.next();
 							StmtIterator it2 = ind.listProperties();
 							int nscounter=1;
+							writer.setPrefix("gml", "http://www.opengis.net/gml");
 							while(it2.hasNext()) {
 								Statement curst=it2.next();
 								String nss=curst.getPredicate().getURI().toString().substring(0,curst.getPredicate().getURI().toString().lastIndexOf('/'));
