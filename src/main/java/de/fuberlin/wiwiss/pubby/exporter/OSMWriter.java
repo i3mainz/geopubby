@@ -165,11 +165,10 @@ public class OSMWriter implements ModelWriter {
 										}
 									}
 									if(lon!=null && lat!=null) {
-										writer.writeStartElement("http://www.opengis.net/gml","Point");
-										writer.writeStartElement("http://www.opengis.net/gml","posList");
-										writer.writeCharacters(lat+" "+lon);
-										writer.writeEndElement();
-										writer.writeEndElement();
+										writer.writeStartElement("node");
+										writer.writeAttribute("lat", lat.toString());
+										writer.writeAttribute("lon", lon.toString());
+										writer.writeAttribute("id", "-1");
 										lat=null;
 										lon=null;
 									}
