@@ -151,8 +151,8 @@ public class OSMWriter implements ModelWriter {
 											}
 											//writer.writeEndElement();	
 										}else {
-											writer.writeStartElement("tag");
-											writer.writeAttribute("k",curst.getPredicate().toString());
+											//writer.writeStartElement("tag");
+											//writer.writeAttribute("k",curst.getPredicate().toString());
 											if(curst.getObject().toString().contains("^^")) {
 												tags.put(curst.getPredicate().toString(), curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
 												//writer.writeAttribute("v", curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
