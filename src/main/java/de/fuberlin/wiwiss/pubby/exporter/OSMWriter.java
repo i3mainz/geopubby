@@ -173,6 +173,7 @@ public class OSMWriter implements ModelWriter {
 								}
 							}	
 						writer.writeEndElement();
+						writer.writeEndElement();
 						writer.writeEndDocument();
 						writer.flush();
 						} catch (XMLStreamException e1) {
