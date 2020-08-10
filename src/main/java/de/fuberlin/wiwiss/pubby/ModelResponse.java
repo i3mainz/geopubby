@@ -11,11 +11,14 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFWriter;
 import org.apache.jena.shared.JenaException;
 
+import de.fuberlin.wiwiss.pubby.exporter.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
+import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
+import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
 import de.fuberlin.wiwiss.pubby.negotiation.PubbyNegotiator;
@@ -91,6 +94,18 @@ public class ModelResponse {
 		}
 		if ("application/geojson".equals(mediaType)) {
 			return new GeoJSONWriterr();
+		}
+		if ("image/svg+xml".equals(mediaType)) {
+			return new SVGWriter();
+		}
+		if("text/csv".equals(mediaType)){
+			return new CSVWriter();
+		}
+		if("text/gpx".equals(mediaType)){
+			return new CSVWriter();
+		}
+		if ("application/osm+xml".equals(mediaType)) {
+			return new OSMWriter();
 		}
 		if ("application/geouri".equals(mediaType)) {
 			return new GeoURIWriter();

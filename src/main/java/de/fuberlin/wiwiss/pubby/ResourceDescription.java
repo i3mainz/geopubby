@@ -57,15 +57,31 @@ public class ResourceDescription {
 	private final Map<Property, Integer> highOutdegreeProperties;
 	private PrefixMapping prefixes = null;
 	private List<ResourceProperty> properties = null;
+	/**
+	 * List of extracted geometries per resource.
+	 */
 	private List<Geometry> geoms;
+	/**
+	 * WKTReader to read WKT literals.
+	 */
 	private WKTReader reader=new WKTReader();
     private GeometryFactory fac=new GeometryFactory();
 	
+    /**
+     * Constructor for this class.
+     * @param controller
+     * @param model
+     * @param config
+     */
 	public ResourceDescription(HypermediaControls controller, Model model, 
 			Configuration config) {
 		this(controller, model, null, null, config, false);
    	}
 	
+	 /**
+	  * Adds a point described by a longitude and latitude coordinate to the list of geometries.
+	  * @param r the resource to analyze
+	  */
 	 private void addPoint(final Resource r) {
 	        final Statement lngS = r.getProperty(GEO.P_LONG);
 	        final Statement latS = r.getProperty(GEO.P_LAT);
@@ -76,6 +92,10 @@ public class ResourceDescription {
 	        }
 	    }
 
+	 /**
+	  * Adds a geometry given as a WKT literal and extracts an EPSG code if annotated.
+	  * @param literall the literal to analyze
+	  */
 	 private void addGeometry2(final Literal literall) {
 		 		String literal=literall.getString();
 		 		System.out.println("Geometry2: "+literal);
@@ -96,6 +116,10 @@ public class ResourceDescription {
 				}
 	    }
 	 
+	 /**
+	  * Adds a geometry described using a GeoJSON literal.
+	  * @param literall the literal to analyze
+	  */
 	 private void addGeometryGeoJSON(final Literal literall) {
 	 		String literal=literall.getString();
 	 		System.out.println("GeometryGeoJSON: "+literal);
@@ -110,6 +134,10 @@ public class ResourceDescription {
 	 		}
 	 }
 	 
+	 /**
+	  * Adds a geometry described using a WKT literal.
+	  * @param r the literal to analyze
+	  */
 	 private void addGeometry(final Resource r) {
 	        StmtIterator it= resource.listProperties(GEO.ASWKT);
 	        while(it.hasNext()) {
@@ -118,6 +146,9 @@ public class ResourceDescription {
 	        it.close();
 	 }
 	 
+	 /**
+	  * Adds geometries to GeoPubby considering a list of geo properties with different literal types.
+	  */
 	 private void addAllGeoms() {
 	        StmtIterator it= resource.listProperties(GEO.ASWKT);
 	        while(it.hasNext()) {
@@ -162,6 +193,10 @@ public class ResourceDescription {
 	        addPoint(resource);
 	    }
 	 
+	/**
+	 * Gets the list of geometries existing at the current resource. 
+	 * @return The list of geometries
+	*/
 	 public List<Geometry> getGeoms() {
 	        if (geoms == null) {
 	            geoms = new ArrayList<Geometry>();
@@ -169,7 +204,11 @@ public class ResourceDescription {
 	        }
 	        return geoms;
 	    }
-	    
+	
+	/**
+	 * Gets the EPSG code from a statement if it is annotated using an EPSG statement. 
+	 * @return The EPSG code as String
+	 */
 	public String getEPSG(){
 	    StmtIterator it= resource.listProperties(GEO.EPSG);
 	    if(it.hasNext()){

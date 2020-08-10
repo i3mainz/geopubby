@@ -75,6 +75,12 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/geojson;q=0.8");
 		dataNegotiator.addVariant("application/kml;q=0.95")
 				.addAliasMediaType("text/kml;q=0.8");
+		dataNegotiator.addVariant("text/csv;q=0.95")
+			.addAliasMediaType("application/csv;q=0.8");
+		dataNegotiator.addVariant("text/gpx;q=0.95")
+			.addAliasMediaType("application/gpx;q=0.8");
+		dataNegotiator.addVariant("text/svg;q=0.95")
+			.addAliasMediaType("application/svg;q=0.8");
 		dataNegotiator.addVariant("application/gml;q=0.95")
 				.addAliasMediaType("text/gml;q=0.8");
 		dataNegotiator.addVariant("application/geouri;q=0.95")
