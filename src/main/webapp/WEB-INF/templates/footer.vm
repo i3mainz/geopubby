@@ -11,7 +11,10 @@
       #if (!$geoms.isEmpty())
         | <a href="$rdf_link?output=geouri">As GeoURI</a> 
       	| <a href="$rdf_link?output=kml">As KML</a> 
-      	| <a href="$rdf_link?output=gml">As GML</a> 
+      	| <a href="$rdf_link?output=gml">As GML</a>
+      	| <a href="$rdf_link?output=csv">As CSV</a>
+      	| <a href="$rdf_link?output=osm">As OSM/XML</a>  
+      	| <a href="$rdf_link?output=svg">As SVG</a> 
       #end
 #end
 </div>
