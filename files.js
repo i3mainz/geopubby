@@ -29,7 +29,7 @@ var files =
       [ "ContentTypeNegotiatorTest", "a00488.html", "a00488" ]
     ] ],
     [ "CSVWriter.java", "a00011.html", [
-      [ "CSVWriter", "a00204.html", null ]
+      [ "CSVWriter", "a00204.html", "a00204" ]
     ] ],
     [ "Dataset.java", "a00008.html", [
       [ "Dataset", "a00200.html", "a00200" ]

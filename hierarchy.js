@@ -12,7 +12,6 @@ var hierarchy =
     ] ],
     [ "CONF", "a00452.html", null ],
     [ "ContentTypeNegotiator", "a00296.html", null ],
-    [ "CSVWriter", "a00204.html", null ],
     [ "DataSource", "a00400.html", [
       [ "FilteredDataSource", "a00404.html", null ],
       [ "IndexDataSource", "a00408.html", null ],
@@ -35,6 +34,7 @@ var hierarchy =
     [ "ModelResponse", "a00264.html", null ],
     [ "ModelUtil", "a00292.html", null ],
     [ "ModelWriter", "a00228.html", [
+      [ "CSVWriter", "a00204.html", null ],
       [ "GeoJSONWriterr", "a00208.html", null ],
       [ "GeoURIWriter", "a00212.html", null ],
       [ "GMLWriter", "a00216.html", null ],
