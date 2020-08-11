@@ -14,38 +14,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class GeoJSONWriterr implements ModelWriter {
+public class GeoJSONWriterr extends ModelWriter {
 
-
-	WKTReader reader=new WKTReader();
 	
 	@Override
-	public void write(Model model, HttpServletResponse response) throws IOException {
-		ExtendedIterator<Resource> it=model.
-		listResourcesWithProperty(GEO.HASGEOMETRY);
+	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		JSONObject geojson=new JSONObject();
-		if(!it.hasNext()) {
-			it.close();
-			it=model.listResourcesWithProperty(GEO.P_LAT);
-		}
-		if(!it.hasNext()) {
-			it.close();
-			it=model.listResourcesWithProperty(GEO.HASGEOMETRY);
-		}
-		if(!it.hasNext()) {
-			it.close();
-			it=model.listResourcesWithProperty(GEO.GEORSSPOINT);
-		}
-		if(!it.hasNext()) {
-			it.close();
-			it=model.listResourcesWithProperty(GEO.P625);
-		}
+		ExtendedIterator<Resource> it=super.write(model, response);
 		if(!it.hasNext()) {
 			it=model.listResourcesWithProperty(model.createProperty("http://www.w3.org/2000/01/rdf-schema#label"));
 			while(it.hasNext()) {
@@ -140,7 +120,7 @@ public class GeoJSONWriterr implements ModelWriter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		return null;
 	}
 	
 }

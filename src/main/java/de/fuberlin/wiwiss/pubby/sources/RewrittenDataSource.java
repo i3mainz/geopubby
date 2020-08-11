@@ -3,15 +3,12 @@ package de.fuberlin.wiwiss.pubby.sources;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.OWL;
-
-import com.miguelfonseca.completely.AutocompleteEngine;
 
 import de.fuberlin.wiwiss.pubby.IRIRewriter;
 import de.fuberlin.wiwiss.pubby.ModelUtil;

@@ -9,7 +9,6 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
@@ -23,40 +22,11 @@ import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class SVGWriter implements ModelWriter {
-
-	WKTReader reader=new WKTReader();
+public class SVGWriter extends ModelWriter {
 	
 	@Override
-	public void write(Model model, HttpServletResponse response) throws IOException {
-		Property usedProperty;
-		ExtendedIterator<Resource> it=model.
-				listResourcesWithProperty(GEO.HASGEOMETRY);			
-		usedProperty=GEO.HASGEOMETRY;
-		if(!it.hasNext()) {
-			usedProperty=null;
-			it.close();
-			it=model.listResourcesWithProperty(GEO.P_LAT);
-			usedProperty=GEO.P_LAT;
-		}
-		if(!it.hasNext()) {
-			usedProperty=null;
-			it.close();
-			it=model.listResourcesWithProperty(GEO.HASGEOMETRY);
-			usedProperty=GEO.HASGEOMETRY;
-		}
-		if(!it.hasNext()) {
-			usedProperty=null;
-			it.close();
-			it=model.listResourcesWithProperty(GEO.GEORSSPOINT);
-			usedProperty=GEO.GEORSSPOINT;
-		}
-		if(!it.hasNext()) {
-			usedProperty=null;
-			it.close();
-			it=model.listResourcesWithProperty(GEO.P625);
-			usedProperty=GEO.P625;
-		}
+	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
+		ExtendedIterator<Resource> it=super.write(model, response);
 		if(!it.hasNext()) {
 			response.getWriter().write("");
 			response.getWriter().close();	
@@ -144,6 +114,7 @@ public class SVGWriter implements ModelWriter {
 			e.printStackTrace();
 		}
 		}
+		return null;
 		
 	}
 

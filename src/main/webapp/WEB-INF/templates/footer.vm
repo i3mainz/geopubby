@@ -16,6 +16,7 @@
       	| <a href="$rdf_link?output=csv">As GPX</a>
       	| <a href="$rdf_link?output=osm">As OSM/XML</a>  
       	| <a href="$rdf_link?output=svg">As SVG</a> 
+      	| <a href="$rdf_link?output=wkt">As WKT</a>
       #end
 #end
 </div>

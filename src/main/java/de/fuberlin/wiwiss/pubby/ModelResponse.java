@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFWriter;
+import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.shared.JenaException;
+import org.apache.jena.util.iterator.ExtendedIterator;
 
 import de.fuberlin.wiwiss.pubby.exporter.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
@@ -19,6 +21,7 @@ import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
 import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
+import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
 import de.fuberlin.wiwiss.pubby.negotiation.PubbyNegotiator;
@@ -77,7 +80,7 @@ public class ModelResponse {
 			response.setContentType("text/plain");
 			ServletOutputStream out = response.getOutputStream();
 			out.println("406 Not Acceptable: The requested data format is not supported.");
-			out.println("Supported formats are RDF/XML, JSON-LD, GeoJSON, GeoURI, TriX, TriG, Turtle, N3, and N-Triples.");
+			out.println("Supported formats are RDF/XML, JSON-LD, GeoJSON, GeoURI, TriX, WKT, GML, KML, SVG, GPX, TriG, Turtle, N3, and N-Triples.");
 			return;
 		}
 		response.setContentType(bestMatch.getMediaType());
@@ -119,6 +122,9 @@ public class ModelResponse {
 		if ("application/trig".equals(mediaType)) {
 			return new TrigWriter();
 		}
+		if ("text/wkt".equals(mediaType)) {
+			return new WKTWriter();
+		}
 		if ("application/trix".equals(mediaType)) {
 			return new TrixWriter();
 		}
@@ -132,44 +138,50 @@ public class ModelResponse {
 	}
 	
 	
-	private class NTriplesWriter implements ModelWriter {
-		public void write(Model model, HttpServletResponse response) throws IOException {
+	private class NTriplesWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("N-TRIPLES").write(model, response.getOutputStream(), null);
+			return null;
 		}
 	}
 	
-	private class JSONWriter implements ModelWriter {
-		public void write(Model model, HttpServletResponse response) throws IOException {
+	private class JSONWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("JSON-LD").write(model, response.getOutputStream(), null);
+			return null;
 		}
 	}
 	
-	private class TrigWriter implements ModelWriter {
-		public void write(Model model, HttpServletResponse response) throws IOException {
+	private class TrigWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("TriG").write(model, response.getOutputStream(), null);
+			return null;
 		}
 	}
 	
-	private class TrixWriter implements ModelWriter {
-		public void write(Model model, HttpServletResponse response) throws IOException {
+	private class TrixWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("TriX").write(model, response.getOutputStream(), null);
+			return null;
 		}
 	}
 	
-	private class TurtleWriter implements ModelWriter {
-		public void write(Model model, HttpServletResponse response) throws IOException {
+	private class TurtleWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("TURTLE").write(model, response.getOutputStream(), null);
+			return null;
 		}
 	}
 
-	private class RDFXMLWriter implements ModelWriter {
-		public void write(Model model, HttpServletResponse response) throws IOException {
+	private class RDFXMLWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			RDFWriter writer = model.getWriter("RDF/XML-ABBREV");
 			writer.setProperty("showXmlDeclaration", "true");
 			// From Joseki -- workaround for the j.cook.up bug.
 			writer.setProperty("blockRules", "propertyAttr");
 			writer.write(model, 
 					new OutputStreamWriter(response.getOutputStream(), "utf-8"), null);
+			return null;
 		}
 	}
 }

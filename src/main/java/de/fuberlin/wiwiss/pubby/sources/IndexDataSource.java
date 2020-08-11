@@ -12,8 +12,6 @@ import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.vocabulary.RDFS;
 
-import com.miguelfonseca.completely.AutocompleteEngine;
-
 import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
