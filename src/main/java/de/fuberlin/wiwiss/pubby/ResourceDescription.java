@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -21,7 +20,6 @@ import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 import org.wololo.jts2geojson.GeoJSONReader;
 import org.apache.jena.graph.Node;
-import org.apache.jena.graph.impl.LiteralLabel;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Property;
@@ -36,7 +34,6 @@ import org.apache.jena.vocabulary.RDFS;
 import org.apache.jena.vocabulary.XSD;
 
 import de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection;
-import de.fuberlin.wiwiss.pubby.servlets.GeoProvider;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**

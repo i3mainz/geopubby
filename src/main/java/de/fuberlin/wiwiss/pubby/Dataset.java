@@ -1,7 +1,6 @@
 package de.fuberlin.wiwiss.pubby;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -18,8 +17,6 @@ import de.fuberlin.wiwiss.pubby.sources.FilteredDataSource;
 import de.fuberlin.wiwiss.pubby.sources.ModelDataSource;
 import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
 import de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource;
-import de.fuberlin.wiwiss.pubby.util.AutocompleteEngine;
-import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 import de.fuberlin.wiwiss.pubby.vocab.CONF;
 
 /**
