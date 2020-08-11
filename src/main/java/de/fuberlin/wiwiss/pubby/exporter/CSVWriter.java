@@ -140,8 +140,9 @@ public class CSVWriter implements ModelWriter {
 			csvresult.append(geom.toText()+",");
 			JSONObject props=geojson.getJSONArray("features").getJSONObject(i).getJSONObject("properties");
 			for(String key:props.keySet()) {
-				if(i==0)
+				if(i==0) {
 					csvresultheader.append(key+",");
+				}
 				if(props.get(key).toString().contains("^^")) {
 					csvresult.append(props.get(key).toString().substring(props.get(key).toString().lastIndexOf("^^")+2)+",");
 				}else {
