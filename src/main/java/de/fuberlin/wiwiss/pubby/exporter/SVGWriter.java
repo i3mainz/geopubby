@@ -16,12 +16,15 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
+
+/**
+ * Writes a GeoPubby instance as SVG.
+ */
 public class SVGWriter extends ModelWriter {
 	
 	@Override

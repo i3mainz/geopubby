@@ -19,6 +19,9 @@ import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
+/**
+ * Writes a GeoPubby instance as JSON or GeoJSON if a geometry is present.
+ */
 public class GeoJSONWriterr extends ModelWriter {
 
 	

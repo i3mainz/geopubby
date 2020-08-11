@@ -15,6 +15,9 @@ import org.locationtech.jts.io.ParseException;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
+/**
+ * Writes a GeoPubby instance as WKT.
+ */
 public class WKTWriter extends ModelWriter {
 
 	@Override

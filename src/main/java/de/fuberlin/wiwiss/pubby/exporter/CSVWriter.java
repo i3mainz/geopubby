@@ -20,6 +20,9 @@ import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
+/**
+ * Writes a GeoPubby instance as CSV.
+ */
 public class CSVWriter extends ModelWriter {
 	
 	@Override

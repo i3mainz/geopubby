@@ -22,6 +22,9 @@ import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
+/**
+ * Writes a GeoPubby instance as OSM/XML.
+ */
 public class OSMWriter extends ModelWriter {
 
 	@Override

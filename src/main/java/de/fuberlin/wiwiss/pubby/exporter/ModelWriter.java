@@ -12,6 +12,9 @@ import org.locationtech.jts.io.WKTReader;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
+/**
+ * A model class for exporting RDF in several downlift formats.
+ */
 public class ModelWriter {
 	
 protected Property usedProperty=null;
