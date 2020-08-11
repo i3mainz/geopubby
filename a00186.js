@@ -1,10 +1,13 @@
 var a00186 =
 [
-    [ "DataSource", "a00400.html", "a00400" ],
-    [ "FilteredDataSource", "a00404.html", "a00404" ],
-    [ "IndexDataSource", "a00408.html", "a00408" ],
-    [ "MergeDataSource", "a00412.html", "a00412" ],
-    [ "ModelDataSource", "a00416.html", "a00416" ],
-    [ "RemoteSPARQLDataSource", "a00420.html", "a00420" ],
-    [ "RewrittenDataSource", "a00424.html", "a00424" ]
+    [ "CSVWriter", "a00207.html", "a00207" ],
+    [ "GeoJSONWriterr", "a00211.html", "a00211" ],
+    [ "GeoURIWriter", "a00215.html", "a00215" ],
+    [ "GMLWriter", "a00219.html", "a00219" ],
+    [ "GPXWriter", "a00223.html", "a00223" ],
+    [ "KMLWriter", "a00227.html", "a00227" ],
+    [ "ModelWriter", "a00231.html", "a00231" ],
+    [ "OSMWriter", "a00235.html", "a00235" ],
+    [ "SVGWriter", "a00239.html", "a00239" ],
+    [ "WKTWriter", "a00243.html", "a00243" ]
 ];

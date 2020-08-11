@@ -1,14 +1,5 @@
-<map id="ValuesURLServlet" name="ValuesURLServlet">
-<area shape="rect" id="node2" href="$a00380.html" title="Abstract base servlet for servlets that handle a property of a given resource. " alt="" coords="2568,356,2701,383"/>
-<area shape="rect" id="node3" href="$a00344.html" title="An abstract base servlet for servlets that manage a namespace of resources. " alt="" coords="2297,236,2391,263"/>
-<area shape="rect" id="node6" href="$a00192.html" title="The server&#39;s configuration. " alt="" coords="2035,331,2134,357"/>
-<area shape="rect" id="node11" href="$a00464.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1649,364,1768,391"/>
-<area shape="rect" id="node7" href="$a00340.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1436,184,1556,211"/>
-<area shape="rect" id="node12" href="$a00468.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,226,1400,267"/>
-<area shape="rect" id="node13" href="$a00480.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,362,1389,403"/>
-<area shape="rect" id="node14" href="$a00472.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,370,1016,411"/>
-<area shape="rect" id="node15" href="$a00472.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,423,629,449"/>
-<area shape="rect" id="node21" href="$a00472.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,454,1016,495"/>
-<area shape="rect" id="node20" href="$a00476.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,465,1383,506"/>
-<area shape="rect" id="node22" href="$a00400.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,537,1337,564"/>
+<map id="ValuesBaseServlet" name="ValuesBaseServlet">
+<area shape="rect" id="node4" href="$a00391.html" title="A servlet for serving an RDF document describing resources related to a given resource via a given pr..." alt="" coords="5,229,164,256"/>
+<area shape="rect" id="node5" href="$a00395.html" title="A servlet for rendering an HTML page listing resources related to a given resource via a given proper..." alt="" coords="189,229,319,256"/>
+<area shape="rect" id="node2" href="$a00351.html" title="An abstract base servlet for servlets that manage a namespace of resources. " alt="" coords="122,80,215,107"/>
 </map>
