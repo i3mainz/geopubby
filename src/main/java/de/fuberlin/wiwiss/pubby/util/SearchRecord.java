@@ -7,8 +7,10 @@ import org.apache.jena.rdf.model.Resource;
 
 import com.miguelfonseca.completely.data.Indexable;
 
-public class SearchRecord implements Indexable
-	{
+/**
+ * Implements a search record which may be indexed in the search index.
+ */
+public class SearchRecord implements Indexable{
 	    private final String label;
 	    
 	    private final Resource res;

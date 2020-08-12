@@ -17,6 +17,10 @@ import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
+/**
+ * Servlet for searching in GeoPubby concepts.
+ *
+ */
 public class SearchServlet extends BaseServlet {
 
 	/**
@@ -46,13 +50,12 @@ public class SearchServlet extends BaseServlet {
 		if(query!=null) {
 		List<SearchRecord> res=new LinkedList<SearchRecord>();
 		if(limit!=null) {
-			for(de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> rec:config.getDataSource().getLabelIndex()) {
-				res.addAll(rec.search(query,limit));
-			}		
+			res.addAll(config.getDataSource().getLabelIndex().search(query,limit));	
 		}else {
-			for(de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> rec:config.getDataSource().getLabelIndex()) {
+			res.addAll(config.getDataSource().getLabelIndex().search(query,limit));	
+			/*for(de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> rec:config.getDataSource().getLabelIndex()) {
 				res.addAll(rec.search(query));
-			}
+			}*/
 			System.out.println(config.getDataSource());
 			System.out.println(config.getDataSource().getLabelIndex());
 		}

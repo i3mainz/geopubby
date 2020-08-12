@@ -103,6 +103,6 @@ public interface DataSource {
 	 */
 	List<Resource> getIndex();
 	
-	List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex();
+	de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex();
 	
 }

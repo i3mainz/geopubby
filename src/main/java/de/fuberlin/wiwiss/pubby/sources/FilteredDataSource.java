@@ -72,7 +72,7 @@ public abstract class FilteredDataSource implements DataSource {
 	}
 	
 	@Override
-	public List<AutocompleteEngine<SearchRecord>> getLabelIndex() {
+	public AutocompleteEngine<SearchRecord> getLabelIndex() {
 		return wrapped.getLabelIndex();
 	}
 }

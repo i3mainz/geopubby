@@ -37,6 +37,7 @@ import de.fuberlin.wiwiss.pubby.ConfigurationException;
 import de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection;
 import de.fuberlin.wiwiss.pubby.util.AutocompleteEngine;
 import de.fuberlin.wiwiss.pubby.util.SearchAdapter;
+import de.fuberlin.wiwiss.pubby.util.SearchIndexInstance;
 import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
@@ -247,13 +248,10 @@ public class RemoteSPARQLDataSource implements DataSource {
 	}
 	
 	@Override
-	public List<AutocompleteEngine<SearchRecord>> getLabelIndex(){
+	public AutocompleteEngine<SearchRecord> getLabelIndex(){
 		System.out.println("SPARQL Datasource: Get Label Index!!!!");
 		if(engine==null) {
-			engine= new AutocompleteEngine.Builder<SearchRecord>()
-		            .setIndex(new SearchAdapter())
-		            .setAnalyzers(new LowerCaseTransformer(), new WordTokenizer())
-		            .build();
+			engine= SearchIndexInstance.getInstance();
 			System.out.println("Building Label Index....");
 			ResultSet rs = execQuerySelect(
 					"SELECT DISTINCT ?s ?label WHERE { " +
@@ -269,7 +267,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 			}
 			System.out.println("Got "+i+" labels!");
 		}
-		return Collections.singletonList(engine);
+		return engine;
 	}
 
 	public String getPreviousDescribeQuery() {

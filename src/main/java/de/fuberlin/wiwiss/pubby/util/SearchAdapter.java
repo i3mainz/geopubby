@@ -8,6 +8,9 @@ import com.miguelfonseca.completely.text.index.FuzzyIndex;
 import com.miguelfonseca.completely.text.index.PatriciaTrie;
 import com.miguelfonseca.completely.text.match.EditDistanceAutomaton;
 
+/**
+ * Search adapter defining a String distance metric between search records.
+ */
 public class SearchAdapter implements IndexAdapter<SearchRecord> {
 	
 	private FuzzyIndex<SearchRecord> index = new PatriciaTrie<>();

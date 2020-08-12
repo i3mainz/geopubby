@@ -22,6 +22,7 @@ import com.miguelfonseca.completely.text.analyze.transform.LowerCaseTransformer;
 import de.fuberlin.wiwiss.pubby.ModelUtil;
 import de.fuberlin.wiwiss.pubby.util.AutocompleteEngine;
 import de.fuberlin.wiwiss.pubby.util.SearchAdapter;
+import de.fuberlin.wiwiss.pubby.util.SearchIndexInstance;
 import de.fuberlin.wiwiss.pubby.util.SearchRecord;
 
 /**
@@ -85,13 +86,10 @@ public class ModelDataSource implements DataSource {
 	}
 
 	@Override
-	public List<de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord>> getLabelIndex() {
+	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
 		System.out.println("ModelDataSource: Get Label Index!!!!");
 		if(engine==null) {
-			engine= new AutocompleteEngine.Builder<SearchRecord>()
-		            .setIndex(new SearchAdapter())
-		            .setAnalyzers(new LowerCaseTransformer(), new WordTokenizer())
-		            .build();
+			engine=SearchIndexInstance.getInstance();
 			System.out.println("Building Label Index....");
 			List<Resource> result = new ArrayList<Resource>();
 			ResIterator subjects = model.listSubjects();
@@ -106,7 +104,7 @@ public class ModelDataSource implements DataSource {
 				}
 			}
 		}
-		return Collections.singletonList(engine);
+		return engine;
 	}
 
 	@Override
