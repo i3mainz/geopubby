@@ -52,7 +52,6 @@ public class OSMLinkWriter extends ModelWriter {
 		}
 		try {
 			if(geom!=null) {
-				response.getWriter().write("http://www.openstreetmap.org/index.html?lat="+lat+"&lon="+lon);
 				Point p=geom.getCentroid();
 				response.getWriter().write("http://www.openstreetmap.org/index.html?lat="+p.getX()+"&lon="+p.getY());
 				response.getWriter().close();
