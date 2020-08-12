@@ -46,6 +46,7 @@ public class RequestParamHandler {
 		mimeTypes.put("wkt", "text/wkt");
 		mimeTypes.put("svg", "image/svg+xml");
 		mimeTypes.put("gpx", "text/gpx");
+		mimeTypes.put("osmlink", "text/osmlink");
 		mimeTypes.put("osm", "application/osm+xml");
 		mimeTypes.put("trig", "application/trig");
 		mimeTypes.put("trix", "application/trix");
