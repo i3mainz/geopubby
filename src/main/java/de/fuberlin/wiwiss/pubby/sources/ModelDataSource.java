@@ -93,6 +93,7 @@ public class ModelDataSource implements DataSource {
 			System.out.println("Building Label Index....");
 			List<Resource> result = new ArrayList<Resource>();
 			ResIterator subjects = model.listSubjects();
+			int i=0;
 			while (subjects.hasNext() && result.size() < DataSource.MAX_INDEX_SIZE) {
 				Resource r = subjects.next();
 				if (r.isAnon()) continue;
@@ -102,7 +103,9 @@ public class ModelDataSource implements DataSource {
 					String label=lit.getString();
 					engine.add(new SearchRecord(label,r));
 				}
+				i++;
 			}
+			System.out.println("Added "+i+" Labels to Index");
 		}
 		return engine;
 	}

@@ -251,7 +251,7 @@ public class RemoteSPARQLDataSource implements DataSource {
 	public AutocompleteEngine<SearchRecord> getLabelIndex(){
 		System.out.println("SPARQL Datasource: Get Label Index!!!!");
 		if(engine==null) {
-			engine= SearchIndexInstance.getInstance();
+			engine=SearchIndexInstance.getInstance();
 			System.out.println("Building Label Index....");
 			ResultSet rs = execQuerySelect(
 					"SELECT DISTINCT ?s ?label WHERE { " +
