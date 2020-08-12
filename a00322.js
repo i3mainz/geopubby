@@ -1,15 +1,9 @@
 var a00322 =
 [
-    [ "addDocumentMetadata", "a00322.html#aafab682dd7935049291522510d9a62ba", null ],
-    [ "addPageMetadata", "a00322.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
-    [ "addQueryString", "a00322.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00322.html#a30237a46a3889021e746ebbb6a1fa527", null ],
-    [ "doGet", "a00322.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
-    [ "doGet", "a00322.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
-    [ "init", "a00322.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
-    [ "send404", "a00322.html#a3208dcc642a59d12778ba619395eec47", null ],
-    [ "sendInitialization500", "a00322.html#a37f74add6038c113368344fbb9210f8e", null ],
-    [ "fullIRIPattern", "a00322.html#acbff59e1ab288ff90309cd9b23b9f9da", null ],
-    [ "prefixedNamePattern", "a00322.html#af552ea0e9e208afae060bad87515a08f", null ],
-    [ "serialVersionUID", "a00322.html#a3238d314ecdee14d2966760945d00c3b", null ]
+    [ "AcceptHeaderOverride", "a00322.html#a62333c819d60f37ab4dc43ff61a210ea", null ],
+    [ "getReplacement", "a00322.html#aef70f59ac6bf685a9ee32f37974a54a0", null ],
+    [ "matches", "a00322.html#a1905bdfe7c1f4050f8e1d04863fd0888", null ],
+    [ "original", "a00322.html#a0d33ec58c7bf400ec61051437a714b85", null ],
+    [ "replacement", "a00322.html#a46c8449d068cc9b8900701670be47fc9", null ],
+    [ "userAgentPattern", "a00322.html#ac3f835bd8ebc7ac5294b67abe18ec5fe", null ]
 ];

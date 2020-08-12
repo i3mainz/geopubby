@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: ContentTypeNegotiatorTest Class Reference</title>
+<title>GeoPubby: DataSource Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,263 +62,244 @@ $(document).ready(function(){initNavTree('a00414.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="a00411.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ContentTypeNegotiatorTest Class Reference</div>  </div>
+<div class="title">DataSource Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A source of RDF data intended for publication through the server.  
+ <a href="a00414.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for ContentTypeNegotiatorTest:</div>
+Inheritance diagram for DataSource:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00413.png" border="0" usemap="#ContentTypeNegotiatorTest_inherit__map" alt="Inheritance graph"/></div>
-<map name="ContentTypeNegotiatorTest_inherit__map" id="ContentTypeNegotiatorTest_inherit__map">
+<div class="center"><img src="a00413.png" border="0" usemap="#DataSource_inherit__map" alt="Inheritance graph"/></div>
+<map name="DataSource_inherit__map" id="DataSource_inherit__map">
+<area shape="rect" id="node2" href="a00418.html" title="A DataSource that wraps another data source in such a way that the resulting data source is only capa..." alt="" coords="172,5,307,32"/>
+<area shape="rect" id="node3" href="a00422.html" title="A DataSource that wraps another data source and adds an index of the resources in that data source..." alt="" coords="178,56,301,83"/>
+<area shape="rect" id="node4" href="a00426.html" title="A DataSource that presents an RDF merge of multiple other data sources. " alt="" coords="176,107,303,133"/>
+<area shape="rect" id="node5" href="a00430.html" title="A data source backed by a Jena model. " alt="" coords="176,157,303,184"/>
+<area shape="rect" id="node6" href="a00434.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="144,208,335,235"/>
+<area shape="rect" id="node7" href="a00438.html" title="Wraps a DataSource by applying a IRIRewriter. " alt="" coords="166,259,313,285"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ContentTypeNegotiatorTest:</div>
+Collaboration diagram for DataSource:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00412.png" border="0" usemap="#ContentTypeNegotiatorTest_coll__map" alt="Collaboration graph"/></div>
-<map name="ContentTypeNegotiatorTest_coll__map" id="ContentTypeNegotiatorTest_coll__map">
-<area shape="rect" id="node3" href="a00242.html" title="ContentTypeNegotiator" alt="" coords="724,144,881,171"/>
+<div class="center"><img src="a00412.png" border="0" usemap="#DataSource_coll__map" alt="Collaboration graph"/></div>
+<map name="DataSource_coll__map" id="DataSource_coll__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a63326a1b70b6e3f070e51687798e02de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a63326a1b70b6e3f070e51687798e02de">setUp</a> ()</td></tr>
-<tr class="separator:a63326a1b70b6e3f070e51687798e02de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ac05091536c70427d6531779b868428"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a9ac05091536c70427d6531779b868428">testNoVariantOnServer</a> ()</td></tr>
-<tr class="separator:a9ac05091536c70427d6531779b868428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd4c6c44b176ca920db9fc0a758168e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a5fd4c6c44b176ca920db9fc0a758168e">testMatchSimple</a> ()</td></tr>
-<tr class="separator:a5fd4c6c44b176ca920db9fc0a758168e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae34df46446904c48f2e595239dc25c51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ae34df46446904c48f2e595239dc25c51">testNoMatch</a> ()</td></tr>
-<tr class="separator:ae34df46446904c48f2e595239dc25c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac73430ed66cf65635f6f7b8c9d14391"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#aac73430ed66cf65635f6f7b8c9d14391">testUseDefaultIfNoMatch</a> ()</td></tr>
-<tr class="separator:aac73430ed66cf65635f6f7b8c9d14391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd4f7efa63d94c9a0a34628340ab3a46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#acd4f7efa63d94c9a0a34628340ab3a46">testUseDefaultIfTwoEqualOptions</a> ()</td></tr>
-<tr class="separator:acd4f7efa63d94c9a0a34628340ab3a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2af55214ea1673967d78dcc1c712b4f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a2af55214ea1673967d78dcc1c712b4f9">testPickFirstIfTwoEqualOptions</a> ()</td></tr>
-<tr class="separator:a2af55214ea1673967d78dcc1c712b4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0fb802ab7acf142fdaf1f4254466ec1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#af0fb802ab7acf142fdaf1f4254466ec1">testDefaultToHigherQuality</a> ()</td></tr>
-<tr class="separator:af0fb802ab7acf142fdaf1f4254466ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a516ae895aabd9d1df0ef4594ecd1955b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a516ae895aabd9d1df0ef4594ecd1955b">testPickCorrectMatchSimple</a> ()</td></tr>
-<tr class="separator:a516ae895aabd9d1df0ef4594ecd1955b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaed8c772bd5fda6148554e0024136191"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#aaed8c772bd5fda6148554e0024136191">testPickCorrectMatchWithClientQuality</a> ()</td></tr>
-<tr class="separator:aaed8c772bd5fda6148554e0024136191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5796314bd106989db42affeb97b278e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a5796314bd106989db42affeb97b278e8">testPickCorrectMatchWithServerQuality1</a> ()</td></tr>
-<tr class="separator:a5796314bd106989db42affeb97b278e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76b72f9f3a971c6896e40bee18c71ada"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a76b72f9f3a971c6896e40bee18c71ada">testPickCorrectMatchWithServerQuality2</a> ()</td></tr>
-<tr class="separator:a76b72f9f3a971c6896e40bee18c71ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b22832236e08e2a5e5a0ec084ba451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a01b22832236e08e2a5e5a0ec084ba451">testNoMatchIfBestEqualsZero</a> ()</td></tr>
-<tr class="separator:a01b22832236e08e2a5e5a0ec084ba451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a542fd21591ce4070bb2326983b954066"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a542fd21591ce4070bb2326983b954066">testQualityMultiplication</a> ()</td></tr>
-<tr class="separator:a542fd21591ce4070bb2326983b954066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7ccde7f210ef3d918c0896536ba393d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ac7ccde7f210ef3d918c0896536ba393d">testEmptyHeader</a> ()</td></tr>
-<tr class="separator:ac7ccde7f210ef3d918c0896536ba393d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3b5f1df7382cc77122f941e2c6c77ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ad3b5f1df7382cc77122f941e2c6c77ac">testEmptyHeaderPickBestQuality</a> ()</td></tr>
-<tr class="separator:ad3b5f1df7382cc77122f941e2c6c77ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a9508944ed52b911eef2cc00ab8dfd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a6a9508944ed52b911eef2cc00ab8dfd5">testAcceptAlias</a> ()</td></tr>
-<tr class="separator:a6a9508944ed52b911eef2cc00ab8dfd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d651c4c78c3165c3c1273dfa3574169"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a0d651c4c78c3165c3c1273dfa3574169">testUseAliasQuality</a> ()</td></tr>
-<tr class="separator:a0d651c4c78c3165c3c1273dfa3574169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c732585f8e5e7f58d98dedc22bf434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a31c732585f8e5e7f58d98dedc22bf434">testSpecifyDefaultAccept</a> ()</td></tr>
-<tr class="separator:a31c732585f8e5e7f58d98dedc22bf434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91224c27c3b20b52fdac952010fab8e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a91224c27c3b20b52fdac952010fab8e8">testUserAgentOverrideSimple</a> ()</td></tr>
-<tr class="separator:a91224c27c3b20b52fdac952010fab8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1681b51a4d9b94752fc6668c82729236"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a1681b51a4d9b94752fc6668c82729236">canDescribe</a> (String absoluteIRI)</td></tr>
+<tr class="memdesc:a1681b51a4d9b94752fc6668c82729236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this data source may have some information about a given IRI.  <a href="#a1681b51a4d9b94752fc6668c82729236">More...</a><br /></td></tr>
+<tr class="separator:a1681b51a4d9b94752fc6668c82729236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab085365476c05945218492b31028610a"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ab085365476c05945218492b31028610a">describeResource</a> (String absoluteIRI)</td></tr>
+<tr class="memdesc:ab085365476c05945218492b31028610a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ab085365476c05945218492b31028610a">More...</a><br /></td></tr>
+<tr class="separator:ab085365476c05945218492b31028610a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#ad4ae7f7efd26ae80f56a0223be0324c8">describeResource</a> (String absoluteIRI, String language)</td></tr>
+<tr class="memdesc:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ad4ae7f7efd26ae80f56a0223be0324c8">More...</a><br /></td></tr>
+<tr class="separator:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd50c79b6d45d0fed770638879c7359e"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a> (String resourceIRI)</td></tr>
+<tr class="memdesc:afd50c79b6d45d0fed770638879c7359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00414.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs.  <a href="#afd50c79b6d45d0fed770638879c7359e">More...</a><br /></td></tr>
+<tr class="separator:afd50c79b6d45d0fed770638879c7359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe9e94afdedf6be6979247520906444"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#acbe9e94afdedf6be6979247520906444">getHighOutdegreeProperties</a> (String resourceIRI)</td></tr>
+<tr class="memdesc:acbe9e94afdedf6be6979247520906444"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00414.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs.  <a href="#acbe9e94afdedf6be6979247520906444">More...</a><br /></td></tr>
+<tr class="separator:acbe9e94afdedf6be6979247520906444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a24260bc730afdd0c68fa8f7f5e0b600f">listPropertyValues</a> (String resourceIRI, Property property, boolean isInverse)</td></tr>
+<tr class="memdesc:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source.  <a href="#a24260bc730afdd0c68fa8f7f5e0b600f">More...</a><br /></td></tr>
+<tr class="separator:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b2ac78c4b45ecc590342abe84c24af"><td class="memItemLeft" align="right" valign="top">List&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a> ()</td></tr>
+<tr class="memdesc:af0b2ac78c4b45ecc590342abe84c24af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of IRI resources described in this data source.  <a href="#af0b2ac78c4b45ecc590342abe84c24af">More...</a><br /></td></tr>
+<tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00446.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt; <a class="el" href="a00462.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a95bb11e41c19f55f0ca37ae0689fd798">getLabelIndex</a> ()</td></tr>
+<tr class="separator:a95bb11e41c19f55f0ca37ae0689fd798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a2e2f4626c40eeebd96e11b4ed1f6273b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00242.html">ContentTypeNegotiator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a></td></tr>
-<tr class="separator:a2e2f4626c40eeebd96e11b4ed1f6273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00414.html#a5d100ac468e8e0551f96450f5bbba1b2">MAX_INDEX_SIZE</a> = 1000000</td></tr>
+<tr class="separator:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a63326a1b70b6e3f070e51687798e02de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63326a1b70b6e3f070e51687798e02de">&#9670;&nbsp;</a></span>setUp()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A source of RDF data intended for publication through the server. </p>
+<p>TODO: describeResource and getHighXxxdegreeProperties should be combined into a single method with a complex result so that implementations can better mess with the high-degree stuff while keeping responses consistent between methods </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1681b51a4d9b94752fc6668c82729236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1681b51a4d9b94752fc6668c82729236">&#9670;&nbsp;</a></span>canDescribe()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setUp </td>
+          <td class="memname">boolean canDescribe </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                            {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a> = <span class="keyword">new</span> ContentTypeNegotiator();</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div><div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a6a9508944ed52b911eef2cc00ab8dfd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a9508944ed52b911eef2cc00ab8dfd5">&#9670;&nbsp;</a></span>testAcceptAlias()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testAcceptAlias </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00246.html#aa2d81e13e9a4a2a0af4bd745e32b6d33">ContentTypeNegotiator.VariantSpec.addAliasMediaType()</a>, <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                      {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>).<a class="code" href="a00246.html#aa2d81e13e9a4a2a0af4bd745e32b6d33">addAliasMediaType</a>(<span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;c/d&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-<div class="ttc" id="a00246_html_aa2d81e13e9a4a2a0af4bd745e32b6d33"><div class="ttname"><a href="a00246.html#aa2d81e13e9a4a2a0af4bd745e32b6d33">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.VariantSpec.addAliasMediaType</a></div><div class="ttdeci">VariantSpec addAliasMediaType(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:84</div></div>
-</div><!-- fragment -->
+<p>Indicates whether this data source may have some information about a given IRI. </p>
+<p>If this is <code>false</code>, a client should not bother to call <a class="el" href="a00414.html#ab085365476c05945218492b31028610a">describeResource(String)</a>. This method is to allow for optimizations and should respond very fast.</p>
+<p>It is also used by the UI to decide whether a click on a resource should go to a Pubby page (if <code>true</code>) or out to the Web (if <code>false</code>).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of a resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this data source might have something about it </dd></dl>
+
+<p>Implemented in <a class="el" href="a00434.html#a1681b51a4d9b94752fc6668c82729236">RemoteSPARQLDataSource</a>, <a class="el" href="a00438.html#a1681b51a4d9b94752fc6668c82729236">RewrittenDataSource</a>, <a class="el" href="a00426.html#a1681b51a4d9b94752fc6668c82729236">MergeDataSource</a>, <a class="el" href="a00430.html#a1681b51a4d9b94752fc6668c82729236">ModelDataSource</a>, <a class="el" href="a00418.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource</a>, and <a class="el" href="a00422.html#a1681b51a4d9b94752fc6668c82729236">IndexDataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00422.html#a1681b51a4d9b94752fc6668c82729236">IndexDataSource.canDescribe()</a>, <a class="el" href="a00438.html#a1681b51a4d9b94752fc6668c82729236">RewrittenDataSource.canDescribe()</a>, and <a class="el" href="a00486.html#a1a984f4cb4d41188c130813c505063fb">VocabularyStore.ValueCache&lt; Integer &gt;.get()</a>.</p>
+
 </div>
 </div>
-<a id="af0fb802ab7acf142fdaf1f4254466ec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0fb802ab7acf142fdaf1f4254466ec1">&#9670;&nbsp;</a></span>testDefaultToHigherQuality()</h2>
+<a id="ab085365476c05945218492b31028610a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab085365476c05945218492b31028610a">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testDefaultToHigherQuality </td>
+          <td class="memname">Model describeResource </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                 {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b;q=0.6&quot;</span>);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d;q=0.8&quot;</span>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;*/*&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implemented in <a class="el" href="a00434.html#ab894bdc30c94ed2c7df302b41c4d3f42">RemoteSPARQLDataSource</a>, <a class="el" href="a00426.html#a88ba0769e10f0ece3e983e61e031dbbc">MergeDataSource</a>, <a class="el" href="a00438.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource</a>, <a class="el" href="a00430.html#ab894bdc30c94ed2c7df302b41c4d3f42">ModelDataSource</a>, <a class="el" href="a00418.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource</a>, and <a class="el" href="a00422.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00198.html#ab53ea1dc8508fc4b3ba182b0af9e27a7">Configuration.buildDataSource()</a>, <a class="el" href="a00198.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00422.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, <a class="el" href="a00418.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource.describeResource()</a>, <a class="el" href="a00438.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource.describeResource()</a>, <a class="el" href="a00486.html#a1a984f4cb4d41188c130813c505063fb">VocabularyStore.ValueCache&lt; Integer &gt;.get()</a>, <a class="el" href="a00254.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>, and <a class="el" href="a00438.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
+
 </div>
 </div>
-<a id="ac7ccde7f210ef3d918c0896536ba393d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ccde7f210ef3d918c0896536ba393d">&#9670;&nbsp;</a></span>testEmptyHeader()</h2>
+<a id="ad4ae7f7efd26ae80f56a0223be0324c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ae7f7efd26ae80f56a0223be0324c8">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testEmptyHeader </td>
+          <td class="memname">Model describeResource </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>language</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implemented in <a class="el" href="a00434.html#ad4ae7f7efd26ae80f56a0223be0324c8">RemoteSPARQLDataSource</a>, <a class="el" href="a00438.html#ad4ae7f7efd26ae80f56a0223be0324c8">RewrittenDataSource</a>, <a class="el" href="a00430.html#ad4ae7f7efd26ae80f56a0223be0324c8">ModelDataSource</a>, <a class="el" href="a00426.html#aee8a51772d6673be0a741b47678df946">MergeDataSource</a>, and <a class="el" href="a00422.html#aee8a51772d6673be0a741b47678df946">IndexDataSource</a>.</p>
+
+</div>
+</div>
+<a id="afd50c79b6d45d0fed770638879c7359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd50c79b6d45d0fed770638879c7359e">&#9670;&nbsp;</a></span>getHighIndegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighIndegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                      {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(null).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;junk&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
+<p>If <a class="el" href="a00414.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-indegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implemented in <a class="el" href="a00434.html#a73de8154ca0a0f9528cf8e2632e40868">RemoteSPARQLDataSource</a>, <a class="el" href="a00426.html#afd50c79b6d45d0fed770638879c7359e">MergeDataSource</a>, <a class="el" href="a00438.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource</a>, <a class="el" href="a00422.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource</a>, <a class="el" href="a00430.html#a73de8154ca0a0f9528cf8e2632e40868">ModelDataSource</a>, and <a class="el" href="a00418.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00418.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00422.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00438.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource.getHighIndegreeProperties()</a>, and <a class="el" href="a00254.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>.</p>
+
 </div>
 </div>
-<a id="ad3b5f1df7382cc77122f941e2c6c77ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3b5f1df7382cc77122f941e2c6c77ac">&#9670;&nbsp;</a></span>testEmptyHeaderPickBestQuality()</h2>
+<a id="acbe9e94afdedf6be6979247520906444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe9e94afdedf6be6979247520906444">&#9670;&nbsp;</a></span>getHighOutdegreeProperties()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testEmptyHeaderPickBestQuality </td>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighOutdegreeProperties </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                     {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b;q=0.2&quot;</span>);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(null).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
+<p>If <a class="el" href="a00414.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-outdegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implemented in <a class="el" href="a00434.html#adee4ed3932a18a60beea0c5e234fe5fc">RemoteSPARQLDataSource</a>, <a class="el" href="a00426.html#acbe9e94afdedf6be6979247520906444">MergeDataSource</a>, <a class="el" href="a00438.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource</a>, <a class="el" href="a00422.html#acbe9e94afdedf6be6979247520906444">IndexDataSource</a>, <a class="el" href="a00430.html#adee4ed3932a18a60beea0c5e234fe5fc">ModelDataSource</a>, and <a class="el" href="a00418.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00418.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00422.html#acbe9e94afdedf6be6979247520906444">IndexDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00438.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource.getHighOutdegreeProperties()</a>, and <a class="el" href="a00254.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>.</p>
+
 </div>
 </div>
-<a id="a5fd4c6c44b176ca920db9fc0a758168e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fd4c6c44b176ca920db9fc0a758168e">&#9670;&nbsp;</a></span>testMatchSimple()</h2>
+<a id="af0b2ac78c4b45ecc590342abe84c24af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b2ac78c4b45ecc590342abe84c24af">&#9670;&nbsp;</a></span>getIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testMatchSimple </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                      {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ae34df46446904c48f2e595239dc25c51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae34df46446904c48f2e595239dc25c51">&#9670;&nbsp;</a></span>testNoMatch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testNoMatch </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, and <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                  {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                assertNull(<a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;z/z&quot;</span>));</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a01b22832236e08e2a5e5a0ec084ba451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01b22832236e08e2a5e5a0ec084ba451">&#9670;&nbsp;</a></span>testNoMatchIfBestEqualsZero()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testNoMatchIfBestEqualsZero </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, and <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                  {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                assertNull(<a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/*;q=0&quot;</span>));</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a9ac05091536c70427d6531779b868428"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ac05091536c70427d6531779b868428">&#9670;&nbsp;</a></span>testNoVariantOnServer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testNoVariantOnServer </td>
+          <td class="memname">List&lt;Resource&gt; getIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -326,20 +307,23 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                            {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                assertNull(<a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b&quot;</span>));</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
+<p>A list of IRI resources described in this data source. </p>
+<p>Ordering is implementation-defined. Usually a reasonable limit should be applied to the number of resources returned. </p>
+
+<p>Implemented in <a class="el" href="a00434.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource</a>, <a class="el" href="a00438.html#af0b2ac78c4b45ecc590342abe84c24af">RewrittenDataSource</a>, <a class="el" href="a00426.html#af0b2ac78c4b45ecc590342abe84c24af">MergeDataSource</a>, <a class="el" href="a00422.html#af0b2ac78c4b45ecc590342abe84c24af">IndexDataSource</a>, <a class="el" href="a00430.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource</a>, and <a class="el" href="a00418.html#af0b2ac78c4b45ecc590342abe84c24af">FilteredDataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00198.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00422.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, <a class="el" href="a00418.html#af0b2ac78c4b45ecc590342abe84c24af">FilteredDataSource.getIndex()</a>, <a class="el" href="a00422.html#af0b2ac78c4b45ecc590342abe84c24af">IndexDataSource.getIndex()</a>, and <a class="el" href="a00438.html#af0b2ac78c4b45ecc590342abe84c24af">RewrittenDataSource.getIndex()</a>.</p>
+
 </div>
 </div>
-<a id="a516ae895aabd9d1df0ef4594ecd1955b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a516ae895aabd9d1df0ef4594ecd1955b">&#9670;&nbsp;</a></span>testPickCorrectMatchSimple()</h2>
+<a id="a95bb11e41c19f55f0ca37ae0689fd798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95bb11e41c19f55f0ca37ae0689fd798">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testPickCorrectMatchSimple </td>
+          <td class="memname">List&lt;<a class="el" href="a00446.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt;<a class="el" href="a00462.html">SearchRecord</a>&gt; &gt; getLabelIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -347,252 +331,64 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                 {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;c/d&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
+<p>Implemented in <a class="el" href="a00434.html#aa89379d3ca3d561141fa020c1c285851">RemoteSPARQLDataSource</a>, <a class="el" href="a00438.html#a95bb11e41c19f55f0ca37ae0689fd798">RewrittenDataSource</a>, <a class="el" href="a00426.html#a95bb11e41c19f55f0ca37ae0689fd798">MergeDataSource</a>, <a class="el" href="a00422.html#a95bb11e41c19f55f0ca37ae0689fd798">IndexDataSource</a>, <a class="el" href="a00430.html#a95bb11e41c19f55f0ca37ae0689fd798">ModelDataSource</a>, and <a class="el" href="a00418.html#aa89379d3ca3d561141fa020c1c285851">FilteredDataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00198.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00386.html#ade0f373e0ee60161c36c160bd5a04a9c">SearchServlet.doGet()</a>, <a class="el" href="a00418.html#aa89379d3ca3d561141fa020c1c285851">FilteredDataSource.getLabelIndex()</a>, <a class="el" href="a00422.html#a95bb11e41c19f55f0ca37ae0689fd798">IndexDataSource.getLabelIndex()</a>, and <a class="el" href="a00438.html#a95bb11e41c19f55f0ca37ae0689fd798">RewrittenDataSource.getLabelIndex()</a>.</p>
+
 </div>
 </div>
-<a id="aaed8c772bd5fda6148554e0024136191"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaed8c772bd5fda6148554e0024136191">&#9670;&nbsp;</a></span>testPickCorrectMatchWithClientQuality()</h2>
+<a id="a24260bc730afdd0c68fa8f7f5e0b600f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24260bc730afdd0c68fa8f7f5e0b600f">&#9670;&nbsp;</a></span>listPropertyValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void testPickCorrectMatchWithClientQuality </td>
+          <td class="memname">Model listPropertyValues </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                            {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b;q=0.8,c/d;q=0.6&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b;q=0.6,c/d;q=0.8&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a5796314bd106989db42affeb97b278e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5796314bd106989db42affeb97b278e8">&#9670;&nbsp;</a></span>testPickCorrectMatchWithServerQuality1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">void testPickCorrectMatchWithServerQuality1 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Property&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                             {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b;q=0.8&quot;</span>);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d;q=0.6&quot;</span>);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b,c/d&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a76b72f9f3a971c6896e40bee18c71ada"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76b72f9f3a971c6896e40bee18c71ada">&#9670;&nbsp;</a></span>testPickCorrectMatchWithServerQuality2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">void testPickCorrectMatchWithServerQuality2 </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isInverse</em>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                             {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b;q=0.6&quot;</span>);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d;q=0.8&quot;</span>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b,c/d&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a2af55214ea1673967d78dcc1c712b4f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af55214ea1673967d78dcc1c712b4f9">&#9670;&nbsp;</a></span>testPickFirstIfTwoEqualOptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">void testPickFirstIfTwoEqualOptions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                     {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;*/*&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a542fd21591ce4070bb2326983b954066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a542fd21591ce4070bb2326983b954066">&#9670;&nbsp;</a></span>testQualityMultiplication()</h2>
+<p>Returns a subgraph of the data source. </p>
+<p>It lists the values of a particular property of a particular resource. Where values are blank nodes, a complete description of these anonymous resources must be included. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The resource to be examined </td></tr>
+    <tr><td class="paramname">property</td><td>The property we're interested in </td></tr>
+    <tr><td class="paramname">isInverse</td><td>Are we interested in outgoing arcs (<code>false</code>) or incoming (<code>true</code>)? </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source. </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testQualityMultiplication </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Implemented in <a class="el" href="a00434.html#a660b961c4b18f651d595cfd867143f79">RemoteSPARQLDataSource</a>, <a class="el" href="a00426.html#a24260bc730afdd0c68fa8f7f5e0b600f">MergeDataSource</a>, <a class="el" href="a00438.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource</a>, <a class="el" href="a00422.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource</a>, <a class="el" href="a00430.html#a660b961c4b18f651d595cfd867143f79">ModelDataSource</a>, and <a class="el" href="a00418.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource</a>.</p>
 
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b;q=0.1&quot;</span>);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d;q=0.9&quot;</span>);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;e/f;q=0.8&quot;</span>);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                assertEquals(<span class="stringliteral">&quot;e/f&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b;q=0.9;c/d;q=0.1;e/f;q=0.8&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a31c732585f8e5e7f58d98dedc22bf434"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31c732585f8e5e7f58d98dedc22bf434">&#9670;&nbsp;</a></span>testSpecifyDefaultAccept()</h2>
+<p class="reference">Referenced by <a class="el" href="a00398.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesDataURLServlet.doGet()</a>, <a class="el" href="a00402.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesURLServlet.doGet()</a>, <a class="el" href="a00482.html#a1c247553b46f28035a0d8cd5173a165a">VocabularyStore.CachedPropertyCollection.get()</a>, <a class="el" href="a00418.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource.listPropertyValues()</a>, <a class="el" href="a00422.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource.listPropertyValues()</a>, and <a class="el" href="a00438.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testSpecifyDefaultAccept </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>, and <a class="el" href="a00242.html#a7652b7c00c4cf54490dfe3535cc70cf2">ContentTypeNegotiator.setDefaultAccept()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                               {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d;q=0.5&quot;</span>);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a7652b7c00c4cf54490dfe3535cc70cf2">setDefaultAccept</a>(<span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(null).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00242_html_a7652b7c00c4cf54490dfe3535cc70cf2"><div class="ttname"><a href="a00242.html#a7652b7c00c4cf54490dfe3535cc70cf2">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.setDefaultAccept</a></div><div class="ttdeci">void setDefaultAccept(String accept)</div><div class="ttdoc">Sets an Accept header to be used as the default if a client does not send an Accept header...</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:27</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a0d651c4c78c3165c3c1273dfa3574169"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d651c4c78c3165c3c1273dfa3574169">&#9670;&nbsp;</a></span>testUseAliasQuality()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testUseAliasQuality </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00246.html#aa2d81e13e9a4a2a0af4bd745e32b6d33">ContentTypeNegotiator.VariantSpec.addAliasMediaType()</a>, <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                          {</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b;q=0.5&quot;</span>);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d&quot;</span>).<a class="code" href="a00246.html#aa2d81e13e9a4a2a0af4bd745e32b6d33">addAliasMediaType</a>(<span class="stringliteral">&quot;e/f;q=0.1&quot;</span>);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b,e/f&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-<div class="ttc" id="a00246_html_aa2d81e13e9a4a2a0af4bd745e32b6d33"><div class="ttname"><a href="a00246.html#aa2d81e13e9a4a2a0af4bd745e32b6d33">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.VariantSpec.addAliasMediaType</a></div><div class="ttdeci">VariantSpec addAliasMediaType(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:84</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aac73430ed66cf65635f6f7b8c9d14391"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac73430ed66cf65635f6f7b8c9d14391">&#9670;&nbsp;</a></span>testUseDefaultIfNoMatch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testUseDefaultIfNoMatch </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>, and <a class="el" href="a00246.html#af4e07f8baa718d621334f3fe8885f09d">ContentTypeNegotiator.VariantSpec.makeDefault()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                              {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>).<a class="code" href="a00246.html#af4e07f8baa718d621334f3fe8885f09d">makeDefault</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                assertEquals(<span class="stringliteral">&quot;a/b&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;z/z&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00246_html_af4e07f8baa718d621334f3fe8885f09d"><div class="ttname"><a href="a00246.html#af4e07f8baa718d621334f3fe8885f09d">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.VariantSpec.makeDefault</a></div><div class="ttdeci">void makeDefault()</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:88</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="acd4f7efa63d94c9a0a34628340ab3a46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd4f7efa63d94c9a0a34628340ab3a46">&#9670;&nbsp;</a></span>testUseDefaultIfTwoEqualOptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testUseDefaultIfTwoEqualOptions </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>, and <a class="el" href="a00246.html#af4e07f8baa718d621334f3fe8885f09d">ContentTypeNegotiator.VariantSpec.makeDefault()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                      {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d&quot;</span>).<a class="code" href="a00246.html#af4e07f8baa718d621334f3fe8885f09d">makeDefault</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;z/z&quot;</span>).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00246_html_af4e07f8baa718d621334f3fe8885f09d"><div class="ttname"><a href="a00246.html#af4e07f8baa718d621334f3fe8885f09d">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.VariantSpec.makeDefault</a></div><div class="ttdeci">void makeDefault()</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:88</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a91224c27c3b20b52fdac952010fab8e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91224c27c3b20b52fdac952010fab8e8">&#9670;&nbsp;</a></span>testUserAgentOverrideSimple()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void testUserAgentOverrideSimple </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#af83bf4d6bf77cdd31256ecc83186a558">ContentTypeNegotiator.addUserAgentOverride()</a>, <a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">ContentTypeNegotiator.addVariant()</a>, <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, and <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                  {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;a/b&quot;</span>);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(<span class="stringliteral">&quot;c/d;q=0.5&quot;</span>);</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#af83bf4d6bf77cdd31256ecc83186a558">addUserAgentOverride</a>(Pattern.compile(<span class="stringliteral">&quot;&quot;</span>), null, <span class="stringliteral">&quot;c/d&quot;</span>);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                assertEquals(<span class="stringliteral">&quot;c/d&quot;</span>, <a class="code" href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">negotiator</a>.<a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(<span class="stringliteral">&quot;a/b&quot;</span>, null).<a class="code" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">getMediaType</a>());</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-<div class="ttc" id="a00258_html_a1651536f0e21049e0d3785a121cb326c"><div class="ttname"><a href="a00258.html#a1651536f0e21049e0d3785a121cb326c">de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec.getMediaType</a></div><div class="ttdeci">String getMediaType()</div><div class="ttdef"><b>Definition:</b> MediaRangeSpec.java:151</div></div>
-<div class="ttc" id="a00242_html_a3953da5ad43555a9edc37e48b7f6e4ab"><div class="ttname"><a href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addVariant</a></div><div class="ttdeci">VariantSpec addVariant(String mediaType)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:16</div></div>
-<div class="ttc" id="a00414_html_a2e2f4626c40eeebd96e11b4ed1f6273b"><div class="ttname"><a href="a00414.html#a2e2f4626c40eeebd96e11b4ed1f6273b">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiatorTest.negotiator</a></div><div class="ttdeci">ContentTypeNegotiator negotiator</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiatorTest.java:8</div></div>
-<div class="ttc" id="a00242_html_af83bf4d6bf77cdd31256ecc83186a558"><div class="ttname"><a href="a00242.html#af83bf4d6bf77cdd31256ecc83186a558">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.addUserAgentOverride</a></div><div class="ttdeci">void addUserAgentOverride(Pattern userAgentString, String originalAcceptHeader, String newAcceptHeader)</div><div class="ttdoc">Overrides the Accept header for certain user agents. </div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:41</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2e2f4626c40eeebd96e11b4ed1f6273b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e2f4626c40eeebd96e11b4ed1f6273b">&#9670;&nbsp;</a></span>negotiator</h2>
+<a id="a5d100ac468e8e0551f96450f5bbba1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d100ac468e8e0551f96450f5bbba1b2">&#9670;&nbsp;</a></span>MAX_INDEX_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -601,15 +397,17 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00242.html">ContentTypeNegotiator</a> negotiator</td>
+          <td class="memname">final int MAX_INDEX_SIZE = 1000000</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00430.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00434.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, <a class="el" href="a00430.html#a95bb11e41c19f55f0ca37ae0689fd798">ModelDataSource.getLabelIndex()</a>, and <a class="el" href="a00434.html#aa89379d3ca3d561141fa020c1c285851">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
 
 </div>
 </div>
@@ -619,7 +417,7 @@ Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00150.html">de</a></li><li class="navelem"><a class="el" href="a00151.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00152.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00149.html">pubby</a></li><li class="navelem"><a class="el" href="a00154.html">negotiation</a></li><li class="navelem"><a class="el" href="a00414.html">ContentTypeNegotiatorTest</a></li>
+    <li class="navelem"><a class="el" href="a00186.html">de</a></li><li class="navelem"><a class="el" href="a00187.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00188.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00185.html">pubby</a></li><li class="navelem"><a class="el" href="a00192.html">sources</a></li><li class="navelem"><a class="el" href="a00414.html">DataSource</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

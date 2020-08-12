@@ -1,11 +1,13 @@
 var a00402 =
 [
-    [ "I18nStringValueCache", "a00402.html#a5a7621c57d2b44b84c97d245068bb57e", null ],
-    [ "get", "a00402.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "get", "a00402.html#aaba80f598d3210ba4493a5854e98f5f8", null ],
-    [ "getBestMatch", "a00402.html#a890f5511eb1ae7cd4f54c9945df05a44", null ],
-    [ "getCached", "a00402.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "getCached", "a00402.html#ab4ff038935184bd1080b08388983e211", null ],
-    [ "getMatchLength", "a00402.html#acbeeee3d9843febb26b8cd03ee19ea4e", null ],
-    [ "pickBestValue", "a00402.html#a5a6385c9343184c17f0aa0d7960c6684", null ]
+    [ "addDocumentMetadata", "a00402.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addPageMetadata", "a00402.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
+    [ "addQueryString", "a00402.html#a235314820d427b745d7a08f1819176eb", null ],
+    [ "doGet", "a00402.html#a4c69ab4acf538f0dc8fb8f7482629e85", null ],
+    [ "doGet", "a00402.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
+    [ "doGet", "a00402.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "init", "a00402.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
+    [ "send404", "a00402.html#a3208dcc642a59d12778ba619395eec47", null ],
+    [ "sendInitialization500", "a00402.html#a37f74add6038c113368344fbb9210f8e", null ],
+    [ "serialVersionUID", "a00402.html#a3238d314ecdee14d2966760945d00c3b", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: ModelResponse Class Reference</title>
+<title>GeoPubby: CSVWriter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,85 +61,59 @@ $(document).ready(function(){initNavTree('a00210.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="a00207.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ModelResponse Class Reference</div>  </div>
+<div class="title">CSVWriter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Calls into Joseki to send a Jena model over HTTP.  
+<p>Writes a GeoPubby instance as CSV.  
  <a href="a00210.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for ModelResponse:</div>
+Inheritance diagram for CSVWriter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00208.png" border="0" usemap="#ModelResponse_coll__map" alt="Collaboration graph"/></div>
-<map name="ModelResponse_coll__map" id="ModelResponse_coll__map">
+<div class="center"><img src="a00209.png" border="0" usemap="#CSVWriter_inherit__map" alt="Inheritance graph"/></div>
+<map name="CSVWriter_inherit__map" id="CSVWriter_inherit__map">
+<area shape="rect" id="node2" href="a00234.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="5,5,97,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for CSVWriter:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00208.png" border="0" usemap="#CSVWriter_coll__map" alt="Collaboration graph"/></div>
+<map name="CSVWriter_coll__map" id="CSVWriter_coll__map">
+<area shape="rect" id="node2" href="a00234.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00218.html">JSONWriter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00214.html">NTriplesWriter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00234.html">RDFXMLWriter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00222.html">TrigWriter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00226.html">TrixWriter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00230.html">TurtleWriter</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9fec765daa76a2aff37534d00fe0e31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse</a> (Model <a class="el" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a>, HttpServletRequest <a class="el" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a>, HttpServletResponse <a class="el" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>)</td></tr>
-<tr class="separator:af9fec765daa76a2aff37534d00fe0e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09a9d9145624e027a1ad3cbe85580acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#a09a9d9145624e027a1ad3cbe85580acc">serve</a> ()</td></tr>
-<tr class="separator:a09a9d9145624e027a1ad3cbe85580acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc00390b9b4242b525b35c95441cc68"><td class="memItemLeft" align="right" valign="top">ExtendedIterator&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#abbc00390b9b4242b525b35c95441cc68">write</a> (Model model, HttpServletResponse response)  throws IOException </td></tr>
+<tr class="separator:abbc00390b9b4242b525b35c95441cc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ad11c019b4ed835885005ab44cd318c25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#ad11c019b4ed835885005ab44cd318c25">doResponseModel</a> ()  throws IOException </td></tr>
-<tr class="separator:ad11c019b4ed835885005ab44cd318c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73103da09cb7aaa7b2b3a15d9b66ad06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00190.html">ModelWriter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#a73103da09cb7aaa7b2b3a15d9b66ad06">getWriter</a> (String mediaType)</td></tr>
-<tr class="separator:a73103da09cb7aaa7b2b3a15d9b66ad06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a356df7b1948e33881b8730f379d137a8"><td class="memItemLeft" align="right" valign="top">final Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a></td></tr>
-<tr class="separator:a356df7b1948e33881b8730f379d137a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad632242c9a97c676da2987811ea46e83"><td class="memItemLeft" align="right" valign="top">final HttpServletRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a></td></tr>
-<tr class="separator:ad632242c9a97c676da2987811ea46e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8acf5478a5097f4a2ccb8021c167dd8f"><td class="memItemLeft" align="right" valign="top">final HttpServletResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a></td></tr>
-<tr class="separator:a8acf5478a5097f4a2ccb8021c167dd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac95bc57d28343d34023e72f916cb9b75"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00234.html#ac95bc57d28343d34023e72f916cb9b75">usedProperty</a> =null</td></tr>
+<tr class="separator:ac95bc57d28343d34023e72f916cb9b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b1e194dbc193fe759f7e517807e668"><td class="memItemLeft" align="right" valign="top">WKTReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">reader</a> =new WKTReader()</td></tr>
+<tr class="separator:ae8b1e194dbc193fe759f7e517807e668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Calls into Joseki to send a Jena model over HTTP. </p>
-<p>This gives us content negotiation and all the other tricks supported by Joseki for free. This has to be in the Joseki package because some required methods are not visible. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af9fec765daa76a2aff37534d00fe0e31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9fec765daa76a2aff37534d00fe0e31">&#9670;&nbsp;</a></span>ModelResponse()</h2>
+<div class="textblock"><p>Writes a GeoPubby instance as CSV. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abbc00390b9b4242b525b35c95441cc68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc00390b9b4242b525b35c95441cc68">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00210.html">ModelResponse</a> </td>
+          <td class="memname">ExtendedIterator&lt;Resource&gt; write </td>
           <td>(</td>
           <td class="paramtype">Model&#160;</td>
           <td class="paramname"><em>model</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpServletRequest&#160;</td>
-          <td class="paramname"><em>request</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -150,107 +124,19 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> throws IOException</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00306.html#a8a4a2fc72dd4dc4202f74244b5750ca9">RequestParamHandler.getModifiedRequest()</a>, <a class="el" href="a00306.html#a33a700fbc74b6d65d9f10230245f852f">RequestParamHandler.isMatchingRequest()</a>, <a class="el" href="a00210.html#a356df7b1948e33881b8730f379d137a8">ModelResponse.model</a>, <a class="el" href="a00210.html#ad632242c9a97c676da2987811ea46e83">ModelResponse.request</a>, and <a class="el" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">ModelResponse.response</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                      {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="comment">// Handle ?output=format request parameter</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                RequestParamHandler handler = <span class="keyword">new</span> RequestParamHandler(<a class="code" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a>);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (handler.isMatchingRequest()) {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <a class="code" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a> = handler.getModifiedRequest();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                </div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                this.<a class="code" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a> = <a class="code" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a>;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                this.<a class="code" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a> = <a class="code" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                this.<a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a> = <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div><div class="ttc" id="a00210_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00210.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.ModelResponse.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:32</div></div>
-<div class="ttc" id="a00210_html_a356df7b1948e33881b8730f379d137a8"><div class="ttname"><a href="a00210.html#a356df7b1948e33881b8730f379d137a8">de.fuberlin.wiwiss.pubby.ModelResponse.model</a></div><div class="ttdeci">final Model model</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:31</div></div>
-<div class="ttc" id="a00210_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:33</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad11c019b4ed835885005ab44cd318c25"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad11c019b4ed835885005ab44cd318c25">&#9670;&nbsp;</a></span>doResponseModel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void doResponseModel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> throws IOException</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">ContentTypeNegotiator.getBestMatch()</a>, <a class="el" href="a00262.html#af03e389fc1ed90d41d751d3d5208fc98">PubbyNegotiator.getDataNegotiator()</a>, <a class="el" href="a00258.html#a1651536f0e21049e0d3785a121cb326c">MediaRangeSpec.getMediaType()</a>, and <a class="el" href="a00210.html#a73103da09cb7aaa7b2b3a15d9b66ad06">ModelResponse.getWriter()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00210.html#a09a9d9145624e027a1ad3cbe85580acc">ModelResponse.serve()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                          {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.addHeader(<span class="stringliteral">&quot;Vary&quot;</span>, <span class="stringliteral">&quot;Accept&quot;</span>);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                ContentTypeNegotiator negotiator = PubbyNegotiator.getDataNegotiator();</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                MediaRangeSpec bestMatch = negotiator.getBestMatch(</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                <a class="code" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a>.getHeader(<span class="stringliteral">&quot;Accept&quot;</span>), <a class="code" href="a00210.html#ad632242c9a97c676da2987811ea46e83">request</a>.getHeader(<span class="stringliteral">&quot;User-Agent&quot;</span>));</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">if</span> (bestMatch == null) {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.setStatus(406);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.setContentType(<span class="stringliteral">&quot;text/plain&quot;</span>);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        ServletOutputStream out = <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.getOutputStream();</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        out.println(<span class="stringliteral">&quot;406 Not Acceptable: The requested data format is not supported.&quot;</span>);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        out.println(<span class="stringliteral">&quot;Supported formats are RDF/XML, JSON-LD, GeoJSON, GeoURI, TriX, TriG, Turtle, N3, and N-Triples.&quot;</span>);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <span class="keywordflow">return</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.setContentType(bestMatch.getMediaType());</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="a00210.html#a73103da09cb7aaa7b2b3a15d9b66ad06">getWriter</a>(bestMatch.getMediaType()).write(<a class="code" href="a00210.html#a356df7b1948e33881b8730f379d137a8">model</a>, <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.getOutputStream().flush();</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div><div class="ttc" id="a00210_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00210.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.ModelResponse.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:32</div></div>
-<div class="ttc" id="a00210_html_a356df7b1948e33881b8730f379d137a8"><div class="ttname"><a href="a00210.html#a356df7b1948e33881b8730f379d137a8">de.fuberlin.wiwiss.pubby.ModelResponse.model</a></div><div class="ttdeci">final Model model</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:31</div></div>
-<div class="ttc" id="a00210_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:33</div></div>
-<div class="ttc" id="a00210_html_a73103da09cb7aaa7b2b3a15d9b66ad06"><div class="ttname"><a href="a00210.html#a73103da09cb7aaa7b2b3a15d9b66ad06">de.fuberlin.wiwiss.pubby.ModelResponse.getWriter</a></div><div class="ttdeci">ModelWriter getWriter(String mediaType)</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:85</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a73103da09cb7aaa7b2b3a15d9b66ad06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73103da09cb7aaa7b2b3a15d9b66ad06">&#9670;&nbsp;</a></span>getWriter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00190.html">ModelWriter</a> getWriter </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>mediaType</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00210.html#ad11c019b4ed835885005ab44cd318c25">ModelResponse.doResponseModel()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                        {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/rdf+xml&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> RDFXMLWriter();</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/json&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> JSONWriter();</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                }</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/geojson&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> GeoJSONWriterr();</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                }</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/geouri&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> GeoURIWriter();</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/gml&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> GMLWriter();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/kml&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> KMLWriter();</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/trig&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> TrigWriter();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                }</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/trix&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> TrixWriter();</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                }</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;application/x-turtle&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> TurtleWriter();</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;text/rdf+n3;charset=utf-8&quot;</span>.equals(mediaType)) {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> TurtleWriter();</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                }</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> NTriplesWriter();</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div></div><!-- fragment -->
-</div>
-</div>
-<a id="a09a9d9145624e027a1ad3cbe85580acc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09a9d9145624e027a1ad3cbe85580acc">&#9670;&nbsp;</a></span>serve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void serve </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00210.html#ad11c019b4ed835885005ab44cd318c25">ModelResponse.doResponseModel()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00326.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesDataURLServlet.doGet()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                            {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">// Error hendling is still quite a mess here.</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <a class="code" href="a00210.html#ad11c019b4ed835885005ab44cd318c25">doResponseModel</a>();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                } <span class="keywordflow">catch</span> (IOException ioEx) {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a00942.html">RuntimeException</a>(ioEx);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                } <span class="keywordflow">catch</span> (JenaException jEx) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <a class="code" href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.sendError(</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                HttpServletResponse.SC_INTERNAL_SERVER_ERROR,</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                <span class="stringliteral">&quot;JenaException: &quot;</span> + jEx.getMessage());</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                jEx.printStackTrace();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a00942.html">RuntimeException</a>(e);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div><div class="ttc" id="a00942_html"><div class="ttname"><a href="a00942.html">RuntimeException</a></div></div>
-<div class="ttc" id="a00210_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00210.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:33</div></div>
-<div class="ttc" id="a00210_html_ad11c019b4ed835885005ab44cd318c25"><div class="ttname"><a href="a00210.html#ad11c019b4ed835885005ab44cd318c25">de.fuberlin.wiwiss.pubby.ModelResponse.doResponseModel</a></div><div class="ttdeci">void doResponseModel()</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:67</div></div>
+<p class="reference">References <a class="el" href="a00470.html#afc6375b31a4b188e127ee01b9ee0a544">GEO.ASGEOJSON</a>, <a class="el" href="a00470.html#af3b39bf8d8c41f1b00a9c91c00034c73">GEO.ASWKT</a>, <a class="el" href="a00470.html#ace73ca6834d4f47bc77ff88053a09cfa">GEO.GEORSSPOINT</a>, <a class="el" href="a00470.html#a6737d980017fe22829716d5e08b2c3e4">GEO.P625</a>, <a class="el" href="a00470.html#ac127f8cb1d116ba2de06695bc81c7fbc">GEO.P_GEOMETRY</a>, <a class="el" href="a00470.html#a6c1d650cd10e326f285fa7cc36e1d737">GEO.P_LAT</a>, <a class="el" href="a00470.html#a97406cbf998cb21121e9c3f2f1921dc0">GEO.P_LONG</a>, and <a class="el" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">ModelWriter.reader</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                                                              {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                JSONObject geojson=<span class="keyword">new</span> JSONObject();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                ExtendedIterator&lt;Resource&gt; it=super.write(model, response);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span>(!it.hasNext()) {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        it=model.listResourcesWithProperty(model.createProperty(<span class="stringliteral">&quot;http://www.w3.org/2000/01/rdf-schema#label&quot;</span>));</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        <span class="keywordflow">while</span>(it.hasNext()) {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                Resource ind=it.next();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                StmtIterator it2 = ind.listProperties();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                <span class="keywordflow">while</span>(it2.hasNext()) {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                        Statement curst=it2.next();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                        <span class="keywordflow">if</span>(geojson.has(curst.getPredicate().toString())) {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                <span class="keywordflow">if</span>(geojson.optJSONArray(curst.getPredicate().toString())!=null) {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                        geojson.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                        JSONArray arr=<span class="keyword">new</span> JSONArray();</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                        arr.put(curst.getObject().toString());</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                        geojson.put(curst.getPredicate().toString(),arr);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                        }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                geojson.put(curst.getPredicate().toString(),curst.getObject().toString());</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        }       </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                }</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        geojson.put(<span class="stringliteral">&quot;type&quot;</span>,<span class="stringliteral">&quot;FeatureCollection&quot;</span>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        JSONArray features=<span class="keyword">new</span> JSONArray();</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        geojson.put(<span class="stringliteral">&quot;features&quot;</span>,features);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">while</span>(it.hasNext()) {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                Resource ind=it.next();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                StmtIterator it2 = ind.listProperties();</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                JSONObject curfeature=<span class="keyword">new</span> JSONObject();</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                features.put(curfeature);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                curfeature.put(<span class="stringliteral">&quot;id&quot;</span>,ind.getURI());</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                curfeature.put(<span class="stringliteral">&quot;type&quot;</span>,<span class="stringliteral">&quot;Feature&quot;</span>);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                JSONObject properties=<span class="keyword">new</span> JSONObject();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                curfeature.put(<span class="stringliteral">&quot;properties&quot;</span>,properties);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                Double lat=null,lon=null;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="keywordflow">while</span>(it2.hasNext()) {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        Statement curst=it2.next();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        <span class="keywordflow">if</span>(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                        GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                        || </div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                        GEO.P625.getURI().equals(curst.getPredicate().getURI())) {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                        Geometry geom=<a class="code" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">reader</a>.read(curst.getObject().asLiteral().getString());           </div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                         GeoJSONWriter writer = <span class="keyword">new</span> GeoJSONWriter();</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                    GeoJSON json = writer.write(geom);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                    String jsonstring = json.toString();</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                    curfeature.put(<span class="stringliteral">&quot;geometry&quot;</span>,<span class="keyword">new</span> JSONObject(jsonstring));</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                } <span class="keywordflow">catch</span> (ParseException e) {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                        e.printStackTrace();</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                }</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(GEO.ASGEOJSON.getURI().equals(curst.getPredicate().getURI().toString())){</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                             <span class="keywordflow">if</span>(curst.getObject().asLiteral().getString()!=null)</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                    curfeature.put(<span class="stringliteral">&quot;geometry&quot;</span>,<span class="keyword">new</span> JSONObject(curst.getObject().asLiteral().getString()));</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                lat=curst.getObject().asLiteral().getDouble();</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                lon=curst.getObject().asLiteral().getDouble();</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                        }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())){</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                lat=Double.valueOf(curst.getObject().asLiteral().getString().split(<span class="stringliteral">&quot; &quot;</span>)[0]);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                lon=Double.valueOf(curst.getObject().asLiteral().getString().split(<span class="stringliteral">&quot; &quot;</span>)[1]);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                        }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                <span class="keywordflow">if</span>(properties.has(curst.getPredicate().toString())) {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                        <span class="keywordflow">if</span>(properties.optJSONArray(curst.getPredicate().toString())!=null) {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                                properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                        }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                JSONArray arr=<span class="keyword">new</span> JSONArray();</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                                arr.put(curst.getObject().toString());</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                                properties.put(curst.getPredicate().toString(),arr);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                        }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                   properties.put(curst.getPredicate().toString(),curst.getObject().toString());</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                }                                       </div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                        }</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                        <span class="keywordflow">if</span>(lon!=null &amp;&amp; lat!=null) {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                JSONObject geeo=<span class="keyword">new</span> JSONObject();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                geeo.put(<span class="stringliteral">&quot;type&quot;</span>,<span class="stringliteral">&quot;Point&quot;</span>);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                geeo.put(<span class="stringliteral">&quot;coordinates&quot;</span>,<span class="keyword">new</span> JSONArray());</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                geeo.getJSONArray(<span class="stringliteral">&quot;coordinates&quot;</span>).put(lat);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                geeo.getJSONArray(<span class="stringliteral">&quot;coordinates&quot;</span>).put(lon);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                curfeature.put(<span class="stringliteral">&quot;geometry&quot;</span>,geeo);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                        }</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                }</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                        }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                }       </div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                StringBuilder csvresult=<span class="keyword">new</span> StringBuilder();</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                StringBuilder csvresultheader=<span class="keyword">new</span> StringBuilder();</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                csvresultheader.append(<span class="stringliteral">&quot;the_geom,&quot;</span>);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                GeoJSONReader <a class="code" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">reader</a>=<span class="keyword">new</span> GeoJSONReader();</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;geojson.getJSONArray(<span class="stringliteral">&quot;features&quot;</span>).length();i++) {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                        Geometry geom=reader.read(geojson.getJSONArray(<span class="stringliteral">&quot;features&quot;</span>).getJSONObject(i).getJSONObject(<span class="stringliteral">&quot;geometry&quot;</span>).toString());</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                        csvresult.append(geom.toText()+<span class="stringliteral">&quot;,&quot;</span>);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        JSONObject props=geojson.getJSONArray(<span class="stringliteral">&quot;features&quot;</span>).getJSONObject(i).getJSONObject(<span class="stringliteral">&quot;properties&quot;</span>);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        <span class="keywordflow">for</span>(String key:props.keySet()) {</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                <span class="keywordflow">if</span>(i==0) {</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                        csvresultheader.append(key+<span class="stringliteral">&quot;,&quot;</span>);</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                }</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                <span class="keywordflow">if</span>(props.get(key).toString().contains(<span class="stringliteral">&quot;^^&quot;</span>)) {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                        csvresult.append(props.get(key).toString().substring(props.get(key).toString().lastIndexOf(<span class="stringliteral">&quot;^^&quot;</span>)+2)+<span class="stringliteral">&quot;,&quot;</span>);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                        csvresult.append(props.get(key)+<span class="stringliteral">&quot;,&quot;</span>);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                }       </div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                        }</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        <span class="keywordflow">if</span>((i+1)&lt;geojson.getJSONArray(<span class="stringliteral">&quot;features&quot;</span>).length())</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                csvresult.append(System.lineSeparator());</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        </div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                }</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                csvresultheader.delete(csvresultheader.length()-1, csvresultheader.length());</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                csvresult.delete(csvresult.length()-1, csvresult.length());</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        response.getWriter().write(csvresultheader.toString()+System.lineSeparator()+csvresult.toString());</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        response.getWriter().close();</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                } <span class="keywordflow">catch</span> (JSONException e) {</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        e.printStackTrace();</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                } <span class="keywordflow">catch</span> (IOException e) {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        e.printStackTrace();</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                </div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div><div class="ttc" id="a00234_html_ae8b1e194dbc193fe759f7e517807e668"><div class="ttname"><a href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">de.fuberlin.wiwiss.pubby.exporter.ModelWriter.reader</a></div><div class="ttdeci">WKTReader reader</div><div class="ttdef"><b>Definition:</b> ModelWriter.java:22</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a356df7b1948e33881b8730f379d137a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a356df7b1948e33881b8730f379d137a8">&#9670;&nbsp;</a></span>model</h2>
+<a id="ae8b1e194dbc193fe759f7e517807e668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b1e194dbc193fe759f7e517807e668">&#9670;&nbsp;</a></span>reader</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,22 +145,22 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Model model</td>
+          <td class="memname">WKTReader reader =new WKTReader()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00210.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00218.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00250.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00238.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00214.html#abbc00390b9b4242b525b35c95441cc68">GeoJSONWriterr.write()</a>, <a class="el" href="a00210.html#abbc00390b9b4242b525b35c95441cc68">CSVWriter.write()</a>, <a class="el" href="a00230.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00226.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, <a class="el" href="a00222.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00246.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, and <a class="el" href="a00242.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>.</p>
 
 </div>
 </div>
-<a id="ad632242c9a97c676da2987811ea46e83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad632242c9a97c676da2987811ea46e83">&#9670;&nbsp;</a></span>request</h2>
+<a id="ac95bc57d28343d34023e72f916cb9b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95bc57d28343d34023e72f916cb9b75">&#9670;&nbsp;</a></span>usedProperty</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,41 +169,17 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final HttpServletRequest request</td>
+          <td class="memname">Property usedProperty =null</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00210.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
-
-</div>
-</div>
-<a id="a8acf5478a5097f4a2ccb8021c167dd8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8acf5478a5097f4a2ccb8021c167dd8f">&#9670;&nbsp;</a></span>response</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final HttpServletResponse response</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00210.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00230.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00242.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00222.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, and <a class="el" href="a00226.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>.</p>
 
 </div>
 </div>
@@ -327,7 +189,7 @@ Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00150.html">de</a></li><li class="navelem"><a class="el" href="a00151.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00152.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00149.html">pubby</a></li><li class="navelem"><a class="el" href="a00210.html">ModelResponse</a></li>
+    <li class="navelem"><a class="el" href="a00186.html">de</a></li><li class="navelem"><a class="el" href="a00187.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00188.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00185.html">pubby</a></li><li class="navelem"><a class="el" href="a00189.html">exporter</a></li><li class="navelem"><a class="el" href="a00210.html">CSVWriter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

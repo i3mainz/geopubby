@@ -1,8 +1,16 @@
 var a00262 =
 [
-    [ "[static initializer]", "a00262.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "getDataNegotiator", "a00262.html#af03e389fc1ed90d41d751d3d5208fc98", null ],
-    [ "getPubbyNegotiator", "a00262.html#a422f474f49521adddc4d56b75af7b77c", null ],
-    [ "dataNegotiator", "a00262.html#a3252abb074c382937d325d56e41084a0", null ],
-    [ "pubbyNegotiator", "a00262.html#a7881b210bc9cb724716ffb109de9c562", null ]
+    [ "appendOctet", "a00262.html#acfdbbfd7aed40b41c8c9aca994a66c14", null ],
+    [ "decode", "a00262.html#afd4859a4f02722bf3a685a838b4a555b", null ],
+    [ "getBytesInSequence", "a00262.html#a4ca72c78b1625ba976db313ae47c8284", null ],
+    [ "isContinuationOctet", "a00262.html#a35fd34a472ef86ad621bd606cb9918fc", null ],
+    [ "isUnreservedASCII", "a00262.html#a76335106e7863f31084d5e2ed66767f7", null ],
+    [ "toByte", "a00262.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8", null ],
+    [ "toByte", "a00262.html#aece1ebe6e7522d7baf8ca765166cedbb", null ],
+    [ "toBytes", "a00262.html#a529e9f1a833424046e5c1dc916f91580", null ],
+    [ "toCharacter", "a00262.html#ab2c6b324020d93bdda6aa0d5a1f9593c", null ],
+    [ "toIRI", "a00262.html#a28910c5e808e547d940cc2f604f5cc91", null ],
+    [ "toURI", "a00262.html#aa9aeab48a7535d6d446c3e7b99d71503", null ],
+    [ "hexDigits", "a00262.html#a24d7e0fcb082c35388ff0e58345c1eb4", null ],
+    [ "percentEncoding", "a00262.html#ad5c79bfeae4228c7bee82125fc969c93", null ]
 ];

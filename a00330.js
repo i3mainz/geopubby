@@ -1,13 +1,8 @@
 var a00330 =
 [
-    [ "addDocumentMetadata", "a00330.html#aafab682dd7935049291522510d9a62ba", null ],
-    [ "addPageMetadata", "a00330.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
-    [ "addQueryString", "a00330.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00330.html#a4c69ab4acf538f0dc8fb8f7482629e85", null ],
-    [ "doGet", "a00330.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
-    [ "doGet", "a00330.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
-    [ "init", "a00330.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
-    [ "send404", "a00330.html#a3208dcc642a59d12778ba619395eec47", null ],
-    [ "sendInitialization500", "a00330.html#a37f74add6038c113368344fbb9210f8e", null ],
-    [ "serialVersionUID", "a00330.html#a3238d314ecdee14d2966760945d00c3b", null ]
+    [ "[static initializer]", "a00330.html#a2e87c5ede6b7235170d287cd2e254454", null ],
+    [ "getDataNegotiator", "a00330.html#af03e389fc1ed90d41d751d3d5208fc98", null ],
+    [ "getPubbyNegotiator", "a00330.html#a422f474f49521adddc4d56b75af7b77c", null ],
+    [ "dataNegotiator", "a00330.html#a3252abb074c382937d325d56e41084a0", null ],
+    [ "pubbyNegotiator", "a00330.html#a7881b210bc9cb724716ffb109de9c562", null ]
 ];

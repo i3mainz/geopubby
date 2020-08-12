@@ -1,12 +1,12 @@
 var a00370 =
 [
-    [ "URIPrefixer", "a00370.html#abebd08c86a66757c33787ad331c89ba7", null ],
-    [ "URIPrefixer", "a00370.html#ac6a7e4134557f6a0af45f334e5e917c6", null ],
-    [ "getLocalName", "a00370.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
-    [ "getPrefix", "a00370.html#a5b9a69b246225ec2eca3637f32437a16", null ],
-    [ "hasPrefix", "a00370.html#aab0bab54f99e36cce47bbbbc1c59cc52", null ],
-    [ "toTurtle", "a00370.html#a63af500e9606acd93d5b95c49d61efe9", null ],
-    [ "localName", "a00370.html#a8dac62958e49f5cdfac4a91262dbeacf", null ],
-    [ "prefix", "a00370.html#ab9aa80baa8113e20a123650a1e9d9a29", null ],
-    [ "resource", "a00370.html#a965b8a7998787959ad4196e807743f5d", null ]
+    [ "addDocumentMetadata", "a00370.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addPageMetadata", "a00370.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
+    [ "addQueryString", "a00370.html#a235314820d427b745d7a08f1819176eb", null ],
+    [ "doGet", "a00370.html#aec5394dd173791063da20720a6e8edc8", null ],
+    [ "doGet", "a00370.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "init", "a00370.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
+    [ "send404", "a00370.html#a3208dcc642a59d12778ba619395eec47", null ],
+    [ "sendInitialization500", "a00370.html#a37f74add6038c113368344fbb9210f8e", null ],
+    [ "serialVersionUID", "a00370.html#a3238d314ecdee14d2966760945d00c3b", null ]
 ];

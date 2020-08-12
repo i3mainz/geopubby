@@ -1,10 +1,13 @@
 var a00318 =
 [
-    [ "contextDestroyed", "a00318.html#a2b7329ef5efd0b065d8b248bdc592ede", null ],
-    [ "contextInitialized", "a00318.html#a3699eb98010381819c39a3e147631cf0", null ],
-    [ "initConfiguration", "a00318.html#a72a4d411dc40cdddb4c0da59f24ee16d", null ],
-    [ "log", "a00318.html#a80fd0cdc19fe3fceef0ee9a6e1730d68", null ],
-    [ "ERROR_MESSAGE", "a00318.html#ab05638d9a7f11c3336bc0195aaa950c5", null ],
-    [ "scheduler", "a00318.html#af212ac4b1194ed67d948abd295b3ecd5", null ],
-    [ "SERVER_CONFIGURATION", "a00318.html#a36baffac865473417759ffeceadbe367", null ]
+    [ "Negotiation", "a00318.html#a07cf8563f3d617fcc378cea627bec93d", null ],
+    [ "evaluateDefaultVariant", "a00318.html#a6e3cb856b5772e59fbda260b38fd9267", null ],
+    [ "evaluateVariant", "a00318.html#ad8b9b3527769ba910de6b103877a01ba", null ],
+    [ "evaluateVariantAlias", "a00318.html#a2946761eb1cc8725338bc684127724cd", null ],
+    [ "negotiate", "a00318.html#a81c339d431e6afa30777976323689228", null ],
+    [ "bestDefaultQuality", "a00318.html#a2d8e397f715337f4f78d8df0bd7eb81a", null ],
+    [ "bestDefaultVariant", "a00318.html#ab54b85225e3b7767ce8389ce1220ac1f", null ],
+    [ "bestMatchingQuality", "a00318.html#a44fff2fe4c48a826cd563ae86b408da2", null ],
+    [ "bestMatchingVariant", "a00318.html#a714cbc1a784570f4c22a73b8469082f9", null ],
+    [ "ranges", "a00318.html#a0e7a133ea71f749c23cd6a4f895121a1", null ]
 ];

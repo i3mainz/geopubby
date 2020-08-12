@@ -1,13 +1,16 @@
 var a00278 =
 [
-    [ "PropertyBuilder", "a00278.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
-    [ "addHighDegreeArcs", "a00278.html#a56093db616f5ec791e721da4b41bcb74", null ],
-    [ "addValue", "a00278.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
-    [ "toProperty", "a00278.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
-    [ "blankNodeDescriptions", "a00278.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
-    [ "highDegreeArcCount", "a00278.html#aa6574d553f74a485106af0677f2c8882", null ],
-    [ "isInverse", "a00278.html#a4556acebb4b8d61aab8f863143d163d6", null ],
-    [ "predicate", "a00278.html#aa9ef63e37d986c48ab7c19294531f962", null ],
-    [ "values", "a00278.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
-    [ "vocabularyStore", "a00278.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
+    [ "JSONWriter", "a00286.html", "a00286" ],
+    [ "NTriplesWriter", "a00282.html", "a00282" ],
+    [ "RDFXMLWriter", "a00302.html", "a00302" ],
+    [ "TrigWriter", "a00290.html", "a00290" ],
+    [ "TrixWriter", "a00294.html", "a00294" ],
+    [ "TurtleWriter", "a00298.html", "a00298" ],
+    [ "ModelResponse", "a00278.html#af9fec765daa76a2aff37534d00fe0e31", null ],
+    [ "doResponseModel", "a00278.html#ad11c019b4ed835885005ab44cd318c25", null ],
+    [ "getWriter", "a00278.html#a73103da09cb7aaa7b2b3a15d9b66ad06", null ],
+    [ "serve", "a00278.html#a09a9d9145624e027a1ad3cbe85580acc", null ],
+    [ "model", "a00278.html#a356df7b1948e33881b8730f379d137a8", null ],
+    [ "request", "a00278.html#ad632242c9a97c676da2987811ea46e83", null ],
+    [ "response", "a00278.html#a8acf5478a5097f4a2ccb8021c167dd8f", null ]
 ];

@@ -1,14 +1,2 @@
-<map id="ValuesDataURLServlet" name="ValuesDataURLServlet">
-<area shape="rect" id="node2" href="$a00322.html" title="Abstract base servlet for servlets that handle a property of a given resource. " alt="" coords="2568,135,2701,161"/>
-<area shape="rect" id="node3" href="$a00290.html" title="An abstract base servlet for servlets that manage a namespace of resources. " alt="" coords="2297,265,2391,292"/>
-<area shape="rect" id="node12" href="$a00390.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1649,297,1768,324"/>
-<area shape="rect" id="node6" href="$a00162.html" title="The server&#39;s configuration. " alt="" coords="2035,247,2134,273"/>
-<area shape="rect" id="node7" href="$a00286.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1436,188,1556,215"/>
-<area shape="rect" id="node13" href="$a00394.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,262,1400,303"/>
-<area shape="rect" id="node14" href="$a00406.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,327,1389,369"/>
-<area shape="rect" id="node15" href="$a00398.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,327,1016,369"/>
-<area shape="rect" id="node16" href="$a00398.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,372,629,399"/>
-<area shape="rect" id="node22" href="$a00398.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,393,1016,434"/>
-<area shape="rect" id="node21" href="$a00402.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,394,1383,435"/>
-<area shape="rect" id="node23" href="$a00342.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,499,1337,525"/>
+<map id="MediaRangeSpec" name="MediaRangeSpec">
 </map>

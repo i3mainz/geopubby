@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: ContentTypeNegotiator Class Reference</title>
+<title>GeoPubby: OSMWriter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,243 +61,83 @@ $(document).ready(function(){initNavTree('a00242.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="a00239.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ContentTypeNegotiator Class Reference</div>  </div>
+<div class="title">OSMWriter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Writes a GeoPubby instance as OSM/XML.  
+ <a href="a00242.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for ContentTypeNegotiator:</div>
+Inheritance diagram for OSMWriter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00240.png" border="0" usemap="#ContentTypeNegotiator_coll__map" alt="Collaboration graph"/></div>
-<map name="ContentTypeNegotiator_coll__map" id="ContentTypeNegotiator_coll__map">
+<div class="center"><img src="a00241.png" border="0" usemap="#OSMWriter_inherit__map" alt="Inheritance graph"/></div>
+<map name="OSMWriter_inherit__map" id="OSMWriter_inherit__map">
+<area shape="rect" id="node2" href="a00234.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="5,5,97,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for OSMWriter:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00240.png" border="0" usemap="#OSMWriter_coll__map" alt="Collaboration graph"/></div>
+<map name="OSMWriter_coll__map" id="OSMWriter_coll__map">
+<area shape="rect" id="node2" href="a00234.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00254.html">AcceptHeaderOverride</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00250.html">Negotiation</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00246.html">VariantSpec</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3953da5ad43555a9edc37e48b7f6e4ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00246.html">VariantSpec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a> (String mediaType)</td></tr>
-<tr class="separator:a3953da5ad43555a9edc37e48b7f6e4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7652b7c00c4cf54490dfe3535cc70cf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a7652b7c00c4cf54490dfe3535cc70cf2">setDefaultAccept</a> (String accept)</td></tr>
-<tr class="memdesc:a7652b7c00c4cf54490dfe3535cc70cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an Accept header to be used as the default if a client does not send an Accept header, or if the Accept header cannot be parsed.  <a href="#a7652b7c00c4cf54490dfe3535cc70cf2">More...</a><br /></td></tr>
-<tr class="separator:a7652b7c00c4cf54490dfe3535cc70cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af83bf4d6bf77cdd31256ecc83186a558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#af83bf4d6bf77cdd31256ecc83186a558">addUserAgentOverride</a> (Pattern userAgentString, String originalAcceptHeader, String newAcceptHeader)</td></tr>
-<tr class="memdesc:af83bf4d6bf77cdd31256ecc83186a558"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overrides the Accept header for certain user agents.  <a href="#af83bf4d6bf77cdd31256ecc83186a558">More...</a><br /></td></tr>
-<tr class="separator:af83bf4d6bf77cdd31256ecc83186a558"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab23b79e631120fc8ce51d40c7c314e62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00258.html">MediaRangeSpec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a> (String accept)</td></tr>
-<tr class="separator:ab23b79e631120fc8ce51d40c7c314e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1afbe15fddec9b99e5780a94774044c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00258.html">MediaRangeSpec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a1afbe15fddec9b99e5780a94774044c7">getBestMatch</a> (String accept, String userAgent)</td></tr>
-<tr class="separator:a1afbe15fddec9b99e5780a94774044c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc00390b9b4242b525b35c95441cc68"><td class="memItemLeft" align="right" valign="top">ExtendedIterator&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#abbc00390b9b4242b525b35c95441cc68">write</a> (Model model, HttpServletResponse response)  throws IOException </td></tr>
+<tr class="separator:abbc00390b9b4242b525b35c95441cc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a37345f6b468bd509ef8896b6c546e1ac"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00258.html">MediaRangeSpec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a37345f6b468bd509ef8896b6c546e1ac">toAcceptRanges</a> (String accept)</td></tr>
-<tr class="separator:a37345f6b468bd509ef8896b6c546e1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a2391e088d7d831c6b5bd35986487becf"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00246.html">VariantSpec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a2391e088d7d831c6b5bd35986487becf">variantSpecs</a> = new ArrayList&lt;<a class="el" href="a00246.html">VariantSpec</a>&gt;()</td></tr>
-<tr class="separator:a2391e088d7d831c6b5bd35986487becf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d851118500a4017a2591587200cd953"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00258.html">MediaRangeSpec</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a9d851118500a4017a2591587200cd953">defaultAcceptRanges</a></td></tr>
-<tr class="separator:a9d851118500a4017a2591587200cd953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a248e951c7087641970d6701f1b7ec536"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="a00254.html">AcceptHeaderOverride</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00242.html#a248e951c7087641970d6701f1b7ec536">userAgentOverrides</a></td></tr>
-<tr class="separator:a248e951c7087641970d6701f1b7ec536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac95bc57d28343d34023e72f916cb9b75"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00234.html#ac95bc57d28343d34023e72f916cb9b75">usedProperty</a> =null</td></tr>
+<tr class="separator:ac95bc57d28343d34023e72f916cb9b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b1e194dbc193fe759f7e517807e668"><td class="memItemLeft" align="right" valign="top">WKTReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">reader</a> =new WKTReader()</td></tr>
+<tr class="separator:ae8b1e194dbc193fe759f7e517807e668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="af83bf4d6bf77cdd31256ecc83186a558"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af83bf4d6bf77cdd31256ecc83186a558">&#9670;&nbsp;</a></span>addUserAgentOverride()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Writes a GeoPubby instance as OSM/XML. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abbc00390b9b4242b525b35c95441cc68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc00390b9b4242b525b35c95441cc68">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void addUserAgentOverride </td>
+          <td class="memname">ExtendedIterator&lt;Resource&gt; write </td>
           <td>(</td>
-          <td class="paramtype">Pattern&#160;</td>
-          <td class="paramname"><em>userAgentString</em>, </td>
+          <td class="paramtype">Model&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>originalAcceptHeader</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>newAcceptHeader</em>&#160;</td>
+          <td class="paramtype">HttpServletResponse&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> throws IOException</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Overrides the Accept header for certain user agents. </p>
-<p>This can be used to implement special-case handling for user agents that send faulty Accept headers. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userAgentString</td><td>A pattern to be matched against the User-Agent header; <code>null</code> means regardless of User-Agent </td></tr>
-    <tr><td class="paramname">originalAcceptHeader</td><td>Only override the Accept header if the user agent sends this header; <code>null</code> means always override </td></tr>
-    <tr><td class="paramname">newAcceptHeader</td><td>The Accept header to be used instead </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">Referenced by <a class="el" href="a00414.html#a91224c27c3b20b52fdac952010fab8e8">ContentTypeNegotiatorTest.testUserAgentOverrideSimple()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                             {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                this.<a class="code" href="a00242.html#a248e951c7087641970d6701f1b7ec536">userAgentOverrides</a>.add(<span class="keyword">new</span> AcceptHeaderOverride(</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                userAgentString, originalAcceptHeader, newAcceptHeader));</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div><div class="ttc" id="a00242_html_a248e951c7087641970d6701f1b7ec536"><div class="ttname"><a href="a00242.html#a248e951c7087641970d6701f1b7ec536">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.userAgentOverrides</a></div><div class="ttdeci">List&lt; AcceptHeaderOverride &gt; userAgentOverrides</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:13</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a3953da5ad43555a9edc37e48b7f6e4ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3953da5ad43555a9edc37e48b7f6e4ab">&#9670;&nbsp;</a></span>addVariant()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00246.html">VariantSpec</a> addVariant </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>mediaType</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00414.html#a6a9508944ed52b911eef2cc00ab8dfd5">ContentTypeNegotiatorTest.testAcceptAlias()</a>, <a class="el" href="a00414.html#af0fb802ab7acf142fdaf1f4254466ec1">ContentTypeNegotiatorTest.testDefaultToHigherQuality()</a>, <a class="el" href="a00414.html#ac7ccde7f210ef3d918c0896536ba393d">ContentTypeNegotiatorTest.testEmptyHeader()</a>, <a class="el" href="a00414.html#ad3b5f1df7382cc77122f941e2c6c77ac">ContentTypeNegotiatorTest.testEmptyHeaderPickBestQuality()</a>, <a class="el" href="a00414.html#a5fd4c6c44b176ca920db9fc0a758168e">ContentTypeNegotiatorTest.testMatchSimple()</a>, <a class="el" href="a00414.html#ae34df46446904c48f2e595239dc25c51">ContentTypeNegotiatorTest.testNoMatch()</a>, <a class="el" href="a00414.html#a01b22832236e08e2a5e5a0ec084ba451">ContentTypeNegotiatorTest.testNoMatchIfBestEqualsZero()</a>, <a class="el" href="a00414.html#a516ae895aabd9d1df0ef4594ecd1955b">ContentTypeNegotiatorTest.testPickCorrectMatchSimple()</a>, <a class="el" href="a00414.html#aaed8c772bd5fda6148554e0024136191">ContentTypeNegotiatorTest.testPickCorrectMatchWithClientQuality()</a>, <a class="el" href="a00414.html#a5796314bd106989db42affeb97b278e8">ContentTypeNegotiatorTest.testPickCorrectMatchWithServerQuality1()</a>, <a class="el" href="a00414.html#a76b72f9f3a971c6896e40bee18c71ada">ContentTypeNegotiatorTest.testPickCorrectMatchWithServerQuality2()</a>, <a class="el" href="a00414.html#a2af55214ea1673967d78dcc1c712b4f9">ContentTypeNegotiatorTest.testPickFirstIfTwoEqualOptions()</a>, <a class="el" href="a00414.html#a542fd21591ce4070bb2326983b954066">ContentTypeNegotiatorTest.testQualityMultiplication()</a>, <a class="el" href="a00414.html#a31c732585f8e5e7f58d98dedc22bf434">ContentTypeNegotiatorTest.testSpecifyDefaultAccept()</a>, <a class="el" href="a00414.html#a0d651c4c78c3165c3c1273dfa3574169">ContentTypeNegotiatorTest.testUseAliasQuality()</a>, <a class="el" href="a00414.html#aac73430ed66cf65635f6f7b8c9d14391">ContentTypeNegotiatorTest.testUseDefaultIfNoMatch()</a>, <a class="el" href="a00414.html#acd4f7efa63d94c9a0a34628340ab3a46">ContentTypeNegotiatorTest.testUseDefaultIfTwoEqualOptions()</a>, and <a class="el" href="a00414.html#a91224c27c3b20b52fdac952010fab8e8">ContentTypeNegotiatorTest.testUserAgentOverrideSimple()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                VariantSpec result = <span class="keyword">new</span> VariantSpec(mediaType);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <a class="code" href="a00242.html#a2391e088d7d831c6b5bd35986487becf">variantSpecs</a>.add(result);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div><div class="ttc" id="a00242_html_a2391e088d7d831c6b5bd35986487becf"><div class="ttname"><a href="a00242.html#a2391e088d7d831c6b5bd35986487becf">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.variantSpecs</a></div><div class="ttdeci">List&lt; VariantSpec &gt; variantSpecs</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:10</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ab23b79e631120fc8ce51d40c7c314e62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab23b79e631120fc8ce51d40c7c314e62">&#9670;&nbsp;</a></span>getBestMatch() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00258.html">MediaRangeSpec</a> getBestMatch </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>accept</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00338.html#ade0f373e0ee60161c36c160bd5a04a9c">WebURIServlet.doGet()</a>, <a class="el" href="a00210.html#ad11c019b4ed835885005ab44cd318c25">ModelResponse.doResponseModel()</a>, <a class="el" href="a00414.html#a6a9508944ed52b911eef2cc00ab8dfd5">ContentTypeNegotiatorTest.testAcceptAlias()</a>, <a class="el" href="a00422.html#af9c9a06c26f4cc4893e268a4e89947f1">PubbyNegotiatorTest.testAcceptEverythingGetsHTML()</a>, <a class="el" href="a00422.html#a067ae17d830b21f363a57f404ae0d846">PubbyNegotiatorTest.testAcceptHTML()</a>, <a class="el" href="a00422.html#aed8d6bed2a6aeeb90ef517ed570c3498">PubbyNegotiatorTest.testAcceptJSON()</a>, <a class="el" href="a00422.html#add2af7fced66c28f1b003b304ec2a172">PubbyNegotiatorTest.testAcceptRDFXML()</a>, <a class="el" href="a00422.html#a18d1366f11d8c1b44275510d9e69e40f">PubbyNegotiatorTest.testAcceptXHTMLGetsHTML()</a>, <a class="el" href="a00422.html#abba9050d73d78c04b441e9edd90d1237">PubbyNegotiatorTest.testAcceptXMLGetsRDFXML()</a>, <a class="el" href="a00422.html#ae06810e2ac46d92767505e65850f1e46">PubbyNegotiatorTest.testBrowsersGetHTML()</a>, <a class="el" href="a00422.html#a3df27448e0b5965b1db194f62035f0a5">PubbyNegotiatorTest.testDataURIDefaultsToN3ForFirefox()</a>, <a class="el" href="a00422.html#a4d205a02a145e56e143cc689c8f8bd3e">PubbyNegotiatorTest.testDataURIDefaultsToN3ForSafari()</a>, <a class="el" href="a00414.html#af0fb802ab7acf142fdaf1f4254466ec1">ContentTypeNegotiatorTest.testDefaultToHigherQuality()</a>, <a class="el" href="a00414.html#ac7ccde7f210ef3d918c0896536ba393d">ContentTypeNegotiatorTest.testEmptyHeader()</a>, <a class="el" href="a00414.html#ad3b5f1df7382cc77122f941e2c6c77ac">ContentTypeNegotiatorTest.testEmptyHeaderPickBestQuality()</a>, <a class="el" href="a00422.html#a4564ff3f2f7a470ee9f9d0113d16df7d">PubbyNegotiatorTest.testFirefox3GetsHTML()</a>, <a class="el" href="a00422.html#a50c36dd0e0e659cda573788392fef5ea">PubbyNegotiatorTest.testGetN3()</a>, <a class="el" href="a00422.html#a53e5750230ec0e086ea49d696fafa87c">PubbyNegotiatorTest.testGetNTriples()</a>, <a class="el" href="a00422.html#af0dc80f4ddd392e87c091458e0a50b70">PubbyNegotiatorTest.testGetTurtle()</a>, <a class="el" href="a00414.html#a5fd4c6c44b176ca920db9fc0a758168e">ContentTypeNegotiatorTest.testMatchSimple()</a>, <a class="el" href="a00422.html#aa2caf3745e0285d111eb4f1ecfe638b1">PubbyNegotiatorTest.testNoAcceptGetsHTML()</a>, <a class="el" href="a00414.html#ae34df46446904c48f2e595239dc25c51">ContentTypeNegotiatorTest.testNoMatch()</a>, <a class="el" href="a00414.html#a01b22832236e08e2a5e5a0ec084ba451">ContentTypeNegotiatorTest.testNoMatchIfBestEqualsZero()</a>, <a class="el" href="a00414.html#a9ac05091536c70427d6531779b868428">ContentTypeNegotiatorTest.testNoVariantOnServer()</a>, <a class="el" href="a00414.html#a516ae895aabd9d1df0ef4594ecd1955b">ContentTypeNegotiatorTest.testPickCorrectMatchSimple()</a>, <a class="el" href="a00414.html#aaed8c772bd5fda6148554e0024136191">ContentTypeNegotiatorTest.testPickCorrectMatchWithClientQuality()</a>, <a class="el" href="a00414.html#a5796314bd106989db42affeb97b278e8">ContentTypeNegotiatorTest.testPickCorrectMatchWithServerQuality1()</a>, <a class="el" href="a00414.html#a76b72f9f3a971c6896e40bee18c71ada">ContentTypeNegotiatorTest.testPickCorrectMatchWithServerQuality2()</a>, <a class="el" href="a00414.html#a2af55214ea1673967d78dcc1c712b4f9">ContentTypeNegotiatorTest.testPickFirstIfTwoEqualOptions()</a>, <a class="el" href="a00414.html#a542fd21591ce4070bb2326983b954066">ContentTypeNegotiatorTest.testQualityMultiplication()</a>, <a class="el" href="a00422.html#ae946c0b5f140bc8aa1175fc235bb40ad">PubbyNegotiatorTest.testSafariGetsHTML()</a>, <a class="el" href="a00414.html#a31c732585f8e5e7f58d98dedc22bf434">ContentTypeNegotiatorTest.testSpecifyDefaultAccept()</a>, <a class="el" href="a00422.html#a03380deaa06bd64932a762685f0ccc86">PubbyNegotiatorTest.testTabulatorGetsRDF()</a>, <a class="el" href="a00414.html#a0d651c4c78c3165c3c1273dfa3574169">ContentTypeNegotiatorTest.testUseAliasQuality()</a>, <a class="el" href="a00414.html#aac73430ed66cf65635f6f7b8c9d14391">ContentTypeNegotiatorTest.testUseDefaultIfNoMatch()</a>, <a class="el" href="a00414.html#acd4f7efa63d94c9a0a34628340ab3a46">ContentTypeNegotiatorTest.testUseDefaultIfTwoEqualOptions()</a>, and <a class="el" href="a00414.html#a91224c27c3b20b52fdac952010fab8e8">ContentTypeNegotiatorTest.testUserAgentOverrideSimple()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                          {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(accept, null);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div><div class="ttc" id="a00242_html_ab23b79e631120fc8ce51d40c7c314e62"><div class="ttname"><a href="a00242.html#ab23b79e631120fc8ce51d40c7c314e62">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.getBestMatch</a></div><div class="ttdeci">MediaRangeSpec getBestMatch(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:47</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a1afbe15fddec9b99e5780a94774044c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1afbe15fddec9b99e5780a94774044c7">&#9670;&nbsp;</a></span>getBestMatch() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00258.html">MediaRangeSpec</a> getBestMatch </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>accept</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>userAgent</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00254.html#aef70f59ac6bf685a9ee32f37974a54a0">ContentTypeNegotiator.AcceptHeaderOverride.getReplacement()</a>, <a class="el" href="a00250.html#a81c339d431e6afa30777976323689228">ContentTypeNegotiator.Negotiation.negotiate()</a>, and <a class="el" href="a00242.html#a37345f6b468bd509ef8896b6c546e1ac">ContentTypeNegotiator.toAcceptRanges()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                            {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">if</span> (userAgent == null) {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        userAgent = <span class="stringliteral">&quot;&quot;</span>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                Iterator&lt;AcceptHeaderOverride&gt; it = <a class="code" href="a00242.html#a248e951c7087641970d6701f1b7ec536">userAgentOverrides</a>.iterator();</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                String overriddenAccept = accept;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">while</span> (it.hasNext()) {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        AcceptHeaderOverride <span class="keyword">override</span> = (AcceptHeaderOverride) it.next();</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <span class="keywordflow">if</span> (<span class="keyword">override</span>.matches(accept, userAgent)) {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                overriddenAccept = <span class="keyword">override</span>.getReplacement();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        }</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> Negotiation(<a class="code" href="a00242.html#a37345f6b468bd509ef8896b6c546e1ac">toAcceptRanges</a>(overriddenAccept)).negotiate();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div><div class="ttc" id="a00242_html_a37345f6b468bd509ef8896b6c546e1ac"><div class="ttname"><a href="a00242.html#a37345f6b468bd509ef8896b6c546e1ac">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.toAcceptRanges</a></div><div class="ttdeci">List&lt; MediaRangeSpec &gt; toAcceptRanges(String accept)</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:66</div></div>
-<div class="ttc" id="a00242_html_a248e951c7087641970d6701f1b7ec536"><div class="ttname"><a href="a00242.html#a248e951c7087641970d6701f1b7ec536">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.userAgentOverrides</a></div><div class="ttdeci">List&lt; AcceptHeaderOverride &gt; userAgentOverrides</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:13</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a7652b7c00c4cf54490dfe3535cc70cf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7652b7c00c4cf54490dfe3535cc70cf2">&#9670;&nbsp;</a></span>setDefaultAccept()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setDefaultAccept </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>accept</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets an Accept header to be used as the default if a client does not send an Accept header, or if the Accept header cannot be parsed. </p>
-<p>Defaults to "* / *". </p>
-
-<p class="reference">References <a class="el" href="a00258.html#ac6aa135b8302424356ff56289ce22656">MediaRangeSpec.parseAccept()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00414.html#a31c732585f8e5e7f58d98dedc22bf434">ContentTypeNegotiatorTest.testSpecifyDefaultAccept()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                    {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                this.<a class="code" href="a00242.html#a9d851118500a4017a2591587200cd953">defaultAcceptRanges</a> = MediaRangeSpec.parseAccept(accept);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div><div class="ttc" id="a00242_html_a9d851118500a4017a2591587200cd953"><div class="ttname"><a href="a00242.html#a9d851118500a4017a2591587200cd953">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.defaultAcceptRanges</a></div><div class="ttdeci">List&lt; MediaRangeSpec &gt; defaultAcceptRanges</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:11</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a37345f6b468bd509ef8896b6c546e1ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37345f6b468bd509ef8896b6c546e1ac">&#9670;&nbsp;</a></span>toAcceptRanges()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="a00258.html">MediaRangeSpec</a>&gt; toAcceptRanges </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>accept</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00242.html#a9d851118500a4017a2591587200cd953">ContentTypeNegotiator.defaultAcceptRanges</a>, and <a class="el" href="a00258.html#ac6aa135b8302424356ff56289ce22656">MediaRangeSpec.parseAccept()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00242.html#a1afbe15fddec9b99e5780a94774044c7">ContentTypeNegotiator.getBestMatch()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                                   {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span> (accept == null) {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00242.html#a9d851118500a4017a2591587200cd953">defaultAcceptRanges</a>;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                List&lt;MediaRangeSpec&gt; result = MediaRangeSpec.parseAccept(accept);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">if</span> (result.isEmpty()) {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00242.html#a9d851118500a4017a2591587200cd953">defaultAcceptRanges</a>;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div><div class="ttc" id="a00242_html_a9d851118500a4017a2591587200cd953"><div class="ttname"><a href="a00242.html#a9d851118500a4017a2591587200cd953">de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator.defaultAcceptRanges</a></div><div class="ttdeci">List&lt; MediaRangeSpec &gt; defaultAcceptRanges</div><div class="ttdef"><b>Definition:</b> ContentTypeNegotiator.java:11</div></div>
+<p class="reference">References <a class="el" href="a00470.html#af3b39bf8d8c41f1b00a9c91c00034c73">GEO.ASWKT</a>, <a class="el" href="a00470.html#ace73ca6834d4f47bc77ff88053a09cfa">GEO.GEORSSPOINT</a>, <a class="el" href="a00470.html#a6737d980017fe22829716d5e08b2c3e4">GEO.P625</a>, <a class="el" href="a00470.html#ac127f8cb1d116ba2de06695bc81c7fbc">GEO.P_GEOMETRY</a>, <a class="el" href="a00470.html#a6c1d650cd10e326f285fa7cc36e1d737">GEO.P_LAT</a>, <a class="el" href="a00470.html#a97406cbf998cb21121e9c3f2f1921dc0">GEO.P_LONG</a>, <a class="el" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">ModelWriter.reader</a>, and <a class="el" href="a00234.html#ac95bc57d28343d34023e72f916cb9b75">ModelWriter.usedProperty</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                                                                              {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                ExtendedIterator&lt;Resource&gt; it = super.write(model, response);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">if</span> (!it.hasNext()) {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        response.getWriter().write(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        response.getWriter().close();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        XMLOutputFactory factory = XMLOutputFactory.newInstance();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        StringWriter strwriter = <span class="keyword">new</span> StringWriter();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                XMLStreamWriter writer = <span class="keyword">new</span> IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                writer.writeStartDocument();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                writer.writeStartElement(<span class="stringliteral">&quot;osm&quot;</span>);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                writer.writeAttribute(<span class="stringliteral">&quot;version&quot;</span>, <span class="stringliteral">&quot;0.6&quot;</span>);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                writer.writeAttribute(<span class="stringliteral">&quot;generator&quot;</span>, <span class="stringliteral">&quot;GeoPubby&quot;</span>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                Map&lt;String, String&gt; ns = <span class="keyword">new</span> TreeMap&lt;String, String&gt;();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                <span class="keywordflow">while</span> (it.hasNext()) {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                        Resource ind = it.next();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        StmtIterator it2 = ind.listProperties();</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        <span class="keywordtype">int</span> nscounter = 1;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        writer.setPrefix(<span class="stringliteral">&quot;gml&quot;</span>, <span class="stringliteral">&quot;http://www.opengis.net/gml&quot;</span>);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        <span class="keywordflow">while</span> (it2.hasNext()) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                Statement curst = it2.next();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                String nss = curst.getPredicate().getURI().toString().substring(0,</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                                curst.getPredicate().getURI().toString().lastIndexOf(<span class="charliteral">&#39;/&#39;</span>));</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                <span class="keywordflow">if</span> (!ns.containsKey(nss)) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                        writer.setPrefix(<span class="stringliteral">&quot;ns&quot;</span> + nscounter, nss);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                        writer.writeNamespace(<span class="stringliteral">&quot;ns&quot;</span> + nscounter, nss);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                        ns.put(nss, <span class="stringliteral">&quot;ns&quot;</span> + nscounter++);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                }</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                it.close();</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                it = model.listResourcesWithProperty(<a class="code" href="a00234.html#ac95bc57d28343d34023e72f916cb9b75">usedProperty</a>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                Map&lt;String, String&gt; tags = <span class="keyword">new</span> TreeMap&lt;&gt;();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                Integer countgeoms = 0;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="keywordflow">while</span> (it.hasNext()) {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        Resource ind = it.next();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        StmtIterator it2 = ind.listProperties();</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                        Double lat = null, lon = null;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                        <span class="keywordflow">while</span> (it2.hasNext()) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                Statement curst = it2.next();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                <span class="keywordflow">if</span> (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                                || GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                                || GEO.P625.getURI().equals(curst.getPredicate().getURI())) {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                                Geometry geom = <a class="code" href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">reader</a>.read(curst.getObject().asLiteral().getString());</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                <span class="keywordtype">int</span> nodecounter = 1;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                                <span class="keywordflow">if</span> (countgeoms == 0) {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                                        <span class="keywordflow">if</span> (geom.getGeometryType().equalsIgnoreCase(<span class="stringliteral">&quot;Point&quot;</span>)) {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                                                writer.writeStartElement(<span class="stringliteral">&quot;node&quot;</span>);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;lat&quot;</span>, geom.getCentroid().getY() + <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;lon&quot;</span>, geom.getCentroid().getX() + <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;-&quot;</span> + (nodecounter++));</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (geom.getGeometryType().toLowerCase().contains(<span class="stringliteral">&quot;multi&quot;</span>)) {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> g = 0; g &lt; geom.getNumGeometries(); g++) {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                                                }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                                                writer.writeStartElement(<span class="stringliteral">&quot;node&quot;</span>);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;lat&quot;</span>, geom.getCentroid().getY() + <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;lon&quot;</span>, geom.getCentroid().getX() + <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;-&quot;</span> + (nodecounter++));</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                                                writer.writeEndElement();</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                                                writer.writeStartElement(<span class="stringliteral">&quot;relation&quot;</span>);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                                        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                                writer.writeStartElement(<span class="stringliteral">&quot;way&quot;</span>);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                                                writer.writeStartElement(<span class="stringliteral">&quot;node&quot;</span>);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;lat&quot;</span>, geom.getCentroid().getY() + <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;lon&quot;</span>, geom.getCentroid().getX() + <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                                                writer.writeAttribute(<span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;-&quot;</span> + nodecounter++);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                                                writer.writeEndElement();</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                                                        }</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                                }</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                        } <span class="keywordflow">catch</span> (ParseException e) {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                                <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                                                e.printStackTrace();</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                                        }</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())) {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                        lat = curst.getObject().asLiteral().getDouble();</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())) {</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                        lon = curst.getObject().asLiteral().getDouble();</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())) {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                                        lat = Double.valueOf(curst.getObject().asLiteral().getString().split(<span class="stringliteral">&quot; &quot;</span>)[0]);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                                        lon = Double.valueOf(curst.getObject().asLiteral().getString().split(<span class="stringliteral">&quot; &quot;</span>)[1]);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                                } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                                        String <span class="keyword">namespace </span>= curst.getPredicate().toString().substring(0,</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                                                        curst.getPredicate().toString().lastIndexOf(&#39;/&#39;));</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                                        String last = curst.getPredicate().toString()</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                                        .substring(curst.getPredicate().toString().lastIndexOf(<span class="charliteral">&#39;/&#39;</span>) + 1);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                        <span class="keywordflow">if</span> (ns.containsKey(<span class="keyword">namespace</span>)) {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                                <span class="comment">// writer.writeStartElement(&quot;tag&quot;);</span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                                <span class="comment">// writer.writeAttribute(&quot;k&quot;, last);</span></div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                                <span class="keywordflow">if</span> (curst.getObject().toString().contains(<span class="stringliteral">&quot;^^&quot;</span>)) {</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                                                        tags.put(last, curst.getObject().toString().substring(0,</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                                                                        curst.getObject().toString().lastIndexOf(<span class="stringliteral">&quot;^^&quot;</span>)));</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                                        <span class="comment">// writer.writeAttribute(&quot;v&quot;,</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                                                        <span class="comment">// curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf(&quot;^^&quot;)));</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                                                } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                                        tags.put(last, curst.getObject().toString());</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                                        <span class="comment">// writer.writeAttribute(&quot;v&quot;, curst.getObject().toString());</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                                }</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                                                <span class="comment">// writer.writeEndElement();</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                                        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                                                <span class="comment">// writer.writeStartElement(&quot;tag&quot;);</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                                                <span class="comment">// writer.writeAttribute(&quot;k&quot;,curst.getPredicate().toString());</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                                                <span class="keywordflow">if</span> (curst.getObject().toString().contains(<span class="stringliteral">&quot;^^&quot;</span>)) {</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                                                        tags.put(curst.getPredicate().toString(), curst.getObject().toString().substring(0,</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                                                                        curst.getObject().toString().lastIndexOf(<span class="stringliteral">&quot;^^&quot;</span>)));</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                                                        <span class="comment">// writer.writeAttribute(&quot;v&quot;,</span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                                                        <span class="comment">// curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf(&quot;^^&quot;)));</span></div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                                                } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                                        tags.put(curst.getPredicate().toString(), curst.getObject().toString());</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                                                        <span class="comment">// writer.writeAttribute(&quot;v&quot;, curst.getObject().toString());</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                                }</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                                <span class="comment">// writer.writeEndElement();</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                                        }</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                }</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                <span class="keywordflow">if</span> (lon != null &amp;&amp; lat != null) {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                        writer.writeStartElement(<span class="stringliteral">&quot;node&quot;</span>);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                        writer.writeAttribute(<span class="stringliteral">&quot;lat&quot;</span>, lat.toString());</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                        writer.writeAttribute(<span class="stringliteral">&quot;lon&quot;</span>, lon.toString());</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                        writer.writeAttribute(<span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;-1&quot;</span>);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                                        lat = null;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                                        lon = null;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                                        countgeoms++;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                                }</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                        }</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                }</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                <span class="keywordflow">for</span> (String key : tags.keySet()) {</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                        writer.writeStartElement(<span class="stringliteral">&quot;tag&quot;</span>);</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                        writer.writeAttribute(<span class="stringliteral">&quot;k&quot;</span>, key.toString());</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                        writer.writeAttribute(<span class="stringliteral">&quot;v&quot;</span>, tags.get(key));</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                        writer.writeEndElement();</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                }</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                writer.writeEndElement();</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                writer.writeEndElement();</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                writer.writeEndDocument();</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                writer.flush();</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                        } <span class="keywordflow">catch</span> (XMLStreamException e1) {</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                e1.printStackTrace();</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        }</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        response.getWriter().write(strwriter.toString());</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        response.getWriter().close();</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                }</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div><div class="ttc" id="a00234_html_ac95bc57d28343d34023e72f916cb9b75"><div class="ttname"><a href="a00234.html#ac95bc57d28343d34023e72f916cb9b75">de.fuberlin.wiwiss.pubby.exporter.ModelWriter.usedProperty</a></div><div class="ttdeci">Property usedProperty</div><div class="ttdef"><b>Definition:</b> ModelWriter.java:20</div></div>
+<div class="ttc" id="a00234_html_ae8b1e194dbc193fe759f7e517807e668"><div class="ttname"><a href="a00234.html#ae8b1e194dbc193fe759f7e517807e668">de.fuberlin.wiwiss.pubby.exporter.ModelWriter.reader</a></div><div class="ttdeci">WKTReader reader</div><div class="ttdef"><b>Definition:</b> ModelWriter.java:22</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9d851118500a4017a2591587200cd953"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d851118500a4017a2591587200cd953">&#9670;&nbsp;</a></span>defaultAcceptRanges</h2>
+<a id="ae8b1e194dbc193fe759f7e517807e668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b1e194dbc193fe759f7e517807e668">&#9670;&nbsp;</a></span>reader</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,44 +146,22 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="a00258.html">MediaRangeSpec</a>&gt; defaultAcceptRanges</td>
+          <td class="memname">WKTReader reader =new WKTReader()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">                Collections.singletonList(MediaRangeSpec.parseRange(<span class="stringliteral">&quot;*/*&quot;</span>))</div></div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="a00242.html#a37345f6b468bd509ef8896b6c546e1ac">ContentTypeNegotiator.toAcceptRanges()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00218.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00250.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00238.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00214.html#abbc00390b9b4242b525b35c95441cc68">GeoJSONWriterr.write()</a>, <a class="el" href="a00210.html#abbc00390b9b4242b525b35c95441cc68">CSVWriter.write()</a>, <a class="el" href="a00230.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00242.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00226.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, <a class="el" href="a00246.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, and <a class="el" href="a00222.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>.</p>
 
 </div>
 </div>
-<a id="a248e951c7087641970d6701f1b7ec536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a248e951c7087641970d6701f1b7ec536">&#9670;&nbsp;</a></span>userAgentOverrides</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;<a class="el" href="a00254.html">AcceptHeaderOverride</a>&gt; userAgentOverrides</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">                        <span class="keyword">new</span> ArrayList&lt;AcceptHeaderOverride&gt;()</div></div><!-- fragment -->
-</div>
-</div>
-<a id="a2391e088d7d831c6b5bd35986487becf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2391e088d7d831c6b5bd35986487becf">&#9670;&nbsp;</a></span>variantSpecs</h2>
+<a id="ac95bc57d28343d34023e72f916cb9b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95bc57d28343d34023e72f916cb9b75">&#9670;&nbsp;</a></span>usedProperty</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,15 +170,17 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;<a class="el" href="a00246.html">VariantSpec</a>&gt; variantSpecs = new ArrayList&lt;<a class="el" href="a00246.html">VariantSpec</a>&gt;()</td>
+          <td class="memname">Property usedProperty =null</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00230.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00242.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00222.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, and <a class="el" href="a00226.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>.</p>
 
 </div>
 </div>
@@ -370,7 +190,7 @@ Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00150.html">de</a></li><li class="navelem"><a class="el" href="a00151.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00152.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00149.html">pubby</a></li><li class="navelem"><a class="el" href="a00154.html">negotiation</a></li><li class="navelem"><a class="el" href="a00242.html">ContentTypeNegotiator</a></li>
+    <li class="navelem"><a class="el" href="a00186.html">de</a></li><li class="navelem"><a class="el" href="a00187.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00188.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00185.html">pubby</a></li><li class="navelem"><a class="el" href="a00189.html">exporter</a></li><li class="navelem"><a class="el" href="a00242.html">OSMWriter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

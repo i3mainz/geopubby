@@ -1,7 +1,15 @@
 var a00310 =
 [
-    [ "WrappedRequest", "a00310.html#a8aa2f7741ee468ab8cdfc01666a96115", null ],
-    [ "getHeader", "a00310.html#a8c4a9eee7e040bbf45fcc4b6e5150911", null ],
-    [ "getHeaderNames", "a00310.html#a54f1fecac0b1956e8d4934853f1290fd", null ],
-    [ "getHeaders", "a00310.html#a1c475c3afb57959ee3bf12817402ec17", null ]
+    [ "AcceptHeaderOverride", "a00322.html", "a00322" ],
+    [ "Negotiation", "a00318.html", "a00318" ],
+    [ "VariantSpec", "a00314.html", "a00314" ],
+    [ "addUserAgentOverride", "a00310.html#af83bf4d6bf77cdd31256ecc83186a558", null ],
+    [ "addVariant", "a00310.html#a3953da5ad43555a9edc37e48b7f6e4ab", null ],
+    [ "getBestMatch", "a00310.html#ab23b79e631120fc8ce51d40c7c314e62", null ],
+    [ "getBestMatch", "a00310.html#a1afbe15fddec9b99e5780a94774044c7", null ],
+    [ "setDefaultAccept", "a00310.html#a7652b7c00c4cf54490dfe3535cc70cf2", null ],
+    [ "toAcceptRanges", "a00310.html#a37345f6b468bd509ef8896b6c546e1ac", null ],
+    [ "defaultAcceptRanges", "a00310.html#a9d851118500a4017a2591587200cd953", null ],
+    [ "userAgentOverrides", "a00310.html#a248e951c7087641970d6701f1b7ec536", null ],
+    [ "variantSpecs", "a00310.html#a2391e088d7d831c6b5bd35986487becf", null ]
 ];
