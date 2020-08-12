@@ -39,7 +39,8 @@ public class GPXWriter extends ModelWriter {
 			try {
 				XMLStreamWriter writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 				writer.writeStartDocument();
-				// writer.setPrefix("gml","http://www.opengis.net/gml");
+				writer.setPrefix("gml","http://www.opengis.net/gml");
+				writer.setPrefix("gpx","http://www.topografix.com/GPX/1/1");
 				writer.writeStartElement("http://www.topografix.com/GPX/1/1", "gpx");
 				writer.writeDefaultNamespace("http://www.topografix.com/GPX/1/1");
 				writer.writeNamespace("gml", "http://www.opengis.net/gml");
