@@ -15,10 +15,12 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 
 import de.fuberlin.wiwiss.pubby.exporter.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
+import de.fuberlin.wiwiss.pubby.exporter.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
+import de.fuberlin.wiwiss.pubby.exporter.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
 import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
 import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
@@ -105,10 +107,13 @@ public class ModelResponse {
 			return new CSVWriter();
 		}
 		if("text/gpx".equals(mediaType)){
-			return new CSVWriter();
+			return new GPXWriter();
 		}
 		if ("application/osm+xml".equals(mediaType)) {
 			return new OSMWriter();
+		}
+		if ("text/osmlink".equals(mediaType)) {
+			return new OSMLinkWriter();
 		}
 		if ("application/geouri".equals(mediaType)) {
 			return new GeoURIWriter();
