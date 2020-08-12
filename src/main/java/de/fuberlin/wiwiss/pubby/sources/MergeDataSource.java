@@ -144,6 +144,9 @@ public class MergeDataSource implements DataSource {
 	@Override
 	public de.fuberlin.wiwiss.pubby.util.AutocompleteEngine<SearchRecord> getLabelIndex() {
 		System.out.println("MergeDataSource: GetLabelIndex()");
+		for(DataSource ds:sources) {
+			ds.getLabelIndex();
+		}
 		return SearchIndexInstance.getInstance();
 	}
 }
