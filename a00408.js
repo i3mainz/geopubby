@@ -1,17 +1,15 @@
 var a00408 =
 [
-    [ "IndexDataSource", "a00408.html#a0a636d916caafddba3d8927d5e8c7395", null ],
-    [ "canDescribe", "a00408.html#a1681b51a4d9b94752fc6668c82729236", null ],
-    [ "describeResource", "a00408.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
-    [ "describeResource", "a00408.html#aee8a51772d6673be0a741b47678df946", null ],
-    [ "getHighIndegreeProperties", "a00408.html#afd50c79b6d45d0fed770638879c7359e", null ],
-    [ "getHighOutdegreeProperties", "a00408.html#acbe9e94afdedf6be6979247520906444", null ],
-    [ "getIndex", "a00408.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "getLabelIndex", "a00408.html#a95bb11e41c19f55f0ca37ae0689fd798", null ],
-    [ "listPropertyValues", "a00408.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
-    [ "indexIRI", "a00408.html#a46ccf3d3cc14002ea252d960b3a9b95a", null ],
-    [ "MAX_INDEX_SIZE", "a00408.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
-    [ "SIOC_NS", "a00408.html#a50553be5572548a1ddda089e2392557b", null ],
-    [ "siocContainerOf", "a00408.html#ae47ed8d5d5ece30da541b5a67c0d8031", null ],
-    [ "wrapped", "a00408.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
+    [ "addDocumentMetadata", "a00408.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addPageMetadata", "a00408.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
+    [ "addQueryString", "a00408.html#a235314820d427b745d7a08f1819176eb", null ],
+    [ "doGet", "a00408.html#a30237a46a3889021e746ebbb6a1fa527", null ],
+    [ "doGet", "a00408.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
+    [ "doGet", "a00408.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "init", "a00408.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
+    [ "send404", "a00408.html#a3208dcc642a59d12778ba619395eec47", null ],
+    [ "sendInitialization500", "a00408.html#a37f74add6038c113368344fbb9210f8e", null ],
+    [ "fullIRIPattern", "a00408.html#acbff59e1ab288ff90309cd9b23b9f9da", null ],
+    [ "prefixedNamePattern", "a00408.html#af552ea0e9e208afae060bad87515a08f", null ],
+    [ "serialVersionUID", "a00408.html#a3238d314ecdee14d2966760945d00c3b", null ]
 ];

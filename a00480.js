@@ -1,7 +1,9 @@
 var a00480 =
 [
-    [ "IntegerValueCache", "a00480.html#ae46ea980eabeebe463df56625f7b4e75", null ],
-    [ "get", "a00480.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "getCached", "a00480.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "pickBestValue", "a00480.html#a1b88e6006962be301e6e3feb2219fd61", null ]
+    [ "SearchRecord", "a00480.html#a4ac7197cdb811ab9e27ad8b390355ce6", null ],
+    [ "getFields", "a00480.html#a0cce3babb743f2fc916f7c2bd20d965e", null ],
+    [ "getLabel", "a00480.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
+    [ "getResource", "a00480.html#afe4a3e88052dbc8b12e217669d8dac77", null ],
+    [ "label", "a00480.html#ac3f915eab3b535426bb9794989e9ea2e", null ],
+    [ "res", "a00480.html#a952d2a362956d26b604846d09847e970", null ]
 ];

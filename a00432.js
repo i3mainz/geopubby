@@ -1,17 +1,14 @@
 var a00432 =
 [
-    [ "Builder", "a00436.html", "a00436" ],
-    [ "AutocompleteEngine", "a00432.html#ab29978a4e02531946ff90e23b2e58b03", null ],
-    [ "add", "a00432.html#a2e4d243958874ed92e4705efd514ec8a", null ],
-    [ "addAll", "a00432.html#aedc4b037549f29df48c94d2432b56f21", null ],
-    [ "getAll", "a00432.html#aba85b697482a87be7652f4cbbfe3ede1", null ],
-    [ "remove", "a00432.html#af924252f2d0e180388cdd6136293a91a", null ],
-    [ "removeAll", "a00432.html#a9be7b1de1b31af20288221beb6fc5140", null ],
-    [ "search", "a00432.html#a9b69034ee356599aba4cb389f97ad7c7", null ],
-    [ "search", "a00432.html#afd22691123368089b69314d5a08a7a1f", null ],
-    [ "analyzer", "a00432.html#adf32c4c95815598002112d2c04c748fc", null ],
-    [ "comparator", "a00432.html#a5fc8d2f44284ae06708e6168ac53a831", null ],
-    [ "index", "a00432.html#a2dab6da7542b85c04c4a01b1ffb1abce", null ],
-    [ "read", "a00432.html#aefb6a09436e031db6f196ce971ee825d", null ],
-    [ "write", "a00432.html#afdd303d9d2a2a62c4038d77278a09cf3", null ]
+    [ "FilteredDataSource", "a00432.html#a3a14265e1444808215ea4d2a7c99b199", null ],
+    [ "canDescribe", "a00432.html#a76346f12873afab70aafac6a443c5f04", null ],
+    [ "describeResource", "a00432.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "describeResource", "a00432.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
+    [ "getHighIndegreeProperties", "a00432.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00432.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00432.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00432.html#a2dbc188988204c9931d77a3f36128e50", null ],
+    [ "listPropertyValues", "a00432.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "MAX_INDEX_SIZE", "a00432.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
+    [ "wrapped", "a00432.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
 ];
