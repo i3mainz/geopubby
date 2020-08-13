@@ -22,6 +22,7 @@ public class RequestParamHandler {
 	private final static Map<String,String> mimeTypes = new HashMap<String,String>();
 	static {
 		mimeTypes.put("rdfxml", "application/rdf+xml");
+		mimeTypes.put("rdfjson", "application/rdf+json");
 		mimeTypes.put("xml", "application/rdf+xml");
 
 		// Explicitly asking for output=turtle will still return

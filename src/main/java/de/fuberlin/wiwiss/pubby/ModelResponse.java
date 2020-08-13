@@ -95,6 +95,9 @@ public class ModelResponse {
 		if ("application/rdf+xml".equals(mediaType)) {
 			return new RDFXMLWriter();
 		}
+		if ("application/rdf+json".equals(mediaType)) {
+			return new RDFJSONWriter();
+		}
 		if ("application/json".equals(mediaType)) {
 			return new JSONWriter();
 		}
@@ -171,6 +174,13 @@ public class ModelResponse {
 	private class TrixWriter extends ModelWriter {
 		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("TriX").write(model, response.getOutputStream(), null);
+			return null;
+		}
+	}
+	
+	private class RDFJSONWriter extends ModelWriter {
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
+			model.getWriter("RDF/JSON").write(model, response.getOutputStream(), null);
 			return null;
 		}
 	}
