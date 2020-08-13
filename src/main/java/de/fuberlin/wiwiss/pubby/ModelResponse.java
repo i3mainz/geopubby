@@ -18,7 +18,7 @@ import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
-import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLink;
+import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMLinkWriter;
@@ -117,7 +117,7 @@ public class ModelResponse {
 			return new OSMLinkWriter();
 		}
 		if ("text/googlemapslink".equals(mediaType)) {
-			return new GoogleMapsLink();
+			return new GoogleMapsLinkWriter();
 		}
 		if ("application/geouri".equals(mediaType)) {
 			return new GeoURIWriter();

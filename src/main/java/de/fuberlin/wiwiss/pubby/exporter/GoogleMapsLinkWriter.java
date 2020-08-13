@@ -16,7 +16,7 @@ import org.locationtech.jts.io.ParseException;
 
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class GoogleMapsLink extends ModelWriter {
+public class GoogleMapsLinkWriter extends ModelWriter {
 
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
