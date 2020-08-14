@@ -106,8 +106,8 @@ public class TopoJSONWriter extends ModelWriter {
 					if(lon!=null && lat!=null) {
 						curfeature.put("type","Point");
 						curfeature.put("coordinates",new JSONArray());
-						curfeature.getJSONArray("coordinates").put(lat);
 						curfeature.getJSONArray("coordinates").put(lon);
+						curfeature.getJSONArray("coordinates").put(lat);
 						features.put("point",curfeature);
 					}
 				}

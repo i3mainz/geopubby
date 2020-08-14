@@ -106,8 +106,8 @@ public class GeoJSONWriterr extends ModelWriter {
 						JSONObject geeo=new JSONObject();
 						geeo.put("type","Point");
 						geeo.put("coordinates",new JSONArray());
-						geeo.getJSONArray("coordinates").put(lat);
 						geeo.getJSONArray("coordinates").put(lon);
+						geeo.getJSONArray("coordinates").put(lat);
 						curfeature.put("geometry",geeo);
 					}
 				}
