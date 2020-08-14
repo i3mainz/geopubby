@@ -108,8 +108,8 @@ public class TopoJSONWriter extends ModelWriter {
 						JSONObject geeo=new JSONObject();
 						curfeature.put("type","Point");
 						curfeature.put("coordinates",new JSONArray());
-						geeo.getJSONArray("coordinates").put(lat);
-						geeo.getJSONArray("coordinates").put(lon);
+						curfeature.getJSONArray("coordinates").put(lat);
+						curfeature.getJSONArray("coordinates").put(lon);
 						features.put("point",curfeature);
 					}
 				}
