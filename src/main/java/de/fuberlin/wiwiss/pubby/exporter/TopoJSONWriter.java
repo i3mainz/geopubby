@@ -69,7 +69,6 @@ public class TopoJSONWriter extends ModelWriter {
 							 GeoJSONWriter writer = new GeoJSONWriter();
 					            GeoJSON json = writer.write(geom);
 					            String jsonstring = json.toString();
-					            curfeature.put("geometry",new JSONObject(jsonstring));
 							    curfeature.put("coordinates",new JSONObject(jsonstring).getJSONArray("coordinates"));
 							    curfeature.put("type",new JSONObject(jsonstring).getString("type"));
 								features.put(new JSONObject(jsonstring).getString("type").toLowerCase(),curfeature);
@@ -105,7 +104,6 @@ public class TopoJSONWriter extends ModelWriter {
 						}					
 					}
 					if(lon!=null && lat!=null) {
-						JSONObject geeo=new JSONObject();
 						curfeature.put("type","Point");
 						curfeature.put("coordinates",new JSONArray());
 						curfeature.getJSONArray("coordinates").put(lat);
