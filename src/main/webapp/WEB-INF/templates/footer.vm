@@ -4,6 +4,7 @@
 #if ($rdf_link)
       <a href="$rdf_link?output=ttl">As Turtle</a> |
       <a href="$rdf_link?output=xml">As RDF/XML</a> |
+      <a href="$rdf_link?output=rdfjson">As RDF/JSON</a> |
       <a href="$rdf_link?output=json">As JSON-LD</a> |
       <a href="$rdf_link?output=trig">As TriG</a> |
       <a href="$rdf_link?output=trix">As TriX</a> |
@@ -16,6 +17,7 @@
       	| <a href="$rdf_link?output=gpx">As GPX</a>
       	| <a href="$rdf_link?output=osm">As OSM/XML</a>  
       	| <a href="$rdf_link?output=osmlink">As OSM Link</a>  
+      	| <a href="$rdf_link?output=googlemapslink">As Google Maps Link</a>  
       	| <a href="$rdf_link?output=svg">As SVG</a> 
       	| <a href="$rdf_link?output=wkt">As WKT</a>
       #end
