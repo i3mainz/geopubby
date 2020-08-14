@@ -55,7 +55,6 @@ public class TopoJSONWriter extends ModelWriter {
 				StmtIterator it2 = ind.listProperties();
 				JSONObject curfeature=new JSONObject();
 				curfeature.put("id",ind.getURI());
-				curfeature.put("type","Feature");
 				JSONObject properties=new JSONObject();
 				curfeature.put("properties",properties);
 				Double lat=null,lon=null;
