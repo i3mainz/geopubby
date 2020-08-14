@@ -37,6 +37,8 @@ public class RequestParamHandler {
 		mimeTypes.put("json", "text/json");
 		mimeTypes.put("geojson", "application/geojson");
 		mimeTypes.put("geojson", "text/geojson");
+		mimeTypes.put("topojson", "application/topojson");
+		mimeTypes.put("topojson", "application/topojson");
 		mimeTypes.put("geouri", "application/geouri");
 		mimeTypes.put("geouri", "text/geouri");
 		mimeTypes.put("kml", "application/kml");

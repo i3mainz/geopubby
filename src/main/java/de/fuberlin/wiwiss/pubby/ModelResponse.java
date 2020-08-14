@@ -24,6 +24,7 @@ import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
 import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
+import de.fuberlin.wiwiss.pubby.exporter.TopoJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
@@ -103,6 +104,9 @@ public class ModelResponse {
 		}
 		if ("application/geojson".equals(mediaType)) {
 			return new GeoJSONWriterr();
+		}
+		if ("application/topojson".equals(mediaType)) {
+			return new TopoJSONWriter();
 		}
 		if ("image/svg+xml".equals(mediaType)) {
 			return new SVGWriter();
