@@ -1,14 +1,13 @@
 var a00367 =
 [
-    [ "WrappedRequest", "a00371.html", "a00371" ],
-    [ "RequestParamHandler", "a00367.html#a78ddf90d954b28fddd8107d28222c31e", null ],
-    [ "[static initializer]", "a00367.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "getModifiedRequest", "a00367.html#a8a4a2fc72dd4dc4202f74244b5750ca9", null ],
-    [ "identifyRequestedType", "a00367.html#a787a7136420b59f91d860e9acda556b1", null ],
-    [ "isMatchingRequest", "a00367.html#a33a700fbc74b6d65d9f10230245f852f", null ],
-    [ "removeOutputRequestParam", "a00367.html#aac8e0c252a2aa3a037e32b1c139da1d5", null ],
-    [ "ATTRIBUTE_NAME_IS_HANDLED", "a00367.html#ad985604e395e1ac08a77a4c2e2b2b267", null ],
-    [ "mimeTypes", "a00367.html#a354bb05992ad3230abb0504d5b255d9e", null ],
-    [ "request", "a00367.html#ad632242c9a97c676da2987811ea46e83", null ],
-    [ "requestedType", "a00367.html#a053eb9bde998fd324ba1d3c9178b9d4c", null ]
+    [ "PropertyBuilder", "a00367.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
+    [ "addHighDegreeArcs", "a00367.html#a56093db616f5ec791e721da4b41bcb74", null ],
+    [ "addValue", "a00367.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
+    [ "toProperty", "a00367.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
+    [ "blankNodeDescriptions", "a00367.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
+    [ "highDegreeArcCount", "a00367.html#aa6574d553f74a485106af0677f2c8882", null ],
+    [ "isInverse", "a00367.html#a4556acebb4b8d61aab8f863143d163d6", null ],
+    [ "predicate", "a00367.html#aa9ef63e37d986c48ab7c19294531f962", null ],
+    [ "values", "a00367.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
+    [ "vocabularyStore", "a00367.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
 ];

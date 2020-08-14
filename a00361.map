@@ -1,3 +1,12 @@
-<map id="DataURLServlet" name="DataURLServlet">
-<area shape="rect" id="node2" href="$a00358.html" title="An abstract base servlet for servlets that manage a namespace of resources. " alt="" coords="18,80,111,107"/>
+<map id="ResourceDescription.ResourceProperty" name="ResourceDescription.ResourceProperty">
+<area shape="rect" id="node2" href="$a01155.html" title="Comparable\&lt; ResourceProperty \&gt;" alt="" coords="1633,5,1855,32"/>
+<area shape="rect" id="node5" href="$a00463.html" title="Helper class that splits URIs into prefix and local name according to a Jena PrefixMapping. " alt="" coords="1699,239,1789,265"/>
+<area shape="rect" id="node9" href="$a00503.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1685,407,1803,433"/>
+<area shape="rect" id="node10" href="$a00507.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,361,1400,402"/>
+<area shape="rect" id="node15" href="$a00511.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,476,629,503"/>
+<area shape="rect" id="node13" href="$a00519.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,429,1389,470"/>
+<area shape="rect" id="node14" href="$a00511.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,429,1016,470"/>
+<area shape="rect" id="node20" href="$a00511.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,554,1016,595"/>
+<area shape="rect" id="node19" href="$a00515.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,561,1383,602"/>
+<area shape="rect" id="node21" href="$a00435.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,495,1337,521"/>
 </map>

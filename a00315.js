@@ -1,9 +1,6 @@
 var a00315 =
 [
-    [ "AcceptHeaderOverride", "a00315.html#a62333c819d60f37ab4dc43ff61a210ea", null ],
-    [ "getReplacement", "a00315.html#aef70f59ac6bf685a9ee32f37974a54a0", null ],
-    [ "matches", "a00315.html#a1905bdfe7c1f4050f8e1d04863fd0888", null ],
-    [ "original", "a00315.html#a0d33ec58c7bf400ec61051437a714b85", null ],
-    [ "replacement", "a00315.html#a46c8449d068cc9b8900701670be47fc9", null ],
-    [ "userAgentPattern", "a00315.html#ac3f835bd8ebc7ac5294b67abe18ec5fe", null ]
+    [ "write", "a00315.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "reader", "a00315.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "usedProperty", "a00315.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];
