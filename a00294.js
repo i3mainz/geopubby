@@ -1,6 +1,10 @@
 var a00294 =
 [
-    [ "write", "a00294.html#abbc00390b9b4242b525b35c95441cc68", null ],
-    [ "reader", "a00294.html#ae8b1e194dbc193fe759f7e517807e668", null ],
-    [ "usedProperty", "a00294.html#ac95bc57d28343d34023e72f916cb9b75", null ]
+    [ "MappedResource", "a00294.html#a1d35ac060a72548d1a38db5c9b3765b5", null ],
+    [ "getController", "a00294.html#af3836f401c27f904d7a9fbfbb542efbf", null ],
+    [ "getDataset", "a00294.html#aa790e1d5a47b90fcc632b93eeb5c5220", null ],
+    [ "getDatasetURI", "a00294.html#a392cb8d27b80bf406cc0f07cc96a37ce", null ],
+    [ "datasetConfig", "a00294.html#a0ad529538808809272da8fa670a20cf9", null ],
+    [ "datasetURI", "a00294.html#a350afe9c4cb51c56757b49e43b3cec39", null ],
+    [ "hypermediaResource", "a00294.html#af9b4b8106f3490a5611815a01b750b6b", null ]
 ];

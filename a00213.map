@@ -1,10 +1,3 @@
-<map id="Dataset" name="Dataset">
-<area shape="rect" id="node2" href="$a00375.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1447,59,1567,85"/>
-<area shape="rect" id="node26" href="$a00291.html" title="MetadataConfiguration" alt="" coords="1836,227,1989,253"/>
-<area shape="rect" id="node10" href="$a00507.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="983,397,1199,438"/>
-<area shape="rect" id="node7" href="$a00455.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="1412,364,1603,391"/>
-<area shape="rect" id="node5" href="$a00435.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1045,7,1136,33"/>
-<area shape="rect" id="node16" href="$a00467.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="989,515,1192,571"/>
-<area shape="rect" id="node17" href="$a00467.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="599,546,763,587"/>
-<area shape="rect" id="node24" href="$a01047.html" title="Indexable" alt="" coords="343,448,422,475"/>
+<map id="ConfigurationException" name="ConfigurationException">
+<area shape="rect" id="node2" href="$a01170.html" title="RuntimeException" alt="" coords="19,5,149,32"/>
 </map>

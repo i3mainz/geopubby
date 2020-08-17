@@ -1,8 +1,6 @@
 var a00306 =
 [
-    [ "ModelUtil", "a00306.html#a506f9e63ffb8a3d5770c2fcfaf211607", null ],
-    [ "addNSIfUndefined", "a00306.html#aee150091883e597b335e317a1b187db2", null ],
-    [ "mergeModels", "a00306.html#a0a57bb7e2ed8f451acec78ed6fa27dc1", null ],
-    [ "mergePrefixes", "a00306.html#a9db1cddaaebb2e37c477e94b2b857bf5", null ],
-    [ "EMPTY_MODEL", "a00306.html#af6ba6db7e4d4a66e0970adb9b4f40bfd", null ]
+    [ "write", "a00306.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "reader", "a00306.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "usedProperty", "a00306.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];

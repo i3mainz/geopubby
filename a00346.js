@@ -1,13 +1,13 @@
 var a00346 =
 [
-    [ "PropertyBuilder", "a00346.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
-    [ "addHighDegreeArcs", "a00346.html#a56093db616f5ec791e721da4b41bcb74", null ],
-    [ "addValue", "a00346.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
-    [ "toProperty", "a00346.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
-    [ "blankNodeDescriptions", "a00346.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
-    [ "highDegreeArcCount", "a00346.html#aa6574d553f74a485106af0677f2c8882", null ],
-    [ "isInverse", "a00346.html#a4556acebb4b8d61aab8f863143d163d6", null ],
-    [ "predicate", "a00346.html#aa9ef63e37d986c48ab7c19294531f962", null ],
-    [ "values", "a00346.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
-    [ "vocabularyStore", "a00346.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
+    [ "Negotiation", "a00346.html#a07cf8563f3d617fcc378cea627bec93d", null ],
+    [ "evaluateDefaultVariant", "a00346.html#a6e3cb856b5772e59fbda260b38fd9267", null ],
+    [ "evaluateVariant", "a00346.html#ad8b9b3527769ba910de6b103877a01ba", null ],
+    [ "evaluateVariantAlias", "a00346.html#a2946761eb1cc8725338bc684127724cd", null ],
+    [ "negotiate", "a00346.html#a81c339d431e6afa30777976323689228", null ],
+    [ "bestDefaultQuality", "a00346.html#a2d8e397f715337f4f78d8df0bd7eb81a", null ],
+    [ "bestDefaultVariant", "a00346.html#ab54b85225e3b7767ce8389ce1220ac1f", null ],
+    [ "bestMatchingQuality", "a00346.html#a44fff2fe4c48a826cd563ae86b408da2", null ],
+    [ "bestMatchingVariant", "a00346.html#a714cbc1a784570f4c22a73b8469082f9", null ],
+    [ "ranges", "a00346.html#a0e7a133ea71f749c23cd6a4f895121a1", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: Member List</title>
+<title>GeoPubby: RemoteSPARQLDataSource Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,26 +56,1371 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00465.html','');});
+$(document).ready(function(){initNavTree('a00462.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pac-attribs">Package Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="a00459.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SearchIndexInstance Member List</div>  </div>
+<div class="title">RemoteSPARQLDataSource Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00465.html">SearchIndexInstance</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00465.html#a5201c10f1db44765b41ecdfaab21af05">getInstance</a>()</td><td class="entry"><a class="el" href="a00465.html">SearchIndexInstance</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00465.html#a9318571cc719efafe318742a05eaf173">globalIndex</a></td><td class="entry"><a class="el" href="a00465.html">SearchIndexInstance</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00465.html#a98b72b6a62d583c628d4389a8c6c547d">SearchIndexInstance</a>()</td><td class="entry"><a class="el" href="a00465.html">SearchIndexInstance</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-</table></div><!-- contents -->
+<p>A data source backed by a SPARQL endpoint accessed through the SPARQL protocol.  
+ <a href="a00462.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for RemoteSPARQLDataSource:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00461.png" border="0" usemap="#RemoteSPARQLDataSource_inherit__map" alt="Inheritance graph"/></div>
+<map name="RemoteSPARQLDataSource_inherit__map" id="RemoteSPARQLDataSource_inherit__map">
+<area shape="rect" id="node2" href="a00442.html" title="A source of RDF data intended for publication through the server. " alt="" coords="55,5,146,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for RemoteSPARQLDataSource:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00460.png" border="0" usemap="#RemoteSPARQLDataSource_coll__map" alt="Collaboration graph"/></div>
+<map name="RemoteSPARQLDataSource_coll__map" id="RemoteSPARQLDataSource_coll__map">
+<area shape="rect" id="node2" href="a00442.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1045,14,1136,40"/>
+<area shape="rect" id="node7" href="a00514.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="983,293,1199,334"/>
+<area shape="rect" id="node14" href="a00474.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="989,460,1192,516"/>
+<area shape="rect" id="node15" href="a00474.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="599,468,763,509"/>
+<area shape="rect" id="node22" href="a01054.html" title="Indexable" alt="" coords="343,574,422,600"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aebbed4bfa84fb35c85f678c2a55b3b2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#aebbed4bfa84fb35c85f678c2a55b3b2d">RemoteSPARQLDataSource</a> (String <a class="el" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a>, String <a class="el" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a>)</td></tr>
+<tr class="separator:aebbed4bfa84fb35c85f678c2a55b3b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7130221c6ed4463069b709028a4e4ee3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource</a> (String <a class="el" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a>, String <a class="el" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a>, boolean <a class="el" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">supportsSPARQL11</a>, Set&lt; String &gt; <a class="el" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a>, Set&lt; String &gt; <a class="el" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a>, Set&lt; String &gt; <a class="el" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a>, Set&lt; String &gt; <a class="el" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a>, Set&lt; String &gt; <a class="el" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a>, <a class="el" href="a00514.html">CachedPropertyCollection</a> <a class="el" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">highIndegreeProperties</a>, <a class="el" href="a00514.html">CachedPropertyCollection</a> <a class="el" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">highOutdegreeProperties</a>)</td></tr>
+<tr class="separator:a7130221c6ed4463069b709028a4e4ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b5c42c49e075c355c94981ad94215b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ad0b5c42c49e075c355c94981ad94215b">setGraphContentType</a> (String mediaType)</td></tr>
+<tr class="memdesc:ad0b5c42c49e075c355c94981ad94215b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the content type to ask for in graph requests (CONSTRUCT and DESCRIBE) to the remote SPARQL endpoint.  <a href="#ad0b5c42c49e075c355c94981ad94215b">More...</a><br /></td></tr>
+<tr class="separator:ad0b5c42c49e075c355c94981ad94215b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78a1357391dd97a93ae4a70d475de043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a78a1357391dd97a93ae4a70d475de043">addGraphQueryParam</a> (String param)</td></tr>
+<tr class="separator:a78a1357391dd97a93ae4a70d475de043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858637aeb66d844b6a923144035a171d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a858637aeb66d844b6a923144035a171d">addSelectQueryParam</a> (String param)</td></tr>
+<tr class="separator:a858637aeb66d844b6a923144035a171d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1681b51a4d9b94752fc6668c82729236"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a1681b51a4d9b94752fc6668c82729236">canDescribe</a> (String absoluteIRI)</td></tr>
+<tr class="memdesc:a1681b51a4d9b94752fc6668c82729236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this data source may have some information about a given IRI.  <a href="#a1681b51a4d9b94752fc6668c82729236">More...</a><br /></td></tr>
+<tr class="separator:a1681b51a4d9b94752fc6668c82729236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab894bdc30c94ed2c7df302b41c4d3f42"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">describeResource</a> (String resourceURI)</td></tr>
+<tr class="memdesc:ab894bdc30c94ed2c7df302b41c4d3f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ab894bdc30c94ed2c7df302b41c4d3f42">More...</a><br /></td></tr>
+<tr class="separator:ab894bdc30c94ed2c7df302b41c4d3f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73de8154ca0a0f9528cf8e2632e40868"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a73de8154ca0a0f9528cf8e2632e40868">getHighIndegreeProperties</a> (String resourceURI)</td></tr>
+<tr class="memdesc:a73de8154ca0a0f9528cf8e2632e40868"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs.  <a href="#a73de8154ca0a0f9528cf8e2632e40868">More...</a><br /></td></tr>
+<tr class="separator:a73de8154ca0a0f9528cf8e2632e40868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adee4ed3932a18a60beea0c5e234fe5fc"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#adee4ed3932a18a60beea0c5e234fe5fc">getHighOutdegreeProperties</a> (String resourceURI)</td></tr>
+<tr class="memdesc:adee4ed3932a18a60beea0c5e234fe5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs.  <a href="#adee4ed3932a18a60beea0c5e234fe5fc">More...</a><br /></td></tr>
+<tr class="separator:adee4ed3932a18a60beea0c5e234fe5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a660b961c4b18f651d595cfd867143f79"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a660b961c4b18f651d595cfd867143f79">listPropertyValues</a> (String resourceURI, Property property, boolean isInverse)</td></tr>
+<tr class="memdesc:a660b961c4b18f651d595cfd867143f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source.  <a href="#a660b961c4b18f651d595cfd867143f79">More...</a><br /></td></tr>
+<tr class="separator:a660b961c4b18f651d595cfd867143f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b2ac78c4b45ecc590342abe84c24af"><td class="memItemLeft" align="right" valign="top">List&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a> ()</td></tr>
+<tr class="memdesc:af0b2ac78c4b45ecc590342abe84c24af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of IRI resources described in this data source.  <a href="#af0b2ac78c4b45ecc590342abe84c24af">More...</a><br /></td></tr>
+<tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbc188988204c9931d77a3f36128e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00474.html">AutocompleteEngine</a>&lt; <a class="el" href="a00494.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a2dbc188988204c9931d77a3f36128e50">getLabelIndex</a> ()</td></tr>
+<tr class="separator:a2dbc188988204c9931d77a3f36128e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b1de34ae677a9929de4412c7f4ae83a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a3b1de34ae677a9929de4412c7f4ae83a">getPreviousDescribeQuery</a> ()</td></tr>
+<tr class="separator:a3b1de34ae677a9929de4412c7f4ae83a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ad4ae7f7efd26ae80f56a0223be0324c8">describeResource</a> (String absoluteIRI, String language)</td></tr>
+<tr class="memdesc:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ad4ae7f7efd26ae80f56a0223be0324c8">More...</a><br /></td></tr>
+<tr class="separator:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00442.html#a5d100ac468e8e0551f96450f5bbba1b2">MAX_INDEX_SIZE</a> = 1000000</td></tr>
+<tr class="separator:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
+Package Attributes</h2></td></tr>
+<tr class="memitem:a8f473c3ab938666fcbc20509d57f537f"><td class="memItemLeft" align="right" valign="top">QueryEngineHTTP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a></td></tr>
+<tr class="separator:a8f473c3ab938666fcbc20509d57f537f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2cb853afc49e783e7a59a2481118618c"><td class="memItemLeft" align="right" valign="top">String []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a2cb853afc49e783e7a59a2481118618c">parseQueryParam</a> (String param)</td></tr>
+<tr class="separator:a2cb853afc49e783e7a59a2481118618c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2afca3709d37ee9264be03d81dccf655"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">getHighDegreeProperties</a> (String query, String resourceURI)</td></tr>
+<tr class="separator:a2afca3709d37ee9264be03d81dccf655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe455235efdbdfd2d8c27ecdb3a9633"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">execQueryGraph</a> (String query)</td></tr>
+<tr class="separator:a5fe455235efdbdfd2d8c27ecdb3a9633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac283733a76a14d96f362610f53f82cfe"><td class="memItemLeft" align="right" valign="top">ResultSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">execQuerySelect</a> (String query)</td></tr>
+<tr class="separator:ac283733a76a14d96f362610f53f82cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d0b33849d91965add6d77f5bc6081a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">preProcessQuery</a> (String query, String resourceURI)</td></tr>
+<tr class="separator:a30d0b33849d91965add6d77f5bc6081a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a54bb8ee48626709f55f118dcb03c7"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a67a54bb8ee48626709f55f118dcb03c7">preProcessQuery</a> (String query, String resourceURI, Property property)</td></tr>
+<tr class="separator:a67a54bb8ee48626709f55f118dcb03c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2eb181988145a350634304497f8b175"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ae2eb181988145a350634304497f8b175">replaceString</a> (String text, String searchString, String replacement)</td></tr>
+<tr class="separator:ae2eb181988145a350634304497f8b175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dfb59be67ec294deaeef160076d059"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a72dfb59be67ec294deaeef160076d059">toSPARQLArgumentList</a> (Collection&lt;? extends RDFNode &gt; values)</td></tr>
+<tr class="separator:a72dfb59be67ec294deaeef160076d059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab855e1e781b1ce51d772f4b0c0e7da53"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a></td></tr>
+<tr class="separator:ab855e1e781b1ce51d772f4b0c0e7da53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18468e3c19d543973eccfee390db0471"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a></td></tr>
+<tr class="separator:a18468e3c19d543973eccfee390db0471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637cdb4f2bfca3e59e2844df0cf7021f"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">supportsSPARQL11</a></td></tr>
+<tr class="separator:a637cdb4f2bfca3e59e2844df0cf7021f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2f2e725ae40ecf8743835a4b52878b"><td class="memItemLeft" align="right" valign="top">final Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a></td></tr>
+<tr class="separator:adf2f2e725ae40ecf8743835a4b52878b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7e3132cf0e40d633ab8981b1d88f0a"><td class="memItemLeft" align="right" valign="top">final Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a></td></tr>
+<tr class="separator:acb7e3132cf0e40d633ab8981b1d88f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95785d0c23a5b18417fd0ec69c960821"><td class="memItemLeft" align="right" valign="top">final Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a></td></tr>
+<tr class="separator:a95785d0c23a5b18417fd0ec69c960821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c5714e40c5a704ccba34a1407928e3"><td class="memItemLeft" align="right" valign="top">final Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a></td></tr>
+<tr class="separator:aa7c5714e40c5a704ccba34a1407928e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f9d135df168ff6069d96b78068d406"><td class="memItemLeft" align="right" valign="top">final Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a></td></tr>
+<tr class="separator:a10f9d135df168ff6069d96b78068d406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1674a400811a34dd2bf7a6aa6746212"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="a00514.html">CachedPropertyCollection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">highIndegreeProperties</a></td></tr>
+<tr class="separator:aa1674a400811a34dd2bf7a6aa6746212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68337f44a9dc14be853f21f6baa4dec3"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="a00514.html">CachedPropertyCollection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">highOutdegreeProperties</a></td></tr>
+<tr class="separator:a68337f44a9dc14be853f21f6baa4dec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2bc74e04cb18f2f4a1e3d7435202457"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#af2bc74e04cb18f2f4a1e3d7435202457">previousDescribeQuery</a></td></tr>
+<tr class="separator:af2bc74e04cb18f2f4a1e3d7435202457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b2a5577c93f69a6b42cf7796dae9a5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">contentType</a> = null</td></tr>
+<tr class="separator:ab2b2a5577c93f69a6b42cf7796dae9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5312d93e0e5d366aafa9a95f4fef96be"><td class="memItemLeft" align="right" valign="top">final Set&lt; String[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a5312d93e0e5d366aafa9a95f4fef96be">queryParamsSelect</a> = new HashSet&lt;String[]&gt;()</td></tr>
+<tr class="separator:a5312d93e0e5d366aafa9a95f4fef96be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09aeeda16127e78b5911e94dbdb93811"><td class="memItemLeft" align="right" valign="top">final Set&lt; String[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a09aeeda16127e78b5911e94dbdb93811">queryParamsGraph</a> = new HashSet&lt;String[]&gt;()</td></tr>
+<tr class="separator:a09aeeda16127e78b5911e94dbdb93811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca40e85c7ac7b0956e57235172f94fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00474.html">AutocompleteEngine</a>&lt; <a class="el" href="a00494.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a></td></tr>
+<tr class="separator:a4ca40e85c7ac7b0956e57235172f94fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03976e900f30669e7e9c70a863b55aa5"><td class="memItemLeft" align="right" valign="top">Pattern&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00462.html#a03976e900f30669e7e9c70a863b55aa5">queryParamPattern</a> = Pattern.compile(&quot;(.*?)=(.*)&quot;)</td></tr>
+<tr class="separator:a03976e900f30669e7e9c70a863b55aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aebbed4bfa84fb35c85f678c2a55b3b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebbed4bfa84fb35c85f678c2a55b3b2d">&#9670;&nbsp;</a></span>RemoteSPARQLDataSource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00462.html">RemoteSPARQLDataSource</a> </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>endpointURL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>defaultGraphURI</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#a18468e3c19d543973eccfee390db0471">RemoteSPARQLDataSource.defaultGraphURI</a>, and <a class="el" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">RemoteSPARQLDataSource.endpointURL</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                                                  {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">this</span>(<a class="code" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a>, <a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a>, <span class="keyword">false</span>, null, null, null, null, null, null, null);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div><div class="ttc" id="a00462_html_a18468e3c19d543973eccfee390db0471"><div class="ttname"><a href="a00462.html#a18468e3c19d543973eccfee390db0471">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.defaultGraphURI</a></div><div class="ttdeci">final String defaultGraphURI</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:49</div></div>
+<div class="ttc" id="a00462_html_ab855e1e781b1ce51d772f4b0c0e7da53"><div class="ttname"><a href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.endpointURL</a></div><div class="ttdeci">final String endpointURL</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:48</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7130221c6ed4463069b709028a4e4ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7130221c6ed4463069b709028a4e4ee3">&#9670;&nbsp;</a></span>RemoteSPARQLDataSource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00462.html">RemoteSPARQLDataSource</a> </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>endpointURL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>defaultGraphURI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>supportsSPARQL11</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Set&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>resourceQueries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Set&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>propertyQueries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Set&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>inversePropertyQueries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Set&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>anonPropertyQueries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Set&lt; String &gt;&#160;</td>
+          <td class="paramname"><em>anonInversePropertyQueries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00514.html">CachedPropertyCollection</a>&#160;</td>
+          <td class="paramname"><em>highIndegreeProperties</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00514.html">CachedPropertyCollection</a>&#160;</td>
+          <td class="paramname"><em>highOutdegreeProperties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#a10f9d135df168ff6069d96b78068d406">RemoteSPARQLDataSource.anonInversePropertyQueries</a>, <a class="el" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">RemoteSPARQLDataSource.anonPropertyQueries</a>, <a class="el" href="a00462.html#a18468e3c19d543973eccfee390db0471">RemoteSPARQLDataSource.defaultGraphURI</a>, <a class="el" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">RemoteSPARQLDataSource.endpointURL</a>, <a class="el" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">RemoteSPARQLDataSource.highIndegreeProperties</a>, <a class="el" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">RemoteSPARQLDataSource.highOutdegreeProperties</a>, <a class="el" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">RemoteSPARQLDataSource.inversePropertyQueries</a>, <a class="el" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">RemoteSPARQLDataSource.propertyQueries</a>, <a class="el" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">RemoteSPARQLDataSource.resourceQueries</a>, and <a class="el" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">RemoteSPARQLDataSource.supportsSPARQL11</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                                                                                           {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                this.<a class="code" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a> = <a class="code" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                this.<a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a> = <a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a>;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                this.<a class="code" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">supportsSPARQL11</a> = <a class="code" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">supportsSPARQL11</a>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a> == null || <a class="code" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a>.isEmpty()) {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <a class="code" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a> = <a class="code" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">supportsSPARQL11</a> ?</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                <span class="keyword">new</span> HashSet&lt;String&gt;(Arrays.asList(<span class="keyword">new</span> String[]{</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                        <span class="stringliteral">&quot;CONSTRUCT {?__this__ ?p ?o} WHERE {?__this__ ?p ?o. FILTER (?p NOT IN ?__high_outdegree_properties__)}&quot;</span>,</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                        <span class="stringliteral">&quot;CONSTRUCT {?s ?p ?__this__} WHERE {?s ?p ?__this__. FILTER (?p NOT IN ?__high_indegree_properties__)}&quot;</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                })) :</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                Collections.singleton(<span class="stringliteral">&quot;DESCRIBE ?__this__&quot;</span>);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                }</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a> == null || <a class="code" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a>.isEmpty()) {</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <a class="code" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a> = Collections.singleton(</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                        <span class="stringliteral">&quot;CONSTRUCT {?__this__ ?__property__ ?x} WHERE {?__this__ ?__property__ ?x. FILTER (!isBlank(?x))}&quot;</span>);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                }</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a> == null || <a class="code" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a>.isEmpty()) {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        <a class="code" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a> = Collections.singleton(</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                        <span class="stringliteral">&quot;CONSTRUCT {?x ?__property__ ?__this__} WHERE {?x ?__property__ ?__this__. FILTER (!isBlank(?x))}&quot;</span>);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a> == null || <a class="code" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a>.isEmpty()) {</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        <a class="code" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a> = Collections.singleton(</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                        <span class="stringliteral">&quot;DESCRIBE ?x WHERE {?__this__ ?__property__ ?x. FILTER (isBlank(?x))}&quot;</span>);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                }</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a> == null || <a class="code" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a>.isEmpty()) {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        <a class="code" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a> = Collections.singleton(</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                        <span class="stringliteral">&quot;DESCRIBE ?x WHERE {?x ?__property__ ?__this__. FILTER (isBlank(?x))}&quot;</span>);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                }</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                this.<a class="code" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a> = <a class="code" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a>;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                this.<a class="code" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a> = <a class="code" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a>;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                this.<a class="code" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a> = <a class="code" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a>;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                this.<a class="code" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a> = <a class="code" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a>;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                this.<a class="code" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a> = <a class="code" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a>;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                </div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                this.<a class="code" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">highIndegreeProperties</a> = <a class="code" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">highIndegreeProperties</a>;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                this.<a class="code" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">highOutdegreeProperties</a> = <a class="code" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">highOutdegreeProperties</a>;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div><div class="ttc" id="a00462_html_aa1674a400811a34dd2bf7a6aa6746212"><div class="ttname"><a href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.highIndegreeProperties</a></div><div class="ttdeci">final CachedPropertyCollection highIndegreeProperties</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:60</div></div>
+<div class="ttc" id="a00462_html_aa7c5714e40c5a704ccba34a1407928e3"><div class="ttname"><a href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.anonPropertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; anonPropertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:57</div></div>
+<div class="ttc" id="a00462_html_a68337f44a9dc14be853f21f6baa4dec3"><div class="ttname"><a href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.highOutdegreeProperties</a></div><div class="ttdeci">final CachedPropertyCollection highOutdegreeProperties</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:61</div></div>
+<div class="ttc" id="a00462_html_a18468e3c19d543973eccfee390db0471"><div class="ttname"><a href="a00462.html#a18468e3c19d543973eccfee390db0471">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.defaultGraphURI</a></div><div class="ttdeci">final String defaultGraphURI</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:49</div></div>
+<div class="ttc" id="a00462_html_adf2f2e725ae40ecf8743835a4b52878b"><div class="ttname"><a href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.resourceQueries</a></div><div class="ttdeci">final Set&lt; String &gt; resourceQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:54</div></div>
+<div class="ttc" id="a00462_html_a637cdb4f2bfca3e59e2844df0cf7021f"><div class="ttname"><a href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.supportsSPARQL11</a></div><div class="ttdeci">final boolean supportsSPARQL11</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:50</div></div>
+<div class="ttc" id="a00462_html_a10f9d135df168ff6069d96b78068d406"><div class="ttname"><a href="a00462.html#a10f9d135df168ff6069d96b78068d406">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.anonInversePropertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; anonInversePropertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:58</div></div>
+<div class="ttc" id="a00462_html_a95785d0c23a5b18417fd0ec69c960821"><div class="ttname"><a href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.inversePropertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; inversePropertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:56</div></div>
+<div class="ttc" id="a00462_html_acb7e3132cf0e40d633ab8981b1d88f0a"><div class="ttname"><a href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.propertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; propertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:55</div></div>
+<div class="ttc" id="a00462_html_ab855e1e781b1ce51d772f4b0c0e7da53"><div class="ttname"><a href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.endpointURL</a></div><div class="ttdeci">final String endpointURL</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:48</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a78a1357391dd97a93ae4a70d475de043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78a1357391dd97a93ae4a70d475de043">&#9670;&nbsp;</a></span>addGraphQueryParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addGraphQueryParam </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#a2cb853afc49e783e7a59a2481118618c">RemoteSPARQLDataSource.parseQueryParam()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00218.html#ad54c7bebc6a5146f7a369997d7c27762">Dataset.buildDataSource()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                                     {</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="a00462.html#a09aeeda16127e78b5911e94dbdb93811">queryParamsGraph</a>.add(<a class="code" href="a00462.html#a2cb853afc49e783e7a59a2481118618c">parseQueryParam</a>(param));</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div><div class="ttc" id="a00462_html_a2cb853afc49e783e7a59a2481118618c"><div class="ttname"><a href="a00462.html#a2cb853afc49e783e7a59a2481118618c">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.parseQueryParam</a></div><div class="ttdeci">String [] parseQueryParam(String param)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:132</div></div>
+<div class="ttc" id="a00462_html_a09aeeda16127e78b5911e94dbdb93811"><div class="ttname"><a href="a00462.html#a09aeeda16127e78b5911e94dbdb93811">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.queryParamsGraph</a></div><div class="ttdeci">final Set&lt; String[]&gt; queryParamsGraph</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:66</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a858637aeb66d844b6a923144035a171d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a858637aeb66d844b6a923144035a171d">&#9670;&nbsp;</a></span>addSelectQueryParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addSelectQueryParam </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#a2cb853afc49e783e7a59a2481118618c">RemoteSPARQLDataSource.parseQueryParam()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00218.html#ad54c7bebc6a5146f7a369997d7c27762">Dataset.buildDataSource()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                                      {</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="a00462.html#a5312d93e0e5d366aafa9a95f4fef96be">queryParamsSelect</a>.add(<a class="code" href="a00462.html#a2cb853afc49e783e7a59a2481118618c">parseQueryParam</a>(param));</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div><div class="ttc" id="a00462_html_a2cb853afc49e783e7a59a2481118618c"><div class="ttname"><a href="a00462.html#a2cb853afc49e783e7a59a2481118618c">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.parseQueryParam</a></div><div class="ttdeci">String [] parseQueryParam(String param)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:132</div></div>
+<div class="ttc" id="a00462_html_a5312d93e0e5d366aafa9a95f4fef96be"><div class="ttname"><a href="a00462.html#a5312d93e0e5d366aafa9a95f4fef96be">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.queryParamsSelect</a></div><div class="ttdeci">final Set&lt; String[]&gt; queryParamsSelect</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:65</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1681b51a4d9b94752fc6668c82729236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1681b51a4d9b94752fc6668c82729236">&#9670;&nbsp;</a></span>canDescribe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean canDescribe </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether this data source may have some information about a given IRI. </p>
+<p>If this is <code>false</code>, a client should not bother to call <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">describeResource(String)</a>. This method is to allow for optimizations and should respond very fast.</p>
+<p>It is also used by the UI to decide whether a click on a resource should go to a Pubby page (if <code>true</code>) or out to the Web (if <code>false</code>).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of a resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this data source might have something about it </dd></dl>
+
+<p>Implements <a class="el" href="a00442.html#a1681b51a4d9b94752fc6668c82729236">DataSource</a>.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                                       {</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ab894bdc30c94ed2c7df302b41c4d3f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab894bdc30c94ed2c7df302b41c4d3f42">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implements <a class="el" href="a00442.html#ab085365476c05945218492b31028610a">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">RemoteSPARQLDataSource.execQueryGraph()</a>, and <a class="el" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">RemoteSPARQLDataSource.preProcessQuery()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                          {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="comment">// Loop over resource description queries, join results in a single model.</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="comment">// Process each query to replace place-holders of the given resource.</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                Model model = ModelFactory.createDefaultModel();</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordflow">for</span> (String query: <a class="code" href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">resourceQueries</a>) {</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        Model result = <a class="code" href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">execQueryGraph</a>(<a class="code" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">preProcessQuery</a>(query, resourceURI));</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                        model.add(result);</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                        model.setNsPrefixes(result);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                }</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keywordflow">return</span> model;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        }</div><div class="ttc" id="a00462_html_adf2f2e725ae40ecf8743835a4b52878b"><div class="ttname"><a href="a00462.html#adf2f2e725ae40ecf8743835a4b52878b">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.resourceQueries</a></div><div class="ttdeci">final Set&lt; String &gt; resourceQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:54</div></div>
+<div class="ttc" id="a00462_html_a5fe455235efdbdfd2d8c27ecdb3a9633"><div class="ttname"><a href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.execQueryGraph</a></div><div class="ttdeci">Model execQueryGraph(String query)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:277</div></div>
+<div class="ttc" id="a00462_html_a30d0b33849d91965add6d77f5bc6081a"><div class="ttname"><a href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.preProcessQuery</a></div><div class="ttdeci">String preProcessQuery(String query, String resourceURI)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:344</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad4ae7f7efd26ae80f56a0223be0324c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ae7f7efd26ae80f56a0223be0324c8">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>language</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implements <a class="el" href="a00442.html#ad4ae7f7efd26ae80f56a0223be0324c8">DataSource</a>.</p>
+<div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                                                                           {</div><div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="comment">// TODO Auto-generated method stub</span></div><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a5fe455235efdbdfd2d8c27ecdb3a9633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe455235efdbdfd2d8c27ecdb3a9633">&#9670;&nbsp;</a></span>execQueryGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model execQueryGraph </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">RemoteSPARQLDataSource.contentType</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">RemoteSPARQLDataSource.describeResource()</a>, and <a class="el" href="a00462.html#a660b961c4b18f651d595cfd867143f79">RemoteSPARQLDataSource.listPropertyValues()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                                   {</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                Model model = ModelFactory.createDefaultModel();</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <a class="code" href="a00462.html#af2bc74e04cb18f2f4a1e3d7435202457">previousDescribeQuery</a> = query;</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="comment">// Since we don&#39;t know the exact query type (e.g. DESCRIBE or CONSTRUCT),</span></div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="comment">// and com.hp.hpl.jena.query.QueryFactory could throw exceptions on</span></div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="comment">// vendor-specific sections of the query, we use the lower-level</span></div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="comment">// com.hp.hpl.jena.sparql.engine.http.HttpQuery to execute the query and</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="comment">// read the results into model.</span></div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                </div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                HttpQuery httpQuery = <span class="keyword">new</span> HttpQuery(<a class="code" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a>);</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                httpQuery.addParam(<span class="stringliteral">&quot;query&quot;</span>, query);</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a> != null) {</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                        httpQuery.addParam(<span class="stringliteral">&quot;default-graph-uri&quot;</span>, <a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a>);</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                }</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">for</span> (String[] param: <a class="code" href="a00462.html#a09aeeda16127e78b5911e94dbdb93811">queryParamsGraph</a>) {</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                        httpQuery.addParam(param[0], param[1]);</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                }</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                </div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="comment">// The rest is more or less a copy of QueryEngineHTTP.execModel()</span></div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                httpQuery.setAccept(<a class="code" href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">contentType</a>);</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                InputStream in = httpQuery.exec();</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <span class="comment">// Don&#39;t assume the endpoint actually gives back the content type we</span></div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                <span class="comment">// asked for</span></div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                String actualContentType = httpQuery.getContentType();</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="comment">// If the server fails to return a Content-Type then we will assume</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                <span class="comment">// the server returned the type we asked for</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                <span class="keywordflow">if</span> (actualContentType == null || actualContentType.equals(<span class="stringliteral">&quot;&quot;</span>)) {</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        actualContentType = <a class="code" href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">contentType</a>;</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                }</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="comment">// Try to select language appropriately here based on the model content</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="comment">// type</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                Lang lang = WebContent.contentTypeToLangResultSet(actualContentType);</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordflow">if</span> (!RDFLanguages.isTriples(lang))</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> QueryException(<span class="stringliteral">&quot;Endpoint &lt;&quot;</span> + <a class="code" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a> + </div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                        <span class="stringliteral">&quot;&gt; returned Content Type: &quot;</span> + actualContentType</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                        + <span class="stringliteral">&quot; which is not a supported RDF graph syntax&quot;</span>);</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                RDFDataMgr.read(model, in, lang);</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="comment">// Skip prefixes ns1, ns2, etc, which are usually</span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="comment">// auto-assigned by the endpoint and do more harm than good</span></div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                <span class="keywordflow">for</span> (String prefix: model.getNsPrefixMap().keySet()) {</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">if</span> (prefix.matches(<span class="stringliteral">&quot;^ns[0-9]+$&quot;</span>)) {</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                model.removeNsPrefix(prefix);</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            }</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                </div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <span class="keywordflow">return</span> model;</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div><div class="ttc" id="a00462_html_ab2b2a5577c93f69a6b42cf7796dae9a5"><div class="ttname"><a href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.contentType</a></div><div class="ttdeci">String contentType</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:64</div></div>
+<div class="ttc" id="a00462_html_af2bc74e04cb18f2f4a1e3d7435202457"><div class="ttname"><a href="a00462.html#af2bc74e04cb18f2f4a1e3d7435202457">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.previousDescribeQuery</a></div><div class="ttdeci">String previousDescribeQuery</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:63</div></div>
+<div class="ttc" id="a00462_html_a18468e3c19d543973eccfee390db0471"><div class="ttname"><a href="a00462.html#a18468e3c19d543973eccfee390db0471">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.defaultGraphURI</a></div><div class="ttdeci">final String defaultGraphURI</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:49</div></div>
+<div class="ttc" id="a00462_html_ab855e1e781b1ce51d772f4b0c0e7da53"><div class="ttname"><a href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.endpointURL</a></div><div class="ttdeci">final String endpointURL</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:48</div></div>
+<div class="ttc" id="a00462_html_a09aeeda16127e78b5911e94dbdb93811"><div class="ttname"><a href="a00462.html#a09aeeda16127e78b5911e94dbdb93811">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.queryParamsGraph</a></div><div class="ttdeci">final Set&lt; String[]&gt; queryParamsGraph</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:66</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac283733a76a14d96f362610f53f82cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac283733a76a14d96f362610f53f82cfe">&#9670;&nbsp;</a></span>execQuerySelect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ResultSet execQuerySelect </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">RemoteSPARQLDataSource.getHighDegreeProperties()</a>, <a class="el" href="a00462.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, and <a class="el" href="a00462.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                                        {</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <span class="keywordflow">if</span>(this.<a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a>!=null &amp;&amp; !this.<a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a>.isClosed()) {</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                        this.<a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a>.close();</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                }</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                this.<a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a> = <span class="keyword">new</span> QueryEngineHTTP(<a class="code" href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">endpointURL</a>, query);</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a> != null) {</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                        <a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a>.setDefaultGraphURIs(Collections.singletonList(<a class="code" href="a00462.html#a18468e3c19d543973eccfee390db0471">defaultGraphURI</a>));</div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                }</div><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="keywordflow">for</span> (String[] param: <a class="code" href="a00462.html#a5312d93e0e5d366aafa9a95f4fef96be">queryParamsSelect</a>) {</div><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                        <a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a>.addParam(param[0], param[1]);</div><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                }</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">endpoint</a>.execSelect();</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        }</div><div class="ttc" id="a00462_html_a8f473c3ab938666fcbc20509d57f537f"><div class="ttname"><a href="a00462.html#a8f473c3ab938666fcbc20509d57f537f">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.endpoint</a></div><div class="ttdeci">QueryEngineHTTP endpoint</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:52</div></div>
+<div class="ttc" id="a00462_html_a18468e3c19d543973eccfee390db0471"><div class="ttname"><a href="a00462.html#a18468e3c19d543973eccfee390db0471">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.defaultGraphURI</a></div><div class="ttdeci">final String defaultGraphURI</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:49</div></div>
+<div class="ttc" id="a00462_html_a5312d93e0e5d366aafa9a95f4fef96be"><div class="ttname"><a href="a00462.html#a5312d93e0e5d366aafa9a95f4fef96be">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.queryParamsSelect</a></div><div class="ttdeci">final Set&lt; String[]&gt; queryParamsSelect</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:65</div></div>
+<div class="ttc" id="a00462_html_ab855e1e781b1ce51d772f4b0c0e7da53"><div class="ttname"><a href="a00462.html#ab855e1e781b1ce51d772f4b0c0e7da53">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.endpointURL</a></div><div class="ttdeci">final String endpointURL</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:48</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2afca3709d37ee9264be03d81dccf655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2afca3709d37ee9264be03d81dccf655">&#9670;&nbsp;</a></span>getHighDegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighDegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceURI</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">RemoteSPARQLDataSource.execQuerySelect()</a>, and <a class="el" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">RemoteSPARQLDataSource.preProcessQuery()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a73de8154ca0a0f9528cf8e2632e40868">RemoteSPARQLDataSource.getHighIndegreeProperties()</a>, and <a class="el" href="a00462.html#adee4ed3932a18a60beea0c5e234fe5fc">RemoteSPARQLDataSource.getHighOutdegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                            {</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">supportsSPARQL11</a>) <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                query = <a class="code" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">preProcessQuery</a>(query, resourceURI);</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                ResultSet rs = <a class="code" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">execQuerySelect</a>(query);</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                Map&lt;Property, Integer&gt; results = <span class="keyword">new</span> HashMap&lt;Property, Integer&gt;();</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keywordflow">while</span> (rs.hasNext()) {</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                        QuerySolution solution = rs.next();</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                        <span class="keywordflow">if</span> (!solution.contains(<span class="stringliteral">&quot;p&quot;</span>) || !solution.contains(<span class="stringliteral">&quot;count&quot;</span>)) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                        Resource p = solution.get(<span class="stringliteral">&quot;p&quot;</span>).asResource();</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                        <span class="keywordtype">int</span> count = solution.get(<span class="stringliteral">&quot;count&quot;</span>).asLiteral().getInt();</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                        results.put(ResourceFactory.createProperty(p.getURI()), count);</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                }</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keywordflow">return</span> results;</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div><div class="ttc" id="a00462_html_ac283733a76a14d96f362610f53f82cfe"><div class="ttname"><a href="a00462.html#ac283733a76a14d96f362610f53f82cfe">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.execQuerySelect</a></div><div class="ttdeci">ResultSet execQuerySelect(String query)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:330</div></div>
+<div class="ttc" id="a00462_html_a637cdb4f2bfca3e59e2844df0cf7021f"><div class="ttname"><a href="a00462.html#a637cdb4f2bfca3e59e2844df0cf7021f">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.supportsSPARQL11</a></div><div class="ttdeci">final boolean supportsSPARQL11</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:50</div></div>
+<div class="ttc" id="a00462_html_a30d0b33849d91965add6d77f5bc6081a"><div class="ttname"><a href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.preProcessQuery</a></div><div class="ttdeci">String preProcessQuery(String query, String resourceURI)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:344</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a73de8154ca0a0f9528cf8e2632e40868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73de8154ca0a0f9528cf8e2632e40868">&#9670;&nbsp;</a></span>getHighIndegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighIndegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-indegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implements <a class="el" href="a00442.html#afd50c79b6d45d0fed770638879c7359e">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">RemoteSPARQLDataSource.getHighDegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                                                    {</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">getHighDegreeProperties</a>(</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                <span class="stringliteral">&quot;SELECT ?p (COUNT(?s) AS ?count) &quot;</span> +</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                <span class="stringliteral">&quot;WHERE { &quot;</span> +</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                <span class="stringliteral">&quot;  ?s ?p ?__this__. &quot;</span> +</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                <span class="stringliteral">&quot;  FILTER (?p IN ?__high_indegree_properties__)&quot;</span> +</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                <span class="stringliteral">&quot;}&quot;</span> +</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                <span class="stringliteral">&quot;GROUP BY ?p&quot;</span>,</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                resourceURI);</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div><div class="ttc" id="a00462_html_a2afca3709d37ee9264be03d81dccf655"><div class="ttname"><a href="a00462.html#a2afca3709d37ee9264be03d81dccf655">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.getHighDegreeProperties</a></div><div class="ttdeci">Map&lt; Property, Integer &gt; getHighDegreeProperties(String query, String resourceURI)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:185</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adee4ed3932a18a60beea0c5e234fe5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adee4ed3932a18a60beea0c5e234fe5fc">&#9670;&nbsp;</a></span>getHighOutdegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighOutdegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-outdegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implements <a class="el" href="a00442.html#acbe9e94afdedf6be6979247520906444">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">RemoteSPARQLDataSource.getHighDegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                                                                     {</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">getHighDegreeProperties</a>(</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                <span class="stringliteral">&quot;SELECT ?p (COUNT(?o) AS ?count) &quot;</span> +</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                <span class="stringliteral">&quot;WHERE { &quot;</span> +</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                <span class="stringliteral">&quot;  ?__this__ ?p ?o. &quot;</span> +</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                <span class="stringliteral">&quot;  FILTER (?p IN ?__high_outdegree_properties__)&quot;</span> +</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                <span class="stringliteral">&quot;}&quot;</span> +</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                <span class="stringliteral">&quot;GROUP BY ?p&quot;</span>, </div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                resourceURI);</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div><div class="ttc" id="a00462_html_a2afca3709d37ee9264be03d81dccf655"><div class="ttname"><a href="a00462.html#a2afca3709d37ee9264be03d81dccf655">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.getHighDegreeProperties</a></div><div class="ttdeci">Map&lt; Property, Integer &gt; getHighDegreeProperties(String query, String resourceURI)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:185</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af0b2ac78c4b45ecc590342abe84c24af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b2ac78c4b45ecc590342abe84c24af">&#9670;&nbsp;</a></span>getIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Resource&gt; getIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A list of IRI resources described in this data source. </p>
+<p>Ordering is implementation-defined. Usually a reasonable limit should be applied to the number of resources returned. </p>
+
+<p>Implements <a class="el" href="a00442.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">RemoteSPARQLDataSource.execQuerySelect()</a>, and <a class="el" href="a00442.html#a5d100ac468e8e0551f96450f5bbba1b2">DataSource.MAX_INDEX_SIZE</a>.</p>
+<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                         {</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                System.out.println(<span class="stringliteral">&quot;Index SPARQL Query&quot;</span>);</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                List&lt;Resource&gt; result = <span class="keyword">new</span> ArrayList&lt;Resource&gt;();</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                ResultSet rs = <a class="code" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">execQuerySelect</a>(</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                <span class="stringliteral">&quot;SELECT DISTINCT ?s { &quot;</span> +</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                <span class="stringliteral">&quot;?s ?p ?o &quot;</span> +</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                <span class="stringliteral">&quot;FILTER (isURI(?s)) &quot;</span> +</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                <span class="stringliteral">&quot;} LIMIT &quot;</span> + DataSource.MAX_INDEX_SIZE);</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">while</span> (rs.hasNext()) {</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        Resource s=rs.next().getResource(<span class="stringliteral">&quot;s&quot;</span>);</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        <span class="comment">//System.out.println(&quot;1. &quot;+s.toString());</span></div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        result.add(s);</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                }</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                System.out.println(<span class="stringliteral">&quot;Attempting second query&quot;</span>);</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">if</span> (result.size() &lt; DataSource.MAX_INDEX_SIZE) {</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        rs = <a class="code" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">execQuerySelect</a>(</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                        <span class="stringliteral">&quot;SELECT DISTINCT ?o { &quot;</span> +</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                        <span class="stringliteral">&quot;?s ?p ?o &quot;</span> +</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                        <span class="stringliteral">&quot;FILTER (isURI(?o)) &quot;</span> +</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                        <span class="stringliteral">&quot;} LIMIT &quot;</span> + (DataSource.MAX_INDEX_SIZE - result.size()));</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        <span class="keywordflow">while</span> (rs.hasNext()) {</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                Resource s=rs.next().getResource(<span class="stringliteral">&quot;o&quot;</span>);</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                <span class="comment">//System.out.println(&quot;2. &quot;+s.toString());</span></div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                result.add(s);</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        }</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                }</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                System.out.println(result.size()+<span class="stringliteral">&quot; - &quot;</span>+result.isEmpty());</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        }</div><div class="ttc" id="a00462_html_ac283733a76a14d96f362610f53f82cfe"><div class="ttname"><a href="a00462.html#ac283733a76a14d96f362610f53f82cfe">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.execQuerySelect</a></div><div class="ttdeci">ResultSet execQuerySelect(String query)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:330</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2dbc188988204c9931d77a3f36128e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbc188988204c9931d77a3f36128e50">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00474.html">AutocompleteEngine</a>&lt;<a class="el" href="a00494.html">SearchRecord</a>&gt; getLabelIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00442.html#ae8f6bc3de3dd60e86da9296226cecd8c">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00474.html#a2e4d243958874ed92e4705efd514ec8a">AutocompleteEngine&lt; T extends Indexable &gt;.add()</a>, <a class="el" href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">RemoteSPARQLDataSource.engine</a>, <a class="el" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">RemoteSPARQLDataSource.execQuerySelect()</a>, <a class="el" href="a00490.html#a5201c10f1db44765b41ecdfaab21af05">SearchIndexInstance.getInstance()</a>, and <a class="el" href="a00442.html#a5d100ac468e8e0551f96450f5bbba1b2">DataSource.MAX_INDEX_SIZE</a>.</p>
+<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                                               {</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                System.out.println(<span class="stringliteral">&quot;SPARQL Datasource: Get Label Index!!!!&quot;</span>);</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>==null) {</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                        <a class="code" href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>=SearchIndexInstance.getInstance();</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                        System.out.println(<span class="stringliteral">&quot;Building Label Index....&quot;</span>);</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                        ResultSet rs = <a class="code" href="a00462.html#ac283733a76a14d96f362610f53f82cfe">execQuerySelect</a>(</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                        <span class="stringliteral">&quot;SELECT DISTINCT ?s ?label WHERE { &quot;</span> +</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                        <span class="stringliteral">&quot;?s &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; ?label . &quot;</span> +</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                        <span class="stringliteral">&quot;FILTER (isURI(?s)) &quot;</span> +</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                        <span class="stringliteral">&quot;} LIMIT &quot;</span> + DataSource.MAX_INDEX_SIZE*6);</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        Integer i=0;</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        <span class="keywordflow">while</span> (rs.hasNext()) {</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                i++;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                QuerySolution st=rs.next();</div><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                System.out.println(st.getLiteral(<span class="stringliteral">&quot;label&quot;</span>).getString());</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                <a class="code" href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>.add(<span class="keyword">new</span> SearchRecord(st.getLiteral(<span class="stringliteral">&quot;label&quot;</span>).getString(),st.getResource(<span class="stringliteral">&quot;s&quot;</span>)));</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                        }</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                        System.out.println(<span class="stringliteral">&quot;Got &quot;</span>+i+<span class="stringliteral">&quot; labels!&quot;</span>);</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                }</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">engine</a>;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div><div class="ttc" id="a00462_html_ac283733a76a14d96f362610f53f82cfe"><div class="ttname"><a href="a00462.html#ac283733a76a14d96f362610f53f82cfe">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.execQuerySelect</a></div><div class="ttdeci">ResultSet execQuerySelect(String query)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:330</div></div>
+<div class="ttc" id="a00462_html_a4ca40e85c7ac7b0956e57235172f94fe"><div class="ttname"><a href="a00462.html#a4ca40e85c7ac7b0956e57235172f94fe">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.engine</a></div><div class="ttdeci">AutocompleteEngine&lt; SearchRecord &gt; engine</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:67</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3b1de34ae677a9929de4412c7f4ae83a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1de34ae677a9929de4412c7f4ae83a">&#9670;&nbsp;</a></span>getPreviousDescribeQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String getPreviousDescribeQuery </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#af2bc74e04cb18f2f4a1e3d7435202457">RemoteSPARQLDataSource.previousDescribeQuery</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00298.html#a0120eb3b694d243227cee71bd8b0ba11">MetadataConfiguration.parsePlaceholder()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                                 {</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00462.html#af2bc74e04cb18f2f4a1e3d7435202457">previousDescribeQuery</a>;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div><div class="ttc" id="a00462_html_af2bc74e04cb18f2f4a1e3d7435202457"><div class="ttname"><a href="a00462.html#af2bc74e04cb18f2f4a1e3d7435202457">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.previousDescribeQuery</a></div><div class="ttdeci">String previousDescribeQuery</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:63</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a660b961c4b18f651d595cfd867143f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a660b961c4b18f651d595cfd867143f79">&#9670;&nbsp;</a></span>listPropertyValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model listPropertyValues </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Property&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isInverse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source. </p>
+<p>It lists the values of a particular property of a particular resource. Where values are blank nodes, a complete description of these anonymous resources must be included. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The resource to be examined </td></tr>
+    <tr><td class="paramname">property</td><td>The property we're interested in </td></tr>
+    <tr><td class="paramname">isInverse</td><td>Are we interested in outgoing arcs (<code>false</code>) or incoming (<code>true</code>)? </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source. </dd></dl>
+
+<p>Implements <a class="el" href="a00442.html#a24260bc730afdd0c68fa8f7f5e0b600f">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">RemoteSPARQLDataSource.execQueryGraph()</a>, and <a class="el" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">RemoteSPARQLDataSource.preProcessQuery()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                           {</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="comment">// Loop over the queries, join results in a single model.</span></div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="comment">// Process each query to replace place-holders of the given resource and property.</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                List&lt;String&gt; queries = <span class="keyword">new</span> ArrayList&lt;String&gt;();</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                queries.addAll(isInverse ? <a class="code" href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">inversePropertyQueries</a> : <a class="code" href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">propertyQueries</a>);</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                queries.addAll(isInverse ? <a class="code" href="a00462.html#a10f9d135df168ff6069d96b78068d406">anonInversePropertyQueries</a> : <a class="code" href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">anonPropertyQueries</a>);</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                Model model = ModelFactory.createDefaultModel();</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <span class="keywordflow">for</span> (String query: queries) {</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        String preprocessed = <a class="code" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">preProcessQuery</a>(query, resourceURI, property);</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        Model result = <a class="code" href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">execQueryGraph</a>(preprocessed);</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        model.add(result);</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        model.setNsPrefixes(result);</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                }</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <span class="keywordflow">return</span> model;</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        }</div><div class="ttc" id="a00462_html_aa7c5714e40c5a704ccba34a1407928e3"><div class="ttname"><a href="a00462.html#aa7c5714e40c5a704ccba34a1407928e3">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.anonPropertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; anonPropertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:57</div></div>
+<div class="ttc" id="a00462_html_a5fe455235efdbdfd2d8c27ecdb3a9633"><div class="ttname"><a href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.execQueryGraph</a></div><div class="ttdeci">Model execQueryGraph(String query)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:277</div></div>
+<div class="ttc" id="a00462_html_a10f9d135df168ff6069d96b78068d406"><div class="ttname"><a href="a00462.html#a10f9d135df168ff6069d96b78068d406">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.anonInversePropertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; anonInversePropertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:58</div></div>
+<div class="ttc" id="a00462_html_a95785d0c23a5b18417fd0ec69c960821"><div class="ttname"><a href="a00462.html#a95785d0c23a5b18417fd0ec69c960821">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.inversePropertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; inversePropertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:56</div></div>
+<div class="ttc" id="a00462_html_acb7e3132cf0e40d633ab8981b1d88f0a"><div class="ttname"><a href="a00462.html#acb7e3132cf0e40d633ab8981b1d88f0a">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.propertyQueries</a></div><div class="ttdeci">final Set&lt; String &gt; propertyQueries</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:55</div></div>
+<div class="ttc" id="a00462_html_a30d0b33849d91965add6d77f5bc6081a"><div class="ttname"><a href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.preProcessQuery</a></div><div class="ttdeci">String preProcessQuery(String query, String resourceURI)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:344</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2cb853afc49e783e7a59a2481118618c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb853afc49e783e7a59a2481118618c">&#9670;&nbsp;</a></span>parseQueryParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String [] parseQueryParam </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00462.html#a03976e900f30669e7e9c70a863b55aa5">RemoteSPARQLDataSource.queryParamPattern</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a78a1357391dd97a93ae4a70d475de043">RemoteSPARQLDataSource.addGraphQueryParam()</a>, and <a class="el" href="a00462.html#a858637aeb66d844b6a923144035a171d">RemoteSPARQLDataSource.addSelectQueryParam()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                       {</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                Matcher match = <a class="code" href="a00462.html#a03976e900f30669e7e9c70a863b55aa5">queryParamPattern</a>.matcher(param);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">if</span> (!match.matches()) {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(<span class="stringliteral">&quot;Query parameter \&quot;&quot;</span> + param + </div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                        <span class="stringliteral">&quot;\&quot; is not in \&quot;param=value\&quot; form&quot;</span>);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                }</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> String[]{match.group(1), match.group(2)};</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div><div class="ttc" id="a00462_html_a03976e900f30669e7e9c70a863b55aa5"><div class="ttname"><a href="a00462.html#a03976e900f30669e7e9c70a863b55aa5">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.queryParamPattern</a></div><div class="ttdeci">Pattern queryParamPattern</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:141</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a30d0b33849d91965add6d77f5bc6081a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d0b33849d91965add6d77f5bc6081a">&#9670;&nbsp;</a></span>preProcessQuery() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String preProcessQuery </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceURI</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#ab894bdc30c94ed2c7df302b41c4d3f42">RemoteSPARQLDataSource.describeResource()</a>, <a class="el" href="a00462.html#a2afca3709d37ee9264be03d81dccf655">RemoteSPARQLDataSource.getHighDegreeProperties()</a>, and <a class="el" href="a00462.html#a660b961c4b18f651d595cfd867143f79">RemoteSPARQLDataSource.listPropertyValues()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                                                         {</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">preProcessQuery</a>(query, resourceURI, null);</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        }</div><div class="ttc" id="a00462_html_a30d0b33849d91965add6d77f5bc6081a"><div class="ttname"><a href="a00462.html#a30d0b33849d91965add6d77f5bc6081a">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.preProcessQuery</a></div><div class="ttdeci">String preProcessQuery(String query, String resourceURI)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:344</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a67a54bb8ee48626709f55f118dcb03c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a54bb8ee48626709f55f118dcb03c7">&#9670;&nbsp;</a></span>preProcessQuery() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String preProcessQuery </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceURI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Property&#160;</td>
+          <td class="paramname"><em>property</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00514.html#a1c247553b46f28035a0d8cd5173a165a">VocabularyStore.CachedPropertyCollection.get()</a>, <a class="el" href="a00462.html#ae2eb181988145a350634304497f8b175">RemoteSPARQLDataSource.replaceString()</a>, and <a class="el" href="a00462.html#a72dfb59be67ec294deaeef160076d059">RemoteSPARQLDataSource.toSPARQLArgumentList()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                                                            {</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                String result = <a class="code" href="a00462.html#ae2eb181988145a350634304497f8b175">replaceString</a>(query, <span class="stringliteral">&quot;?__this__&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> + resourceURI + <span class="stringliteral">&quot;&gt;&quot;</span>);</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                <span class="keywordflow">if</span> (property != null) {</div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                        result = <a class="code" href="a00462.html#ae2eb181988145a350634304497f8b175">replaceString</a>(result, <span class="stringliteral">&quot;?__property__&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> + property.getURI() + <span class="stringliteral">&quot;&gt;&quot;</span>);</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                }</div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                result = <a class="code" href="a00462.html#ae2eb181988145a350634304497f8b175">replaceString</a>(result, <span class="stringliteral">&quot;?__high_indegree_properties__&quot;</span>, </div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                <a class="code" href="a00462.html#a72dfb59be67ec294deaeef160076d059">toSPARQLArgumentList</a>(<a class="code" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">highIndegreeProperties</a> == null ? null : <a class="code" href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">highIndegreeProperties</a>.<a class="code" href="a00514.html#a1c247553b46f28035a0d8cd5173a165a">get</a>()));</div><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                result = <a class="code" href="a00462.html#ae2eb181988145a350634304497f8b175">replaceString</a>(result, <span class="stringliteral">&quot;?__high_outdegree_properties__&quot;</span>, </div><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                <a class="code" href="a00462.html#a72dfb59be67ec294deaeef160076d059">toSPARQLArgumentList</a>(<a class="code" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">highOutdegreeProperties</a> == null ? null : <a class="code" href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">highOutdegreeProperties</a>.<a class="code" href="a00514.html#a1c247553b46f28035a0d8cd5173a165a">get</a>()));</div><div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        }</div><div class="ttc" id="a00462_html_aa1674a400811a34dd2bf7a6aa6746212"><div class="ttname"><a href="a00462.html#aa1674a400811a34dd2bf7a6aa6746212">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.highIndegreeProperties</a></div><div class="ttdeci">final CachedPropertyCollection highIndegreeProperties</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:60</div></div>
+<div class="ttc" id="a00514_html_a1c247553b46f28035a0d8cd5173a165a"><div class="ttname"><a href="a00514.html#a1c247553b46f28035a0d8cd5173a165a">de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection.get</a></div><div class="ttdeci">Collection&lt; Property &gt; get()</div><div class="ttdef"><b>Definition:</b> VocabularyStore.java:133</div></div>
+<div class="ttc" id="a00462_html_a68337f44a9dc14be853f21f6baa4dec3"><div class="ttname"><a href="a00462.html#a68337f44a9dc14be853f21f6baa4dec3">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.highOutdegreeProperties</a></div><div class="ttdeci">final CachedPropertyCollection highOutdegreeProperties</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:61</div></div>
+<div class="ttc" id="a00462_html_a72dfb59be67ec294deaeef160076d059"><div class="ttname"><a href="a00462.html#a72dfb59be67ec294deaeef160076d059">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.toSPARQLArgumentList</a></div><div class="ttdeci">String toSPARQLArgumentList(Collection&lt;? extends RDFNode &gt; values)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:378</div></div>
+<div class="ttc" id="a00462_html_ae2eb181988145a350634304497f8b175"><div class="ttname"><a href="a00462.html#ae2eb181988145a350634304497f8b175">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.replaceString</a></div><div class="ttdeci">String replaceString(String text, String searchString, String replacement)</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:360</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae2eb181988145a350634304497f8b175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2eb181988145a350634304497f8b175">&#9670;&nbsp;</a></span>replaceString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String replaceString </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>searchString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a67a54bb8ee48626709f55f118dcb03c7">RemoteSPARQLDataSource.preProcessQuery()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                                                                           {</div><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordtype">int</span> start = 0;</div><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keywordtype">int</span> end = text.indexOf(searchString, start);</div><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="keywordflow">if</span> (end == -1) {</div><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                        <span class="keywordflow">return</span> text;</div><div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                }</div><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;</div><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <span class="keywordtype">int</span> replacementLength = searchString.length();</div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                StringBuffer buf = <span class="keyword">new</span> StringBuffer();</div><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                <span class="keywordflow">while</span> (end != -1) {</div><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                        buf.append(text.substring(start, end)).append(replacement);</div><div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                        start = end + replacementLength;</div><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                        end = text.indexOf(searchString, start);</div><div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                }</div><div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                buf.append(text.substring(start));</div><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                <span class="keywordflow">return</span> buf.toString();</div><div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="ad0b5c42c49e075c355c94981ad94215b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b5c42c49e075c355c94981ad94215b">&#9670;&nbsp;</a></span>setGraphContentType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setGraphContentType </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>mediaType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the content type to ask for in graph requests (CONSTRUCT and DESCRIBE) to the remote SPARQL endpoint. </p>
+
+<p class="reference">Referenced by <a class="el" href="a00218.html#ad54c7bebc6a5146f7a369997d7c27762">Dataset.buildDataSource()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                                          {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                this.<a class="code" href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">contentType</a> = mediaType;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div><div class="ttc" id="a00462_html_ab2b2a5577c93f69a6b42cf7796dae9a5"><div class="ttname"><a href="a00462.html#ab2b2a5577c93f69a6b42cf7796dae9a5">de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource.contentType</a></div><div class="ttdeci">String contentType</div><div class="ttdef"><b>Definition:</b> RemoteSPARQLDataSource.java:64</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a72dfb59be67ec294deaeef160076d059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72dfb59be67ec294deaeef160076d059">&#9670;&nbsp;</a></span>toSPARQLArgumentList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String toSPARQLArgumentList </td>
+          <td>(</td>
+          <td class="paramtype">Collection&lt;? extends RDFNode &gt;&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a67a54bb8ee48626709f55f118dcb03c7">RemoteSPARQLDataSource.preProcessQuery()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                                                                  {</div><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                <span class="keywordflow">if</span> (values == null) <span class="keywordflow">return</span> <span class="stringliteral">&quot;()&quot;</span>;</div><div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                StringBuilder result = <span class="keyword">new</span> StringBuilder();</div><div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                result.append(<span class="charliteral">&#39;(&#39;</span>);</div><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                <span class="keywordtype">boolean</span> isFirst = <span class="keyword">true</span>;</div><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <span class="keywordflow">for</span> (RDFNode term: values) {</div><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                        <span class="keywordflow">if</span> (!isFirst) {</div><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                result.append(<span class="stringliteral">&quot;, &quot;</span>);</div><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                        }</div><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                        <span class="keywordflow">if</span> (term.isURIResource()) {</div><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                result.append(<span class="charliteral">&#39;&lt;&#39;</span>);</div><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                result.append(term.asResource().getURI());</div><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                result.append(<span class="charliteral">&#39;&gt;&#39;</span>);</div><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                                <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(</div><div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                                <span class="stringliteral">&quot;toSPARQLArgumentList is only implemented for URIs; &quot;</span> + </div><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                                <span class="stringliteral">&quot;called with term &quot;</span> + term);</div><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                        }</div><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                        isFirst = <span class="keyword">false</span>;</div><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                }</div><div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                result.append(<span class="charliteral">&#39;)&#39;</span>);</div><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="keywordflow">return</span> result.toString();</div><div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a10f9d135df168ff6069d96b78068d406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f9d135df168ff6069d96b78068d406">&#9670;&nbsp;</a></span>anonInversePropertyQueries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String&gt; anonInversePropertyQueries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="aa7c5714e40c5a704ccba34a1407928e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c5714e40c5a704ccba34a1407928e3">&#9670;&nbsp;</a></span>anonPropertyQueries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String&gt; anonPropertyQueries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="ab2b2a5577c93f69a6b42cf7796dae9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b2a5577c93f69a6b42cf7796dae9a5">&#9670;&nbsp;</a></span>contentType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String contentType = null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a5fe455235efdbdfd2d8c27ecdb3a9633">RemoteSPARQLDataSource.execQueryGraph()</a>.</p>
+
+</div>
+</div>
+<a id="a18468e3c19d543973eccfee390db0471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18468e3c19d543973eccfee390db0471">&#9670;&nbsp;</a></span>defaultGraphURI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String defaultGraphURI</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#aebbed4bfa84fb35c85f678c2a55b3b2d">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a8f473c3ab938666fcbc20509d57f537f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f473c3ab938666fcbc20509d57f537f">&#9670;&nbsp;</a></span>endpoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QueryEngineHTTP endpoint</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab855e1e781b1ce51d772f4b0c0e7da53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab855e1e781b1ce51d772f4b0c0e7da53">&#9670;&nbsp;</a></span>endpointURL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String endpointURL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#aebbed4bfa84fb35c85f678c2a55b3b2d">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a4ca40e85c7ac7b0956e57235172f94fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca40e85c7ac7b0956e57235172f94fe">&#9670;&nbsp;</a></span>engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00474.html">AutocompleteEngine</a>&lt;<a class="el" href="a00494.html">SearchRecord</a>&gt; engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
+
+</div>
+</div>
+<a id="aa1674a400811a34dd2bf7a6aa6746212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1674a400811a34dd2bf7a6aa6746212">&#9670;&nbsp;</a></span>highIndegreeProperties</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="a00514.html">CachedPropertyCollection</a> highIndegreeProperties</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a68337f44a9dc14be853f21f6baa4dec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68337f44a9dc14be853f21f6baa4dec3">&#9670;&nbsp;</a></span>highOutdegreeProperties</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final <a class="el" href="a00514.html">CachedPropertyCollection</a> highOutdegreeProperties</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a95785d0c23a5b18417fd0ec69c960821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95785d0c23a5b18417fd0ec69c960821">&#9670;&nbsp;</a></span>inversePropertyQueries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String&gt; inversePropertyQueries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a5d100ac468e8e0551f96450f5bbba1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d100ac468e8e0551f96450f5bbba1b2">&#9670;&nbsp;</a></span>MAX_INDEX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final int MAX_INDEX_SIZE = 1000000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00458.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00462.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, <a class="el" href="a00458.html#ae8f6bc3de3dd60e86da9296226cecd8c">ModelDataSource.getLabelIndex()</a>, and <a class="el" href="a00462.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
+
+</div>
+</div>
+<a id="af2bc74e04cb18f2f4a1e3d7435202457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2bc74e04cb18f2f4a1e3d7435202457">&#9670;&nbsp;</a></span>previousDescribeQuery</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String previousDescribeQuery</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a3b1de34ae677a9929de4412c7f4ae83a">RemoteSPARQLDataSource.getPreviousDescribeQuery()</a>.</p>
+
+</div>
+</div>
+<a id="acb7e3132cf0e40d633ab8981b1d88f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7e3132cf0e40d633ab8981b1d88f0a">&#9670;&nbsp;</a></span>propertyQueries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String&gt; propertyQueries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a03976e900f30669e7e9c70a863b55aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03976e900f30669e7e9c70a863b55aa5">&#9670;&nbsp;</a></span>queryParamPattern</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Pattern queryParamPattern = Pattern.compile(&quot;(.*?)=(.*)&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a2cb853afc49e783e7a59a2481118618c">RemoteSPARQLDataSource.parseQueryParam()</a>.</p>
+
+</div>
+</div>
+<a id="a09aeeda16127e78b5911e94dbdb93811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09aeeda16127e78b5911e94dbdb93811">&#9670;&nbsp;</a></span>queryParamsGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String[]&gt; queryParamsGraph = new HashSet&lt;String[]&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5312d93e0e5d366aafa9a95f4fef96be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5312d93e0e5d366aafa9a95f4fef96be">&#9670;&nbsp;</a></span>queryParamsSelect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String[]&gt; queryParamsSelect = new HashSet&lt;String[]&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf2f2e725ae40ecf8743835a4b52878b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2f2e725ae40ecf8743835a4b52878b">&#9670;&nbsp;</a></span>resourceQueries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Set&lt;String&gt; resourceQueries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+<a id="a637cdb4f2bfca3e59e2844df0cf7021f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637cdb4f2bfca3e59e2844df0cf7021f">&#9670;&nbsp;</a></span>supportsSPARQL11</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final boolean supportsSPARQL11</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00462.html#a7130221c6ed4463069b709028a4e4ee3">RemoteSPARQLDataSource.RemoteSPARQLDataSource()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00198.html">de</a></li><li class="navelem"><a class="el" href="a00199.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00200.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00197.html">pubby</a></li><li class="navelem"><a class="el" href="a00204.html">sources</a></li><li class="navelem"><a class="el" href="a00462.html">RemoteSPARQLDataSource</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

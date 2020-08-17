@@ -1,3 +1,6 @@
-<map id="Reloader" name="Reloader">
-<area shape="rect" id="node2" href="$a01141.html" title="Runnable" alt="" coords="5,5,83,32"/>
+<map id="ModelDataSource" name="ModelDataSource">
+<area shape="rect" id="node2" href="$a00442.html" title="A source of RDF data intended for publication through the server. " alt="" coords="92,347,183,373"/>
+<area shape="rect" id="node5" href="$a00474.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="289,332,492,388"/>
+<area shape="rect" id="node6" href="$a00474.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="309,213,473,255"/>
+<area shape="rect" id="node13" href="$a01054.html" title="Indexable" alt="" coords="538,102,617,129"/>
 </map>

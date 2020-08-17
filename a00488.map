@@ -1,4 +1,5 @@
-<map id="VocabularyStore.I18nStringValueCache" name="VocabularyStore.I18nStringValueCache">
-<area shape="rect" id="node2" href="$a00486.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="91,273,285,315"/>
-<area shape="rect" id="node3" href="$a00486.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="75,184,301,211"/>
+<map id="SearchIndexInstance" name="SearchIndexInstance">
+<area shape="rect" id="node2" href="$a00474.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="289,332,492,388"/>
+<area shape="rect" id="node3" href="$a00474.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="309,213,473,255"/>
+<area shape="rect" id="node10" href="$a01054.html" title="Indexable" alt="" coords="538,102,617,129"/>
 </map>

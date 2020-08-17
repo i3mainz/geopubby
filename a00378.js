@@ -1,7 +1,19 @@
 var a00378 =
 [
-    [ "WrappedRequest", "a00378.html#a8aa2f7741ee468ab8cdfc01666a96115", null ],
-    [ "getHeader", "a00378.html#a8c4a9eee7e040bbf45fcc4b6e5150911", null ],
-    [ "getHeaderNames", "a00378.html#a54f1fecac0b1956e8d4934853f1290fd", null ],
-    [ "getHeaders", "a00378.html#a1c475c3afb57959ee3bf12817402ec17", null ]
+    [ "Value", "a00378.html#a00b619f435fb3a11e837a7b4d925cdc1", null ],
+    [ "compareTo", "a00378.html#a2c0340adadb986fd837f7941b165c5b7", null ],
+    [ "getBrowsableURL", "a00378.html#a838b3f0aaa81b845dda27dd94108e50f", null ],
+    [ "getDatatypeLabel", "a00378.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8", null ],
+    [ "getDatatypeURI", "a00378.html#aff522d91494da4e73ded9723d9063e8c", null ],
+    [ "getDescription", "a00378.html#ac7feffb7a33f63504ff1f87f19e2d2d8", null ],
+    [ "getLabel", "a00378.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
+    [ "getLocalName", "a00378.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
+    [ "getNode", "a00378.html#ae54e73a602cdba03485c90dc824c4f6c", null ],
+    [ "getPrefix", "a00378.html#a5b9a69b246225ec2eca3637f32437a16", null ],
+    [ "hasPrefix", "a00378.html#aab0bab54f99e36cce47bbbbc1c59cc52", null ],
+    [ "isType", "a00378.html#a43e3cfcd45f3d223c3b1d377bef1f2f7", null ],
+    [ "node", "a00378.html#aa4138f776a750c373e5b2e158a214086", null ],
+    [ "predicate", "a00378.html#a25acea555f18c3370e38a27f28dcafa7", null ],
+    [ "prefixer", "a00378.html#af4c43282873f7bac7949d5c412623b0c", null ],
+    [ "vocabularyStore", "a00378.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
 ];
