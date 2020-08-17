@@ -20,6 +20,7 @@ import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
+import de.fuberlin.wiwiss.pubby.exporter.LatLonTextWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
@@ -110,6 +111,9 @@ public class ModelResponse {
 		}
 		if ("image/svg+xml".equals(mediaType)) {
 			return new SVGWriter();
+		}
+		if ("text/latlon".equals(mediaType)) {
+			return new LatLonTextWriter();
 		}
 		if("text/csv".equals(mediaType)){
 			return new CSVWriter();
