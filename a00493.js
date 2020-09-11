@@ -1,13 +1,12 @@
 var a00493 =
 [
-    [ "ValueCache", "a00493.html#a105a8f41ca8d9a8a675e8cbd785fe96f", null ],
-    [ "get", "a00493.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "getCached", "a00493.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "getInverseValues", "a00493.html#aa5f2aed2aab2adf64e4df948ad270a1b", null ],
-    [ "getValues", "a00493.html#a5eba7f0965036c4a8aa59e91d758e301", null ],
-    [ "pickBestFromModel", "a00493.html#a377335356fab11c64944617d7fabbfe5", null ],
-    [ "pickBestValue", "a00493.html#aee3eb8d5409c980d6ecf225783f372b4", null ],
-    [ "cache", "a00493.html#ad77ba7b82272e4c3fd8076414138bab4", null ],
-    [ "inverse", "a00493.html#ab9fa15a3f639296a771d62138f251aee", null ],
-    [ "property", "a00493.html#a135e9d987c2b7a77b76841b31d413ce7", null ]
+    [ "Builder", "a00493.html#a4c5b1b5b658880619647b859000724fc", null ],
+    [ "build", "a00493.html#a1e4fbf697357d25c5f3112daf2c9abee", null ],
+    [ "setAnalyzer", "a00493.html#a75be2b67c84e6582fc763413aa9c95bb", null ],
+    [ "setAnalyzers", "a00493.html#a5b046f779187f94e1d872748badcb092", null ],
+    [ "setComparator", "a00493.html#a80d4cfc5257a34d5573ee59eccfac025", null ],
+    [ "setIndex", "a00493.html#ac67f216229a795a817b7136c9b7bc188", null ],
+    [ "analyzer", "a00493.html#ab68f7dcfc065da0fd4295b518c820c87", null ],
+    [ "comparator", "a00493.html#aac9e41375776a2145cdf5025fd4dd947", null ],
+    [ "index", "a00493.html#abce4b54107ea8e7233ebeb0a9a67383a", null ]
 ];

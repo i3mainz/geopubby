@@ -1,8 +1,6 @@
 var a00333 =
 [
-    [ "[static initializer]", "a00333.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "getDataNegotiator", "a00333.html#af03e389fc1ed90d41d751d3d5208fc98", null ],
-    [ "getPubbyNegotiator", "a00333.html#a422f474f49521adddc4d56b75af7b77c", null ],
-    [ "dataNegotiator", "a00333.html#a3252abb074c382937d325d56e41084a0", null ],
-    [ "pubbyNegotiator", "a00333.html#a7881b210bc9cb724716ffb109de9c562", null ]
+    [ "write", "a00333.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "reader", "a00333.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "usedProperty", "a00333.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];

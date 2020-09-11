@@ -1,9 +1,9 @@
 var a00405 =
 [
     [ "addDocumentMetadata", "a00405.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addHighDegreePropertyLinks", "a00405.html#ac355651e23f62e5e76b524724a4646f2", null ],
     [ "addPageMetadata", "a00405.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
     [ "addQueryString", "a00405.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00405.html#a4c69ab4acf538f0dc8fb8f7482629e85", null ],
     [ "doGet", "a00405.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
     [ "doGet", "a00405.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
     [ "init", "a00405.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],

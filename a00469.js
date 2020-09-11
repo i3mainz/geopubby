@@ -1,9 +1,18 @@
 var a00469 =
 [
-    [ "SearchRecord", "a00469.html#a4ac7197cdb811ab9e27ad8b390355ce6", null ],
-    [ "getFields", "a00469.html#a0cce3babb743f2fc916f7c2bd20d965e", null ],
-    [ "getLabel", "a00469.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
-    [ "getResource", "a00469.html#afe4a3e88052dbc8b12e217669d8dac77", null ],
-    [ "label", "a00469.html#ac3f915eab3b535426bb9794989e9ea2e", null ],
-    [ "res", "a00469.html#a952d2a362956d26b604846d09847e970", null ]
+    [ "MergeDataSource", "a00469.html#a74f758efa3079900db48f8754211da31", null ],
+    [ "MergeDataSource", "a00469.html#ac43c266de35dd1ce3208606609ec6e6b", null ],
+    [ "MergeDataSource", "a00469.html#ac3df88e80e7f98ac638de9e1ef351824", null ],
+    [ "addIntegerMaps", "a00469.html#af53abc20ddd2cc1f91869175d013a2b1", null ],
+    [ "canDescribe", "a00469.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "describeResource", "a00469.html#aee8a51772d6673be0a741b47678df946", null ],
+    [ "describeResource", "a00469.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "getHighIndegreeProperties", "a00469.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00469.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00469.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00469.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
+    [ "listPropertyValues", "a00469.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "MAX_INDEX_SIZE", "a00469.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
+    [ "mustHavePrefixes", "a00469.html#a208888ad59e85ab5bdcf5a54677ec0ab", null ],
+    [ "sources", "a00469.html#a85908e02842d3176be283f47c7aa7c44", null ]
 ];

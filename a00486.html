@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: SearchAdapter Class Reference</title>
+<title>GeoPubby: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,150 +56,36 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00486.html','');});
+$(document).ready(function(){initNavTree('a00489.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="a00483.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SearchAdapter Class Reference</div>  </div>
+<div class="title">AutocompleteEngine&lt; T extends Indexable &gt; Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Search adapter defining a String distance metric between search records.  
- <a href="a00486.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for SearchAdapter:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00485.png" border="0" usemap="#SearchAdapter_inherit__map" alt="Inheritance graph"/></div>
-<map name="SearchAdapter_inherit__map" id="SearchAdapter_inherit__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for SearchAdapter:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00484.png" border="0" usemap="#SearchAdapter_coll__map" alt="Collaboration graph"/></div>
-<map name="SearchAdapter_coll__map" id="SearchAdapter_coll__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a9695d4a4855959f9b00390c9f08d9cd5"><td class="memItemLeft" align="right" valign="top">Collection&lt; ScoredObject&lt; <a class="el" href="a00494.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html#a9695d4a4855959f9b00390c9f08d9cd5">get</a> (String token)</td></tr>
-<tr class="separator:a9695d4a4855959f9b00390c9f08d9cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad55ad95418061ae37fe65df7493e6e84"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html#ad55ad95418061ae37fe65df7493e6e84">put</a> (String token, <a class="el" href="a00494.html">SearchRecord</a> value)</td></tr>
-<tr class="separator:ad55ad95418061ae37fe65df7493e6e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dcd1ee780b50b35c60ef427449266bb"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html#a3dcd1ee780b50b35c60ef427449266bb">remove</a> (<a class="el" href="a00494.html">SearchRecord</a> value)</td></tr>
-<tr class="separator:a3dcd1ee780b50b35c60ef427449266bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a4aeec757e2fc5d6bce4a2617b976858b"><td class="memItemLeft" align="right" valign="top">FuzzyIndex&lt; <a class="el" href="a00494.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a> = new PatriciaTrie&lt;&gt;()</td></tr>
-<tr class="separator:a4aeec757e2fc5d6bce4a2617b976858b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Search adapter defining a String distance metric between search records. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9695d4a4855959f9b00390c9f08d9cd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9695d4a4855959f9b00390c9f08d9cd5">&#9670;&nbsp;</a></span>get()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Collection&lt;ScoredObject&lt;<a class="el" href="a00494.html">SearchRecord</a>&gt; &gt; get </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>token</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                        {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 <span class="comment">// Set threshold according to the token length</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">double</span> threshold = Math.log(Math.max(token.length() - 1, 1));</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.getAny(<span class="keyword">new</span> EditDistanceAutomaton(token, threshold));</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="ttc" id="a00486_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ad55ad95418061ae37fe65df7493e6e84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad55ad95418061ae37fe65df7493e6e84">&#9670;&nbsp;</a></span>put()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean put </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>token</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="a00494.html">SearchRecord</a>&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                             {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.put(token, value);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="ttc" id="a00486_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a3dcd1ee780b50b35c60ef427449266bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dcd1ee780b50b35c60ef427449266bb">&#9670;&nbsp;</a></span>remove()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean remove </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00494.html">SearchRecord</a>&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                  {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.remove(value);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="a00486_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00486.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4aeec757e2fc5d6bce4a2617b976858b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4aeec757e2fc5d6bce4a2617b976858b">&#9670;&nbsp;</a></span>index</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FuzzyIndex&lt;<a class="el" href="a00494.html">SearchRecord</a>&gt; index = new PatriciaTrie&lt;&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#a2e4d243958874ed92e4705efd514ec8a">add</a>(T element)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00489.html#aedc4b037549f29df48c94d2432b56f21">addAll</a>(Collection&lt; T &gt; elements)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#adf32c4c95815598002112d2c04c748fc">analyzer</a></td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00489.html#ab29978a4e02531946ff90e23b2e58b03">AutocompleteEngine</a>(Builder&lt; T &gt; builder)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#a5fc8d2f44284ae06708e6168ac53a831">comparator</a></td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00489.html#aba85b697482a87be7652f4cbbfe3ede1">getAll</a>()</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#a2dab6da7542b85c04c4a01b1ffb1abce">index</a></td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00489.html#aefb6a09436e031db6f196ce971ee825d">read</a></td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#af924252f2d0e180388cdd6136293a91a">remove</a>(T element)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00489.html#a9be7b1de1b31af20288221beb6fc5140">removeAll</a>(Collection&lt; T &gt; elements)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#a9b69034ee356599aba4cb389f97ad7c7">search</a>(String query)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00489.html#afd22691123368089b69314d5a08a7a1f">search</a>(String query, int limit)</td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00489.html#afdd303d9d2a2a62c4038d77278a09cf3">write</a></td><td class="entry"><a class="el" href="a00489.html">AutocompleteEngine&lt; T extends Indexable &gt;</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00198.html">de</a></li><li class="navelem"><a class="el" href="a00199.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00200.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00197.html">pubby</a></li><li class="navelem"><a class="el" href="a00205.html">util</a></li><li class="navelem"><a class="el" href="a00486.html">SearchAdapter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

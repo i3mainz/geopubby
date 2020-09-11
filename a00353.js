@@ -1,19 +1,15 @@
 var a00353 =
 [
-    [ "Value", "a00353.html#a00b619f435fb3a11e837a7b4d925cdc1", null ],
-    [ "compareTo", "a00353.html#a2c0340adadb986fd837f7941b165c5b7", null ],
-    [ "getBrowsableURL", "a00353.html#a838b3f0aaa81b845dda27dd94108e50f", null ],
-    [ "getDatatypeLabel", "a00353.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8", null ],
-    [ "getDatatypeURI", "a00353.html#aff522d91494da4e73ded9723d9063e8c", null ],
-    [ "getDescription", "a00353.html#ac7feffb7a33f63504ff1f87f19e2d2d8", null ],
-    [ "getLabel", "a00353.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
-    [ "getLocalName", "a00353.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
-    [ "getNode", "a00353.html#ae54e73a602cdba03485c90dc824c4f6c", null ],
-    [ "getPrefix", "a00353.html#a5b9a69b246225ec2eca3637f32437a16", null ],
-    [ "hasPrefix", "a00353.html#aab0bab54f99e36cce47bbbbc1c59cc52", null ],
-    [ "isType", "a00353.html#a43e3cfcd45f3d223c3b1d377bef1f2f7", null ],
-    [ "node", "a00353.html#aa4138f776a750c373e5b2e158a214086", null ],
-    [ "predicate", "a00353.html#a25acea555f18c3370e38a27f28dcafa7", null ],
-    [ "prefixer", "a00353.html#af4c43282873f7bac7949d5c412623b0c", null ],
-    [ "vocabularyStore", "a00353.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
+    [ "AcceptHeaderOverride", "a00365.html", "a00365" ],
+    [ "Negotiation", "a00361.html", "a00361" ],
+    [ "VariantSpec", "a00357.html", "a00357" ],
+    [ "addUserAgentOverride", "a00353.html#af83bf4d6bf77cdd31256ecc83186a558", null ],
+    [ "addVariant", "a00353.html#a3953da5ad43555a9edc37e48b7f6e4ab", null ],
+    [ "getBestMatch", "a00353.html#ab23b79e631120fc8ce51d40c7c314e62", null ],
+    [ "getBestMatch", "a00353.html#a1afbe15fddec9b99e5780a94774044c7", null ],
+    [ "setDefaultAccept", "a00353.html#a7652b7c00c4cf54490dfe3535cc70cf2", null ],
+    [ "toAcceptRanges", "a00353.html#a37345f6b468bd509ef8896b6c546e1ac", null ],
+    [ "defaultAcceptRanges", "a00353.html#a9d851118500a4017a2591587200cd953", null ],
+    [ "userAgentOverrides", "a00353.html#a248e951c7087641970d6701f1b7ec536", null ],
+    [ "variantSpecs", "a00353.html#a2391e088d7d831c6b5bd35986487becf", null ]
 ];

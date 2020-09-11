@@ -1,14 +1,18 @@
 var a00377 =
 [
-    [ "WrappedRequest", "a00381.html", "a00381" ],
-    [ "RequestParamHandler", "a00377.html#a78ddf90d954b28fddd8107d28222c31e", null ],
-    [ "[static initializer]", "a00377.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "getModifiedRequest", "a00377.html#a8a4a2fc72dd4dc4202f74244b5750ca9", null ],
-    [ "identifyRequestedType", "a00377.html#a787a7136420b59f91d860e9acda556b1", null ],
-    [ "isMatchingRequest", "a00377.html#a33a700fbc74b6d65d9f10230245f852f", null ],
-    [ "removeOutputRequestParam", "a00377.html#aac8e0c252a2aa3a037e32b1c139da1d5", null ],
-    [ "ATTRIBUTE_NAME_IS_HANDLED", "a00377.html#ad985604e395e1ac08a77a4c2e2b2b267", null ],
-    [ "mimeTypes", "a00377.html#a354bb05992ad3230abb0504d5b255d9e", null ],
-    [ "request", "a00377.html#ad632242c9a97c676da2987811ea46e83", null ],
-    [ "requestedType", "a00377.html#a053eb9bde998fd324ba1d3c9178b9d4c", null ]
+    [ "PubbyIRIEscaper", "a00377.html#af9c886a3751239a87e8cd82189b07d7a", null ],
+    [ "chain", "a00377.html#a52462d47ad21ab9cb767615af3408865", null ],
+    [ "createNamespaceBased", "a00377.html#a874bc2a710da29ab8a229940ac39d5c8", null ],
+    [ "escapeSpecialCharacters", "a00377.html#a03704caf9297e90ca6f94bd2f7eb0027", null ],
+    [ "rewrite", "a00377.html#ad231a3c3defc265966333ec5c96fc98a", null ],
+    [ "rewrite", "a00377.html#a9aa71f847262c020413d65ef96d23428", null ],
+    [ "rewrite", "a00377.html#a9dcf9e44886aea1d08614869ac6f45a5", null ],
+    [ "rewrite", "a00377.html#a98a5375f1da1bf709fe29231ed297276", null ],
+    [ "rewrite", "a00377.html#a02792897faa966eaeb7084a6ac10b3bb", null ],
+    [ "unescapeSpecialCharacters", "a00377.html#ac13705f826199959ca4668df479af23b", null ],
+    [ "unrewrite", "a00377.html#a0ac56882f3fb5afa390617ee8e0d9015", null ],
+    [ "unrewrite", "a00377.html#a6b7cd2d5390855d5b1047f03d316dd8b", null ],
+    [ "unrewrite", "a00377.html#addbb06d72792422729d7c550ee0cce03", null ],
+    [ "encodeURIsToIRIs", "a00377.html#acf74a0094f0e35f9949ae1c07c553dbe", null ],
+    [ "identity", "a00377.html#a932f921acd3dc33045ca5471398e8e9a", null ]
 ];

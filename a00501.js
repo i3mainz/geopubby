@@ -1,7 +1,7 @@
 var a00501 =
 [
-    [ "IntegerValueCache", "a00501.html#ae46ea980eabeebe463df56625f7b4e75", null ],
-    [ "get", "a00501.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "getCached", "a00501.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "pickBestValue", "a00501.html#a1b88e6006962be301e6e3feb2219fd61", null ]
+    [ "get", "a00501.html#a9695d4a4855959f9b00390c9f08d9cd5", null ],
+    [ "put", "a00501.html#ad55ad95418061ae37fe65df7493e6e84", null ],
+    [ "remove", "a00501.html#a3dcd1ee780b50b35c60ef427449266bb", null ],
+    [ "index", "a00501.html#a4aeec757e2fc5d6bce4a2617b976858b", null ]
 ];

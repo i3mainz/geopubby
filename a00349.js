@@ -1,13 +1,8 @@
 var a00349 =
 [
-    [ "PropertyBuilder", "a00349.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
-    [ "addHighDegreeArcs", "a00349.html#a56093db616f5ec791e721da4b41bcb74", null ],
-    [ "addValue", "a00349.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
-    [ "toProperty", "a00349.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
-    [ "blankNodeDescriptions", "a00349.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
-    [ "highDegreeArcCount", "a00349.html#aa6574d553f74a485106af0677f2c8882", null ],
-    [ "isInverse", "a00349.html#a4556acebb4b8d61aab8f863143d163d6", null ],
-    [ "predicate", "a00349.html#aa9ef63e37d986c48ab7c19294531f962", null ],
-    [ "values", "a00349.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
-    [ "vocabularyStore", "a00349.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
+    [ "ModelUtil", "a00349.html#a506f9e63ffb8a3d5770c2fcfaf211607", null ],
+    [ "addNSIfUndefined", "a00349.html#aee150091883e597b335e317a1b187db2", null ],
+    [ "mergeModels", "a00349.html#a0a57bb7e2ed8f451acec78ed6fa27dc1", null ],
+    [ "mergePrefixes", "a00349.html#a9db1cddaaebb2e37c477e94b2b857bf5", null ],
+    [ "EMPTY_MODEL", "a00349.html#af6ba6db7e4d4a66e0970adb9b4f40bfd", null ]
 ];

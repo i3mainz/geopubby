@@ -1,14 +1,13 @@
 var a00361 =
 [
-    [ "addDocumentMetadata", "a00361.html#aafab682dd7935049291522510d9a62ba", null ],
-    [ "addPageMetadata", "a00361.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
-    [ "addQueryString", "a00361.html#a235314820d427b745d7a08f1819176eb", null ],
-    [ "doGet", "a00361.html#a4ad25bb2cf64fb5919b4917103b3af29", null ],
-    [ "doGet", "a00361.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
-    [ "init", "a00361.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
-    [ "send404", "a00361.html#a3208dcc642a59d12778ba619395eec47", null ],
-    [ "sendInitialization500", "a00361.html#a37f74add6038c113368344fbb9210f8e", null ],
-    [ "config", "a00361.html#a0910717551963df697d192900a7f4f59", null ],
-    [ "initError", "a00361.html#a087abcd8848850044d1fa825aa50e01f", null ],
-    [ "serialVersionUID", "a00361.html#a3238d314ecdee14d2966760945d00c3b", null ]
+    [ "Negotiation", "a00361.html#a07cf8563f3d617fcc378cea627bec93d", null ],
+    [ "evaluateDefaultVariant", "a00361.html#a6e3cb856b5772e59fbda260b38fd9267", null ],
+    [ "evaluateVariant", "a00361.html#ad8b9b3527769ba910de6b103877a01ba", null ],
+    [ "evaluateVariantAlias", "a00361.html#a2946761eb1cc8725338bc684127724cd", null ],
+    [ "negotiate", "a00361.html#a81c339d431e6afa30777976323689228", null ],
+    [ "bestDefaultQuality", "a00361.html#a2d8e397f715337f4f78d8df0bd7eb81a", null ],
+    [ "bestDefaultVariant", "a00361.html#ab54b85225e3b7767ce8389ce1220ac1f", null ],
+    [ "bestMatchingQuality", "a00361.html#a44fff2fe4c48a826cd563ae86b408da2", null ],
+    [ "bestMatchingVariant", "a00361.html#a714cbc1a784570f4c22a73b8469082f9", null ],
+    [ "ranges", "a00361.html#a0e7a133ea71f749c23cd6a4f895121a1", null ]
 ];

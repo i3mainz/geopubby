@@ -1,18 +1,12 @@
 var a00429 =
 [
-    [ "MergeDataSource", "a00429.html#a74f758efa3079900db48f8754211da31", null ],
-    [ "MergeDataSource", "a00429.html#ac43c266de35dd1ce3208606609ec6e6b", null ],
-    [ "MergeDataSource", "a00429.html#ac3df88e80e7f98ac638de9e1ef351824", null ],
-    [ "addIntegerMaps", "a00429.html#af53abc20ddd2cc1f91869175d013a2b1", null ],
-    [ "canDescribe", "a00429.html#a1681b51a4d9b94752fc6668c82729236", null ],
-    [ "describeResource", "a00429.html#aee8a51772d6673be0a741b47678df946", null ],
-    [ "describeResource", "a00429.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
-    [ "getHighIndegreeProperties", "a00429.html#afd50c79b6d45d0fed770638879c7359e", null ],
-    [ "getHighOutdegreeProperties", "a00429.html#acbe9e94afdedf6be6979247520906444", null ],
-    [ "getIndex", "a00429.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "getLabelIndex", "a00429.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
-    [ "listPropertyValues", "a00429.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
-    [ "MAX_INDEX_SIZE", "a00429.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
-    [ "mustHavePrefixes", "a00429.html#a208888ad59e85ab5bdcf5a54677ec0ab", null ],
-    [ "sources", "a00429.html#a85908e02842d3176be283f47c7aa7c44", null ]
+    [ "addDocumentMetadata", "a00429.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addPageMetadata", "a00429.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
+    [ "addQueryString", "a00429.html#a235314820d427b745d7a08f1819176eb", null ],
+    [ "doGet", "a00429.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
+    [ "doGet", "a00429.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "init", "a00429.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
+    [ "send404", "a00429.html#a3208dcc642a59d12778ba619395eec47", null ],
+    [ "sendInitialization500", "a00429.html#a37f74add6038c113368344fbb9210f8e", null ],
+    [ "serialVersionUID", "a00429.html#a3238d314ecdee14d2966760945d00c3b", null ]
 ];
