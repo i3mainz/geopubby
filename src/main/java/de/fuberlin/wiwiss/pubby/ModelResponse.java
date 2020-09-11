@@ -19,6 +19,7 @@ import de.fuberlin.wiwiss.pubby.exporter.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLinkWriter;
+import de.fuberlin.wiwiss.pubby.exporter.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.LatLonTextWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
@@ -154,6 +155,15 @@ public class ModelResponse {
 		if ("text/rdf+n3;charset=utf-8".equals(mediaType)) {
 			return new TurtleWriter();
 		}
+		if("application/rt".equals(mediaType)) {
+			return new RDFThriftWriter();
+		}
+		if("text/nq".equals(mediaType)) {
+			return new NQuadsWriter();
+		}
+		if("application/hex+x-ndjson".equals(mediaType)) {
+			return new HexTuplesWriter();
+		}
 		return new NTriplesWriter();
 	}
 	
@@ -189,6 +199,22 @@ public class ModelResponse {
 	private class RDFJSONWriter extends ModelWriter {
 		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 			model.getWriter("RDF/JSON").write(model, response.getOutputStream(), null);
+			return null;
+		}
+	}
+
+	private class RDFThriftWriter extends ModelWriter {
+		@Override
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
+			model.getWriter("RDFTHRIFT").write(model, response.getOutputStream(), null);
+			return null;
+		}
+	}
+	
+	private class NQuadsWriter extends ModelWriter {
+		@Override
+		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
+			model.getWriter("NQUADS").write(model, response.getOutputStream(), null);
 			return null;
 		}
 	}
