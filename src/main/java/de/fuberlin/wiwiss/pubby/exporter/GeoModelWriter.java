@@ -1,6 +1,5 @@
 package de.fuberlin.wiwiss.pubby.exporter;
 
-import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;

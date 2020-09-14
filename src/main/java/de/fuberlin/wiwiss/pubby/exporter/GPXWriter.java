@@ -15,6 +15,7 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
+import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 
@@ -100,6 +101,11 @@ public class GPXWriter extends GeoModelWriter {
 								}
 								writer.writeEndElement();
 							}
+						}
+						if (geom != null) {
+							Coordinate coord=geom.getCoordinate();
+							writer.writeAttribute("lat", coord.getY() + "");
+							writer.writeAttribute("lon", coord.getX() + "");	
 						}
 						if (lon != null && lat != null) {
 							writer.writeStartElement("wpt");

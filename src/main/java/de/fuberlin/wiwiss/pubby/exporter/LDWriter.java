@@ -36,9 +36,7 @@ public class LDWriter extends GeoModelWriter {
 				if (ind.hasProperty(GEO.EPSG)) {
 					sourceCRS = "EPSG:" + ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
 				}
-				if (this.epsg != null) {
-					ind.removeAll(GEO.EPSG);
-				}
+
 				Double lat = null, lon = null;
 				while (it2.hasNext()) {
 					Statement curst = it2.next();
@@ -59,7 +57,6 @@ public class LDWriter extends GeoModelWriter {
 						if (curst.getObject().asLiteral().getString() != null) {
 							GeoJSONReader read = new GeoJSONReader();
 							Geometry geom = read.read(curst.getObject().asLiteral().getString());
-							ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
 							curst.changeObject(
 									geom.toText() + "^^<http://www.opengis.net/ont/geosparql#geoJSONLiteral>");
@@ -81,6 +78,8 @@ public class LDWriter extends GeoModelWriter {
 					}
 
 				}
+				ind.removeAll(GEO.EPSG);
+				ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 			}
 		}
 		model.commit();
