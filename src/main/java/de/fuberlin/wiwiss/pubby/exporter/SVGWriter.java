@@ -62,45 +62,27 @@ public class SVGWriter extends GeoModelWriter {
 
 			while(it2.hasNext()) {
 				Statement curst=it2.next();
-				if(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||
-						GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
-						|| 
-						GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
-					try {
-						Geometry geom=reader.read(curst.getObject().asLiteral().getString());
-						if(this.epsg!=null) {
-							geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
-						}
-						if(geom.getGeometryType().equalsIgnoreCase("point")) {
-							lat=geom.getCentroid().getCoordinate().getY();
-							lon=geom.getCentroid().getCoordinate().getX();							
-						}else {
-							writer.writeStartElement("polyline");
-							writer.writeAttribute("stroke", "black");
-							writer.writeAttribute("stroke-width","3");
-							String points="";
-							
-							for(int j=0;j<geom.getCoordinates().length-1;j+=2) {
-								points+=geom.getCoordinates()[j]+","+geom.getCoordinates()[j+1];
-							}
-							writer.writeAttribute("points", points);
-							writer.writeEndElement();	
-						}
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}else if(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){
-					lat=curst.getObject().asLiteral().getDouble();
-				}else if(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){
-					lon=curst.getObject().asLiteral().getDouble();
-				}else if(GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())){
-					lat=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
-					lon=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
-				}
+				this.handleGeometry(curst, ind, model);
 			}
 			}
 		it.close();
+		if(geom!=null) {
+			if(geom.getGeometryType().equalsIgnoreCase("point")) {
+				lat=geom.getCentroid().getCoordinate().getY();
+				lon=geom.getCentroid().getCoordinate().getX();							
+			}else {
+				writer.writeStartElement("polyline");
+				writer.writeAttribute("stroke", "black");
+				writer.writeAttribute("stroke-width","3");
+				String points="";
+				
+				for(int j=0;j<geom.getCoordinates().length-1;j+=2) {
+					points+=geom.getCoordinates()[j]+","+geom.getCoordinates()[j+1];
+				}
+				writer.writeAttribute("points", points);
+				writer.writeEndElement();	
+			}
+		}
 		if(lat!=null && lon!=null) {
 			writer.writeStartElement("circle");
 			writer.writeAttribute("stroke", "black");

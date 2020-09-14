@@ -50,6 +50,7 @@ public class RequestParamHandler {
 		mimeTypes.put("rt", "application/rt");
 		mimeTypes.put("csv", "text/csv");
 		mimeTypes.put("wkt", "text/wkt");
+		mimeTypes.put("wkb", "text/wkb");
 		mimeTypes.put("xyz", "text/xyz");
 		mimeTypes.put("svg", "image/svg+xml");
 		mimeTypes.put("gpx", "text/gpx");

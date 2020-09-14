@@ -9,13 +9,10 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
-import org.json.JSONObject;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
-import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONReader;
-import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
@@ -32,7 +29,7 @@ public class LDWriter extends GeoModelWriter {
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		if (this.epsg != null) {
-			ExtendedIterator<Resource> it = super.write(model, response);
+			ExtendedIterator<Resource> it = model.listSubjects();
 			while (it.hasNext()) {
 				Resource ind = it.next();
 				StmtIterator it2 = ind.listProperties();
@@ -86,6 +83,7 @@ public class LDWriter extends GeoModelWriter {
 				}
 			}
 		}
+		model.commit();
 		model.getWriter(format).write(model, response.getOutputStream(), null);
 		return null;
 	}

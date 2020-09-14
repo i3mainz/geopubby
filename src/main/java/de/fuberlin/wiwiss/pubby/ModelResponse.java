@@ -12,6 +12,7 @@ import org.apache.jena.rdf.model.RDFWriter;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.shared.JenaException;
 import org.apache.jena.util.iterator.ExtendedIterator;
+import org.locationtech.jts.io.WKBWriter;
 
 import de.fuberlin.wiwiss.pubby.exporter.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
@@ -21,6 +22,7 @@ import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
+import de.fuberlin.wiwiss.pubby.exporter.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.LatLonTextWriter;
 import de.fuberlin.wiwiss.pubby.exporter.MapMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
@@ -28,6 +30,7 @@ import de.fuberlin.wiwiss.pubby.exporter.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
 import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
 import de.fuberlin.wiwiss.pubby.exporter.TopoJSONWriter;
+import de.fuberlin.wiwiss.pubby.exporter.WKBWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
@@ -102,13 +105,13 @@ public class ModelResponse {
 	
 	private ModelWriter getWriter(String mediaType, String crs) {
 		if ("application/rdf+xml".equals(mediaType)) {
-			return new RDFXMLWriter();
+			return new LDWriter(crs,"RDF/XML");
 		}
 		if ("application/rdf+json".equals(mediaType)) {
-			return new RDFJSONWriter();
+			return new LDWriter(crs,"RDF/JSON");
 		}
 		if ("application/json".equals(mediaType)) {
-			return new JSONWriter();
+			return new LDWriter(crs,"JSON-LD");
 		}
 		if ("application/geojson".equals(mediaType)) {
 			return new GeoJSONWriterr(crs);
@@ -147,10 +150,13 @@ public class ModelResponse {
 			return new KMLWriter(crs);
 		}
 		if ("application/trig".equals(mediaType)) {
-			return new TrigWriter();
+			return new LDWriter(crs,"TriG");
 		}
 		if ("text/wkt".equals(mediaType)) {
 			return new WKTWriter(crs);
+		}
+		if ("text/wkb".equals(mediaType)) {
+			return new WKBWriterr(crs);
 		}
 		if ("text/mapml".equals(mediaType)) {
 			return new MapMLWriter(crs);
@@ -159,94 +165,24 @@ public class ModelResponse {
 			return new XYZASCIIWriter(crs);
 		}
 		if ("application/trix".equals(mediaType)) {
-			return new TrixWriter();
+			return new LDWriter(crs,"TriX");
 		}
 		if ("application/x-turtle".equals(mediaType)) {
-			return new TurtleWriter();
+			return new LDWriter(crs,"TURTLE");
 		}
 		if ("text/rdf+n3;charset=utf-8".equals(mediaType)) {
-			return new TurtleWriter();
+			return new LDWriter(crs,"N3");
 		}
 		if("application/rt".equals(mediaType)) {
-			return new RDFThriftWriter();
+			return new LDWriter(crs,"RDFTHRIFT");
 		}
 		if("text/nq".equals(mediaType)) {
-			return new NQuadsWriter();
+			return new LDWriter(crs,"NQUADS");
 		}
 		if("application/hex+x-ndjson".equals(mediaType)) {
 			return new HexTuplesWriter(crs);
 		}
-		return new NTriplesWriter();
+		return new LDWriter(crs,"N-TRIPLES");
 	}
 	
-	
-	private class NTriplesWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("N-TRIPLES").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-	
-	private class JSONWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("JSON-LD").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-	
-	private class TrigWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("TriG").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-	
-	private class TrixWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("TriX").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-	
-	private class RDFJSONWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("RDF/JSON").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-
-	private class RDFThriftWriter extends ModelWriter {
-		@Override
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("RDFTHRIFT").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-	
-	private class NQuadsWriter extends ModelWriter {
-		@Override
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("NQUADS").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-	
-	private class TurtleWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			model.getWriter("TURTLE").write(model, response.getOutputStream(), null);
-			return null;
-		}
-	}
-
-	private class RDFXMLWriter extends ModelWriter {
-		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-			RDFWriter writer = model.getWriter("RDF/XML-ABBREV");
-			writer.setProperty("showXmlDeclaration", "true");
-			// From Joseki -- workaround for the j.cook.up bug.
-			writer.setProperty("blockRules", "propertyAttr");
-			writer.write(model, 
-					new OutputStreamWriter(response.getOutputStream(), "utf-8"), null);
-			return null;
-		}
-	}
 }

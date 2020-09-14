@@ -10,22 +10,21 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKBWriter;
 
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class XYZASCIIWriter extends GeoModelWriter {
-	
-	public XYZASCIIWriter(String epsg) {
+public class WKBWriterr extends GeoModelWriter {
+
+	public WKBWriterr(String epsg) {
 		super(epsg);
 	}
-
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-		ExtendedIterator<Resource> it = super.write(model, response);
+		ExtendedIterator<Resource> it=super.write(model, response);
 		while (it.hasNext()) {
 			Resource ind = it.next();
 			if(ind.hasProperty(GEO.EPSG)) {
@@ -38,32 +37,23 @@ public class XYZASCIIWriter extends GeoModelWriter {
 			}
 		}
 		try {
-			if (geom != null) {
-				for (Coordinate coord : geom.getCoordinates()) {
-					response.getWriter().write(coord.getX() + " " + coord.getY());
-					if (!Double.isNaN(coord.getZ())) {
-						response.getWriter().write(" " + coord.getZ());
-					}
-				}
+			if(geom!=null) {
+				WKBWriter writer=new WKBWriter();
+				response.getWriter().write(WKBWriter.toHex(writer.write(geom)));
 				response.getWriter().close();
-			} else if (lat != null || lon != null) {
+			}else if (lat != null || lon != null) {
 				try {
 					geom = reader.read("Point("+lon+" "+lat+")");
 					if(this.epsg!=null) {
 						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
 					}
-					Coordinate coord=geom.getCoordinate();
-					response.getWriter().write(coord.getX() + " " + coord.getY());
-					if (!Double.isNaN(coord.getZ())) {
-						response.getWriter().write(" " + coord.getZ());
-					}
-					response.getWriter().close();
+					response.getWriter().write(geom.toText());
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
-			} else {
+				response.getWriter().close();
+			}else{
 				response.getWriter().write("");
 				response.getWriter().close();
 			}
@@ -76,4 +66,5 @@ public class XYZASCIIWriter extends GeoModelWriter {
 		}
 		return null;
 	}
+
 }
