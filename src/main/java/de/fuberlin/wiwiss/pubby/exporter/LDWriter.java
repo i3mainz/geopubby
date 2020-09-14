@@ -84,7 +84,6 @@ public class LDWriter extends GeoModelWriter {
 				ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 			}
 		}
-		model.commit();
 		model.getWriter(format).write(model, response.getOutputStream(), null);
 		return null;
 	}
