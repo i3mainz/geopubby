@@ -22,6 +22,7 @@ import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.LatLonTextWriter;
+import de.fuberlin.wiwiss.pubby.exporter.MapMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
@@ -145,6 +146,9 @@ public class ModelResponse {
 		}
 		if ("text/wkt".equals(mediaType)) {
 			return new WKTWriter();
+		}
+		if ("text/mapml".equals(mediaType)) {
+			return new MapMLWriter();
 		}
 		if ("application/trix".equals(mediaType)) {
 			return new TrixWriter();
