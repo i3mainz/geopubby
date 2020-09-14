@@ -1,7 +1,11 @@
 #set ($has_text = false)
     <div id="footer">
      <div class="container-fluid">
-
+<script>
+function download(){
+	window.open(window.location.href+"?output="+$('#format').val()+"&crs="+$('#crs').val(),'_blank');
+}
+</script>
 #if ($rdf_link)
 Format:<select id="format">		
       <option value="csv">Comma Separated Values (CSV)</option>
@@ -33,36 +37,11 @@ Format:<select id="format">
         <option value="wkt">Well-Known-Text (WKT)</option>
       #end
 </select>
-CRS:<select id="crs"></select><button id="downloadButton">Download</button>
-#end
-#if ($rdf_link)
-      <a href="$rdf_link?output=ttl">As Turtle</a> |
-      <a href="$rdf_link?output=xml">As RDF/XML</a> |
-      <a href="$rdf_link?output=rdfjson">As RDF/JSON</a> |
-      <a href="$rdf_link?output=json">As JSON-LD</a> |
-      <a href="$rdf_link?output=trig">As TriG</a> |
-      <a href="$rdf_link?output=trix">As TriX</a> |
-      <a href="$rdf_link?output=hextuples">As HexTuples RDF</a> |
-      <a href="$rdf_link?output=geojson">As (Geo)JSON</a> |
-      <a href="$rdf_link?output=csv">As CSV</a>
-      #if (!$geoms.isEmpty())
-        | <a href="$rdf_link?output=geouri">As GeoURI</a> 
-        | <a href="$rdf_link?output=latlontext">As Lat/Lon Text</a> 
-      	| <a href="$rdf_link?output=kml">As KML</a> 
-      	| <a href="$rdf_link?output=gml">As GML</a>
-      	| <a href="$rdf_link?output=gpx">As GPX</a>
-        | <a href="$rdf_link?output=mapml">As MapML</a>
-       	| <a href="$rdf_link?output=topojson">As TopoJSON</a>  
-      	| <a href="$rdf_link?output=osm">As OSM/XML</a>  
-      	| <a href="$rdf_link?output=osmlink">As OSM Link</a>  
-      	| <a href="$rdf_link?output=googlemapslink">As Google Maps Link</a>  
-      	| <a href="$rdf_link?output=svg">As SVG</a> 
-      	| <a href="$rdf_link?output=wkt">As WKT</a>
-      #end
+CRS:<select id="crs"></select><button id="downloadButton" onclick="download()">Download</button><br/>
 #end
 </div>
     </div>
 
-<script> $.ajax({url:'epsg.txt',success: function (data){$('#crs').html(data); $('#crs').val(epsg);}});</script>
+<script> $.ajax({url:'static/epsg.txt',success: function (data){$('#crs').html(data); $('#crs').val(epsg);}});</script>
   </body>
 </html>
