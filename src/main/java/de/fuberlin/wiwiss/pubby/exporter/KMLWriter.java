@@ -19,13 +19,18 @@ import org.locationtech.jts.io.ParseException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * Writes a GeoPubby instance as KML.
  */
-public class KMLWriter extends ModelWriter {
+public class KMLWriter extends GeoModelWriter {
 
+	public KMLWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it = super.write(model, response);
@@ -44,6 +49,9 @@ public class KMLWriter extends ModelWriter {
 				Double lat = null, lon = null;
 				while (it.hasNext()) {
 					Resource ind = it.next();
+					if(ind.hasProperty(GEO.EPSG)) {
+						sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+					}
 					StmtIterator it2 = ind.listProperties();
 					while (it2.hasNext()) {
 						Statement curst = it2.next();
@@ -52,6 +60,9 @@ public class KMLWriter extends ModelWriter {
 								|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 							try {
 								Geometry geom = reader.read(curst.getObject().asLiteral().getString());
+								if(this.epsg!=null) {
+									geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+								}
 								lat = geom.getCentroid().getCoordinate().getY();
 								lon = geom.getCentroid().getCoordinate().getX();
 							} catch (ParseException e) {

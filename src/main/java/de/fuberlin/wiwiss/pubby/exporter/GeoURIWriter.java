@@ -13,19 +13,27 @@ import org.json.JSONException;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * Writes a GeoPubby instance as GeoURI.
  */
-public class GeoURIWriter extends ModelWriter {
+public class GeoURIWriter extends GeoModelWriter {
 
+	public GeoURIWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it=super.write(model, response);
 		Double lat = null, lon = null;
 		while (it.hasNext()) {
 			Resource ind = it.next();
+			if(ind.hasProperty(GEO.EPSG)) {
+				sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+			}
 			StmtIterator it2 = ind.listProperties();
 			while (it2.hasNext()) {
 				Statement curst = it2.next();
@@ -34,6 +42,9 @@ public class GeoURIWriter extends ModelWriter {
 						|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 					try {
 						Geometry geom = reader.read(curst.getObject().asLiteral().getString());
+						if(this.epsg!=null) {
+							geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+						}
 						lat = geom.getCentroid().getCoordinate().getY();
 						lon = geom.getCentroid().getCoordinate().getX();
 					} catch (ParseException e) {

@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
@@ -17,14 +19,18 @@ import org.locationtech.jts.io.ParseException;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * Writes a GeoPubby instance as JSON or GeoJSON if a geometry is present.
  */
-public class GeoJSONWriterr extends ModelWriter {
+public class GeoJSONWriterr extends GeoModelWriter {
 
-	
+	public GeoJSONWriterr(String epsg) {
+		super(epsg);
+	}
+
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		JSONObject geojson=new JSONObject();
@@ -63,6 +69,9 @@ public class GeoJSONWriterr extends ModelWriter {
 				JSONObject properties=new JSONObject();
 				curfeature.put("properties",properties);
 				Double lat=null,lon=null;
+				if(ind.hasProperty(GEO.EPSG)) {
+					sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+				}
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
 					if(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||
@@ -70,7 +79,10 @@ public class GeoJSONWriterr extends ModelWriter {
 							|| 
 							GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 						try {
-							Geometry geom=reader.read(curst.getObject().asLiteral().getString());		
+							Geometry geom=reader.read(curst.getObject().asLiteral().getString());							
+							if(this.epsg!=null) {
+								geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+							}
 							 GeoJSONWriter writer = new GeoJSONWriter();
 					            GeoJSON json = writer.write(geom);
 					            String jsonstring = json.toString();

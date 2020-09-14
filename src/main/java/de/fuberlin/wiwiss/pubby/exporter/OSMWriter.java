@@ -20,13 +20,18 @@ import org.locationtech.jts.io.ParseException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * Writes a GeoPubby instance as OSM/XML.
  */
-public class OSMWriter extends ModelWriter {
+public class OSMWriter extends GeoModelWriter {
 
+	public OSMWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it = super.write(model, response);
@@ -45,6 +50,9 @@ public class OSMWriter extends ModelWriter {
 				Map<String, String> ns = new TreeMap<String, String>();
 				while (it.hasNext()) {
 					Resource ind = it.next();
+					if(ind.hasProperty(GEO.EPSG)) {
+						sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+					}
 					StmtIterator it2 = ind.listProperties();
 					int nscounter = 1;
 					writer.setPrefix("gml", "http://www.opengis.net/gml");
@@ -74,6 +82,9 @@ public class OSMWriter extends ModelWriter {
 								|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 							try {
 								Geometry geom = reader.read(curst.getObject().asLiteral().getString());
+								if(this.epsg!=null) {
+									geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+								}
 								int nodecounter = 1;
 								if (countgeoms == 0) {
 

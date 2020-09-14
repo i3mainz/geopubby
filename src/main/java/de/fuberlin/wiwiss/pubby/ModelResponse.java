@@ -91,12 +91,16 @@ public class ModelResponse {
 			out.println("Supported formats are RDF/XML, JSON-LD, GeoJSON, GeoURI, TriX, WKT, GML, KML, SVG, GPX, TriG, Turtle, N3, and N-Triples.");
 			return;
 		}
+		String crs=null;
+		if(request.getParameter("crs")!=null) {
+			crs=request.getParameter("crs").toString();
+		}
 		response.setContentType(bestMatch.getMediaType());
-		getWriter(bestMatch.getMediaType()).write(model, response);
+		getWriter(bestMatch.getMediaType(),crs).write(model, response);
 		response.getOutputStream().flush();
     }
 	
-	private ModelWriter getWriter(String mediaType) {
+	private ModelWriter getWriter(String mediaType, String crs) {
 		if ("application/rdf+xml".equals(mediaType)) {
 			return new RDFXMLWriter();
 		}
@@ -107,52 +111,52 @@ public class ModelResponse {
 			return new JSONWriter();
 		}
 		if ("application/geojson".equals(mediaType)) {
-			return new GeoJSONWriterr();
+			return new GeoJSONWriterr(crs);
 		}
 		if ("application/topojson".equals(mediaType)) {
-			return new TopoJSONWriter();
+			return new TopoJSONWriter(crs);
 		}
 		if ("image/svg+xml".equals(mediaType)) {
-			return new SVGWriter();
+			return new SVGWriter(crs);
 		}
 		if ("text/latlon".equals(mediaType)) {
-			return new LatLonTextWriter();
+			return new LatLonTextWriter(crs);
 		}
 		if("text/csv".equals(mediaType)){
-			return new CSVWriter();
+			return new CSVWriter(crs);
 		}
 		if("text/gpx".equals(mediaType)){
-			return new GPXWriter();
+			return new GPXWriter(crs);
 		}
 		if ("application/osm+xml".equals(mediaType)) {
-			return new OSMWriter();
+			return new OSMWriter(crs);
 		}
 		if ("text/osmlink".equals(mediaType)) {
-			return new OSMLinkWriter();
+			return new OSMLinkWriter(crs);
 		}
 		if ("text/googlemapslink".equals(mediaType)) {
-			return new GoogleMapsLinkWriter();
+			return new GoogleMapsLinkWriter(crs);
 		}
 		if ("application/geouri".equals(mediaType)) {
-			return new GeoURIWriter();
+			return new GeoURIWriter(crs);
 		}
 		if ("application/gml".equals(mediaType)) {
-			return new GMLWriter();
+			return new GMLWriter(crs);
 		}
 		if ("application/kml".equals(mediaType)) {
-			return new KMLWriter();
+			return new KMLWriter(crs);
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new TrigWriter();
 		}
 		if ("text/wkt".equals(mediaType)) {
-			return new WKTWriter();
+			return new WKTWriter(crs);
 		}
 		if ("text/mapml".equals(mediaType)) {
-			return new MapMLWriter();
+			return new MapMLWriter(crs);
 		}
 		if ("text/xyz".equals(mediaType)) {
-			return new XYZASCIIWriter();
+			return new XYZASCIIWriter(crs);
 		}
 		if ("application/trix".equals(mediaType)) {
 			return new TrixWriter();
@@ -170,7 +174,7 @@ public class ModelResponse {
 			return new NQuadsWriter();
 		}
 		if("application/hex+x-ndjson".equals(mediaType)) {
-			return new HexTuplesWriter();
+			return new HexTuplesWriter(crs);
 		}
 		return new NTriplesWriter();
 	}

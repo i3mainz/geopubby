@@ -23,7 +23,11 @@ import de.fuberlin.wiwiss.pubby.vocab.GEO;
 /**
  * Writes a GeoPubby instance as CSV.
  */
-public class CSVWriter extends ModelWriter {
+public class CSVWriter extends GeoModelWriter {
+	
+	public CSVWriter(String epsg) {
+		super(epsg);
+	}
 	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {

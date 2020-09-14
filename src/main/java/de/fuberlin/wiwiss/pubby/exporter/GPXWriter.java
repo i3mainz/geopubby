@@ -20,13 +20,18 @@ import org.locationtech.jts.io.ParseException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * Writes a GeoPubby instance as GPX.
  */
-public class GPXWriter extends ModelWriter {
+public class GPXWriter extends GeoModelWriter {
 
+	public GPXWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it = super.write(model, response);
@@ -65,6 +70,9 @@ public class GPXWriter extends ModelWriter {
 
 				while (it.hasNext()) {
 					Resource ind = it.next();
+					if(ind.hasProperty(GEO.EPSG)) {
+						sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+					}
 					StmtIterator it2 = ind.listProperties();
 					Double lat = null, lon = null;
 					while (it2.hasNext()) {
@@ -74,6 +82,9 @@ public class GPXWriter extends ModelWriter {
 								|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 							try {
 								Geometry geom = reader.read(curst.getObject().asLiteral().getString());
+								if(this.epsg!=null) {
+									geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+								}
 								writer.writeStartElement("http://www.opengis.net/gml", geom.getGeometryType());
 								writer.writeStartElement("http://www.opengis.net/gml", "posList");
 								writer.writeCharacters(lat + " " + lon);

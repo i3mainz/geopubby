@@ -14,9 +14,14 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class XYZASCIIWriter extends ModelWriter {
+public class XYZASCIIWriter extends GeoModelWriter {
+	
+	public XYZASCIIWriter(String epsg) {
+		super(epsg);
+	}
 
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
@@ -25,6 +30,9 @@ public class XYZASCIIWriter extends ModelWriter {
 		Geometry geom = null;
 		while (it.hasNext()) {
 			Resource ind = it.next();
+			if(ind.hasProperty(GEO.EPSG)) {
+				sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+			}
 			StmtIterator it2 = ind.listProperties();
 			while (it2.hasNext()) {
 				Statement curst = it2.next();
@@ -33,6 +41,9 @@ public class XYZASCIIWriter extends ModelWriter {
 						|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 					try {
 						geom = reader.read(curst.getObject().asLiteral().getString());
+						if(this.epsg!=null) {
+							geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+						}
 					} catch (ParseException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -57,8 +68,22 @@ public class XYZASCIIWriter extends ModelWriter {
 				}
 				response.getWriter().close();
 			} else if (lat != null || lon != null) {
-				response.getWriter().write(lon + " " + lat);
-				response.getWriter().close();
+				try {
+					geom = reader.read("Point("+lon+" "+lat+")");
+					if(this.epsg!=null) {
+						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+					Coordinate coord=geom.getCoordinate();
+					response.getWriter().write(coord.getX() + " " + coord.getY());
+					if (!Double.isNaN(coord.getZ())) {
+						response.getWriter().write(" " + coord.getZ());
+					}
+					response.getWriter().close();
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 			} else {
 				response.getWriter().write("");
 				response.getWriter().close();

@@ -17,10 +17,15 @@ import org.locationtech.jts.io.ParseException;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
-public class TopoJSONWriter extends ModelWriter {
+public class TopoJSONWriter extends GeoModelWriter {
 
+	public TopoJSONWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		JSONObject topojson=new JSONObject();
@@ -52,6 +57,9 @@ public class TopoJSONWriter extends ModelWriter {
 			topojson.put("arcs",new JSONArray());
 			while(it.hasNext()) {
 				Resource ind=it.next();
+				if(ind.hasProperty(GEO.EPSG)) {
+					sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+				}
 				StmtIterator it2 = ind.listProperties();
 				JSONObject curfeature=new JSONObject();
 				curfeature.put("id",ind.getURI());
@@ -65,7 +73,10 @@ public class TopoJSONWriter extends ModelWriter {
 							|| 
 							GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
 						try {
-							Geometry geom=reader.read(curst.getObject().asLiteral().getString());		
+							Geometry geom=reader.read(curst.getObject().asLiteral().getString());	
+							if(this.epsg!=null) {
+								geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+							}
 							 GeoJSONWriter writer = new GeoJSONWriter();
 					            GeoJSON json = writer.write(geom);
 					            String jsonstring = json.toString();
