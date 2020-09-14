@@ -2,12 +2,12 @@
     <div id="footer">
      <div class="container-fluid">
 <script>
-function download(){
-	window.open(window.location.href+"?output="+$('#format').val()+"&crs="+$('#crs').val(),'_blank');
+function download(link){
+	window.open("${rdf_link}?output="+$('#format').val()+"&crs="+$('#crs').val(),'_blank');
 }
 </script>
 #if ($rdf_link)
-Format:<select id="format">		
+<b>Download Options:</b>&nsbp;Format:<select id="format">		
       <option value="csv">Comma Separated Values (CSV)</option>
       <option value="geojson">(Geo)JSON</option>
       <option value="json">JSON-LD</option>
@@ -42,6 +42,6 @@ CRS:<select id="crs"></select><button id="downloadButton" onclick="download()">D
 </div>
     </div>
 
-<script> $.ajax({url:'static/epsg.txt',success: function (data){$('#crs').html(data); $('#crs').val(epsg);}});</script>
+<script> $.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs').html(data); $('#crs').val(epsg);}});</script>
   </body>
 </html>
