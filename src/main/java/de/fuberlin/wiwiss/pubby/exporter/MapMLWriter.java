@@ -54,17 +54,17 @@ public class MapMLWriter extends ModelWriter {
 					writer.writeStartElement("feature");	
 					writer.writeAttribute("id", ind.getURI());
 					writer.writeAttribute("itemscope", "itemscope");
+					writer.writeStartElement("properties");
+					writer.writeStartElement("div");
+					writer.writeAttribute("class", "table-container");
+					writer.writeStartElement("table");
+					writer.writeStartElement("caption");
+					writer.writeCharacters("Feature Properties");
+					writer.writeStartElement("tbody");
 					StmtIterator it2 = ind.listProperties();
 					Double lat = null, lon = null;
 					List<Geometry> geoms=new LinkedList<Geometry>();
 					while (it2.hasNext()) {
-						writer.writeStartElement("properties");
-						writer.writeStartElement("div");
-						writer.writeAttribute("class", "table-container");
-						writer.writeStartElement("table");
-						writer.writeStartElement("caption");
-						writer.writeCharacters("Feature Properties");
-						writer.writeStartElement("tbody");
 						Statement curst = it2.next();
 						if (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())
 								|| GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
