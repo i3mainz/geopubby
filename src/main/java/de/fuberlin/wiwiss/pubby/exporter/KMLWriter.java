@@ -55,12 +55,19 @@ public class KMLWriter extends GeoModelWriter {
 					}
 				}
 				it.close();
+				if(geom!=null) {
+					lat = geom.getCentroid().getCoordinate().getY();
+					lon = geom.getCentroid().getCoordinate().getX();
+					geom=null;
+				}
 				if (lat != null && lon != null) {
 					writer.writeStartElement("Point");
 					writer.writeStartElement("coordinates");
 					writer.writeCharacters(lat + " " + lon);
 					writer.writeEndElement();
 					writer.writeEndElement();
+					lat=null;
+					lon=null;
 				}
 				it = model.listResourcesWithProperty(usedProperty);
 				writer.writeStartElement("ExtendedData");

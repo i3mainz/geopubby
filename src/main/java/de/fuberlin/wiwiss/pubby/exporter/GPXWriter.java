@@ -104,8 +104,8 @@ public class GPXWriter extends GeoModelWriter {
 						}
 						if (geom != null) {
 							Coordinate coord=geom.getCoordinate();
-							writer.writeAttribute("lat", coord.getY() + "");
-							writer.writeAttribute("lon", coord.getX() + "");	
+							lat=coord.getY();
+							lon=coord.getX();
 						}
 						if (lon != null && lat != null) {
 							writer.writeStartElement("wpt");
