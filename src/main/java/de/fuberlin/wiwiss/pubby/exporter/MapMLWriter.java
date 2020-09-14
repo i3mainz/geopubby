@@ -115,8 +115,11 @@ public class MapMLWriter extends GeoModelWriter {
 						}
 					}
 					if (lon != null && lat != null) {
-						Point point = fac.createPoint(
+						Geometry point = fac.createPoint(
 								new Coordinate(Double.valueOf(lon.toString()), Double.valueOf(lat.toString())));
+						if(this.epsg!=null) {
+							point=ReprojectionUtils.reproject(point, sourceCRS, epsg);
+						}
 						geoms.add(point);
 						lat = null;
 						lon = null;

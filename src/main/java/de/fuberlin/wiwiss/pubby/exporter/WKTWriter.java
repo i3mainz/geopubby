@@ -10,6 +10,7 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
+import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.io.ParseException;
 
@@ -65,7 +66,16 @@ public class WKTWriter extends GeoModelWriter {
 				response.getWriter().write(geom.toText());
 				response.getWriter().close();
 			}else if (lat != null || lon != null) {
-				response.getWriter().write("POINT ("+lon+" "+lat+")");
+				try {
+					geom = reader.read("Point("+lon+" "+lat+")");
+					if(this.epsg!=null) {
+						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+					response.getWriter().write(geom.toText());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				response.getWriter().close();
 			}else{
 				response.getWriter().write("");

@@ -67,7 +67,6 @@ public class GPXWriter extends GeoModelWriter {
 				}
 				it.close();
 				it = model.listResourcesWithProperty(usedProperty);
-
 				while (it.hasNext()) {
 					Resource ind = it.next();
 					if(ind.hasProperty(GEO.EPSG)) {
@@ -128,10 +127,21 @@ public class GPXWriter extends GeoModelWriter {
 						}
 						if (lon != null && lat != null) {
 							writer.writeStartElement("wpt");
-							writer.writeAttribute("lat", lat + "");
-							writer.writeAttribute("lon", lon + "");
-							// collectColumns(writer,
-							// geojson.getJSONArray("features").getJSONObject(i).getJSONObject("properties"),"");
+							if(this.epsg!=null) {
+								Geometry geom;
+								try {
+									geom = reader.read("Point("+lon+" "+lat+")");
+									geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);	
+									writer.writeAttribute("lat", geom.getCoordinate().getX() + "");
+									writer.writeAttribute("lon", geom.getCoordinate().getY() + "");
+								} catch (ParseException e) {
+									writer.writeAttribute("lat", lat + "");
+									writer.writeAttribute("lon", lon + "");	
+								}
+							}else {
+								writer.writeAttribute("lat", lat + "");
+								writer.writeAttribute("lon", lon + "");								
+							}
 							writer.writeEndElement();
 							lat = null;
 							lon = null;

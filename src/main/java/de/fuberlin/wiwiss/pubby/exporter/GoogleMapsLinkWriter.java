@@ -64,7 +64,16 @@ public class GoogleMapsLinkWriter extends GeoModelWriter {
 				response.getWriter().write("http://www.google.com/maps/place/"+p.getX()+","+p.getY());
 				response.getWriter().close();
 			}else if (lat != null || lon != null) {
-				response.getWriter().write("http://www.google.com/maps/place/"+lat+","+lon);
+				try {
+					geom = reader.read("Point("+lon+" "+lat+")");
+					if(this.epsg!=null) {
+						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+					response.getWriter().write("http://www.google.com/maps/place/"+geom.getCoordinate().getX()+","+geom.getCoordinate().getY());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				response.getWriter().close();
 			}else{
 				response.getWriter().write("");

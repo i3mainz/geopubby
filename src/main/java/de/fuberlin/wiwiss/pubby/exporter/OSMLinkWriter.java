@@ -67,7 +67,18 @@ public class OSMLinkWriter extends GeoModelWriter {
 				response.getWriter().write("http://www.openstreetmap.org/index.html?lat="+p.getX()+"&lon="+p.getY());
 				response.getWriter().close();
 			}else if (lat != null || lon != null) {
-				response.getWriter().write("http://www.openstreetmap.org/index.html?lat="+lat+"&lon="+lon);
+				try {
+					geom = reader.read("Point("+lon+" "+lat+")");
+					if(this.epsg!=null) {
+						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+					response.getWriter().write("http://www.openstreetmap.org/index.html?lat="+geom.getCoordinate().getX()+"&lon="+geom.getCoordinate().getY());
+					response.getWriter().write(geom.toText());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 				response.getWriter().close();
 			}else{
 				response.getWriter().write("");
