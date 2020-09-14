@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: ModelResponse.NTriplesWriter Class Reference</title>
+<title>GeoPubby: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,134 +56,30 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00344.html','');});
+$(document).ready(function(){initNavTree('a00347.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="a00341.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ModelResponse.NTriplesWriter Class Reference</div>  </div>
+<div class="title">ModelResponse Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for ModelResponse.NTriplesWriter:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00343.png" border="0" usemap="#ModelResponse_8NTriplesWriter_inherit__map" alt="Inheritance graph"/></div>
-<map name="ModelResponse_8NTriplesWriter_inherit__map" id="ModelResponse_8NTriplesWriter_inherit__map">
-<area shape="rect" id="node2" href="a00288.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="61,5,153,32"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for ModelResponse.NTriplesWriter:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00342.png" border="0" usemap="#ModelResponse_8NTriplesWriter_coll__map" alt="Collaboration graph"/></div>
-<map name="ModelResponse_8NTriplesWriter_coll__map" id="ModelResponse_8NTriplesWriter_coll__map">
-<area shape="rect" id="node2" href="a00288.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="61,95,153,121"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:abbc00390b9b4242b525b35c95441cc68"><td class="memItemLeft" align="right" valign="top">ExtendedIterator&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00344.html#abbc00390b9b4242b525b35c95441cc68">write</a> (Model <a class="el" href="a00340.html#a356df7b1948e33881b8730f379d137a8">model</a>, HttpServletResponse <a class="el" href="a00340.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>)  throws IOException </td></tr>
-<tr class="separator:abbc00390b9b4242b525b35c95441cc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ac95bc57d28343d34023e72f916cb9b75"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288.html#ac95bc57d28343d34023e72f916cb9b75">usedProperty</a> =null</td></tr>
-<tr class="separator:ac95bc57d28343d34023e72f916cb9b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8b1e194dbc193fe759f7e517807e668"><td class="memItemLeft" align="right" valign="top">WKTReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288.html#ae8b1e194dbc193fe759f7e517807e668">reader</a> =new WKTReader()</td></tr>
-<tr class="separator:ae8b1e194dbc193fe759f7e517807e668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abbc00390b9b4242b525b35c95441cc68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbc00390b9b4242b525b35c95441cc68">&#9670;&nbsp;</a></span>write()</h2>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ExtendedIterator&lt;Resource&gt; write </td>
-          <td>(</td>
-          <td class="paramtype">Model&#160;</td>
-          <td class="paramname"><em>model</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpServletResponse&#160;</td>
-          <td class="paramname"><em>response</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> throws IOException</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                                                                                                      {</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                        <a class="code" href="a00340.html#a356df7b1948e33881b8730f379d137a8">model</a>.getWriter(<span class="stringliteral">&quot;N-TRIPLES&quot;</span>).write(<a class="code" href="a00340.html#a356df7b1948e33881b8730f379d137a8">model</a>, <a class="code" href="a00340.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.getOutputStream(), null);</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                        <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                }</div><div class="ttc" id="a00340_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00340.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:47</div></div>
-<div class="ttc" id="a00340_html_a356df7b1948e33881b8730f379d137a8"><div class="ttname"><a href="a00340.html#a356df7b1948e33881b8730f379d137a8">de.fuberlin.wiwiss.pubby.ModelResponse.model</a></div><div class="ttdeci">final Model model</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:45</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae8b1e194dbc193fe759f7e517807e668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8b1e194dbc193fe759f7e517807e668">&#9670;&nbsp;</a></span>reader</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">WKTReader reader =new WKTReader()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00240.html#abbc00390b9b4242b525b35c95441cc68">CoverageJSONWriter.write()</a>, <a class="el" href="a00312.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00264.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00256.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00308.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00292.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00304.html#abbc00390b9b4242b525b35c95441cc68">TopoJSONWriter.write()</a>, <a class="el" href="a00244.html#abbc00390b9b4242b525b35c95441cc68">CSVWriter.write()</a>, <a class="el" href="a00276.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00248.html#abbc00390b9b4242b525b35c95441cc68">GeoJSONWriterr.write()</a>, <a class="el" href="a00296.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00268.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, <a class="el" href="a00300.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, <a class="el" href="a00260.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00284.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>, and <a class="el" href="a00280.html#abbc00390b9b4242b525b35c95441cc68">LatLonTextWriter.write()</a>.</p>
-
-</div>
-</div>
-<a id="ac95bc57d28343d34023e72f916cb9b75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac95bc57d28343d34023e72f916cb9b75">&#9670;&nbsp;</a></span>usedProperty</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Property usedProperty =null</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00276.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00296.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00268.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, <a class="el" href="a00260.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, and <a class="el" href="a00284.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00347.html">ModelResponse</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00347.html#ad11c019b4ed835885005ab44cd318c25">doResponseModel</a>()</td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00347.html#aa8bb17b56c84b64f02a105efae6e2c6a">getWriter</a>(String mediaType, String crs)</td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00347.html#a356df7b1948e33881b8730f379d137a8">model</a></td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00347.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse</a>(Model model, HttpServletRequest request, HttpServletResponse response)</td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00347.html#ad632242c9a97c676da2987811ea46e83">request</a></td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00347.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a></td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00347.html#a09a9d9145624e027a1ad3cbe85580acc">serve</a>()</td><td class="entry"><a class="el" href="a00347.html">ModelResponse</a></td><td class="entry"></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00216.html">de</a></li><li class="navelem"><a class="el" href="a00217.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00218.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00215.html">pubby</a></li><li class="navelem"><a class="el" href="a00340.html">ModelResponse</a></li><li class="navelem"><a class="el" href="a00344.html">NTriplesWriter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
