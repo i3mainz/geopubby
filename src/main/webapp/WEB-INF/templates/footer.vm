@@ -1,14 +1,37 @@
 #set ($has_text = false)
     <div id="footer">
      <div class="container-fluid">
+
+#if ($rdf_link)
+Format:<select id="format">		
+      <option value="ttl">Turtle</option>
+      <option value="xml">RDF/XML</option>
+      <option value="rdfjson">RDF/JSON</option>
+      <option value="json">JSON-LD</option>
+      <option value="trig">TriG</option>
+      <option value="trix">TriX</option>
+      <option value="hextuples">HexTuples RDF</option>
+      <option value="geojson">(Geo)JSON</option>
+      <option value="csv">CSV</option>
+      #if (!$geoms.isEmpty())
+      	<option value="geouri">GeoURI</option>
+    	<option value="latlontext">LatLonText</option>
+       	<option value="kml">KML</option>
+        <option value="gml">GML</option>
+        <option value="gpx">GPX</option>
+        <option value="mapml">MapML</option>
+        <option value="topojson">TopoJSON</option>
+      #end
+CRS:<select id="crs"></select><button id="downloadButton">Download</button>
+#end
 #if ($rdf_link)
       <a href="$rdf_link?output=ttl">As Turtle</a> |
       <a href="$rdf_link?output=xml">As RDF/XML</a> |
       <a href="$rdf_link?output=rdfjson">As RDF/JSON</a> |
       <a href="$rdf_link?output=json">As JSON-LD</a> |
       <a href="$rdf_link?output=trig">As TriG</a> |
-      <a href="$rdf_link?output=hextuples">As HexTuples RDF</a> |
       <a href="$rdf_link?output=trix">As TriX</a> |
+      <a href="$rdf_link?output=hextuples">As HexTuples RDF</a> |
       <a href="$rdf_link?output=geojson">As (Geo)JSON</a> |
       <a href="$rdf_link?output=csv">As CSV</a>
       #if (!$geoms.isEmpty())
@@ -25,8 +48,9 @@
       	| <a href="$rdf_link?output=svg">As SVG</a> 
       	| <a href="$rdf_link?output=wkt">As WKT</a>
       #end
-#end
 </div>
     </div>
+
+<script> $.ajax({url:'epsg.txt',success: function (data){$('#crs').html(data); $('#crs').val(epsg);}});</script>
   </body>
 </html>
