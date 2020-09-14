@@ -10,7 +10,9 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
+import org.locationtech.jts.io.ParseException;
 
+import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
@@ -40,8 +42,16 @@ public class GeoURIWriter extends GeoModelWriter {
 			if (lat == null || lon == null) {
 				response.getWriter().write("");
 				response.getWriter().close();
-			} else {		
-				response.getWriter().write("geo:" + lat + "," + lon);
+			} else {
+				try {
+					geom = reader.read("Point("+lon+" "+lat+")");
+					if(this.epsg!=null) {
+						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+					response.getWriter().write("http://www.google.com/maps/place/"+geom.getCoordinate().getX()+","+geom.getCoordinate().getY());
+				} catch (ParseException e) {
+					response.getWriter().write("geo:" + lat + "," + lon);
+				}
 				response.getWriter().close();
 			}
 		} catch (JSONException e) {
