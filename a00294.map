@@ -1,3 +1,12 @@
-<map id="ModelResponse.JSONWriter" name="ModelResponse.JSONWriter">
-<area shape="rect" id="node2" href="$a00244.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
+<map id="HypermediaResource" name="HypermediaResource">
+<area shape="rect" id="node3" href="$a00216.html" title="The server&#39;s configuration. " alt="" coords="2029,304,2128,331"/>
+<area shape="rect" id="node8" href="$a00532.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1649,304,1768,331"/>
+<area shape="rect" id="node4" href="$a00404.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1436,120,1556,147"/>
+<area shape="rect" id="node9" href="$a00536.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,162,1400,203"/>
+<area shape="rect" id="node10" href="$a00548.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,298,1389,339"/>
+<area shape="rect" id="node11" href="$a00540.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,319,1016,361"/>
+<area shape="rect" id="node12" href="$a00540.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,367,629,393"/>
+<area shape="rect" id="node18" href="$a00540.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,394,1016,435"/>
+<area shape="rect" id="node17" href="$a00544.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,401,1383,442"/>
+<area shape="rect" id="node19" href="$a00464.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,473,1337,500"/>
 </map>

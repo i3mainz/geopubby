@@ -1,14 +1,12 @@
 var a00432 =
 [
-    [ "FilteredDataSource", "a00432.html#a3a14265e1444808215ea4d2a7c99b199", null ],
-    [ "canDescribe", "a00432.html#a76346f12873afab70aafac6a443c5f04", null ],
-    [ "describeResource", "a00432.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
-    [ "describeResource", "a00432.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
-    [ "getHighIndegreeProperties", "a00432.html#afd50c79b6d45d0fed770638879c7359e", null ],
-    [ "getHighOutdegreeProperties", "a00432.html#acbe9e94afdedf6be6979247520906444", null ],
-    [ "getIndex", "a00432.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "getLabelIndex", "a00432.html#a2dbc188988204c9931d77a3f36128e50", null ],
-    [ "listPropertyValues", "a00432.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
-    [ "MAX_INDEX_SIZE", "a00432.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
-    [ "wrapped", "a00432.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
+    [ "addDocumentMetadata", "a00432.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addPageMetadata", "a00432.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
+    [ "addQueryString", "a00432.html#a235314820d427b745d7a08f1819176eb", null ],
+    [ "doGet", "a00432.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
+    [ "doGet", "a00432.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "init", "a00432.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
+    [ "send404", "a00432.html#a3208dcc642a59d12778ba619395eec47", null ],
+    [ "sendInitialization500", "a00432.html#a37f74add6038c113368344fbb9210f8e", null ],
+    [ "serialVersionUID", "a00432.html#a3238d314ecdee14d2966760945d00c3b", null ]
 ];

@@ -1,13 +1,15 @@
 var a00360 =
 [
-    [ "PropertyBuilder", "a00360.html#ae0adae1e09e59e9cd8908d1a4754dabf", null ],
-    [ "addHighDegreeArcs", "a00360.html#a56093db616f5ec791e721da4b41bcb74", null ],
-    [ "addValue", "a00360.html#a39c7c671ab4ed298bc1953f546a71e04", null ],
-    [ "toProperty", "a00360.html#a2c56e4c4709f129f7a0205d6c867ad5f", null ],
-    [ "blankNodeDescriptions", "a00360.html#af6d12ed9691193b05643c24b1b10e3ee", null ],
-    [ "highDegreeArcCount", "a00360.html#aa6574d553f74a485106af0677f2c8882", null ],
-    [ "isInverse", "a00360.html#a4556acebb4b8d61aab8f863143d163d6", null ],
-    [ "predicate", "a00360.html#aa9ef63e37d986c48ab7c19294531f962", null ],
-    [ "values", "a00360.html#a78978dc7828b1ff5932b3cb465e09ac7", null ],
-    [ "vocabularyStore", "a00360.html#abcedb82d4994dd55d8b1d513b0601a95", null ]
+    [ "AcceptHeaderOverride", "a00372.html", "a00372" ],
+    [ "Negotiation", "a00368.html", "a00368" ],
+    [ "VariantSpec", "a00364.html", "a00364" ],
+    [ "addUserAgentOverride", "a00360.html#af83bf4d6bf77cdd31256ecc83186a558", null ],
+    [ "addVariant", "a00360.html#a3953da5ad43555a9edc37e48b7f6e4ab", null ],
+    [ "getBestMatch", "a00360.html#ab23b79e631120fc8ce51d40c7c314e62", null ],
+    [ "getBestMatch", "a00360.html#a1afbe15fddec9b99e5780a94774044c7", null ],
+    [ "setDefaultAccept", "a00360.html#a7652b7c00c4cf54490dfe3535cc70cf2", null ],
+    [ "toAcceptRanges", "a00360.html#a37345f6b468bd509ef8896b6c546e1ac", null ],
+    [ "defaultAcceptRanges", "a00360.html#a9d851118500a4017a2591587200cd953", null ],
+    [ "userAgentOverrides", "a00360.html#a248e951c7087641970d6701f1b7ec536", null ],
+    [ "variantSpecs", "a00360.html#a2391e088d7d831c6b5bd35986487becf", null ]
 ];

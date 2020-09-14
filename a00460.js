@@ -1,17 +1,12 @@
 var a00460 =
 [
-    [ "Builder", "a00464.html", "a00464" ],
-    [ "AutocompleteEngine", "a00460.html#ab29978a4e02531946ff90e23b2e58b03", null ],
-    [ "add", "a00460.html#a2e4d243958874ed92e4705efd514ec8a", null ],
-    [ "addAll", "a00460.html#aedc4b037549f29df48c94d2432b56f21", null ],
-    [ "getAll", "a00460.html#aba85b697482a87be7652f4cbbfe3ede1", null ],
-    [ "remove", "a00460.html#af924252f2d0e180388cdd6136293a91a", null ],
-    [ "removeAll", "a00460.html#a9be7b1de1b31af20288221beb6fc5140", null ],
-    [ "search", "a00460.html#a9b69034ee356599aba4cb389f97ad7c7", null ],
-    [ "search", "a00460.html#afd22691123368089b69314d5a08a7a1f", null ],
-    [ "analyzer", "a00460.html#adf32c4c95815598002112d2c04c748fc", null ],
-    [ "comparator", "a00460.html#a5fc8d2f44284ae06708e6168ac53a831", null ],
-    [ "index", "a00460.html#a2dab6da7542b85c04c4a01b1ffb1abce", null ],
-    [ "read", "a00460.html#aefb6a09436e031db6f196ce971ee825d", null ],
-    [ "write", "a00460.html#afdd303d9d2a2a62c4038d77278a09cf3", null ]
+    [ "addDocumentMetadata", "a00460.html#aafab682dd7935049291522510d9a62ba", null ],
+    [ "addPageMetadata", "a00460.html#abcab14ade69d9eff8f17b4405b29f6e4", null ],
+    [ "addQueryString", "a00460.html#a235314820d427b745d7a08f1819176eb", null ],
+    [ "doGet", "a00460.html#ade0f373e0ee60161c36c160bd5a04a9c", null ],
+    [ "doGet", "a00460.html#a1a499993fcbc802bf7f39ff4e8185050", null ],
+    [ "init", "a00460.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ],
+    [ "send404", "a00460.html#a3208dcc642a59d12778ba619395eec47", null ],
+    [ "sendInitialization500", "a00460.html#a37f74add6038c113368344fbb9210f8e", null ],
+    [ "serialVersionUID", "a00460.html#a3238d314ecdee14d2966760945d00c3b", null ]
 ];

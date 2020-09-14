@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00457.html" title="A source of RDF data intended for publication through the server. " alt="" coords="5,132,96,159"/>
-<area shape="rect" id="node2" href="$a00461.html" title="A DataSource that wraps another data source in such a way that the resulting data source is only capa..." alt="" coords="172,5,307,32"/>
-<area shape="rect" id="node3" href="$a00465.html" title="A DataSource that wraps another data source and adds an index of the resources in that data source..." alt="" coords="178,56,301,83"/>
-<area shape="rect" id="node4" href="$a00469.html" title="A DataSource that presents an RDF merge of multiple other data sources. " alt="" coords="176,107,303,133"/>
-<area shape="rect" id="node5" href="$a00473.html" title="A data source backed by a Jena model. " alt="" coords="176,157,303,184"/>
-<area shape="rect" id="node6" href="$a00477.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="144,208,335,235"/>
-<area shape="rect" id="node7" href="$a00481.html" title="Wraps a DataSource by applying a IRIRewriter. " alt="" coords="166,259,313,285"/>
+<area shape="rect" id="node1" href="$a00464.html" title="A source of RDF data intended for publication through the server. " alt="" coords="5,132,96,159"/>
+<area shape="rect" id="node2" href="$a00468.html" title="A DataSource that wraps another data source in such a way that the resulting data source is only capa..." alt="" coords="172,5,307,32"/>
+<area shape="rect" id="node3" href="$a00472.html" title="A DataSource that wraps another data source and adds an index of the resources in that data source..." alt="" coords="178,56,301,83"/>
+<area shape="rect" id="node4" href="$a00476.html" title="A DataSource that presents an RDF merge of multiple other data sources. " alt="" coords="176,107,303,133"/>
+<area shape="rect" id="node5" href="$a00480.html" title="A data source backed by a Jena model. " alt="" coords="176,157,303,184"/>
+<area shape="rect" id="node6" href="$a00484.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="144,208,335,235"/>
+<area shape="rect" id="node7" href="$a00488.html" title="Wraps a DataSource by applying a IRIRewriter. " alt="" coords="166,259,313,285"/>
 </map>
