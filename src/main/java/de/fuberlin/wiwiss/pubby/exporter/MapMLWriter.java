@@ -114,6 +114,7 @@ public class MapMLWriter extends ModelWriter {
 					writer.writeEndElement();
 					writer.writeEndElement();
 					writer.writeEndElement();
+					writer.writeEndElement();
 					writer.writeStartElement("geometry");
 					for(Geometry geom:geoms) {
 						writer.writeStartElement(geom.getGeometryType());
@@ -124,7 +125,6 @@ public class MapMLWriter extends ModelWriter {
 						writer.writeEndElement();
 						writer.writeEndElement();
 					}
-					writer.writeEndElement();
 				writer.writeEndElement();
 				writer.writeEndElement();
 				writer.writeEndDocument();
