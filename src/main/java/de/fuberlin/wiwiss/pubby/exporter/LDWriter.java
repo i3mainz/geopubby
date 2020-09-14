@@ -80,6 +80,7 @@ public class LDWriter extends GeoModelWriter {
 					}
 
 				}
+			it2.close();
 				ind.removeAll(GEO.EPSG);
 				ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 			}
