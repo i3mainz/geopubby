@@ -29,6 +29,7 @@ import de.fuberlin.wiwiss.pubby.exporter.OSMWriter;
 import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
 import de.fuberlin.wiwiss.pubby.exporter.TopoJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
+import de.fuberlin.wiwiss.pubby.exporter.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
 import de.fuberlin.wiwiss.pubby.negotiation.PubbyNegotiator;
@@ -149,6 +150,9 @@ public class ModelResponse {
 		}
 		if ("text/mapml".equals(mediaType)) {
 			return new MapMLWriter();
+		}
+		if ("text/xyz".equals(mediaType)) {
+			return new XYZASCIIWriter();
 		}
 		if ("application/trix".equals(mediaType)) {
 			return new TrixWriter();
