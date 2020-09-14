@@ -61,6 +61,8 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
 		pubbyNegotiator.addVariant("image/svg+xml;q=0.95");
+		pubbyNegotiator.addVariant("application/rt;q=0.95");
+		pubbyNegotiator.addVariant("text/mapml;q=0.95");
 		pubbyNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		pubbyNegotiator.addVariant("text/plain;q=0.2");
@@ -99,8 +101,10 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("text/osmlink;q=0.95");
 		dataNegotiator.addVariant("application/gml;q=0.95")
 				.addAliasMediaType("text/gml;q=0.8");
+		dataNegotiator.addVariant("text/mapml;q=0.95");
 		dataNegotiator.addVariant("text/wkt;q=0.95");
 		dataNegotiator.addVariant("application/osm+xml;q=0.95");
+		dataNegotiator.addVariant("application/rt;q=0.95");
 		dataNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		dataNegotiator.addVariant("application/x-turtle;q=0.99")

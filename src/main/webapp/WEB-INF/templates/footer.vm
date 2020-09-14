@@ -7,6 +7,7 @@
       <a href="$rdf_link?output=rdfjson">As RDF/JSON</a> |
       <a href="$rdf_link?output=json">As JSON-LD</a> |
       <a href="$rdf_link?output=trig">As TriG</a> |
+      <a href="$rdf_link?output=hextuples">As HexTuples RDF</a> |
       <a href="$rdf_link?output=trix">As TriX</a> |
       <a href="$rdf_link?output=geojson">As (Geo)JSON</a> |
       <a href="$rdf_link?output=csv">As CSV</a>
@@ -16,6 +17,7 @@
       	| <a href="$rdf_link?output=kml">As KML</a> 
       	| <a href="$rdf_link?output=gml">As GML</a>
       	| <a href="$rdf_link?output=gpx">As GPX</a>
+        | <a href="$rdf_link?output=mapml">As MapML</a>
        	| <a href="$rdf_link?output=topojson">As TopoJSON</a>  
       	| <a href="$rdf_link?output=osm">As OSM/XML</a>  
       	| <a href="$rdf_link?output=osmlink">As OSM Link</a>  
