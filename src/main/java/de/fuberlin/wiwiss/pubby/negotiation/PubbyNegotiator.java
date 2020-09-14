@@ -62,6 +62,7 @@ public class PubbyNegotiator {
 			.addAliasMediaType("application/gpx;q=0.8");
 		pubbyNegotiator.addVariant("image/svg+xml;q=0.95");
 		pubbyNegotiator.addVariant("application/rt;q=0.95");
+		pubbyNegotiator.addVariant("application/hex+x-ndjson;q=0.95");
 		pubbyNegotiator.addVariant("text/mapml;q=0.95");
 		pubbyNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
@@ -96,6 +97,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
 		dataNegotiator.addVariant("image/svg+xml;q=0.95");
+		dataNegotiator.addVariant("application/hex+x-ndjson;q=0.95");
 		dataNegotiator.addVariant("text/latlon;q=0.95");
 		dataNegotiator.addVariant("text/googlemapslink;q=0.95");
 		dataNegotiator.addVariant("text/osmlink;q=0.95");
