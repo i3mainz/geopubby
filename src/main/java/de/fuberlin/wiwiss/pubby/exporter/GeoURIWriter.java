@@ -48,7 +48,7 @@ public class GeoURIWriter extends GeoModelWriter {
 					if(this.epsg!=null) {
 						geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);
 					}
-					response.getWriter().write("http://www.google.com/maps/place/"+geom.getCoordinate().getX()+","+geom.getCoordinate().getY());
+					response.getWriter().write("geo:"+geom.getCoordinate().getX()+","+geom.getCoordinate().getY());
 				} catch (ParseException e) {
 					response.getWriter().write("geo:" + lat + "," + lon);
 				}
