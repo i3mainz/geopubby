@@ -13,17 +13,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.ParseException;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONReader;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
-import de.fuberlin.wiwiss.pubby.vocab.GEO;
-
 /**
  * Writes a GeoPubby instance as CSV.
  */
-public class CSVWriter extends ModelWriter {
+public class CSVWriter extends GeoModelWriter {
+	
+	public CSVWriter(String epsg) {
+		super(epsg);
+	}
 	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
@@ -65,31 +66,8 @@ public class CSVWriter extends ModelWriter {
 				Double lat=null,lon=null;
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
-					if(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||
-							GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
-							|| 
-							GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
-						try {
-							Geometry geom=reader.read(curst.getObject().asLiteral().getString());		
-							 GeoJSONWriter writer = new GeoJSONWriter();
-					            GeoJSON json = writer.write(geom);
-					            String jsonstring = json.toString();
-					            curfeature.put("geometry",new JSONObject(jsonstring));
-						} catch (ParseException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}else if(GEO.ASGEOJSON.getURI().equals(curst.getPredicate().getURI().toString())){
-					     if(curst.getObject().asLiteral().getString()!=null)
-						    curfeature.put("geometry",new JSONObject(curst.getObject().asLiteral().getString()));
-					}else if(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){
-						lat=curst.getObject().asLiteral().getDouble();
-					}else if(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){
-						lon=curst.getObject().asLiteral().getDouble();
-					}else if(GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())){
-						lat=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
-						lon=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
-					}else {
+					boolean handled=this.handleGeometry(curst, ind, model);
+					if(!handled) {
 						if(properties.has(curst.getPredicate().toString())) {
 							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
 								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
@@ -102,6 +80,13 @@ public class CSVWriter extends ModelWriter {
 						   properties.put(curst.getPredicate().toString(),curst.getObject().toString());
 						}					
 					}
+					if(geom!=null) {
+						 GeoJSONWriter writer = new GeoJSONWriter();
+				         GeoJSON json = writer.write(geom);
+				         String jsonstring = json.toString();
+				         curfeature.put("geometry",new JSONObject(jsonstring));
+				         geom=null;
+					}
 					if(lon!=null && lat!=null) {
 						JSONObject geeo=new JSONObject();
 						geeo.put("type","Point");
@@ -109,6 +94,8 @@ public class CSVWriter extends ModelWriter {
 						geeo.getJSONArray("coordinates").put(lat);
 						geeo.getJSONArray("coordinates").put(lon);
 						curfeature.put("geometry",geeo);
+						lat=null;
+						lon=null;
 					}
 				}
 			}

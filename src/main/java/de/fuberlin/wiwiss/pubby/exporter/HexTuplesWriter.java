@@ -10,7 +10,12 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
 
-public class HexTuplesWriter extends ModelWriter {
+public class HexTuplesWriter extends GeoModelWriter {
+	
+	public HexTuplesWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it=super.write(model, response);

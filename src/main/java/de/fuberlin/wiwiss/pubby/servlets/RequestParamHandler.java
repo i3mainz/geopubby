@@ -39,15 +39,19 @@ public class RequestParamHandler {
 		mimeTypes.put("geojson", "application/geojson");
 		mimeTypes.put("geojson", "text/geojson");
 		mimeTypes.put("topojson", "application/topojson");
-		mimeTypes.put("topojson", "application/topojson");
+		mimeTypes.put("hextuples", "application/hex+x-ndjson");
 		mimeTypes.put("geouri", "application/geouri");
 		mimeTypes.put("geouri", "text/geouri");
 		mimeTypes.put("kml", "application/kml");
 		mimeTypes.put("kml", "text/kml");
 		mimeTypes.put("gml", "application/gml");
 		mimeTypes.put("gml", "text/gml");
+		mimeTypes.put("mapml", "text/mapml");
+		mimeTypes.put("rt", "application/rt");
 		mimeTypes.put("csv", "text/csv");
 		mimeTypes.put("wkt", "text/wkt");
+		mimeTypes.put("wkb", "text/wkb");
+		mimeTypes.put("xyz", "text/xyz");
 		mimeTypes.put("svg", "image/svg+xml");
 		mimeTypes.put("gpx", "text/gpx");
 		mimeTypes.put("osmlink", "text/osmlink");
@@ -55,10 +59,9 @@ public class RequestParamHandler {
 		mimeTypes.put("osm", "application/osm+xml");
 		mimeTypes.put("trig", "application/trig");
 		mimeTypes.put("trix", "application/trix");
-//		mimeTypes.put("turtle", "application/x-turtle");
-//		mimeTypes.put("ttl", "application/x-turtle");
 		mimeTypes.put("n3", "text/rdf+n3;charset=utf-8");
-		mimeTypes.put("nt", "text/plain");
+		mimeTypes.put("nq", "text/nq");
+		mimeTypes.put("nt", "text/nt");
 		mimeTypes.put("text", "text/plain");
 	}
 	

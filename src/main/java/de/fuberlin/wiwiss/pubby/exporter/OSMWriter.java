@@ -15,8 +15,6 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.ParseException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
@@ -25,8 +23,12 @@ import de.fuberlin.wiwiss.pubby.vocab.GEO;
 /**
  * Writes a GeoPubby instance as OSM/XML.
  */
-public class OSMWriter extends ModelWriter {
+public class OSMWriter extends GeoModelWriter {
 
+	public OSMWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it = super.write(model, response);
@@ -45,6 +47,9 @@ public class OSMWriter extends ModelWriter {
 				Map<String, String> ns = new TreeMap<String, String>();
 				while (it.hasNext()) {
 					Resource ind = it.next();
+					if(ind.hasProperty(GEO.EPSG)) {
+						sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+					}
 					StmtIterator it2 = ind.listProperties();
 					int nscounter = 1;
 					writer.setPrefix("gml", "http://www.opengis.net/gml");
@@ -69,51 +74,8 @@ public class OSMWriter extends ModelWriter {
 					Double lat = null, lon = null;
 					while (it2.hasNext()) {
 						Statement curst = it2.next();
-						if (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())
-								|| GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
-								|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
-							try {
-								Geometry geom = reader.read(curst.getObject().asLiteral().getString());
-								int nodecounter = 1;
-								if (countgeoms == 0) {
-
-									if (geom.getGeometryType().equalsIgnoreCase("Point")) {
-										writer.writeStartElement("node");
-										writer.writeAttribute("lat", geom.getCentroid().getY() + "");
-										writer.writeAttribute("lon", geom.getCentroid().getX() + "");
-										writer.writeAttribute("id", "-" + (nodecounter++));
-									} else if (geom.getGeometryType().toLowerCase().contains("multi")) {
-										for (int g = 0; g < geom.getNumGeometries(); g++) {
-
-										}
-										writer.writeStartElement("node");
-										writer.writeAttribute("lat", geom.getCentroid().getY() + "");
-										writer.writeAttribute("lon", geom.getCentroid().getX() + "");
-										writer.writeAttribute("id", "-" + (nodecounter++));
-										writer.writeEndElement();
-										writer.writeStartElement("relation");
-
-									} else {
-										writer.writeStartElement("way");
-										writer.writeStartElement("node");
-										writer.writeAttribute("lat", geom.getCentroid().getY() + "");
-										writer.writeAttribute("lon", geom.getCentroid().getX() + "");
-										writer.writeAttribute("id", "-" + nodecounter++);
-										writer.writeEndElement();
-									}
-								}
-							} catch (ParseException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-						} else if (GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())) {
-							lat = curst.getObject().asLiteral().getDouble();
-						} else if (GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())) {
-							lon = curst.getObject().asLiteral().getDouble();
-						} else if (GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())) {
-							lat = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
-							lon = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
-						} else {
+						boolean handled=this.handleGeometry(curst, ind, model);
+						if (!handled) {
 							String namespace = curst.getPredicate().toString().substring(0,
 									curst.getPredicate().toString().lastIndexOf('/'));
 							String last = curst.getPredicate().toString()
@@ -145,6 +107,37 @@ public class OSMWriter extends ModelWriter {
 								}
 								// writer.writeEndElement();
 							}
+						}
+						if(geom!=null) {
+							int nodecounter = 1;
+							if (countgeoms == 0) {
+
+								if (geom.getGeometryType().equalsIgnoreCase("Point")) {
+									writer.writeStartElement("node");
+									writer.writeAttribute("lat", geom.getCentroid().getY() + "");
+									writer.writeAttribute("lon", geom.getCentroid().getX() + "");
+									writer.writeAttribute("id", "-" + (nodecounter++));
+								} else if (geom.getGeometryType().toLowerCase().contains("multi")) {
+									for (int g = 0; g < geom.getNumGeometries(); g++) {
+
+									}
+									writer.writeStartElement("node");
+									writer.writeAttribute("lat", geom.getCentroid().getY() + "");
+									writer.writeAttribute("lon", geom.getCentroid().getX() + "");
+									writer.writeAttribute("id", "-" + (nodecounter++));
+									writer.writeEndElement();
+									writer.writeStartElement("relation");
+
+								} else {
+									writer.writeStartElement("way");
+									writer.writeStartElement("node");
+									writer.writeAttribute("lat", geom.getCentroid().getY() + "");
+									writer.writeAttribute("lon", geom.getCentroid().getX() + "");
+									writer.writeAttribute("id", "-" + nodecounter++);
+									writer.writeEndElement();
+								}
+							}
+							geom=null;
 						}
 						if (lon != null && lat != null) {
 							writer.writeStartElement("node");

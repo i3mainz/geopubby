@@ -14,8 +14,6 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.ParseException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
@@ -25,7 +23,11 @@ import de.fuberlin.wiwiss.pubby.vocab.GEO;
 /**
  * Writes a GeoPubby instance as SVG.
  */
-public class SVGWriter extends ModelWriter {
+public class SVGWriter extends GeoModelWriter {
+	
+	public SVGWriter(String epsg) {
+		super(epsg);
+	}
 	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
@@ -50,46 +52,34 @@ public class SVGWriter extends ModelWriter {
 		Double lat=null,lon=null;
 		while(it.hasNext()) {
 			Resource ind=it.next();
+			if(ind.hasProperty(GEO.EPSG)) {
+				sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
+			}
 			StmtIterator it2 = ind.listProperties();
 
 			while(it2.hasNext()) {
 				Statement curst=it2.next();
-				if(GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString()) ||
-						GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
-						|| 
-						GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
-					try {
-						Geometry geom=reader.read(curst.getObject().asLiteral().getString());	
-						if(geom.getGeometryType().equalsIgnoreCase("point")) {
-							lat=geom.getCentroid().getCoordinate().getY();
-							lon=geom.getCentroid().getCoordinate().getX();							
-						}else {
-							writer.writeStartElement("polyline");
-							writer.writeAttribute("stroke", "black");
-							writer.writeAttribute("stroke-width","3");
-							String points="";
-							
-							for(int j=0;j<geom.getCoordinates().length-1;j+=2) {
-								points+=geom.getCoordinates()[j]+","+geom.getCoordinates()[j+1];
-							}
-							writer.writeAttribute("points", points);
-							writer.writeEndElement();	
-						}
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}else if(GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())){
-					lat=curst.getObject().asLiteral().getDouble();
-				}else if(GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())){
-					lon=curst.getObject().asLiteral().getDouble();
-				}else if(GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())){
-					lat=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
-					lon=Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
-				}
+				this.handleGeometry(curst, ind, model);
 			}
 			}
 		it.close();
+		if(geom!=null) {
+			if(geom.getGeometryType().equalsIgnoreCase("point")) {
+				lat=geom.getCentroid().getCoordinate().getY();
+				lon=geom.getCentroid().getCoordinate().getX();							
+			}else {
+				writer.writeStartElement("polyline");
+				writer.writeAttribute("stroke", "black");
+				writer.writeAttribute("stroke-width","3");
+				String points="";
+				
+				for(int j=0;j<geom.getCoordinates().length-1;j+=2) {
+					points+=geom.getCoordinates()[j]+","+geom.getCoordinates()[j+1];
+				}
+				writer.writeAttribute("points", points);
+				writer.writeEndElement();	
+			}
+		}
 		if(lat!=null && lon!=null) {
 			writer.writeStartElement("circle");
 			writer.writeAttribute("stroke", "black");

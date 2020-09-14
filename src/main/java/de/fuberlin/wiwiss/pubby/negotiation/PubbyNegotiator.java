@@ -39,6 +39,7 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("application/x-trix;q=0.95")
 				.addAliasMediaType("application/trix;q=0.8")
 				.addAliasMediaType("text/trix;q=0.5");
+		pubbyNegotiator.addVariant("text/xyz;q=0.95");
 		pubbyNegotiator.addVariant("application/x-trig;q=0.95")
 				.addAliasMediaType("application/trig;q=0.8")
 				.addAliasMediaType("text/trig;q=0.5");
@@ -58,9 +59,13 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("text/osmlink;q=0.95");
 		pubbyNegotiator.addVariant("text/latlon;q=0.95");
 		pubbyNegotiator.addVariant("text/wkt;q=0.95");
+		pubbyNegotiator.addVariant("text/wkb;q=0.95");
 		pubbyNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
 		pubbyNegotiator.addVariant("image/svg+xml;q=0.95");
+		pubbyNegotiator.addVariant("application/rt;q=0.95");
+		pubbyNegotiator.addVariant("application/hex+x-ndjson;q=0.95");
+		pubbyNegotiator.addVariant("text/mapml;q=0.95");
 		pubbyNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		pubbyNegotiator.addVariant("text/plain;q=0.2");
@@ -70,6 +75,7 @@ public class PubbyNegotiator {
 				.addAliasMediaType("application/xml;q=0.45")
 				.addAliasMediaType("text/xml;q=0.4");
 		dataNegotiator.addVariant("application/rdf+json;q=0.99");
+		dataNegotiator.addVariant("text/xyz;q=0.95");
 		dataNegotiator.addVariant("text/rdf+n3;charset=utf-8")
 				.addAliasMediaType("text/n3;q=0.5")
 				.addAliasMediaType("application/n3;q=0.5");
@@ -94,13 +100,17 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
 		dataNegotiator.addVariant("image/svg+xml;q=0.95");
+		dataNegotiator.addVariant("application/hex+x-ndjson;q=0.95");
 		dataNegotiator.addVariant("text/latlon;q=0.95");
 		dataNegotiator.addVariant("text/googlemapslink;q=0.95");
 		dataNegotiator.addVariant("text/osmlink;q=0.95");
 		dataNegotiator.addVariant("application/gml;q=0.95")
 				.addAliasMediaType("text/gml;q=0.8");
+		dataNegotiator.addVariant("text/mapml;q=0.95");
 		dataNegotiator.addVariant("text/wkt;q=0.95");
+		dataNegotiator.addVariant("text/wkb;q=0.95");
 		dataNegotiator.addVariant("application/osm+xml;q=0.95");
+		dataNegotiator.addVariant("application/rt;q=0.95");
 		dataNegotiator.addVariant("application/geouri;q=0.95")
 				.addAliasMediaType("text/geouri;q=0.8");
 		dataNegotiator.addVariant("application/x-turtle;q=0.99")
