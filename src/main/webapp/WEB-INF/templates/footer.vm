@@ -8,11 +8,11 @@ Format:<select id="format">
       <option value="geojson">(Geo)JSON</option>
       <option value="json">JSON-LD</option>
       <option value="hextuples">HexTuples RDF</option>
-      <option value="n3">Notation3</option>
-      <option value="nq">NQuads</option>
-      <option value="nt">NTriples</option>
+      <option value="n3">Notation3 (N3)</option>
+      <option value="nq">NQuads (NQ)</option>
+      <option value="nt">NTriples (NT)</option>
       <option value="rdfjson">RDF/JSON</option>
-      <option value="rt">RDF/Thrift</option>
+      <option value="rt">RDF/Thrift (RT)</option>
       <option value="xml">RDF/XML</option>
       <option value="ttl">Turtle (TTL)</option>
       <option value="trig">RDF TriG</option>
@@ -26,12 +26,13 @@ Format:<select id="format">
     	<option value="latlontext">LatLonText</option>
         <option value="mapml">Map Markup Language (MapML)</option>
         <option value="osmlink">OSM Link</option>
-        <option value="osm">OSM/XML</option>
+        <option value="osm">OSM/XML (OSM)</option>
         <option value="svg">Scalable Vector Graphics (SVG)</option>
         <option value="topojson">TopoJSON</option>
         <option value="wkb">Well-Known-Binary (WKB)</option>
         <option value="wkt">Well-Known-Text (WKT)</option>
       #end
+</select>
 CRS:<select id="crs"></select><button id="downloadButton">Download</button>
 #end
 #if ($rdf_link)
@@ -58,6 +59,7 @@ CRS:<select id="crs"></select><button id="downloadButton">Download</button>
       	| <a href="$rdf_link?output=svg">As SVG</a> 
       	| <a href="$rdf_link?output=wkt">As WKT</a>
       #end
+#end
 </div>
     </div>
 
