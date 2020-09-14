@@ -109,17 +109,19 @@ public class GPXWriter extends GeoModelWriter {
 						}
 						if (lon != null && lat != null) {
 							writer.writeStartElement("wpt");
-							if(this.epsg!=null) {
-								Geometry geom;
-								try {
-									geom = reader.read("Point("+lon+" "+lat+")");
-									geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);	
-									writer.writeAttribute("lat", geom.getCoordinate().getX() + "");
-									writer.writeAttribute("lon", geom.getCoordinate().getY() + "");
-								} catch (ParseException e) {
-									writer.writeAttribute("lat", lat + "");
-									writer.writeAttribute("lon", lon + "");	
-								}
+							if(geom==null && this.epsg!=null) {
+									try {
+										geom = reader.read("Point("+lon+" "+lat+")");
+										geom=ReprojectionUtils.reproject(geom, sourceCRS, epsg);	
+										writer.writeAttribute("lat", geom.getCoordinate().getX() + "");
+										writer.writeAttribute("lon", geom.getCoordinate().getY() + "");
+									} catch (ParseException e) {
+										writer.writeAttribute("lat", lat + "");
+										writer.writeAttribute("lon", lon + "");	
+									}
+							}else if(geom!=null){
+								writer.writeAttribute("lat", geom.getCoordinate().getX() + "");
+								writer.writeAttribute("lon", geom.getCoordinate().getY() + "");
 							}else {
 								writer.writeAttribute("lat", lat + "");
 								writer.writeAttribute("lon", lon + "");								
