@@ -2,12 +2,54 @@
     <div id="footer">
      <div class="container-fluid">
 <script>
+var definitionlinks={
+"covjson":"https://covjson.org",
+"csv":"https://tools.ietf.org/html/rfc4180",
+"geohash":"http://geohash.org",
+"json":"https://geojson.org",
+"geojsonld":"http://geojson.org/geojson-ld/",
+"geojsonseq":"https://tools.ietf.org/html/rfc8142",
+"geouri":"https://tools.ietf.org/html/rfc5870",
+"gml":"https://www.ogc.org/standards/gml",
+"gpx":"https://www.topografix.com/gpx.asp",
+"hdt":"https://www.w3.org/Submission/2011/03/",
+"hextuples":"https://github.com/ontola/hextuples",
+"html":"https://html.spec.whatwg.org",
+"jsonld":"https://json-ld.org",
+"jsonn":"",
+"jsonp":"http://jsonp.eu",
+"jsonseq":"https://tools.ietf.org/html/rfc7464",
+"kml":"https://www.ogc.org/standards/kml",
+"latlon":"",
+"mapml":"https://maps4html.org/MapML/spec/",
+"mvt":"https://docs.mapbox.com/vector-tiles/reference/",
+"n3":"https://www.w3.org/TeamSubmission/n3/",
+"nq":"https://www.w3.org/TR/n-quads/",
+"nt":"https://www.w3.org/TR/n-triples/",
+"osm":"https://wiki.openstreetmap.org/wiki/OSM_XML",
+"osmlink":"",
+"rdfxml":"https://www.w3.org/TR/rdf-syntax-grammar/",
+"rdfjson":"https://www.w3.org/TR/rdf-json/",
+"rt":"https://afs.github.io/rdf-thrift/rdf-binary-thrift.html",
+"svg":"https://www.w3.org/TR/SVG11/",
+"trig":"https://www.w3.org/TR/trig/",
+"trix":"https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html",
+"ttl":"https://www.w3.org/TR/turtle/",
+"wkb":"https://www.iso.org/standard/40114.html",
+"wkt":"https://www.iso.org/standard/40114.html",
+"xls":"http://www.openoffice.org/sc/excelfileformat.pdf",
+"xlsx":"http://www.openoffice.org/sc/excelfileformat.pdf",
+"xyz":"https://gdal.org/drivers/raster/xyz.html"
+};
+function changeDefLink(){
+	$('#formatlink').attr('href',definitionlinks[$('#format').val()]);
+}
 function download(link){
 	window.open("${rdf_link}?output="+$('#format').val()+"&crs="+$('#crs').val(),'_blank');
 }
 </script>
 #if ($rdf_link)
-<b>Download Options:</b>&nbsp;Format:<select id="format">		
+<b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">		
       <option value="csv">Comma Separated Values (CSV)</option>
       <option value="geojson">(Geo)JSON</option>
       <option value="json">JSON-LD</option>
@@ -38,7 +80,7 @@ function download(link){
         <option value="xyz">XYZ ASCII Format (XYZ)</option>
       #end
 </select>
-CRS:<select id="crs"></select><button id="downloadButton" onclick="download()">Download</button><br/>
+CRS:<select id="crs"></select><button id="downloadButton" onclick="download()">Download</button><a id="formatlink" href="#" target="_blank"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></a><br/>
 #end
 </div>
     </div>
