@@ -13,6 +13,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Coordinate;
+import org.wololo.geojson.GeoJSON;
+import org.wololo.geojson.Geometry;
+import org.wololo.jts2geojson.GeoJSONWriter;
 
 public class CoverageJSONWriter extends GeoModelWriter {
 
@@ -67,7 +70,7 @@ public class CoverageJSONWriter extends GeoModelWriter {
 					axes.getJSONObject("y").getJSONArray("values").put(geom.getCoordinate().getY());
 				}
 				JSONArray referencing=new JSONArray();
-				covjsonresult.put("referencing", referencing);
+				domain.put("referencing", referencing);
 				JSONObject ref=new JSONObject();
 				referencing.put(ref);
 				ref.put("coordinates", new JSONArray());
@@ -75,7 +78,11 @@ public class CoverageJSONWriter extends GeoModelWriter {
 				ref.getJSONArray("coordinates").put("y");
 				ref.put("system", new JSONObject());
 				ref.getJSONObject("system").put("type","GeographicCRS");
-				ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS);
+				if(sourceCRS.contains(":")) {
+					ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS.substring(sourceCRS.lastIndexOf(':')+1));					
+				}else {
+					ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS);
+				}
 				JSONObject parameters=new JSONObject();
 				covjsonresult.put("parameters", parameters);
 				for(String key:properties.keySet()) {
@@ -112,11 +119,141 @@ public class CoverageJSONWriter extends GeoModelWriter {
 				response.getWriter().write(covjsonresult.toString(2));
 				response.getWriter().close();
 			}else if (geom != null) {
-				for (Coordinate coord : geom.getCoordinates()) {
-					response.getWriter().write(coord.getX() + " " + coord.getY());
-					if (!Double.isNaN(coord.getZ())) {
-						response.getWriter().write(" " + coord.getZ());
+				if(geom.getGeometryType().equalsIgnoreCase("LineString")) {
+					covjsonresult.put("type","Coverage");
+					JSONObject domain=new JSONObject();
+					covjsonresult.put("domain", domain);
+					domain.put("type", "Domain");
+					domain.put("domainType","Trajectory");
+					JSONObject axes=new JSONObject();
+					domain.put("axes", axes);
+					JSONObject composite=new JSONObject();
+					axes.put("composite", composite);
+					composite.put("dataType", "tuple");
+					composite.put("coordinates",new JSONArray());
+					composite.getJSONArray("coordinates").put("x");
+					composite.getJSONArray("coordinates").put("y");
+					composite.put("values", new JSONArray());
+					for (Coordinate coord : geom.getCoordinates()) {
+						JSONArray cor=new JSONArray();
+						cor.put(coord.getX());
+						cor.put(coord.getY());
+						composite.getJSONArray("values").put(cor);
 					}
+					JSONArray referencing=new JSONArray();
+					domain.put("referencing", referencing);
+					JSONObject ref=new JSONObject();
+					referencing.put(ref);
+					ref.put("coordinates", new JSONArray());
+					ref.getJSONArray("coordinates").put("x");
+					ref.getJSONArray("coordinates").put("y");
+					ref.put("system", new JSONObject());
+					ref.getJSONObject("system").put("type","GeographicCRS");
+					if(sourceCRS.contains(":")) {
+						ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS.substring(sourceCRS.lastIndexOf(':')+1));					
+					}else {
+						ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS);
+					}
+					JSONObject parameters=new JSONObject();
+					covjsonresult.put("parameters", parameters);
+					for(String key:properties.keySet()) {
+						JSONObject param=new JSONObject();
+						parameters.put(key, param);
+						param.put("type", "Parameter");
+						param.put("observedProperty", new JSONObject());
+						param.getJSONObject("observedProperty").put("id",key);
+						param.getJSONObject("observedProperty").put("label",new JSONObject());					
+						param.getJSONObject("observedProperty").getJSONObject("label").put("label", key);
+					}
+					JSONObject ranges=new JSONObject();
+					covjsonresult.put("ranges", ranges);
+					for(String key:properties.keySet()) {
+						JSONObject range=new JSONObject();
+						ranges.put(key, range);
+						range.put("type", "NdArray");
+						range.put("values", new JSONArray());
+						try {
+							Number valuenum=properties.getInt(key);
+							range.put("dataType", "integer");
+							range.getJSONArray("values").put(valuenum);
+						}catch(Exception e) {
+							try {
+								Double valuebool=properties.getDouble(key);
+								range.put("dataType", "float");
+								range.getJSONArray("values").put(valuebool);
+							}catch(Exception ex) {
+								range.put("dataType", "string");
+								range.getJSONArray("values").put(properties.get(key).toString());
+							}
+						}
+					}
+					response.getWriter().write(covjsonresult.toString(2));
+				}else if(geom.getGeometryType().equalsIgnoreCase("Polygon")) {
+					covjsonresult.put("type","Coverage");
+					JSONObject domain=new JSONObject();
+					covjsonresult.put("domain", domain);
+					domain.put("type", "Domain");
+					domain.put("domainType","MultiPolygon");
+					JSONObject axes=new JSONObject();
+					domain.put("axes", axes);
+					JSONObject composite=new JSONObject();
+					axes.put("composite", composite);
+					composite.put("dataType", "tuple");
+					composite.put("coordinates",new JSONArray());
+					composite.getJSONArray("coordinates").put("x");
+					composite.getJSONArray("coordinates").put("y");
+					composite.put("values", new JSONArray());
+					GeoJSONWriter writer=new GeoJSONWriter();
+					JSONObject obj=new JSONObject(writer.write(geom).toString());
+					composite.getJSONArray("values").put(obj.getJSONArray("coordinates"));
+					JSONArray referencing=new JSONArray();
+					domain.put("referencing", referencing);
+					JSONObject ref=new JSONObject();
+					referencing.put(ref);
+					ref.put("coordinates", new JSONArray());
+					ref.getJSONArray("coordinates").put("x");
+					ref.getJSONArray("coordinates").put("y");
+					ref.put("system", new JSONObject());
+					ref.getJSONObject("system").put("type","GeographicCRS");
+					if(sourceCRS.contains(":")) {
+						ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS.substring(sourceCRS.lastIndexOf(':')+1));					
+					}else {
+						ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS);
+					}
+					JSONObject parameters=new JSONObject();
+					covjsonresult.put("parameters", parameters);
+					for(String key:properties.keySet()) {
+						JSONObject param=new JSONObject();
+						parameters.put(key, param);
+						param.put("type", "Parameter");
+						param.put("observedProperty", new JSONObject());
+						param.getJSONObject("observedProperty").put("id",key);
+						param.getJSONObject("observedProperty").put("label",new JSONObject());					
+						param.getJSONObject("observedProperty").getJSONObject("label").put("label", key);
+					}
+					JSONObject ranges=new JSONObject();
+					covjsonresult.put("ranges", ranges);
+					for(String key:properties.keySet()) {
+						JSONObject range=new JSONObject();
+						ranges.put(key, range);
+						range.put("type", "NdArray");
+						range.put("values", new JSONArray());
+						try {
+							Number valuenum=properties.getInt(key);
+							range.put("dataType", "integer");
+							range.getJSONArray("values").put(valuenum);
+						}catch(Exception e) {
+							try {
+								Double valuebool=properties.getDouble(key);
+								range.put("dataType", "float");
+								range.getJSONArray("values").put(valuebool);
+							}catch(Exception ex) {
+								range.put("dataType", "string");
+								range.getJSONArray("values").put(properties.get(key).toString());
+							}
+						}
+					}
+					response.getWriter().write(covjsonresult.toString(2));
 				}
 				response.getWriter().close();
 			} else {
