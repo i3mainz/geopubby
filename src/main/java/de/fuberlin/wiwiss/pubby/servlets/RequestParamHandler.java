@@ -44,6 +44,7 @@ public class RequestParamHandler {
 		mimeTypes.put("geouri", "text/geouri");
 		mimeTypes.put("kml", "application/kml");
 		mimeTypes.put("kml", "text/kml");
+		mimeTypes.put("covjson", "application/prs.coverage+json");
 		mimeTypes.put("gml", "application/gml");
 		mimeTypes.put("gml", "text/gml");
 		mimeTypes.put("mapml", "text/mapml");
