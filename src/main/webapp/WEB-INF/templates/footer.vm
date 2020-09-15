@@ -64,6 +64,7 @@ function download(link){
       <option value="trig">RDF TriG</option>
       <option value="trix">Triples in XML (TriX)</option>
       #if (!$geoms.isEmpty())
+        <option value="covjson">CoverageJSON (COVJSON)</option>
         <option value="gml">Geography Markup Language (GML)</option>
         <option value="geouri">GeoURI</option> 
         <option value="googlemapslink">Google Maps Link</option>

@@ -15,6 +15,7 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 import org.locationtech.jts.io.WKBWriter;
 
 import de.fuberlin.wiwiss.pubby.exporter.CSVWriter;
+import de.fuberlin.wiwiss.pubby.exporter.CoverageJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
@@ -145,6 +146,9 @@ public class ModelResponse {
 		}
 		if ("application/gml".equals(mediaType)) {
 			return new GMLWriter(crs);
+		}
+		if ("application/prs.coverage+json".equals(mediaType)) {
+			return new CoverageJSONWriter(crs);
 		}
 		if ("application/kml".equals(mediaType)) {
 			return new KMLWriter(crs);

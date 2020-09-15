@@ -9,55 +9,114 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.io.ParseException;
 
-import de.fuberlin.wiwiss.pubby.vocab.GEO;
+public class CoverageJSONWriter extends GeoModelWriter {
 
-public class CoverageJSONWriter extends ModelWriter {
-
+	public CoverageJSONWriter(String epsg) {
+		super(epsg);
+	}
+	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		ExtendedIterator<Resource> it = super.write(model, response);
-		Double lat = null, lon = null;
-		Geometry geom = null;
+		JSONObject covjsonresult=new JSONObject();
+		JSONObject properties=new JSONObject();
 		while (it.hasNext()) {
 			Resource ind = it.next();
 			StmtIterator it2 = ind.listProperties();
 			while (it2.hasNext()) {
 				Statement curst = it2.next();
-				if (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())
-						|| GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
-						|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
-					try {
-						geom = reader.read(curst.getObject().asLiteral().getString());
-					} catch (ParseException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				} else if (GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())) {
-					lat = curst.getObject().asLiteral().getDouble();
-				} else if (GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())) {
-					lon = curst.getObject().asLiteral().getDouble();
-				} else if (GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())) {
-					lat = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
-					lon = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
+				boolean handled=this.handleGeometry(curst, ind, model);
+				if(!handled) {
+					if(properties.has(curst.getPredicate().toString())) {
+						if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
+							properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
+						}else {
+							JSONArray arr=new JSONArray();
+							arr.put(curst.getObject().toString());
+							properties.put(curst.getPredicate().toString(),arr);
+						}
+					}else {
+					   properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+					}					
 				}
 			}
 		}
 		try {
-			if (geom != null) {
+			if (geom!=null && geom.getGeometryType().equalsIgnoreCase("Point") || (lat != null && lon != null)) {
+				covjsonresult.put("type","Coverage");
+				JSONObject domain=new JSONObject();
+				covjsonresult.put("domain", domain);
+				domain.put("tyoe", "Domain");
+				domain.put("domainType","Point");
+				JSONObject axes=new JSONObject();
+				domain.put("axes", axes);
+				axes.put("x", new JSONObject());
+				axes.put("y", new JSONObject());
+				axes.getJSONObject("x").put("values", new JSONArray());
+				axes.getJSONObject("y").put("values", new JSONArray());
+				if (lat != null || lon != null) {
+					axes.getJSONObject("x").getJSONArray("values").put(lon);
+					axes.getJSONObject("y").getJSONArray("values").put(lat);
+				}else {
+					axes.getJSONObject("x").getJSONArray("values").put(geom.getCoordinate().getX());
+					axes.getJSONObject("y").getJSONArray("values").put(geom.getCoordinate().getY());
+				}
+				JSONArray referencing=new JSONArray();
+				covjsonresult.put("referencing", referencing);
+				JSONObject ref=new JSONObject();
+				referencing.put(ref);
+				ref.put("coordinates", new JSONArray());
+				ref.getJSONArray("coordinates").put("x");
+				ref.getJSONArray("coordinates").put("y");
+				ref.put("system", new JSONObject());
+				ref.getJSONObject("system").put("type","GeographicCRS");
+				ref.getJSONObject("system").put("id","http://www.opengis.net/def/crs/EPSG/0/"+sourceCRS);
+				JSONObject parameters=new JSONObject();
+				covjsonresult.put("parameters", parameters);
+				for(String key:properties.keySet()) {
+					JSONObject param=new JSONObject();
+					parameters.put(key, param);
+					param.put("observedProperty", new JSONObject());
+					param.getJSONObject("observedProperty").put("id",key);
+					param.getJSONObject("observedProperty").put("label",new JSONObject());					
+					param.getJSONObject("observedProperty").getJSONObject("label").put("label", key);
+				}
+				JSONObject ranges=new JSONObject();
+				covjsonresult.put("ranges", ranges);
+				for(String key:properties.keySet()) {
+					JSONObject range=new JSONObject();
+					ranges.put(key, range);
+					range.put("type", "NdArray");
+					range.put("values", new JSONArray());
+					try {
+						Number valuenum=properties.getInt(key);
+						range.put("dataType", "integer");
+						range.getJSONArray("values").put(valuenum);
+					}catch(Exception e) {
+						try {
+							Double valuebool=properties.getDouble(key);
+							range.put("dataType", "float");
+							range.getJSONArray("values").put(valuebool);
+						}catch(Exception ex) {
+							range.put("dataType", "string");
+							range.getJSONArray("values").put(properties.get(key).toString());
+						}
+					}
+				}
+				response.getWriter().write(covjsonresult.toString(2));
+				response.getWriter().close();
+			}else if (geom != null) {
 				for (Coordinate coord : geom.getCoordinates()) {
 					response.getWriter().write(coord.getX() + " " + coord.getY());
 					if (!Double.isNaN(coord.getZ())) {
 						response.getWriter().write(" " + coord.getZ());
 					}
 				}
-				response.getWriter().close();
-			} else if (lat != null || lon != null) {
-				response.getWriter().write(lon + " " + lat);
 				response.getWriter().close();
 			} else {
 				response.getWriter().write("");

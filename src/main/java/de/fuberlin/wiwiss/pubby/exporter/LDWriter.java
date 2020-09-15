@@ -45,11 +45,11 @@ public class LDWriter extends GeoModelWriter {
 				while (it2.hasNext()) {
 					Statement curst2 = it2.next();	
 					Statement curst=ind.getProperty(curst2.getPredicate());
-					if (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())
-							|| GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
+					if (GEO.ASWKT.getURI().equals(curst2.getPredicate().getURI().toString())
+							|| GEO.P_GEOMETRY.getURI().equals(curst2.getPredicate().getURI())
 							|| GEO.P625.getURI().equals(curst.getPredicate().getURI()) && this.epsg != null) {
 						try {
-							Geometry geom = reader.read(curst.getObject().asLiteral().getString());
+							Geometry geom = reader.read(curst2.getObject().asLiteral().getString());
 							ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
 							curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#wktLiteral>");
