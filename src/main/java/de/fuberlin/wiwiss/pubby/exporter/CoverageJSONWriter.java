@@ -13,8 +13,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Coordinate;
-import org.wololo.geojson.GeoJSON;
-import org.wololo.geojson.Geometry;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
 public class CoverageJSONWriter extends GeoModelWriter {
@@ -37,14 +35,26 @@ public class CoverageJSONWriter extends GeoModelWriter {
 				if(!handled) {
 					if(properties.has(curst.getPredicate().toString())) {
 						if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
-							properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
+							if(curst.getObject().toString().contains("^^")) {
+								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+							}else {
+								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());						
+							}
 						}else {
 							JSONArray arr=new JSONArray();
-							arr.put(curst.getObject().toString());
+							if(curst.getObject().toString().contains("^^")) {
+								arr.put(curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+							}else {
+								arr.put(curst.getObject().toString());					
+							}
 							properties.put(curst.getPredicate().toString(),arr);
 						}
 					}else {
-					   properties.put(curst.getPredicate().toString(),curst.getObject().toString());
+						if(curst.getObject().toString().contains("^^")) {
+							   properties.put(curst.getPredicate().toString(),curst.getObject().toString().substring(0,curst.getObject().toString().lastIndexOf("^^")));
+						}else {
+							   properties.put(curst.getPredicate().toString(),curst.getObject().toString());							
+						}
 					}					
 				}
 			}
