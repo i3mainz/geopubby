@@ -51,7 +51,7 @@ public class CoverageJSONWriter extends GeoModelWriter {
 				covjsonresult.put("type","Coverage");
 				JSONObject domain=new JSONObject();
 				covjsonresult.put("domain", domain);
-				domain.put("tyoe", "Domain");
+				domain.put("type", "Domain");
 				domain.put("domainType","Point");
 				JSONObject axes=new JSONObject();
 				domain.put("axes", axes);
