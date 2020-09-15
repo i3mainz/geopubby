@@ -7,7 +7,7 @@ function download(link){
 }
 </script>
 #if ($rdf_link)
-<b>Download Options:</b>&nsbp;Format:<select id="format">		
+<b>Download Options:</b>&nbsp;Format:<select id="format">		
       <option value="csv">Comma Separated Values (CSV)</option>
       <option value="geojson">(Geo)JSON</option>
       <option value="json">JSON-LD</option>
