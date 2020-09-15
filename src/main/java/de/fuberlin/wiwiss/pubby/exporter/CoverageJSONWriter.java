@@ -81,6 +81,7 @@ public class CoverageJSONWriter extends GeoModelWriter {
 				for(String key:properties.keySet()) {
 					JSONObject param=new JSONObject();
 					parameters.put(key, param);
+					param.put("type", "Parameter");
 					param.put("observedProperty", new JSONObject());
 					param.getJSONObject("observedProperty").put("id",key);
 					param.getJSONObject("observedProperty").put("label",new JSONObject());					
