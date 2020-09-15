@@ -34,8 +34,8 @@ var hierarchy =
     [ "ModelResponse", "a00354.html", null ],
     [ "ModelUtil", "a00358.html", null ],
     [ "ModelWriter", "a00298.html", [
-      [ "CoverageJSONWriter", "a00246.html", null ],
       [ "GeoModelWriter", "a00258.html", [
+        [ "CoverageJSONWriter", "a00246.html", null ],
         [ "CSVWriter", "a00250.html", null ],
         [ "GeoJSONWriterr", "a00254.html", null ],
         [ "GeoURIWriter", "a00262.html", null ],
