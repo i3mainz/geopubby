@@ -1,5 +1,5 @@
 <map id="ResourceDescription.Value" name="ResourceDescription.Value">
-<area shape="rect" id="node2" href="$a01268.html" title="Comparable\&lt; Value \&gt;" alt="" coords="1592,5,1741,32"/>
+<area shape="rect" id="node2" href="$a01264.html" title="Comparable\&lt; Value \&gt;" alt="" coords="1592,5,1741,32"/>
 <area shape="rect" id="node4" href="$a00508.html" title="Helper class that splits URIs into prefix and local name according to a Jena PrefixMapping. " alt="" coords="1621,157,1712,184"/>
 <area shape="rect" id="node8" href="$a00552.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1607,341,1726,368"/>
 <area shape="rect" id="node9" href="$a00556.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,291,1400,333"/>
