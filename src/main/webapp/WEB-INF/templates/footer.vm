@@ -23,9 +23,9 @@ function download(link){
       <option value="trix">Triples in XML (TriX)</option>
       #if (!$geoms.isEmpty())
         <option value="gml">Geography Markup Language (GML)</option>
+        <option value="geouri">GeoURI</option> 
         <option value="googlemapslink">Google Maps Link</option>
         <option value="gpx">GPS Exchange Format (GPX)</option>
-      	<option value="geouri">GeoURI</option>
        	<option value="kml">Keyhole Markup Language (KML)</option>
     	<option value="latlontext">LatLonText</option>
         <option value="mapml">Map Markup Language (MapML)</option>
@@ -35,6 +35,7 @@ function download(link){
         <option value="topojson">TopoJSON</option>
         <option value="wkb">Well-Known-Binary (WKB)</option>
         <option value="wkt">Well-Known-Text (WKT)</option>
+        <option value="xyz">XYZ ASCII Format (XYZ)</option>
       #end
 </select>
 CRS:<select id="crs"></select><button id="downloadButton" onclick="download()">Download</button><br/>
