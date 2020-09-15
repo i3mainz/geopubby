@@ -45,6 +45,8 @@ public class RequestParamHandler {
 		mimeTypes.put("kml", "application/kml");
 		mimeTypes.put("kml", "text/kml");
 		mimeTypes.put("covjson", "application/prs.coverage+json");
+		mimeTypes.put("xls", "application/msexcel");
+		mimeTypes.put("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 		mimeTypes.put("gml", "application/gml");
 		mimeTypes.put("gml", "text/gml");
 		mimeTypes.put("mapml", "text/mapml");

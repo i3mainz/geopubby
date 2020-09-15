@@ -33,6 +33,8 @@ import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
 import de.fuberlin.wiwiss.pubby.exporter.TopoJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.WKBWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
+import de.fuberlin.wiwiss.pubby.exporter.XLSWriter;
+import de.fuberlin.wiwiss.pubby.exporter.XLSXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
@@ -152,6 +154,12 @@ public class ModelResponse {
 		}
 		if ("application/kml".equals(mediaType)) {
 			return new KMLWriter(crs);
+		}
+		if ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet".equals(mediaType)) {
+			return new XLSXWriter(crs);
+		}
+		if ("application/msexcel".equals(mediaType)) {
+			return new XLSWriter(crs);
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new LDWriter(crs,"TriG");

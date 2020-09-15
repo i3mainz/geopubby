@@ -28,6 +28,8 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("application/rdf+xml")
 				.addAliasMediaType("application/xml;q=0.45")
 				.addAliasMediaType("text/xml;q=0.4");
+		pubbyNegotiator.addVariant("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;q=0.95");
+		pubbyNegotiator.addVariant("application/msexcel;q=0.95");
 		pubbyNegotiator.addVariant("application/rdf+json;q=0.99");
 		pubbyNegotiator.addVariant("text/rdf+n3;charset=utf-8;q=0.95")
 				.addAliasMediaType("text/n3;q=0.5")
@@ -75,6 +77,8 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("application/rdf+xml;q=0.99")
 				.addAliasMediaType("application/xml;q=0.45")
 				.addAliasMediaType("text/xml;q=0.4");
+		dataNegotiator.addVariant("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;q=0.95");
+		dataNegotiator.addVariant("application/msexcel;q=0.95");
 		dataNegotiator.addVariant("application/rdf+json;q=0.99");
 		dataNegotiator.addVariant("text/xyz;q=0.95");
 		dataNegotiator.addVariant("application/prs.coverage+json;q=0.95");
