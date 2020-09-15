@@ -30,7 +30,7 @@ public class LDWriter extends GeoModelWriter {
 	@Override
 	public ExtendedIterator<Resource> write(Model modell, HttpServletResponse response) throws IOException {
 		Model model=modell;
-		if (this.epsg != null) {
+		if (false /*this.epsg != null*/) {
 			model = ModelFactory.createModelForGraph(modell.getGraph());
 			ExtendedIterator<Resource> it = modell.listSubjects();
 			while (it.hasNext()) {
