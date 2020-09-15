@@ -31,18 +31,20 @@ public class LDWriter extends GeoModelWriter {
 	public ExtendedIterator<Resource> write(Model modell, HttpServletResponse response) throws IOException {
 		Model model=modell;
 		if (this.epsg != null) {
-			 model = ModelFactory.createModelForGraph(modell.getGraph());
-			ExtendedIterator<Resource> it = model.listSubjects();
+			model = ModelFactory.createModelForGraph(modell.getGraph());
+			ExtendedIterator<Resource> it = modell.listSubjects();
 			while (it.hasNext()) {
-				Resource ind = it.next();
-				StmtIterator it2 = ind.listProperties();
+				Resource indd = it.next();
+				Resource ind=model.getResource(indd.getURI());
+				StmtIterator it2 = indd.listProperties();
 				if (ind.hasProperty(GEO.EPSG)) {
 					sourceCRS = "EPSG:" + ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
 				}
 
 				Double lat = null, lon = null;
 				while (it2.hasNext()) {
-					Statement curst = it2.next();				
+					Statement curst2 = it2.next();	
+					Statement curst=ind.getProperty(curst2.getPredicate());
 					if (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())
 							|| GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
 							|| GEO.P625.getURI().equals(curst.getPredicate().getURI()) && this.epsg != null) {
