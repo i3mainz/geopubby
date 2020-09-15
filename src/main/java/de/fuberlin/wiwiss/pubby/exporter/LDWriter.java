@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
@@ -27,8 +28,10 @@ public class LDWriter extends GeoModelWriter {
 	}
 
 	@Override
-	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
+	public ExtendedIterator<Resource> write(Model modell, HttpServletResponse response) throws IOException {
+		Model model=modell;
 		if (this.epsg != null) {
+			 model = ModelFactory.createModelForGraph(modell.getGraph());
 			ExtendedIterator<Resource> it = model.listSubjects();
 			while (it.hasNext()) {
 				Resource ind = it.next();
@@ -45,9 +48,9 @@ public class LDWriter extends GeoModelWriter {
 							|| GEO.P625.getURI().equals(curst.getPredicate().getURI()) && this.epsg != null) {
 						try {
 							Geometry geom = reader.read(curst.getObject().asLiteral().getString());
-							//ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+							ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
-							//curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#wktLiteral>");
+							curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#wktLiteral>");
 						} catch (ParseException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -58,7 +61,7 @@ public class LDWriter extends GeoModelWriter {
 							GeoJSONReader read = new GeoJSONReader();
 							Geometry geom = read.read(curst.getObject().asLiteral().getString());
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
-							//curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#geoJSONLiteral>");
+							curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#geoJSONLiteral>");
 						}
 					} else if (GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())) {
 						lat = curst.getObject().asLiteral().getDouble();
@@ -70,18 +73,18 @@ public class LDWriter extends GeoModelWriter {
 						lat = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
 						lon = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
 						Coordinate coord = ReprojectionUtils.reproject(lon, lat, sourceCRS, epsg);
-						//curst.changeObject(coord.y + " " + coord.x);
+						curst.changeObject(coord.y + " " + coord.x);
 					}
 					if (lat != null && lon != null) {
 						Coordinate coord = ReprojectionUtils.reproject(lon, lat, sourceCRS, epsg);
-						//ind.listProperties(GEO.P_LAT).next().changeLiteralObject(coord.y);
-						//ind.listProperties(GEO.P_LONG).next().changeLiteralObject(coord.x);
+						ind.listProperties(GEO.P_LAT).next().changeLiteralObject(coord.y);
+						ind.listProperties(GEO.P_LONG).next().changeLiteralObject(coord.x);
 					}
 
 				}
 			it2.close();
-				//ind.removeAll(GEO.EPSG);
-				//ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+			ind.removeAll(GEO.EPSG);
+			ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 			}
 		}
 		model.getWriter(format).write(model, response.getOutputStream(), null);
