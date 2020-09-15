@@ -47,7 +47,7 @@ public class LDWriter extends GeoModelWriter {
 							Geometry geom = reader.read(curst.getObject().asLiteral().getString());
 							ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
-							curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#wktLiteral>");
+							//curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#wktLiteral>");
 						} catch (ParseException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -58,8 +58,7 @@ public class LDWriter extends GeoModelWriter {
 							GeoJSONReader read = new GeoJSONReader();
 							Geometry geom = read.read(curst.getObject().asLiteral().getString());
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
-							curst.changeObject(
-									geom.toText() + "^^<http://www.opengis.net/ont/geosparql#geoJSONLiteral>");
+							//curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#geoJSONLiteral>");
 						}
 					} else if (GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())) {
 						lat = curst.getObject().asLiteral().getDouble();
@@ -71,18 +70,18 @@ public class LDWriter extends GeoModelWriter {
 						lat = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[0]);
 						lon = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
 						Coordinate coord = ReprojectionUtils.reproject(lon, lat, sourceCRS, epsg);
-						curst.changeObject(coord.y + " " + coord.x);
+						//curst.changeObject(coord.y + " " + coord.x);
 					}
 					if (lat != null && lon != null) {
 						Coordinate coord = ReprojectionUtils.reproject(lon, lat, sourceCRS, epsg);
-						ind.listProperties(GEO.P_LAT).next().changeLiteralObject(coord.y);
-						ind.listProperties(GEO.P_LONG).next().changeLiteralObject(coord.x);
+						//ind.listProperties(GEO.P_LAT).next().changeLiteralObject(coord.y);
+						//ind.listProperties(GEO.P_LONG).next().changeLiteralObject(coord.x);
 					}
 
 				}
 			it2.close();
-				ind.removeAll(GEO.EPSG);
-				ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+				//ind.removeAll(GEO.EPSG);
+				//ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 			}
 		}
 		model.getWriter(format).write(model, response.getOutputStream(), null);
