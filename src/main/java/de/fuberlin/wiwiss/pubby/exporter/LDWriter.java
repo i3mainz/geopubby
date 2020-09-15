@@ -45,7 +45,7 @@ public class LDWriter extends GeoModelWriter {
 							|| GEO.P625.getURI().equals(curst.getPredicate().getURI()) && this.epsg != null) {
 						try {
 							Geometry geom = reader.read(curst.getObject().asLiteral().getString());
-							ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+							//ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 							geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
 							//curst.changeObject(geom.toText() + "^^<http://www.opengis.net/ont/geosparql#wktLiteral>");
 						} catch (ParseException e) {
