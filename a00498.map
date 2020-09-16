@@ -1,7 +1,0 @@
-<map id="RemoteSPARQLDataSource" name="RemoteSPARQLDataSource">
-<area shape="rect" id="node2" href="$a00480.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1045,14,1136,40"/>
-<area shape="rect" id="node7" href="$a00556.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="983,293,1199,334"/>
-<area shape="rect" id="node14" href="$a00512.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="989,460,1192,516"/>
-<area shape="rect" id="node15" href="$a00512.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="599,468,763,509"/>
-<area shape="rect" id="node22" href="$a01160.html" title="Indexable" alt="" coords="343,574,422,600"/>
-</map>

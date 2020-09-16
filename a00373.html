@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: Member List</title>
+<title>GeoPubby: IRIEncoder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,32 +56,492 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00376.html','');});
+$(document).ready(function(){initNavTree('a00373.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="a00370.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ContentTypeNegotiator Member List</div>  </div>
+<div class="title">IRIEncoder Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00376.html">ContentTypeNegotiator</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00376.html#af83bf4d6bf77cdd31256ecc83186a558">addUserAgentOverride</a>(Pattern userAgentString, String originalAcceptHeader, String newAcceptHeader)</td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00376.html#a3953da5ad43555a9edc37e48b7f6e4ab">addVariant</a>(String mediaType)</td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00376.html#a9d851118500a4017a2591587200cd953">defaultAcceptRanges</a></td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00376.html#ab23b79e631120fc8ce51d40c7c314e62">getBestMatch</a>(String accept)</td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00376.html#a1afbe15fddec9b99e5780a94774044c7">getBestMatch</a>(String accept, String userAgent)</td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00376.html#a7652b7c00c4cf54490dfe3535cc70cf2">setDefaultAccept</a>(String accept)</td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00376.html#a37345f6b468bd509ef8896b6c546e1ac">toAcceptRanges</a>(String accept)</td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00376.html#a248e951c7087641970d6701f1b7ec536">userAgentOverrides</a></td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00376.html#a2391e088d7d831c6b5bd35986487becf">variantSpecs</a></td><td class="entry"><a class="el" href="a00376.html">ContentTypeNegotiator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-</table></div><!-- contents -->
+<p>Implements the IRI-to-URI and URI-to-IRI conversions defined in RFC 3987.  
+ <a href="a00373.html#details">More...</a></p>
+<div class="dynheader">
+Collaboration diagram for IRIEncoder:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00371.png" border="0" usemap="#IRIEncoder_coll__map" alt="Collaboration graph"/></div>
+<map name="IRIEncoder_coll__map" id="IRIEncoder_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a28910c5e808e547d940cc2f604f5cc91"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a28910c5e808e547d940cc2f604f5cc91">toIRI</a> (String uri)</td></tr>
+<tr class="memdesc:a28910c5e808e547d940cc2f604f5cc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a URI to an IRI by removing unnecessary percent-encoding of UTF-8 sequences.  <a href="#a28910c5e808e547d940cc2f604f5cc91">More...</a><br /></td></tr>
+<tr class="separator:a28910c5e808e547d940cc2f604f5cc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9aeab48a7535d6d446c3e7b99d71503"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#aa9aeab48a7535d6d446c3e7b99d71503">toURI</a> (String iri)</td></tr>
+<tr class="memdesc:aa9aeab48a7535d6d446c3e7b99d71503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an IRI to a URI by percent-encoding characters outside of the US-ASCII range.  <a href="#aa9aeab48a7535d6d446c3e7b99d71503">More...</a><br /></td></tr>
+<tr class="separator:aa9aeab48a7535d6d446c3e7b99d71503"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:afd4859a4f02722bf3a685a838b4a555b"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">decode</a> (String percentEncoded)</td></tr>
+<tr class="separator:afd4859a4f02722bf3a685a838b4a555b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35fd34a472ef86ad621bd606cb9918fc"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a35fd34a472ef86ad621bd606cb9918fc">isContinuationOctet</a> (int octet)</td></tr>
+<tr class="separator:a35fd34a472ef86ad621bd606cb9918fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfdbbfd7aed40b41c8c9aca994a66c14"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">appendOctet</a> (StringBuffer sb, byte octet)</td></tr>
+<tr class="separator:acfdbbfd7aed40b41c8c9aca994a66c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca72c78b1625ba976db313ae47c8284"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a4ca72c78b1625ba976db313ae47c8284">getBytesInSequence</a> (int octet)</td></tr>
+<tr class="separator:a4ca72c78b1625ba976db313ae47c8284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c6b324020d93bdda6aa0d5a1f9593c"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#ab2c6b324020d93bdda6aa0d5a1f9593c">toCharacter</a> (int[] octets, int offset, int length)</td></tr>
+<tr class="separator:ab2c6b324020d93bdda6aa0d5a1f9593c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76335106e7863f31084d5e2ed66767f7"><td class="memItemLeft" align="right" valign="top">static boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a76335106e7863f31084d5e2ed66767f7">isUnreservedASCII</a> (char c)</td></tr>
+<tr class="separator:a76335106e7863f31084d5e2ed66767f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529e9f1a833424046e5c1dc916f91580"><td class="memItemLeft" align="right" valign="top">static int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a529e9f1a833424046e5c1dc916f91580">toBytes</a> (String percentEncoded)</td></tr>
+<tr class="separator:a529e9f1a833424046e5c1dc916f91580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3cb1ce7dfd57e9abb28cca9bc4edc8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">toByte</a> (char hex1, char hex2)</td></tr>
+<tr class="separator:a2e3cb1ce7dfd57e9abb28cca9bc4edc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece1ebe6e7522d7baf8ca765166cedbb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#aece1ebe6e7522d7baf8ca765166cedbb">toByte</a> (char hex)</td></tr>
+<tr class="separator:aece1ebe6e7522d7baf8ca765166cedbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ad5c79bfeae4228c7bee82125fc969c93"><td class="memItemLeft" align="right" valign="top">static final Pattern&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#ad5c79bfeae4228c7bee82125fc969c93">percentEncoding</a> = Pattern.compile(&quot;(%[0-9a-fA-F][0-9a-fA-F])+&quot;)</td></tr>
+<tr class="separator:ad5c79bfeae4228c7bee82125fc969c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d7e0fcb082c35388ff0e58345c1eb4"><td class="memItemLeft" align="right" valign="top">static char []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00373.html#a24d7e0fcb082c35388ff0e58345c1eb4">hexDigits</a> = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'}</td></tr>
+<tr class="separator:a24d7e0fcb082c35388ff0e58345c1eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements the IRI-to-URI and URI-to-IRI conversions defined in RFC 3987. </p>
+<p>TODO: This really needs some unit tests TODO: Make this an <a class="el" href="a00377.html" title="Rewrites IRI in an 1:1 fashion. ">IRIRewriter</a>? </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acfdbbfd7aed40b41c8c9aca994a66c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfdbbfd7aed40b41c8c9aca994a66c14">&#9670;&nbsp;</a></span>appendOctet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void appendOctet </td>
+          <td>(</td>
+          <td class="paramtype">StringBuffer&#160;</td>
+          <td class="paramname"><em>sb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>octet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>, and <a class="el" href="a00373.html#aa9aeab48a7535d6d446c3e7b99d71503">IRIEncoder.toURI()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                                                     {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                sb.append(<span class="charliteral">&#39;%&#39;</span>);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                sb.append(<a class="code" href="a00373.html#a24d7e0fcb082c35388ff0e58345c1eb4">hexDigits</a>[(octet &gt;&gt; 4) &amp; 0x0F]);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                sb.append(<a class="code" href="a00373.html#a24d7e0fcb082c35388ff0e58345c1eb4">hexDigits</a>[octet &amp; 0x0F]);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div><div class="ttc" id="a00373_html_a24d7e0fcb082c35388ff0e58345c1eb4"><div class="ttname"><a href="a00373.html#a24d7e0fcb082c35388ff0e58345c1eb4">de.fuberlin.wiwiss.pubby.IRIEncoder.hexDigits</a></div><div class="ttdeci">static char [] hexDigits</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:53</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd4859a4f02722bf3a685a838b4a555b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4859a4f02722bf3a685a838b4a555b">&#9670;&nbsp;</a></span>decode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String decode </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>percentEncoded</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">IRIEncoder.appendOctet()</a>, <a class="el" href="a00373.html#a4ca72c78b1625ba976db313ae47c8284">IRIEncoder.getBytesInSequence()</a>, <a class="el" href="a00373.html#a35fd34a472ef86ad621bd606cb9918fc">IRIEncoder.isContinuationOctet()</a>, <a class="el" href="a00373.html#a76335106e7863f31084d5e2ed66767f7">IRIEncoder.isUnreservedASCII()</a>, <a class="el" href="a00373.html#a529e9f1a833424046e5c1dc916f91580">IRIEncoder.toBytes()</a>, and <a class="el" href="a00373.html#ab2c6b324020d93bdda6aa0d5a1f9593c">IRIEncoder.toCharacter()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#a28910c5e808e547d940cc2f604f5cc91">IRIEncoder.toIRI()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                            {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                StringBuffer decoded = <span class="keyword">new</span> StringBuffer();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">int</span>[] octets = <a class="code" href="a00373.html#a529e9f1a833424046e5c1dc916f91580">toBytes</a>(percentEncoded);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">int</span> i = 0;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">while</span> (i &lt; octets.length) {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <span class="keywordflow">if</span> (octets[i] &lt;= 0x7F) {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                <span class="comment">// US-ASCII character. Decode, except if it&#39;s one of</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                <span class="comment">// %, reserved, or not allowed in IRIs. In that case, re-encode.</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                <span class="keywordflow">if</span> (<a class="code" href="a00373.html#a76335106e7863f31084d5e2ed66767f7">isUnreservedASCII</a>((<span class="keywordtype">char</span>) octets[i])) {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                        decoded.append((<span class="keywordtype">char</span>) octets[i]);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        <span class="comment">// FIXME: Strictly speaking, the spec says that the original</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        <span class="comment">// percent-encoding remains unchanged, meaning lower-case</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        <span class="comment">// hex digits would remain lower-case. We upper-case them</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                        <span class="comment">// here by re-encoding.</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                        <a class="code" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">appendOctet</a>(decoded, (byte) octets[i]);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                i++;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="a00373.html#a35fd34a472ef86ad621bd606cb9918fc">isContinuationOctet</a>(octets[i])) {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                <a class="code" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">appendOctet</a>(decoded, (byte) octets[i]);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                i++;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        }</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        <span class="keywordtype">int</span> bytesInSequence = <a class="code" href="a00373.html#a4ca72c78b1625ba976db313ae47c8284">getBytesInSequence</a>(octets[i]);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="keywordflow">if</span> (i + bytesInSequence &gt; octets.length) {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                <span class="comment">// Not enough continuation bytes to complete the character.</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                <span class="comment">// Re-encode one byte, then let the main loop eat the rest.</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                <a class="code" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">appendOctet</a>(decoded, (byte) octets[i]);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                i++;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        }</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        <span class="comment">// Next, check if the next n bytes are all continuation bytes.</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordtype">boolean</span> enoughContinuationBytes = <span class="keyword">true</span>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 1; j &lt; bytesInSequence; j++) {</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                <span class="keywordflow">if</span> (!<a class="code" href="a00373.html#a35fd34a472ef86ad621bd606cb9918fc">isContinuationOctet</a>(octets[i + j])) {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                        <span class="comment">// Nope</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                        enoughContinuationBytes = <span class="keyword">false</span>;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                        <span class="keywordflow">break</span>;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                }</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        }</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        <span class="keywordflow">if</span> (!enoughContinuationBytes) {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                <span class="comment">// Re-encode one byte, and let the main loop eat the rest.</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                <a class="code" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">appendOctet</a>(decoded, (byte) octets[i]);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                i++;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        }</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        <span class="comment">// UTF-8 encoding looks fine. Decode to one character.</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        <span class="comment">// FIXME: RFC 3987 says here:</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <span class="comment">//   4. Re-percent-encode all octets produced in step 3 that in UTF-8</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        <span class="comment">//      represent characters that are not appropriate according to</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        <span class="comment">//      sections 2.2, 4.1, and 6.1.</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        <span class="comment">// This is about weird unicode characters that are inappropriate</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        <span class="comment">// in IRIs for various reasons. We ignore this currently.</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        decoded.append(<a class="code" href="a00373.html#ab2c6b324020d93bdda6aa0d5a1f9593c">toCharacter</a>(octets, i, bytesInSequence));</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        i += bytesInSequence;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                }</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">return</span> decoded.toString();</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div><div class="ttc" id="a00373_html_ab2c6b324020d93bdda6aa0d5a1f9593c"><div class="ttname"><a href="a00373.html#ab2c6b324020d93bdda6aa0d5a1f9593c">de.fuberlin.wiwiss.pubby.IRIEncoder.toCharacter</a></div><div class="ttdeci">static char toCharacter(int[] octets, int offset, int length)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:139</div></div>
+<div class="ttc" id="a00373_html_a4ca72c78b1625ba976db313ae47c8284"><div class="ttname"><a href="a00373.html#a4ca72c78b1625ba976db313ae47c8284">de.fuberlin.wiwiss.pubby.IRIEncoder.getBytesInSequence</a></div><div class="ttdeci">static int getBytesInSequence(int octet)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:127</div></div>
+<div class="ttc" id="a00373_html_a529e9f1a833424046e5c1dc916f91580"><div class="ttname"><a href="a00373.html#a529e9f1a833424046e5c1dc916f91580">de.fuberlin.wiwiss.pubby.IRIEncoder.toBytes</a></div><div class="ttdeci">static int [] toBytes(String percentEncoded)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:158</div></div>
+<div class="ttc" id="a00373_html_a35fd34a472ef86ad621bd606cb9918fc"><div class="ttname"><a href="a00373.html#a35fd34a472ef86ad621bd606cb9918fc">de.fuberlin.wiwiss.pubby.IRIEncoder.isContinuationOctet</a></div><div class="ttdeci">static boolean isContinuationOctet(int octet)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:117</div></div>
+<div class="ttc" id="a00373_html_a76335106e7863f31084d5e2ed66767f7"><div class="ttname"><a href="a00373.html#a76335106e7863f31084d5e2ed66767f7">de.fuberlin.wiwiss.pubby.IRIEncoder.isUnreservedASCII</a></div><div class="ttdeci">static boolean isUnreservedASCII(char c)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:152</div></div>
+<div class="ttc" id="a00373_html_acfdbbfd7aed40b41c8c9aca994a66c14"><div class="ttname"><a href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">de.fuberlin.wiwiss.pubby.IRIEncoder.appendOctet</a></div><div class="ttdeci">static void appendOctet(StringBuffer sb, byte octet)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:121</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4ca72c78b1625ba976db313ae47c8284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca72c78b1625ba976db313ae47c8284">&#9670;&nbsp;</a></span>getBytesInSequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int getBytesInSequence </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>octet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                         {</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="comment">// See table in http://en.wikipedia.org/wiki/UTF-8#Description</span></div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0x80) == 0) <span class="keywordflow">return</span> 1;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0xC0) == 0x80) <span class="keywordflow">return</span> 0;   <span class="comment">// Continuation octet</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0xE0) == 0xC0) <span class="keywordflow">return</span> 2;</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0xF0) == 0xE0) <span class="keywordflow">return</span> 3;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0xF8) == 0xF0) <span class="keywordflow">return</span> 4;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0xFC) == 0xF8) <span class="keywordflow">return</span> 5;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="keywordflow">if</span> ((octet &amp; 0xFE) == 0xFC) <span class="keywordflow">return</span> 6;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordflow">return</span> 0;       <span class="comment">// Shouldn&#39;t happen</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a35fd34a472ef86ad621bd606cb9918fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35fd34a472ef86ad621bd606cb9918fc">&#9670;&nbsp;</a></span>isContinuationOctet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static boolean isContinuationOctet </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>octet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                                                              {</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">return</span> (octet &amp; 0xC0) == 0x80;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a76335106e7863f31084d5e2ed66767f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76335106e7863f31084d5e2ed66767f7">&#9670;&nbsp;</a></span>isUnreservedASCII()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static boolean isUnreservedASCII </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                         {</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="comment">// unreserved = ALPHA / DIGIT / &quot;-&quot; / &quot;.&quot; / &quot;_&quot; / &quot;~&quot;</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="keywordflow">return</span> (c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;z&#39;</span>) || (c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;Z&#39;</span>) ||</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>) || c == <span class="charliteral">&#39;-&#39;</span> || c == <span class="charliteral">&#39;.&#39;</span> || c == <span class="charliteral">&#39;_&#39;</span> || c == <span class="charliteral">&#39;~&#39;</span>;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a2e3cb1ce7dfd57e9abb28cca9bc4edc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">&#9670;&nbsp;</a></span>toByte() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int toByte </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>hex1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>hex2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#a529e9f1a833424046e5c1dc916f91580">IRIEncoder.toBytes()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                                        {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">return</span> (<a class="code" href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">toByte</a>(hex1) &lt;&lt; 4) | <a class="code" href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">toByte</a>(hex2);</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div><div class="ttc" id="a00373_html_a2e3cb1ce7dfd57e9abb28cca9bc4edc8"><div class="ttname"><a href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">de.fuberlin.wiwiss.pubby.IRIEncoder.toByte</a></div><div class="ttdeci">static int toByte(char hex1, char hex2)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:167</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aece1ebe6e7522d7baf8ca765166cedbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece1ebe6e7522d7baf8ca765166cedbb">&#9670;&nbsp;</a></span>toByte() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int toByte </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                            {</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordflow">if</span> (hex &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; hex &lt;= <span class="charliteral">&#39;9&#39;</span>) {</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                        <span class="keywordflow">return</span> hex - <span class="charliteral">&#39;0&#39;</span>;</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                }</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">if</span> (hex &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; hex &lt;= <span class="charliteral">&#39;f&#39;</span>) {</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        <span class="keywordflow">return</span> hex - <span class="charliteral">&#39;a&#39;</span> + 10;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                }</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">if</span> (hex &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; hex &lt;= <span class="charliteral">&#39;F&#39;</span>) {</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        <span class="keywordflow">return</span> hex - <span class="charliteral">&#39;A&#39;</span> + 10;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                }</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Not a hex digit: &quot;</span> + hex);</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a529e9f1a833424046e5c1dc916f91580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529e9f1a833424046e5c1dc916f91580">&#9670;&nbsp;</a></span>toBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int [] toBytes </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>percentEncoded</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">IRIEncoder.toByte()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                            {</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordtype">int</span> length = percentEncoded.length() / 3;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keywordtype">int</span>[] result = <span class="keyword">new</span> <span class="keywordtype">int</span>[length];</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length; i++) {</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        result[i] = <a class="code" href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">toByte</a>(percentEncoded.charAt(i * 3 + 1), percentEncoded.charAt(i * 3 + 2));</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                }</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div><div class="ttc" id="a00373_html_a2e3cb1ce7dfd57e9abb28cca9bc4edc8"><div class="ttname"><a href="a00373.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">de.fuberlin.wiwiss.pubby.IRIEncoder.toByte</a></div><div class="ttdeci">static int toByte(char hex1, char hex2)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:167</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab2c6b324020d93bdda6aa0d5a1f9593c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c6b324020d93bdda6aa0d5a1f9593c">&#9670;&nbsp;</a></span>toCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char toCharacter </td>
+          <td>(</td>
+          <td class="paramtype">int []&#160;</td>
+          <td class="paramname"><em>octets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                                                              {</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                byte[] bytes = <span class="keyword">new</span> byte[length];</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length; i++) {</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        bytes[i] = (byte) octets[offset + i];</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                }</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> String(bytes, <span class="stringliteral">&quot;utf-8&quot;</span>).charAt(0);</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                } <span class="keywordflow">catch</span> (UnsupportedEncodingException ex) {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <span class="comment">// Can&#39;t happen</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01309.html">RuntimeException</a>(ex);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div><div class="ttc" id="a01309_html"><div class="ttname"><a href="a01309.html">RuntimeException</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a28910c5e808e547d940cc2f604f5cc91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28910c5e808e547d940cc2f604f5cc91">&#9670;&nbsp;</a></span>toIRI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String toIRI </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>uri</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a URI to an IRI by removing unnecessary percent-encoding of UTF-8 sequences. </p>
+
+<p class="reference">References <a class="el" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">IRIEncoder.decode()</a>, and <a class="el" href="a00373.html#ad5c79bfeae4228c7bee82125fc969c93">IRIEncoder.percentEncoding</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00481.html#ade0f373e0ee60161c36c160bd5a04a9c">ValuesBaseServlet.doGet()</a>, <a class="el" href="a00249.html#a6eccf05aca93cfb90fb04f368fee6e32">Configuration.getControls()</a>, and <a class="el" href="a00421.html#ad231a3c3defc265966333ec5c96fc98a">PubbyIRIEscaper.rewrite()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                               {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                StringBuffer decoded = <span class="keyword">new</span> StringBuffer();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                Matcher matcher = <a class="code" href="a00373.html#ad5c79bfeae4228c7bee82125fc969c93">percentEncoding</a>.matcher(uri);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">while</span> (matcher.find()) {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                        matcher.appendReplacement(decoded, <a class="code" href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">decode</a>(matcher.group()));</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                matcher.appendTail(decoded);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">return</span> decoded.toString();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="ttc" id="a00373_html_afd4859a4f02722bf3a685a838b4a555b"><div class="ttname"><a href="a00373.html#afd4859a4f02722bf3a685a838b4a555b">de.fuberlin.wiwiss.pubby.IRIEncoder.decode</a></div><div class="ttdeci">static String decode(String percentEncoded)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:55</div></div>
+<div class="ttc" id="a00373_html_ad5c79bfeae4228c7bee82125fc969c93"><div class="ttname"><a href="a00373.html#ad5c79bfeae4228c7bee82125fc969c93">de.fuberlin.wiwiss.pubby.IRIEncoder.percentEncoding</a></div><div class="ttdeci">static final Pattern percentEncoding</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:29</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa9aeab48a7535d6d446c3e7b99d71503"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9aeab48a7535d6d446c3e7b99d71503">&#9670;&nbsp;</a></span>toURI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String toURI </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>iri</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts an IRI to a URI by percent-encoding characters outside of the US-ASCII range. </p>
+
+<p class="reference">References <a class="el" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">IRIEncoder.appendOctet()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00469.html#ade0f373e0ee60161c36c160bd5a04a9c">RootServlet.doGet()</a>, <a class="el" href="a00497.html#ade0f373e0ee60161c36c160bd5a04a9c">WebURIServlet.doGet()</a>, and <a class="el" href="a00421.html#a0ac56882f3fb5afa390617ee8e0d9015">PubbyIRIEscaper.unrewrite()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                               {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        StringBuffer encoded = <span class="keyword">new</span> StringBuffer();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; iri.length(); i++) {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                <span class="keywordflow">if</span> ((<span class="keywordtype">int</span>) iri.charAt(i) &lt;= 128) {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                        encoded.append(iri.charAt(i));</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                        <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                }</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                <span class="keywordflow">for</span> (byte b: iri.substring(i, i + 1).getBytes(<span class="stringliteral">&quot;utf-8&quot;</span>)) {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                        <a class="code" href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">appendOctet</a>(encoded, b);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                }</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        <span class="keywordflow">return</span> encoded.toString();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                } <span class="keywordflow">catch</span> (UnsupportedEncodingException ex) {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="comment">// Can&#39;t happen</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">return</span> iri;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div><div class="ttc" id="a00373_html_acfdbbfd7aed40b41c8c9aca994a66c14"><div class="ttname"><a href="a00373.html#acfdbbfd7aed40b41c8c9aca994a66c14">de.fuberlin.wiwiss.pubby.IRIEncoder.appendOctet</a></div><div class="ttdeci">static void appendOctet(StringBuffer sb, byte octet)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:121</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a24d7e0fcb082c35388ff0e58345c1eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d7e0fcb082c35388ff0e58345c1eb4">&#9670;&nbsp;</a></span>hexDigits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char [] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5c79bfeae4228c7bee82125fc969c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c79bfeae4228c7bee82125fc969c93">&#9670;&nbsp;</a></span>percentEncoding</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Pattern percentEncoding = Pattern.compile(&quot;(%[0-9a-fA-F][0-9a-fA-F])+&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00373.html#a28910c5e808e547d940cc2f604f5cc91">IRIEncoder.toIRI()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00237.html">de</a></li><li class="navelem"><a class="el" href="a00238.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00239.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00236.html">pubby</a></li><li class="navelem"><a class="el" href="a00373.html">IRIEncoder</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

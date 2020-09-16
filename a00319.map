@@ -1,4 +1,2 @@
-<map id="TopoJSONWriter" name="TopoJSONWriter">
-<area shape="rect" id="node2" href="$a00264.html" title="GeoModelWriter" alt="" coords="9,80,125,107"/>
-<area shape="rect" id="node3" href="$a00304.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="21,5,113,32"/>
+<map id="ModelWriter" name="ModelWriter">
 </map>

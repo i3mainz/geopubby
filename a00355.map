@@ -1,3 +1,4 @@
-<map id="IRIRewriter" name="IRIRewriter">
-<area shape="rect" id="node2" href="$a00400.html" title="IRI rewriter that implements special behaviour for Pubby: Any IRI within a certain namespace (the nam..." alt="" coords="5,80,131,107"/>
+<map id="XYZASCIIWriter" name="XYZASCIIWriter">
+<area shape="rect" id="node2" href="$a00277.html" title="GeoModelWriter" alt="" coords="188,199,304,225"/>
+<area shape="rect" id="node3" href="$a00321.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
 </map>
