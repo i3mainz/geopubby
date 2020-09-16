@@ -20,7 +20,7 @@ import org.wololo.jts2geojson.GeoJSONWriter;
 /**
  * Writes a GeoPubby instance as CSV.
  */
-public class CSVWriter extends GeoModelWriter {
+public class CSVWriter extends AbstractGeoJSONWriter {
 	
 	public CSVWriter(String epsg) {
 		super(epsg);
@@ -28,78 +28,7 @@ public class CSVWriter extends GeoModelWriter {
 	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
-		JSONObject geojson=new JSONObject();
-		ExtendedIterator<Resource> it=super.write(model, response);
-		if(!it.hasNext()) {
-			it=model.listResourcesWithProperty(model.createProperty("http://www.w3.org/2000/01/rdf-schema#label"));
-			while(it.hasNext()) {
-				Resource ind=it.next();
-				StmtIterator it2 = ind.listProperties();
-				while(it2.hasNext()) {
-					Statement curst=it2.next();
-					if(geojson.has(curst.getPredicate().toString())) {
-						if(geojson.optJSONArray(curst.getPredicate().toString())!=null) {
-							geojson.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
-						}else {
-							JSONArray arr=new JSONArray();
-							arr.put(curst.getObject().toString());
-							geojson.put(curst.getPredicate().toString(),arr);
-						}
-					}else {
-						geojson.put(curst.getPredicate().toString(),curst.getObject().toString());
-					}	
-				}
-			}
-		}else {
-			geojson.put("type","FeatureCollection");
-			JSONArray features=new JSONArray();
-			geojson.put("features",features);
-			while(it.hasNext()) {
-				Resource ind=it.next();
-				StmtIterator it2 = ind.listProperties();
-				JSONObject curfeature=new JSONObject();
-				features.put(curfeature);
-				curfeature.put("id",ind.getURI());
-				curfeature.put("type","Feature");
-				JSONObject properties=new JSONObject();
-				curfeature.put("properties",properties);
-				Double lat=null,lon=null;
-				while(it2.hasNext()) {
-					Statement curst=it2.next();
-					boolean handled=this.handleGeometry(curst, ind, model);
-					if(!handled) {
-						if(properties.has(curst.getPredicate().toString())) {
-							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
-								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
-							}else {
-								JSONArray arr=new JSONArray();
-								arr.put(curst.getObject().toString());
-								properties.put(curst.getPredicate().toString(),arr);
-							}
-						}else {
-						   properties.put(curst.getPredicate().toString(),curst.getObject().toString());
-						}					
-					}
-					if(geom!=null) {
-						 GeoJSONWriter writer = new GeoJSONWriter();
-				         GeoJSON json = writer.write(geom);
-				         String jsonstring = json.toString();
-				         curfeature.put("geometry",new JSONObject(jsonstring));
-				         geom=null;
-					}
-					if(lon!=null && lat!=null) {
-						JSONObject geeo=new JSONObject();
-						geeo.put("type","Point");
-						geeo.put("coordinates",new JSONArray());
-						geeo.getJSONArray("coordinates").put(lat);
-						geeo.getJSONArray("coordinates").put(lon);
-						curfeature.put("geometry",geeo);
-						lat=null;
-						lon=null;
-					}
-				}
-			}
-		}	
+		JSONObject geojson=this.prepareGeoJSONString(model, response);
 		StringBuilder csvresult=new StringBuilder();
 		StringBuilder csvresultheader=new StringBuilder();
 		csvresultheader.append("the_geom,");

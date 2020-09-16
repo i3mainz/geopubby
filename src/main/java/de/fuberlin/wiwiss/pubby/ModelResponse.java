@@ -22,6 +22,7 @@ import de.fuberlin.wiwiss.pubby.exporter.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GoogleMapsLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.HexTuplesWriter;
+import de.fuberlin.wiwiss.pubby.exporter.JSONPWriter;
 import de.fuberlin.wiwiss.pubby.exporter.KMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.LatLonTextWriter;
@@ -36,6 +37,7 @@ import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XLSWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XLSXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XYZASCIIWriter;
+import de.fuberlin.wiwiss.pubby.exporter.YAMLWriter;
 import de.fuberlin.wiwiss.pubby.negotiation.ContentTypeNegotiator;
 import de.fuberlin.wiwiss.pubby.negotiation.MediaRangeSpec;
 import de.fuberlin.wiwiss.pubby.negotiation.PubbyNegotiator;
@@ -164,6 +166,12 @@ public class ModelResponse {
 		if ("application/trig".equals(mediaType)) {
 			return new LDWriter(crs,"TriG");
 		}
+		if ("text/vnd.yaml".equals(mediaType)) {
+			return new YAMLWriter(crs);
+		}
+		if ("application/javascript".equals(mediaType)) {
+			return new JSONPWriter(crs);
+		}		
 		if ("text/wkt".equals(mediaType)) {
 			return new WKTWriter(crs);
 		}

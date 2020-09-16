@@ -39,7 +39,8 @@ var definitionlinks={
 "wkt":"https://www.iso.org/standard/40114.html",
 "xls":"http://www.openoffice.org/sc/excelfileformat.pdf",
 "xlsx":"http://www.openoffice.org/sc/excelfileformat.pdf",
-"xyz":"https://gdal.org/drivers/raster/xyz.html"
+"xyz":"https://gdal.org/drivers/raster/xyz.html",
+"yaml":"https://yaml.org"
 };
 function changeDefLink(){
 	$('#formatlink').attr('href',definitionlinks[$('#format').val()]);
@@ -53,6 +54,7 @@ function download(link){
       <option value="csv">Comma Separated Values (CSV)</option>
       <option value="geojson">(Geo)JSON</option>
       <option value="json">JSON-LD</option>
+      <option value="jsonp">JSONP</option>
       <option value="hextuples">HexTuples RDF</option>
       <option value="n3">Notation3 (N3)</option>
       <option value="nq">NQuads (NQ)</option>
@@ -65,6 +67,7 @@ function download(link){
       <option value="trix">Triples in XML (TriX)</option>
       <option value="xls">MS Excel (XLS)</option>
       <option value="xlsx">Excel Spreadsheet (XLSX)</option>
+      <option value="yaml">YAML Ain't Markup Language (YAML)</option>
       #if (!$geoms.isEmpty())
         <option value="covjson">CoverageJSON (COVJSON)</option>
         <option value="gml">Geography Markup Language (GML)</option>
