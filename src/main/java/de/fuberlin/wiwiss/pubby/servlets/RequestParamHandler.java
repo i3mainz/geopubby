@@ -49,6 +49,7 @@ public class RequestParamHandler {
 		mimeTypes.put("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 		mimeTypes.put("gml", "application/gml");
 		mimeTypes.put("yaml","text/vnd.yaml");
+		mimeTypes.put("x3d", "model/x3d+xml");
 		mimeTypes.put("jsonp", "application/javascript");
 		mimeTypes.put("gml", "text/gml");
 		mimeTypes.put("mapml", "text/mapml");

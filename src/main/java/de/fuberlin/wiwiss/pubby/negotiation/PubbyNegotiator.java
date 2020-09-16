@@ -67,6 +67,7 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
 		pubbyNegotiator.addVariant("application/javascript;q=0.95");
+		pubbyNegotiator.addVariant("model/x3d+xml;q=0.95");
 		pubbyNegotiator.addVariant("image/svg+xml;q=0.95");
 		pubbyNegotiator.addVariant("application/rt;q=0.95");
 		pubbyNegotiator.addVariant("application/hex+x-ndjson;q=0.95");
@@ -83,6 +84,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("application/msexcel;q=0.95");
 		dataNegotiator.addVariant("application/rdf+json;q=0.99");
 		dataNegotiator.addVariant("text/xyz;q=0.95");
+		dataNegotiator.addVariant("model/x3d+xml;q=0.95");
 		dataNegotiator.addVariant("application/prs.coverage+json;q=0.95");
 		dataNegotiator.addVariant("text/rdf+n3;charset=utf-8")
 				.addAliasMediaType("text/n3;q=0.5")

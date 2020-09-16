@@ -34,6 +34,7 @@ import de.fuberlin.wiwiss.pubby.exporter.SVGWriter;
 import de.fuberlin.wiwiss.pubby.exporter.TopoJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.WKBWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.WKTWriter;
+import de.fuberlin.wiwiss.pubby.exporter.X3DWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XLSWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XLSXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.XYZASCIIWriter;
@@ -171,7 +172,10 @@ public class ModelResponse {
 		}
 		if ("application/javascript".equals(mediaType)) {
 			return new JSONPWriter(crs);
-		}		
+		}	
+		if("model/x3d+xml".equals(mediaType)) {
+			return new X3DWriter(crs);
+		}
 		if ("text/wkt".equals(mediaType)) {
 			return new WKTWriter(crs);
 		}
