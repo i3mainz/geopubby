@@ -56,8 +56,16 @@
 <dependency>
     <groupId>org.locationtech.jts</groupId>
     <artifactId>jts-core</artifactId>
-    <version>1.16.1</version>
+    <version>1.17.1</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml -->
+<dependency>
+    <groupId>com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat-yaml</artifactId>
+    <version>2.11.2</version>
+</dependency>
+
+
 <!-- https://mvnrepository.com/artifact/com.sun.xml.txw2/txw2 -->
 <dependency>
     <groupId>com.sun.xml.txw2</groupId>
