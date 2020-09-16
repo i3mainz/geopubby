@@ -2,6 +2,7 @@ var a00572 =
 [
     [ "ASGEOJSON", "a00572.html#afc6375b31a4b188e127ee01b9ee0a544", null ],
     [ "ASGML", "a00572.html#a7d05011f10f73bdb11355876136c7957", null ],
+    [ "ASWKB", "a00572.html#a7b0e15c8279602eea669deb1c66f137b", null ],
     [ "ASWKT", "a00572.html#af3b39bf8d8c41f1b00a9c91c00034c73", null ],
     [ "EPSG", "a00572.html#a0fc2d65d7e1c8d618abd44757c1f5f70", null ],
     [ "geomprops", "a00572.html#a7167f6b3f9027d7dcc0f4135a9c2346d", null ],
