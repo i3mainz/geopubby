@@ -20,13 +20,13 @@ import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class GeoModelWriter extends ModelWriter {
 
-	String epsg=null;
+	protected String epsg=null;
 	
-	Double lat,lon;
+	protected Double lat,lon;
 	
-	String sourceCRS="EPSG:4326";
+	protected String sourceCRS="EPSG:4326";
 	
-	Geometry geom;
+	protected Geometry geom;
 	
 	
 	
