@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 
 /**
  * Writes a GeoPubby instance as JSON or GeoJSON if a geometry is present.

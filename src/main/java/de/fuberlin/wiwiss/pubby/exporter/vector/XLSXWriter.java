@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -18,7 +18,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.io.ParseException;
 
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
+import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class XLSXWriter extends GeoModelWriter {
@@ -48,8 +50,8 @@ public class XLSXWriter extends GeoModelWriter {
 				StmtIterator it2 = ind.listProperties();
 				while (it2.hasNext()) {
 					Statement curst = it2.next();
-					boolean handled = this.handleGeometry(curst, ind, model);
-					if (!handled) {
+					Tuple<Boolean,String> handled = this.handleGeometry(curst, ind, model);
+					if (!handled.getOne()) {
 						firstRow.createCell(colNum).setCellValue(curst.getPredicate().getURI());
 						secondRow.createCell(colNum++).setCellValue(curst.getObject().toString());
 					}

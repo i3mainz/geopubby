@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 
@@ -15,6 +15,8 @@ import org.json.JSONObject;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
+import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class TopoJSONWriter extends GeoModelWriter {
@@ -65,8 +67,8 @@ public class TopoJSONWriter extends GeoModelWriter {
 				Double lat=null,lon=null;
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
-					boolean handled=this.handleGeometry(curst, ind, model);
-					if(!handled) {
+					Tuple<Boolean,String> handled=this.handleGeometry(curst, ind, model);
+					if(!handled.getOne()) {
 						if(properties.has(curst.getPredicate().toString())) {
 							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
 								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());

@@ -16,6 +16,7 @@ import org.wololo.jts2geojson.GeoJSONReader;
 import org.xml.sax.SAXException;
 
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
+import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class GeoModelWriter extends ModelWriter {
@@ -39,8 +40,9 @@ public class GeoModelWriter extends ModelWriter {
 	}
 	
 	
-	public boolean handleGeometry(Statement curst,Resource ind,Model model) {
+	public Tuple<Boolean,String> handleGeometry(Statement curst,Resource ind,Model model) {
 		boolean handled=false;
+		String type="vector";
 		if (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())
 				|| GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())
 				|| GEO.P625.getURI().equals(curst.getPredicate().getURI())) {
@@ -108,7 +110,7 @@ public class GeoModelWriter extends ModelWriter {
 			lon = Double.valueOf(curst.getObject().asLiteral().getString().split(" ")[1]);
 			handled=true;
 		}
-		return handled;
+		return new Tuple<Boolean,String>(handled,type);
 	}
 	
 	

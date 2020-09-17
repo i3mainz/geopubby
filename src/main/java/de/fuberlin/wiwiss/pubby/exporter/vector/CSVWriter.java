@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 
@@ -11,6 +11,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Geometry;
 import org.wololo.jts2geojson.GeoJSONReader;
+
+import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 
 /**
  * Writes a GeoPubby instance as CSV.

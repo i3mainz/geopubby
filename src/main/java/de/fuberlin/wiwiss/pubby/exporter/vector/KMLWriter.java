@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -17,6 +17,7 @@ import org.json.JSONException;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**

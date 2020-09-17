@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -21,7 +21,9 @@ import org.locationtech.jts.geom.GeometryFactory;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
+import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class MapMLWriter extends GeoModelWriter {
@@ -71,8 +73,8 @@ public class MapMLWriter extends GeoModelWriter {
 				List<Geometry> geoms = new LinkedList<Geometry>();
 				while (it2.hasNext()) {
 					Statement curst = it2.next();
-					boolean handled=this.handleGeometry(curst, ind, model);
-					if(!handled){
+					Tuple<Boolean,String> handled=this.handleGeometry(curst, ind, model);
+					if(!handled.getOne()){
 						String last = curst.getPredicate().toString()
 								.substring(curst.getPredicate().toString().lastIndexOf('/') + 1);
 						writer.writeStartElement("th");
