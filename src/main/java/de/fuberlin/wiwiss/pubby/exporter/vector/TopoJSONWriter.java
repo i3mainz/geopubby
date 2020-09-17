@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 
@@ -15,6 +15,7 @@ import org.json.JSONObject;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class TopoJSONWriter extends GeoModelWriter {

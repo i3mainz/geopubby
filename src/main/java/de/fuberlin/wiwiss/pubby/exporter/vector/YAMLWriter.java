@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.IOException;
 
@@ -13,6 +13,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
+
+import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 
 public class YAMLWriter extends AbstractGeoJSONWriter {
 

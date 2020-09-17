@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.vector;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.io.ParseException;
 
-
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 

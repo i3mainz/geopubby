@@ -1,4 +1,4 @@
-package de.fuberlin.wiwiss.pubby.exporter;
+package de.fuberlin.wiwiss.pubby.exporter.coverage;
 
 import java.io.IOException;
 
@@ -14,6 +14,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Coordinate;
 import org.wololo.jts2geojson.GeoJSONWriter;
+
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 
 public class CoverageJSONWriter extends GeoModelWriter {
 
