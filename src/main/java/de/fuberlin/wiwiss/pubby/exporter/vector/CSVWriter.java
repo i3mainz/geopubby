@@ -6,16 +6,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.Statement;
-import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Geometry;
-import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONReader;
-import org.wololo.jts2geojson.GeoJSONWriter;
+
+import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 

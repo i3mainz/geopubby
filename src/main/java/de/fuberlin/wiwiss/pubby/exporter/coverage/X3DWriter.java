@@ -156,6 +156,4 @@ public class X3DWriter extends AbstractGeoJSONWriter {
 		
 		return null;
 	}
-
-
 }

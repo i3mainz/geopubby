@@ -1,18 +1,13 @@
 package de.fuberlin.wiwiss.pubby;
 
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.RDFWriter;
-import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.shared.JenaException;
-import org.apache.jena.util.iterator.ExtendedIterator;
-import org.locationtech.jts.io.WKBWriter;
 
 import de.fuberlin.wiwiss.pubby.exporter.JSONPWriter;
 import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
