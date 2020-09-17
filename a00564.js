@@ -1,9 +1,7 @@
 var a00564 =
 [
-    [ "SearchRecord", "a00564.html#a4ac7197cdb811ab9e27ad8b390355ce6", null ],
-    [ "getFields", "a00564.html#a0cce3babb743f2fc916f7c2bd20d965e", null ],
-    [ "getLabel", "a00564.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
-    [ "getResource", "a00564.html#afe4a3e88052dbc8b12e217669d8dac77", null ],
-    [ "label", "a00564.html#ac3f915eab3b535426bb9794989e9ea2e", null ],
-    [ "res", "a00564.html#a952d2a362956d26b604846d09847e970", null ]
+    [ "get", "a00564.html#a9695d4a4855959f9b00390c9f08d9cd5", null ],
+    [ "put", "a00564.html#ad55ad95418061ae37fe65df7493e6e84", null ],
+    [ "remove", "a00564.html#a3dcd1ee780b50b35c60ef427449266bb", null ],
+    [ "index", "a00564.html#a4aeec757e2fc5d6bce4a2617b976858b", null ]
 ];

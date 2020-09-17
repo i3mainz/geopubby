@@ -1,7 +1,8 @@
 var a00308 =
 [
-    [ "KMLWriter", "a00308.html#a3df01d724721d381015db2cfe2eafc67", null ],
+    [ "CSVWriter", "a00308.html#a07bdacf368bee7bde13bb37ced8cb792", null ],
     [ "handleGeometry", "a00308.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "prepareGeoJSONString", "a00308.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00308.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00308.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00308.html#a986ad099513be1127d32ade506e5fa4c", null ],

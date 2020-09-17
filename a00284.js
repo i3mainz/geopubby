@@ -1,6 +1,6 @@
 var a00284 =
 [
-    [ "GeoURIWriter", "a00284.html#a08ca9cd80b14097e1cab4661feb2f6c8", null ],
+    [ "XYZASCIIWriter", "a00284.html#aa8de0ac3d739fe7639f2d6bd762abb23", null ],
     [ "handleGeometry", "a00284.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00284.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00284.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

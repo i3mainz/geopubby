@@ -1,8 +1,7 @@
 var a00352 =
 [
-    [ "X3DWriter", "a00352.html#a689426a35efe4ef8aecbaeaaae290729", null ],
+    [ "SVGWriter", "a00352.html#a36dd16a9af63e1a2db3f4bd1528374cf", null ],
     [ "handleGeometry", "a00352.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
-    [ "prepareGeoJSONString", "a00352.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00352.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00352.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00352.html#a986ad099513be1127d32ade506e5fa4c", null ],

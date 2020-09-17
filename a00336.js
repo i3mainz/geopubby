@@ -1,6 +1,7 @@
 var a00336 =
 [
-    [ "SVGWriter", "a00336.html#a36dd16a9af63e1a2db3f4bd1528374cf", null ],
+    [ "LatLonTextWriter", "a00336.html#a407bc12bfc5133bb23a9764e12311951", null ],
+    [ "convertDecimalToLatLonText", "a00336.html#a4de262c8cc5abdbadbdd425520b98ef1", null ],
     [ "handleGeometry", "a00336.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00336.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00336.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

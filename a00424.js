@@ -1,8 +1,9 @@
 var a00424 =
 [
-    [ "[static initializer]", "a00424.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "getDataNegotiator", "a00424.html#af03e389fc1ed90d41d751d3d5208fc98", null ],
-    [ "getPubbyNegotiator", "a00424.html#a422f474f49521adddc4d56b75af7b77c", null ],
-    [ "dataNegotiator", "a00424.html#a3252abb074c382937d325d56e41084a0", null ],
-    [ "pubbyNegotiator", "a00424.html#a7881b210bc9cb724716ffb109de9c562", null ]
+    [ "AcceptHeaderOverride", "a00424.html#a62333c819d60f37ab4dc43ff61a210ea", null ],
+    [ "getReplacement", "a00424.html#aef70f59ac6bf685a9ee32f37974a54a0", null ],
+    [ "matches", "a00424.html#a1905bdfe7c1f4050f8e1d04863fd0888", null ],
+    [ "original", "a00424.html#a0d33ec58c7bf400ec61051437a714b85", null ],
+    [ "replacement", "a00424.html#a46c8449d068cc9b8900701670be47fc9", null ],
+    [ "userAgentPattern", "a00424.html#ac3f835bd8ebc7ac5294b67abe18ec5fe", null ]
 ];

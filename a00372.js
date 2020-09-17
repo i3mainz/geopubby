@@ -1,21 +1,13 @@
 var a00372 =
 [
-    [ "HypermediaControls", "a00372.html#ae073ebaad2d9fb2166ab855192d3b9c9", null ],
-    [ "createFromIRI", "a00372.html#a20cf1e1f08a408807589c7fa7ae79add", null ],
-    [ "createFromPubbyPath", "a00372.html#aead9438dd18c64d46dc13da10601fe47", null ],
-    [ "getAbsoluteIRI", "a00372.html#a8cc99e23b8d0876ba37f67895ab17ab7", null ],
-    [ "getBrowsableURL", "a00372.html#a838b3f0aaa81b845dda27dd94108e50f", null ],
-    [ "getDataURL", "a00372.html#a6a843740749f1c282376668464eecc55", null ],
-    [ "getInverseValuesDataURL", "a00372.html#a1ca721459ea4bbaba1f03670854247a7", null ],
-    [ "getInverseValuesPageURL", "a00372.html#adfebee8c9bb794da50abb2bd80a8b0ad", null ],
-    [ "getPageURL", "a00372.html#aa1dda0b0dedb5fddbf92718a8d8bad29", null ],
-    [ "getPathURL", "a00372.html#a732091dc66ebcd3ea19ef3ecc35724c4", null ],
-    [ "getPubbyPath", "a00372.html#ac97cc21700ee930b77e9150959f4b95c", null ],
-    [ "getResourceDescription", "a00372.html#a6cf2b400f7faea2de00e78577de543e7", null ],
-    [ "getValuesDataURL", "a00372.html#a5deb0e1b71fe0bc30994f30284b415a1", null ],
-    [ "getValuesPageURL", "a00372.html#a057619f8ac36faa147f10b4d32685163", null ],
-    [ "isHosted", "a00372.html#abcbc1cb576473b4bf2860dfce7658979", null ],
-    [ "absoluteIRI", "a00372.html#ac02015c3b3f8527514134192ff00b0ea", null ],
-    [ "config", "a00372.html#ae9dc406bdd1efad232eaf625a5714fc9", null ],
-    [ "isHosted", "a00372.html#aead74ce729e1a5bb340cba5b80266f68", null ]
+    [ "XLSXWriter", "a00372.html#a473ac5f2952a61129afc7ab3992dd584", null ],
+    [ "handleGeometry", "a00372.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "write", "a00372.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "epsg", "a00372.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
+    [ "geom", "a00372.html#a986ad099513be1127d32ade506e5fa4c", null ],
+    [ "lat", "a00372.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
+    [ "lon", "a00372.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
+    [ "reader", "a00372.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "sourceCRS", "a00372.html#a29f7567e6745fe87158905295092ad7c", null ],
+    [ "usedProperty", "a00372.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];

@@ -1,6 +1,6 @@
 var a00332 =
 [
-    [ "OSMWriter", "a00332.html#a46d9618696e719cb2584c78a1c0f5ca6", null ],
+    [ "KMLWriter", "a00332.html#a3df01d724721d381015db2cfe2eafc67", null ],
     [ "handleGeometry", "a00332.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00332.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00332.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

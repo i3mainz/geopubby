@@ -1,7 +1,8 @@
 var a00292 =
 [
-    [ "GoogleMapsLinkWriter", "a00292.html#a696b9d86a6ca3995fb62e7506aae2a4d", null ],
+    [ "JSONPWriter", "a00292.html#a35196cc8e13c29e422d3ccc81d3e6cfc", null ],
     [ "handleGeometry", "a00292.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "prepareGeoJSONString", "a00292.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00292.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00292.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00292.html#a986ad099513be1127d32ade506e5fa4c", null ],

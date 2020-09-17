@@ -1,6 +1,6 @@
 var a00356 =
 [
-    [ "XLSWriter", "a00356.html#a34cd55a8521686d69db766dd69e7248a", null ],
+    [ "TopoJSONWriter", "a00356.html#acef498ff3b01a494ab78a733a3a307c2", null ],
     [ "handleGeometry", "a00356.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00356.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00356.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

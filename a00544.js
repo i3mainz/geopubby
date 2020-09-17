@@ -1,12 +1,12 @@
 var a00544 =
 [
-    [ "Builder", "a00544.html#a4c5b1b5b658880619647b859000724fc", null ],
-    [ "build", "a00544.html#a1e4fbf697357d25c5f3112daf2c9abee", null ],
-    [ "setAnalyzer", "a00544.html#a75be2b67c84e6582fc763413aa9c95bb", null ],
-    [ "setAnalyzers", "a00544.html#a5b046f779187f94e1d872748badcb092", null ],
-    [ "setComparator", "a00544.html#a80d4cfc5257a34d5573ee59eccfac025", null ],
-    [ "setIndex", "a00544.html#ac67f216229a795a817b7136c9b7bc188", null ],
-    [ "analyzer", "a00544.html#ab68f7dcfc065da0fd4295b518c820c87", null ],
-    [ "comparator", "a00544.html#aac9e41375776a2145cdf5025fd4dd947", null ],
-    [ "index", "a00544.html#abce4b54107ea8e7233ebeb0a9a67383a", null ]
+    [ "URIPrefixer", "a00544.html#abebd08c86a66757c33787ad331c89ba7", null ],
+    [ "URIPrefixer", "a00544.html#ac6a7e4134557f6a0af45f334e5e917c6", null ],
+    [ "getLocalName", "a00544.html#a9e0dca1c6efc6550f1cea481c823960a", null ],
+    [ "getPrefix", "a00544.html#a5b9a69b246225ec2eca3637f32437a16", null ],
+    [ "hasPrefix", "a00544.html#aab0bab54f99e36cce47bbbbc1c59cc52", null ],
+    [ "toTurtle", "a00544.html#a63af500e9606acd93d5b95c49d61efe9", null ],
+    [ "localName", "a00544.html#a8dac62958e49f5cdfac4a91262dbeacf", null ],
+    [ "prefix", "a00544.html#ab9aa80baa8113e20a123650a1e9d9a29", null ],
+    [ "resource", "a00544.html#a965b8a7998787959ad4196e807743f5d", null ]
 ];

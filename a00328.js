@@ -1,6 +1,6 @@
 var a00328 =
 [
-    [ "OSMLinkWriter", "a00328.html#a7c2dcfdd11630176e626ce9a541f7d3a", null ],
+    [ "GPXWriter", "a00328.html#a82c02b1ac791adc55c01ea2a8361d291", null ],
     [ "handleGeometry", "a00328.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00328.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00328.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

@@ -1,10 +1,16 @@
 var a00388 =
 [
-    [ "MappedResource", "a00388.html#a1d35ac060a72548d1a38db5c9b3765b5", null ],
-    [ "getController", "a00388.html#af3836f401c27f904d7a9fbfbb542efbf", null ],
-    [ "getDataset", "a00388.html#aa790e1d5a47b90fcc632b93eeb5c5220", null ],
-    [ "getDatasetURI", "a00388.html#a392cb8d27b80bf406cc0f07cc96a37ce", null ],
-    [ "datasetConfig", "a00388.html#a0ad529538808809272da8fa670a20cf9", null ],
-    [ "datasetURI", "a00388.html#a350afe9c4cb51c56757b49e43b3cec39", null ],
-    [ "hypermediaResource", "a00388.html#af9b4b8106f3490a5611815a01b750b6b", null ]
+    [ "appendOctet", "a00388.html#acfdbbfd7aed40b41c8c9aca994a66c14", null ],
+    [ "decode", "a00388.html#afd4859a4f02722bf3a685a838b4a555b", null ],
+    [ "getBytesInSequence", "a00388.html#a4ca72c78b1625ba976db313ae47c8284", null ],
+    [ "isContinuationOctet", "a00388.html#a35fd34a472ef86ad621bd606cb9918fc", null ],
+    [ "isUnreservedASCII", "a00388.html#a76335106e7863f31084d5e2ed66767f7", null ],
+    [ "toByte", "a00388.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8", null ],
+    [ "toByte", "a00388.html#aece1ebe6e7522d7baf8ca765166cedbb", null ],
+    [ "toBytes", "a00388.html#a529e9f1a833424046e5c1dc916f91580", null ],
+    [ "toCharacter", "a00388.html#ab2c6b324020d93bdda6aa0d5a1f9593c", null ],
+    [ "toIRI", "a00388.html#a28910c5e808e547d940cc2f604f5cc91", null ],
+    [ "toURI", "a00388.html#aa9aeab48a7535d6d446c3e7b99d71503", null ],
+    [ "hexDigits", "a00388.html#a24d7e0fcb082c35388ff0e58345c1eb4", null ],
+    [ "percentEncoding", "a00388.html#ad5c79bfeae4228c7bee82125fc969c93", null ]
 ];

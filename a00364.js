@@ -1,6 +1,6 @@
 var a00364 =
 [
-    [ "XYZASCIIWriter", "a00364.html#aa8de0ac3d739fe7639f2d6bd762abb23", null ],
+    [ "WKTWriter", "a00364.html#adcd08455d6de396d49f8deb4515b27c1", null ],
     [ "handleGeometry", "a00364.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00364.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00364.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

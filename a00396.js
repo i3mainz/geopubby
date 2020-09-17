@@ -1,10 +1,10 @@
 var a00396 =
 [
-    [ "ModelResponse", "a00396.html#af9fec765daa76a2aff37534d00fe0e31", null ],
-    [ "doResponseModel", "a00396.html#ad11c019b4ed835885005ab44cd318c25", null ],
-    [ "getWriter", "a00396.html#aa8bb17b56c84b64f02a105efae6e2c6a", null ],
-    [ "serve", "a00396.html#a09a9d9145624e027a1ad3cbe85580acc", null ],
-    [ "model", "a00396.html#a356df7b1948e33881b8730f379d137a8", null ],
-    [ "request", "a00396.html#ad632242c9a97c676da2987811ea46e83", null ],
-    [ "response", "a00396.html#a8acf5478a5097f4a2ccb8021c167dd8f", null ]
+    [ "MappedResource", "a00396.html#a1d35ac060a72548d1a38db5c9b3765b5", null ],
+    [ "getController", "a00396.html#af3836f401c27f904d7a9fbfbb542efbf", null ],
+    [ "getDataset", "a00396.html#aa790e1d5a47b90fcc632b93eeb5c5220", null ],
+    [ "getDatasetURI", "a00396.html#a392cb8d27b80bf406cc0f07cc96a37ce", null ],
+    [ "datasetConfig", "a00396.html#a0ad529538808809272da8fa670a20cf9", null ],
+    [ "datasetURI", "a00396.html#a350afe9c4cb51c56757b49e43b3cec39", null ],
+    [ "hypermediaResource", "a00396.html#af9b4b8106f3490a5611815a01b750b6b", null ]
 ];

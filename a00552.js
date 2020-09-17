@@ -1,16 +1,12 @@
 var a00552 =
 [
-    [ "createGeometry", "a00552.html#aa9b8459efc091f657b74ed0e5a245375", null ],
-    [ "createGeometry", "a00552.html#a9e565b4d0520b1fc30ab5fe2118abb5f", null ],
-    [ "createGeometryCollection", "a00552.html#a3475604f80ee636cca3d07baa336def7", null ],
-    [ "createGeometryCollection", "a00552.html#a7530a3b20b256d3096c63b5556adba6c", null ],
-    [ "crsURIToEPSG", "a00552.html#aa421448c7ce84a54522d8130fa94af64", null ],
-    [ "reproject", "a00552.html#a99ea74c86ef21b4eefcecf4ef42c9763", null ],
-    [ "reproject", "a00552.html#a5a21536a5d5fe27d07f1dba5850fa432", null ],
-    [ "reproject", "a00552.html#a6055e15f4f0347366ad62a93f647f652", null ],
-    [ "toGeometry", "a00552.html#ad1731b05de5c7e8bae69ff8eb74036f2", null ],
-    [ "toGeometry", "a00552.html#ad7e9fd4bfe07509ba9bbd5a1e09c8a71", null ],
-    [ "csFactory", "a00552.html#a3813e566ccc891c0eb59ae4e305fe1f0", null ],
-    [ "ctFactory", "a00552.html#acd5d3f9a3011d9a57d87736f722df902", null ],
-    [ "fac", "a00552.html#a06fda23017f0f5df370535d4e7514c03", null ]
+    [ "Builder", "a00552.html#a4c5b1b5b658880619647b859000724fc", null ],
+    [ "build", "a00552.html#a1e4fbf697357d25c5f3112daf2c9abee", null ],
+    [ "setAnalyzer", "a00552.html#a75be2b67c84e6582fc763413aa9c95bb", null ],
+    [ "setAnalyzers", "a00552.html#a5b046f779187f94e1d872748badcb092", null ],
+    [ "setComparator", "a00552.html#a80d4cfc5257a34d5573ee59eccfac025", null ],
+    [ "setIndex", "a00552.html#ac67f216229a795a817b7136c9b7bc188", null ],
+    [ "analyzer", "a00552.html#ab68f7dcfc065da0fd4295b518c820c87", null ],
+    [ "comparator", "a00552.html#aac9e41375776a2145cdf5025fd4dd947", null ],
+    [ "index", "a00552.html#abce4b54107ea8e7233ebeb0a9a67383a", null ]
 ];

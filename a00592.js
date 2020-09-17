@@ -1,11 +1,8 @@
 var a00592 =
 [
-    [ "I18nStringValueCache", "a00592.html#a5a7621c57d2b44b84c97d245068bb57e", null ],
-    [ "get", "a00592.html#a1a984f4cb4d41188c130813c505063fb", null ],
-    [ "get", "a00592.html#aaba80f598d3210ba4493a5854e98f5f8", null ],
-    [ "getBestMatch", "a00592.html#a890f5511eb1ae7cd4f54c9945df05a44", null ],
-    [ "getCached", "a00592.html#a083d9b50ef29b03d5520218df8bf4870", null ],
-    [ "getCached", "a00592.html#ab4ff038935184bd1080b08388983e211", null ],
-    [ "getMatchLength", "a00592.html#acbeeee3d9843febb26b8cd03ee19ea4e", null ],
-    [ "pickBestValue", "a00592.html#a5a6385c9343184c17f0aa0d7960c6684", null ]
+    [ "CachedPropertyCollection", "a00592.html#a0563a59ae97e1a1e48da5719d60d9b76", null ],
+    [ "get", "a00592.html#a1c247553b46f28035a0d8cd5173a165a", null ],
+    [ "reportAdditional", "a00592.html#a5c01b618cf13973272fd6acd3863c220", null ],
+    [ "cache", "a00592.html#a2a8889dc401cdc7eccb9ee1aa0692e86", null ],
+    [ "type", "a00592.html#a9742717107802ca6833f2f46fa05276f", null ]
 ];

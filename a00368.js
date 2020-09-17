@@ -1,8 +1,7 @@
 var a00368 =
 [
-    [ "YAMLWriter", "a00368.html#ab844d64196ffbe76b98e2f30e97dc8e8", null ],
+    [ "XLSWriter", "a00368.html#a34cd55a8521686d69db766dd69e7248a", null ],
     [ "handleGeometry", "a00368.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
-    [ "prepareGeoJSONString", "a00368.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00368.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00368.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00368.html#a986ad099513be1127d32ade506e5fa4c", null ],

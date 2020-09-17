@@ -1,6 +1,6 @@
 var a00344 =
 [
-    [ "WKBWriterr", "a00344.html#a08f0bdcef17eca36fc3abfdbfd625720", null ],
+    [ "OSMLinkWriter", "a00344.html#a7c2dcfdd11630176e626ce9a541f7d3a", null ],
     [ "handleGeometry", "a00344.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
     [ "write", "a00344.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00344.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

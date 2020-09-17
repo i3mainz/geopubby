@@ -1,6 +1,10 @@
 var a00248 =
 [
-    [ "CONF", "a00568.html", "a00568" ],
-    [ "GEO", "a00572.html", "a00572" ],
-    [ "META", "a00576.html", "a00576" ]
+    [ "AllTests", "a00608.html", "a00608" ],
+    [ "ContentTypeNegotiator", "a00412.html", "a00412" ],
+    [ "ContentTypeNegotiatorTest", "a00612.html", "a00612" ],
+    [ "MediaRangeSpec", "a00428.html", "a00428" ],
+    [ "MediaRangeSpecTest", "a00616.html", "a00616" ],
+    [ "PubbyNegotiator", "a00432.html", "a00432" ],
+    [ "PubbyNegotiatorTest", "a00620.html", "a00620" ]
 ];

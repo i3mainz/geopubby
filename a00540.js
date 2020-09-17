@@ -1,17 +1,19 @@
 var a00540 =
 [
-    [ "Builder", "a00544.html", "a00544" ],
-    [ "AutocompleteEngine", "a00540.html#ab29978a4e02531946ff90e23b2e58b03", null ],
-    [ "add", "a00540.html#a2e4d243958874ed92e4705efd514ec8a", null ],
-    [ "addAll", "a00540.html#aedc4b037549f29df48c94d2432b56f21", null ],
-    [ "getAll", "a00540.html#aba85b697482a87be7652f4cbbfe3ede1", null ],
-    [ "remove", "a00540.html#af924252f2d0e180388cdd6136293a91a", null ],
-    [ "removeAll", "a00540.html#a9be7b1de1b31af20288221beb6fc5140", null ],
-    [ "search", "a00540.html#a9b69034ee356599aba4cb389f97ad7c7", null ],
-    [ "search", "a00540.html#afd22691123368089b69314d5a08a7a1f", null ],
-    [ "analyzer", "a00540.html#adf32c4c95815598002112d2c04c748fc", null ],
-    [ "comparator", "a00540.html#a5fc8d2f44284ae06708e6168ac53a831", null ],
-    [ "index", "a00540.html#a2dab6da7542b85c04c4a01b1ffb1abce", null ],
-    [ "read", "a00540.html#aefb6a09436e031db6f196ce971ee825d", null ],
-    [ "write", "a00540.html#afdd303d9d2a2a62c4038d77278a09cf3", null ]
+    [ "RewrittenDataSource", "a00540.html#afaef43435ce350d33ba905badb9ecbb6", null ],
+    [ "RewrittenDataSource", "a00540.html#a43d8d4dcc055ace077d09f31d97caff5", null ],
+    [ "addSameAsStatement", "a00540.html#a8a3fcd0431a11b0718d57c494e080b31", null ],
+    [ "canDescribe", "a00540.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "describeResource", "a00540.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "describeResource", "a00540.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
+    [ "getHighIndegreeProperties", "a00540.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00540.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00540.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00540.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
+    [ "isOriginalIRI", "a00540.html#a73d5e7b94f88ddccb34308d690bb2702", null ],
+    [ "listPropertyValues", "a00540.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "addSameAs", "a00540.html#ad85ff5ee38b39ceafe5fe78998f85869", null ],
+    [ "MAX_INDEX_SIZE", "a00540.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
+    [ "original", "a00540.html#a1223cdf19f3440a10d8bde8a96e68504", null ],
+    [ "rewriter", "a00540.html#a104e75039d657862cd3cf0541b5ca61f", null ]
 ];

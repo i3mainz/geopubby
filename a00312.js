@@ -1,8 +1,8 @@
 var a00312 =
 [
-    [ "LatLonTextWriter", "a00312.html#a407bc12bfc5133bb23a9764e12311951", null ],
-    [ "convertDecimalToLatLonText", "a00312.html#a4de262c8cc5abdbadbdd425520b98ef1", null ],
+    [ "GeoJSONWriterr", "a00312.html#a6533575ecdbfa041b3888f9535c27d94", null ],
     [ "handleGeometry", "a00312.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "prepareGeoJSONString", "a00312.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00312.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "epsg", "a00312.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00312.html#a986ad099513be1127d32ade506e5fa4c", null ],
