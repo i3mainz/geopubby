@@ -1,10 +1,10 @@
 var a00270 =
 [
-    [ "DataSource", "a00552.html", "a00552" ],
-    [ "FilteredDataSource", "a00556.html", "a00556" ],
-    [ "IndexDataSource", "a00560.html", "a00560" ],
-    [ "MergeDataSource", "a00564.html", "a00564" ],
-    [ "ModelDataSource", "a00568.html", "a00568" ],
-    [ "RemoteSPARQLDataSource", "a00572.html", "a00572" ],
-    [ "RewrittenDataSource", "a00576.html", "a00576" ]
+    [ "coverage", "a00271.html", "a00271" ],
+    [ "rdf", "a00272.html", "a00272" ],
+    [ "vector", "a00273.html", "a00273" ],
+    [ "AbstractGeoJSONWriter", "a00294.html", "a00294" ],
+    [ "GeoModelWriter", "a00314.html", "a00314" ],
+    [ "JSONPWriter", "a00318.html", "a00318" ],
+    [ "ModelWriter", "a00322.html", "a00322" ]
 ];
