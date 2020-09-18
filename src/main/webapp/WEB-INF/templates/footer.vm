@@ -52,6 +52,7 @@ function download(link){
 #if ($rdf_link)
 <b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">		
       <option value="csv">Comma Separated Values (CSV)</option>
+      <option value="exijson">EXI4JSON</option>
       <option value="geojson">(Geo)JSON</option>
       <option value="json">JSON-LD</option>
       <option value="jsonp">JSONP</option>

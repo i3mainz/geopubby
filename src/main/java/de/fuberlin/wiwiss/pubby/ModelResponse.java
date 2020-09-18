@@ -16,7 +16,9 @@ import de.fuberlin.wiwiss.pubby.exporter.coverage.X3DWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.CSVWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.EXIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GRASSVectorASCIIWriter;
@@ -130,6 +132,9 @@ public class ModelResponse {
 		if ("text/grass".equals(mediaType)) {
 			return new GRASSVectorASCIIWriter(crs);
 		}
+		if ("application/json+exi".equals(mediaType)) {
+			return new EXIJSONWriter(crs);
+		}
 		if("text/csv".equals(mediaType)){
 			return new CSVWriter(crs);
 		}
@@ -167,7 +172,7 @@ public class ModelResponse {
 			return new LDWriter(crs,"TriG");
 		}
 		if ("application/rdf+xml+exi".equals(mediaType)) {
-			return new LDWriter(crs,"TriG");
+			return new RDFEXIWriter();
 		}
 		if ("text/vnd.yaml".equals(mediaType)) {
 			return new YAMLWriter(crs);

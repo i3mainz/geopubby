@@ -43,6 +43,7 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/trix;q=0.5");
 		pubbyNegotiator.addVariant("text/grass;q=0.95");
 		pubbyNegotiator.addVariant("application/rdf+xml+exi;q=0.95");
+		pubbyNegotiator.addVariant("application/json+exi;q=0.95");
 		pubbyNegotiator.addVariant("text/xyz;q=0.95");
 		pubbyNegotiator.addVariant("application/x-trig;q=0.95")
 				.addAliasMediaType("application/trig;q=0.8")
@@ -88,6 +89,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("text/xyz;q=0.95");
 		dataNegotiator.addVariant("text/grass;q=0.95");
 		dataNegotiator.addVariant("application/rdf+xml+exi;q=0.95");
+		dataNegotiator.addVariant("application/json+exi;q=0.95");
 		dataNegotiator.addVariant("model/x3d+xml;q=0.95");
 		dataNegotiator.addVariant("application/prs.coverage+json;q=0.95");
 		dataNegotiator.addVariant("text/rdf+n3;charset=utf-8")
