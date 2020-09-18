@@ -16,9 +16,12 @@ import de.fuberlin.wiwiss.pubby.exporter.coverage.X3DWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.CSVWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.EXIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GPXWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.GRASSVectorASCIIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GoogleMapsLinkWriter;
@@ -126,6 +129,12 @@ public class ModelResponse {
 		if ("text/latlon".equals(mediaType)) {
 			return new LatLonTextWriter(crs);
 		}
+		if ("text/grass".equals(mediaType)) {
+			return new GRASSVectorASCIIWriter(crs);
+		}
+		if ("application/json+exi".equals(mediaType)) {
+			return new EXIJSONWriter(crs);
+		}
 		if("text/csv".equals(mediaType)){
 			return new CSVWriter(crs);
 		}
@@ -161,6 +170,9 @@ public class ModelResponse {
 		}
 		if ("application/trig".equals(mediaType)) {
 			return new LDWriter(crs,"TriG");
+		}
+		if ("application/rdf+xml+exi".equals(mediaType)) {
+			return new RDFEXIWriter();
 		}
 		if ("text/vnd.yaml".equals(mediaType)) {
 			return new YAMLWriter(crs);
