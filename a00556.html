@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: Reloader Class Reference</title>
+<title>GeoPubby: FilteredDataSource Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,89 +62,358 @@ $(document).ready(function(){initNavTree('a00556.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pac-attribs">Package Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="a00553.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Reloader Class Reference</div>  </div>
+<div class="title">FilteredDataSource Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="a00552.html">DataSource</a> that wraps another data source in such a way that the resulting data source is only capable of describing a subset of the IRI space.  
+ <a href="a00556.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for Reloader:</div>
+Inheritance diagram for FilteredDataSource:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00555.png" border="0" usemap="#Reloader_inherit__map" alt="Inheritance graph"/></div>
-<map name="Reloader_inherit__map" id="Reloader_inherit__map">
-<area shape="rect" id="node2" href="a01336.html" title="Runnable" alt="" coords="5,5,83,32"/>
+<div class="center"><img src="a00555.png" border="0" usemap="#FilteredDataSource_inherit__map" alt="Inheritance graph"/></div>
+<map name="FilteredDataSource_inherit__map" id="FilteredDataSource_inherit__map">
+<area shape="rect" id="node2" href="a00552.html" title="A source of RDF data intended for publication through the server. " alt="" coords="27,5,118,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for Reloader:</div>
+Collaboration diagram for FilteredDataSource:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00554.png" border="0" usemap="#Reloader_coll__map" alt="Collaboration graph"/></div>
-<map name="Reloader_coll__map" id="Reloader_coll__map">
-<area shape="rect" id="node2" href="a01336.html" title="Runnable" alt="" coords="2045,5,2123,32"/>
-<area shape="rect" id="node4" href="a00256.html" title="The server&#39;s configuration. " alt="" coords="2035,329,2133,356"/>
-<area shape="rect" id="node9" href="a00588.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1649,363,1768,389"/>
-<area shape="rect" id="node5" href="a00456.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1436,184,1556,211"/>
-<area shape="rect" id="node10" href="a00592.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,226,1400,267"/>
-<area shape="rect" id="node11" href="a00604.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,365,1389,406"/>
-<area shape="rect" id="node12" href="a00596.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,379,1016,421"/>
-<area shape="rect" id="node13" href="a00596.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,423,629,449"/>
-<area shape="rect" id="node19" href="a00596.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,447,1016,489"/>
-<area shape="rect" id="node18" href="a00600.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,451,1383,493"/>
-<area shape="rect" id="node20" href="a00516.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,529,1337,556"/>
+<div class="center"><img src="a00554.png" border="0" usemap="#FilteredDataSource_coll__map" alt="Collaboration graph"/></div>
+<map name="FilteredDataSource_coll__map" id="FilteredDataSource_coll__map">
+<area shape="rect" id="node2" href="a00552.html" title="A source of RDF data intended for publication through the server. " alt="" coords="27,95,118,121"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa76b66b3cf4d762c3dc96209e48eaa06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader</a> (<a class="el" href="a00256.html">Configuration</a> <a class="el" href="a00556.html#a0910717551963df697d192900a7f4f59">config</a>, String <a class="el" href="a00556.html#af44443f87d7b66dff07b3d884445dca1">error</a>, String <a class="el" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>, String realpath)</td></tr>
-<tr class="separator:aa76b66b3cf4d762c3dc96209e48eaa06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a43e6d814de94978c515cb084873b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a13a43e6d814de94978c515cb084873b1">run</a> ()</td></tr>
-<tr class="separator:a13a43e6d814de94978c515cb084873b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a14265e1444808215ea4d2a7c99b199"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a3a14265e1444808215ea4d2a7c99b199">FilteredDataSource</a> (<a class="el" href="a00552.html">DataSource</a> <a class="el" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>)</td></tr>
+<tr class="separator:a3a14265e1444808215ea4d2a7c99b199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76346f12873afab70aafac6a443c5f04"><td class="memItemLeft" align="right" valign="top">abstract boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">canDescribe</a> (String absoluteIRI)</td></tr>
+<tr class="memdesc:a76346f12873afab70aafac6a443c5f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a given IRI is considered to be described in the wrapped data source or not.  <a href="#a76346f12873afab70aafac6a443c5f04">More...</a><br /></td></tr>
+<tr class="separator:a76346f12873afab70aafac6a443c5f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ba0769e10f0ece3e983e61e031dbbc"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource</a> (String iri)</td></tr>
+<tr class="memdesc:a88ba0769e10f0ece3e983e61e031dbbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#a88ba0769e10f0ece3e983e61e031dbbc">More...</a><br /></td></tr>
+<tr class="separator:a88ba0769e10f0ece3e983e61e031dbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd50c79b6d45d0fed770638879c7359e"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a> (String resourceIRI)</td></tr>
+<tr class="memdesc:afd50c79b6d45d0fed770638879c7359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00556.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs.  <a href="#afd50c79b6d45d0fed770638879c7359e">More...</a><br /></td></tr>
+<tr class="separator:afd50c79b6d45d0fed770638879c7359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe9e94afdedf6be6979247520906444"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#acbe9e94afdedf6be6979247520906444">getHighOutdegreeProperties</a> (String resourceIRI)</td></tr>
+<tr class="memdesc:acbe9e94afdedf6be6979247520906444"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00556.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs.  <a href="#acbe9e94afdedf6be6979247520906444">More...</a><br /></td></tr>
+<tr class="separator:acbe9e94afdedf6be6979247520906444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a24260bc730afdd0c68fa8f7f5e0b600f">listPropertyValues</a> (String resourceIRI, Property property, boolean isInverse)</td></tr>
+<tr class="memdesc:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source.  <a href="#a24260bc730afdd0c68fa8f7f5e0b600f">More...</a><br /></td></tr>
+<tr class="separator:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b2ac78c4b45ecc590342abe84c24af"><td class="memItemLeft" align="right" valign="top">List&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a> ()</td></tr>
+<tr class="memdesc:af0b2ac78c4b45ecc590342abe84c24af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of IRI resources described in this data source.  <a href="#af0b2ac78c4b45ecc590342abe84c24af">More...</a><br /></td></tr>
+<tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbc188988204c9931d77a3f36128e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00584.html">AutocompleteEngine</a>&lt; <a class="el" href="a00612.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a2dbc188988204c9931d77a3f36128e50">getLabelIndex</a> ()</td></tr>
+<tr class="separator:a2dbc188988204c9931d77a3f36128e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00552.html#ad4ae7f7efd26ae80f56a0223be0324c8">describeResource</a> (String absoluteIRI, String language)</td></tr>
+<tr class="memdesc:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ad4ae7f7efd26ae80f56a0223be0324c8">More...</a><br /></td></tr>
+<tr class="separator:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
-Package Attributes</h2></td></tr>
-<tr class="memitem:a0910717551963df697d192900a7f4f59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00256.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a0910717551963df697d192900a7f4f59">config</a></td></tr>
-<tr class="separator:a0910717551963df697d192900a7f4f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c8bcf282d889b7993d6c9d7a3c230d0"><td class="memItemLeft" align="right" valign="top">ServletContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a2c8bcf282d889b7993d6c9d7a3c230d0">context</a></td></tr>
-<tr class="separator:a2c8bcf282d889b7993d6c9d7a3c230d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b641c81adb45d9bc216ffb0fe84c25a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a></td></tr>
-<tr class="separator:a7b641c81adb45d9bc216ffb0fe84c25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bc2df2fea9860ab6f4782d2e1575ed0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a4bc2df2fea9860ab6f4782d2e1575ed0">realPath</a></td></tr>
-<tr class="separator:a4bc2df2fea9860ab6f4782d2e1575ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44443f87d7b66dff07b3d884445dca1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#af44443f87d7b66dff07b3d884445dca1">error</a></td></tr>
-<tr class="separator:af44443f87d7b66dff07b3d884445dca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00552.html#a5d100ac468e8e0551f96450f5bbba1b2">MAX_INDEX_SIZE</a> = 1000000</td></tr>
+<tr class="separator:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a47d718ee92a3e8f0141906f457e76e5e"><td class="memItemLeft" align="right" valign="top">final <a class="el" href="a00552.html">DataSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a></td></tr>
+<tr class="separator:a47d718ee92a3e8f0141906f457e76e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa76b66b3cf4d762c3dc96209e48eaa06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa76b66b3cf4d762c3dc96209e48eaa06">&#9670;&nbsp;</a></span>Reloader()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="a00552.html">DataSource</a> that wraps another data source in such a way that the resulting data source is only capable of describing a subset of the IRI space. </p>
+<p>This is usually done for performance, to prevent the underlying data source from attempting to describe resources that we know it doesn't have anything of value about. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3a14265e1444808215ea4d2a7c99b199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a14265e1444808215ea4d2a7c99b199">&#9670;&nbsp;</a></span>FilteredDataSource()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00556.html">Reloader</a> </td>
+          <td class="memname"><a class="el" href="a00556.html">FilteredDataSource</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00256.html">Configuration</a>&#160;</td>
-          <td class="paramname"><em>config</em>, </td>
+          <td class="paramtype"><a class="el" href="a00552.html">DataSource</a>&#160;</td>
+          <td class="paramname"><em>wrapped</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource.canDescribe()</a>, and <a class="el" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">FilteredDataSource.wrapped</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                      {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                this.<a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a> = <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a76346f12873afab70aafac6a443c5f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76346f12873afab70aafac6a443c5f04">&#9670;&nbsp;</a></span>canDescribe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract boolean canDescribe </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether a given IRI is considered to be described in the wrapped data source or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>Any syntactically valid IRI </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if that IRI is described in the data source </dd></dl>
+
+<p>Implements <a class="el" href="a00552.html#a1681b51a4d9b94752fc6668c82729236">DataSource</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00556.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource.describeResource()</a>, <a class="el" href="a00556.html#a3a14265e1444808215ea4d2a7c99b199">FilteredDataSource.FilteredDataSource()</a>, <a class="el" href="a00556.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00556.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00556.html#af0b2ac78c4b45ecc590342abe84c24af">FilteredDataSource.getIndex()</a>, and <a class="el" href="a00556.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource.listPropertyValues()</a>.</p>
+
+</div>
+</div>
+<a id="a88ba0769e10f0ece3e983e61e031dbbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ba0769e10f0ece3e983e61e031dbbc">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implements <a class="el" href="a00552.html#ab085365476c05945218492b31028610a">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource.canDescribe()</a>, <a class="el" href="a00552.html#ab085365476c05945218492b31028610a">DataSource.describeResource()</a>, and <a class="el" href="a00444.html#af6ba6db7e4d4a66e0970adb9b4f40bfd">ModelUtil.EMPTY_MODEL</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                  {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00556.html#a76346f12873afab70aafac6a443c5f04">canDescribe</a>(iri)) <span class="keywordflow">return</span> ModelUtil.EMPTY_MODEL;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00552.html#ab085365476c05945218492b31028610a">describeResource</a>(iri);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div><div class="ttc" id="a00552_html_ab085365476c05945218492b31028610a"><div class="ttname"><a href="a00552.html#ab085365476c05945218492b31028610a">de.fuberlin.wiwiss.pubby.sources.DataSource.describeResource</a></div><div class="ttdeci">Model describeResource(String absoluteIRI)</div><div class="ttdoc">Returns a subgraph of the data source describing one resource. </div></div>
+<div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+<div class="ttc" id="a00556_html_a76346f12873afab70aafac6a443c5f04"><div class="ttname"><a href="a00556.html#a76346f12873afab70aafac6a443c5f04">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.canDescribe</a></div><div class="ttdeci">abstract boolean canDescribe(String absoluteIRI)</div><div class="ttdoc">Determines whether a given IRI is considered to be described in the wrapped data source or not...</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad4ae7f7efd26ae80f56a0223be0324c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ae7f7efd26ae80f56a0223be0324c8">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model describeResource </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>absoluteIRI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>error</em>, </td>
+          <td class="paramname"><em>language</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a subgraph of the data source describing one resource. </p>
+<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
+
+<p>Implemented in <a class="el" href="a00572.html#ad4ae7f7efd26ae80f56a0223be0324c8">RemoteSPARQLDataSource</a>, <a class="el" href="a00576.html#ad4ae7f7efd26ae80f56a0223be0324c8">RewrittenDataSource</a>, <a class="el" href="a00568.html#ad4ae7f7efd26ae80f56a0223be0324c8">ModelDataSource</a>, <a class="el" href="a00564.html#aee8a51772d6673be0a741b47678df946">MergeDataSource</a>, and <a class="el" href="a00560.html#aee8a51772d6673be0a741b47678df946">IndexDataSource</a>.</p>
+
+</div>
+</div>
+<a id="afd50c79b6d45d0fed770638879c7359e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd50c79b6d45d0fed770638879c7359e">&#9670;&nbsp;</a></span>getHighIndegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighIndegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="a00556.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-indegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implements <a class="el" href="a00552.html#afd50c79b6d45d0fed770638879c7359e">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource.canDescribe()</a>, and <a class="el" href="a00552.html#afd50c79b6d45d0fed770638879c7359e">DataSource.getHighIndegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                                                    {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00556.html#a76346f12873afab70aafac6a443c5f04">canDescribe</a>(resourceIRI)) <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00552.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a>(resourceIRI);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div><div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+<div class="ttc" id="a00552_html_afd50c79b6d45d0fed770638879c7359e"><div class="ttname"><a href="a00552.html#afd50c79b6d45d0fed770638879c7359e">de.fuberlin.wiwiss.pubby.sources.DataSource.getHighIndegreeProperties</a></div><div class="ttdeci">Map&lt; Property, Integer &gt; getHighIndegreeProperties(String resourceIRI)</div><div class="ttdoc">If describeResource(String) omits properties of high indegree, then those properties must be returned...</div></div>
+<div class="ttc" id="a00556_html_a76346f12873afab70aafac6a443c5f04"><div class="ttname"><a href="a00556.html#a76346f12873afab70aafac6a443c5f04">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.canDescribe</a></div><div class="ttdeci">abstract boolean canDescribe(String absoluteIRI)</div><div class="ttdoc">Determines whether a given IRI is considered to be described in the wrapped data source or not...</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acbe9e94afdedf6be6979247520906444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbe9e94afdedf6be6979247520906444">&#9670;&nbsp;</a></span>getHighOutdegreeProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Map&lt;Property, Integer&gt; getHighOutdegreeProperties </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="a00556.html#a88ba0769e10f0ece3e983e61e031dbbc">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs. </p>
+<p>If high-outdegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
+
+<p>Implements <a class="el" href="a00552.html#acbe9e94afdedf6be6979247520906444">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource.canDescribe()</a>, and <a class="el" href="a00552.html#acbe9e94afdedf6be6979247520906444">DataSource.getHighOutdegreeProperties()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                                     {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00556.html#a76346f12873afab70aafac6a443c5f04">canDescribe</a>(resourceIRI)) <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00552.html#acbe9e94afdedf6be6979247520906444">getHighOutdegreeProperties</a>(resourceIRI);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div><div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+<div class="ttc" id="a00556_html_a76346f12873afab70aafac6a443c5f04"><div class="ttname"><a href="a00556.html#a76346f12873afab70aafac6a443c5f04">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.canDescribe</a></div><div class="ttdeci">abstract boolean canDescribe(String absoluteIRI)</div><div class="ttdoc">Determines whether a given IRI is considered to be described in the wrapped data source or not...</div></div>
+<div class="ttc" id="a00552_html_acbe9e94afdedf6be6979247520906444"><div class="ttname"><a href="a00552.html#acbe9e94afdedf6be6979247520906444">de.fuberlin.wiwiss.pubby.sources.DataSource.getHighOutdegreeProperties</a></div><div class="ttdeci">Map&lt; Property, Integer &gt; getHighOutdegreeProperties(String resourceIRI)</div><div class="ttdoc">If describeResource(String) omits properties of high outdegree, then those properties must be returne...</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af0b2ac78c4b45ecc590342abe84c24af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b2ac78c4b45ecc590342abe84c24af">&#9670;&nbsp;</a></span>getIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Resource&gt; getIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A list of IRI resources described in this data source. </p>
+<p>Ordering is implementation-defined. Usually a reasonable limit should be applied to the number of resources returned. </p>
+
+<p>Implements <a class="el" href="a00552.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource.canDescribe()</a>, and <a class="el" href="a00552.html#af0b2ac78c4b45ecc590342abe84c24af">DataSource.getIndex()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                         {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                List&lt;Resource&gt; result = <span class="keyword">new</span> ArrayList&lt;Resource&gt;();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">for</span> (Resource r: <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00552.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a>()) {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="a00556.html#a76346f12873afab70aafac6a443c5f04">canDescribe</a>(r.getURI())) {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                result.add(r);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div><div class="ttc" id="a00552_html_af0b2ac78c4b45ecc590342abe84c24af"><div class="ttname"><a href="a00552.html#af0b2ac78c4b45ecc590342abe84c24af">de.fuberlin.wiwiss.pubby.sources.DataSource.getIndex</a></div><div class="ttdeci">List&lt; Resource &gt; getIndex()</div><div class="ttdoc">A list of IRI resources described in this data source. </div></div>
+<div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+<div class="ttc" id="a00556_html_a76346f12873afab70aafac6a443c5f04"><div class="ttname"><a href="a00556.html#a76346f12873afab70aafac6a443c5f04">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.canDescribe</a></div><div class="ttdeci">abstract boolean canDescribe(String absoluteIRI)</div><div class="ttdoc">Determines whether a given IRI is considered to be described in the wrapped data source or not...</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2dbc188988204c9931d77a3f36128e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbc188988204c9931d77a3f36128e50">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00584.html">AutocompleteEngine</a>&lt;<a class="el" href="a00612.html">SearchRecord</a>&gt; getLabelIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="a00552.html#ae8f6bc3de3dd60e86da9296226cecd8c">DataSource</a>.</p>
+
+<p class="reference">References <a class="el" href="a00552.html#ae8f6bc3de3dd60e86da9296226cecd8c">DataSource.getLabelIndex()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                                {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00552.html#ae8f6bc3de3dd60e86da9296226cecd8c">getLabelIndex</a>();</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div><div class="ttc" id="a00552_html_ae8f6bc3de3dd60e86da9296226cecd8c"><div class="ttname"><a href="a00552.html#ae8f6bc3de3dd60e86da9296226cecd8c">de.fuberlin.wiwiss.pubby.sources.DataSource.getLabelIndex</a></div><div class="ttdeci">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine&lt; SearchRecord &gt; getLabelIndex()</div></div>
+<div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a24260bc730afdd0c68fa8f7f5e0b600f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24260bc730afdd0c68fa8f7f5e0b600f">&#9670;&nbsp;</a></span>listPropertyValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model listPropertyValues </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>resourceIRI</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>configfile</em>, </td>
+          <td class="paramtype">Property&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>realpath</em>&#160;</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isInverse</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -154,41 +423,29 @@ Package Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00556.html#a0910717551963df697d192900a7f4f59">Reloader.config</a>, <a class="el" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">Reloader.configfile</a>, and <a class="el" href="a00556.html#af44443f87d7b66dff07b3d884445dca1">Reloader.error</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                             {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                this.<a class="code" href="a00556.html#a0910717551963df697d192900a7f4f59">config</a>=<a class="code" href="a00556.html#a0910717551963df697d192900a7f4f59">config</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                this.<a class="code" href="a00556.html#af44443f87d7b66dff07b3d884445dca1">error</a>=<a class="code" href="a00556.html#af44443f87d7b66dff07b3d884445dca1">error</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                this.<a class="code" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>=<a class="code" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                this.<a class="code" href="a00556.html#a4bc2df2fea9860ab6f4782d2e1575ed0">realPath</a>=realpath;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="a00556_html_a0910717551963df697d192900a7f4f59"><div class="ttname"><a href="a00556.html#a0910717551963df697d192900a7f4f59">de.fuberlin.wiwiss.pubby.util.Reloader.config</a></div><div class="ttdeci">Configuration config</div><div class="ttdef"><b>Definition:</b> Reloader.java:18</div></div>
-<div class="ttc" id="a00556_html_af44443f87d7b66dff07b3d884445dca1"><div class="ttname"><a href="a00556.html#af44443f87d7b66dff07b3d884445dca1">de.fuberlin.wiwiss.pubby.util.Reloader.error</a></div><div class="ttdeci">String error</div><div class="ttdef"><b>Definition:</b> Reloader.java:26</div></div>
-<div class="ttc" id="a00556_html_a4bc2df2fea9860ab6f4782d2e1575ed0"><div class="ttname"><a href="a00556.html#a4bc2df2fea9860ab6f4782d2e1575ed0">de.fuberlin.wiwiss.pubby.util.Reloader.realPath</a></div><div class="ttdeci">String realPath</div><div class="ttdef"><b>Definition:</b> Reloader.java:24</div></div>
-<div class="ttc" id="a00556_html_a7b641c81adb45d9bc216ffb0fe84c25a"><div class="ttname"><a href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">de.fuberlin.wiwiss.pubby.util.Reloader.configfile</a></div><div class="ttdeci">String configfile</div><div class="ttdef"><b>Definition:</b> Reloader.java:22</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a13a43e6d814de94978c515cb084873b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13a43e6d814de94978c515cb084873b1">&#9670;&nbsp;</a></span>run()</h2>
+<p>Returns a subgraph of the data source. </p>
+<p>It lists the values of a particular property of a particular resource. Where values are blank nodes, a complete description of these anonymous resources must be included. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resourceIRI</td><td>The resource to be examined </td></tr>
+    <tr><td class="paramname">property</td><td>The property we're interested in </td></tr>
+    <tr><td class="paramname">isInverse</td><td>Are we interested in outgoing arcs (<code>false</code>) or incoming (<code>true</code>)? </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source. </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void run </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Implements <a class="el" href="a00552.html#a24260bc730afdd0c68fa8f7f5e0b600f">DataSource</a>.</p>
 
-<p class="reference">References <a class="el" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">Reloader.configfile</a>, and <a class="el" href="a00256.html#a3b5db867479f0dffeee2f31b99272a2d">Configuration.create()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                          {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00556.html#a0910717551963df697d192900a7f4f59">config</a>==null) {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                String configFileName = this.<a class="code" href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">configfile</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                <span class="keywordflow">if</span> (configFileName == null) {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(<span class="stringliteral">&quot;Missing context parameter \&quot;config-file\&quot; in /WEB-INF/web.xml&quot;</span>);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                File configFile = <span class="keyword">new</span> File(configFileName);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                <span class="keywordflow">if</span> (!configFile.isAbsolute()) {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                        configFile = <span class="keyword">new</span> File(this.<a class="code" href="a00556.html#a4bc2df2fea9860ab6f4782d2e1575ed0">realPath</a> + <span class="stringliteral">&quot;/WEB-INF/&quot;</span> + configFileName);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                }</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                String url = configFile.getAbsoluteFile().toURI().toString();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        Model m = FileManager.get().loadModel(url);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        Configuration conf = Configuration.create(m);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        this.<a class="code" href="a00556.html#a0910717551963df697d192900a7f4f59">config</a>=conf;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                } <span class="keywordflow">catch</span> (JenaException ex) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                    <span class="keywordflow">if</span>(ex.getCause()!=null){</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                                        <span class="stringliteral">&quot;Error parsing configuration file &lt;&quot;</span> + url + <span class="stringliteral">&quot;&gt;: &quot;</span> + </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                        ex.getMessage()+<span class="stringliteral">&quot;\nCause: &quot;</span>+ex.getCause().getMessage());</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                    }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                        StringWriter sw = <span class="keyword">new</span> StringWriter();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                            PrintWriter pw = <span class="keyword">new</span> PrintWriter(sw);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                            ex.printStackTrace(pw);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        <span class="keywordflow">throw</span> <span class="keyword">new</span> ConfigurationException(</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                        <span class="stringliteral">&quot;Error parsing configuration file &lt;&quot;</span> + url + <span class="stringliteral">&quot;&gt;: &quot;</span> + </div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                        ex.getMessage()+<span class="stringliteral">&quot;\n&quot;</span>+sw.toString());                            </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                    }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                }</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        } <span class="keywordflow">catch</span> (ConfigurationException ex) {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                <a class="code" href="a00556.html#af44443f87d7b66dff07b3d884445dca1">error</a>=ex.getMessage();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }               </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="a00556_html_a0910717551963df697d192900a7f4f59"><div class="ttname"><a href="a00556.html#a0910717551963df697d192900a7f4f59">de.fuberlin.wiwiss.pubby.util.Reloader.config</a></div><div class="ttdeci">Configuration config</div><div class="ttdef"><b>Definition:</b> Reloader.java:18</div></div>
-<div class="ttc" id="a00556_html_af44443f87d7b66dff07b3d884445dca1"><div class="ttname"><a href="a00556.html#af44443f87d7b66dff07b3d884445dca1">de.fuberlin.wiwiss.pubby.util.Reloader.error</a></div><div class="ttdeci">String error</div><div class="ttdef"><b>Definition:</b> Reloader.java:26</div></div>
-<div class="ttc" id="a00556_html_a4bc2df2fea9860ab6f4782d2e1575ed0"><div class="ttname"><a href="a00556.html#a4bc2df2fea9860ab6f4782d2e1575ed0">de.fuberlin.wiwiss.pubby.util.Reloader.realPath</a></div><div class="ttdeci">String realPath</div><div class="ttdef"><b>Definition:</b> Reloader.java:24</div></div>
-<div class="ttc" id="a00556_html_a7b641c81adb45d9bc216ffb0fe84c25a"><div class="ttname"><a href="a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a">de.fuberlin.wiwiss.pubby.util.Reloader.configfile</a></div><div class="ttdeci">String configfile</div><div class="ttdef"><b>Definition:</b> Reloader.java:22</div></div>
+<p class="reference">References <a class="el" href="a00556.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource.canDescribe()</a>, <a class="el" href="a00444.html#af6ba6db7e4d4a66e0970adb9b4f40bfd">ModelUtil.EMPTY_MODEL</a>, and <a class="el" href="a00552.html#a24260bc730afdd0c68fa8f7f5e0b600f">DataSource.listPropertyValues()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                           {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="a00556.html#a76346f12873afab70aafac6a443c5f04">canDescribe</a>(resourceIRI)) <span class="keywordflow">return</span> ModelUtil.EMPTY_MODEL;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">wrapped</a>.<a class="code" href="a00552.html#a24260bc730afdd0c68fa8f7f5e0b600f">listPropertyValues</a>(resourceIRI, property, isInverse);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div><div class="ttc" id="a00552_html_a24260bc730afdd0c68fa8f7f5e0b600f"><div class="ttname"><a href="a00552.html#a24260bc730afdd0c68fa8f7f5e0b600f">de.fuberlin.wiwiss.pubby.sources.DataSource.listPropertyValues</a></div><div class="ttdeci">Model listPropertyValues(String resourceIRI, Property property, boolean isInverse)</div><div class="ttdoc">Returns a subgraph of the data source. </div></div>
+<div class="ttc" id="a00556_html_a47d718ee92a3e8f0141906f457e76e5e"><div class="ttname"><a href="a00556.html#a47d718ee92a3e8f0141906f457e76e5e">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.wrapped</a></div><div class="ttdeci">final DataSource wrapped</div><div class="ttdef"><b>Definition:</b> FilteredDataSource.java:23</div></div>
+<div class="ttc" id="a00556_html_a76346f12873afab70aafac6a443c5f04"><div class="ttname"><a href="a00556.html#a76346f12873afab70aafac6a443c5f04">de.fuberlin.wiwiss.pubby.sources.FilteredDataSource.canDescribe</a></div><div class="ttdeci">abstract boolean canDescribe(String absoluteIRI)</div><div class="ttdoc">Determines whether a given IRI is considered to be described in the wrapped data source or not...</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0910717551963df697d192900a7f4f59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0910717551963df697d192900a7f4f59">&#9670;&nbsp;</a></span>config</h2>
+<a id="a5d100ac468e8e0551f96450f5bbba1b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d100ac468e8e0551f96450f5bbba1b2">&#9670;&nbsp;</a></span>MAX_INDEX_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,22 +454,22 @@ Package Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00256.html">Configuration</a> config</td>
+          <td class="memname">final int MAX_INDEX_SIZE = 1000000</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00556.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader.Reloader()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00568.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00572.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, <a class="el" href="a00568.html#ae8f6bc3de3dd60e86da9296226cecd8c">ModelDataSource.getLabelIndex()</a>, and <a class="el" href="a00572.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
 
 </div>
 </div>
-<a id="a7b641c81adb45d9bc216ffb0fe84c25a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b641c81adb45d9bc216ffb0fe84c25a">&#9670;&nbsp;</a></span>configfile</h2>
+<a id="a47d718ee92a3e8f0141906f457e76e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d718ee92a3e8f0141906f457e76e5e">&#9670;&nbsp;</a></span>wrapped</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,85 +478,17 @@ Package Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String configfile</td>
+          <td class="memname">final <a class="el" href="a00552.html">DataSource</a> wrapped</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00556.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader.Reloader()</a>, and <a class="el" href="a00556.html#a13a43e6d814de94978c515cb084873b1">Reloader.run()</a>.</p>
-
-</div>
-</div>
-<a id="a2c8bcf282d889b7993d6c9d7a3c230d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c8bcf282d889b7993d6c9d7a3c230d0">&#9670;&nbsp;</a></span>context</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ServletContext context</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af44443f87d7b66dff07b3d884445dca1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af44443f87d7b66dff07b3d884445dca1">&#9670;&nbsp;</a></span>error</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String error</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00556.html#aa76b66b3cf4d762c3dc96209e48eaa06">Reloader.Reloader()</a>.</p>
-
-</div>
-</div>
-<a id="a4bc2df2fea9860ab6f4782d2e1575ed0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4bc2df2fea9860ab6f4782d2e1575ed0">&#9670;&nbsp;</a></span>realPath</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">String realPath</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="reference">Referenced by <a class="el" href="a00556.html#a3a14265e1444808215ea4d2a7c99b199">FilteredDataSource.FilteredDataSource()</a>.</p>
 
 </div>
 </div>
@@ -309,7 +498,7 @@ Package Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00243.html">de</a></li><li class="navelem"><a class="el" href="a00244.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00245.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00242.html">pubby</a></li><li class="navelem"><a class="el" href="a00251.html">util</a></li><li class="navelem"><a class="el" href="a00556.html">Reloader</a></li>
+    <li class="navelem"><a class="el" href="a00261.html">de</a></li><li class="navelem"><a class="el" href="a00262.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00263.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00260.html">pubby</a></li><li class="navelem"><a class="el" href="a00270.html">sources</a></li><li class="navelem"><a class="el" href="a00556.html">FilteredDataSource</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

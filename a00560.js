@@ -1,16 +1,17 @@
 var a00560 =
 [
-    [ "createGeometry", "a00560.html#aa9b8459efc091f657b74ed0e5a245375", null ],
-    [ "createGeometry", "a00560.html#a9e565b4d0520b1fc30ab5fe2118abb5f", null ],
-    [ "createGeometryCollection", "a00560.html#a3475604f80ee636cca3d07baa336def7", null ],
-    [ "createGeometryCollection", "a00560.html#a7530a3b20b256d3096c63b5556adba6c", null ],
-    [ "crsURIToEPSG", "a00560.html#aa421448c7ce84a54522d8130fa94af64", null ],
-    [ "reproject", "a00560.html#a99ea74c86ef21b4eefcecf4ef42c9763", null ],
-    [ "reproject", "a00560.html#a5a21536a5d5fe27d07f1dba5850fa432", null ],
-    [ "reproject", "a00560.html#a6055e15f4f0347366ad62a93f647f652", null ],
-    [ "toGeometry", "a00560.html#ad1731b05de5c7e8bae69ff8eb74036f2", null ],
-    [ "toGeometry", "a00560.html#ad7e9fd4bfe07509ba9bbd5a1e09c8a71", null ],
-    [ "csFactory", "a00560.html#a3813e566ccc891c0eb59ae4e305fe1f0", null ],
-    [ "ctFactory", "a00560.html#acd5d3f9a3011d9a57d87736f722df902", null ],
-    [ "fac", "a00560.html#a06fda23017f0f5df370535d4e7514c03", null ]
+    [ "IndexDataSource", "a00560.html#a0a636d916caafddba3d8927d5e8c7395", null ],
+    [ "canDescribe", "a00560.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "describeResource", "a00560.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "describeResource", "a00560.html#aee8a51772d6673be0a741b47678df946", null ],
+    [ "getHighIndegreeProperties", "a00560.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00560.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00560.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00560.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
+    [ "listPropertyValues", "a00560.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "indexIRI", "a00560.html#a46ccf3d3cc14002ea252d960b3a9b95a", null ],
+    [ "MAX_INDEX_SIZE", "a00560.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
+    [ "SIOC_NS", "a00560.html#a50553be5572548a1ddda089e2392557b", null ],
+    [ "siocContainerOf", "a00560.html#ae47ed8d5d5ece30da541b5a67c0d8031", null ],
+    [ "wrapped", "a00560.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
 ];

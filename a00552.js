@@ -1,12 +1,12 @@
 var a00552 =
 [
-    [ "Builder", "a00552.html#a4c5b1b5b658880619647b859000724fc", null ],
-    [ "build", "a00552.html#a1e4fbf697357d25c5f3112daf2c9abee", null ],
-    [ "setAnalyzer", "a00552.html#a75be2b67c84e6582fc763413aa9c95bb", null ],
-    [ "setAnalyzers", "a00552.html#a5b046f779187f94e1d872748badcb092", null ],
-    [ "setComparator", "a00552.html#a80d4cfc5257a34d5573ee59eccfac025", null ],
-    [ "setIndex", "a00552.html#ac67f216229a795a817b7136c9b7bc188", null ],
-    [ "analyzer", "a00552.html#ab68f7dcfc065da0fd4295b518c820c87", null ],
-    [ "comparator", "a00552.html#aac9e41375776a2145cdf5025fd4dd947", null ],
-    [ "index", "a00552.html#abce4b54107ea8e7233ebeb0a9a67383a", null ]
+    [ "canDescribe", "a00552.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "describeResource", "a00552.html#ab085365476c05945218492b31028610a", null ],
+    [ "describeResource", "a00552.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
+    [ "getHighIndegreeProperties", "a00552.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00552.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00552.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00552.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
+    [ "listPropertyValues", "a00552.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "MAX_INDEX_SIZE", "a00552.html#a5d100ac468e8e0551f96450f5bbba1b2", null ]
 ];

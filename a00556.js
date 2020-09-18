@@ -1,10 +1,14 @@
 var a00556 =
 [
-    [ "Reloader", "a00556.html#aa76b66b3cf4d762c3dc96209e48eaa06", null ],
-    [ "run", "a00556.html#a13a43e6d814de94978c515cb084873b1", null ],
-    [ "config", "a00556.html#a0910717551963df697d192900a7f4f59", null ],
-    [ "configfile", "a00556.html#a7b641c81adb45d9bc216ffb0fe84c25a", null ],
-    [ "context", "a00556.html#a2c8bcf282d889b7993d6c9d7a3c230d0", null ],
-    [ "error", "a00556.html#af44443f87d7b66dff07b3d884445dca1", null ],
-    [ "realPath", "a00556.html#a4bc2df2fea9860ab6f4782d2e1575ed0", null ]
+    [ "FilteredDataSource", "a00556.html#a3a14265e1444808215ea4d2a7c99b199", null ],
+    [ "canDescribe", "a00556.html#a76346f12873afab70aafac6a443c5f04", null ],
+    [ "describeResource", "a00556.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "describeResource", "a00556.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
+    [ "getHighIndegreeProperties", "a00556.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00556.html#acbe9e94afdedf6be6979247520906444", null ],
+    [ "getIndex", "a00556.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
+    [ "getLabelIndex", "a00556.html#a2dbc188988204c9931d77a3f36128e50", null ],
+    [ "listPropertyValues", "a00556.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
+    [ "MAX_INDEX_SIZE", "a00556.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
+    [ "wrapped", "a00556.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
 ];

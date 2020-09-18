@@ -1,15 +1,15 @@
 var a00384 =
 [
-    [ "HypermediaResource", "a00384.html#a1ce7630a38c4245b651f576fdb7bf7b1", null ],
-    [ "getAbsoluteIRI", "a00384.html#a8cc99e23b8d0876ba37f67895ab17ab7", null ],
-    [ "getDataURL", "a00384.html#a6a843740749f1c282376668464eecc55", null ],
-    [ "getInversePathDataURL", "a00384.html#a6fbcecf2989453571d87ddb025131fcf", null ],
-    [ "getInversePathPageURL", "a00384.html#ab2b8590228ee89faa93dcd5ea8d359e5", null ],
-    [ "getPageURL", "a00384.html#aa1dda0b0dedb5fddbf92718a8d8bad29", null ],
-    [ "getPathDataURL", "a00384.html#ae1726fa7e5ad0c3c6f3d8592c99b37cc", null ],
-    [ "getPathPageURL", "a00384.html#a7c5ceed65176a05dcdfb84569947e530", null ],
-    [ "getPathURL", "a00384.html#a732091dc66ebcd3ea19ef3ecc35724c4", null ],
-    [ "getRelativeIRI", "a00384.html#a67c8d978450e3800d1d25a3cf0a820ef", null ],
-    [ "config", "a00384.html#ae9dc406bdd1efad232eaf625a5714fc9", null ],
-    [ "relativeIRI", "a00384.html#ac642b03d4d18a90a1d593cdcc09d20ac", null ]
+    [ "SHPWriter", "a00384.html#a522f56256949a6f7999271834054fd51", null ],
+    [ "handleGeometry", "a00384.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
+    [ "prepareGeoJSONString", "a00384.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
+    [ "write", "a00384.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00384.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
+    [ "epsg", "a00384.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
+    [ "geom", "a00384.html#a986ad099513be1127d32ade506e5fa4c", null ],
+    [ "lat", "a00384.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
+    [ "lon", "a00384.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
+    [ "reader", "a00384.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "sourceCRS", "a00384.html#a29f7567e6745fe87158905295092ad7c", null ],
+    [ "usedProperty", "a00384.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];

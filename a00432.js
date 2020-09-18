@@ -1,8 +1,10 @@
 var a00432 =
 [
-    [ "[static initializer]", "a00432.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "getDataNegotiator", "a00432.html#af03e389fc1ed90d41d751d3d5208fc98", null ],
-    [ "getPubbyNegotiator", "a00432.html#a422f474f49521adddc4d56b75af7b77c", null ],
-    [ "dataNegotiator", "a00432.html#a3252abb074c382937d325d56e41084a0", null ],
-    [ "pubbyNegotiator", "a00432.html#a7881b210bc9cb724716ffb109de9c562", null ]
+    [ "MappedResource", "a00432.html#a1d35ac060a72548d1a38db5c9b3765b5", null ],
+    [ "getController", "a00432.html#af3836f401c27f904d7a9fbfbb542efbf", null ],
+    [ "getDataset", "a00432.html#aa790e1d5a47b90fcc632b93eeb5c5220", null ],
+    [ "getDatasetURI", "a00432.html#a392cb8d27b80bf406cc0f07cc96a37ce", null ],
+    [ "datasetConfig", "a00432.html#a0ad529538808809272da8fa670a20cf9", null ],
+    [ "datasetURI", "a00432.html#a350afe9c4cb51c56757b49e43b3cec39", null ],
+    [ "hypermediaResource", "a00432.html#af9b4b8106f3490a5611815a01b750b6b", null ]
 ];

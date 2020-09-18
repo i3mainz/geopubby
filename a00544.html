@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: URIPrefixer Class Reference</title>
+<title>GeoPubby: VelocityHelper Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,95 +62,77 @@ $(document).ready(function(){initNavTree('a00544.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="a00541.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">URIPrefixer Class Reference</div>  </div>
+<div class="title">VelocityHelper Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Helper class that splits URIs into prefix and local name according to a Jena PrefixMapping.  
+<p>A facade class that simplifies using a custom Velocity engine from a servlet.  
  <a href="a00544.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for URIPrefixer:</div>
+Collaboration diagram for VelocityHelper:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00542.png" border="0" usemap="#URIPrefixer_coll__map" alt="Collaboration graph"/></div>
-<map name="URIPrefixer_coll__map" id="URIPrefixer_coll__map">
+<div class="center"><img src="a00542.png" border="0" usemap="#VelocityHelper_coll__map" alt="Collaboration graph"/></div>
+<map name="VelocityHelper_coll__map" id="VelocityHelper_coll__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abebd08c86a66757c33787ad331c89ba7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#abebd08c86a66757c33787ad331c89ba7">URIPrefixer</a> (String uri, PrefixMapping prefixes)</td></tr>
-<tr class="separator:abebd08c86a66757c33787ad331c89ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a7e4134557f6a0af45f334e5e917c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#ac6a7e4134557f6a0af45f334e5e917c6">URIPrefixer</a> (Resource <a class="el" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>, PrefixMapping prefixes)</td></tr>
-<tr class="separator:ac6a7e4134557f6a0af45f334e5e917c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab0bab54f99e36cce47bbbbc1c59cc52"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#aab0bab54f99e36cce47bbbbc1c59cc52">hasPrefix</a> ()</td></tr>
-<tr class="separator:aab0bab54f99e36cce47bbbbc1c59cc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b9a69b246225ec2eca3637f32437a16"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a5b9a69b246225ec2eca3637f32437a16">getPrefix</a> ()</td></tr>
-<tr class="separator:a5b9a69b246225ec2eca3637f32437a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e0dca1c6efc6550f1cea481c823960a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a9e0dca1c6efc6550f1cea481c823960a">getLocalName</a> ()</td></tr>
-<tr class="separator:a9e0dca1c6efc6550f1cea481c823960a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63af500e9606acd93d5b95c49d61efe9"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a63af500e9606acd93d5b95c49d61efe9">toTurtle</a> ()</td></tr>
-<tr class="separator:a63af500e9606acd93d5b95c49d61efe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6120510d2c825e1e46ee0ec9421e5707"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a6120510d2c825e1e46ee0ec9421e5707">VelocityHelper</a> (ServletContext <a class="el" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>, HttpServletResponse <a class="el" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>)</td></tr>
+<tr class="separator:a6120510d2c825e1e46ee0ec9421e5707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c6ccb2a7adcb1d17a3b9c9947dc3c9"><td class="memItemLeft" align="right" valign="top">Context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#ad0c6ccb2a7adcb1d17a3b9c9947dc3c9">getVelocityContext</a> ()</td></tr>
+<tr class="separator:ad0c6ccb2a7adcb1d17a3b9c9947dc3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d266ba78c974acced0c9a85de40cc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#ab6d266ba78c974acced0c9a85de40cc2">renderXHTML</a> (String templateName)</td></tr>
+<tr class="memdesc:ab6d266ba78c974acced0c9a85de40cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a template using the template variables put into the velocity context.  <a href="#ab6d266ba78c974acced0c9a85de40cc2">More...</a><br /></td></tr>
+<tr class="separator:ab6d266ba78c974acced0c9a85de40cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af554a6cb839ba7b2a7367a426449c960"><td class="memItemLeft" align="right" valign="top">VelocityEngine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#af554a6cb839ba7b2a7367a426449c960">getVelocityEngine</a> ()</td></tr>
+<tr class="separator:af554a6cb839ba7b2a7367a426449c960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256b4176d50a0e3f2b75b6d00850ad23"><td class="memItemLeft" align="right" valign="top">VelocityEngine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a256b4176d50a0e3f2b75b6d00850ad23">createVelocityEngine</a> ()</td></tr>
+<tr class="separator:a256b4176d50a0e3f2b75b6d00850ad23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a965b8a7998787959ad4196e807743f5d"><td class="memItemLeft" align="right" valign="top">final Resource&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a></td></tr>
-<tr class="separator:a965b8a7998787959ad4196e807743f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9aa80baa8113e20a123650a1e9d9a29"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">prefix</a></td></tr>
-<tr class="separator:ab9aa80baa8113e20a123650a1e9d9a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dac62958e49f5cdfac4a91262dbeacf"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">localName</a></td></tr>
-<tr class="separator:a8dac62958e49f5cdfac4a91262dbeacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeef38191b1fac970b38c3096b3ee4cc"><td class="memItemLeft" align="right" valign="top">final ServletContext&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a></td></tr>
+<tr class="separator:aaeef38191b1fac970b38c3096b3ee4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8acf5478a5097f4a2ccb8021c167dd8f"><td class="memItemLeft" align="right" valign="top">final HttpServletResponse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a></td></tr>
+<tr class="separator:a8acf5478a5097f4a2ccb8021c167dd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc996a08fa1c3b75373cf0fff1af2976"><td class="memItemLeft" align="right" valign="top">final Context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">velocityContext</a></td></tr>
+<tr class="separator:abc996a08fa1c3b75373cf0fff1af2976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:afe9f95303c6c0305ddef9638242941de"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00544.html#afe9f95303c6c0305ddef9638242941de">VELOCITY_ENGINE</a></td></tr>
+<tr class="separator:afe9f95303c6c0305ddef9638242941de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helper class that splits URIs into prefix and local name according to a Jena PrefixMapping. </p>
+<div class="textblock"><p>A facade class that simplifies using a custom Velocity engine from a servlet. </p>
+<p>It encapsulates creation of the VelocityEngine instance, its storage in the servlet context, and the rendering of templates into the servlet response output stream. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abebd08c86a66757c33787ad331c89ba7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abebd08c86a66757c33787ad331c89ba7">&#9670;&nbsp;</a></span>URIPrefixer() <span class="overload">[1/2]</span></h2>
+<a id="a6120510d2c825e1e46ee0ec9421e5707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6120510d2c825e1e46ee0ec9421e5707">&#9670;&nbsp;</a></span>VelocityHelper()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00544.html">URIPrefixer</a> </td>
+          <td class="memname"><a class="el" href="a00544.html">VelocityHelper</a> </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>uri</em>, </td>
+          <td class="paramtype">ServletContext&#160;</td>
+          <td class="paramname"><em>servletContext</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PrefixMapping&#160;</td>
-          <td class="paramname"><em>prefixes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                               {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keyword">this</span>(ResourceFactory.createResource(uri), prefixes);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div></div><!-- fragment -->
-</div>
-</div>
-<a id="ac6a7e4134557f6a0af45f334e5e917c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6a7e4134557f6a0af45f334e5e917c6">&#9670;&nbsp;</a></span>URIPrefixer() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00544.html">URIPrefixer</a> </td>
-          <td>(</td>
-          <td class="paramtype">Resource&#160;</td>
-          <td class="paramname"><em>resource</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">PrefixMapping&#160;</td>
-          <td class="paramname"><em>prefixes</em>&#160;</td>
+          <td class="paramtype">HttpServletResponse&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,107 +142,125 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00544.html#a965b8a7998787959ad4196e807743f5d">URIPrefixer.resource</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                                      {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                this.<a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a> = <a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                String uri = <a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>.getURI();</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                Iterator&lt;String&gt; it = prefixes.getNsPrefixMap().keySet().iterator();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">while</span> (it.hasNext() &amp;&amp; uri != null) {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        String entryPrefix = it.next();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        String entryURI = prefixes.getNsPrefixURI(entryPrefix);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <span class="keywordflow">if</span> (uri.startsWith(entryURI)) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                <a class="code" href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">prefix</a> = entryPrefix;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                <a class="code" href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">localName</a> = uri.substring(entryURI.length());</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                }</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">prefix</a> = null;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">localName</a> = null;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div><div class="ttc" id="a00544_html_ab9aa80baa8113e20a123650a1e9d9a29"><div class="ttname"><a href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">de.fuberlin.wiwiss.pubby.URIPrefixer.prefix</a></div><div class="ttdeci">final String prefix</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:17</div></div>
-<div class="ttc" id="a00544_html_a8dac62958e49f5cdfac4a91262dbeacf"><div class="ttname"><a href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">de.fuberlin.wiwiss.pubby.URIPrefixer.localName</a></div><div class="ttdeci">final String localName</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:18</div></div>
-<div class="ttc" id="a00544_html_a965b8a7998787959ad4196e807743f5d"><div class="ttname"><a href="a00544.html#a965b8a7998787959ad4196e807743f5d">de.fuberlin.wiwiss.pubby.URIPrefixer.resource</a></div><div class="ttdeci">final Resource resource</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:16</div></div>
+<p class="reference">References <a class="el" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">VelocityHelper.response</a>, and <a class="el" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">VelocityHelper.servletContext</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                                                           {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                this.<a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a> = <a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                this.<a class="code" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a> = <a class="code" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                this.<a class="code" href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">velocityContext</a> = <span class="keyword">new</span> VelocityContext();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div><div class="ttc" id="a00544_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:25</div></div>
+<div class="ttc" id="a00544_html_aaeef38191b1fac970b38c3096b3ee4cc"><div class="ttname"><a href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.servletContext</a></div><div class="ttdeci">final ServletContext servletContext</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:24</div></div>
+<div class="ttc" id="a00544_html_abc996a08fa1c3b75373cf0fff1af2976"><div class="ttname"><a href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.velocityContext</a></div><div class="ttdeci">final Context velocityContext</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:26</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9e0dca1c6efc6550f1cea481c823960a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e0dca1c6efc6550f1cea481c823960a">&#9670;&nbsp;</a></span>getLocalName()</h2>
+<a id="a256b4176d50a0e3f2b75b6d00850ad23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256b4176d50a0e3f2b75b6d00850ad23">&#9670;&nbsp;</a></span>createVelocityEngine()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String getLocalName </td>
+          <td class="memname">VelocityEngine createVelocityEngine </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">URIPrefixer.localName</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00452.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8">ResourceDescription.Value.getDatatypeLabel()</a>, <a class="el" href="a00444.html#a9e0dca1c6efc6550f1cea481c823960a">ResourceDescription.ResourceProperty.getLocalName()</a>, <a class="el" href="a00452.html#a9e0dca1c6efc6550f1cea481c823960a">ResourceDescription.Value.getLocalName()</a>, <a class="el" href="a00440.html#a888f94790c968e3f0b5de17e509098aa">ResourceDescription.getTitle()</a>, and <a class="el" href="a00544.html#a63af500e9606acd93d5b95c49d61efe9">URIPrefixer.toTurtle()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                     {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>.isAnon()) <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">localName</a> == null) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        Matcher matcher = Pattern.compile(<span class="stringliteral">&quot;([^#/:?]+)[#/:?]*$&quot;</span>).matcher(<a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>.getURI());</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        <span class="keywordflow">if</span> (matcher.find()) {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                <span class="keywordflow">return</span> matcher.group(1);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        }</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;      <span class="comment">// Only happens if the URI contains only excluded chars</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">localName</a>;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="ttc" id="a00544_html_a8dac62958e49f5cdfac4a91262dbeacf"><div class="ttname"><a href="a00544.html#a8dac62958e49f5cdfac4a91262dbeacf">de.fuberlin.wiwiss.pubby.URIPrefixer.localName</a></div><div class="ttdeci">final String localName</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:18</div></div>
-<div class="ttc" id="a00544_html_a965b8a7998787959ad4196e807743f5d"><div class="ttname"><a href="a00544.html#a965b8a7998787959ad4196e807743f5d">de.fuberlin.wiwiss.pubby.URIPrefixer.resource</a></div><div class="ttdeci">final Resource resource</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:16</div></div>
+<p class="reference">Referenced by <a class="el" href="a00544.html#af554a6cb839ba7b2a7367a426449c960">VelocityHelper.getVelocityEngine()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                      {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        VelocityEngine result = <span class="keyword">new</span> VelocityEngine();</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        result.setProperty(<span class="stringliteral">&quot;output.encoding&quot;</span>, <span class="stringliteral">&quot;utf-8&quot;</span>);</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        result.setProperty(<span class="stringliteral">&quot;file.resource.loader.path&quot;</span>, </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                        <a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>.getRealPath(<span class="stringliteral">&quot;/&quot;</span>) + <span class="stringliteral">&quot;/WEB-INF/templates/&quot;</span>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        result.setProperty(<span class="stringliteral">&quot;velocimacro.context.localscope&quot;</span>, <span class="keyword">true</span>);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="comment">// Turn off Velocity logging</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        result.setProperty(<span class="stringliteral">&quot;runtime.log.logsystem.class&quot;</span>, </div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                        <span class="stringliteral">&quot;org.apache.velocity.runtime.log.NullLogSystem&quot;</span>);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        </div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        <span class="comment">// XML-escape *all* references inserted into templates</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        result.setProperty(<span class="stringliteral">&quot;eventhandler.referenceinsertion.class&quot;</span>, EscapeXmlReference.class.getName());</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        </div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        <span class="comment">// Enable caching</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        result.setProperty(<span class="stringliteral">&quot;file.resource.loader.cache&quot;</span>, <span class="keyword">true</span>);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        </div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        result.init();</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <span class="keywordflow">return</span> result;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                } <span class="keywordflow">catch</span> (Exception ex) {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01436.html">RuntimeException</a>(ex);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                }</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="ttc" id="a01436_html"><div class="ttname"><a href="a01436.html">RuntimeException</a></div></div>
+<div class="ttc" id="a00544_html_aaeef38191b1fac970b38c3096b3ee4cc"><div class="ttname"><a href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.servletContext</a></div><div class="ttdeci">final ServletContext servletContext</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:24</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5b9a69b246225ec2eca3637f32437a16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b9a69b246225ec2eca3637f32437a16">&#9670;&nbsp;</a></span>getPrefix()</h2>
+<a id="ad0c6ccb2a7adcb1d17a3b9c9947dc3c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c6ccb2a7adcb1d17a3b9c9947dc3c9">&#9670;&nbsp;</a></span>getVelocityContext()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">String getPrefix </td>
+          <td class="memname">Context getVelocityContext </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A receptacle for template variables </dd></dl>
 
-<p class="reference">References <a class="el" href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">URIPrefixer.prefix</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00444.html#a5b9a69b246225ec2eca3637f32437a16">ResourceDescription.ResourceProperty.getPrefix()</a>, <a class="el" href="a00452.html#a5b9a69b246225ec2eca3637f32437a16">ResourceDescription.Value.getPrefix()</a>, and <a class="el" href="a00544.html#a63af500e9606acd93d5b95c49d61efe9">URIPrefixer.toTurtle()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                  {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">prefix</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div><div class="ttc" id="a00544_html_ab9aa80baa8113e20a123650a1e9d9a29"><div class="ttname"><a href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">de.fuberlin.wiwiss.pubby.URIPrefixer.prefix</a></div><div class="ttdeci">final String prefix</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:17</div></div>
+<p class="reference">References <a class="el" href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">VelocityHelper.velocityContext</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                            {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">velocityContext</a>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div><div class="ttc" id="a00544_html_abc996a08fa1c3b75373cf0fff1af2976"><div class="ttname"><a href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.velocityContext</a></div><div class="ttdeci">final Context velocityContext</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:26</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aab0bab54f99e36cce47bbbbc1c59cc52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab0bab54f99e36cce47bbbbc1c59cc52">&#9670;&nbsp;</a></span>hasPrefix()</h2>
+<a id="af554a6cb839ba7b2a7367a426449c960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af554a6cb839ba7b2a7367a426449c960">&#9670;&nbsp;</a></span>getVelocityEngine()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boolean hasPrefix </td>
+          <td class="memname">VelocityEngine getVelocityEngine </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00452.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8">ResourceDescription.Value.getDatatypeLabel()</a>, <a class="el" href="a00444.html#aab0bab54f99e36cce47bbbbc1c59cc52">ResourceDescription.ResourceProperty.hasPrefix()</a>, <a class="el" href="a00452.html#aab0bab54f99e36cce47bbbbc1c59cc52">ResourceDescription.Value.hasPrefix()</a>, and <a class="el" href="a00544.html#a63af500e9606acd93d5b95c49d61efe9">URIPrefixer.toTurtle()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                   {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">prefix</a> != null;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div><div class="ttc" id="a00544_html_ab9aa80baa8113e20a123650a1e9d9a29"><div class="ttname"><a href="a00544.html#ab9aa80baa8113e20a123650a1e9d9a29">de.fuberlin.wiwiss.pubby.URIPrefixer.prefix</a></div><div class="ttdeci">final String prefix</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:17</div></div>
+<p class="reference">References <a class="el" href="a00544.html#a256b4176d50a0e3f2b75b6d00850ad23">VelocityHelper.createVelocityEngine()</a>, and <a class="el" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">VelocityHelper.servletContext</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00544.html#ab6d266ba78c974acced0c9a85de40cc2">VelocityHelper.renderXHTML()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                   {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keyword">synchronized</span> (<a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>) {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>.getAttribute(<a class="code" href="a00544.html#afe9f95303c6c0305ddef9638242941de">VELOCITY_ENGINE</a>) == null) {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                <a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>.setAttribute(<a class="code" href="a00544.html#afe9f95303c6c0305ddef9638242941de">VELOCITY_ENGINE</a>, <a class="code" href="a00544.html#a256b4176d50a0e3f2b75b6d00850ad23">createVelocityEngine</a>());</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        <span class="keywordflow">return</span> (VelocityEngine) <a class="code" href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">servletContext</a>.getAttribute(<a class="code" href="a00544.html#afe9f95303c6c0305ddef9638242941de">VELOCITY_ENGINE</a>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div><div class="ttc" id="a00544_html_afe9f95303c6c0305ddef9638242941de"><div class="ttname"><a href="a00544.html#afe9f95303c6c0305ddef9638242941de">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.VELOCITY_ENGINE</a></div><div class="ttdeci">static final String VELOCITY_ENGINE</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:21</div></div>
+<div class="ttc" id="a00544_html_aaeef38191b1fac970b38c3096b3ee4cc"><div class="ttname"><a href="a00544.html#aaeef38191b1fac970b38c3096b3ee4cc">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.servletContext</a></div><div class="ttdeci">final ServletContext servletContext</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:24</div></div>
+<div class="ttc" id="a00544_html_a256b4176d50a0e3f2b75b6d00850ad23"><div class="ttname"><a href="a00544.html#a256b4176d50a0e3f2b75b6d00850ad23">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.createVelocityEngine</a></div><div class="ttdeci">VelocityEngine createVelocityEngine()</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:67</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a63af500e9606acd93d5b95c49d61efe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63af500e9606acd93d5b95c49d61efe9">&#9670;&nbsp;</a></span>toTurtle()</h2>
+<a id="ab6d266ba78c974acced0c9a85de40cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6d266ba78c974acced0c9a85de40cc2">&#9670;&nbsp;</a></span>renderXHTML()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">String toTurtle </td>
+          <td class="memname">void renderXHTML </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>templateName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00544.html#a9e0dca1c6efc6550f1cea481c823960a">URIPrefixer.getLocalName()</a>, <a class="el" href="a00544.html#a5b9a69b246225ec2eca3637f32437a16">URIPrefixer.getPrefix()</a>, and <a class="el" href="a00544.html#aab0bab54f99e36cce47bbbbc1c59cc52">URIPrefixer.hasPrefix()</a>.</p>
+<p>Renders a template using the template variables put into the velocity context. </p>
 
-<p class="reference">Referenced by <a class="el" href="a00452.html#a307e8a571eeaa4c2fa0dff3d46e9d1d8">ResourceDescription.Value.getDatatypeLabel()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                 {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>.isAnon()) <span class="keywordflow">return</span> <span class="stringliteral">&quot;[]&quot;</span>;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00544.html#aab0bab54f99e36cce47bbbbc1c59cc52">hasPrefix</a>()) {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00544.html#a5b9a69b246225ec2eca3637f32437a16">getPrefix</a>() + <span class="stringliteral">&quot;:&quot;</span> + <a class="code" href="a00544.html#a9e0dca1c6efc6550f1cea481c823960a">getLocalName</a>();</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">return</span> <span class="stringliteral">&quot;&lt;&quot;</span> + <a class="code" href="a00544.html#a965b8a7998787959ad4196e807743f5d">resource</a>.getURI() + <span class="stringliteral">&quot;&gt;&quot;</span>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div><div class="ttc" id="a00544_html_a9e0dca1c6efc6550f1cea481c823960a"><div class="ttname"><a href="a00544.html#a9e0dca1c6efc6550f1cea481c823960a">de.fuberlin.wiwiss.pubby.URIPrefixer.getLocalName</a></div><div class="ttdeci">String getLocalName()</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:49</div></div>
-<div class="ttc" id="a00544_html_a965b8a7998787959ad4196e807743f5d"><div class="ttname"><a href="a00544.html#a965b8a7998787959ad4196e807743f5d">de.fuberlin.wiwiss.pubby.URIPrefixer.resource</a></div><div class="ttdeci">final Resource resource</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:16</div></div>
-<div class="ttc" id="a00544_html_aab0bab54f99e36cce47bbbbc1c59cc52"><div class="ttname"><a href="a00544.html#aab0bab54f99e36cce47bbbbc1c59cc52">de.fuberlin.wiwiss.pubby.URIPrefixer.hasPrefix</a></div><div class="ttdeci">boolean hasPrefix()</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:41</div></div>
-<div class="ttc" id="a00544_html_a5b9a69b246225ec2eca3637f32437a16"><div class="ttname"><a href="a00544.html#a5b9a69b246225ec2eca3637f32437a16">de.fuberlin.wiwiss.pubby.URIPrefixer.getPrefix</a></div><div class="ttdeci">String getPrefix()</div><div class="ttdef"><b>Definition:</b> URIPrefixer.java:45</div></div>
+<p class="reference">References <a class="el" href="a00544.html#af554a6cb839ba7b2a7367a426449c960">VelocityHelper.getVelocityEngine()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                     {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.addHeader(<span class="stringliteral">&quot;Content-Type&quot;</span>, <span class="stringliteral">&quot;text/html; charset=utf-8&quot;</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.addHeader(<span class="stringliteral">&quot;Cache-Control&quot;</span>, <span class="stringliteral">&quot;no-cache&quot;</span>);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.addHeader(<span class="stringliteral">&quot;Pragma&quot;</span>, <span class="stringliteral">&quot;no-cache&quot;</span>);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        OutputStreamWriter writer = <span class="keyword">new</span> OutputStreamWriter(<a class="code" href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.getOutputStream(), <span class="stringliteral">&quot;utf-8&quot;</span>);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <a class="code" href="a00544.html#af554a6cb839ba7b2a7367a426449c960">getVelocityEngine</a>().mergeTemplate(templateName, <a class="code" href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">velocityContext</a>, </div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        writer);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        writer.close();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                } <span class="keywordflow">catch</span> (Exception ex) {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01436.html">RuntimeException</a>(ex);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                }</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div><div class="ttc" id="a01436_html"><div class="ttname"><a href="a01436.html">RuntimeException</a></div></div>
+<div class="ttc" id="a00544_html_af554a6cb839ba7b2a7367a426449c960"><div class="ttname"><a href="a00544.html#af554a6cb839ba7b2a7367a426449c960">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.getVelocityEngine</a></div><div class="ttdeci">VelocityEngine getVelocityEngine()</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:58</div></div>
+<div class="ttc" id="a00544_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00544.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:25</div></div>
+<div class="ttc" id="a00544_html_abc996a08fa1c3b75373cf0fff1af2976"><div class="ttname"><a href="a00544.html#abc996a08fa1c3b75373cf0fff1af2976">de.fuberlin.wiwiss.pubby.servlets.VelocityHelper.velocityContext</a></div><div class="ttdeci">final Context velocityContext</div><div class="ttdef"><b>Definition:</b> VelocityHelper.java:26</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8dac62958e49f5cdfac4a91262dbeacf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dac62958e49f5cdfac4a91262dbeacf">&#9670;&nbsp;</a></span>localName</h2>
+<a id="a8acf5478a5097f4a2ccb8021c167dd8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8acf5478a5097f4a2ccb8021c167dd8f">&#9670;&nbsp;</a></span>response</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +269,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final String localName</td>
+          <td class="memname">final HttpServletResponse response</td>
         </tr>
       </table>
   </td>
@@ -279,12 +279,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00544.html#a9e0dca1c6efc6550f1cea481c823960a">URIPrefixer.getLocalName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00544.html#a6120510d2c825e1e46ee0ec9421e5707">VelocityHelper.VelocityHelper()</a>.</p>
 
 </div>
 </div>
-<a id="ab9aa80baa8113e20a123650a1e9d9a29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9aa80baa8113e20a123650a1e9d9a29">&#9670;&nbsp;</a></span>prefix</h2>
+<a id="aaeef38191b1fac970b38c3096b3ee4cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeef38191b1fac970b38c3096b3ee4cc">&#9670;&nbsp;</a></span>servletContext</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,7 +293,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final String prefix</td>
+          <td class="memname">final ServletContext servletContext</td>
         </tr>
       </table>
   </td>
@@ -303,12 +303,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00544.html#a5b9a69b246225ec2eca3637f32437a16">URIPrefixer.getPrefix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00544.html#af554a6cb839ba7b2a7367a426449c960">VelocityHelper.getVelocityEngine()</a>, and <a class="el" href="a00544.html#a6120510d2c825e1e46ee0ec9421e5707">VelocityHelper.VelocityHelper()</a>.</p>
 
 </div>
 </div>
-<a id="a965b8a7998787959ad4196e807743f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a965b8a7998787959ad4196e807743f5d">&#9670;&nbsp;</a></span>resource</h2>
+<a id="afe9f95303c6c0305ddef9638242941de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9f95303c6c0305ddef9638242941de">&#9670;&nbsp;</a></span>VELOCITY_ENGINE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +317,29 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">final Resource resource</td>
+          <td class="memname">final String VELOCITY_ENGINE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= </div><div class="line">                <a class="code" href="a00544.html#a6120510d2c825e1e46ee0ec9421e5707">VelocityHelper</a>.class.getName() + <span class="stringliteral">&quot;.VELOCITY_ENGINE&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="abc996a08fa1c3b75373cf0fff1af2976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc996a08fa1c3b75373cf0fff1af2976">&#9670;&nbsp;</a></span>velocityContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Context velocityContext</td>
         </tr>
       </table>
   </td>
@@ -327,7 +349,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="a00544.html#ac6a7e4134557f6a0af45f334e5e917c6">URIPrefixer.URIPrefixer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="a00544.html#ad0c6ccb2a7adcb1d17a3b9c9947dc3c9">VelocityHelper.getVelocityContext()</a>.</p>
 
 </div>
 </div>
@@ -337,7 +359,7 @@ Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00243.html">de</a></li><li class="navelem"><a class="el" href="a00244.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00245.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00242.html">pubby</a></li><li class="navelem"><a class="el" href="a00544.html">URIPrefixer</a></li>
+    <li class="navelem"><a class="el" href="a00261.html">de</a></li><li class="navelem"><a class="el" href="a00262.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00263.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00260.html">pubby</a></li><li class="navelem"><a class="el" href="a00269.html">servlets</a></li><li class="navelem"><a class="el" href="a00544.html">VelocityHelper</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

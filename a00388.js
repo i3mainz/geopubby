@@ -1,16 +1,14 @@
 var a00388 =
 [
-    [ "appendOctet", "a00388.html#acfdbbfd7aed40b41c8c9aca994a66c14", null ],
-    [ "decode", "a00388.html#afd4859a4f02722bf3a685a838b4a555b", null ],
-    [ "getBytesInSequence", "a00388.html#a4ca72c78b1625ba976db313ae47c8284", null ],
-    [ "isContinuationOctet", "a00388.html#a35fd34a472ef86ad621bd606cb9918fc", null ],
-    [ "isUnreservedASCII", "a00388.html#a76335106e7863f31084d5e2ed66767f7", null ],
-    [ "toByte", "a00388.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8", null ],
-    [ "toByte", "a00388.html#aece1ebe6e7522d7baf8ca765166cedbb", null ],
-    [ "toBytes", "a00388.html#a529e9f1a833424046e5c1dc916f91580", null ],
-    [ "toCharacter", "a00388.html#ab2c6b324020d93bdda6aa0d5a1f9593c", null ],
-    [ "toIRI", "a00388.html#a28910c5e808e547d940cc2f604f5cc91", null ],
-    [ "toURI", "a00388.html#aa9aeab48a7535d6d446c3e7b99d71503", null ],
-    [ "hexDigits", "a00388.html#a24d7e0fcb082c35388ff0e58345c1eb4", null ],
-    [ "percentEncoding", "a00388.html#ad5c79bfeae4228c7bee82125fc969c93", null ]
+    [ "SVGWriter", "a00388.html#a36dd16a9af63e1a2db3f4bd1528374cf", null ],
+    [ "handleGeometry", "a00388.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
+    [ "write", "a00388.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00388.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
+    [ "epsg", "a00388.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
+    [ "geom", "a00388.html#a986ad099513be1127d32ade506e5fa4c", null ],
+    [ "lat", "a00388.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
+    [ "lon", "a00388.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
+    [ "reader", "a00388.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "sourceCRS", "a00388.html#a29f7567e6745fe87158905295092ad7c", null ],
+    [ "usedProperty", "a00388.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];

@@ -1,8 +1,9 @@
 var a00344 =
 [
-    [ "OSMLinkWriter", "a00344.html#a7c2dcfdd11630176e626ce9a541f7d3a", null ],
-    [ "handleGeometry", "a00344.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "GeoURIWriter", "a00344.html#a08ca9cd80b14097e1cab4661feb2f6c8", null ],
+    [ "handleGeometry", "a00344.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "write", "a00344.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00344.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00344.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00344.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00344.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],

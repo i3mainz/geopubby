@@ -1,10 +1,14 @@
 var a00404 =
 [
-    [ "ModelResponse", "a00404.html#af9fec765daa76a2aff37534d00fe0e31", null ],
-    [ "doResponseModel", "a00404.html#ad11c019b4ed835885005ab44cd318c25", null ],
-    [ "getWriter", "a00404.html#aa8bb17b56c84b64f02a105efae6e2c6a", null ],
-    [ "serve", "a00404.html#a09a9d9145624e027a1ad3cbe85580acc", null ],
-    [ "model", "a00404.html#a356df7b1948e33881b8730f379d137a8", null ],
-    [ "request", "a00404.html#ad632242c9a97c676da2987811ea46e83", null ],
-    [ "response", "a00404.html#a8acf5478a5097f4a2ccb8021c167dd8f", null ]
+    [ "XLSWriter", "a00404.html#a34cd55a8521686d69db766dd69e7248a", null ],
+    [ "handleGeometry", "a00404.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
+    [ "write", "a00404.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00404.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
+    [ "epsg", "a00404.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
+    [ "geom", "a00404.html#a986ad099513be1127d32ade506e5fa4c", null ],
+    [ "lat", "a00404.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
+    [ "lon", "a00404.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
+    [ "reader", "a00404.html#ae8b1e194dbc193fe759f7e517807e668", null ],
+    [ "sourceCRS", "a00404.html#a29f7567e6745fe87158905295092ad7c", null ],
+    [ "usedProperty", "a00404.html#ac95bc57d28343d34023e72f916cb9b75", null ]
 ];

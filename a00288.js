@@ -1,9 +1,10 @@
 var a00288 =
 [
-    [ "GeoModelWriter", "a00288.html#ab0d6737826308a7bd8d3bcd02dd2ad13", null ],
-    [ "GeoModelWriter", "a00288.html#a5f39a133422151f0682c799ffe23cff6", null ],
-    [ "handleGeometry", "a00288.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "AbstractGeoJSONWriter", "a00288.html#a24f2ee3707e784452d5770ac014fb2ea", null ],
+    [ "handleGeometry", "a00288.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
+    [ "prepareGeoJSONString", "a00288.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00288.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00288.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00288.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00288.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00288.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],

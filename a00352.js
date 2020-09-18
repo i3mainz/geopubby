@@ -1,8 +1,9 @@
 var a00352 =
 [
-    [ "SVGWriter", "a00352.html#a36dd16a9af63e1a2db3f4bd1528374cf", null ],
-    [ "handleGeometry", "a00352.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "GoogleMapsLinkWriter", "a00352.html#a696b9d86a6ca3995fb62e7506aae2a4d", null ],
+    [ "handleGeometry", "a00352.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "write", "a00352.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00352.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00352.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00352.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00352.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],

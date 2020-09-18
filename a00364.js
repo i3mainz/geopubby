@@ -1,8 +1,9 @@
 var a00364 =
 [
-    [ "WKTWriter", "a00364.html#adcd08455d6de396d49f8deb4515b27c1", null ],
-    [ "handleGeometry", "a00364.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "KMLWriter", "a00364.html#a3df01d724721d381015db2cfe2eafc67", null ],
+    [ "handleGeometry", "a00364.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "write", "a00364.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00364.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00364.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00364.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00364.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],

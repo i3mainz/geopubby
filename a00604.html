@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: VocabularyStore.IntegerValueCache Class Reference</title>
+<title>GeoPubby: SearchAdapter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,63 +61,84 @@ $(document).ready(function(){initNavTree('a00604.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pac-methods">Package Functions</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="a00601.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">VocabularyStore.IntegerValueCache Class Reference</div>  </div>
+<div class="title">SearchAdapter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Search adapter defining a String distance metric between search records.  
+ <a href="a00604.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for VocabularyStore.IntegerValueCache:</div>
+Inheritance diagram for SearchAdapter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00603.png" border="0" usemap="#VocabularyStore_8IntegerValueCache_inherit__map" alt="Inheritance graph"/></div>
-<map name="VocabularyStore_8IntegerValueCache_inherit__map" id="VocabularyStore_8IntegerValueCache_inherit__map">
-<area shape="rect" id="node2" href="a00596.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="22,95,215,136"/>
-<area shape="rect" id="node3" href="a00596.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="5,5,232,32"/>
+<div class="center"><img src="a00603.png" border="0" usemap="#SearchAdapter_inherit__map" alt="Inheritance graph"/></div>
+<map name="SearchAdapter_inherit__map" id="SearchAdapter_inherit__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for VocabularyStore.IntegerValueCache:</div>
+Collaboration diagram for SearchAdapter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00602.png" border="0" usemap="#VocabularyStore_8IntegerValueCache_coll__map" alt="Collaboration graph"/></div>
-<map name="VocabularyStore_8IntegerValueCache_coll__map" id="VocabularyStore_8IntegerValueCache_coll__map">
-<area shape="rect" id="node2" href="a00596.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="91,273,285,315"/>
-<area shape="rect" id="node3" href="a00596.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="75,184,301,211"/>
+<div class="center"><img src="a00602.png" border="0" usemap="#SearchAdapter_coll__map" alt="Collaboration graph"/></div>
+<map name="SearchAdapter_coll__map" id="SearchAdapter_coll__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
-Package Functions</h2></td></tr>
-<tr class="memitem:ae46ea980eabeebe463df56625f7b4e75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00604.html#ae46ea980eabeebe463df56625f7b4e75">IntegerValueCache</a> (Property p, boolean <a class="el" href="a00596.html#ab9fa15a3f639296a771d62138f251aee">inverse</a>)</td></tr>
-<tr class="separator:ae46ea980eabeebe463df56625f7b4e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b88e6006962be301e6e3feb2219fd61"><td class="memItemLeft" align="right" valign="top">Integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00604.html#a1b88e6006962be301e6e3feb2219fd61">pickBestValue</a> (Set&lt; RDFNode &gt; candidates)</td></tr>
-<tr class="separator:a1b88e6006962be301e6e3feb2219fd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a984f4cb4d41188c130813c505063fb"><td class="memItemLeft" align="right" valign="top">K&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00596.html#a1a984f4cb4d41188c130813c505063fb">get</a> (String iri)</td></tr>
-<tr class="separator:a1a984f4cb4d41188c130813c505063fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a083d9b50ef29b03d5520218df8bf4870"><td class="memItemLeft" align="right" valign="top">K&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00596.html#a083d9b50ef29b03d5520218df8bf4870">getCached</a> (String iri)</td></tr>
-<tr class="separator:a083d9b50ef29b03d5520218df8bf4870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9695d4a4855959f9b00390c9f08d9cd5"><td class="memItemLeft" align="right" valign="top">Collection&lt; ScoredObject&lt; <a class="el" href="a00612.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00604.html#a9695d4a4855959f9b00390c9f08d9cd5">get</a> (String token)</td></tr>
+<tr class="separator:a9695d4a4855959f9b00390c9f08d9cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad55ad95418061ae37fe65df7493e6e84"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00604.html#ad55ad95418061ae37fe65df7493e6e84">put</a> (String token, <a class="el" href="a00612.html">SearchRecord</a> value)</td></tr>
+<tr class="separator:ad55ad95418061ae37fe65df7493e6e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcd1ee780b50b35c60ef427449266bb"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00604.html#a3dcd1ee780b50b35c60ef427449266bb">remove</a> (<a class="el" href="a00612.html">SearchRecord</a> value)</td></tr>
+<tr class="separator:a3dcd1ee780b50b35c60ef427449266bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4aeec757e2fc5d6bce4a2617b976858b"><td class="memItemLeft" align="right" valign="top">FuzzyIndex&lt; <a class="el" href="a00612.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a> = new PatriciaTrie&lt;&gt;()</td></tr>
+<tr class="separator:a4aeec757e2fc5d6bce4a2617b976858b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae46ea980eabeebe463df56625f7b4e75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae46ea980eabeebe463df56625f7b4e75">&#9670;&nbsp;</a></span>IntegerValueCache()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Search adapter defining a String distance metric between search records. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9695d4a4855959f9b00390c9f08d9cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9695d4a4855959f9b00390c9f08d9cd5">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00604.html">IntegerValueCache</a> </td>
+          <td class="memname">Collection&lt;ScoredObject&lt;<a class="el" href="a00612.html">SearchRecord</a>&gt; &gt; get </td>
           <td>(</td>
-          <td class="paramtype">Property&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>token</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                        {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 <span class="comment">// Set threshold according to the token length</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">double</span> threshold = Math.log(Math.max(token.length() - 1, 1));</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.getAny(<span class="keyword">new</span> EditDistanceAutomaton(token, threshold));</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="ttc" id="a00604_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad55ad95418061ae37fe65df7493e6e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55ad95418061ae37fe65df7493e6e84">&#9670;&nbsp;</a></span>put()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean put </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>inverse</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00612.html">SearchRecord</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -125,19 +146,33 @@ Package Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{ super(p, <a class="code" href="a00596.html#ab9fa15a3f639296a771d62138f251aee">inverse</a>); }</div><div class="ttc" id="a00596_html_ab9fa15a3f639296a771d62138f251aee"><div class="ttname"><a href="a00596.html#ab9fa15a3f639296a771d62138f251aee">de.fuberlin.wiwiss.pubby.VocabularyStore.ValueCache&lt; Integer &gt;::inverse</a></div><div class="ttdeci">final boolean inverse</div><div class="ttdef"><b>Definition:</b> VocabularyStore.java:155</div></div>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                             {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.put(token, value);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="ttc" id="a00604_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1a984f4cb4d41188c130813c505063fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a984f4cb4d41188c130813c505063fb">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a3dcd1ee780b50b35c60ef427449266bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcd1ee780b50b35c60ef427449266bb">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00612.html">SearchRecord</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                  {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.remove(value);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="a00604_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00604.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4aeec757e2fc5d6bce4a2617b976858b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aeec757e2fc5d6bce4a2617b976858b">&#9670;&nbsp;</a></span>index</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,77 +181,16 @@ Package Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">K get </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>iri</em></td><td>)</td>
-          <td></td>
+          <td class="memname">FuzzyIndex&lt;<a class="el" href="a00612.html">SearchRecord</a>&gt; index = new PatriciaTrie&lt;&gt;()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="a00516.html#a1681b51a4d9b94752fc6668c82729236">DataSource::canDescribe()</a>, and <a class="el" href="a00516.html#ab085365476c05945218492b31028610a">DataSource::describeResource()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                  {</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="a00596.html#ad77ba7b82272e4c3fd8076414138bab4">cache</a>.containsKey(iri)) {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                <span class="keywordflow">return</span> <a class="code" href="a00596.html#ad77ba7b82272e4c3fd8076414138bab4">cache</a>.get(iri);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        }</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        K best = null;</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        <span class="keywordflow">if</span> (dataSource.canDescribe(iri)) {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                best = <a class="code" href="a00596.html#a377335356fab11c64944617d7fabbfe5">pickBestFromModel</a>(dataSource.describeResource(iri), iri);</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        }</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                        <a class="code" href="a00596.html#ad77ba7b82272e4c3fd8076414138bab4">cache</a>.put(iri, best);</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        <span class="keywordflow">return</span> best;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                }</div><div class="ttc" id="a00596_html_ad77ba7b82272e4c3fd8076414138bab4"><div class="ttname"><a href="a00596.html#ad77ba7b82272e4c3fd8076414138bab4">de.fuberlin.wiwiss.pubby.VocabularyStore.ValueCache&lt; Integer &gt;::cache</a></div><div class="ttdeci">final Map&lt; String, K &gt; cache</div><div class="ttdef"><b>Definition:</b> VocabularyStore.java:156</div></div>
-<div class="ttc" id="a00596_html_a377335356fab11c64944617d7fabbfe5"><div class="ttname"><a href="a00596.html#a377335356fab11c64944617d7fabbfe5">de.fuberlin.wiwiss.pubby.VocabularyStore.ValueCache&lt; Integer &gt;::pickBestFromModel</a></div><div class="ttdeci">K pickBestFromModel(Model m, String iri)</div><div class="ttdef"><b>Definition:</b> VocabularyStore.java:176</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a083d9b50ef29b03d5520218df8bf4870"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a083d9b50ef29b03d5520218df8bf4870">&#9670;&nbsp;</a></span>getCached()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">K getCached </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>iri</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                        {</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00596.html#ad77ba7b82272e4c3fd8076414138bab4">cache</a>.get(iri);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                }</div><div class="ttc" id="a00596_html_ad77ba7b82272e4c3fd8076414138bab4"><div class="ttname"><a href="a00596.html#ad77ba7b82272e4c3fd8076414138bab4">de.fuberlin.wiwiss.pubby.VocabularyStore.ValueCache&lt; Integer &gt;::cache</a></div><div class="ttdeci">final Map&lt; String, K &gt; cache</div><div class="ttdef"><b>Definition:</b> VocabularyStore.java:156</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a1b88e6006962be301e6e3feb2219fd61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b88e6006962be301e6e3feb2219fd61">&#9670;&nbsp;</a></span>pickBestValue()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Integer pickBestValue </td>
-          <td>(</td>
-          <td class="paramtype">Set&lt; RDFNode &gt;&#160;</td>
-          <td class="paramname"><em>candidates</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                                               {</div><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                        <span class="keywordflow">for</span> (RDFNode node: candidates) {</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                <span class="keywordflow">if</span> (!node.isLiteral()) <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                        <span class="keywordflow">return</span> node.asLiteral().getInt();</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                } <span class="keywordflow">catch</span> (JenaException ex) {</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                        <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                }</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        }</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                        <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                }</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -225,7 +199,7 @@ Package Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00243.html">de</a></li><li class="navelem"><a class="el" href="a00244.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00245.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00242.html">pubby</a></li><li class="navelem"><a class="el" href="a00588.html">VocabularyStore</a></li><li class="navelem"><a class="el" href="a00604.html">IntegerValueCache</a></li>
+    <li class="navelem"><a class="el" href="a00261.html">de</a></li><li class="navelem"><a class="el" href="a00262.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00263.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00260.html">pubby</a></li><li class="navelem"><a class="el" href="a00271.html">util</a></li><li class="navelem"><a class="el" href="a00604.html">SearchAdapter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

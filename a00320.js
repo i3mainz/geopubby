@@ -1,8 +1,9 @@
 var a00320 =
 [
-    [ "GMLWriter", "a00320.html#a10a439ceb7a10d4e059b6f2c8f3cf46a", null ],
-    [ "handleGeometry", "a00320.html#a1db5758f9dc869cecab9058fc45c2ca1", null ],
+    [ "HexTuplesWriter", "a00320.html#a7a915c55e4fa5d175709447fae6cc7c9", null ],
+    [ "handleGeometry", "a00320.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "write", "a00320.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "cov", "a00320.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00320.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00320.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00320.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],

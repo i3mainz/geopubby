@@ -1,4 +1,4 @@
-<map id="LDWriter" name="LDWriter">
-<area shape="rect" id="node2" href="$a00288.html" title="GeoModelWriter" alt="" coords="172,199,288,225"/>
-<area shape="rect" id="node3" href="$a00296.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="92,95,184,121"/>
+<map id="XYZASCIIWriter" name="XYZASCIIWriter">
+<area shape="rect" id="node2" href="$a00308.html" title="GeoModelWriter" alt="" coords="227,199,343,225"/>
+<area shape="rect" id="node3" href="$a00316.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
 </map>
