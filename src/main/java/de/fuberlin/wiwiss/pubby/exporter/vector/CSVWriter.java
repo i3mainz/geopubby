@@ -14,8 +14,6 @@ import org.wololo.jts2geojson.GeoJSONReader;
 
 import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 
-import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
-
 /**
  * Writes a GeoPubby instance as CSV.
  */

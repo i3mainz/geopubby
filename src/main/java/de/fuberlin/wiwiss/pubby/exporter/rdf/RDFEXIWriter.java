@@ -39,7 +39,7 @@ public class RDFEXIWriter extends GeoModelWriter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} // parse XML input
-		response.getWriter().close();
+		response.getOutputStream().close();
 		return null;
 	}
 	

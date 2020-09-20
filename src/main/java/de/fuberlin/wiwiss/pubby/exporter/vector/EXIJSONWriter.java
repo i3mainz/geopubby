@@ -33,7 +33,7 @@ public class EXIJSONWriter extends AbstractGeoJSONWriter {
 		// generate
 		OutputStream e4jOS = response.getOutputStream(); // output stream
 		mapperEXI.writeTree(fEXI.createGenerator(e4jOS), car);
-		response.getWriter().close();
+		response.getOutputStream().close();
 		return null;
 	}
 
