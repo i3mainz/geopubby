@@ -111,6 +111,8 @@ public class ESRIJSONWriter extends GeoModelWriter {
 	}
 	
 	public JSONObject handleGeometry(Geometry geom,String epsgcode) {
+		if(epsgcode==null)
+			epsgcode="4326";
 		JSONObject result=new JSONObject();
 		if(geom.getGeometryType().equalsIgnoreCase("Point")) {
 			result.put("x", geom.getCoordinate().getX());

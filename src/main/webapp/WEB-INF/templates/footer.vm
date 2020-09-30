@@ -60,6 +60,7 @@ function download2(link){
             #if (!$geoms.isEmpty())
         <option value="covjson">CoverageJSON (COVJSON)</option>
         <option value="csv">Comma Separated Values (CSV)</option>
+        <option value="esrijson">ESRIJSON</option>
         <option value="exijson">EXI4JSON</option>
         <option value="geojson">(Geo)JSON</option>
         <option value="geojsonld">GeoJSON-LD</option>
