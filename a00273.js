@@ -1,26 +1,10 @@
 var a00273 =
 [
-    [ "CSVWriter", "a00338.html", "a00338" ],
-    [ "ESRIJSONWriter", "a00342.html", "a00342" ],
-    [ "EXIJSONWriter", "a00346.html", "a00346" ],
-    [ "GeobufWriter", "a00350.html", null ],
-    [ "GeoJSONWriterr", "a00354.html", "a00354" ],
-    [ "GeoURIWriter", "a00358.html", "a00358" ],
-    [ "GMLWriter", "a00362.html", "a00362" ],
-    [ "GoogleMapsLinkWriter", "a00366.html", "a00366" ],
-    [ "GPXWriter", "a00370.html", "a00370" ],
-    [ "GRASSVectorASCIIWriter", "a00374.html", "a00374" ],
-    [ "KMLWriter", "a00378.html", "a00378" ],
-    [ "LatLonTextWriter", "a00382.html", "a00382" ],
-    [ "MapMLWriter", "a00386.html", "a00386" ],
-    [ "OSMLinkWriter", "a00390.html", "a00390" ],
-    [ "OSMWriter", "a00394.html", "a00394" ],
-    [ "SHPWriter", "a00398.html", "a00398" ],
-    [ "SVGWriter", "a00402.html", "a00402" ],
-    [ "TopoJSONWriter", "a00406.html", "a00406" ],
-    [ "WKBWriterr", "a00410.html", "a00410" ],
-    [ "WKTWriter", "a00414.html", "a00414" ],
-    [ "XLSWriter", "a00418.html", "a00418" ],
-    [ "XLSXWriter", "a00422.html", "a00422" ],
-    [ "YAMLWriter", "a00426.html", "a00426" ]
+    [ "coverage", "a00274.html", "a00274" ],
+    [ "rdf", "a00275.html", "a00275" ],
+    [ "vector", "a00276.html", "a00276" ],
+    [ "AbstractGeoJSONWriter", "a00297.html", "a00297" ],
+    [ "GeoModelWriter", "a00317.html", "a00317" ],
+    [ "JSONPWriter", "a00321.html", "a00321" ],
+    [ "ModelWriter", "a00325.html", "a00325" ]
 ];
