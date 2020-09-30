@@ -2,8 +2,12 @@ This is a Linked Data server that adds an HTML interface and
 dereferenceable URLs on top of RDF data that sits in a SPARQL
 store.
 
+![GeoPubby Architecture](geopubby.png)
+
 See [the Pubby website](http://www4.wiwiss.fu-berlin.de/pubby/)
 for details and instructions.
+
+## Features
 
 In addition to Pubby, GeoPubby supports the following features:
 
@@ -24,3 +28,6 @@ In addition to Pubby, GeoPubby supports the following features:
   * Binary formats: [BSON](http://bsonspec.org/), [RDF/EXI](https://www.w3.org/TR/exi/), [RDF/Thrift](https://afs.github.io/rdf-thrift/)
   * Streaming formats: [JSON Sequential](https://tools.ietf.org/html/rfc7464), [GeoJSON Sequential](https://github.com/geojson/geojson-text-sequences)
 
+## Sample Screen
+
+![GeoPubby Architecture](pubbyexample.png)
