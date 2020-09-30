@@ -13,12 +13,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.locationtech.jts.geom.Geometry;
+import org.wololo.jts2geojson.GeoJSONWriter;
 
 import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
 import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class ESRIJSONWriter extends GeoModelWriter {
+	
+	GeoJSONWriter writer=new GeoJSONWriter();
 	
 	public ESRIJSONWriter(String epsg) {
 		super(epsg);
@@ -112,6 +115,24 @@ public class ESRIJSONWriter extends GeoModelWriter {
 		if(geom.getGeometryType().equalsIgnoreCase("Point")) {
 			result.put("x", geom.getCoordinate().getX());
 			result.put("y", geom.getCoordinate().getY());
+			result.put("wkid", epsgcode);
+		}
+		if(geom.getGeometryType().equalsIgnoreCase("LineString")) {
+			org.wololo.geojson.Geometry obj=writer.write(geom);
+			JSONObject objj=new JSONObject(obj.toString());
+			result.put("paths", objj.getJSONArray("coordinates"));
+			result.put("wkid", epsgcode);
+		}
+		if(geom.getGeometryType().equalsIgnoreCase("Polygon")) {
+			org.wololo.geojson.Geometry obj=writer.write(geom);
+			JSONObject objj=new JSONObject(obj.toString());
+			result.put("rings", objj.getJSONArray("coordinates"));
+			result.put("wkid", epsgcode);
+		}
+		if(geom.getGeometryType().equalsIgnoreCase("MultiPoint")) {
+			org.wololo.geojson.Geometry obj=writer.write(geom);
+			JSONObject objj=new JSONObject(obj.toString());
+			result.put("points", objj.getJSONArray("coordinates"));
 			result.put("wkid", epsgcode);
 		}
 		return result;
