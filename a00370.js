@@ -7,6 +7,7 @@ var a00370 =
     [ "contextMapper", "a00370.html#ae7316c0c7550712f915cc3cd353cd981", null ],
     [ "cov", "a00370.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00370.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
+    [ "geojsonreader", "a00370.html#aa1372dfa0614d0f21c9d3ad785c16e81", null ],
     [ "geom", "a00370.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00370.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
     [ "lon", "a00370.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
