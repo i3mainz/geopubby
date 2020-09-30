@@ -39,6 +39,11 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
 					if(geojson.has(curst.getPredicate().toString())) {
+						if (curst.getPredicate().toString().contains("#")) {
+							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+						} else {
+							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+						}
 						if(geojson.optJSONArray(curst.getPredicate().toString())!=null) {
 							geojson.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
 						}else {
