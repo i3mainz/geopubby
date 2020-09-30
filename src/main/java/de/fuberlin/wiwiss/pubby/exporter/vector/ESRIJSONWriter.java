@@ -82,7 +82,7 @@ public class ESRIJSONWriter extends GeoModelWriter {
 						}					
 					}
 					if(geom!=null) {
-				        curfeature.put("geometry",handleGeometry(geom));
+				        curfeature.put("geometry",handleGeometry(geom,this.epsg));
 						geom=null;
 					}
 					if(lon!=null && lat!=null) {
@@ -107,9 +107,13 @@ public class ESRIJSONWriter extends GeoModelWriter {
 		return null;
 	}
 	
-	public JSONObject handleGeometry(Geometry geom) {
+	public JSONObject handleGeometry(Geometry geom,String epsgcode) {
 		JSONObject result=new JSONObject();
-		
+		if(geom.getGeometryType().equalsIgnoreCase("Point")) {
+			result.put("x", geom.getCoordinate().getX());
+			result.put("y", geom.getCoordinate().getY());
+			result.put("wkid", epsgcode);
+		}
 		return result;
 	}
 	
