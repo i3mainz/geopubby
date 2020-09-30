@@ -19,7 +19,8 @@ public class GeoJSONLDWriter extends AbstractGeoJSONWriter {
 		public GeoJSONLDWriter(String epsg) {
 			super(epsg);
 		}
-
+		
+		
 		@Override
 		public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {	
 			JSONObject geojson=this.prepareGeoJSONString(model, response);	
