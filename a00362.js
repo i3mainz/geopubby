@@ -1,5 +1,6 @@
 var a00362 =
 [
+    [ "ESRIJSONWriter", "a00362.html#a641d42f513ebd323500f883dfa9725d2", null ],
     [ "handleGeometry", "a00362.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleGeometry", "a00362.html#adfe0d7da65ce1d0c0331671b4bae7e9a", null ],
     [ "write", "a00362.html#abbc00390b9b4242b525b35c95441cc68", null ],
