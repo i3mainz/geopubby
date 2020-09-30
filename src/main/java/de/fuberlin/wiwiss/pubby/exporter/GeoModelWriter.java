@@ -7,6 +7,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
+import org.apache.sis.coverage.SampleDimension;
 import org.apache.sis.coverage.grid.GridCoverage;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -32,10 +33,11 @@ public class GeoModelWriter extends ModelWriter {
 	
 	protected GridCoverage cov;
 	
-	
-	
 	public GeoModelWriter(String epsg) {
 		this.epsg=epsg;
+		SampleDimension sam;
+		sam.
+		this.cov=new Grid
 	}
 	
 	public GeoModelWriter() {
