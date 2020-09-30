@@ -32,8 +32,6 @@ public class GeoModelWriter extends ModelWriter {
 	
 	protected GridCoverage cov;
 	
-	
-	
 	public GeoModelWriter(String epsg) {
 		this.epsg=epsg;
 	}

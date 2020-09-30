@@ -45,6 +45,7 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("application/rdf+xml+exi;q=0.95");
 		pubbyNegotiator.addVariant("application/json+exi;q=0.95");
 		pubbyNegotiator.addVariant("text/xyz;q=0.95");
+		pubbyNegotiator.addVariant("application/geojson-ld;q=0.95");
 		pubbyNegotiator.addVariant("application/x-trig;q=0.95")
 				.addAliasMediaType("application/trig;q=0.8")
 				.addAliasMediaType("text/trig;q=0.5");
@@ -115,6 +116,7 @@ public class PubbyNegotiator {
 			.addAliasMediaType("application/csv;q=0.8");
 		dataNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
+		dataNegotiator.addVariant("application/geojson-ld;q=0.95");
 		dataNegotiator.addVariant("image/svg+xml;q=0.95");
 		dataNegotiator.addVariant("application/hex+x-ndjson;q=0.95");
 		dataNegotiator.addVariant("text/latlon;q=0.95");

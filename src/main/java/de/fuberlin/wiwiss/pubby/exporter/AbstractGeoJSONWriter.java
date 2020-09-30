@@ -1,6 +1,8 @@
 package de.fuberlin.wiwiss.pubby.exporter;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,8 +21,11 @@ import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class AbstractGeoJSONWriter extends GeoModelWriter {
 
+	protected Map<String,String> contextMapper;
+	
 	public AbstractGeoJSONWriter(String epsg) {
 		super(epsg);
+		this.contextMapper=new TreeMap<String,String>();
 	}
 	
 	public JSONObject prepareGeoJSONString(Model model, HttpServletResponse response) throws IOException {
@@ -68,6 +73,11 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 					Tuple<Boolean,String> handled=this.handleGeometry(curst, ind, model);
 					if(!handled.getOne()) {
 						if(properties.has(curst.getPredicate().toString())) {
+							if (curst.getPredicate().toString().contains("#")) {
+								contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+							} else {
+								contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+							}
 							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
 								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
 							}else {

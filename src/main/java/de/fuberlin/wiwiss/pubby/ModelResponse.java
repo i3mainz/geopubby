@@ -22,6 +22,7 @@ import de.fuberlin.wiwiss.pubby.exporter.vector.EXIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GRASSVectorASCIIWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.GeoJSONLDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoURIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GoogleMapsLinkWriter;
@@ -119,6 +120,9 @@ public class ModelResponse {
 		}
 		if ("application/geojson".equals(mediaType)) {
 			return new GeoJSONWriterr(crs);
+		}
+		if ("application/geojson-ld".equals(mediaType)) {
+			return new GeoJSONLDWriter(crs);
 		}
 		if ("application/topojson".equals(mediaType)) {
 			return new TopoJSONWriter(crs);
