@@ -75,6 +75,22 @@ public class GeoModelWriter extends ModelWriter {
 			if (curst.getObject().asLiteral().getString() != null) {
 				WKBReader wkbread=new WKBReader();
 				try {
+					geom = wkbread.read(curst.getObject().asLiteral().getString().getBytes());
+					if(this.epsg!=null) {
+						ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+						geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			handled=true;
+		} else if (GEO.ASHEXWKB.getURI().equals(curst.getPredicate().getURI().toString())
+				&& this.epsg != null) {
+			if (curst.getObject().asLiteral().getString() != null) {
+				WKBReader wkbread=new WKBReader();
+				try {
 					geom = wkbread.read(WKBReader.hexToBytes(curst.getObject().asLiteral().getString()));
 					if(this.epsg!=null) {
 						ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
