@@ -38,12 +38,12 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 				StmtIterator it2 = ind.listProperties();
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
+					if (curst.getPredicate().toString().contains("#")) {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+					} else {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+					}
 					if(geojson.has(curst.getPredicate().toString())) {
-						if (curst.getPredicate().toString().contains("#")) {
-							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
-						} else {
-							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
-						}
 						if(geojson.optJSONArray(curst.getPredicate().toString())!=null) {
 							geojson.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
 						}else {
@@ -77,12 +77,12 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 					Statement curst=it2.next();
 					Tuple<Boolean,String> handled=this.handleGeometry(curst, ind, model);
 					if(!handled.getOne()) {
+						if (curst.getPredicate().toString().contains("#")) {
+							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+						} else {
+							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+						}
 						if(properties.has(curst.getPredicate().toString())) {
-							if (curst.getPredicate().toString().contains("#")) {
-								contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
-							} else {
-								contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
-							}
 							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
 								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
 							}else {
