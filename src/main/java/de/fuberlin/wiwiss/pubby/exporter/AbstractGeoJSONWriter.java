@@ -76,12 +76,12 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
 					Tuple<Boolean,String> handled=this.handleGeometry(curst, ind, model);
+					if (curst.getPredicate().toString().contains("#")) {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+					} else {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+					}
 					if(!handled.getOne()) {
-						if (curst.getPredicate().toString().contains("#")) {
-							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
-						} else {
-							contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
-						}
 						if(properties.has(curst.getPredicate().toString())) {
 							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {
 								properties.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());

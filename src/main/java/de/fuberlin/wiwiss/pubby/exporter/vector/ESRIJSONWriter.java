@@ -19,6 +19,11 @@ import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class ESRIJSONWriter extends GeoModelWriter {
+	
+	public ESRIJSONWriter(String epsg) {
+		super(epsg);
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
