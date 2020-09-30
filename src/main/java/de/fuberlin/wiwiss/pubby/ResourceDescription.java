@@ -760,11 +760,11 @@ public class ResourceDescription {
 			offset = matcher.end();
 			String word = matcher.group();
 			if ("".equals(word)) continue;
-			if (first || !uncapitalizedWords.contains(word.toLowerCase())) {
+			/*if (first || !uncapitalizedWords.contains(word.toLowerCase())) {
 				word = word.substring(0, 1).toUpperCase() + word.substring(1);
 			} else {
 				word = word.substring(0, 1).toLowerCase() + word.substring(1);
-			}
+			}*/
 			result.append(word);
 			first = false;
 		}

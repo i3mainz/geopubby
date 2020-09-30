@@ -12,8 +12,8 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 import org.json.JSONObject;
 import org.wololo.jts2geojson.GeoJSONReader;
 
-import com.conveyal.data.geobuf.GeobufEncoder;
-import com.conveyal.data.geobuf.GeobufFeature;
+//import com.conveyal.data.geobuf.GeobufEncoder;
+//import com.conveyal.data.geobuf.GeobufFeature;
 
 import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
@@ -30,7 +30,7 @@ public class GeobufWriter extends AbstractGeoJSONWriter {
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
 		JSONObject geojson=this.prepareGeoJSONString(model, response);
-		List<GeobufFeature> feats=new LinkedList<>();
+		/*List<GeobufFeature> feats=new LinkedList<>();
 		for(int i=0;i<geojson.getJSONArray("features").length();i++) {
 			JSONObject ft=geojson.getJSONArray("features").getJSONObject(i);
 			GeobufFeature feat=new GeobufFeature();
@@ -38,7 +38,8 @@ public class GeobufWriter extends AbstractGeoJSONWriter {
 		}
 
 		GeobufEncoder enc=new GeobufEncoder(null, 0);
-		enc.
+		enc.*/
+		return null;
 	}
 
 }

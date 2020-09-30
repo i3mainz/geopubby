@@ -35,9 +35,6 @@ public class GeoModelWriter extends ModelWriter {
 	
 	public GeoModelWriter(String epsg) {
 		this.epsg=epsg;
-		SampleDimension sam;
-		sam.
-		this.cov=new Grid
 	}
 	
 	public GeoModelWriter() {
@@ -73,6 +70,22 @@ public class GeoModelWriter extends ModelWriter {
 			}
 			handled=true;
 		} else if (GEO.ASWKB.getURI().equals(curst.getPredicate().getURI().toString())
+				&& this.epsg != null) {
+			if (curst.getObject().asLiteral().getString() != null) {
+				WKBReader wkbread=new WKBReader();
+				try {
+					geom = wkbread.read(curst.getObject().asLiteral().getString().getBytes());
+					if(this.epsg!=null) {
+						ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+						geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			handled=true;
+		} else if (GEO.ASHEXWKB.getURI().equals(curst.getPredicate().getURI().toString())
 				&& this.epsg != null) {
 			if (curst.getObject().asLiteral().getString() != null) {
 				WKBReader wkbread=new WKBReader();

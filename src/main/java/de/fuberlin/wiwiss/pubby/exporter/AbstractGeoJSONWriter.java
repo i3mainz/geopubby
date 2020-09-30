@@ -1,6 +1,8 @@
 package de.fuberlin.wiwiss.pubby.exporter;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,8 +21,11 @@ import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 public class AbstractGeoJSONWriter extends GeoModelWriter {
 
+	protected Map<String,String> contextMapper;
+	
 	public AbstractGeoJSONWriter(String epsg) {
 		super(epsg);
+		this.contextMapper=new TreeMap<String,String>();
 	}
 	
 	public JSONObject prepareGeoJSONString(Model model, HttpServletResponse response) throws IOException {
@@ -33,6 +38,11 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 				StmtIterator it2 = ind.listProperties();
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
+					if (curst.getPredicate().toString().contains("#")) {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+					} else {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+					}
 					if(geojson.has(curst.getPredicate().toString())) {
 						if(geojson.optJSONArray(curst.getPredicate().toString())!=null) {
 							geojson.getJSONArray(curst.getPredicate().toString()).put(curst.getObject().toString());
@@ -66,6 +76,11 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 				while(it2.hasNext()) {
 					Statement curst=it2.next();
 					Tuple<Boolean,String> handled=this.handleGeometry(curst, ind, model);
+					if (curst.getPredicate().toString().contains("#")) {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('#') + 1));
+					} else {
+						contextMapper.put(curst.getPredicate().toString(),curst.getPredicate().toString().substring(curst.getPredicate().toString().lastIndexOf('/') + 1));
+					}
 					if(!handled.getOne()) {
 						if(properties.has(curst.getPredicate().toString())) {
 							if(properties.optJSONArray(curst.getPredicate().toString())!=null) {

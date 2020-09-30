@@ -38,6 +38,8 @@ public class RequestParamHandler {
 		mimeTypes.put("latlontext", "text/latlon");
 		mimeTypes.put("geojson", "application/geojson");
 		mimeTypes.put("geojson", "text/geojson");
+		mimeTypes.put("esrijson", "text/esrijson");
+		mimeTypes.put("geojsonld", "application/geojson-ld");
 		mimeTypes.put("topojson", "application/topojson");
 		mimeTypes.put("hextuples", "application/hex+x-ndjson");
 		mimeTypes.put("geouri", "application/geouri");
