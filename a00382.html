@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: Member List</title>
+<title>GeoPubby: GeoURIWriter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,37 +56,382 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00385.html','');});
+$(document).ready(function(){initNavTree('a00382.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pac-attribs">Package Attributes</a> &#124;
+<a href="a00379.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">LatLonTextWriter Member List</div>  </div>
+<div class="title">GeoURIWriter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00385.html">LatLonTextWriter</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00385.html#a4de262c8cc5abdbadbdd425520b98ef1">convertDecimalToLatLonText</a>(Double D, Boolean lng)</td><td class="entry"><a class="el" href="a00385.html">LatLonTextWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00317.html#ae46fa35c884a8b26e022dedba4ba1350">cov</a></td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00317.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a></td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00317.html#a986ad099513be1127d32ade506e5fa4c">geom</a></td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00317.html#ab0d6737826308a7bd8d3bcd02dd2ad13">GeoModelWriter</a>(String epsg)</td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00317.html#a5f39a133422151f0682c799ffe23cff6">GeoModelWriter</a>()</td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00317.html#a43095d9fd65543513e8ecb1eb2db272c">handleGeometry</a>(Statement curst, Resource ind, Model model)</td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00317.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a></td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00385.html#a407bc12bfc5133bb23a9764e12311951">LatLonTextWriter</a>(String epsg)</td><td class="entry"><a class="el" href="a00385.html">LatLonTextWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00317.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a></td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"><span class="mlabel">package</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00325.html#ae8b1e194dbc193fe759f7e517807e668">reader</a></td><td class="entry"><a class="el" href="a00325.html">ModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00317.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a></td><td class="entry"><a class="el" href="a00317.html">GeoModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00325.html#ac95bc57d28343d34023e72f916cb9b75">usedProperty</a></td><td class="entry"><a class="el" href="a00325.html">ModelWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00385.html#abbc00390b9b4242b525b35c95441cc68">write</a>(Model model, HttpServletResponse response)</td><td class="entry"><a class="el" href="a00385.html">LatLonTextWriter</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<p>Writes a GeoPubby instance as GeoURI.  
+ <a href="a00382.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for GeoURIWriter:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00381.png" border="0" usemap="#GeoURIWriter_inherit__map" alt="Inheritance graph"/></div>
+<map name="GeoURIWriter_inherit__map" id="GeoURIWriter_inherit__map">
+<area shape="rect" id="node2" href="a00334.html" title="GeoModelWriter" alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node3" href="a00342.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="17,5,109,32"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for GeoURIWriter:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00380.png" border="0" usemap="#GeoURIWriter_coll__map" alt="Collaboration graph"/></div>
+<map name="GeoURIWriter_coll__map" id="GeoURIWriter_coll__map">
+<area shape="rect" id="node2" href="a00334.html" title="GeoModelWriter" alt="" coords="227,199,343,225"/>
+<area shape="rect" id="node3" href="a00342.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a08ca9cd80b14097e1cab4661feb2f6c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html#a08ca9cd80b14097e1cab4661feb2f6c8">GeoURIWriter</a> (String <a class="el" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>)</td></tr>
+<tr class="separator:a08ca9cd80b14097e1cab4661feb2f6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc00390b9b4242b525b35c95441cc68"><td class="memItemLeft" align="right" valign="top">ExtendedIterator&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">write</a> (Model model, HttpServletResponse response)  throws IOException </td></tr>
+<tr class="separator:abbc00390b9b4242b525b35c95441cc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43095d9fd65543513e8ecb1eb2db272c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00654.html">Tuple</a>&lt; Boolean, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a43095d9fd65543513e8ecb1eb2db272c">handleGeometry</a> (Statement curst, Resource ind, Model model)</td></tr>
+<tr class="separator:a43095d9fd65543513e8ecb1eb2db272c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ae984b1b4178b56b80cdb7a80eac64541"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a> =null</td></tr>
+<tr class="separator:ae984b1b4178b56b80cdb7a80eac64541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ee7b62aaf174d3551c77990a8f7dc9"><td class="memItemLeft" align="right" valign="top">Double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a></td></tr>
+<tr class="separator:af3ee7b62aaf174d3551c77990a8f7dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f7567e6745fe87158905295092ad7c"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a> =&quot;EPSG:4326&quot;</td></tr>
+<tr class="separator:a29f7567e6745fe87158905295092ad7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986ad099513be1127d32ade506e5fa4c"><td class="memItemLeft" align="right" valign="top">Geometry&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a></td></tr>
+<tr class="separator:a986ad099513be1127d32ade506e5fa4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46fa35c884a8b26e022dedba4ba1350"><td class="memItemLeft" align="right" valign="top">GridCoverage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#ae46fa35c884a8b26e022dedba4ba1350">cov</a></td></tr>
+<tr class="separator:ae46fa35c884a8b26e022dedba4ba1350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95bc57d28343d34023e72f916cb9b75"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00342.html#ac95bc57d28343d34023e72f916cb9b75">usedProperty</a> =null</td></tr>
+<tr class="separator:ac95bc57d28343d34023e72f916cb9b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8b1e194dbc193fe759f7e517807e668"><td class="memItemLeft" align="right" valign="top">WKTReader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">reader</a> =new WKTReader()</td></tr>
+<tr class="separator:ae8b1e194dbc193fe759f7e517807e668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
+Package Attributes</h2></td></tr>
+<tr class="memitem:a9f38292d4c9d61b3702f7c243f7515fe"><td class="memItemLeft" align="right" valign="top">Double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a></td></tr>
+<tr class="separator:a9f38292d4c9d61b3702f7c243f7515fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Writes a GeoPubby instance as GeoURI. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a08ca9cd80b14097e1cab4661feb2f6c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ca9cd80b14097e1cab4661feb2f6c8">&#9670;&nbsp;</a></span>GeoURIWriter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00382.html">GeoURIWriter</a> </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>epsg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                         {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                super(<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="a00334_html_ae984b1b4178b56b80cdb7a80eac64541"><div class="ttname"><a href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.epsg</a></div><div class="ttdeci">String epsg</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:25</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a43095d9fd65543513e8ecb1eb2db272c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43095d9fd65543513e8ecb1eb2db272c">&#9670;&nbsp;</a></span>handleGeometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00654.html">Tuple</a>&lt;Boolean,String&gt; handleGeometry </td>
+          <td>(</td>
+          <td class="paramtype">Statement&#160;</td>
+          <td class="paramname"><em>curst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Resource&#160;</td>
+          <td class="paramname"><em>ind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Model&#160;</td>
+          <td class="paramname"><em>model</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00666.html#afc6375b31a4b188e127ee01b9ee0a544">GEO.ASGEOJSON</a>, <a class="el" href="a00666.html#a7d05011f10f73bdb11355876136c7957">GEO.ASGML</a>, <a class="el" href="a00666.html#a3a0c1e4c302c2c3afba7dbb9d34dc9a3">GEO.ASHEXWKB</a>, <a class="el" href="a00666.html#a7b0e15c8279602eea669deb1c66f137b">GEO.ASWKB</a>, <a class="el" href="a00666.html#af3b39bf8d8c41f1b00a9c91c00034c73">GEO.ASWKT</a>, <a class="el" href="a00666.html#a0fc2d65d7e1c8d618abd44757c1f5f70">GEO.EPSG</a>, <a class="el" href="a00666.html#ace73ca6834d4f47bc77ff88053a09cfa">GEO.GEORSSPOINT</a>, <a class="el" href="a00666.html#a6737d980017fe22829716d5e08b2c3e4">GEO.P625</a>, <a class="el" href="a00666.html#ac127f8cb1d116ba2de06695bc81c7fbc">GEO.P_GEOMETRY</a>, <a class="el" href="a00666.html#a6c1d650cd10e326f285fa7cc36e1d737">GEO.P_LAT</a>, <a class="el" href="a00666.html#a97406cbf998cb21121e9c3f2f1921dc0">GEO.P_LONG</a>, <a class="el" href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">ModelWriter.reader</a>, and <a class="el" href="a00638.html#a99ea74c86ef21b4eefcecf4ef42c9763">ReprojectionUtils.reproject()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00306.html#a858e5df55c2876a07b0fb69e77b30e09">AbstractGeoJSONWriter.prepareGeoJSONString()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00310.html#abbc00390b9b4242b525b35c95441cc68">CoverageJSONWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00430.html#abbc00390b9b4242b525b35c95441cc68">TopoJSONWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, <a class="el" href="a00402.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00426.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, <a class="el" href="a00418.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00386.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>, <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, and <a class="el" href="a00406.html#abbc00390b9b4242b525b35c95441cc68">LatLonTextWriter.write()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                                                              {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordtype">boolean</span> handled=<span class="keyword">false</span>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                String type=<span class="stringliteral">&quot;vector&quot;</span>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">if</span> (GEO.ASWKT.getURI().equals(curst.getPredicate().getURI().toString())</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                || GEO.P_GEOMETRY.getURI().equals(curst.getPredicate().getURI())</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                || GEO.P625.getURI().equals(curst.getPredicate().getURI())) {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = <a class="code" href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">reader</a>.read(curst.getObject().asLiteral().getString());</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                <span class="keywordflow">if</span>(this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>!=null) {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                        <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>=ReprojectionUtils.reproject(<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>, <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>, <a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        } <span class="keywordflow">catch</span> (ParseException e) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                e.printStackTrace();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        }</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.ASGEOJSON.getURI().equals(curst.getPredicate().getURI().toString())</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                &amp;&amp; this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a> != null) {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        <span class="keywordflow">if</span> (curst.getObject().asLiteral().getString() != null) {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                GeoJSONReader read = <span class="keyword">new</span> GeoJSONReader();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = read.read(curst.getObject().asLiteral().getString());</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                <span class="keywordflow">if</span>(this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>!=null) {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                        ind.addProperty(GEO.EPSG, model.createTypedLiteral(<span class="keyword">this</span>.epsg));</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = ReprojectionUtils.reproject(<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>, <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>, <a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.ASWKB.getURI().equals(curst.getPredicate().getURI().toString())</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                &amp;&amp; this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a> != null) {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordflow">if</span> (curst.getObject().asLiteral().getString() != null) {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                WKBReader wkbread=<span class="keyword">new</span> WKBReader();</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                        <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = wkbread.read(curst.getObject().asLiteral().getString().getBytes());</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                        <span class="keywordflow">if</span>(this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>!=null) {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                ind.addProperty(GEO.EPSG, model.createTypedLiteral(<span class="keyword">this</span>.epsg));</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = ReprojectionUtils.reproject(<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>, <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>, <a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                        }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                } <span class="keywordflow">catch</span> (ParseException e) {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                        e.printStackTrace();</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                }</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.ASHEXWKB.getURI().equals(curst.getPredicate().getURI().toString())</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                &amp;&amp; this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a> != null) {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordflow">if</span> (curst.getObject().asLiteral().getString() != null) {</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                WKBReader wkbread=<span class="keyword">new</span> WKBReader();</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                        <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = wkbread.read(WKBReader.hexToBytes(curst.getObject().asLiteral().getString()));</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                        <span class="keywordflow">if</span>(this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>!=null) {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                ind.addProperty(GEO.EPSG, model.createTypedLiteral(<span class="keyword">this</span>.epsg));</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = ReprojectionUtils.reproject(<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>, <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>, <a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                        }</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                } <span class="keywordflow">catch</span> (ParseException e) {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                        e.printStackTrace();</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        }</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.ASGML.getURI().equals(curst.getPredicate().getURI().toString())</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                &amp;&amp; this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a> != null) {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                        <span class="keywordflow">if</span> (curst.getObject().asLiteral().getString() != null) {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                GMLReader <a class="code" href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">reader</a>=<span class="keyword">new</span> GMLReader();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                        <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>=reader.read(curst.getObject().asLiteral().getString(), <span class="keyword">new</span> GeometryFactory());</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                        <span class="keywordflow">if</span>(this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>!=null) {</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                ind.addProperty(GEO.EPSG, model.createTypedLiteral(<span class="keyword">this</span>.epsg));</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = ReprojectionUtils.reproject(<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>, <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>, <a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                        }</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                } <span class="keywordflow">catch</span> (SAXException | IOException | ParserConfigurationException e) {</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                        e.printStackTrace();</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                }</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        }</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.P_LAT.getURI().equals(curst.getPredicate().getURI().toString())) {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                        <a class="code" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a> = curst.getObject().asLiteral().getDouble();</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.P_LONG.getURI().equals(curst.getPredicate().getURI().toString())) {</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                        <a class="code" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a> = curst.getObject().asLiteral().getDouble();</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (GEO.GEORSSPOINT.getURI().equals(curst.getPredicate().getURI().toString())) {</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        <a class="code" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a> = Double.valueOf(curst.getObject().asLiteral().getString().split(<span class="stringliteral">&quot; &quot;</span>)[0]);</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        <a class="code" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a> = Double.valueOf(curst.getObject().asLiteral().getString().split(<span class="stringliteral">&quot; &quot;</span>)[1]);</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                        handled=<span class="keyword">true</span>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                }</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> Tuple&lt;Boolean,String&gt;(handled,type);</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div><div class="ttc" id="a00334_html_a986ad099513be1127d32ade506e5fa4c"><div class="ttname"><a href="a00334.html#a986ad099513be1127d32ade506e5fa4c">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.geom</a></div><div class="ttdeci">Geometry geom</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:31</div></div>
+<div class="ttc" id="a00334_html_a29f7567e6745fe87158905295092ad7c"><div class="ttname"><a href="a00334.html#a29f7567e6745fe87158905295092ad7c">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.sourceCRS</a></div><div class="ttdeci">String sourceCRS</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:29</div></div>
+<div class="ttc" id="a00334_html_af3ee7b62aaf174d3551c77990a8f7dc9"><div class="ttname"><a href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.lat</a></div><div class="ttdeci">Double lat</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:27</div></div>
+<div class="ttc" id="a00342_html_ae8b1e194dbc193fe759f7e517807e668"><div class="ttname"><a href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">de.fuberlin.wiwiss.pubby.exporter.ModelWriter.reader</a></div><div class="ttdeci">WKTReader reader</div><div class="ttdef"><b>Definition:</b> ModelWriter.java:22</div></div>
+<div class="ttc" id="a00334_html_a9f38292d4c9d61b3702f7c243f7515fe"><div class="ttname"><a href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.lon</a></div><div class="ttdeci">Double lon</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:27</div></div>
+<div class="ttc" id="a00334_html_ae984b1b4178b56b80cdb7a80eac64541"><div class="ttname"><a href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.epsg</a></div><div class="ttdeci">String epsg</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:25</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abbc00390b9b4242b525b35c95441cc68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc00390b9b4242b525b35c95441cc68">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExtendedIterator&lt;Resource&gt; write </td>
+          <td>(</td>
+          <td class="paramtype">Model&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HttpServletResponse&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws IOException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">GeoModelWriter.epsg</a>, <a class="el" href="a00666.html#a0fc2d65d7e1c8d618abd44757c1f5f70">GEO.EPSG</a>, <a class="el" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">GeoModelWriter.geom</a>, <a class="el" href="a00334.html#a43095d9fd65543513e8ecb1eb2db272c">GeoModelWriter.handleGeometry()</a>, <a class="el" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">GeoModelWriter.lat</a>, <a class="el" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">GeoModelWriter.lon</a>, <a class="el" href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">ModelWriter.reader</a>, <a class="el" href="a00638.html#a99ea74c86ef21b4eefcecf4ef42c9763">ReprojectionUtils.reproject()</a>, and <a class="el" href="a00334.html#a29f7567e6745fe87158905295092ad7c">GeoModelWriter.sourceCRS</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                                                              {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                ExtendedIterator&lt;Resource&gt; it=super.write(model, response);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">while</span> (it.hasNext()) {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        Resource ind = it.next();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <span class="keywordflow">if</span>(ind.hasProperty(GEO.EPSG)) {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>=<span class="stringliteral">&quot;EPSG:&quot;</span>+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        StmtIterator it2 = ind.listProperties();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <span class="keywordflow">while</span> (it2.hasNext()) {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                Statement curst = it2.next();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                this.<a class="code" href="a00334.html#a43095d9fd65543513e8ecb1eb2db272c">handleGeometry</a>(curst, ind, model);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <span class="keywordflow">if</span> (<a class="code" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a> == null || <a class="code" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a> == null) {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                response.getWriter().write(<span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                response.getWriter().close();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        } <span class="keywordflow">else</span> {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                <span class="keywordflow">try</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a> = <a class="code" href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">reader</a>.read(<span class="stringliteral">&quot;Point(&quot;</span>+<a class="code" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a>+<span class="stringliteral">&quot; &quot;</span>+<a class="code" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a>+<span class="stringliteral">&quot;)&quot;</span>);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        <span class="keywordflow">if</span>(this.<a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>!=null) {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                <a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>=ReprojectionUtils.reproject(<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>, <a class="code" href="a00334.html#a29f7567e6745fe87158905295092ad7c">sourceCRS</a>, <a class="code" href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">epsg</a>);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                        }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                        response.getWriter().write(<span class="stringliteral">&quot;geo:&quot;</span>+<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>.getCoordinate().getX()+<span class="stringliteral">&quot;,&quot;</span>+<a class="code" href="a00334.html#a986ad099513be1127d32ade506e5fa4c">geom</a>.getCoordinate().getY());</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                } <span class="keywordflow">catch</span> (ParseException e) {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                        response.getWriter().write(<span class="stringliteral">&quot;geo:&quot;</span> + <a class="code" href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">lat</a> + <span class="stringliteral">&quot;,&quot;</span> + <a class="code" href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">lon</a>);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                }</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                response.getWriter().close();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                } <span class="keywordflow">catch</span> (JSONException e) {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        e.printStackTrace();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                } <span class="keywordflow">catch</span> (IOException e) {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        <span class="comment">// TODO Auto-generated catch block</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        e.printStackTrace();</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div><div class="ttc" id="a00334_html_a986ad099513be1127d32ade506e5fa4c"><div class="ttname"><a href="a00334.html#a986ad099513be1127d32ade506e5fa4c">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.geom</a></div><div class="ttdeci">Geometry geom</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:31</div></div>
+<div class="ttc" id="a00334_html_a29f7567e6745fe87158905295092ad7c"><div class="ttname"><a href="a00334.html#a29f7567e6745fe87158905295092ad7c">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.sourceCRS</a></div><div class="ttdeci">String sourceCRS</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:29</div></div>
+<div class="ttc" id="a00334_html_af3ee7b62aaf174d3551c77990a8f7dc9"><div class="ttname"><a href="a00334.html#af3ee7b62aaf174d3551c77990a8f7dc9">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.lat</a></div><div class="ttdeci">Double lat</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:27</div></div>
+<div class="ttc" id="a00342_html_ae8b1e194dbc193fe759f7e517807e668"><div class="ttname"><a href="a00342.html#ae8b1e194dbc193fe759f7e517807e668">de.fuberlin.wiwiss.pubby.exporter.ModelWriter.reader</a></div><div class="ttdeci">WKTReader reader</div><div class="ttdef"><b>Definition:</b> ModelWriter.java:22</div></div>
+<div class="ttc" id="a00334_html_a43095d9fd65543513e8ecb1eb2db272c"><div class="ttname"><a href="a00334.html#a43095d9fd65543513e8ecb1eb2db272c">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.handleGeometry</a></div><div class="ttdeci">Tuple&lt; Boolean, String &gt; handleGeometry(Statement curst, Resource ind, Model model)</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:44</div></div>
+<div class="ttc" id="a00334_html_a9f38292d4c9d61b3702f7c243f7515fe"><div class="ttname"><a href="a00334.html#a9f38292d4c9d61b3702f7c243f7515fe">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.lon</a></div><div class="ttdeci">Double lon</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:27</div></div>
+<div class="ttc" id="a00334_html_ae984b1b4178b56b80cdb7a80eac64541"><div class="ttname"><a href="a00334.html#ae984b1b4178b56b80cdb7a80eac64541">de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter.epsg</a></div><div class="ttdeci">String epsg</div><div class="ttdef"><b>Definition:</b> GeoModelWriter.java:25</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae46fa35c884a8b26e022dedba4ba1350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46fa35c884a8b26e022dedba4ba1350">&#9670;&nbsp;</a></span>cov</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GridCoverage cov</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae984b1b4178b56b80cdb7a80eac64541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae984b1b4178b56b80cdb7a80eac64541">&#9670;&nbsp;</a></span>epsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String epsg =null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00334.html#ab0d6737826308a7bd8d3bcd02dd2ad13">GeoModelWriter.GeoModelWriter()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00350.html#abdd713b028a11990b5724683382c1f5d">LDWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, and <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>.</p>
+
+</div>
+</div>
+<a id="a986ad099513be1127d32ade506e5fa4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986ad099513be1127d32ade506e5fa4c">&#9670;&nbsp;</a></span>geom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Geometry geom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00306.html#a858e5df55c2876a07b0fb69e77b30e09">AbstractGeoJSONWriter.prepareGeoJSONString()</a>, <a class="el" href="a00362.html#abbc00390b9b4242b525b35c95441cc68">ESRIJSONWriter.write()</a>, <a class="el" href="a00398.html#abbc00390b9b4242b525b35c95441cc68">GRASSVectorASCIIWriter.write()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00358.html#abbc00390b9b4242b525b35c95441cc68">CSVWriter.write()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00310.html#abbc00390b9b4242b525b35c95441cc68">CoverageJSONWriter.write()</a>, <a class="el" href="a00430.html#abbc00390b9b4242b525b35c95441cc68">TopoJSONWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00350.html#abdd713b028a11990b5724683382c1f5d">LDWriter.write()</a>, <a class="el" href="a00402.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, <a class="el" href="a00426.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, <a class="el" href="a00418.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00386.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, and <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>.</p>
+
+</div>
+</div>
+<a id="af3ee7b62aaf174d3551c77990a8f7dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ee7b62aaf174d3551c77990a8f7dc9">&#9670;&nbsp;</a></span>lat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double lat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00306.html#a858e5df55c2876a07b0fb69e77b30e09">AbstractGeoJSONWriter.prepareGeoJSONString()</a>, <a class="el" href="a00362.html#abbc00390b9b4242b525b35c95441cc68">ESRIJSONWriter.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00310.html#abbc00390b9b4242b525b35c95441cc68">CoverageJSONWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00430.html#abbc00390b9b4242b525b35c95441cc68">TopoJSONWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00350.html#abdd713b028a11990b5724683382c1f5d">LDWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00402.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00426.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, <a class="el" href="a00418.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00386.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>, <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, and <a class="el" href="a00406.html#abbc00390b9b4242b525b35c95441cc68">LatLonTextWriter.write()</a>.</p>
+
+</div>
+</div>
+<a id="a9f38292d4c9d61b3702f7c243f7515fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f38292d4c9d61b3702f7c243f7515fe">&#9670;&nbsp;</a></span>lon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Double lon</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00306.html#a858e5df55c2876a07b0fb69e77b30e09">AbstractGeoJSONWriter.prepareGeoJSONString()</a>, <a class="el" href="a00362.html#abbc00390b9b4242b525b35c95441cc68">ESRIJSONWriter.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00310.html#abbc00390b9b4242b525b35c95441cc68">CoverageJSONWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00430.html#abbc00390b9b4242b525b35c95441cc68">TopoJSONWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00350.html#abdd713b028a11990b5724683382c1f5d">LDWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00402.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00426.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, <a class="el" href="a00418.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00386.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>, <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, and <a class="el" href="a00406.html#abbc00390b9b4242b525b35c95441cc68">LatLonTextWriter.write()</a>.</p>
+
+</div>
+</div>
+<a id="ae8b1e194dbc193fe759f7e517807e668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8b1e194dbc193fe759f7e517807e668">&#9670;&nbsp;</a></span>reader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WKTReader reader =new WKTReader()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00334.html#a43095d9fd65543513e8ecb1eb2db272c">GeoModelWriter.handleGeometry()</a>, <a class="el" href="a00358.html#abbc00390b9b4242b525b35c95441cc68">CSVWriter.write()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00350.html#abdd713b028a11990b5724683382c1f5d">LDWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, and <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>.</p>
+
+</div>
+</div>
+<a id="a29f7567e6745fe87158905295092ad7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29f7567e6745fe87158905295092ad7c">&#9670;&nbsp;</a></span>sourceCRS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String sourceCRS =&quot;EPSG:4326&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00306.html#a858e5df55c2876a07b0fb69e77b30e09">AbstractGeoJSONWriter.prepareGeoJSONString()</a>, <a class="el" href="a00362.html#abbc00390b9b4242b525b35c95441cc68">ESRIJSONWriter.write()</a>, <a class="el" href="a00326.html#abbc00390b9b4242b525b35c95441cc68">XYZASCIIWriter.write()</a>, <a class="el" href="a00390.html#abbc00390b9b4242b525b35c95441cc68">GoogleMapsLinkWriter.write()</a>, <a class="el" href="a00434.html#abbc00390b9b4242b525b35c95441cc68">WKBWriterr.write()</a>, <a class="el" href="a00310.html#abbc00390b9b4242b525b35c95441cc68">CoverageJSONWriter.write()</a>, <a class="el" href="a00438.html#abbc00390b9b4242b525b35c95441cc68">WKTWriter.write()</a>, <a class="el" href="a00430.html#abbc00390b9b4242b525b35c95441cc68">TopoJSONWriter.write()</a>, <a class="el" href="a00382.html#abbc00390b9b4242b525b35c95441cc68">GeoURIWriter.write()</a>, <a class="el" href="a00322.html#abbc00390b9b4242b525b35c95441cc68">X3DWriter.write()</a>, <a class="el" href="a00414.html#abbc00390b9b4242b525b35c95441cc68">OSMLinkWriter.write()</a>, <a class="el" href="a00350.html#abdd713b028a11990b5724683382c1f5d">LDWriter.write()</a>, <a class="el" href="a00446.html#abbc00390b9b4242b525b35c95441cc68">XLSXWriter.write()</a>, <a class="el" href="a00442.html#abbc00390b9b4242b525b35c95441cc68">XLSWriter.write()</a>, <a class="el" href="a00402.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00426.html#abbc00390b9b4242b525b35c95441cc68">SVGWriter.write()</a>, <a class="el" href="a00418.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00386.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>, <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>, and <a class="el" href="a00406.html#abbc00390b9b4242b525b35c95441cc68">LatLonTextWriter.write()</a>.</p>
+
+</div>
+</div>
+<a id="ac95bc57d28343d34023e72f916cb9b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95bc57d28343d34023e72f916cb9b75">&#9670;&nbsp;</a></span>usedProperty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Property usedProperty =null</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00402.html#abbc00390b9b4242b525b35c95441cc68">KMLWriter.write()</a>, <a class="el" href="a00418.html#abbc00390b9b4242b525b35c95441cc68">OSMWriter.write()</a>, <a class="el" href="a00386.html#abbc00390b9b4242b525b35c95441cc68">GMLWriter.write()</a>, <a class="el" href="a00410.html#abbc00390b9b4242b525b35c95441cc68">MapMLWriter.write()</a>, and <a class="el" href="a00394.html#abbc00390b9b4242b525b35c95441cc68">GPXWriter.write()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00279.html">de</a></li><li class="navelem"><a class="el" href="a00280.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00281.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00278.html">pubby</a></li><li class="navelem"><a class="el" href="a00282.html">exporter</a></li><li class="navelem"><a class="el" href="a00285.html">vector</a></li><li class="navelem"><a class="el" href="a00382.html">GeoURIWriter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
