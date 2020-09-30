@@ -16,11 +16,12 @@ In addition to Pubby, GeoPubby supports the following features:
   * GeoSPARQL GMLLiteral
   * GeoJSON Literal
   * Well-Known-Binary WKBLiteral
-* Supports reprojection of geometries to a selected amount of coordinate reference systems
+* Supports reprojection of geometries to [EPSG](http://www.epsg-registry.org) coordinate reference systems
 * Implements a fuzzy search over concept labels 
 * Implements the exports of geometries in one of the following formats:
-  * RDF Serizalizations: [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), [RDF/JSON](https://www.w3.org/TR/rdf-json/), [TriG](https://www.w3.org/TR/trig/), [TriX](https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html), [JSON-LD](https://json-ld.org/spec/latest/json-ld/), [TTL](https://www.w3.org/TR/turtle/), [N-Triples](https://www.w3.org/TR/n-triples/), [NQuads](https://www.w3.org/TR/n-quads/), [HexTuples](https://github.com/ontola/hextuples)
-  * Vector geometry formats: [GeoJSON](https://geojson.org/), [KML](https://www.ogc.org/standards/kml/), [GML](https://www.ogc.org/standards/gml), [OSM/XML](https://wiki.openstreetmap.org/wiki/OSM_XML), [TopoJSON](https://github.com/topojson/topojson), [WKT](https://www.ogc.org/standards/sfa), [HexWKB](https://www.iso.org/standard/40114.html), [SVG](https://www.w3.org/Graphics/SVG/)
+  * RDF Serizalizations:  [HexTuples](https://github.com/ontola/hextuples), [JSON-LD](https://json-ld.org/spec/latest/json-ld/), [N-Triples](https://www.w3.org/TR/n-triples/), [Notation3](https://www.w3.org/TeamSubmission/n3/), [NQuads](https://www.w3.org/TR/n-quads/), [RDF/JSON](https://www.w3.org/TR/rdf-json/), [RDF/XML](https://www.w3.org/TR/rdf-syntax-grammar/), [TriG](https://www.w3.org/TR/trig/), [TriX](https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html), [TTL](https://www.w3.org/TR/turtle/)
+  * Vector geometry formats: [GeoJSON](https://geojson.org/), [KML](https://www.ogc.org/standards/kml/), [GML](https://www.ogc.org/standards/gml), 
+  [GPX](https://www.topografix.com/gpx.asp), LatLonText, [MapML](https://maps4html.org/MapML/spec/), [OSM/XML](https://wiki.openstreetmap.org/wiki/OSM_XML), [SVG](https://www.w3.org/Graphics/SVG/), [TopoJSON](https://github.com/topojson/topojson), [WKT](https://www.ogc.org/standards/sfa), [HexWKB](https://www.iso.org/standard/40114.html)
   * Coverage-centric formats:
      * [CoverageJSON](https://covjson.org) to display Points, LineStrings, Polygons and GridCoverages
      * [XYZASCII](https://gdal.org/drivers/raster/xyz.html) to display coverage data or simply a list of points
