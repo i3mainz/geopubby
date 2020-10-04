@@ -1,10 +1,8 @@
 var a00286 =
 [
-    [ "AllTests", "a00694.html", "a00694" ],
-    [ "ContentTypeNegotiator", "a00486.html", "a00486" ],
-    [ "ContentTypeNegotiatorTest", "a00698.html", "a00698" ],
-    [ "MediaRangeSpec", "a00502.html", "a00502" ],
-    [ "MediaRangeSpecTest", "a00702.html", "a00702" ],
-    [ "PubbyNegotiator", "a00506.html", "a00506" ],
-    [ "PubbyNegotiatorTest", "a00706.html", "a00706" ]
+    [ "CoverageJSONWriter", "a00313.html", "a00313" ],
+    [ "HexWKBRasterWriter", "a00317.html", null ],
+    [ "WKBRasterWriter", "a00321.html", "a00321" ],
+    [ "X3DWriter", "a00325.html", "a00325" ],
+    [ "XYZASCIIWriter", "a00329.html", "a00329" ]
 ];

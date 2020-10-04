@@ -1,5 +1,4 @@
-<map id="EXIJSONWriter" name="EXIJSONWriter">
-<area shape="rect" id="node2" href="$a00306.html" title="AbstractGeoJSONWriter" alt="" coords="333,288,500,315"/>
-<area shape="rect" id="node3" href="$a00334.html" title="GeoModelWriter" alt="" coords="281,199,397,225"/>
-<area shape="rect" id="node4" href="$a00342.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="60,95,152,121"/>
+<map id="ESRIJSONWriter" name="ESRIJSONWriter">
+<area shape="rect" id="node2" href="$a00337.html" title="GeoModelWriter" alt="" coords="10,80,126,107"/>
+<area shape="rect" id="node3" href="$a00345.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="22,5,114,32"/>
 </map>
