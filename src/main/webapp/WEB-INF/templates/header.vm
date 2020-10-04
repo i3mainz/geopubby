@@ -144,6 +144,7 @@
       	<option value="trix">Triples in XML (TriX)</option>
         <option value="wkb">Well-Known-Binary (WKB)</option>
         <option value="wkt">Well-Known-Text (WKT)</option>
+        <option value="ewkt">Extended Well-Known-Text (EWKT)</option>
         <option value="x3d">X3D Format (X3D)</option>
         <option value="xls">MS Excel (XLS)</option>
       	<option value="xlsx">Excel Spreadsheet (XLSX)</option>

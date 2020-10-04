@@ -67,6 +67,7 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("text/osmlink;q=0.95");
 		pubbyNegotiator.addVariant("text/latlon;q=0.95");
 		pubbyNegotiator.addVariant("text/wkt;q=0.95");
+		pubbyNegotiator.addVariant("text/wkt;q=0.95");
 		pubbyNegotiator.addVariant("text/vnd.yaml;q=0.95");
 		pubbyNegotiator.addVariant("text/wkb;q=0.95");
 		pubbyNegotiator.addVariant("text/gpx;q=0.95")
@@ -130,6 +131,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("application/javascript;q=0.95");
 		dataNegotiator.addVariant("text/vnd.yaml;q=0.95");
 		dataNegotiator.addVariant("text/wkt;q=0.95");
+		dataNegotiator.addVariant("text/ewkt;q=0.95");
 		dataNegotiator.addVariant("text/wkb;q=0.95");
 		dataNegotiator.addVariant("application/osm+xml;q=0.95");
 		dataNegotiator.addVariant("application/rt;q=0.95");

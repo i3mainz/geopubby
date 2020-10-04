@@ -60,6 +60,7 @@ public class RequestParamHandler {
 		mimeTypes.put("mapml", "text/mapml");
 		mimeTypes.put("rt", "application/rt");
 		mimeTypes.put("csv", "text/csv");
+		mimeTypes.put("ewkt", "text/ewkt");
 		mimeTypes.put("wkt", "text/wkt");
 		mimeTypes.put("wkb", "text/wkb");
 		mimeTypes.put("xyz", "text/xyz");
