@@ -32,9 +32,9 @@
     <span class="literal" content="$value.Node.LiteralLexicalForm">$value.Node.LiteralLexicalForm
 #if ($value.DatatypeLabel)
     #if ($value.DatatypeURI.toString().contains($server_base.toString()))
-      <small><a href="$value.DatatypeURI" style="color: #666;" dataType="$value.Node.URI">($value.DatatypeLabel)</a></small>
+      <small><a href="$value.DatatypeURI" style="color: #666;" dataType="$value.DatatypeURI">($value.DatatypeLabel)</a></small>
     #else
-      <small><a href="$value.DatatypeURI" style="color: #666;" dataType="$value.Node.URI" target="_blank">($value.DatatypeLabel)</a></small> 
+      <small><a href="$value.DatatypeURI" style="color: #666;" dataType="$value.DatatypeURI" target="_blank">($value.DatatypeLabel)</a></small> 
     #end 
 #end
 #if ($value.Node.LiteralLanguage != "")
