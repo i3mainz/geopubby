@@ -5,9 +5,9 @@
 #end
 #if ($showLabels && $property.Inverse && $property.InverseLabel)
     #if ($value.BrowsableURL.toString().contains($server_base.toString()))
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI">$property.InverseLabel
+        <a class="uri" href="$property.BrowsableURL" property="$property.URI" title="$property.URI">$property.InverseLabel
     #else
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank">$property.InverseLabel
+        <a class="uri" href="$property.BrowsableURL" property="$property.URI" title="$property.URI" target="_blank">$property.InverseLabel
     #end
     #if($property.hasPrefix())
         (<small>$property.Prefix:</small>$property.LocalName)
@@ -17,9 +17,9 @@
     </a>
 #elseif ($showLabels && $property.label)
    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI">$property.label 
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" property="$property.URI">$property.label 
     #else
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank">$property.label 
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" property="$property.URI" target="_blank">$property.label 
     #end
     #if($property.hasPrefix())
         (<small>$property.Prefix:</small>$property.LocalName)
@@ -29,15 +29,15 @@
     </a>
 #elseif ($property.hasPrefix())
     #if ($value.BrowsableURL.toString().contains($server_base.toString()))
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI"><small>$property.Prefix:</small>$property.LocalName</a>
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" property="$property.URI"><small>$property.Prefix:</small>$property.LocalName</a>
     #else
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank"><small>$property.Prefix:</small>$property.LocalName</a>
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank" property="$property.URI"><small>$property.Prefix:</small>$property.LocalName</a>
     #end
 #else
     #if ($value.BrowsableURL.toString().contains($server_base.toString()))
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI"><small>?:</small>$property.LocalName</a>
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" property="$property.URI"><small>?:</small>$property.LocalName</a>
     #else
-        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank"><small>?:</small>$property.LocalName</a>
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" property="$property.URI" target="_blank"><small>?:</small>$property.LocalName</a>
     #end
   
 #end
