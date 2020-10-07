@@ -1,6 +1,6 @@
 ## Renders a set of ResourceProperties, given in $properties, as a property-value table
 <div class="row-fluid">
-    <table class="description table table-bordered table-hover">
+    <table class="description table table-bordered table-hover" about="$uri">
 	<thead>
       <tr><th>Property</th><th>Value</th></tr>
      </thead>
@@ -11,7 +11,7 @@
 #else
 #set ($odd_even = "odd")
 #end
-      <tr class="$odd_even">
+      <tr class="$odd_even"  property="$property.URI">
         <td class="property">
   
 #parse("property-name.vm")
