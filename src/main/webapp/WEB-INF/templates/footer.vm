@@ -89,6 +89,7 @@ function download2(link){
         <option value="ttl">Turtle (TTL)</option>
       	<option value="trig">RDF TriG</option>
       	<option value="trix">Triples in XML (TriX)</option>
+      	<option value="twkb">Tiny Well-Known-Binary (TWKB)</option>
         <option value="wkb">Well-Known-Binary (WKB)</option>
         <option value="wkt">Well-Known-Text (WKT)</option>
         <option value="ewkt">Extended Well-Known-Text (EWKT)</option>
