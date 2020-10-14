@@ -19,6 +19,7 @@ import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.ESRIJSONWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.EWKTWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.EXIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GPXWriter;
@@ -33,6 +34,7 @@ import de.fuberlin.wiwiss.pubby.exporter.vector.MapMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.OSMWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.SVGWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.TWKBWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.vector.TopoJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.WKBWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.vector.WKTWriter;
@@ -191,8 +193,14 @@ public class ModelResponse {
 		if("model/x3d+xml".equals(mediaType)) {
 			return new X3DWriter(crs);
 		}
+		if ("text/ewkt".equals(mediaType)) {
+			return new EWKTWriter(crs);
+		}
 		if ("text/wkt".equals(mediaType)) {
 			return new WKTWriter(crs);
+		}
+		if ("text/twkb".equals(mediaType)) {
+			return new TWKBWriterr(crs);
 		}
 		if ("text/wkb".equals(mediaType)) {
 			return new WKBWriterr(crs);
