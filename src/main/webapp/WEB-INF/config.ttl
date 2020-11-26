@@ -54,7 +54,7 @@
 # Server configuration section
 <> a conf:Configuration;
     # Project name for display in page titles
-    conf:projectName "RGZM WissIT Linked Data";
+    conf:projectName "archaeology.link - Linked Open Data";
     # Homepage with description of the project for the link in the page header
     conf:projectHomepage <https://archaeology.link>;
     # The Pubby root, where the webapp is running inside the servlet container.
@@ -68,6 +68,8 @@
     # When the homepage of the server is accessed, this resource will
     # be shown.
     # conf:indexResource <http://atlantgis.squirrel.link/ar_site#1>;
+    # image preview
+    conf:imageProperty <http://archaeology.link/ontology#hasImage>;
 
 # Dataset configuration section #1 (for DBpedia resources)
 #
@@ -80,7 +82,6 @@
         # conf:sparqlDefaultGraph <http://dbpedia.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
         conf:datasetBase <http://data.archaeology.link/data/>;
-        conf:imageProperty <http://archaeology.link/ontology#hasImage>;
         #conf:datasetBase <http://atlantgis.squirrel.link/>;
         # Will be appended to the conf:webBase to form the public
         # resource URIs; if not present, defaults to ""
