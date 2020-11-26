@@ -8,6 +8,7 @@ body {
     font-size: 80%;
     margin: 0;
     padding: 1.2em 2em;
+    color: #ffffff;
 }
 
 #rdficon {
@@ -17,13 +18,13 @@ body {
 }
 
 #header {
-    border-bottom: 2px solid #621e4b;
+    border-bottom: 2px solid #058b8cff;
     margin: 0 0 1.2em;
     padding: 0 0 0.3em;
 }
 
 #footer {
-    border-top: 2px solid #621e4b;
+    border-top: 2px solid #058b8cff;
     margin: 1.2em 0 0;
     padding: 0.3em 0 0;
     text-align: center;
@@ -72,7 +73,7 @@ h2 {
 }
 
 .page-resource-uri a:hover {
-    color: #892a69;
+    color: #058b8cff;
     text-decoration: underline;
 }
 
@@ -143,11 +144,11 @@ table.description .property {
 }
 
 h1, h2 {
-    color: #892a69;
+    color: #058b8cff;
 }
 
 body {
-    background: #FFFFFF;
+    background: #252331ff;
 }
 
 table.description .container>td {
