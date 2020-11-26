@@ -107,6 +107,10 @@ table.description {
     width: 100%;
 }
 
+table.description th {
+    background: transparent !important;
+}
+
 #map {
     margin-top: 25px;
 }
