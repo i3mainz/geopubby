@@ -1,54 +1,424 @@
-html { margin: 0; padding: 0; }
-body { font-family: sans-serif; font-size: 80%; margin: 0; padding: 1.2em 2em; }
-#rdficon { float: right; position: relative; top: -28px; }
-#header { border-bottom: 2px solid #696; margin: 0 0 1.2em; padding: 0 0 0.3em; }
-#footer { border-top: 2px solid #696; margin: 1.2em 0 0; padding: 0.3em 0 0; }
-#homelink { display: inline; }
-#homelink, #homelink a { color: #666; }
-#homelink a { font-weight: bold; text-decoration: none; }
-#homelink a:hover { color: red; text-decoration: underline; }
-h1 { display: inline; font-weight: normal; font-size: 200%; margin: 0; text-align: left; }
-h2 { font-weight: normal; font-size: 124%; margin: 1.2em 0 0.2em; }
-.page-resource-uri { font-size: 116%; margin: 0.2em 0; }
-.page-resource-uri a { color: #666; text-decoration: none; }
-.page-resource-uri a:hover { color: red; text-decoration: underline; }
-img { border: none; }
-table.description { border-collapse: collapse; clear: left; font-size: 100%; margin: 0 0 1em; width: 100%; }
-table.description th { background: white; text-align: left; }
-table.description td, table.description th { line-height: 1.2em; padding: 0.3em 0.5em; vertical-align: top; }
-table.description ul { margin: 0; padding-left: 1.4em; }
-table.description li { list-style-position: outside; list-style-type: square; margin-left: 0; padding-left: 0; }
-table.description .property-column { width: 13em; }
-.uri { white-space: nowrap; }
-.uri a, a.uri { text-decoration: none; }
-.unbound { color: #888; }
-table.description a small, .metadata-table a small  { font-size: 100%; color: #55a; }
-table.description small, .metadata-table a small  { font-size: 100%; color: #666; }
-table.description .property { white-space: nowrap; padding-right: 1.5em; }
-h1, h2 { color: #810; }
-body { background: #cec; }
-table.description .container > td { background: #c0e2c0; padding: 0.2em 0.8em; }
-table.description .even td { background: #d4f6d4; }
-table.description .odd td { background: #f0fcf0; }
-.image { background: white; float: left; margin: 0 1.5em 1.5em 0; padding: 2px; }
-a.expander { text-decoration: none; }
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 80%;
+    margin: 0;
+    padding: 1.2em 2em;
+}
+
+#rdficon {
+    float: right;
+    position: relative;
+    top: -28px;
+}
+
+#header {
+    border-bottom: 2px solid #696;
+    margin: 0 0 1.2em;
+    padding: 0 0 0.3em;
+}
+
+#footer {
+    border-top: 2px solid #696;
+    margin: 1.2em 0 0;
+    padding: 0.3em 0 0;
+}
+
+#homelink {
+    display: inline;
+}
+
+#homelink, #homelink a {
+    color: #666;
+}
+
+#homelink a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#homelink a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+h1 {
+    display: inline;
+    font-weight: normal;
+    font-size: 200%;
+    margin: 0;
+    text-align: left;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 124%;
+    margin: 1.2em 0 0.2em;
+}
+
+.page-resource-uri {
+    font-size: 116%;
+    margin: 0.2em 0;
+}
+
+.page-resource-uri a {
+    color: #666;
+    text-decoration: none;
+}
+
+.page-resource-uri a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+img {
+    border: none;
+}
+
+table.description {
+    border-collapse: collapse;
+    clear: left;
+    font-size: 100%;
+    margin: 0 0 1em;
+    width: 100%;
+}
+
+table.description th {
+    background: white;
+    text-align: left;
+}
+
+table.description td, table.description th {
+    line-height: 1.2em;
+    padding: 0.3em 0.5em;
+    vertical-align: top;
+}
+
+table.description ul {
+    margin: 0;
+    padding-left: 1.4em;
+}
+
+table.description li {
+    list-style-position: outside;
+    list-style-type: square;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+table.description .property-column {
+    width: 13em;
+}
+
+.uri {
+    white-space: nowrap;
+}
+
+.uri a, a.uri {
+    text-decoration: none;
+}
+
+.unbound {
+    color: #888;
+}
+
+table.description a small, .metadata-table a small {
+    font-size: 100%;
+    color: #55a;
+}
+
+table.description small, .metadata-table a small {
+    font-size: 100%;
+    color: #666;
+}
+
+table.description .property {
+    white-space: nowrap;
+    padding-right: 1.5em;
+}
+
+h1, h2 {
+    color: #810;
+}
+
+body {
+    background: #cec;
+}
+
+table.description .container>td {
+    background: #c0e2c0;
+    padding: 0.2em 0.8em;
+}
+
+table.description .even td {
+    background: #d4f6d4;
+}
+
+table.description .odd td {
+    background: #f0fcf0;
+}
+
+.image {
+    background: white;
+    float: left;
+    margin: 0 1.5em 1.5em 0;
+    padding: 2px;
+}
+
+a.expander {
+    text-decoration: none;
+}
 
 .metadata-label {
-	font-size: 100%;
-	background: #f0fcf0;
-	padding: 3px;
+    font-size: 100%;
+    background: #f0fcf0;
+    padding: 3px;
 }
 
 .metadata-table {
-	font-size: 100%;
-	border-left: 3px solid #f0fcf0;
-	border-bottom: 3px solid #f0fcf0;
-	border-right: 3px solid #f0fcf0;
-	background: #d4f6d4;
-	border-top: 0px solid none;
-	margin: 0px;
+    font-size: 100%;
+    border-left: 3px solid #f0fcf0;
+    border-bottom: 3px solid #f0fcf0;
+    border-right: 3px solid #f0fcf0;
+    background: #d4f6d4;
+    border-top: 0px solid none;
+    margin: 0px;
 }
 
 .metadata-table td {
-	padding: 3px;
+    padding: 3px;
 }
+
+body {
+    padding-top: 20px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Custom container */
+.container {
+    margin: 0 auto !important;
+    max-width: 1000px !important;
+}
+
+.container>hr {
+    margin: 40px 0 !important;
+
+    .search {
+        z-index: 9999999 !important;
+    }
+
+    html {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body {
+        font-family: sans-serif !important;
+        font-size: 80% !important;
+        margin: 0 !important;
+        padding: 1.2em 2em !important;
+    }
+
+    #rdficon {
+        float: right !important;
+        position: relative !important;
+        top: -55px !important;
+    }
+
+    #header {
+        border-bottom: 2px solid #621e4b !important;
+        margin: 0 0 1.2em !important;
+        padding: 0 0 0.3em !important;
+    }
+
+    #footer {
+        border-top: 2px solid #621e4b !important;
+        margin: 1.2em 0 0 !important;
+        padding: 0.3em 0 0 !important;
+        text-align: center !important;
+    }
+
+    #homelink {
+        display: inline !important;
+    }
+
+    #homelink,
+    #homelink a {
+        color: #666 !important;
+    }
+
+    #homelink a {
+        font-weight: bold !important;
+        text-decoration: none !important;
+    }
+
+    #homelink a:hover {
+        color: red !important;
+        text-decoration: underline !important;
+    }
+
+    h1 {
+        display: inline !important;
+        font-weight: normal !important;
+        font-size: 200% !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    h2 {
+        font-weight: normal !important;
+        font-size: 124% !important;
+        margin: 1.2em 0 0.2em !important;
+    }
+
+    .page-resource-uri {
+        font-size: 116% !important;
+        margin: 0.2em 0 !important;
+    }
+
+    .page-resource-uri a {
+        color: #666 !important;
+        text-decoration: none !important;
+    }
+
+    .page-resource-uri a:hover {
+        color: #892a69 !important;
+        text-decoration: underline !important;
+    }
+
+    img {
+        border: none !important;
+    }
+
+    table.description {
+        border-collapse: collapse !important;
+        clear: left !important;
+        font-size: 100% !important;
+        margin: 0 0 1em !important;
+        width: 100% !important;
+    }
+
+    table.description th {
+        background: white !important;
+        text-align: left !important;
+    }
+
+    table.description td,
+    table.description th {
+        line-height: 1.2em !important;
+        padding: 0.3em 0.5em !important;
+        vertical-align: top !important;
+    }
+
+    table.description ul {
+        margin: 0 !important;
+        padding-left: 1.4em !important;
+    }
+
+    table.description li {
+        list-style-position: outside !important;
+        list-style-type: square !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    table.description .property-column {
+        width: 13em !important;
+    }
+
+    .uri {
+        white-space: nowrap !important;
+    }
+
+    .uri a,
+    a.uri {
+        text-decoration: none !important;
+    }
+
+    .unbound {
+        color: #888 !important;
+    }
+
+    table.description a small,
+    .metadata-table a small {
+        font-size: 100% !important;
+        color: #55a !important;
+    }
+
+    table.description small,
+    .metadata-table a small {
+        font-size: 100% !important;
+        color: #666 !important;
+    }
+
+    table.description .property {
+        white-space: nowrap !important;
+        padding-right: 1.5em !important;
+    }
+
+    h1,
+    h2 {
+        color: #892a69 !important;
+    }
+
+    body {
+        background: #FFFFFF !important;
+    }
+
+    table.description .container>td {
+        background: #c0e2c0 !important;
+        padding: 0.2em 0.8em !important;
+    }
+
+    table.description .even td {
+        background: #f9ecf5 !important;
+    }
+
+    table.description .odd td {
+        background: #edc5e0 !important;
+    }
+
+    .image {
+        background: white !important;
+        float: left !important;
+        margin: 0 1.5em 1.5em 0 !important;
+        padding: 2px !important;
+    }
+
+    a.expander {
+        text-decoration: none !important;
+    }
+
+    a {
+        color: #892a69 !important;
+        text-decoration: none !important;
+    }
+
+    a:hover {
+        color: #621e4b !important;
+        text-decoration: underline !important;
+    }
+
+    .metadata-label {
+        font-size: 100% !important;
+        background: #f0fcf0 !important;
+        padding: 3px !important;
+    }
+
+    .metadata-table {
+        font-size: 100%;
+        border-left: 3px solid #f0fcf0 !important;
+        border-bottom: 3px solid #f0fcf0 !important;
+        border-right: 3px solid #f0fcf0 !important;
+        background: #d4f6d4 !important;
+        border-top: 0px solid none !important;
+        margin: 0px !important;
+    }
+
+    .metadata-table td {
+        padding: 3px !important;
+    }
