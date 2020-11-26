@@ -16,9 +16,12 @@
 <script type="text/javascript">
 var overlayMaps={}
 var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
-	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	});
+    var layer=L.tileLayer.grayscale('http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri ',
+        minZoom: 1,
+        maxZoom: 16,
+        ext: 'jpg'
+    });
 	var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
 		layers: 'web',
 		format: 'image/png',
@@ -26,7 +29,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
 		});
 	var baseMaps = {
-        "OSM": layer
+        "ESRI World-Shaded-Relief": layer
 	};
 	baseMaps["OSM"].addTo(map);
 	L.control.scale({
