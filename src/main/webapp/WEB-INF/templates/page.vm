@@ -203,7 +203,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               bounds.extend(layerBounds);
         #end
         map.fitBounds(bounds);
-        map.setZoom(3);
+        map.setZoom(4);
 </script>
 #end
 </div>
