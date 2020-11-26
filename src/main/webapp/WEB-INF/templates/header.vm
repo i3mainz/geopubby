@@ -1,443 +1,178 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
+  <head>
+   <meta charset="UTF-8">
     <title>
-        #if ($head_title)
-        $head_title
-        #else
-        $title
-        #end
-        #if ($project_name)
-        | $project_name
-        #end
+#if ($head_title)
+      $head_title
+#else
+      $title
+#end
+#if ($project_name)
+      | $project_name
+#end
     </title>
-    #if ($rdf_link)
+#if ($rdf_link)
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link" title="RDF" />
-    #end
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+#end
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	    <link rel="stylesheet" type="text/css" href="${server_base}static/style.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.min.js"></script>
+    <script type="text/javascript" src="${server_base}static/epsg.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.6/wicket.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function init() {
-	init_long_literals();
-}
+  <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
 
-var long_literal_counter = 0;
-var long_literal_spans = {};
-var long_literal_texts = {};
-function init_long_literals() {
-    var spans = document.getElementsByTagName('span');
-    for (i = 0; i < spans.length; i++) {
-        if (spans[i].className != 'literal') continue;
-        var span = spans[i];
-        var textNode = span.firstChild;
-        var text = textNode.data;
-        if (text.length < 300) continue;
-        var match = text.match(/([^\0]{150}[^\0]*? )([^\0]*)/);
-        if (!match) continue;
-        span.insertBefore(document.createTextNode(match[1] + ' ... '), span.firstChild);
-        span.removeChild(textNode);
-        var link = document.createElement('a');
-        link.href = 'javascript:expand(' + long_literal_counter + ');';
-        link.appendChild(document.createTextNode('\u00BBmore\u00BB'));
-        link.className = 'expander';
-        span.insertBefore(link, span.firstChild.nextSibling);
-        long_literal_spans[long_literal_counter] = span;
-        long_literal_texts[long_literal_counter] = textNode;
-        long_literal_counter = long_literal_counter + 1;
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 40px 0;
+      .search {
+    	z-index: 9999999 !important;
+		}
+     </style>
+  <script>
+  $( function() {
+    function split( val ) {
+      return val.split( /,\s*/ );
     }
-}
-
-function expand(i) {
-    var span = long_literal_spans[i];
-    span.removeChild(span.firstChild);
-    span.removeChild(span.firstChild);
-    span.insertBefore(long_literal_texts[i], span.firstChild);
-}
-
-function showAllMetadata(name) {
-	var ele = document.getElementById(name);
-	if (ele == null) return;
-	var tables = document.getElementsByTagName('table');
-	for (i = 0; i < tables.length; i++) {
-		tables[i].style.display = 'block';
-	}
-}
-
-    var epsgdefs={"EPSG:4326":"+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs","EPSG:3048":"proj=utm +zone=36 +ellps=GRS80 +units=m +no_defs","EPSG:3587":"+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs","EPSG:3912":"proj=tmerc +lat_0=0 +lon_0=15 +k=0.9999 +x_0=500000 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +units=m +no_defs","EPSG:25832":"+proj=utm +zone=32 +ellps=GRS80 +units=m +no_defs","EPSG:25833":"+proj=utm +zone=33 +ellps=GRS80 +units=m +no_defs","EPSG:31467":"+proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=bessel +datum=potsdam +units=m +no_defs"}
-var wgs84dest = new proj4.Proj('EPSG:4326');
-
-function convertGeoJSON(geojson,from){
-	if("features" in geojson){
-		for(feature in geojson["features"]){
-			coords=geojson["features"][feature]["geometry"]["coordinates"]
-			geojson["features"][feature]["geometry"]=exportConvert(coords,from,geojson["features"][feature]["geometry"]["type"],false)
-		}
-	}else{
-		coords=geojson["geometry"]["coordinates"]
-		geojson["geometry"]=exportConvert(coords,from,geojson["geometry"]["type"],false)
-	}
-	console.log(geojson);
-	return geojson;
-}
-
-function exportConvert(coordinates,from,geomtype,switchlatlong){
-    console.log("ExportConvert")
-    coords=convertit(coordinates,from,epsgdefs["EPSG:4326"],switchlatlong)
-    console.log("Coords: "+coords)
-    res=geometryToGeoJSON(geomtype,coords)
-    console.log("Res: "+res)
-    return res;
-}
-
-function geometryToGeoJSON(geomtype,coordinates){
-    res={}
-	res["geometry"]={}
-    res["geometry"]["coordinates"]=""
-    geomtype=geomtype.toLowerCase()
-    console.log(geomtype.trim())
-	switch(geomtype.trim()){
-            case "linearring":
-            case "polygon":
-                res["geometry"]["type"]="Polygon"
-		res["geometry"]["coordinates"]="[["
-		break;
-            case "envelope":
-            res["geometry"]["type"]="Envelope"
-		res["geometry"]["coordinates"]="["
-		break;
-            case "linestring":
-                res["geometry"]["type"]="LineString"
-		res["geometry"]["coordinates"]="["
-		break;
-            case "point":
-                res["geometry"]["type"]="Point"
-		res["geometry"]["coordinates"]=""
-		break;
-	}
-	splstr=coordinates.toString().split(",")
-	console.log(res)
-	i=0;
-		while(i<splstr.length){
-			res["geometry"]["coordinates"]+="["+splstr[i]+", "+splstr[i+1]+"], "
-			i+=2;
-		}
-        res["geometry"]["coordinates"]=res["geometry"]["coordinates"].substring(0,res["geometry"]["coordinates"].length-2)
-        if(geomtype=="linearring" || geomtype=="polygon"){
-		res["geometry"]["coordinates"]+="]]"
-	}else{
-		res["geometry"]["coordinates"]+=""
-	}
-    console.log(res)
-    res["geometry"]["coordinates"]=JSON.parse(res["geometry"]["coordinates"])
-	return res["geometry"];
-}
-
-function convertit(coordinates,source,dest,switchlatlong){
-	//console.log("Coordinates: "+coordinates)
-	if(source==dest && !switchlatlong){
-            return coordinates;
-	}
-	resultarray=[]
-	//console.log(coordinates.length)
-	i=0;
-	splitted=coordinates.toString().split(",")
-	while(i<splitted.length){
-		//console.log(splitted[i]+" - "+splitted[i+1]+" - "+parseFloat(splitted[i])+" - "+parseFloat(splitted[i+1]))
-		var p=new proj4.Point(splitted[i],splitted[i+1])
-		//console.log("Point: "+p.x+" - "+p.y)
-		//console.log(source)
-		//console.log(dest)
-		if(source!=dest)
-			res=proj4(source, dest, p);
-		else{
-			res=p;
-		}
-		//console.log("Point: "+res.x+" - "+res.y)
-		if(switchlatlong){
-			resultarray.push(res.y)
-			resultarray.push(res.x)
-		}else{
-			resultarray.push(res.x)
-			resultarray.push(res.y)
-		}
-		i+=2;
-	}
-	//console.log("Resultarray: "+resultarray)
-	return resultarray
-}
-</script>
-    <style type="text/css">
-        body {
-            padding-top: 20px;
-            padding-bottom: 60px;
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+ 
+    $( "#search" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
         }
-
-        /* Custom container */
-        .container {
-            margin: 0 auto;
-            max-width: 1000px;
+      })
+      .autocomplete({
+        source: function( request, response ) {
+          $.getJSON( "${server_base}search", {
+            search: extractLast( request.term ),
+            limit: 10
+          }, response );
+        },
+        search: function() {
+          // custom minLength
+          var term = extractLast( this.value );
+          if ( term.length < 2 ) {
+            return false;
+          }
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          window.location.href=ui.item.value
+          return false;
         }
-
-        .container>hr {
-            margin: 40px 0;
-
-            .search {
-                z-index: 9999999 !important;
-            }
-    </style>
-    <script>
-        $(function() {
-            function split(val) {
-                return val.split(/,\s*/);
-            }
-
-            function extractLast(term) {
-                return split(term).pop();
-            }
-
-        });
-    </script>
-    <style>
-        html {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: sans-serif;
-            font-size: 80%;
-            margin: 0;
-            padding: 1.2em 2em;
-        }
-
-        #rdficon {
-            float: right;
-            position: relative;
-            top: -55px;
-        }
-
-        #header {
-            border-bottom: 2px solid #621e4b;
-            margin: 0 0 1.2em;
-            padding: 0 0 0.3em;
-        }
-
-        #footer {
-            border-top: 2px solid #621e4b;
-            margin: 1.2em 0 0;
-            padding: 0.3em 0 0;
-            text-align: center;
-        }
-
-        #homelink {
-            display: inline;
-        }
-
-        #homelink,
-        #homelink a {
-            color: #666;
-        }
-
-        #homelink a {
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        #homelink a:hover {
-            color: red;
-            text-decoration: underline;
-        }
-
-        h1 {
-            display: inline;
-            font-weight: normal;
-            font-size: 200%;
-            margin: 0;
-            text-align: left;
-        }
-
-        h2 {
-            font-weight: normal;
-            font-size: 124%;
-            margin: 1.2em 0 0.2em;
-        }
-
-        .page-resource-uri {
-            font-size: 116%;
-            margin: 0.2em 0;
-        }
-
-        .page-resource-uri a {
-            color: #666;
-            text-decoration: none;
-        }
-
-        .page-resource-uri a:hover {
-            color: #892a69;
-            text-decoration: underline;
-        }
-
-        img {
-            border: none;
-        }
-
-        table.description {
-            border-collapse: collapse;
-            clear: left;
-            font-size: 100%;
-            margin: 0 0 1em;
-            width: 100%;
-        }
-
-        table.description th {
-            background: white;
-            text-align: left;
-        }
-
-        table.description td,
-        table.description th {
-            line-height: 1.2em;
-            padding: 0.3em 0.5em;
-            vertical-align: top;
-        }
-
-        table.description ul {
-            margin: 0;
-            padding-left: 1.4em;
-        }
-
-        table.description li {
-            list-style-position: outside;
-            list-style-type: square;
-            margin-left: 0;
-            padding-left: 0;
-        }
-
-        table.description .property-column {
-            width: 13em;
-        }
-
-        .uri {
-            white-space: nowrap;
-        }
-
-        .uri a,
-        a.uri {
-            text-decoration: none;
-        }
-
-        .unbound {
-            color: #888;
-        }
-
-        table.description a small,
-        .metadata-table a small {
-            font-size: 100%;
-            color: #55a;
-        }
-
-        table.description small,
-        .metadata-table a small {
-            font-size: 100%;
-            color: #666;
-        }
-
-        table.description .property {
-            white-space: nowrap;
-            padding-right: 1.5em;
-        }
-
-        h1,
-        h2 {
-            color: #892a69;
-        }
-
-        body {
-            background: #FFFFFF;
-        }
-
-        table.description .container>td {
-            background: #c0e2c0;
-            padding: 0.2em 0.8em;
-        }
-
-        table.description .even td {
-            background: #f9ecf5;
-        }
-
-        table.description .odd td {
-            background: #edc5e0;
-        }
-
-        .image {
-            background: white;
-            float: left;
-            margin: 0 1.5em 1.5em 0;
-            padding: 2px;
-        }
-
-        a.expander {
-            text-decoration: none;
-        }
-
-        a {
-            color: #892a69 !important;
-            text-decoration: none !important;
-        }
-
-        a:hover {
-            color: #621e4b !important;
-            text-decoration: underline !important;
-        }
-
-        .metadata-label {
-            font-size: 100%;
-            background: #f0fcf0;
-            padding: 3px;
-        }
-
-        .metadata-table {
-            font-size: 100%;
-            border-left: 3px solid #f0fcf0;
-            border-bottom: 3px solid #f0fcf0;
-            border-right: 3px solid #f0fcf0;
-            background: #d4f6d4;
-            border-top: 0px solid none;
-            margin: 0px;
-        }
-
-        .metadata-table td {
-            padding: 3px;
-        }
-    </style>
-</head>
-
-<body onLoad="init();">
+      });
+  } );
+  </script>
+      <script type="text/javascript" src="${server_base}static/script.js"></script>
+  </head>
+  <body onLoad="init();">
     <div id="header">
         <div>
-            <h1 id="title">$title</h1>
-            #if ($project_name)
-            #if ($project_link)
-            <div id="homelink">at <a href="$project_link" target="_blank">$project_name</a></div>
-            #else
-            <div id="homelink">at <a href="$server_base" target="_blank">$project_name</a></div>
-            #end
-            #end
-        </div>
-        #set( $uri2 = $uri.replace("https://digits.mainzed.org/ogham/pubby/","http://lod.ogham.link/data/") )
-        #if ($uri)
-        <div class="page-resource-uri"><a href="$uri2">$uri2</a></div>
-        #end
-        <div id="rdficon"><a href="http://ogham.link" target="_blank"><img src="${server_base}static/ogham_logo.png" height="50" style="margin-bottom:-50px" /></a></div>
+        <h1 id="title">$title</h1>
+#if ($project_name)
+#if ($project_link)
+        <div id="homelink">at <a href="$project_link" target="_blank">$project_name</a></div>
+#else
+        <div id="homelink">at <a href="$server_base" target="_blank">$project_name</a></div>
+#end
+#end
+</div>
+#if ($uri)
+      <div class="page-resource-uri"><a href="$uri">$uri</a></div>
+#end
+#if ($rdf_link)
+      <div id="rdficon"><a href="$rdf_link" title="RDF data"><img src="${server_base}static/rdf-icon.gif" alt="[This page as RDF]" /></a></div>
+#end
     </div>
     <div class="search">
-        Search: <input id="search" size="50">
+    Search: <input id="search" size="50">
+    #if ($rdf_link)
+<b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">	
+      #if (!$geoms.isEmpty())
+        <option value="covjson">CoverageJSON (COVJSON)</option>
+        <option value="csv">Comma Separated Values (CSV)</option>
+        <option value="esrijson">ESRIJSON</option>
+        <option value="exijson">EXI4JSON</option>
+        <option value="geojson">(Geo)JSON</option>
+        <option value="geojsonld">GeoJSON-LD</option>
+        <option value="gml">Geography Markup Language (GML)</option>
+        <option value="geouri">GeoURI</option> 
+        <option value="googlemapslink">Google Maps Link</option>
+        <option value="gpx">GPS Exchange Format (GPX)</option>
+        <option value="grass">GRASS Vector ASCII Format (GRASS)</option>
+      	<option value="json">JSON-LD</option>
+      	<option value="jsonp">JSONP</option>
+       	<option value="hextuples">HexTuples RDF</option>
+       	<option value="kml">Keyhole Markup Language (KML)</option>
+    	<option value="latlontext">LatLonText</option>
+        <option value="mapml">Map Markup Language (MapML)</option>
+      	<option value="n3">Notation3 (N3)</option>
+      	<option value="nq">NQuads (NQ)</option>
+      	<option value="nt">NTriples (NT)</option>
+        <option value="osmlink">OSM Link</option>
+        <option value="osm">OSM/XML (OSM)</option>
+      	<option value="rdfexi">RDF/EXI (EXI)</option>
+      	<option value="rdfjson">RDF/JSON</option>
+       	<option value="rt">RDF/Thrift (RT)</option>
+      	<option value="xml">RDF/XML</option>
+        <option value="svg">Scalable Vector Graphics (SVG)</option>
+        <option value="topojson">TopoJSON</option>
+        <option value="ttl">Turtle (TTL)</option>
+      	<option value="trig">RDF TriG</option>
+      	<option value="trix">Triples in XML (TriX)</option>
+      	<option value="twkb">Tiny Well-Known-Binary (TWKB)</option>
+        <option value="wkb">Well-Known-Binary (WKB)</option>
+        <option value="wkt">Well-Known-Text (WKT)</option>
+        <option value="ewkt">Extended Well-Known-Text (EWKT)</option>
+        <option value="x3d">X3D Format (X3D)</option>
+        <option value="xls">MS Excel (XLS)</option>
+      	<option value="xlsx">Excel Spreadsheet (XLSX)</option>
+        <option value="xyz">XYZ ASCII Format (XYZ)</option>
+        <option value="yaml">YAML Ain't Markup Language (YAML)</option>
+      #else
+      	<option value="csv">Comma Separated Values (CSV)</option>
+      	<option value="exijson">EXI4JSON</option>
+      	<option value="geojson">(Geo)JSON</option>
+      	<option value="json">JSON-LD</option>
+      	<option value="jsonp">JSONP</option>
+      	<option value="hextuples">HexTuples RDF</option>
+      	<option value="n3">Notation3 (N3)</option>
+      	<option value="nq">NQuads (NQ)</option>
+      	<option value="nt">NTriples (NT)</option>
+      	<option value="rdfexi">RDF/EXI (EXI)</option>
+      	<option value="rdfjson">RDF/JSON</option>
+      	<option value="rt">RDF/Thrift (RT)</option>
+      	<option value="xml">RDF/XML</option>
+      	<option value="ttl">Turtle (TTL)</option>
+      	<option value="trig">RDF TriG</option>
+      	<option value="trix">Triples in XML (TriX)</option>
+      	<option value="xls">MS Excel (XLS)</option>
+      	<option value="xlsx">Excel Spreadsheet (XLSX)</option>
+      	<option value="yaml">YAML Ain't Markup Language (YAML)</option>
+      #end	
+</select><a id="formatlink" href="#" target="_blank"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></a>&nbsp;
+CRS:<select id="crs"></select><button id="downloadButton" onclick="download()">Download</button><br/>
+#end
     </div>
