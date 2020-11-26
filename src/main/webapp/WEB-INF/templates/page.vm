@@ -13,6 +13,8 @@
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
 <script src="${server_base}static/TileLayer.Grayscale.js" type="text/javascript"></script>
+<script src="${server_base}static/canals.js" type="text/javascript"></script>
+<script src="${server_base}static/rivers.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 var overlayMaps={}
@@ -37,6 +39,22 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	position: 'bottomright',
 	imperial: false
 	}).addTo(map);
+    L.geoJSON(rivers, {
+        style: function(feature) {
+            return {
+                color: "#326690",
+                weight: 1
+            };
+        }
+    }).addTo(map);
+    L.geoJSON(canals, {
+        style: function(feature) {
+            return {
+                color: "#326690",
+                weight: 1
+            };
+        }
+    }).addTo(map);
 	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	var bounds = L.latLngBounds([]);
         #foreach($i in $geoms)
