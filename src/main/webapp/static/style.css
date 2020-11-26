@@ -8,6 +8,7 @@ body {
     font-size: 80%;
     margin: 0;
     padding: 1.2em 2em;
+    background: #FFFFFF !important;
 }
 
 #rdficon {
@@ -17,13 +18,13 @@ body {
 }
 
 #header {
-    border-bottom: 2px solid #696;
+    /*border-bottom: 2px solid #696;*/
     margin: 0 0 1.2em;
     padding: 0 0 0.3em;
 }
 
 #footer {
-    border-top: 2px solid #696;
+    /*border-top: 2px solid #696;*/
     margin: 1.2em 0 0;
     padding: 0.3em 0 0;
 }
@@ -33,7 +34,7 @@ body {
 }
 
 #homelink, #homelink a {
-    color: #666;
+    /*color: #666;*/
 }
 
 #homelink a {
@@ -42,7 +43,7 @@ body {
 }
 
 #homelink a:hover {
-    color: red;
+    /*color: red;*/
     text-decoration: underline;
 }
 
@@ -71,7 +72,7 @@ h2 {
 }
 
 .page-resource-uri a:hover {
-    color: red;
+    /*color: red;*/
     text-decoration: underline;
 }
 
@@ -128,12 +129,12 @@ table.description .property-column {
 
 table.description a small, .metadata-table a small {
     font-size: 100%;
-    color: #55a;
+    /*color: #55a;*/
 }
 
 table.description small, .metadata-table a small {
     font-size: 100%;
-    color: #666;
+    /*color: #666;*/
 }
 
 table.description .property {
@@ -142,24 +143,20 @@ table.description .property {
 }
 
 h1, h2 {
-    color: #810;
-}
-
-body {
-    background: #cec;
+    /*color: #810;*/
 }
 
 table.description .container>td {
-    background: #c0e2c0;
+    /*background: #c0e2c0;*/
     padding: 0.2em 0.8em;
 }
 
 table.description .even td {
-    background: #d4f6d4;
+    /*background: #d4f6d4;*/
 }
 
 table.description .odd td {
-    background: #f0fcf0;
+    /*background: #f0fcf0;*/
 }
 
 .image {
@@ -363,10 +360,6 @@ body {
     h1,
     h2 {
         color: #892a69 !important;
-    }
-
-    body {
-        background: #FFFFFF !important;
     }
 
     table.description .container>td {
