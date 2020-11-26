@@ -72,7 +72,7 @@
     # image preview
     conf:imageProperty <http://archaeology.link/ontology#hasImage>;
 
-# Dataset configuration section #1 (for DBpedia resources)
+# Dataset configuration section #1
 #
 # URIs in the SPARQL endpoint: http://dbpedia.org/resource/*
 # URIs on the Web:             http://localhost:8080/resource/*
@@ -112,19 +112,40 @@
 #        meta:endpointDataset <URI of the linked dataset that is exposed via the SPARQL endpoint>;
     ];
 
-# Dataset configuration section #2 (for DBpedia classes and properties)
-#
-# URIs in the SPARQL endpoint: http://dbpedia.org/class/*
-#                              http://dbpedia.org/property/*
-# URIs on the Web:             http://localhost:8080/class/*
-#                              http://localhost:8080/property/*
-# conf:dataset [
-#    conf:sparqlEndpoint <http://dbpedia.openlinksw.com:8890/sparql>;
-#        conf:sparqlDefaultGraph <http://dbpedia.org>;
-#        conf:datasetBase <http://dbpedia.org/>;
-        # Dataset URIs are mapped only if the part after the
-        # conf:webBase matches this regular expression
-#        conf:datasetURIPattern "(class|property)/.*";
-#        conf:fixUnescapedCharacters "(),'!$&*+;=@";
-#    ];
+    # Dataset configuration section #2
+    #
+    # URIs in the SPARQL endpoint: http://dbpedia.org/resource/*
+    # URIs on the Web:             http://localhost:8080/resource/*
+        conf:dataset [
+            # SPARQL endpoint URL of the dataset
+            conf:sparqlEndpoint <https://java-dev.rgzm.de/rdf4j-server/repositories/roman-lod>;
+            # Common URI prefix of all resource URIs in the SPARQL dataset
+            conf:datasetBase <http://lod.squirrel.link/data/>;
+            # Will be appended to the conf:webBase to form the public
+            # resource URIs; if not present, defaults to ""
+            # conf:webResourcePrefix "resource/";
+            # Fixes an issue with the server running behind an Apache proxy;
+            # can be ignored otherwise
+            conf:fixUnescapedCharacters "(),'!$&*+;=@";
+            # Queries for describing a resource denoted by "?__this__".
+            # Multiple queries can be specified, results will be merged.
+    		conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { ?__this__ ?p ?o }";
+            conf:resourceDescriptionQuery "CONSTRUCT { ?s ?p ?__this__ } WHERE { ?s ?p ?__this__ }";
+            conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { VALUES ?p { <http://www.opengis.net/ont/geosparql#asWKT> <http://www.opengis.net/ont/geosparql#epsg> <http://www.opengis.net/ont/geosparql#asGML> } . ?__this__ <http://www.opengis.net/ont/geosparql#hasGeometry> ?geo . ?geo ?p ?o . }";
+
+
+            # include metadata
+            # conf:metadataTemplate "metadata.ttl";
+
+            # configure your metadata here
+            # Use properties with the meta: prefix where the property name
+            # corresponds to the placeholder URIs in metadata.ttl that begin
+            # with about:metadata:metadata:
+            # Examples for such properties are:
+    #        meta:pubbyUser <URI of the data publisher who uses this Pubby>;
+    #        meta:pubbyOperator <URI of the service provider who operates this Pubby>;
+    #        meta:endpointUser <URI of the data publisher who uses the SPARQL endpoint queried by this Pubby>;
+    #        meta:endpointOperator <URI of the service provider who operates the SPARQL endpoint>;
+    #        meta:endpointDataset <URI of the linked dataset that is exposed via the SPARQL endpoint>;
+        ];
     .

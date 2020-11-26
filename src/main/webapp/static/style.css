@@ -35,7 +35,7 @@ body {
 }
 
 #homelink, #homelink a {
-    color: #666;
+    color: white;
 }
 
 #homelink a {
@@ -44,7 +44,7 @@ body {
 }
 
 #homelink a:hover {
-    color: red;
+    color: white;
     text-decoration: underline;
 }
 
@@ -62,13 +62,22 @@ h2 {
     margin: 1.2em 0 0.2em;
 }
 
+a {
+    color: #058b8cff !important;
+}
+
+a:hover {
+    color: #058b8cff !important;
+    text-decoration: underline;
+}
+
 .page-resource-uri {
     font-size: 116%;
     margin: 0.2em 0;
 }
 
 .page-resource-uri a {
-    color: #666;
+    color: white;
     text-decoration: none;
 }
 
@@ -152,16 +161,16 @@ body {
 }
 
 table.description .container>td {
-    background: #edc5e0;
+    background: #47435e;
     padding: 0.2em 0.8em;
 }
 
 table.description .even td {
-    background: #f9ecf5;
+    background: #69638b;
 }
 
 table.description .odd td {
-    background: #edc5e0;
+    background: #47435e;
 }
 
 .image {
@@ -186,7 +195,7 @@ a.expander {
     border-left: 3px solid #f0fcf0;
     border-bottom: 3px solid #f0fcf0;
     border-right: 3px solid #f0fcf0;
-    background: #edc5e0;
+    background: #47435e;
     border-top: 0px solid none;
     margin: 0px;
 }

@@ -89,10 +89,10 @@
         </div>
         #set( $uri2 = $uri.replace("https://digits.mainzed.org/rgzmwissit/pubby/","http://data.archaeology.link/data/") )
         #if ($uri)
-        <div class="page-resource-uri"><a href="$uri2">$uri2</a>&nbsp;based on <a href="https://github.com/i3mainz/geopubby/">geopubby</a> by i3mainz</div>
+        <div class="page-resource-uri"><a href="$uri2">$uri2</a>&nbsp;powered by <a href="https://github.com/i3mainz/geopubby/">geopubby</a> / <a href="http://i3mainz.hs-mainz.de">i3mainz</a></div>
         #end
         #if ($rdf_link)
-        <div id="rdficon"><a href="$rdf_link" title="RDF data"><img src="${server_base}static/rdf-icon.gif" alt="[This page as RDF]" /></a></div>
+        <!--<div id="rdficon"><a href="$rdf_link" title="RDF data"><img src="${server_base}static/rdf-icon.gif" alt="[This page as RDF]" /></a></div>-->
         #end
     </div>
     <div class="search">
