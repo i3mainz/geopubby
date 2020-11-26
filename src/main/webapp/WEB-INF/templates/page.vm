@@ -32,7 +32,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	var baseMaps = {
         "ESRI World-Shaded-Relief": layer
 	};
-	baseMaps["OSM"].addTo(map);
+	baseMaps["ESRI World-Shaded-Relief"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
