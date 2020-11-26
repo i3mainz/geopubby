@@ -12,7 +12,7 @@
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-<script src="https://raw.githubusercontent.com/Zverik/leaflet-grayscale/master/TileLayer.Grayscale.js"></script>
+<script src="${server_base}static/TileLayer.Grayscale.js"></script>
 
 <script type="text/javascript">
 var overlayMaps={}
