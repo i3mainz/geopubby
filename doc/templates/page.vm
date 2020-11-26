@@ -1,0 +1,215 @@
+#parse("header.vm")
+<div class="row-fluid">
+#if ($image)
+    <div class="image">
+    <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
+    </div>
+#end
+
+#if (!$geoms.isEmpty())
+<a name="geo"></a>
+<div id="map" style="height:500px; z-index:0;">
+</div>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script type="text/javascript">
+var overlayMaps={}
+var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 10);
+	var layer=L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}{r}.{ext}', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    subdomains: 'abcd',
+    minZoom: 0,
+    maxZoom: 20,
+    ext: 'png'
+	});
+	var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
+		layers: 'web',
+		format: 'image/png',
+ 			transparent: true,
+			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
+		});
+	var baseMaps = {
+    "BKG": wmsLayer,
+        "OSM": layer
+	};
+	baseMaps["OSM"].addTo(map);
+	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+	}).addTo(map);
+	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
+	var bounds = L.latLngBounds([]);
+        #foreach($i in $geoms)
+              var wkt_geom = "${i}";
+              var sridepsg="${i.getSRID()}";
+              var globalepsg="${epsg}";
+              var espg="EPSG:4326";
+              if(sridepsg!="0"){
+                  var epsg="EPSG:${i.getSRID()}"
+              }else if(sridepsg=="0" && globalepsg!="null"){
+                  var epsg="EPSG:${epsg}"
+              }
+			  var wicket = new Wkt.Wkt();
+              wicket.read(wkt_geom);
+              props={}
+              #set($x = 0)
+              #foreach ($property in $properties)
+                  #if($x < 10)
+                     props["${property.BrowsableURL}"]=[
+                     #foreach ($propval in $property.SimpleValues)
+                        #if ($propval.Node.isURI())
+                            {"uri":"${propval.BrowsableURL}","proplabel":
+                            #if ($showLabels && $property.label)
+                                "$property.label"
+                            #elseif($property.hasPrefix())
+                                "$property.Prefix:$property.LocalName"
+                            #else
+                                "?:$property.LocalName"
+                            #end
+                            ,"vallabel":
+                            #if ($showLabels && $propval.label)
+                                "$propval.label"
+                            #elseif($propval.hasPrefix())
+                                "$propval.Prefix:$propval.LocalName"
+                            #else
+                                "?:$propval.LocalName"
+                            #end
+                            }
+                        #elseif ($propval.Node.isLiteral())
+                            {"uri":"${propval.Node.LiteralLexicalForm}","proplabel":
+                            #if ($showLabels && $property.label)
+                                "$property.label"
+                            #elseif($property.hasPrefix())
+                                "$property.Prefix:$property.LocalName"
+                            #else
+                                "?:$property.LocalName"
+                            #end
+                            }
+                        #end
+                        ,
+                     #end
+                     {}
+                    ]
+                  #end
+                  #set($x = $x+1)
+              #end
+			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
+			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
+	            feature=convertGeoJSON(feature,epsgdefs[epsg])
+	            console.log(feature);
+              }
+              layerr=L.geoJson(feature,{
+                   pointToLayer: function(feature, latlng){
+                  var greenIcon = new L.Icon({
+                    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+                return L.marker(latlng, {icon: greenIcon});
+              },
+              onEachFeature: function (feature, layer) {
+              		var popup="<b><a href=\"$uri\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
+                    for(prop in feature.properties){
+                        if((typeof prop !== 'undefined') && prop.includes("http")){
+                        	popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
+                        }else{
+                        	popup+="<li>"+prop+" - "
+                        }
+                        if(feature.properties[prop].length==1){
+                            if((typeof feature.properties[prop][0] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("http")){
+                        	        popup+="<a href=\""+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][0]){
+                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][0]["uri"].substring(feature.properties[prop][0]["uri"].lastIndexOf('/')+1)+"</a></li>"
+                                    }
+                            }else if((typeof feature.properties[prop][0]["uri"] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("www.")){
+                                    popup+="<a href=\"http://"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][0]){
+                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][0]["uri"]+"</a></li>"
+                                    }
+                            }else if((typeof feature.properties[prop][0]["uri"] !== 'undefined') && feature.properties[prop][0]["uri"].includes("@")){
+                                    popup+="<a href=\"mailto:"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][0]){
+                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][0]["uri"]+"</a></li>"
+                                    }
+                            }else{
+                        	        popup+=feature.properties[prop][0]["uri"]+"</li>"
+                            }
+
+                        }else{
+                            popup+="<ul>"
+                            for(val in feature.properties[prop]){
+                                popup+="<li>"
+                                if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].startsWith("http")){
+                        	        popup+="<a href=\""+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                        	        if("vallabel" in feature.properties[prop][val]){
+                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][val]["uri"].substring(feature.properties[prop][val]["uri"].lastIndexOf('/')+1)+"</a></li>"
+                                    }
+                                }else if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].startsWith("www.")){
+                                    popup+="<a href=\"http://"+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][val]){
+                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][val]["uri"]+"</a></li>"
+                                    }
+                                }else if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].includes("@")){
+                                    popup+="<a href=\"mailto:"+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][val]){
+                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][val]["uri"]+"</a></li>"
+                                    }
+                                }else{
+                        	        popup+=feature.properties[prop][val]["uri"]+"</li>"
+                                }
+                            }
+                            popup+="</ul></li>"
+                        }
+                    }
+                    popup+="</ul>"
+                    layer.bindPopup(popup)
+              }
+              })
+              layerr.addTo(map)
+              var layerBounds = layerr.getBounds();
+              bounds.extend(layerBounds);
+        #end
+        map.fitBounds(bounds);
+        map.setZoom(6);
+</script>
+#end
+</div>
+#if ($comment)
+    <p class="comment">$comment</p>
+#end
+
+#if (!$properties.isEmpty())
+#parse("proptable.vm")
+#else
+    <p>No further information is available.</p>
+#end
+
+#if ($metadata)
+<div class="row-fluid">
+	<a name="meta"></a>
+	<h2>Metadata</h2>
+	<div id="metadata-tables">
+	#parse("metadatatable.vm")
+	</div>
+	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
+</div>
+#end
+
+
+
+#parse("footer.vm")

@@ -16,6 +16,7 @@
 # Prefix declarations to be used in RDF output
 @prefix conf: <http://richard.cyganiak.de/2007/pubby/config.rdf#> .
 @prefix meta: <http://example.org/metadata#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -30,67 +31,69 @@
 @prefix yago: <http://localhost:8080/class/yago/> .
 @prefix units: <http://dbpedia.org/units/> .
 @prefix geonames: <http://www.geonames.org/ontology#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix prv:      <http://purl.org/net/provenance/ns#> .
 @prefix prvTypes: <http://purl.org/net/provenance/types#> .
 @prefix doap:     <http://usefulinc.com/ns/doap#> .
 @prefix void:     <http://rdfs.org/ns/void#> .
 @prefix ir:       <http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix geosf: <http://www.opengis.net/def/function/geosparql/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix osgeo: <http://data.ordnancesurvey.co.uk/ontology/geometry/>
+@prefix osspatial: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
+@prefix spatial: <http://geovocab.org/spatial#>
+@prefix placetype: <http://pleiades.stoa.org//plone/vocabularies/place-types/>
+@prefix ogham: <http://lod.ogham.link/data/>
+@prefix oghamonto: <http://ontology.ogham.link#>
+
 
 # Server configuration section
 <> a conf:Configuration;
     # Project name for display in page titles
-    conf:projectName "DBpedia.org";
+    conf:projectName "RGZM WissIT Linked Data";
     # Homepage with description of the project for the link in the page header
-    conf:projectHomepage <http://dbpedia.org>;
+    conf:projectHomepage <https://archaeology.link>;
     # The Pubby root, where the webapp is running inside the servlet container.
-    conf:webBase <http://localhost:8080/pubby>;
+    conf:webBase <https://digits.mainzed.org/rgzmwissit/pubby/>;
     # URL of an RDF file whose prefix mapping is to be used by the
     # server; defaults to <>, which is *this* file.
-    conf:usePrefixesFrom <>;
+    # conf:usePrefixesFrom <>;
     # If labels and descriptions are available in multiple languages,
     # prefer this one.
     conf:defaultLanguage "en";
     # When the homepage of the server is accessed, this resource will
     # be shown.
-    conf:indexResource <http://localhost:8080/resource/DBpedia>;
-    # Will be appended to the conf:webBase to form the public
-    # resource URIs; if not present, defaults to ""
-    conf:webResourcePrefix "resource/";
+    # conf:indexResource <http://atlantgis.squirrel.link/ar_site#1>;
 
-# Dataset configuration section (for DBpedia resources)
+# Dataset configuration section #1 (for DBpedia resources)
 #
 # URIs in the SPARQL endpoint: http://dbpedia.org/resource/*
 # URIs on the Web:             http://localhost:8080/resource/*
     conf:dataset [
         # SPARQL endpoint URL of the dataset
-        conf:sparqlEndpoint <http://geosparql.i3mainz.hs-mainz.de:7200/repositories/poirepo>;
+        conf:sparqlEndpoint <https://java-dev.rgzm.de/rdf4j-server/repositories/samian-lod>;
         # Default graph name to query (not necessary for most endpoints)
-        #conf:sparqlDefaultGraph <http://dbpedia.org>;
+        # conf:sparqlDefaultGraph <http://dbpedia.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
-        conf:datasetBase <http://ld.gdi-de.org/>;
+        conf:datasetBase <http://data.archaeology.link/data/>;
+        #conf:datasetBase <http://atlantgis.squirrel.link/>;
+        # Will be appended to the conf:webBase to form the public
+        # resource URIs; if not present, defaults to ""
+        # conf:webResourcePrefix "resource/";
         # Fixes an issue with the server running behind an Apache proxy;
-        # can be disabled otherwise
+        # can be ignored otherwise
         conf:fixUnescapedCharacters "(),'!$&*+;=@";
-        # DBpedia uses URIs, not IRIs
-        conf:supportsIRIs false;
-
         # Queries for describing a resource denoted by "?__this__".
         # Multiple queries can be specified, results will be merged.
-#        conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { ?__this__ ?p ?o }";
-#        conf:resourceDescriptionQuery "CONSTRUCT { ?s ?p ?__this__ } WHERE { ?s ?p ?__this__ }";
-        
-        # Queries for describing the blank nodes related to a given resource via a given property.
-        # The resource and the property should be denoted by "?__this__" and "?__property__".
-        # Multiple queries can be specified, results will be merged.
-#        conf:anonymousPropertyDescriptionQuery "DESCRIBE ?x WHERE { ?__this__ ?__property__ ?x. FILTER (isBlank(?x)) }";
-        
-        # Queries for describing the blank nodes inversely related to a given resource via a given property.
-        # The resource and the property should be denoted by "?__this__" and "?__property__".
-        # Multiple queries can be specified, results will be merged.
-#        conf:anonymousInversePropertyDescriptionQuery "DESCRIBE ?x WHERE { ?x ?__property__ ?__this__. FILTER (isBlank(?x)) }";
-        
+		conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { ?__this__ ?p ?o }";
+        conf:resourceDescriptionQuery "CONSTRUCT { ?s ?p ?__this__ } WHERE { ?s ?p ?__this__ }";
+        conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { VALUES ?p { <http://www.opengis.net/ont/geosparql#asWKT> <http://www.opengis.net/ont/geosparql#epsg> <http://www.opengis.net/ont/geosparql#asGML> } . ?__this__ <http://www.opengis.net/ont/geosparql#hasGeometry> ?geo . ?geo ?p ?o . }";
+
+
         # include metadata
-        conf:metadataTemplate "metadata.ttl";
+        # conf:metadataTemplate "metadata.ttl";
 
         # configure your metadata here
         # Use properties with the meta: prefix where the property name
@@ -103,4 +106,20 @@
 #        meta:endpointOperator <URI of the service provider who operates the SPARQL endpoint>;
 #        meta:endpointDataset <URI of the linked dataset that is exposed via the SPARQL endpoint>;
     ];
+
+# Dataset configuration section #2 (for DBpedia classes and properties)
+#
+# URIs in the SPARQL endpoint: http://dbpedia.org/class/*
+#                              http://dbpedia.org/property/*
+# URIs on the Web:             http://localhost:8080/class/*
+#                              http://localhost:8080/property/*
+# conf:dataset [
+#    conf:sparqlEndpoint <http://dbpedia.openlinksw.com:8890/sparql>;
+#        conf:sparqlDefaultGraph <http://dbpedia.org>;
+#        conf:datasetBase <http://dbpedia.org/>;
+        # Dataset URIs are mapped only if the part after the
+        # conf:webBase matches this regular expression
+#        conf:datasetURIPattern "(class|property)/.*";
+#        conf:fixUnescapedCharacters "(),'!$&*+;=@";
+#    ];
     .
