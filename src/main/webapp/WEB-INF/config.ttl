@@ -47,6 +47,7 @@
 @prefix placetype: <http://pleiades.stoa.org//plone/vocabularies/place-types/>
 @prefix sf: <http://www.opengis.net/ont/sf#>
 @prefix lado: <http://archaeology.link/ontology#>
+@prefix archlink: <http://data.archaeology.link/data/>
 @prefix samian: <http://data.archaeology.link/data/samian/>
 @prefix amt: <http://academic-meta-tool.xyz/vocab#>
 
@@ -81,7 +82,7 @@
         # Default graph name to query (not necessary for most endpoints)
         # conf:sparqlDefaultGraph <http://dbpedia.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
-        conf:datasetBase <http://data.archaeology.link/data/samian/>;
+        conf:datasetBase <http://data.archaeology.link/data/>;
         #conf:datasetBase <http://atlantgis.squirrel.link/>;
         # Will be appended to the conf:webBase to form the public
         # resource URIs; if not present, defaults to ""
