@@ -27,6 +27,7 @@
     <script type="text/javascript" src="${server_base}static/epsg.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.6/wicket.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/Zverik/leaflet-grayscale/master/TileLayer.Grayscale.js"></script>
     <style type="text/css">
     </style>
     <script>
