@@ -53,7 +53,7 @@ body {
 
 #homelink a:hover {
     color: white;
-    text-decoration: underline;
+    text-decoration: underline dotted;
 }
 
 h1 {
@@ -75,8 +75,8 @@ a {
 }
 
 a:hover {
-    color: white !important;
-    text-decoration: underline;
+    color: white;
+    text-decoration: underline dotted;
 }
 
 .page-resource-uri {
@@ -86,12 +86,12 @@ a:hover {
 
 .page-resource-uri a {
     color: white;
-    text-decoration: none;
+    text-decoration: underline dotted;
 }
 
 .page-resource-uri a:hover {
-    color: #058b8cff;
-    text-decoration: underline;
+    color: white;
+    text-decoration: underline dotted;
 }
 
 img {
@@ -102,8 +102,13 @@ table.description {
     border-collapse: collapse;
     clear: left;
     font-size: 100%;
-    margin: 0 0 1em;
+    margin-top: 25px;
+    margin-bottom: 25px;
     width: 100%;
+}
+
+#map {
+    margin-top: 25px;
 }
 
 table.description th {
@@ -156,7 +161,7 @@ table.description a small, .metadata-table a small {
 
 table.description small, .metadata-table a small {
     font-size: 100%;
-    color: #666;
+    color: #058b8cff;
 }
 
 table.description .property {
@@ -188,7 +193,7 @@ table.description .odd td {
 .image {
     background: white;
     float: left;
-    margin: 0 1.5em 1.5em 0;
+    margin: 1.5em;
     padding: 2px;
 }
 
