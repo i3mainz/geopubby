@@ -45,9 +45,10 @@
 @prefix osspatial: <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/>
 @prefix spatial: <http://geovocab.org/spatial#>
 @prefix placetype: <http://pleiades.stoa.org//plone/vocabularies/place-types/>
-@prefix sf: <http://www.opengis.net/ont/sf#> 
+@prefix sf: <http://www.opengis.net/ont/sf#>
 @prefix lado: <http://archaeology.link/ontology#>
 @prefix samian: <http://data.archaeology.link/data/samian/>
+@prefix amt: <http://academic-meta-tool.xyz/vocab#>
 
 
 # Server configuration section
