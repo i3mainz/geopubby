@@ -206,6 +206,10 @@ table.description .even td {
     background: #47435e;
 }
 
+.table-hover tbody tr:hover {
+    color: white !important;
+}
+
 table.description .odd td {
     background: #47435e;
 }
