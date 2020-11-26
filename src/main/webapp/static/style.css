@@ -160,6 +160,8 @@ table.description .property-column {
 table.description a small, .metadata-table a small {
     font-size: 100%;
     color: white;
+    font-weight: bold;
+    font-style: italic;
 }
 
 table.description small, .metadata-table a small {

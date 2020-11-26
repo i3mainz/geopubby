@@ -84,6 +84,7 @@
         # conf:sparqlDefaultGraph <http://dbpedia.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
         conf:datasetBase <http://data.archaeology.link/data/>;
+        conf:datasetURIPattern "(samian|documents)/.*";
         #conf:datasetBase <http://atlantgis.squirrel.link/>;
         # Will be appended to the conf:webBase to form the public
         # resource URIs; if not present, defaults to ""
@@ -122,6 +123,7 @@
             conf:sparqlEndpoint <https://java-dev.rgzm.de/rdf4j-server/repositories/roman-lod>;
             # Common URI prefix of all resource URIs in the SPARQL dataset
             conf:datasetBase <http://data.archaeology.link/data/>;
+            conf:datasetURIPattern "(roman|documents)/.*";
             # Will be appended to the conf:webBase to form the public
             # resource URIs; if not present, defaults to ""
             # conf:webResourcePrefix "resource/";
