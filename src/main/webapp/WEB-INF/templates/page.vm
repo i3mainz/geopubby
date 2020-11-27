@@ -42,7 +42,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               var espg="EPSG:4326";
               if(sridepsg!="0"){
                   var epsg="EPSG:${i.getSRID()}"
-              }else if(sridepsg=="0" && globalepsg!="null"){
+              }else if(sridepsg=="0" && globalepsg!="null" && globalepsg!=""){
                   var epsg="EPSG:${epsg}"
               }
 			  var wicket = new Wkt.Wkt();
