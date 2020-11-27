@@ -182,6 +182,10 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
         #end
         map.fitBounds(bounds);
 </script>
+#else
+<script>
+var espg="EPSG:4326";
+</script>
 #end
 </div>
 #if ($comment)
