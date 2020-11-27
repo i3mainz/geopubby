@@ -128,7 +128,10 @@ CRS:<select id="crs"></select>
 </div>
     </div>
 #if (!$geoms.isEmpty())
-<script> $.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs2').html(data); $('#crs2').val(epsg); $('#crs').html(data); $('#crs').val(epsg);}});</script>
+<script> 
+$.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs2').html(data); $('#crs2').val(epsg);}});
+$.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs').html(data); $('#crs').val(epsg);}});
+</script>
 #end
   </body>
 </html>
