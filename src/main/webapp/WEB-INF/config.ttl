@@ -162,7 +162,7 @@
                 conf:sparqlEndpoint <https://java-dev.rgzm.de/rdf4j-server/repositories/dragonlairs>;
                 # Common URI prefix of all resource URIs in the SPARQL dataset
                 conf:datasetBase <http://lod.datadragon.link/data/>;
-                conf:datasetURIPattern "(roman|documents)/.*";
+                conf:datasetURIPattern "(dragonlair|documents)/.*";
                 # Will be appended to the conf:webBase to form the public
                 # resource URIs; if not present, defaults to ""
                 # conf:webResourcePrefix "resource/";
