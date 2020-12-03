@@ -53,6 +53,8 @@
 @prefix samian: <https://digits.mainzed.org/rgzmwissit/pubby/page/samian/>
 @prefix lair: <http://lod.datadragon.link/data/dragonlair/>
 @prefix wikidata: <http://www.wikidata.org/entity/>
+@prefix orcid: <https://orcid.org/>
+@prefix dcmitype: <http://purl.org/dc/dcmitype/>
 
 
 # Server configuration section
