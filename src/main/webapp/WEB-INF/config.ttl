@@ -52,6 +52,7 @@
 @prefix amt: <http://academic-meta-tool.xyz/vocab#>
 @prefix samian: <https://digits.mainzed.org/rgzmwissit/pubby/page/samian/>
 @prefix lair: <http://lod.datadragon.link/data/dragonlair/>
+@prefix wikidata: <http://www.wikidata.org/entity/>
 
 
 # Server configuration section
