@@ -89,7 +89,6 @@
   </head>
   <body onLoad="init();">
     <div id="header">
-     <div><a href="https://github.com/i3mainz/geopubby" title="GeoPubby"><img src="${server_base}static/geopubby_logo.png" alt="GeoPubby Logo" /></a></div>
         <h1 id="title">$title</h1>
 #if ($project_name)
 #if ($project_link)
@@ -103,7 +102,7 @@
       <div class="page-resource-uri"><a href="$uri">$uri</a></div>
 #end
 #if ($rdf_link)
-      <div id="rdficon"><a href="$rdf_link" title="RDF data"><img src="${server_base}static/rdf-icon.gif" alt="[This page as RDF]" /></a></div>
+      <div id="rdficon"><a href="https://github.com/i3mainz/geopubby" title="GeoPubby"><img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></div>
 #end
     </div>
     <div class="search">
