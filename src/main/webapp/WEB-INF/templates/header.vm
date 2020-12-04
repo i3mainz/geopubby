@@ -102,7 +102,7 @@
       <div class="page-resource-uri"><a href="$uri">$uri</a></div>
 #end
 #if ($rdf_link)
-      <div id="rdficon">powered by GeoPubby<a href="https://github.com/i3mainz/geopubby" title="GeoPubby" target="_blank"><img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></div>
+      <div id="rdficon"><b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby" target="_blank">GeoPubby<img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></b></div>
 #end
     </div>
     <div class="search">
