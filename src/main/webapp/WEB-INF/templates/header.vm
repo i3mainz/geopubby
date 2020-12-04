@@ -89,7 +89,7 @@
   </head>
   <body onLoad="init();">
     <div id="header">
-        <div>
+     <div><a href="https://github.com/i3mainz/geopubby" title="GeoPubby"><img src="${server_base}static/geopubby_logo.png" alt="GeoPubby Logo" /></a></div>
         <h1 id="title">$title</h1>
 #if ($project_name)
 #if ($project_link)
