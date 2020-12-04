@@ -127,9 +127,10 @@ public class GPXWriter extends GeoModelWriter {
 								writer.writeAttribute("lat", lat + "");
 								writer.writeAttribute("lon", lon + "");								
 							}
-							writer.writeEndElement();
 							lat = null;
 							lon = null;
+							geom=null;
+							writer.writeEndElement();
 						}
 					}
 				}
