@@ -47,7 +47,7 @@ public class VelocityHelper {
 		response.addHeader("Pragma", "no-cache");
 		try {
 			OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream(), "utf-8");
-			getVelocityEngine().mergeTemplate(templateName, velocityContext, 
+			getVelocityEngine().mergeTemplate(templateName,"UTF-8", velocityContext, 
 					writer);
 			writer.close();
 		} catch (Exception ex) {
