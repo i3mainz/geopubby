@@ -12,19 +12,13 @@
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-<script src="${server_base}static/TileLayer.Grayscale.js" type="text/javascript"></script>
-<script src="${server_base}static/canals.js" type="text/javascript"></script>
-<script src="${server_base}static/rivers.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 var overlayMaps={}
 var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
-    var layer=L.tileLayer.grayscale('http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; Esri &mdash; Source: Esri ',
-        minZoom: 1,
-        maxZoom: 16,
-        ext: 'jpg'
-    });
+	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	});
 	var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
 		layers: 'web',
 		format: 'image/png',
@@ -32,29 +26,13 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
 		});
 	var baseMaps = {
-        "ESRI World-Shaded-Relief": layer
+        "OSM": layer
 	};
-	baseMaps["ESRI World-Shaded-Relief"].addTo(map);
+	baseMaps["OSM"].addTo(map);
 	L.control.scale({
 	position: 'bottomright',
 	imperial: false
 	}).addTo(map);
-    L.geoJSON(rivers, {
-        style: function(feature) {
-            return {
-                color: "#326690",
-                weight: 1
-            };
-        }
-    }).addTo(map);
-    L.geoJSON(canals, {
-        style: function(feature) {
-            return {
-                color: "#326690",
-                weight: 1
-            };
-        }
-    }).addTo(map);
 	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
 	var bounds = L.latLngBounds([]);
         #foreach($i in $geoms)
@@ -203,7 +181,6 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               bounds.extend(layerBounds);
         #end
         map.fitBounds(bounds);
-        map.setZoom(4);
 </script>
 #else
 <script>

@@ -1,248 +1,54 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100italic,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100);
-
-@font-face {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-style: normal;
-}
-
-html {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: "Roboto" !important;
-    font-size: 80%;
-    margin: 0;
-    padding: 1.2em 2em;
-    color: #ffffff;
-}
-
-#rdficon {
-    float: right;
-    position: relative;
-    top: -55px;
-}
-
-#header {
-    border-bottom: 2px solid #058b8cff;
-    margin: 0 0 1.2em;
-    padding: 0 0 0.3em;
-}
-
-#footer {
-    border-top: 2px solid #058b8cff;
-    margin: 1.2em 0 0;
-    padding: 0.3em 0 0;
-    text-align: center;
-}
-
-#homelink {
-    display: inline;
-}
-
-#homelink, #homelink a {
-    color: white;
-}
-
-#homelink a {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-#homelink a:hover {
-    color: white;
-    text-decoration: underline dotted;
-}
-
-h1 {
-    display: inline;
-    font-weight: normal;
-    font-size: 200%;
-    margin: 0;
-    text-align: left;
-}
-
-h2 {
-    font-weight: normal;
-    font-size: 124%;
-    margin: 1.2em 0 0.2em;
-}
-
-a {
-    color: white !important;
-}
-
-a:hover {
-    color: white;
-    text-decoration: underline dotted;
-}
-
-.page-resource-uri {
-    font-size: 116%;
-    margin: 0.2em 0;
-}
-
-.page-resource-uri a {
-    color: white;
-}
-
-.page-resource-uri a:hover {
-    color: white;
-    text-decoration: underline dotted;
-}
-
-img {
-    border: none;
-}
-
-table.description {
-    border-collapse: collapse;
-    clear: left;
-    font-size: 100%;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    width: 100%;
-}
-
-table.description th {
-    background: transparent !important;
-}
-
-#map {
-    margin-top: 25px;
-}
-
-table.description th {
-    background: white;
-    text-align: left;
-}
-
-table.description td, table.description th {
-    line-height: 1.2em;
-    padding: 0.3em 0.5em;
-    vertical-align: top;
-}
-
-table.description ul {
-    margin: 0;
-    padding-left: 1.4em;
-}
-
-table.description li {
-    list-style-position: outside;
-    list-style-type: square;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-table.description .property-column {
-    width: 13em;
-}
-
-.uri {
-    white-space: nowrap;
-}
-
-.uri a, a.uri {
-    text-decoration: none;
-}
-
-.unbound {
-    color: #888;
-}
-
-.table {
-    color: white !important;
-}
-
-table.description a small, .metadata-table a small {
-    font-size: 100%;
-    color: white;
-    font-weight: bold;
-    font-style: italic;
-}
-
-table.description small, .metadata-table a small {
-    font-size: 100%;
-    color: white;
-}
-
-table.description .property {
-    white-space: nowrap;
-    padding-right: 1.5em;
-}
-
-h1, h2 {
-    color: #058b8cff;
-}
-
-body {
-    background: #252331ff;
-}
-
-table.description .container>td {
-    background: #47435e;
-    padding: 0.2em 0.8em;
-}
-
-.leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    background: #69638b !important;
-    width: calc(100% + 50px);
-}
-
-.leaflet-popup-content {
-    color: white !important;
-}
-
-a.leaflet-control-zoom-in {
-    color: #058b8cff !important;
-}
-
-a.leaflet-control-zoom-out {
-    color: #058b8cff !important;
-}
-
-table.description .even td {
-    background: #47435e;
-}
-
-.table-hover tbody tr:hover {
-    color: white !important;
-}
-
-table.description .odd td {
-    background: #47435e;
-}
-
-.image {
-    background: white;
-    float: left;
-    margin: 1.5em;
-    padding: 2px;
-}
-
-a.expander {
-    text-decoration: none;
-}
+html { margin: 0; padding: 0; }
+body { font-family: sans-serif; font-size: 80%; margin: 0; padding: 1.2em 2em; }
+#rdficon { float: right; position: relative; top: -28px; }
+#header { border-bottom: 2px solid #696; margin: 0 0 1.2em; padding: 0 0 0.3em; }
+#footer { border-top: 2px solid #696; margin: 1.2em 0 0; padding: 0.3em 0 0; }
+#homelink { display: inline; }
+#homelink, #homelink a { color: #666; }
+#homelink a { font-weight: bold; text-decoration: none; }
+#homelink a:hover { color: red; text-decoration: underline; }
+h1 { display: inline; font-weight: normal; font-size: 200%; margin: 0; text-align: left; }
+h2 { font-weight: normal; font-size: 124%; margin: 1.2em 0 0.2em; }
+.page-resource-uri { font-size: 116%; margin: 0.2em 0; }
+.page-resource-uri a { color: #666; text-decoration: none; }
+.page-resource-uri a:hover { color: red; text-decoration: underline; }
+img { border: none; }
+table.description { border-collapse: collapse; clear: left; font-size: 100%; margin: 0 0 1em; width: 100%; }
+table.description th { background: white; text-align: left; }
+table.description td, table.description th { line-height: 1.2em; padding: 0.3em 0.5em; vertical-align: top; }
+table.description ul { margin: 0; padding-left: 1.4em; }
+table.description li { list-style-position: outside; list-style-type: square; margin-left: 0; padding-left: 0; }
+table.description .property-column { width: 13em; }
+.uri { white-space: nowrap; }
+.uri a, a.uri { text-decoration: none; }
+.unbound { color: #888; }
+table.description a small, .metadata-table a small  { font-size: 100%; color: #55a; }
+table.description small, .metadata-table a small  { font-size: 100%; color: #666; }
+table.description .property { white-space: nowrap; padding-right: 1.5em; }
+h1, h2 { color: #810; }
+body { background: #cec; }
+table.description .container > td { background: #c0e2c0; padding: 0.2em 0.8em; }
+table.description .even td { background: #d4f6d4; }
+table.description .odd td { background: #f0fcf0; }
+.image { background: white; float: left; margin: 0 1.5em 1.5em 0; padding: 2px; }
+a.expander { text-decoration: none; }
 
 .metadata-label {
-    font-size: 100%;
-    background: #f0fcf0;
-    padding: 3px;
+	font-size: 100%;
+	background: #f0fcf0;
+	padding: 3px;
 }
 
 .metadata-table {
-    font-size: 100%;
-    border-left: 3px solid #f0fcf0;
-    border-bottom: 3px solid #f0fcf0;
-    border-right: 3px solid #f0fcf0;
-    background: #47435e;
-    border-top: 0px solid none;
-    margin: 0px;
+	font-size: 100%;
+	border-left: 3px solid #f0fcf0;
+	border-bottom: 3px solid #f0fcf0;
+	border-right: 3px solid #f0fcf0;
+	background: #d4f6d4;
+	border-top: 0px solid none;
+	margin: 0px;
 }
 
 .metadata-table td {
-    padding: 3px;
+	padding: 3px;
 }
