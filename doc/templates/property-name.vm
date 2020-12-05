@@ -1,0 +1,47 @@
+## Renders the name of a ResourceProperty, given in $property
+<span class="property-name">
+#if ($property.Inverse && !($showLabels && $property.InverseLabel))
+  <small>Is</small>
+#end
+#if ($showLabels && $property.Inverse && $property.InverseLabel)
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI">$property.InverseLabel
+    #else
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank">$property.InverseLabel
+    #end
+    #if($property.hasPrefix())
+        (<small>$property.Prefix:</small>$property.LocalName)
+    #else
+        (<small>?:</small>$property.LocalName)
+    #end
+    </a>
+#elseif ($showLabels && $property.label)
+   #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI">$property.label 
+    #else
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank">$property.label 
+    #end
+    #if($property.hasPrefix())
+        (<small>$property.Prefix:</small>$property.LocalName)
+    #else
+        (<small>?:</small>$property.LocalName)
+    #end
+    </a>
+#elseif ($property.hasPrefix())
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI"><small>$property.Prefix:</small>$property.LocalName</a>
+    #else
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank"><small>$property.Prefix:</small>$property.LocalName</a>
+    #end
+#else
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI"><small>?:</small>$property.LocalName</a>
+    #else
+        <a class="uri" href="$property.BrowsableURL" title="$property.URI" target="_blank"><small>?:</small>$property.LocalName</a>
+    #end
+  
+#end
+#if ($property.Inverse && !($showLabels && $property.InverseLabel))
+  <small>of</small>
+#end
+</span>

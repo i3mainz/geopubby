@@ -1,0 +1,47 @@
+## Renders the values of a single ResourceProperties, given in $property, as an unordered list
+<ul class="property-values">
+#foreach ($value in $property.SimpleValues)
+  <li>
+#if ($value.Node.isURI())
+#if ($showLabels && $value.label)
+   #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI">$value.label
+    #else
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank">$value.label
+        #if($value.hasPrefix())
+            (<small>$value.Prefix:</small>$value.LocalName)
+        #else
+            (<small>?:</small>$value.LocalName)
+        #end
+    #end
+    </a>
+#elseif ($value.hasPrefix())
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI"><small>$value.Prefix:</small>$value.LocalName</a>
+    #else
+        <a class="uri" href="$value.BrowsableURL" title="$value.Node.URI" target="_blank"><small>$value.Prefix:</small>$value.LocalName</a>
+    #end
+#else
+    #if ($value.BrowsableURL.toString().contains($server_base.toString()))
+        <small>&lt;</small><a class="uri" href="$value.BrowsableURL">$value.Node.URI</a><small>&gt;</small>
+    #else
+        <small>&lt;</small><a class="uri" href="$value.BrowsableURL" target="_blank">$value.Node.URI</a><small>&gt;</small>
+    #end
+#end
+#elseif ($value.Node.isLiteral())
+    <span class="literal">$value.Node.LiteralLexicalForm
+#if ($value.DatatypeLabel)
+    #if ($value.DatatypeURI.toString().contains($server_base.toString()))
+      <small><a href="$value.DatatypeURI" style="color: #666;">($value.DatatypeLabel)</a></small>
+    #else
+      <small><a href="$value.DatatypeURI" style="color: #666;" target="_blank">($value.DatatypeLabel)</a></small> 
+    #end 
+#end
+#if ($value.Node.LiteralLanguage != "")
+      <small> ($value.Node.LiteralLanguage)</small>
+#end
+    </span>
+#end
+  </li>
+#end
+</ul>
