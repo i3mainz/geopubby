@@ -93,7 +93,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	            feature=convertGeoJSON(feature,epsgdefs[epsg])
 	            console.log(feature);
               }
-              layerr=L.geoJson(feature,{
+              layerr=L.geoJSON.css(feature,{
                    pointToLayer: function(feature, latlng){
                   var greenIcon = new L.Icon({
                     iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
