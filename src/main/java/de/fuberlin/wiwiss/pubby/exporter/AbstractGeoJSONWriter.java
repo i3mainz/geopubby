@@ -122,6 +122,9 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 						String styledesc=formatter.formatGeometry(geomtype, styleObject);
 						curfeature.put("style", styledesc);
 					}
+					if(styleObject.popupStyle!=null) {
+						curfeature.put("popupTemplate", styleObject.popupStyle);
+					}
 				}
 			}
 		}

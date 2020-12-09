@@ -60,12 +60,17 @@ public class StyleObject {
 	 * An identifier of a given style.
 	 */
 	public String styleName;
+	
+	/**
+	 * A style definition for the map popup.
+	 */
+	public String popupStyle;
 
 	@Override
 	public String toString() {
 		return "StyleObject [pointStyle=" + pointStyle + ", pointImage=" + pointImage + ", lineStringStyle="
 				+ lineStringStyle + ", lineStringImage=" + lineStringImage + ", polygonStyle=" + polygonStyle
-				+ ", polygonImage=" + polygonImage + ", hatch=" + hatch + "]";
+				+", popupStyle=" + popupStyle +", polygonImage=" + polygonImage + ", hatch=" + hatch + "]";
 	}
 	
 	/**
@@ -81,6 +86,7 @@ public class StyleObject {
 		result.put("lineStringImageStyle",(lineStringImageStyle!=null?lineStringImageStyle.replace("\"","").replace("\\",""):null));
 		result.put("polygonStyle",(polygonStyle!=null?polygonStyle.replace("\"","").replace("\\",""):null));
 		result.put("polygonImage",(polygonImage!=null?polygonImage.replace("\"","").replace("\\",""):null));
+		result.put("popupStyle",(popupStyle!=null?popupStyle.replace("\"","").replace("\\",""):null));
 		result.put("hatch",(hatch!=null?hatch.replace("\"","").replace("\\",""):null));
 		result.put("styleName",styleName);
 		return result.toString(2);
@@ -100,6 +106,7 @@ public class StyleObject {
 		result.append("<tr><td>lineStringImageStyle</td><td>"+(lineStringImageStyle!=null?lineStringImageStyle.replace("\"","").replace("\\",""):"")+"</td></tr>");
 		result.append("<tr><td>polygonStyle</td><td>"+(polygonStyle!=null?polygonStyle.replace("\"","").replace("\\",""):"")+"</td></tr>");
 		result.append("<tr><td>polygonImage</td><td>"+(polygonImage!=null?polygonImage.replace("\"","").replace("\\",""):"")+"</td></tr>");
+		result.append("<tr><td>popupStyle</td><td>"+(popupStyle!=null?popupStyle.replace("\"","").replace("\\",""):"")+"</td></tr>");
 		result.append("<tr><td>hatch</td><td>"+(hatch!=null?hatch.replace("\"","").replace("\\",""):"")+"</td></tr>");
 		result.append("<tr><td>styleName</td><td>"+styleName+"</td></tr></table>");
 		return result.toString();
@@ -135,6 +142,9 @@ public class StyleObject {
 				writer.writeEndElement();
 				writer.writeStartElement("polygonStyle");
 				writer.writeCharacters(polygonStyle);
+				writer.writeEndElement();
+				writer.writeStartElement("popupStyle");
+				writer.writeCharacters(popupStyle);
 				writer.writeEndElement();
 				writer.writeStartElement("polygonImage");
 				writer.writeCharacters(polygonImage);
