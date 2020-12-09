@@ -12,7 +12,7 @@
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-
+<script type="text/javascript" src="${server_base}static/Leaflet.geojsoncss.min.js"></script>
 <script type="text/javascript">
 var overlayMaps={}
 var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
