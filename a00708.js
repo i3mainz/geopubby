@@ -12,5 +12,6 @@ var a00708 =
     [ "pointStyle", "a00708.html#a87e7ed2ad089c7ba8db7857efa15befa", null ],
     [ "polygonImage", "a00708.html#a3877196bb534272431a59e7ecb4d5338", null ],
     [ "polygonStyle", "a00708.html#a27511b5779d69b4e26b4ed7737d5de2e", null ],
+    [ "popupStyle", "a00708.html#ae93d83f6c0fc3f2b141fe82729631cd8", null ],
     [ "styleName", "a00708.html#ac1612ef6d046b45bf698d7c2c284e0ca", null ]
 ];
