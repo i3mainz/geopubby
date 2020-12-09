@@ -18,6 +18,7 @@ import org.json.JSONException;
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
 
 import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
+import de.fuberlin.wiwiss.pubby.exporter.style.KMLStyleFormatter;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
@@ -27,6 +28,7 @@ public class KMLWriter extends GeoModelWriter {
 
 	public KMLWriter(String epsg) {
 		super(epsg);
+		this.styleformatter=new KMLStyleFormatter();
 	}
 	
 	@Override
@@ -49,6 +51,9 @@ public class KMLWriter extends GeoModelWriter {
 					if(ind.hasProperty(GEO.EPSG)) {
 						sourceCRS="EPSG:"+ind.getProperty(GEO.EPSG).getObject().asLiteral().getValue().toString();
 					}
+					if(ind.hasProperty(GEO.STYLE)) {
+						styleObject=handleStyle(ind.getProperty(GEO.STYLE).getObject().asResource());
+					}
 					StmtIterator it2 = ind.listProperties();
 					while (it2.hasNext()) {
 						Statement curst = it2.next();
@@ -69,6 +74,15 @@ public class KMLWriter extends GeoModelWriter {
 					writer.writeEndElement();
 					lat=null;
 					lon=null;
+				}
+				if(styleObject!=null) {
+					writer.writeStartElement("Style");
+					writer.writeCharacters("");
+					writer.flush();
+					strwriter.write(this.styleformatter.formatGeometry("LineString", styleObject));
+				    strwriter.write(this.styleformatter.formatGeometry("Polygon", styleObject));
+					strwriter.write(this.styleformatter.formatGeometry("Point", styleObject));
+					writer.writeEndElement();
 				}
 				it = model.listResourcesWithProperty(usedProperty);
 				writer.writeStartElement("ExtendedData");

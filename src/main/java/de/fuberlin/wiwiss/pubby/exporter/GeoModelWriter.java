@@ -7,7 +7,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
-import org.apache.sis.coverage.SampleDimension;
 import org.apache.sis.coverage.grid.GridCoverage;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -17,7 +16,9 @@ import org.locationtech.jts.io.gml2.GMLReader;
 import org.wololo.jts2geojson.GeoJSONReader;
 import org.xml.sax.SAXException;
 
+import de.fuberlin.wiwiss.pubby.exporter.style.ResultStyleFormatter;
 import de.fuberlin.wiwiss.pubby.util.ReprojectionUtils;
+import de.fuberlin.wiwiss.pubby.util.StyleObject;
 import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
@@ -33,12 +34,45 @@ public class GeoModelWriter extends ModelWriter {
 	
 	protected GridCoverage cov;
 	
+	protected StyleObject styleObject;
+	
+	protected ResultStyleFormatter styleformatter;
+	
 	public GeoModelWriter(String epsg) {
 		this.epsg=epsg;
 	}
 	
 	public GeoModelWriter() {
 		super();
+	}
+	
+	protected StyleObject handleStyle(Resource res) {
+		StyleObject result=new StyleObject();
+		if(res.hasProperty(GEO.POINTSTYLE)){
+			result.pointStyle=res.getProperty(GEO.POINTSTYLE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POINTIMAGE)){
+			result.pointImage=res.getProperty(GEO.POINTIMAGE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.LINESTRINGSTYLE)){
+			result.lineStringStyle=res.getProperty(GEO.LINESTRINGSTYLE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.LINESTRINGIMAGE)){
+			result.lineStringImage=res.getProperty(GEO.LINESTRINGIMAGE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.LINESTRINGIMAGESTYLE)){
+			result.lineStringImageStyle=res.getProperty(GEO.LINESTRINGIMAGESTYLE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POLYGONSTYLE)){
+			result.polygonStyle=res.getProperty(GEO.POLYGONSTYLE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POLYGONIMAGE)){
+			result.polygonImage=res.getProperty(GEO.POLYGONIMAGE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.HATCH)){
+			result.polygonImage=res.getProperty(GEO.HATCH).getLiteral().getString();
+		}
+		return result;
 	}
 	
 	

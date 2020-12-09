@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import org.wololo.geojson.GeoJSON;
 import org.wololo.jts2geojson.GeoJSONWriter;
 
+import de.fuberlin.wiwiss.pubby.exporter.style.GeoJSONCSSFormatter;
 import de.fuberlin.wiwiss.pubby.util.Tuple;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
@@ -26,6 +27,7 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 	public AbstractGeoJSONWriter(String epsg) {
 		super(epsg);
 		this.contextMapper=new TreeMap<String,String>();
+		this.styleformatter=new GeoJSONCSSFormatter();
 	}
 	
 	public JSONObject prepareGeoJSONString(Model model, HttpServletResponse response) throws IOException {
@@ -62,6 +64,7 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 			geojson.put("features",features);
 			while(it.hasNext()) {
 				Resource ind=it.next();
+				String geomtype=null;
 				StmtIterator it2 = ind.listProperties();
 				JSONObject curfeature=new JSONObject();
 				features.put(curfeature);
@@ -97,6 +100,7 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 					if(geom!=null) {
 						GeoJSONWriter writer = new GeoJSONWriter();
 				        GeoJSON json = writer.write(geom);
+				        geomtype=geom.getGeometryType();
 				        String jsonstring = json.toString();
 				        curfeature.put("geometry",new JSONObject(jsonstring));
 						geom=null;
@@ -104,15 +108,25 @@ public class AbstractGeoJSONWriter extends GeoModelWriter {
 					if(lon!=null && lat!=null) {
 						JSONObject geeo=new JSONObject();
 						geeo.put("type","Point");
+						geomtype="Point";
 						geeo.put("coordinates",new JSONArray());
 						geeo.getJSONArray("coordinates").put(lon);
 						geeo.getJSONArray("coordinates").put(lat);
 						curfeature.put("geometry",geeo);
 					}
 				}
+				if(ind.hasProperty(GEO.STYLE)) {
+					styleObject=handleStyle(ind.getProperty(GEO.STYLE).getObject().asResource());
+					GeoJSONCSSFormatter formatter=new GeoJSONCSSFormatter();
+					if(geomtype!=null) {
+						String styledesc=formatter.formatGeometry(geomtype, styleObject);
+						curfeature.put("style", styledesc);
+					}
+				}
 			}
 		}
 		return geojson;
 	}
+	
 	
 }

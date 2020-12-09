@@ -39,10 +39,30 @@ public class GEO {
 	
 	public static final Property EPSG = model.createProperty( GEOSPARQLNS + "epsg" );
 	
+	public static final Property STYLE = model.createProperty( GEOSPARQLNS + "style" );
+	
+	public static final Property LINESTRINGSTYLE=model.createProperty(GEOSPARQLNS+"lineStringStyle");
+	
+	public static final Property LINESTRINGIMAGE=model.createProperty(GEOSPARQLNS+"lineStringImage");
+	
+	public static final Property POINTSTYLE=model.createProperty(GEOSPARQLNS+"pointStyle");
+	
+	public static final Property POINTIMAGE=model.createProperty(GEOSPARQLNS+"pointImage");
+	
+	public static final Property POLYGONSTYLE=model.createProperty(GEOSPARQLNS+"polygonStyle");	
+	
+	public static final Property POLYGONIMAGE=model.createProperty(GEOSPARQLNS+"polygonImage");
+	
+	public static final Property HATCH=model.createProperty(GEOSPARQLNS+"hatch");
+	
+	public static final Property LINESTRINGIMAGESTYLE=model.createProperty(GEOSPARQLNS+"lineStringImageStyle");
+	
 	public static final Property P625 = model.createProperty( WIKIDATANS + "P625" );
 	
 	public static final Property GEORSSPOINT= model.createProperty("http://www.georss.org/georss/point");
 	
-	public static List<Property> geomprops=Arrays.asList(new Property[] {P_LONG,P_LAT,P_GEOMETRY,LOCATION,HASGEOMETRY,ASWKT,P625});
+	public static List<Property> geomprops=Arrays.asList(new Property[] {P_LONG,P_LAT,P_GEOMETRY,LOCATION,HASGEOMETRY,ASWKT,ASGML,ASWKB,ASHEXWKB,ASGEOJSON,P625,GEORSSPOINT});
+
+	
 	
 }
