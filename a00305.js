@@ -1,7 +1,25 @@
 var a00305 =
 [
-    [ "CONF", "a00687.html", "a00687" ],
-    [ "COV", "a00691.html", "a00691" ],
-    [ "GEO", "a00695.html", "a00695" ],
-    [ "META", "a00699.html", "a00699" ]
+    [ "exporter", "a00309.html", "a00309" ],
+    [ "negotiation", "a00314.html", "a00314" ],
+    [ "servlets", "a00315.html", "a00315" ],
+    [ "sources", "a00316.html", "a00316" ],
+    [ "util", "a00317.html", "a00317" ],
+    [ "vocab", "a00318.html", "a00318" ],
+    [ "Configuration", "a00328.html", "a00328" ],
+    [ "ConfigurationException", "a00332.html", "a00332" ],
+    [ "Dataset", "a00336.html", "a00336" ],
+    [ "HypermediaControls", "a00508.html", "a00508" ],
+    [ "HypermediaResource", "a00512.html", "a00512" ],
+    [ "IRIEncoder", "a00516.html", "a00516" ],
+    [ "IRIRewriter", "a00520.html", "a00520" ],
+    [ "MappedResource", "a00524.html", "a00524" ],
+    [ "MetadataConfiguration", "a00528.html", "a00528" ],
+    [ "ModelResponse", "a00532.html", "a00532" ],
+    [ "ModelUtil", "a00536.html", "a00536" ],
+    [ "PubbyIRIEscaper", "a00564.html", "a00564" ],
+    [ "ResourceDescription", "a00568.html", "a00568" ],
+    [ "ResourceReader", "a00584.html", "a00584" ],
+    [ "URIPrefixer", "a00672.html", "a00672" ],
+    [ "VocabularyStore", "a00732.html", "a00732" ]
 ];

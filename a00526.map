@@ -1,0 +1,9 @@
+<map id="MetadataConfiguration" name="MetadataConfiguration">
+<area shape="rect" id="node2" href="$a00584.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1245,40,1365,67"/>
+<area shape="rect" id="node10" href="$a00736.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="983,311,1199,353"/>
+<area shape="rect" id="node5" href="$a00664.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="1412,357,1603,384"/>
+<area shape="rect" id="node6" href="$a00644.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1045,377,1136,404"/>
+<area shape="rect" id="node16" href="$a00676.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="989,231,1192,287"/>
+<area shape="rect" id="node17" href="$a00676.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="599,169,763,210"/>
+<area shape="rect" id="node24" href="$a01500.html" title="Indexable" alt="" coords="343,112,422,139"/>
+</map>
