@@ -10,6 +10,7 @@ import org.apache.velocity.context.Context;
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
+import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
 
 /**
  * A servlet for serving the HTML page describing a resource.
@@ -32,6 +33,9 @@ public class PageURLServlet extends BaseServlet {
 		context.put("project_name", config.getProjectName());
 		context.put("project_link", config.getProjectLink());
 		context.put("uri", description.getURI());
+		if(config.getDataSource() instanceof RemoteSPARQLDataSource) {
+			context.put("endpoint", ((RemoteSPARQLDataSource)config.getDataSource()).endpointURL);
+		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
 		context.put("title", description.getTitle());

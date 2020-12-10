@@ -13,6 +13,7 @@ import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
 import de.fuberlin.wiwiss.pubby.ResourceDescription.ResourceProperty;
+import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
 
 /**
  * A servlet for rendering an HTML page listing resources
@@ -42,6 +43,9 @@ public class ValuesURLServlet extends ValuesBaseServlet {
 		context.put("project_name", config.getProjectName());
 		context.put("project_link", config.getProjectLink());
 		context.put("uri", resource.getURI());
+		if(config.getDataSource() instanceof RemoteSPARQLDataSource) {
+			context.put("endpoint", ((RemoteSPARQLDataSource)config.getDataSource()).endpointURL);
+		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("title", resource.getTitle());
 		context.put("head_title", resource.getTitle() + " \u00BB " + property.getCompleteLabel());
