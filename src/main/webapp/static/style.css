@@ -52,3 +52,300 @@ a.expander { text-decoration: none; }
 .metadata-table td {
 	padding: 3px;
 }
+
+/* Main-Wrapper */
+nav {
+  
+  position: fixed;
+  width: 150px;
+  left: -150px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba( 0, 0, 0, .9 );
+  padding: 15px 0;
+  transition: left 1s ease-in .5s;
+  
+  &:after {
+    
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: inherit;
+    color: #ffffff;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    padding: 15px;
+    background-color: rgba( 0, 0, 0, .9 );
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    
+  }
+  
+  &:hover {
+    
+    left: 0;
+    transition: left 1s ease-in 0s;
+    
+    &:after {
+      
+      content: "\f00d";
+      
+    }
+    
+  }
+  
+}
+/* Main-Wrapper - End */
+
+
+/* Global Styles */
+nav {
+  
+  ul {
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      
+      position: relative;
+      
+      a {
+        
+        padding: 10px 5px;
+        padding-left: 30px;
+        
+      }
+      
+      &:hover {
+        
+        background-color: rgba( 0, 150, 255, 1 );
+        
+        & > ul {
+          
+          top: 0%;
+          
+        }
+        
+      }
+      
+      & > ul {
+        
+        position: absolute;
+        background-color: rgba( 0, 0, 0, .9 );
+        width: 100%;
+        top: 1999px;
+        left: 100%;
+        transition: top .5s;
+        
+        li {
+          
+          min-width: 120px;
+          
+        }
+        
+        &:hover {
+        
+          top: 0%;
+          
+        }
+        
+      }
+      
+    }
+    
+    a {
+      
+      color: #ffffff;
+      text-decoration: none;
+      padding-left: 25px;
+      display: block;
+      
+      &:after {
+        
+        content: "\f054";
+        font-family: "FontAwesome";
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 13px;
+        font-size: 12px;
+        
+      }
+
+    }
+    
+  }
+  
+  /* First-Level Navigation */
+  & > ul {
+    
+    margin-top: 32px;
+    
+  }
+  
+}
+/* Global Styles - End */
+
+
+/* Sidebar */
+
+  /* Multi-Level Navigation */
+  
+  
+  /* Alternative Style */
+  /* Looks cool, but a bit unhandy. Just de-coment the next-lines */
+  /*
+    nav {
+    
+    ul {
+      
+      li {
+        
+        background-color: rgba( 0, 0, 0, .4 );
+        
+        & > ul {
+          
+          position: unset;
+          background-color: transparent;
+          margin-left: 10px;
+          max-height: 0;
+          transition: max-height .5s;
+          overflow: hidden;
+          
+        }
+      
+        &:hover {
+          
+          background-color: rgba( 0, 150, 255, .4 );
+          
+          & > ul {
+            
+            max-height: 999px;
+            overflow: visible;
+            
+          }
+          
+        }
+      
+      }
+      
+    }
+    
+  }
+  /**/
+
+/* Some CSS to prettyfy the screen */
+body {
+
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  overflow-y: auto;
+
+  background: linear-gradient(180deg, rgba(48,136,255,1) 0%, rgba(255,115,118,1) 100%);
+  background-repeat: no-repeat;
+
+  &:after {
+
+    content: " ";
+    display: block;
+    
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    z-index: -1;
+    opacity: .8;
+    
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%239C92AC" fill-opacity="0.4" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+
+  }
+  
+  a {
+    color: #0078cc;
+    text-decoration: none;
+  }
+  
+  #main-wrapper {
+    
+    padding: 40px 0;
+    
+  }
+  
+  .contrast-bg {
+    
+    padding: 15px;
+    background-color: rgba( 255, 255, 255, .6 );
+    
+    &:first-child {
+      
+      margin-bottom: 60px;
+      
+    }
+    &:last-child {
+      
+      margin-top: 60px;
+      
+    }
+    
+    p {
+      
+      margin-top: 0;
+      
+    }
+    
+  }
+  
+  .container {
+    
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+    
+    .left {
+      
+      text-align: left;
+      width: 25%;
+      margin: 0 15px;
+      
+    }
+    .right {
+      
+      text-align: left;
+      width: 75%;
+      margin: 0 15px;
+      
+    }
+    
+  }
+
+}
+@media ( max-width: 767px ) {
+  
+  body .container {
+    
+    display: block;
+    
+  }
+  body .container .left,
+  body .container .right {
+    
+    margin: 15px;
+    width: calc( 100% - 60px );
+    
+  }
+  
+}

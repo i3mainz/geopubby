@@ -98,6 +98,11 @@
 #end
 #end
 </div>
+<nav>
+  <ul>
+    <li><a href="#0">Home</a></li>
+    <li><a href="#0">About</a></li>
+</nav>
 #if ($uri)
       <div class="page-resource-uri"><a href="$uri">$uri</a></div>
 #end
