@@ -46,6 +46,8 @@ public class PageURLServlet extends BaseServlet {
 			}
 			if(!sources.isEmpty())
 				context.put("endpoint", sources.substring(0,sources.length()-1));
+		}else {
+			context.put("endpoint", "#");
 		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
