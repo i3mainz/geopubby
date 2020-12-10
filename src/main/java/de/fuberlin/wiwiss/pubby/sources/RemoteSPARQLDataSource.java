@@ -45,7 +45,7 @@ import de.fuberlin.wiwiss.pubby.util.SearchRecord;
  * the SPARQL protocol.
  */
 public class RemoteSPARQLDataSource implements DataSource {
-	private final String endpointURL;
+	public final String endpointURL;
 	private final String defaultGraphURI;
 	private final boolean supportsSPARQL11;
 	
