@@ -46,6 +46,11 @@
 		}
      </style>
   <script>
+  var ttlprefixList="@prefix wd: <http://www.wikidata.org/entity/> . \n @prefix foaf: <http://xmlns.com/foaf/0.1/> . \n @prefix owl: <http://www.w3.org/2002/07/owl#> . \n @prefix geo: <http://www.opengis.net/ont/geosparql#> . \n @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . \n @prefix xml: <http://www.w3.org/XML/1998/namespace> . \n @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . \n @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . \n @prefix kml: <http://www.opengis.net/kml/2.2#> . \n @prefix gml: <http://www.opengis.net/gml/3.2#> . \n @prefix xplan5: <http://www.xplanung.de/xplangml/5/0#> . \n "
+var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/ont/geosparql#":"geo" 
+, "http://www.wikidata.org/entity/":"wd", "http://xmlns.com/foaf/0.1/":"foaf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#":"rdf", 
+"http://www.w3.org/XML/1998/namespace":"xml", "http://www.w3.org/2001/XMLSchema#":"xsd", "http://www.w3.org/2000/01/rdf-schema#":"rdfs" ,
+ "http://www.xerleben.de/schema/2.0_1#":"xerl", "http://www.xplanung.de/xplangml/5/0#":"xplan5", "http://www.opengis.net/gml/3.2":"gml", "http://www.opengis.net/kml/2.2#":"kml" }; 
   $( function() {
     function split( val ) {
       return val.split( /,\s*/ );
@@ -102,7 +107,7 @@
 </div>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  Endpoint: <select id="endpointselect" onclick="getClassHierarchy([])"><option value="$endpoint">$project_name</option><option value="http://www.dbpedia.org/sparql">$project_name</option></select><br/>
+  Endpoint: <select id="endpointselect" onclick="getClassHierarchy([])"><option value="$endpoint">$project_name</option><option value="https://www.dbpedia.org/sparql">$project_name</option></select><br/>
   GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
   <div id="jstree"></div>
 </div>
