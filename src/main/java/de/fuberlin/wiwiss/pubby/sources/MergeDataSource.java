@@ -25,7 +25,7 @@ import de.fuberlin.wiwiss.pubby.util.SearchRecord;
  * be guaranteed to be defined on all result models.
  */
 public class MergeDataSource implements DataSource {
-	private final Collection<DataSource> sources;
+	public final Collection<DataSource> sources;
 	private final PrefixMapping mustHavePrefixes;
 	
 	public MergeDataSource(DataSource... sources) {

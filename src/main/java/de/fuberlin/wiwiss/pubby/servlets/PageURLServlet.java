@@ -10,6 +10,8 @@ import org.apache.velocity.context.Context;
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
+import de.fuberlin.wiwiss.pubby.sources.DataSource;
+import de.fuberlin.wiwiss.pubby.sources.MergeDataSource;
 import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
 
 /**
@@ -35,6 +37,14 @@ public class PageURLServlet extends BaseServlet {
 		context.put("uri", description.getURI());
 		if(config.getDataSource() instanceof RemoteSPARQLDataSource) {
 			context.put("endpoint", ((RemoteSPARQLDataSource)config.getDataSource()).endpointURL);
+		}else if(config.getDataSource() instanceof MergeDataSource) {
+			String sources="";
+			for(DataSource source:((MergeDataSource)config.getDataSource()).sources) {
+				if(source instanceof RemoteSPARQLDataSource) {
+					sources+=((RemoteSPARQLDataSource) source).endpointURL+";";
+				}
+			}
+			context.put("endpoint", sources.substring(0,sources.length()-1));
 		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
