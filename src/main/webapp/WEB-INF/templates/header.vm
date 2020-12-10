@@ -120,7 +120,7 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
 </div>
 <script>
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "400px";
 }
 
 function closeNav() {
