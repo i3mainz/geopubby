@@ -44,7 +44,8 @@ public class PageURLServlet extends BaseServlet {
 					sources+=((RemoteSPARQLDataSource) source).endpointURL+";";
 				}
 			}
-			context.put("endpoint", sources.substring(0,sources.length()-1));
+			if(!sources.isEmpty())
+				context.put("endpoint", sources.substring(0,sources.length()-1));
 		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());

@@ -54,7 +54,8 @@ public class ValuesURLServlet extends ValuesBaseServlet {
 					sources+=((RemoteSPARQLDataSource) source).endpointURL+";";
 				}
 			}
-			context.put("endpoint", sources.substring(0,sources.length()-1));
+			if(!sources.isEmpty())
+				context.put("endpoint", sources.substring(0,sources.length()-1));
 		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("title", resource.getTitle());
