@@ -1,5 +1,16 @@
 #parse("header.vm")
+<div class="contrast-bg">
+    <h1>Sidebar Navigation</h1>
+    <p>A CSS-Only Sidebar menu for websites.</p>
+  </div>
+<div class="container-fluid">
 <div class="row-fluid" id="main-wrapper">
+
+ <div class="contrast-bg">
+      
+      <p>Hover over the menu-icon in the right upper corner to open the sidebar-menu.</p>
+      
+    </div>
 #if ($image)
     <div class="image">
     <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
@@ -208,5 +219,6 @@ var espg="EPSG:4326";
 	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
 </div>
 #end
+</div>
 
 #parse("footer.vm")

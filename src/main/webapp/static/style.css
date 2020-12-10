@@ -251,9 +251,6 @@ body {
   overflow: hidden;
   overflow-y: auto;
 
-  background: linear-gradient(180deg, rgba(48,136,255,1) 0%, rgba(255,115,118,1) 100%);
-  background-repeat: no-repeat;
-
   &:after {
 
     content: " ";
@@ -335,13 +332,13 @@ body {
 }
 @media ( max-width: 767px ) {
   
-  body .container {
+  body .container-fluid {
     
     display: block;
     
   }
-  body .container .left,
-  body .container .right {
+  body .container-fluid .left,
+  body .container-fluid .right {
     
     margin: 15px;
     width: calc( 100% - 60px );
