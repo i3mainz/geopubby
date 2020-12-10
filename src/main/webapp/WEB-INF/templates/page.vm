@@ -1,5 +1,5 @@
 #parse("header.vm")
-<div class="row-fluid">
+<div class="row-fluid" id="main-wrapper">
 #if ($image)
     <div class="image">
     <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
