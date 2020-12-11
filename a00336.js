@@ -27,5 +27,6 @@ var a00336 =
     [ "datasetBase", "a00336.html#a97806fc09c1400cee4edd69ae19d5a4b", null ],
     [ "dataSource", "a00336.html#a0565026296eb9b83b087cce11898ff08", null ],
     [ "metadata", "a00336.html#a290a08c1de1d99d5ae29f8c659c58ef3", null ],
-    [ "sparqlDataSource", "a00336.html#a7257c75d74e2c392e2517c0ed3af938a", null ]
+    [ "sparqlDataSource", "a00336.html#a7257c75d74e2c392e2517c0ed3af938a", null ],
+    [ "sparqlEndpoint", "a00336.html#a0c183c626792e784054c97cc92947364", null ]
 ];
