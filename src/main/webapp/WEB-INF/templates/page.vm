@@ -47,7 +47,7 @@ console.log(query)
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
        console.log(results)
         ress={}
-        var tree={ "plugins": ["search", "types","sort"],"search": {}, "core": { "data" :[]}}
+        var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {}, "core": { "data" :[]}}
         tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","parent" : "#", "text" : "owl:Thing" })
         for(res in results){
             //console.log(results[res])
@@ -152,6 +152,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
             $('#jstree').jstree("destroy");
         }catch(err){}
         $('#jstree').jstree(tree);
+        $('#jstree').bind("dblclick.jstree", function (event) {
+   			var node = $(event.target).closest("li");
+   			var data = node.data("jstree");
+   			window.open(data, '_blank');
+		});
 		var to = false;
 		$('#classsearch').keyup(function () {
 		console.log("KEY UP")
