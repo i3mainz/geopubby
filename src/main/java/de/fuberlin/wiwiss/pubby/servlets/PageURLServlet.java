@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.velocity.context.Context;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
+import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
 import de.fuberlin.wiwiss.pubby.sources.DataSource;
@@ -37,32 +38,12 @@ public class PageURLServlet extends BaseServlet {
 		context.put("project_name", config.getProjectName());
 		context.put("project_link", config.getProjectLink());
 		context.put("uri", description.getURI());
-		
-		if(config.getDataSource() instanceof RemoteSPARQLDataSource) {
-			context.put("endpoint", ((RemoteSPARQLDataSource)config.getDataSource()).endpointURL);
-		}else if(config.getDataSource() instanceof MergeDataSource) {
-			String sources="";
-			for(DataSource source:((MergeDataSource)config.getDataSource()).sources) {
-				if(source instanceof RemoteSPARQLDataSource) {
-					sources+=((RemoteSPARQLDataSource) source).endpointURL+";";
-				}else if(source instanceof RewrittenDataSource && ((RewrittenDataSource) source).original instanceof RemoteSPARQLDataSource) {
-					sources+=((RemoteSPARQLDataSource)((RewrittenDataSource) source).original).endpointURL+";";
-				}else if(source instanceof IndexDataSource && ((IndexDataSource) source).wrapped instanceof RemoteSPARQLDataSource) {
-					sources+=((RemoteSPARQLDataSource)((IndexDataSource) source).wrapped).endpointURL+";";
-				}
-			}
-			if(!sources.isEmpty())
-				context.put("endpoint", sources.substring(0,sources.length()-1));
-			else {
-				context.put("endpoint", config.getDatasets().iterator().next().sparqlEndpoint);
-			}
-		}else if(config.getDataSource() instanceof RewrittenDataSource && ((RewrittenDataSource) config.getDataSource()).original instanceof RemoteSPARQLDataSource){
-			context.put("endpoint", ((RemoteSPARQLDataSource)((RewrittenDataSource) config.getDataSource()).original).endpointURL);
-		}else if(config.getDataSource() instanceof IndexDataSource && ((IndexDataSource) config.getDataSource()).wrapped instanceof RemoteSPARQLDataSource){
-			context.put("endpoint", ((RemoteSPARQLDataSource)((IndexDataSource) config.getDataSource()).wrapped).endpointURL);
-		}else {
-			context.put("endpoint", config.getDatasets().iterator().next().sparqlEndpoint);
+		String sources="";
+		for(Dataset ds:config.getDatasets()) {
+			sources+=ds.sparqlEndpoint+";";
 		}
+		if(!sources.isEmpty())
+			context.put("endpoint", sources.substring(0,sources.length()-1));
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
 		context.put("title", description.getTitle());
