@@ -119,10 +119,15 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
   Search:<input type="text" id="classsearch"><br/>
   <div id="jstree"></div>
 </div>
-<div style="text-align:right">
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-</div>
-<script>
+#if ($uri)
+      <div class="page-resource-uri"><a href="$uri">$uri</a> <b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby" target="_blank">GeoPubby<img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></b></div>
+      </div>
+#end
+#if ($rdf_link)
+      <div id="rdficon"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
+#end
+    </div>
+    <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "400px";
 }
@@ -131,13 +136,6 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 </script>
-#if ($uri)
-      <div class="page-resource-uri"><a href="$uri">$uri</a></div>
-#end
-#if ($rdf_link)
-      <div id="rdficon"><b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby" target="_blank">GeoPubby<img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></b></div>
-#end
-    </div>
     <div class="search">
     Search: <input id="search" size="50">
     #if ($rdf_link)
