@@ -121,8 +121,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                 }
         }*/
         tree["core"]["types"]={"file" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif"},"default" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","valid_children" : ["default"]}}
-        tree["plugins"]=["checkbox","search","sort","state","types","contextmenu"]
-        tree["checkbox"]={"cascade":"","three_state":false}
+        tree["plugins"]=["search","sort","state","types","contextmenu"]
 		tree["contextmenu"]={}
 		tree["contextmenu"]["items"]=function (node) {
                         return {
