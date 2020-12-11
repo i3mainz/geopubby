@@ -42,6 +42,9 @@
       }
       .container > hr {
         margin: 40px 0;
+      .jstree-contextmenu {
+    	z-index: 9999999 !important;
+		}
       .search {
     	z-index: 9999999 !important;
 		}
