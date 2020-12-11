@@ -28,6 +28,8 @@ public class Dataset extends ResourceReader {
 	
 	public String datasetBase;
 	
+	public String sparqlEndpoint;
+	
 	// TODO: This is a rather dirty hack. We may need DataSource.getProvenance() or something
 	private RemoteSPARQLDataSource sparqlDataSource = null;
 	
@@ -77,6 +79,7 @@ public class Dataset extends ResourceReader {
 			
 			// SPARQL data source
 			String endpointURL = getIRI(CONF.sparqlEndpoint);
+			this.sparqlEndpoint=endpointURL;
 			String defaultGraphURI = getIRI(CONF.sparqlDefaultGraph);
 			sparqlDataSource = new RemoteSPARQLDataSource(
 					endpointURL,

@@ -37,6 +37,7 @@ public class PageURLServlet extends BaseServlet {
 		context.put("project_name", config.getProjectName());
 		context.put("project_link", config.getProjectLink());
 		context.put("uri", description.getURI());
+		
 		if(config.getDataSource() instanceof RemoteSPARQLDataSource) {
 			context.put("endpoint", ((RemoteSPARQLDataSource)config.getDataSource()).endpointURL);
 		}else if(config.getDataSource() instanceof MergeDataSource) {
@@ -53,14 +54,14 @@ public class PageURLServlet extends BaseServlet {
 			if(!sources.isEmpty())
 				context.put("endpoint", sources.substring(0,sources.length()-1));
 			else {
-				context.put("endpoint", "#");
+				context.put("endpoint", config.getDatasets().iterator().next().sparqlEndpoint);
 			}
 		}else if(config.getDataSource() instanceof RewrittenDataSource && ((RewrittenDataSource) config.getDataSource()).original instanceof RemoteSPARQLDataSource){
 			context.put("endpoint", ((RemoteSPARQLDataSource)((RewrittenDataSource) config.getDataSource()).original).endpointURL);
 		}else if(config.getDataSource() instanceof IndexDataSource && ((IndexDataSource) config.getDataSource()).wrapped instanceof RemoteSPARQLDataSource){
 			context.put("endpoint", ((RemoteSPARQLDataSource)((IndexDataSource) config.getDataSource()).wrapped).endpointURL);
 		}else {
-			context.put("endpoint", "#");
+			context.put("endpoint", config.getDatasets().iterator().next().sparqlEndpoint);
 		}
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
