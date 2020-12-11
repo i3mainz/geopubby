@@ -63,6 +63,7 @@ body {
   z-index: 1;
   top: 0;
   right: 0;
+  background-color: #FFF;
   overflow-x: hidden;
   transition: 0.5s;
 }
