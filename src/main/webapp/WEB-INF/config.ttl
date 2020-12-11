@@ -65,7 +65,7 @@
 # URIs on the Web:             http://localhost:8080/resource/*
     conf:dataset [
         # SPARQL endpoint URL of the dataset
-        conf:sparqlEndpoint <http://dbpedia.org/sparql>;
+        conf:sparqlEndpoint <https://dbpedia.org/sparql>;
         # Default graph name to query (not necessary for most endpoints)
         conf:sparqlDefaultGraph <http://dbpedia.org>;
         # Common URI prefix of all resource URIs in the SPARQL dataset
