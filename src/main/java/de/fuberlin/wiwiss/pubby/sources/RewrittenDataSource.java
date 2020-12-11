@@ -23,7 +23,7 @@ import de.fuberlin.wiwiss.pubby.util.SearchRecord;
  * rewritten and original IRIs identify the same entity.
  */
 public class RewrittenDataSource implements DataSource {
-	private final DataSource original;
+	public final DataSource original;
 	private final IRIRewriter rewriter;
 	private final boolean addSameAs;
 	

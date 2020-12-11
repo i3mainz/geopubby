@@ -11,8 +11,10 @@ import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
 import de.fuberlin.wiwiss.pubby.sources.DataSource;
+import de.fuberlin.wiwiss.pubby.sources.IndexDataSource;
 import de.fuberlin.wiwiss.pubby.sources.MergeDataSource;
 import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
+import de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource;
 
 /**
  * A servlet for serving the HTML page describing a resource.
@@ -42,6 +44,10 @@ public class PageURLServlet extends BaseServlet {
 			for(DataSource source:((MergeDataSource)config.getDataSource()).sources) {
 				if(source instanceof RemoteSPARQLDataSource) {
 					sources+=((RemoteSPARQLDataSource) source).endpointURL+";";
+				}else if(source instanceof RewrittenDataSource && ((RewrittenDataSource) source).original instanceof RemoteSPARQLDataSource) {
+					sources+=((RemoteSPARQLDataSource)((RewrittenDataSource) source).original).endpointURL+";";
+				}else if(source instanceof IndexDataSource && ((IndexDataSource) source).wrapped instanceof RemoteSPARQLDataSource) {
+					sources+=((RemoteSPARQLDataSource)((IndexDataSource) source).wrapped).endpointURL+";";
 				}
 			}
 			if(!sources.isEmpty())

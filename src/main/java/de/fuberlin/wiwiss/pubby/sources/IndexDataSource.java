@@ -20,7 +20,7 @@ import de.fuberlin.wiwiss.pubby.util.SearchRecord;
  */
 public class IndexDataSource implements DataSource {
 	private final String indexIRI;
-	private final DataSource wrapped;
+	public final DataSource wrapped;
 	
 	public IndexDataSource(String indexIRI, DataSource wrapped) {
 		this.indexIRI = indexIRI;
