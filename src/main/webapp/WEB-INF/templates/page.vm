@@ -155,7 +155,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         $('#jstree').bind("dblclick.jstree", function (event) {
    			var node = $(event.target).closest("li");
    			var data = node.data("jstree");
-   			window.open(data, '_blank');
+   			window.open(data["id"], '_blank');
 		});
 		var to = false;
 		$('#classsearch').keyup(function () {
