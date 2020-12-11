@@ -52,6 +52,13 @@ public class PageURLServlet extends BaseServlet {
 			}
 			if(!sources.isEmpty())
 				context.put("endpoint", sources.substring(0,sources.length()-1));
+			else {
+				context.put("endpoint", "#");
+			}
+		}else if(config.getDataSource() instanceof RewrittenDataSource && ((RewrittenDataSource) config.getDataSource()).original instanceof RemoteSPARQLDataSource){
+			context.put("endpoint", ((RemoteSPARQLDataSource)((RewrittenDataSource) config.getDataSource()).original).endpointURL);
+		}else if(config.getDataSource() instanceof IndexDataSource && ((IndexDataSource) config.getDataSource()).wrapped instanceof RemoteSPARQLDataSource){
+			context.put("endpoint", ((RemoteSPARQLDataSource)((IndexDataSource) config.getDataSource()).wrapped).endpointURL);
 		}else {
 			context.put("endpoint", "#");
 		}
