@@ -48,7 +48,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
        console.log(results)
         prefixurl=""
         if($('#endpointselect').prop('selectedIndex')<srcurls.length){
-        	prefixurl=srculs[$('#endpointselect').prop('selectedIndex')]        
+        	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
         }
         ress={}
         var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {}, "core": { "data" :[]}}
