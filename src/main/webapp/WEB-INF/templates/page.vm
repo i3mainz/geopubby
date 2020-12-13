@@ -46,6 +46,10 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 console.log(query)
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
        console.log(results)
+        prefixurl=""
+        if($('#endpointselect').prop('selectedIndex')<srcurls.length){
+        	prefixurl=srculs[$('#endpointselect').prop('selectedIndex')]        
+        }
         ress={}
         var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {}, "core": { "data" :[]}}
         tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","parent" : "#", "text" : "owl:Thing" })
@@ -63,11 +67,15 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         }
 
         console.log(classeswithinstances)
-        //clsMap={}
-        //superMap={}
-        for(cls in ress){
-            //clsMap[cls]=true;
-            //superMap[ress[cls]["super"]]=true;
+        clsMap={}
+        superMap={}
+        for(clss in ress){
+            cls=clss
+            if(prefixurl!=""){
+            	cls=cls.replace($server_base,prefixurl);
+            }
+            clsMap[cls]=true;
+            superMap[ress[cls]["super"]]=true;
 			if(cls.includes("_:") || !(cls.startsWith("http"))){
 				continue;
 			}
@@ -115,11 +123,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					
             //}
         }
-        /*for(cls in superMap){
+        for(cls in superMap){
                 if(!(cls in clsMap)){
                         console.log("Not defined superClass: "+cls)
                 }
-        }*/
+        }
         tree["core"]["types"]={"file" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif"},"default" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","valid_children" : ["default"]}}
         tree["plugins"]=["search","sort","state","types","contextmenu"]
 		tree["contextmenu"]={}

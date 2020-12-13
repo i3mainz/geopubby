@@ -36,10 +36,13 @@ public class PageURLServlet extends BaseServlet {
 		context.put("project_link", config.getProjectLink());
 		context.put("uri", description.getURI());
 		List<String> sources=new LinkedList<String>();
+		List<String> sourceURLs=new LinkedList<String>();
 		for(Dataset ds:config.getDatasets()) {
 			sources.add(ds.sparqlEndpoint);
+			sourceURLs.add(ds.datasetBase);
 		}
 		context.put("endpoint", sources);
+		context.put("sourceURLs", sourceURLs);
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
 		context.put("title", description.getTitle());
