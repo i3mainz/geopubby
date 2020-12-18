@@ -78,7 +78,7 @@ function download2(link){
       	<option value="n3">Notation3 (N3)</option>
       	<option value="nq">NQuads (NQ)</option>
       	<option value="nt">NTriples (NT)</option>
-       	<option value="olc">Open Location Code</option>
+       	<option value="olc">Open Location Code (OLC)</option>
         <option value="osmlink">OSM Link</option>
         <option value="osm">OSM/XML (OSM)</option>
       	<option value="rdfexi">RDF/EXI (EXI)</option>
