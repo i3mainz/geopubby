@@ -71,6 +71,12 @@
     <version>1.18.12</version>
     <scope>provided</scope>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.google.openlocationcode/openlocationcode -->
+<dependency>
+    <groupId>com.google.openlocationcode</groupId>
+    <artifactId>openlocationcode</artifactId>
+    <version>1.0.4</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/org.apache.sis.storage/sis-storage -->
 <dependency>
     <groupId>org.apache.sis.storage</groupId>
