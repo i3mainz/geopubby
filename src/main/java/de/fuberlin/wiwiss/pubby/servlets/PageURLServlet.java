@@ -1,5 +1,7 @@
 package de.fuberlin.wiwiss.pubby.servlets;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,11 +13,6 @@ import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
-import de.fuberlin.wiwiss.pubby.sources.DataSource;
-import de.fuberlin.wiwiss.pubby.sources.IndexDataSource;
-import de.fuberlin.wiwiss.pubby.sources.MergeDataSource;
-import de.fuberlin.wiwiss.pubby.sources.RemoteSPARQLDataSource;
-import de.fuberlin.wiwiss.pubby.sources.RewrittenDataSource;
 
 /**
  * A servlet for serving the HTML page describing a resource.
@@ -38,12 +35,14 @@ public class PageURLServlet extends BaseServlet {
 		context.put("project_name", config.getProjectName());
 		context.put("project_link", config.getProjectLink());
 		context.put("uri", description.getURI());
-		String sources="";
+		List<String> sources=new LinkedList<String>();
+		List<String> sourceURLs=new LinkedList<String>();
 		for(Dataset ds:config.getDatasets()) {
-			sources+=ds.sparqlEndpoint+";";
+			sources.add(ds.sparqlEndpoint);
+			sourceURLs.add(ds.datasetBase);
 		}
-		if(!sources.isEmpty())
-			context.put("endpoint", sources.substring(0,sources.length()-1));
+		context.put("endpoint", sources);
+		context.put("sourceURLs", sourceURLs);
 		context.put("server_base", config.getWebApplicationBaseURI());
 		context.put("rdf_link", controller.getDataURL());
 		context.put("title", description.getTitle());

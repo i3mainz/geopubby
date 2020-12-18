@@ -1,3 +1,15 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  Endpoint: <select id="endpointselect" onclick="getClassHierarchy([])">
+  #foreach($end in $endpoint)
+  	<option value="${end}">$end</option>  	
+  #end
+  <option value="https://digits.mainzed.org/osi/sparql">OSI</option><option value="https://ld.gdi-de.org/graphdb/repositories/lod1test">GDI-DE LOD1</option><option value="https://ld.gdi-de.org/graphdb/repositories/gdischools">GDI-DE Schulen</option><option value="https://ld.gdi-de.org/graphdb/repositories/lod2test">GDI-DE LOD2</option><option value="https://ld.gdi-de.org/graphdb/repositories/xyztest">GDI-DE POI</option><option value="https://digits.mainzed.org/atlantgis/sparql">AtlantGIS</option><option value="https://query.wikidata.org/sparql">Wikidata</option><option value="https://ld.gdi-de.org/graphdb/repositories/aaa6test">GDI-DE AAA6</option><option value="https://ld.gdi-de.org/graphdb/repositories/gdiunesco">GDI-DE UNESCO</option><option value="https://digits.mainzed.org/pleiades/sparql">Pleiades</option><option value="https://ld.gdi-de.org/graphdb/repositories/xplanungtest">GDI-DE XPlanung</option><option value="https://ld.gdi-de.org/graphdb/repositories/gn_inspire">GDI-DE GN250</option><option value="http://linkedgeodata.org/sparql">LinkedGeoData</option><option value="https://dbpedia.org/sparql">DBPedia</option><option value="https://digits.mainzed.org/squirrels/sparql">Squirrels</option><option value="https://ld.gdi-de.org/graphdb/repositories/poi">GDI-DE POI</option><option value="https://ld.gdi-de.org/graphdb/repositories/dlmtest">GDI-DE DLM</option>
+  </select><br/>
+  GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
+  Search:<input type="text" id="classsearch"><br/>
+  <div id="jstree"></div>
+</div>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
    <meta charset="UTF-8">
@@ -27,7 +39,7 @@
     <script type="text/javascript" src="${server_base}static/epsg.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.6/wicket.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/jstree.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.9/jstree.min.js"></script>
     <script src="${server_base}static/d3sparql.js"></script>
   <style type="text/css">
       body {
@@ -50,6 +62,11 @@
 		}
      </style>
   <script>
+  var srcurls=[
+  #foreach ($ur in $sourceURLs)
+ 	"$ur", 	
+  #end
+  ]
   var ttlprefixList="@prefix wd: <http://www.wikidata.org/entity/> . \n @prefix foaf: <http://xmlns.com/foaf/0.1/> . \n @prefix owl: <http://www.w3.org/2002/07/owl#> . \n @prefix geo: <http://www.opengis.net/ont/geosparql#> . \n @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . \n @prefix xml: <http://www.w3.org/XML/1998/namespace> . \n @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . \n @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . \n @prefix kml: <http://www.opengis.net/kml/2.2#> . \n @prefix gml: <http://www.opengis.net/gml/3.2#> . \n @prefix xplan5: <http://www.xplanung.de/xplangml/5/0#> . \n "
 var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/ont/geosparql#":"geo" 
 , "http://www.wikidata.org/entity/":"wd", "http://xmlns.com/foaf/0.1/":"foaf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#":"rdf", 
@@ -110,15 +127,7 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
 #end
 #end
 </div>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  Endpoint: <select id="endpointselect" onclick="getClassHierarchy([])"><option value="${endpoint}">$project_name</option>
-  <option value="https://digits.mainzed.org/osi/sparql">OSI</option><option value="https://ld.gdi-de.org/graphdb/repositories/lod1test">GDI-DE LOD1</option><option value="https://ld.gdi-de.org/graphdb/repositories/gdischools">GDI-DE Schulen</option><option value="https://ld.gdi-de.org/graphdb/repositories/lod2test">GDI-DE LOD2</option><option value="https://ld.gdi-de.org/graphdb/repositories/xyztest">GDI-DE POI</option><option value="https://digits.mainzed.org/atlantgis/sparql">AtlantGIS</option><option value="https://query.wikidata.org/sparql">Wikidata</option><option value="https://ld.gdi-de.org/graphdb/repositories/aaa6test">GDI-DE AAA6</option><option value="https://ld.gdi-de.org/graphdb/repositories/gdiunesco">GDI-DE UNESCO</option><option value="https://digits.mainzed.org/pleiades/sparql">Pleiades</option><option value="https://ld.gdi-de.org/graphdb/repositories/xplanungtest">GDI-DE XPlanung</option><option value="https://ld.gdi-de.org/graphdb/repositories/gn_inspire">GDI-DE GN250</option><option value="http://linkedgeodata.org/sparql">LinkedGeoData</option><option value="https://dbpedia.org/sparql">DBPedia</option><option value="https://digits.mainzed.org/squirrels/sparql">Squirrels</option><option value="https://ld.gdi-de.org/graphdb/repositories/poi">GDI-DE POI</option><option value="https://ld.gdi-de.org/graphdb/repositories/dlmtest">GDI-DE DLM</option>
-  </select><br/>
-  GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
-  Search:<input type="text" id="classsearch"><br/>
-  <div id="jstree"></div>
-</div>
+
 #if ($uri)
       <div class="page-resource-uri"><a href="$uri">$uri</a> <b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby" target="_blank">GeoPubby<img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></b></div>
       </div>
@@ -128,6 +137,13 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
 #end
     </div>
     <script>
+function loadClasses(){
+	if($('#geoclasses').prop('checked')){
+		getAllClasses();
+	}else{
+		getClassHierarchy([]);
+	}
+}
 function openNav() {
   document.getElementById("mySidenav").style.width = "400px";
 }
