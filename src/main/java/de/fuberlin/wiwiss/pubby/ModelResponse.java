@@ -24,6 +24,7 @@ import de.fuberlin.wiwiss.pubby.exporter.vector.EXIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GPXWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GRASSVectorASCIIWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.GeoHashWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoJSONLDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoJSONWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.vector.GeoURIWriter;
@@ -33,6 +34,7 @@ import de.fuberlin.wiwiss.pubby.exporter.vector.LatLonTextWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.MapMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.OSMLinkWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.OSMWriter;
+import de.fuberlin.wiwiss.pubby.exporter.vector.OpenLocationCodeWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.SVGWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.TWKBWriterr;
 import de.fuberlin.wiwiss.pubby.exporter.vector.TopoJSONWriter;
@@ -210,6 +212,12 @@ public class ModelResponse {
 		}
 		if ("text/xyz".equals(mediaType)) {
 			return new XYZASCIIWriter(crs);
+		}
+		if ("text/olc".equals(mediaType)) {
+			return new OpenLocationCodeWriter(crs);
+		}
+		if ("text/geohash".equals(mediaType)) {
+			return new GeoHashWriter(crs);
 		}
 		if ("application/trix".equals(mediaType)) {
 			return new LDWriter(crs,"TriX");

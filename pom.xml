@@ -77,6 +77,12 @@
     <artifactId>openlocationcode</artifactId>
     <version>1.0.4</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/ch.hsr/geohash -->
+<dependency>
+    <groupId>ch.hsr</groupId>
+    <artifactId>geohash</artifactId>
+    <version>1.4.0</version>
+</dependency>
 <!-- https://mvnrepository.com/artifact/org.apache.sis.storage/sis-storage -->
 <dependency>
     <groupId>org.apache.sis.storage</groupId>

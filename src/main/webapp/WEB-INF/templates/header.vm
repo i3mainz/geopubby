@@ -161,6 +161,7 @@ function closeNav() {
         <option value="csv">Comma Separated Values (CSV)</option>
         <option value="esrijson">ESRIJSON</option>
         <option value="exijson">EXI4JSON</option>
+        <option value="geohash">GeoHash</option>
         <option value="geojson">(Geo)JSON</option>
         <option value="geojsonld">GeoJSON-LD</option>
         <option value="gml">Geography Markup Language (GML)</option>
