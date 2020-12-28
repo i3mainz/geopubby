@@ -1,7 +1,9 @@
 package de.fuberlin.wiwiss.pubby.exporter.rdf;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +22,13 @@ public class CypherWriter extends AbstractGeoJSONWriter {
 
 	public CypherWriter(String epsg) {
 		super(epsg);
+		this.namespaceToPrefix=new HashMap<String,String>();
 		// TODO Auto-generated constructor stub
 	}
+	
+	Map<String,String> namespaceToPrefix;
+	
+	Integer namespacecounter=0;
 	
 	@Override
 	public ExtendedIterator<Resource> write(Model model, HttpServletResponse response) throws IOException {
@@ -39,16 +46,52 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         StringBuilder literalresult=new StringBuilder();
         StringBuilder resourceresult=new StringBuilder();
         for(Resource res:resources) {
-        	if(!res.isURIResource() && res.getLocalName()!=null)
+        	if(!res.isURIResource() || res.getLocalName()==null)
         		continue;
-        	literalresult.append("CREATE (").append(res.getURI()).append(" {");
+			String resprefix=res.getModel().getNsURIPrefix(res.getNameSpace());
+			if(resprefix==null) {
+				if(namespaceToPrefix.containsKey(res.getNameSpace())) {
+					resprefix=namespaceToPrefix.get(res.getNameSpace());
+				}else {
+					resprefix="ns"+namespacecounter++;
+					namespaceToPrefix.put(res.getNameSpace(),resprefix);
+				}
+			}
+        	literalresult.append("CREATE (").append(resprefix+"_"+res.getLocalName()).append(" {");
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
         		Statement curst=propiter.next();
-        		if(curst.getObject().isURIResource()) {
-                	resourceresult.append("CREATE\n("+curst.getSubject().getURI()+")-[:"+curst.getPredicate().getLocalName()+"]->("+curst.getObject().asResource().getURI()+"),\n");	
+    			String subprefix=curst.getSubject().asResource().getModel().getNsURIPrefix(curst.getSubject().asResource().getNameSpace());
+    			if(subprefix==null) {
+    				if(namespaceToPrefix.containsKey(curst.getSubject().getNameSpace())) {
+    					subprefix=namespaceToPrefix.get(curst.getSubject().getNameSpace());
+    				}else {
+    					subprefix="ns"+namespacecounter++;
+    					namespaceToPrefix.put(curst.getSubject().getNameSpace(),subprefix);
+    				}
+    			}
+    			String predprefix=curst.getPredicate().asResource().getModel().getNsURIPrefix(curst.getPredicate().asResource().getNameSpace());
+    			if(predprefix==null) {
+    				if(namespaceToPrefix.containsKey(curst.getPredicate().getNameSpace())) {
+    					predprefix=namespaceToPrefix.get(curst.getPredicate().getNameSpace());
+    				}else {
+    					predprefix="ns"+namespacecounter++;
+    					namespaceToPrefix.put(curst.getPredicate().getNameSpace(),predprefix);
+    				}
+    			}
+    			if(curst.getObject().isURIResource()) {
+        			String objprefix=curst.getObject().asResource().getModel().getNsURIPrefix(curst.getObject().asResource().getNameSpace());
+        			if(objprefix==null) {
+        				if(namespaceToPrefix.containsKey(curst.getObject().asResource().getNameSpace())) {
+        					objprefix=namespaceToPrefix.get(curst.getObject().asResource().getNameSpace());
+        				}else {
+        					objprefix="ns"+namespacecounter++;
+        					namespaceToPrefix.put(curst.getObject().asResource().getNameSpace(),objprefix);
+        				}
+        			}
+                	resourceresult.append("CREATE\n("+subprefix+"_"+curst.getSubject().getLocalName()+")-[:"+predprefix+"_"+curst.getPredicate().getLocalName()+"]->("+objprefix+"_"+curst.getObject().asResource().getLocalName()+"),\n");	
         		}else if(curst.getObject().isLiteral()){
-                	literalresult.append(curst.getPredicate().getURI()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
+                	literalresult.append(predprefix+"_"+curst.getPredicate().getLocalName()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
         	}
         	if(!literalresult.toString().endsWith("{"))
