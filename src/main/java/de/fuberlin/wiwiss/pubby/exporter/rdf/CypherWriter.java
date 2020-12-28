@@ -41,14 +41,14 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         for(Resource res:resources) {
         	if(!res.isURIResource() && res.getLocalName()!=null)
         		continue;
-        	literalresult.append("CREATE (").append(res.getLocalName()).append(" {");
+        	literalresult.append("CREATE (").append(res.getURI()).append(" {");
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
         		Statement curst=propiter.next();
-        		if(curst.getObject().isResource()) {
-                	resourceresult.append("CREATE\n("+curst.getSubject().getLocalName()+")-[:"+curst.getPredicate().getLocalName()+"]->("+curst.getObject().asResource().getLocalName()+"),\n");	
+        		if(curst.getObject().isURIResource()) {
+                	resourceresult.append("CREATE\n("+curst.getSubject().getURI()+")-[:"+curst.getPredicate().getLocalName()+"]->("+curst.getObject().asResource().getURI()+"),\n");	
         		}else {
-                	literalresult.append(curst.getPredicate().getLocalName()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
+                	literalresult.append(curst.getPredicate().getURI()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
         	}
         	if(!literalresult.toString().endsWith("{"))
