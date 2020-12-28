@@ -2,15 +2,11 @@ package de.fuberlin.wiwiss.pubby.exporter.rdf;
 
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jena.graph.Node;
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
@@ -43,7 +39,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         StringBuilder literalresult=new StringBuilder();
         StringBuilder resourceresult=new StringBuilder();
         for(Resource res:resources) {
-        	if(!res.isURIResource())
+        	if(!res.isURIResource() && res.getLocalName()!=null)
         		continue;
         	literalresult.append("CREATE (").append(res.getLocalName()).append(" {");
         	StmtIterator propiter = res.listProperties();
