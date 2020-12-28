@@ -89,7 +89,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
     			}else {
     				predprefix=predprefix.replace("-", "_");
     			}
-    			if(curst.getObject().isURIResource()) {
+    			if(curst.getObject().isURIResource() && curst.getObject().asResource().getLocalName()!=null && !curst.getObject().asResource().getLocalName().isEmpty()) {
         			String objprefix=curst.getObject().asResource().getModel().getNsURIPrefix(curst.getObject().asResource().getNameSpace());
         			if(objprefix==null) {
         				if(namespaceToPrefix.containsKey(curst.getObject().asResource().getNameSpace())) {
@@ -109,7 +109,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         	if(!literalresult.toString().endsWith("{"))
         		literalresult.delete(literalresult.length()-2, literalresult.length());
         	if(!resourceresult.toString().isEmpty())
-        		resourceresult.delete(resourceresult.length()-2, resourceresult.length());
+        		resourceresult.delete(resourceresult.length()-1, resourceresult.length());
         	literalresult.append(" })\n");
         }
         try {
