@@ -11,6 +11,8 @@ var a00389 =
     [ "geom", "a00389.html#a986ad099513be1127d32ade506e5fa4c", null ],
     [ "lat", "a00389.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
     [ "lon", "a00389.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
+    [ "namespacecounter", "a00389.html#ad6a5d3e925057164487cc52d6d80867d", null ],
+    [ "namespaceToPrefix", "a00389.html#ae532fcde0a5fbe02bc2704200d086779", null ],
     [ "reader", "a00389.html#ae8b1e194dbc193fe759f7e517807e668", null ],
     [ "sourceCRS", "a00389.html#a29f7567e6745fe87158905295092ad7c", null ],
     [ "styleformatter", "a00389.html#a642e338a4dd781605dd3b0ca82fbd940", null ],
