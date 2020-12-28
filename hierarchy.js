@@ -43,7 +43,7 @@ var hierarchy =
         [ "AbstractGeoJSONWriter", "a00349.html", [
           [ "X3DWriter", "a00365.html", null ],
           [ "JSONPWriter", "a00381.html", null ],
-          [ "CipherWriter", "a00389.html", null ],
+          [ "CypherWriter", "a00389.html", null ],
           [ "CSVWriter", "a00417.html", null ],
           [ "EXIJSONWriter", "a00429.html", null ],
           [ "GeobufWriter", "a00433.html", null ],

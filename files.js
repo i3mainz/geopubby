@@ -13,9 +13,6 @@ var files =
     [ "BaseServlet.java", "a00188.html", [
       [ "BaseServlet", "a00609.html", "a00609" ]
     ] ],
-    [ "CipherWriter.java", "a00041.html", [
-      [ "CipherWriter", "a00389.html", "a00389" ]
-    ] ],
     [ "CONF.java", "a00278.html", [
       [ "CONF", "a00737.html", "a00737" ]
     ] ],
@@ -45,6 +42,9 @@ var files =
     ] ],
     [ "CSVWriter.java", "a00062.html", [
       [ "CSVWriter", "a00417.html", "a00417" ]
+    ] ],
+    [ "CypherWriter.java", "a00041.html", [
+      [ "CypherWriter", "a00389.html", "a00389" ]
     ] ],
     [ "Dataset.java", "a00008.html", [
       [ "Dataset", "a00345.html", "a00345" ]
