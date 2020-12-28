@@ -108,10 +108,10 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         	}
         	if(!literalresult.toString().endsWith("{"))
         		literalresult.delete(literalresult.length()-2, literalresult.length());
-        	if(!resourceresult.toString().isEmpty())
-        		resourceresult.delete(resourceresult.length()-1, resourceresult.length());
         	literalresult.append(" })\n");
         }
+    	if(!resourceresult.toString().isEmpty())
+    		resourceresult.delete(resourceresult.length()-2, resourceresult.length());
         try {
 			response.getWriter().write(literalresult.toString()+System.lineSeparator()+resourceresult.toString());
 			response.getWriter().close();
