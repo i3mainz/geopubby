@@ -45,6 +45,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         
         StringBuilder literalresult=new StringBuilder();
         StringBuilder resourceresult=new StringBuilder();
+        resourceresult.append("CREATE ");
         for(Resource res:resources) {
         	if(!res.isURIResource() || res.getLocalName()==null || res.getLocalName().isEmpty())
         		continue;
@@ -101,7 +102,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         			}else {
         				objprefix=objprefix.replace("-", "_");
         			}
-                	resourceresult.append("CREATE ("+subprefix+"_"+curst.getSubject().getLocalName().replace(".","_").replace("-", "_")+")-[:"+predprefix+"_"+curst.getPredicate().getLocalName().replace(".","_").replace("-", "_")+"]->("+objprefix+"_"+curst.getObject().asResource().getLocalName().replace(".","_").replace("-", "_")+"),\n");	
+                	resourceresult.append("("+subprefix+"_"+curst.getSubject().getLocalName().replace(".","_").replace("-", "_")+")-[:"+predprefix+"_"+curst.getPredicate().getLocalName().replace(".","_").replace("-", "_")+"]->("+objprefix+"_"+curst.getObject().asResource().getLocalName().replace(".","_").replace("-", "_")+"),\n");	
         		}else if(curst.getObject().isLiteral()){
                 	literalresult.append(predprefix+"_"+curst.getPredicate().getLocalName().replace(".","_").replace("-", "_")+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
