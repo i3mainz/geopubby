@@ -20,9 +20,9 @@ import org.json.JSONException;
 
 import de.fuberlin.wiwiss.pubby.exporter.AbstractGeoJSONWriter;
 
-public class CipherWriter extends AbstractGeoJSONWriter {
+public class CypherWriter extends AbstractGeoJSONWriter {
 
-	public CipherWriter(String epsg) {
+	public CypherWriter(String epsg) {
 		super(epsg);
 		// TODO Auto-generated constructor stub
 	}
@@ -50,9 +50,10 @@ public class CipherWriter extends AbstractGeoJSONWriter {
         		if(curst.getObject().isResource()) {
                 	resourceresult.append("CREATE\n("+curst.getSubject().getLocalName()+")-[:"+curst.getPredicate().getLocalName()+"]->("+curst.getObject().asResource().getLocalName()+"),\n");	
         		}else {
-                	literalresult.append(curst.getPredicate().getLocalName()+":"+curst.getObject().asLiteral().getValue().toString()+", ");        			
+                	literalresult.append(curst.getPredicate().getLocalName()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
         	}
+        	literalresult.delete(literalresult.length()-2, literalresult.length());
         	literalresult.append(" })\n");
         }
         try {

@@ -61,9 +61,9 @@ function download2(link){
 #if ($rdf_link)
 <b>Download Options:</b>&nbsp;Format:<select id="format2" onchange="changeDefLink2()">		
             #if (!$geoms.isEmpty())
-        <option value="cipher">Neo4J Cipher (Cipher)</option>
         <option value="covjson">CoverageJSON (COVJSON)</option>
         <option value="csv">Comma Separated Values (CSV)</option>
+        <option value="cipher">Cypher Neo4J (Cypher)</option>
         <option value="esrijson">ESRIJSON</option>
         <option value="exijson">EXI4JSON</option>
         <option value="geohash">GeoHash</option>

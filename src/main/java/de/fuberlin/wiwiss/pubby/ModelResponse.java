@@ -14,7 +14,7 @@ import de.fuberlin.wiwiss.pubby.exporter.ModelWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.CoverageJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.X3DWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.XYZASCIIWriter;
-import de.fuberlin.wiwiss.pubby.exporter.rdf.CipherWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.CypherWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
@@ -215,7 +215,7 @@ public class ModelResponse {
 			return new XYZASCIIWriter(crs);
 		}
 		if ("text/cipher".equals(mediaType)) {
-			return new CipherWriter(crs);
+			return new CypherWriter(crs);
 		}
 		if ("text/olc".equals(mediaType)) {
 			return new OpenLocationCodeWriter(crs);
