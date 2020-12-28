@@ -47,7 +47,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         		Statement curst=propiter.next();
         		if(curst.getObject().isURIResource()) {
                 	resourceresult.append("CREATE\n("+curst.getSubject().getURI()+")-[:"+curst.getPredicate().getLocalName()+"]->("+curst.getObject().asResource().getURI()+"),\n");	
-        		}else {
+        		}else if(curst.getObject().isLiteral()){
                 	literalresult.append(curst.getPredicate().getURI()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
         	}
