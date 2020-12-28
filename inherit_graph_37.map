@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00406.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="5,31,152,57"/>
-<area shape="rect" id="node2" href="$a00398.html" title="Reads an ontological style description and formats it to GeoJSONCSS. " alt="" coords="200,5,367,32"/>
-<area shape="rect" id="node3" href="$a00402.html" title="Reads an ontological style description and formats it to KML Styles. " alt="" coords="216,56,351,83"/>
+<area shape="rect" id="node1" href="$a00413.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="5,31,152,57"/>
+<area shape="rect" id="node2" href="$a00405.html" title="Reads an ontological style description and formats it to GeoJSONCSS. " alt="" coords="200,5,367,32"/>
+<area shape="rect" id="node3" href="$a00409.html" title="Reads an ontological style description and formats it to KML Styles. " alt="" coords="216,56,351,83"/>
 </map>

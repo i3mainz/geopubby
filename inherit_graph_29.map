@@ -1,42 +1,43 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00382.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="5,867,97,893"/>
-<area shape="rect" id="node2" href="$a00370.html" title="CoverageModelWriter" alt="" coords="145,841,293,868"/>
-<area shape="rect" id="node3" href="$a00374.html" title="GeoModelWriter" alt="" coords="161,892,277,919"/>
-<area shape="rect" id="node4" href="$a00346.html" title="AbstractGeoJSONWriter" alt="" coords="342,233,509,260"/>
-<area shape="rect" id="node15" href="$a00350.html" title="CoverageJSONWriter" alt="" coords="351,284,500,311"/>
-<area shape="rect" id="node16" href="$a00358.html" title="WKBRasterWriter" alt="" coords="362,335,489,361"/>
-<area shape="rect" id="node17" href="$a00366.html" title="XYZASCIIWriter" alt="" coords="366,385,485,412"/>
-<area shape="rect" id="node18" href="$a00386.html" title="HexTuplesWriter" alt="" coords="365,436,485,463"/>
-<area shape="rect" id="node19" href="$a00390.html" title="LDWriter" alt="" coords="388,487,463,513"/>
-<area shape="rect" id="node20" href="$a00394.html" title="RDFEXIWriter" alt="" coords="372,537,479,564"/>
-<area shape="rect" id="node21" href="$a00414.html" title="ESRIJSONWriter" alt="" coords="363,588,488,615"/>
-<area shape="rect" id="node22" href="$a00418.html" title="Writes a GeoPubby instance as WKT. " alt="" coords="377,639,473,665"/>
-<area shape="rect" id="node23" href="$a00430.html" title="GeoHashWriter" alt="" coords="369,689,481,716"/>
-<area shape="rect" id="node24" href="$a00442.html" title="Writes a GeoPubby instance as GeoURI. " alt="" coords="373,740,478,767"/>
-<area shape="rect" id="node25" href="$a00446.html" title="Writes a GeoPubby instance as GML. " alt="" coords="383,791,468,817"/>
-<area shape="rect" id="node26" href="$a00450.html" title="GoogleMapsLinkWriter" alt="" coords="348,841,503,868"/>
-<area shape="rect" id="node27" href="$a00454.html" title="Writes a GeoPubby instance as GPX. " alt="" coords="383,892,468,919"/>
-<area shape="rect" id="node28" href="$a00462.html" title="Writes a GeoPubby instance as KML. " alt="" coords="383,943,467,969"/>
-<area shape="rect" id="node29" href="$a00466.html" title="LatLonTextWriter" alt="" coords="364,993,487,1020"/>
-<area shape="rect" id="node30" href="$a00470.html" title="MapMLWriter" alt="" coords="375,1044,475,1071"/>
-<area shape="rect" id="node31" href="$a00474.html" title="OpenLocationCodeWriter" alt="" coords="341,1095,509,1121"/>
-<area shape="rect" id="node32" href="$a00478.html" title="Extracts an OSM link from the given GeoPubby instance. " alt="" coords="370,1145,481,1172"/>
-<area shape="rect" id="node33" href="$a00482.html" title="Writes a GeoPubby instance as OSM/XML. " alt="" coords="382,1196,469,1223"/>
-<area shape="rect" id="node34" href="$a00490.html" title="Writes a GeoPubby instance as SVG. " alt="" coords="383,1247,468,1273"/>
-<area shape="rect" id="node35" href="$a00494.html" title="TopoJSONWriter" alt="" coords="364,1297,487,1324"/>
-<area shape="rect" id="node36" href="$a00498.html" title="TWKBWriterr" alt="" coords="375,1348,475,1375"/>
-<area shape="rect" id="node37" href="$a00502.html" title="WKBWriterr" alt="" coords="379,1399,471,1425"/>
-<area shape="rect" id="node38" href="$a00506.html" title="Writes a GeoPubby instance as WKT. " alt="" coords="382,1449,469,1476"/>
-<area shape="rect" id="node39" href="$a00510.html" title="XLSWriter" alt="" coords="384,1500,467,1527"/>
-<area shape="rect" id="node40" href="$a00514.html" title="XLSXWriter" alt="" coords="380,1551,471,1577"/>
-<area shape="rect" id="node5" href="$a00362.html" title="X3DWriter" alt="" coords="605,5,688,32"/>
-<area shape="rect" id="node6" href="$a00378.html" title="JSONPWriter" alt="" coords="595,56,698,83"/>
-<area shape="rect" id="node7" href="$a00410.html" title="Writes a GeoPubby instance as CSV. " alt="" coords="604,107,689,133"/>
-<area shape="rect" id="node8" href="$a00422.html" title="EXIJSONWriter" alt="" coords="589,157,704,184"/>
-<area shape="rect" id="node9" href="$a00426.html" title="GeobufWriter" alt="" coords="597,208,696,235"/>
-<area shape="rect" id="node10" href="$a00434.html" title="GeoJSONLDWriter" alt="" coords="579,259,714,285"/>
-<area shape="rect" id="node11" href="$a00438.html" title="Writes a GeoPubby instance as JSON or GeoJSON if a geometry is present. " alt="" coords="586,309,707,336"/>
-<area shape="rect" id="node12" href="$a00458.html" title="GRASSVectorASCIIWriter" alt="" coords="557,360,736,387"/>
-<area shape="rect" id="node13" href="$a00486.html" title="SHPWriter" alt="" coords="604,411,689,437"/>
-<area shape="rect" id="node14" href="$a00518.html" title="YAMLWriter" alt="" coords="600,461,693,488"/>
+<area shape="rect" id="node1" href="$a00385.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="5,892,97,919"/>
+<area shape="rect" id="node2" href="$a00373.html" title="CoverageModelWriter" alt="" coords="145,867,293,893"/>
+<area shape="rect" id="node3" href="$a00377.html" title="GeoModelWriter" alt="" coords="161,917,277,944"/>
+<area shape="rect" id="node4" href="$a00349.html" title="AbstractGeoJSONWriter" alt="" coords="342,259,509,285"/>
+<area shape="rect" id="node16" href="$a00353.html" title="CoverageJSONWriter" alt="" coords="351,309,500,336"/>
+<area shape="rect" id="node17" href="$a00361.html" title="WKBRasterWriter" alt="" coords="362,360,489,387"/>
+<area shape="rect" id="node18" href="$a00369.html" title="XYZASCIIWriter" alt="" coords="366,411,485,437"/>
+<area shape="rect" id="node19" href="$a00393.html" title="HexTuplesWriter" alt="" coords="365,461,485,488"/>
+<area shape="rect" id="node20" href="$a00397.html" title="LDWriter" alt="" coords="388,512,463,539"/>
+<area shape="rect" id="node21" href="$a00401.html" title="RDFEXIWriter" alt="" coords="372,563,479,589"/>
+<area shape="rect" id="node22" href="$a00421.html" title="ESRIJSONWriter" alt="" coords="363,613,488,640"/>
+<area shape="rect" id="node23" href="$a00425.html" title="Writes a GeoPubby instance as WKT. " alt="" coords="377,664,473,691"/>
+<area shape="rect" id="node24" href="$a00437.html" title="GeoHashWriter" alt="" coords="369,715,481,741"/>
+<area shape="rect" id="node25" href="$a00449.html" title="Writes a GeoPubby instance as GeoURI. " alt="" coords="373,765,478,792"/>
+<area shape="rect" id="node26" href="$a00453.html" title="Writes a GeoPubby instance as GML. " alt="" coords="383,816,468,843"/>
+<area shape="rect" id="node27" href="$a00457.html" title="GoogleMapsLinkWriter" alt="" coords="348,867,503,893"/>
+<area shape="rect" id="node28" href="$a00461.html" title="Writes a GeoPubby instance as GPX. " alt="" coords="383,917,468,944"/>
+<area shape="rect" id="node29" href="$a00469.html" title="Writes a GeoPubby instance as KML. " alt="" coords="383,968,467,995"/>
+<area shape="rect" id="node30" href="$a00473.html" title="LatLonTextWriter" alt="" coords="364,1019,487,1045"/>
+<area shape="rect" id="node31" href="$a00477.html" title="MapMLWriter" alt="" coords="375,1069,475,1096"/>
+<area shape="rect" id="node32" href="$a00481.html" title="OpenLocationCodeWriter" alt="" coords="341,1120,509,1147"/>
+<area shape="rect" id="node33" href="$a00485.html" title="Extracts an OSM link from the given GeoPubby instance. " alt="" coords="370,1171,481,1197"/>
+<area shape="rect" id="node34" href="$a00489.html" title="Writes a GeoPubby instance as OSM/XML. " alt="" coords="382,1221,469,1248"/>
+<area shape="rect" id="node35" href="$a00497.html" title="Writes a GeoPubby instance as SVG. " alt="" coords="383,1272,468,1299"/>
+<area shape="rect" id="node36" href="$a00501.html" title="TopoJSONWriter" alt="" coords="364,1323,487,1349"/>
+<area shape="rect" id="node37" href="$a00505.html" title="TWKBWriterr" alt="" coords="375,1373,475,1400"/>
+<area shape="rect" id="node38" href="$a00509.html" title="WKBWriterr" alt="" coords="379,1424,471,1451"/>
+<area shape="rect" id="node39" href="$a00513.html" title="Writes a GeoPubby instance as WKT. " alt="" coords="382,1475,469,1501"/>
+<area shape="rect" id="node40" href="$a00517.html" title="XLSWriter" alt="" coords="384,1525,467,1552"/>
+<area shape="rect" id="node41" href="$a00521.html" title="XLSXWriter" alt="" coords="380,1576,471,1603"/>
+<area shape="rect" id="node5" href="$a00365.html" title="X3DWriter" alt="" coords="605,5,688,32"/>
+<area shape="rect" id="node6" href="$a00381.html" title="JSONPWriter" alt="" coords="595,56,698,83"/>
+<area shape="rect" id="node7" href="$a00389.html" title="CipherWriter" alt="" coords="599,107,694,133"/>
+<area shape="rect" id="node8" href="$a00417.html" title="Writes a GeoPubby instance as CSV. " alt="" coords="604,157,689,184"/>
+<area shape="rect" id="node9" href="$a00429.html" title="EXIJSONWriter" alt="" coords="589,208,704,235"/>
+<area shape="rect" id="node10" href="$a00433.html" title="GeobufWriter" alt="" coords="597,259,696,285"/>
+<area shape="rect" id="node11" href="$a00441.html" title="GeoJSONLDWriter" alt="" coords="579,309,714,336"/>
+<area shape="rect" id="node12" href="$a00445.html" title="Writes a GeoPubby instance as JSON or GeoJSON if a geometry is present. " alt="" coords="586,360,707,387"/>
+<area shape="rect" id="node13" href="$a00465.html" title="GRASSVectorASCIIWriter" alt="" coords="557,411,736,437"/>
+<area shape="rect" id="node14" href="$a00493.html" title="SHPWriter" alt="" coords="604,461,689,488"/>
+<area shape="rect" id="node15" href="$a00525.html" title="YAMLWriter" alt="" coords="600,512,693,539"/>
 </map>

@@ -1,6 +1,5 @@
-<map id="LDWriter" name="LDWriter">
-<area shape="rect" id="node2" href="$a00374.html" title="GeoModelWriter" alt="" coords="1076,251,1192,277"/>
-<area shape="rect" id="node3" href="$a00382.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="823,44,915,71"/>
-<area shape="rect" id="node9" href="$a00722.html" title="An object containing style definitions to apply on geospatial objects. " alt="" coords="824,324,915,351"/>
-<area shape="rect" id="node10" href="$a00406.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="796,461,943,488"/>
+<map id="CipherWriter" name="CipherWriter">
+<area shape="rect" id="node2" href="$a00349.html" title="AbstractGeoJSONWriter" alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node3" href="$a00377.html" title="GeoModelWriter" alt="" coords="31,80,147,107"/>
+<area shape="rect" id="node4" href="$a00385.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="43,5,135,32"/>
 </map>

@@ -1,6 +1,5 @@
-<map id="EWKTWriter" name="EWKTWriter">
-<area shape="rect" id="node2" href="$a00374.html" title="GeoModelWriter" alt="" coords="1076,329,1192,356"/>
-<area shape="rect" id="node3" href="$a00382.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="823,31,915,57"/>
-<area shape="rect" id="node9" href="$a00722.html" title="An object containing style definitions to apply on geospatial objects. " alt="" coords="824,329,915,356"/>
-<area shape="rect" id="node10" href="$a00406.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="796,392,943,419"/>
+<map id="CSVWriter" name="CSVWriter">
+<area shape="rect" id="node2" href="$a00349.html" title="AbstractGeoJSONWriter" alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node3" href="$a00377.html" title="GeoModelWriter" alt="" coords="31,80,147,107"/>
+<area shape="rect" id="node4" href="$a00385.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="43,5,135,32"/>
 </map>
