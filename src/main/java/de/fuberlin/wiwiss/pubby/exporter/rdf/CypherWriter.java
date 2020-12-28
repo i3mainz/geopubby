@@ -46,7 +46,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         StringBuilder literalresult=new StringBuilder();
         StringBuilder resourceresult=new StringBuilder();
         for(Resource res:resources) {
-        	if(!res.isURIResource() || res.getLocalName()==null)
+        	if(!res.isURIResource() || res.getLocalName()==null || res.getLocalName().isEmpty())
         		continue;
 			String resprefix=res.getModel().getNsURIPrefix(res.getNameSpace());
 			if(resprefix==null) {
@@ -57,7 +57,11 @@ public class CypherWriter extends AbstractGeoJSONWriter {
 					namespaceToPrefix.put(res.getNameSpace(),resprefix);
 				}
 			}
-        	literalresult.append("CREATE (").append(resprefix+"_"+res.getLocalName()).append(" {");
+        	literalresult.append("CREATE (").append(resprefix+"_"+res.getLocalName()).append(" { ");
+        	if(res.getURI()!=null && !res.getURI().isEmpty()) {
+        		literalresult.append("_id:'"+resprefix+"_"+res.getLocalName()+"' ");
+        		literalresult.append("_uri:'"+res.getURI()+"' ");
+        	}
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
         		Statement curst=propiter.next();
@@ -89,7 +93,7 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         					namespaceToPrefix.put(curst.getObject().asResource().getNameSpace(),objprefix);
         				}
         			}
-                	resourceresult.append("CREATE\n("+subprefix+"_"+curst.getSubject().getLocalName()+")-[:"+predprefix+"_"+curst.getPredicate().getLocalName()+"]->("+objprefix+"_"+curst.getObject().asResource().getLocalName()+"),\n");	
+                	resourceresult.append("CREATE ("+subprefix+"_"+curst.getSubject().getLocalName()+")-[:"+predprefix+"_"+curst.getPredicate().getLocalName()+"]->("+objprefix+"_"+curst.getObject().asResource().getLocalName()+"),\n");	
         		}else if(curst.getObject().isLiteral()){
                 	literalresult.append(predprefix+"_"+curst.getPredicate().getLocalName()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
