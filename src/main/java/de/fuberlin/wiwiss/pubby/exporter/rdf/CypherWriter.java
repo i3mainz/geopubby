@@ -59,8 +59,8 @@ public class CypherWriter extends AbstractGeoJSONWriter {
 			}
         	literalresult.append("CREATE (").append(resprefix+"_"+res.getLocalName()).append(" { ");
         	if(res.getURI()!=null && !res.getURI().isEmpty()) {
-        		literalresult.append("_id:'"+resprefix+"_"+res.getLocalName()+"' ");
-        		literalresult.append("_uri:'"+res.getURI()+"' ");
+        		literalresult.append("_id:'"+resprefix+"_"+res.getLocalName()+"', ");
+        		literalresult.append("_uri:'"+res.getURI()+"', ");
         	}
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
