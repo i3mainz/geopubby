@@ -60,6 +60,7 @@ public class RequestParamHandler {
 		mimeTypes.put("jsonp", "application/javascript");
 		mimeTypes.put("gml", "text/gml");
 		mimeTypes.put("mapml", "text/mapml");
+		mimeTypes.put("cipher", "text/cipher");
 		mimeTypes.put("rt", "application/rt");
 		mimeTypes.put("csv", "text/csv");
 		mimeTypes.put("ewkt", "text/ewkt");

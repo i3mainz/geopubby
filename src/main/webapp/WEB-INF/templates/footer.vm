@@ -5,6 +5,8 @@
 var definitionlinks={
 "covjson":"https://covjson.org",
 "csv":"https://tools.ietf.org/html/rfc4180",
+"cipher":"https://neo4j.com/docs/cypher-manual/current/",
+"esrijson":"https://doc.arcgis.com/de/iot/ingest/esrijson.htm",
 "geohash":"http://geohash.org",
 "json":"https://geojson.org",
 "geojsonld":"http://geojson.org/geojson-ld/",
@@ -26,6 +28,7 @@ var definitionlinks={
 "n3":"https://www.w3.org/TeamSubmission/n3/",
 "nq":"https://www.w3.org/TR/n-quads/",
 "nt":"https://www.w3.org/TR/n-triples/",
+"olc":"https://github.com/google/open-location-code/blob/master/docs/specification.md",
 "osm":"https://wiki.openstreetmap.org/wiki/OSM_XML",
 "osmlink":"",
 "rdfxml":"https://www.w3.org/TR/rdf-syntax-grammar/",
@@ -58,6 +61,7 @@ function download2(link){
 #if ($rdf_link)
 <b>Download Options:</b>&nbsp;Format:<select id="format2" onchange="changeDefLink2()">		
             #if (!$geoms.isEmpty())
+        <option value="cipher">Neo4J Cipher (Cipher)</option>
         <option value="covjson">CoverageJSON (COVJSON)</option>
         <option value="csv">Comma Separated Values (CSV)</option>
         <option value="esrijson">ESRIJSON</option>

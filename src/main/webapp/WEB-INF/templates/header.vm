@@ -157,6 +157,7 @@ function closeNav() {
     #if ($rdf_link)
 <b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">	
       #if (!$geoms.isEmpty())
+        <option value="cipher">Neo4J Cipher (Cipher)</option>
         <option value="covjson">CoverageJSON (COVJSON)</option>
         <option value="csv">Comma Separated Values (CSV)</option>
         <option value="esrijson">ESRIJSON</option>
