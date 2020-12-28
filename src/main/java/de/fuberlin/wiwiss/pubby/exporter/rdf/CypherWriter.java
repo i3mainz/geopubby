@@ -43,6 +43,8 @@ public class CypherWriter extends AbstractGeoJSONWriter {
         StringBuilder literalresult=new StringBuilder();
         StringBuilder resourceresult=new StringBuilder();
         for(Resource res:resources) {
+        	if(!res.isURIResource())
+        		continue;
         	literalresult.append("CREATE (").append(res.getLocalName()).append(" {");
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
@@ -53,7 +55,8 @@ public class CypherWriter extends AbstractGeoJSONWriter {
                 	literalresult.append(curst.getPredicate().getLocalName()+":'"+curst.getObject().asLiteral().getValue().toString()+"', ");        			
         		}
         	}
-        	literalresult.delete(literalresult.length()-2, literalresult.length());
+        	if(!literalresult.toString().endsWith("{"))
+        		literalresult.delete(literalresult.length()-2, literalresult.length());
         	literalresult.append(" })\n");
         }
         try {
