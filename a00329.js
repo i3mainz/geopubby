@@ -1,10 +1,10 @@
 var a00329 =
 [
-    [ "AllTests", "a00819.html", "a00819" ],
-    [ "ContentTypeNegotiator", "a00575.html", "a00575" ],
-    [ "ContentTypeNegotiatorTest", "a00823.html", "a00823" ],
-    [ "MediaRangeSpec", "a00591.html", "a00591" ],
-    [ "MediaRangeSpecTest", "a00827.html", "a00827" ],
-    [ "PubbyNegotiator", "a00595.html", "a00595" ],
-    [ "PubbyNegotiatorTest", "a00831.html", "a00831" ]
+    [ "CypherWriter", "a00398.html", "a00398" ],
+    [ "GDFWriter", "a00402.html", "a00402" ],
+    [ "GraphMLWriter", "a00406.html", "a00406" ],
+    [ "HexTuplesWriter", "a00410.html", "a00410" ],
+    [ "LDWriter", "a00414.html", "a00414" ],
+    [ "RDFEXIWriter", "a00418.html", "a00418" ],
+    [ "TGFWriter", "a00422.html", "a00422" ]
 ];
