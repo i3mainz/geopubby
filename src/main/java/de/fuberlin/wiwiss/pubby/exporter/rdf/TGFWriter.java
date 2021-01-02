@@ -32,14 +32,14 @@ public class TGFWriter extends GeoModelWriter {
                         resources.add(object.asResource());
                     }
         });
-        Integer nodecounter=0,edgecounter=0;
+        Integer nodecounter=0;
         Integer resnodeid=0;
         StringBuilder edgebuilder=new StringBuilder();
         for(Resource res:resources) {
         	if(!res.isURIResource())
 				continue;
         	resnodeid=nodecounter++;
-        	response.getWriter().write(resnodeid+" "+res.getURI());
+        	response.getWriter().write(resnodeid+" "+res.getURI()+System.lineSeparator());
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
         		Statement curst=propiter.next();
