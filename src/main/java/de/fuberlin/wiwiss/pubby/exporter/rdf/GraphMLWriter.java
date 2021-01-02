@@ -51,9 +51,11 @@ public class GraphMLWriter extends GeoModelWriter {
 	        writer.writeAttribute("id", "G");
 	        writer.writeAttribute("edgedefault", "undirected");    
 			for(Resource res:resources) {
-				writer.writeStartElement("node");
+				if(!res.isURIResource())
+					continue;
+				writer.writeStartElement("node");	
 				writer.writeAttribute("id",res.getURI());
-				writer.writeAttribute("name",res.getLocalName());
+				writer.writeAttribute("value",res.getLocalName());
 				writer.writeAttribute("uri", res.getURI());
 				writer.writeEndElement();
 	        	StmtIterator propiter = res.listProperties();
@@ -62,26 +64,29 @@ public class GraphMLWriter extends GeoModelWriter {
 	        		if(curst.getObject().isURIResource()) {
 						writer.writeStartElement("node");
 						writer.writeAttribute("id",curst.getObject().asResource().getURI());
-						writer.writeAttribute("name",res.getLocalName());
-						writer.writeAttribute("uri", res.getURI());
+						writer.writeAttribute("value",curst.getObject().asResource().getLocalName());
+						writer.writeAttribute("uri", curst.getObject().asResource().getURI());
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
 						writer.writeAttribute("id",curst.getPredicate().getURI());
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
-						writer.writeAttribute("name",curst.getPredicate().getLocalName());
+						writer.writeAttribute("value",curst.getPredicate().getLocalName());
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", curst.getObject().asResource().getURI());
 						writer.writeEndElement();
 	        		}else if(curst.getObject().isLiteral()) {
 						writer.writeStartElement("node");
 						writer.writeAttribute("id","literal"+literalcounter);
-						writer.writeAttribute("name",res.getLocalName());
-						writer.writeAttribute("uri", res.getURI());
+						writer.writeAttribute("value",curst.getObject().asLiteral().getValue().toString());
+						writer.writeAttribute("type", curst.getObject().asLiteral().getDatatypeURI());
+						if(curst.getObject().asLiteral().getLanguage()!=null) {
+							writer.writeAttribute("lang", curst.getObject().asLiteral().getLanguage());							
+						}
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
 						writer.writeAttribute("id",curst.getPredicate().getURI());
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
-						writer.writeAttribute("name",curst.getPredicate().getLocalName());
+						writer.writeAttribute("value",curst.getPredicate().getLocalName());
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeEndElement();
