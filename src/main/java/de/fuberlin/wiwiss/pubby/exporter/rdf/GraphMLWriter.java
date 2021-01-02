@@ -47,6 +47,7 @@ public class GraphMLWriter extends GeoModelWriter {
 	        writer.writeStartElement("graphml");
 	        writer.writeAttribute("xmlns", "http://graphml.graphdrawing.org/xmlns");
 	        writer.writeAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
+	        writer.writeAttribute("xmlns:y","http://www.yworks.com/xml/graphml");
 	        writer.writeAttribute("xmlns:schemaLocation", "http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd");
 	        writer.writeStartElement("graph");
 	        writer.writeAttribute("id", "G");
@@ -70,7 +71,10 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeStartElement("data");
 						writer.writeAttribute("key", "val"+literalcounter);
 						literalcounter++;
-						writer.writeCharacters(curst.getObject().asResource().getLocalName());
+						writer.writeStartElement("y:ShapeNode");
+						writer.writeStartElement("y:NodeLabel");
+						writer.writeCharacters(curst.getObject().asResource().getLocalName().toString());
+						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
@@ -85,7 +89,11 @@ public class GraphMLWriter extends GeoModelWriter {
 						if(!curst.getObject().asLiteral().getValue().toString().isEmpty()) {
 							writer.writeStartElement("data");
 							writer.writeAttribute("key", "val"+valcounter);
+							writer.writeStartElement("y:ShapeNode");
+							writer.writeStartElement("y:NodeLabel");
 							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString());
+							writer.writeEndElement();
+							writer.writeEndElement();
 							writer.writeEndElement();
 							valcounter++;
 						}
