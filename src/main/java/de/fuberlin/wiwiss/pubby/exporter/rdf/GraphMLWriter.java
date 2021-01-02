@@ -196,7 +196,6 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndElement();
-						writer.writeEndElement();
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeEndElement();
