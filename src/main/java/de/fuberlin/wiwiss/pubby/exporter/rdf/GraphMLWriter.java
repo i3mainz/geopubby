@@ -73,7 +73,7 @@ public class GraphMLWriter extends GeoModelWriter {
 				literalcounter++;
 				writer.writeStartElement("y:ShapeNode");
 				writer.writeStartElement("y:Shape");
-				writer.writeAttribute("shape", "rectangle");
+				writer.writeAttribute("shape", "ellipse");
 				writer.writeEndElement();
 				writer.writeStartElement("y:Fill");
 				writer.writeAttribute("color", "#800080");
@@ -111,7 +111,7 @@ public class GraphMLWriter extends GeoModelWriter {
 						literalcounter++;
 						writer.writeStartElement("y:ShapeNode");
 						writer.writeStartElement("y:Shape");
-						writer.writeAttribute("shape", "rectangle");
+						writer.writeAttribute("shape", "ellipse");
 						writer.writeEndElement();
 						writer.writeStartElement("y:Fill");
 						if(curst.getPredicate().getURI()!=null 
@@ -158,7 +158,7 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("key", "nodekey");
 							writer.writeStartElement("y:ShapeNode");
 							writer.writeStartElement("y:Shape");
-							writer.writeAttribute("shape", "rectangle");
+							writer.writeAttribute("shape", "ellipse");
 							writer.writeEndElement();
 							writer.writeStartElement("y:Fill");
 							writer.writeAttribute("color", "#800080");								
@@ -199,14 +199,7 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeStartElement("data");
 						writer.writeAttribute("key", "edgekey");
 						literalcounter++;
-						writer.writeStartElement("y:ShapeNode");
-						writer.writeStartElement("y:Shape");
-						writer.writeAttribute("shape", "rectangle");
-						writer.writeEndElement();
-						writer.writeStartElement("y:Fill");
-						writer.writeAttribute("color", "#ffa500");
-						writer.writeAttribute("transparent", "false");
-						writer.writeEndElement();
+						writer.writeStartElement("y:PolyLineEdge");
 						writer.writeStartElement("y:EdgeLabel");
 						writer.writeAttribute("alignment", "center");
 						writer.writeAttribute("configuration", "AutoFlippingLabel");
