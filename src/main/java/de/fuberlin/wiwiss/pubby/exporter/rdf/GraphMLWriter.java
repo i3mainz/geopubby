@@ -72,6 +72,13 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("key", "val"+literalcounter);
 						literalcounter++;
 						writer.writeStartElement("y:ShapeNode");
+						writer.writeStartElement("y:Shape");
+						writer.writeAttribute("shape", "rectangle");
+						writer.writeEndElement();
+						writer.writeStartElement("y:Fill");
+						writer.writeAttribute("color", "#ffa500");
+						writer.writeAttribute("transparent", "false");
+						writer.writeEndElement();
 						writer.writeStartElement("y:NodeLabel");
 						writer.writeAttribute("alignment", "center");
 						writer.writeAttribute("autoSizePolicy", "content");
@@ -98,6 +105,13 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeStartElement("data");
 							writer.writeAttribute("key", "val"+valcounter);
 							writer.writeStartElement("y:ShapeNode");
+							writer.writeStartElement("y:Shape");
+							writer.writeAttribute("shape", "rectangle");
+							writer.writeEndElement();
+							writer.writeStartElement("y:Fill");
+							writer.writeAttribute("color", "#008000");
+							writer.writeAttribute("transparent", "false");
+							writer.writeEndElement();
 							writer.writeStartElement("y:NodeLabel");
 							writer.writeAttribute("alignment", "center");
 							writer.writeAttribute("autoSizePolicy", "content");
