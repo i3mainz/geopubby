@@ -38,7 +38,7 @@ public class GraphMLWriter extends GeoModelWriter {
                     }
         });
         Integer literalcounter=0;
-        Integer typecounter=0,langcounter=0;
+        Integer typecounter=0,langcounter=0,valcounter=0;
         StringWriter strwriter=new StringWriter();
 		XMLOutputFactory factory = XMLOutputFactory.newInstance();
 		try {
@@ -82,12 +82,13 @@ public class GraphMLWriter extends GeoModelWriter {
 	        		}else if(curst.getObject().isLiteral()) {
 						writer.writeStartElement("node");
 						writer.writeAttribute("id","literal"+literalcounter);
-						writer.writeStartElement("data");
-						writer.writeAttribute("key", "val"+literalcounter);
-						literalcounter++;
-						writer.writeCharacters(curst.getObject().asLiteral().getValue().toString());
-						writer.writeEndElement();
-						literalcounter++;
+						if(!curst.getObject().asLiteral().getValue().toString().isEmpty()) {
+							writer.writeStartElement("data");
+							writer.writeAttribute("key", "val"+valcounter);
+							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString());
+							writer.writeEndElement();
+							valcounter++;
+						}
 						writer.writeStartElement("data");
 						writer.writeAttribute("key", "type"+typecounter);
 						typecounter++;
@@ -95,8 +96,8 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeEndElement();
 						if(curst.getObject().asLiteral().getLanguage()!=null) {
 							writer.writeStartElement("data");
-							writer.writeAttribute("key", "lang"+typecounter);
-							typecounter++;
+							writer.writeAttribute("key", "lang"+langcounter);
+							langcounter++;
 							writer.writeCharacters(curst.getObject().asLiteral().getLanguage());
 							writer.writeEndElement();						
 						}
