@@ -188,6 +188,7 @@ function closeNav() {
        	<option value="rt">RDF/Thrift (RT)</option>
       	<option value="xml">RDF/XML</option>
         <option value="svg">Scalable Vector Graphics (SVG)</option>
+        <option value="tgf">Trivial Graph Format (TGF)</option>
         <option value="topojson">TopoJSON</option>
         <option value="ttl">Turtle (TTL)</option>
       	<option value="trig">RDF TriG</option>
@@ -217,6 +218,7 @@ function closeNav() {
       	<option value="rdfjson">RDF/JSON</option>
       	<option value="rt">RDF/Thrift (RT)</option>
       	<option value="xml">RDF/XML</option>
+      	<option value="tgf">Trivial Graph Format (TGF)</option>
       	<option value="ttl">Turtle (TTL)</option>
       	<option value="trig">RDF TriG</option>
       	<option value="trix">Triples in XML (TriX)</option>

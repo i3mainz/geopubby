@@ -56,6 +56,7 @@ public class RequestParamHandler {
 		mimeTypes.put("yaml","text/vnd.yaml");
 		mimeTypes.put("olc","text/olc");
 		mimeTypes.put("graphml","text/graphml");
+		mimeTypes.put("tgf","text/tgf");
 		mimeTypes.put("geohash","text/geohash");
 		mimeTypes.put("x3d", "model/x3d+xml");
 		mimeTypes.put("jsonp", "application/javascript");

@@ -42,6 +42,7 @@ public class PubbyNegotiator {
 				.addAliasMediaType("application/trix;q=0.8")
 				.addAliasMediaType("text/trix;q=0.5");
 		pubbyNegotiator.addVariant("text/cipher;q=0.95");
+		pubbyNegotiator.addVariant("text/tgf;q=0.95");
 		pubbyNegotiator.addVariant("text/graphml;q=0.95");
 		pubbyNegotiator.addVariant("text/esrijson;q=0.95");
 		pubbyNegotiator.addVariant("text/geohash;q=0.95");
@@ -118,6 +119,7 @@ public class PubbyNegotiator {
 					  .addAliasMediaType("application/json-ld;q=0.76").addAliasMediaType("text/json-ld;q=0.76");
 		dataNegotiator.addVariant("application/geojson;q=0.95").addAliasMediaType("text/geojson;q=0.8");
 		dataNegotiator.addVariant("text/cipher;q=0.95");
+		dataNegotiator.addVariant("text/tgf;q=0.95");
 		dataNegotiator.addVariant("text/twkb;q=0.95");
 		dataNegotiator.addVariant("application/topojson;q=0.95").addAliasMediaType("text/topojson;q=0.8");
 		dataNegotiator.addVariant("application/kml;q=0.95").addAliasMediaType("text/kml;q=0.8");

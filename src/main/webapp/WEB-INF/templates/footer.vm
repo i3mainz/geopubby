@@ -36,6 +36,7 @@ var definitionlinks={
 "rdfjson":"https://www.w3.org/TR/rdf-json/",
 "rt":"https://afs.github.io/rdf-thrift/rdf-binary-thrift.html",
 "svg":"https://www.w3.org/TR/SVG11/",
+"tgf":"https://docs.yworks.com/yfiles/doc/developers-guide/tgf.html",
 "trig":"https://www.w3.org/TR/trig/",
 "trix":"https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html",
 "ttl":"https://www.w3.org/TR/turtle/",
@@ -93,6 +94,7 @@ function download2(link){
        	<option value="rt">RDF/Thrift (RT)</option>
       	<option value="xml">RDF/XML</option>
         <option value="svg">Scalable Vector Graphics (SVG)</option>
+        <option value="tgf">Trivial Graph Format (TGF)</option>
         <option value="topojson">TopoJSON</option>
         <option value="ttl">Turtle (TTL)</option>
       	<option value="trig">RDF TriG</option>
@@ -122,6 +124,7 @@ function download2(link){
       	<option value="rdfjson">RDF/JSON</option>
       	<option value="rt">RDF/Thrift (RT)</option>
       	<option value="xml">RDF/XML</option>
+      	<option value="tgf">Trivial Graph Format (TGF)</option>
       	<option value="ttl">Turtle (TTL)</option>
       	<option value="trig">RDF TriG</option>
       	<option value="trix">Triples in XML (TriX)</option>

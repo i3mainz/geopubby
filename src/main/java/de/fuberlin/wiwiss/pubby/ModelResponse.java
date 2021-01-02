@@ -19,6 +19,7 @@ import de.fuberlin.wiwiss.pubby.exporter.rdf.GraphMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.TGFWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.ESRIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.EWKTWriter;
@@ -226,6 +227,9 @@ public class ModelResponse {
 		}
 		if ("text/graphml".equals(mediaType)) {
 			return new GraphMLWriter(crs);
+		}
+		if ("text/tgf".equals(mediaType)) {
+			return new TGFWriter(crs);
 		}
 		if ("application/trix".equals(mediaType)) {
 			return new LDWriter(crs,"TriX");
