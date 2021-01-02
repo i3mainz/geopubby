@@ -54,6 +54,11 @@ public class GraphMLWriter extends GeoModelWriter {
 	        writer.writeAttribute("id", "nodekey");
 	        writer.writeAttribute("yfiles.type", "nodegraphics");
 	        writer.writeEndElement();
+	        writer.writeStartElement("key");
+	        writer.writeAttribute("for", "edge");
+	        writer.writeAttribute("id", "edgekey");
+	        writer.writeAttribute("yfiles.type", "edgegraphics");
+	        writer.writeEndElement();
 	        writer.writeStartElement("graph");
 	        writer.writeAttribute("id", "G");
 	        writer.writeAttribute("edgedefault", "undirected");    
@@ -192,7 +197,7 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeStartElement("data");
-						writer.writeAttribute("key", "nodekey");
+						writer.writeAttribute("key", "edgekey");
 						literalcounter++;
 						writer.writeStartElement("y:ShapeNode");
 						writer.writeStartElement("y:Shape");
