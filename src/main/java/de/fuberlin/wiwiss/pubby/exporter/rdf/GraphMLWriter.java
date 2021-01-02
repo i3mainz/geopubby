@@ -33,9 +33,9 @@ public class GraphMLWriter extends GeoModelWriter {
 		Property rdftype=model.createProperty("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
 		if(res.getURI().contains("http://www.w3.org/2000/01/rdf-schema#")) {
 			return "#F08080";
-		}else if(res.listProperties(scof).hasNext()){
-			return "#F0F8FF";	
 		}else if(res.listProperties(spof).hasNext()){
+			return "#F0F8FF";	
+		}else if(res.listProperties(scof).hasNext()){
 			return "#ffa500";	
 		}else if(res.listProperties(rdftype).hasNext()) {
 			StmtIterator it=res.listProperties(rdftype);
