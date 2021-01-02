@@ -118,11 +118,11 @@ public class GraphMLWriter extends GeoModelWriter {
 								&& 
 								(curst.getPredicate().getURI().equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
 								|| curst.getPredicate().getURI().equals("http://www.w3.org/2000/01/rdf-schema#subClassOf"))) {
-							writer.writeAttribute("color", "#008000");	
+							writer.writeAttribute("color", "#ffa500");	
 						}else if(curst.getPredicate().getURI()!=null && curst.getPredicate().getURI().startsWith("http://www.w3.org/2000/01/rdf-schema#")){
 							writer.writeAttribute("color", "#F08080");	
 						}else {
-							writer.writeAttribute("color", "#ffa500");								
+							writer.writeAttribute("color", "#800080");								
 						}
 						writer.writeAttribute("transparent", "false");
 						writer.writeEndElement();
@@ -161,7 +161,7 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("shape", "ellipse");
 							writer.writeEndElement();
 							writer.writeStartElement("y:Fill");
-							writer.writeAttribute("color", "#800080");								
+							writer.writeAttribute("color", "#008000");								
 							writer.writeAttribute("transparent", "false");
 							writer.writeEndElement();
 							writer.writeStartElement("y:NodeLabel");
