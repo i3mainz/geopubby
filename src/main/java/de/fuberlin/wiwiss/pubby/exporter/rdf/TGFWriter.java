@@ -46,8 +46,8 @@ public class TGFWriter extends GeoModelWriter {
         	}else {
             	resnodeid=nodecounter++;
             	uriToNodeId.put(res.getURI(),resnodeid);
+            	response.getWriter().write(resnodeid+" "+res.getURI()+System.lineSeparator());
         	}
-        	response.getWriter().write(resnodeid+" "+res.getURI()+System.lineSeparator());
         	StmtIterator propiter = res.listProperties();
         	while(propiter.hasNext()) {
         		Statement curst=propiter.next();
@@ -58,8 +58,8 @@ public class TGFWriter extends GeoModelWriter {
         			}else {
         				objnodeid=nodecounter;
         				uriToNodeId.put(curst.getObject().asResource().getURI(),objnodeid);
+            			response.getWriter().write(objnodeid+" "+curst.getObject().asResource().getURI()+System.lineSeparator());
         			}
-        			response.getWriter().write(objnodeid+" "+curst.getObject().asResource().getURI()+System.lineSeparator());
         			edgebuilder.append(resnodeid+" "+objnodeid+" "+curst.getPredicate().getURI()+System.lineSeparator());
         		}else if(curst.getObject().isLiteral()) {
         			response.getWriter().write(nodecounter+" "+curst.getObject().asLiteral().getValue()+" ("+curst.getObject().asLiteral().getDatatypeURI()+")"+System.lineSeparator());
