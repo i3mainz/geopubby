@@ -15,6 +15,7 @@ import de.fuberlin.wiwiss.pubby.exporter.coverage.CoverageJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.X3DWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.CypherWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.GraphMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
@@ -222,6 +223,9 @@ public class ModelResponse {
 		}
 		if ("text/geohash".equals(mediaType)) {
 			return new GeoHashWriter(crs);
+		}
+		if ("text/graphml".equals(mediaType)) {
+			return new GraphMLWriter(crs);
 		}
 		if ("application/trix".equals(mediaType)) {
 			return new LDWriter(crs,"TriX");

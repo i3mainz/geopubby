@@ -170,6 +170,7 @@ function closeNav() {
         <option value="googlemapslink">Google Maps Link</option>
         <option value="gpx">GPS Exchange Format (GPX)</option>
         <option value="grass">GRASS Vector ASCII Format (GRASS)</option>
+        <option value="graphml">GraphML</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
        	<option value="hextuples">HexTuples RDF</option>
@@ -202,8 +203,10 @@ function closeNav() {
         <option value="yaml">YAML Ain't Markup Language (YAML)</option>
       #else
       	<option value="csv">Comma Separated Values (CSV)</option>
+      	<option value="cipher">Cypher Neo4J (Cypher)</option>
       	<option value="exijson">EXI4JSON</option>
       	<option value="geojson">(Geo)JSON</option>
+      	<option value="graphml">GraphML</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
       	<option value="hextuples">HexTuples RDF</option>
