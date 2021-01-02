@@ -161,7 +161,11 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("shape", "ellipse");
 							writer.writeEndElement();
 							writer.writeStartElement("y:Fill");
-							writer.writeAttribute("color", "#008000");								
+							if(curst.getPredicate().getURI()!=null && curst.getPredicate().getURI().startsWith("http://www.w3.org/2000/01/rdf-schema#")){
+								writer.writeAttribute("color", "#F08080");	
+							}else {
+								writer.writeAttribute("color", "#008000");	
+							}									
 							writer.writeAttribute("transparent", "false");
 							writer.writeEndElement();
 							writer.writeStartElement("y:NodeLabel");
