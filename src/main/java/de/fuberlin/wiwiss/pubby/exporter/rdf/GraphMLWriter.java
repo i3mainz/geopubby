@@ -38,6 +38,7 @@ public class GraphMLWriter extends GeoModelWriter {
                     }
         });
         Integer literalcounter=0;
+        Integer typecounter=0,langcounter=0;
         StringWriter strwriter=new StringWriter();
 		XMLOutputFactory factory = XMLOutputFactory.newInstance();
 		try {
@@ -66,21 +67,38 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("id",curst.getObject().asResource().getURI());
 						writer.writeAttribute("value",curst.getObject().asResource().getLocalName());
 						writer.writeAttribute("uri", curst.getObject().asResource().getURI());
+						writer.writeStartElement("data");
+						writer.writeAttribute("key", "val"+literalcounter);
+						literalcounter++;
+						writer.writeCharacters(curst.getObject().asResource().getLocalName());
+						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
 						writer.writeAttribute("id",curst.getPredicate().getURI());
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
-						writer.writeAttribute("value",curst.getPredicate().getLocalName());
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", curst.getObject().asResource().getURI());
 						writer.writeEndElement();
 	        		}else if(curst.getObject().isLiteral()) {
 						writer.writeStartElement("node");
 						writer.writeAttribute("id","literal"+literalcounter);
-						writer.writeAttribute("value",curst.getObject().asLiteral().getValue().toString());
-						writer.writeAttribute("type", curst.getObject().asLiteral().getDatatypeURI());
+						writer.writeStartElement("data");
+						writer.writeAttribute("key", "val"+literalcounter);
+						literalcounter++;
+						writer.writeCharacters(curst.getObject().asLiteral().getValue().toString());
+						writer.writeEndElement();
+						literalcounter++;
+						writer.writeStartElement("data");
+						writer.writeAttribute("key", "type"+typecounter);
+						typecounter++;
+						writer.writeCharacters(curst.getObject().asLiteral().getDatatypeURI());
+						writer.writeEndElement();
 						if(curst.getObject().asLiteral().getLanguage()!=null) {
-							writer.writeAttribute("lang", curst.getObject().asLiteral().getLanguage());							
+							writer.writeStartElement("data");
+							writer.writeAttribute("key", "lang"+typecounter);
+							typecounter++;
+							writer.writeCharacters(curst.getObject().asLiteral().getLanguage());
+							writer.writeEndElement();						
 						}
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
