@@ -37,7 +37,7 @@ public class GraphMLWriter extends GeoModelWriter {
                         resources.add(object.asResource());
                     }
         });
-        Integer literalcounter=0;
+        Integer literalcounter=0,edgecounter=0;
         Integer typecounter=0,langcounter=0,valcounter=0;
         StringWriter strwriter=new StringWriter();
 		XMLOutputFactory factory = XMLOutputFactory.newInstance();
@@ -74,7 +74,7 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
-						writer.writeAttribute("id",curst.getPredicate().getURI());
+						writer.writeAttribute("id","e"+edgecounter++);
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", curst.getObject().asResource().getURI());
@@ -103,7 +103,7 @@ public class GraphMLWriter extends GeoModelWriter {
 						}
 						writer.writeEndElement();
 						writer.writeStartElement("edge");
-						writer.writeAttribute("id",curst.getPredicate().getURI());
+						writer.writeAttribute("id","e"+edgecounter++);
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
 						writer.writeAttribute("value",curst.getPredicate().getLocalName());
 						writer.writeAttribute("source", curst.getSubject().getURI());
