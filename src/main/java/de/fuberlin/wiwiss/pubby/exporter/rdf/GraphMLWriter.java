@@ -62,8 +62,30 @@ public class GraphMLWriter extends GeoModelWriter {
 					continue;
 				writer.writeStartElement("node");	
 				writer.writeAttribute("id",res.getURI());
-				writer.writeAttribute("value",res.getLocalName());
 				writer.writeAttribute("uri", res.getURI());
+				writer.writeStartElement("data");
+				writer.writeAttribute("key", "nodekey");
+				literalcounter++;
+				writer.writeStartElement("y:ShapeNode");
+				writer.writeStartElement("y:Shape");
+				writer.writeAttribute("shape", "rectangle");
+				writer.writeEndElement();
+				writer.writeStartElement("y:Fill");
+				writer.writeAttribute("color", "#800080");
+				writer.writeAttribute("transparent", "false");
+				writer.writeEndElement();
+				writer.writeStartElement("y:NodeLabel");
+				writer.writeAttribute("alignment", "center");
+				writer.writeAttribute("autoSizePolicy", "content");
+				writer.writeAttribute("fontSize", "12");
+				writer.writeAttribute("fontStyle", "plain");
+				writer.writeAttribute("hasText", "true");
+				writer.writeAttribute("visible", "true");
+				writer.writeAttribute("width", "4.0");
+				writer.writeCharacters(res.getLocalName());
+				writer.writeEndElement();
+				writer.writeEndElement();
+				writer.writeEndElement();
 				writer.writeEndElement();
 	        	StmtIterator propiter = res.listProperties();
 	        	while(propiter.hasNext()) {
@@ -114,7 +136,11 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("shape", "rectangle");
 							writer.writeEndElement();
 							writer.writeStartElement("y:Fill");
-							writer.writeAttribute("color", "#008000");
+							if(curst.getPredicate().getURI()!=null && curst.getPredicate().getURI().equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")) {
+								writer.writeAttribute("color", "#008000");	
+							}else {
+								writer.writeAttribute("color", "#800080");								
+							}
 							writer.writeAttribute("transparent", "false");
 							writer.writeEndElement();
 							writer.writeStartElement("y:NodeLabel");
@@ -125,7 +151,7 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("hasText", "true");
 							writer.writeAttribute("visible", "true");
 							writer.writeAttribute("width", "4.0");
-							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString());
+							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString()+" ("+curst.getObject().asLiteral().getDatatype().toString()+")");
 							writer.writeEndElement();
 							writer.writeEndElement();
 							writer.writeEndElement();
@@ -147,7 +173,30 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeStartElement("edge");
 						writer.writeAttribute("id","e"+edgecounter++);
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
-						writer.writeAttribute("value",curst.getPredicate().getLocalName());
+						writer.writeStartElement("data");
+						writer.writeAttribute("key", "nodekey");
+						literalcounter++;
+						writer.writeStartElement("y:ShapeNode");
+						writer.writeStartElement("y:Shape");
+						writer.writeAttribute("shape", "rectangle");
+						writer.writeEndElement();
+						writer.writeStartElement("y:Fill");
+						writer.writeAttribute("color", "#ffa500");
+						writer.writeAttribute("transparent", "false");
+						writer.writeEndElement();
+						writer.writeStartElement("y:NodeLabel");
+						writer.writeAttribute("alignment", "center");
+						writer.writeAttribute("autoSizePolicy", "content");
+						writer.writeAttribute("fontSize", "12");
+						writer.writeAttribute("fontStyle", "plain");
+						writer.writeAttribute("hasText", "true");
+						writer.writeAttribute("visible", "true");
+						writer.writeAttribute("width", "4.0");
+						writer.writeCharacters(curst.getPredicate().getLocalName());
+						writer.writeEndElement();
+						writer.writeEndElement();
+						writer.writeEndElement();
+						writer.writeEndElement();
 						writer.writeAttribute("source", curst.getSubject().getURI());
 						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeEndElement();
