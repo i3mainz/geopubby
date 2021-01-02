@@ -1,6 +1,10 @@
 var a00331 =
 [
-    [ "TWKBReader", "a00780.html", "a00780" ],
-    [ "TWKBUtils", "a00796.html", "a00796" ],
-    [ "TWKBWriter", "a00800.html", "a00800" ]
+    [ "DataSource", "a00679.html", "a00679" ],
+    [ "FilteredDataSource", "a00683.html", "a00683" ],
+    [ "IndexDataSource", "a00687.html", "a00687" ],
+    [ "MergeDataSource", "a00691.html", "a00691" ],
+    [ "ModelDataSource", "a00695.html", "a00695" ],
+    [ "RemoteSPARQLDataSource", "a00699.html", "a00699" ],
+    [ "RewrittenDataSource", "a00703.html", "a00703" ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: DataSource Interface Reference</title>
+<title>GeoPubby: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,368 +56,32 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('a00672.html','');});
+$(document).ready(function(){initNavTree('a00675.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="a00669.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DataSource Interface Reference</div>  </div>
+<div class="title">WebURIServlet Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A source of RDF data intended for publication through the server.  
- <a href="a00672.html#details">More...</a></p>
-<div class="dynheader">
-Inheritance diagram for DataSource:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00671.png" border="0" usemap="#DataSource_inherit__map" alt="Inheritance graph"/></div>
-<map name="DataSource_inherit__map" id="DataSource_inherit__map">
-<area shape="rect" id="node2" href="a00676.html" title="A DataSource that wraps another data source in such a way that the resulting data source is only capa..." alt="" coords="172,5,307,32"/>
-<area shape="rect" id="node3" href="a00680.html" title="A DataSource that wraps another data source and adds an index of the resources in that data source..." alt="" coords="178,56,301,83"/>
-<area shape="rect" id="node4" href="a00684.html" title="A DataSource that presents an RDF merge of multiple other data sources. " alt="" coords="176,107,303,133"/>
-<area shape="rect" id="node5" href="a00688.html" title="A data source backed by a Jena model. " alt="" coords="176,157,303,184"/>
-<area shape="rect" id="node6" href="a00692.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="144,208,335,235"/>
-<area shape="rect" id="node7" href="a00696.html" title="Wraps a DataSource by applying a IRIRewriter. " alt="" coords="166,259,313,285"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for DataSource:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00670.png" border="0" usemap="#DataSource_coll__map" alt="Collaboration graph"/></div>
-<map name="DataSource_coll__map" id="DataSource_coll__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a1681b51a4d9b94752fc6668c82729236"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#a1681b51a4d9b94752fc6668c82729236">canDescribe</a> (String absoluteIRI)</td></tr>
-<tr class="memdesc:a1681b51a4d9b94752fc6668c82729236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this data source may have some information about a given IRI.  <a href="#a1681b51a4d9b94752fc6668c82729236">More...</a><br /></td></tr>
-<tr class="separator:a1681b51a4d9b94752fc6668c82729236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab085365476c05945218492b31028610a"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#ab085365476c05945218492b31028610a">describeResource</a> (String absoluteIRI)</td></tr>
-<tr class="memdesc:ab085365476c05945218492b31028610a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ab085365476c05945218492b31028610a">More...</a><br /></td></tr>
-<tr class="separator:ab085365476c05945218492b31028610a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#ad4ae7f7efd26ae80f56a0223be0324c8">describeResource</a> (String absoluteIRI, String language)</td></tr>
-<tr class="memdesc:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source describing one resource.  <a href="#ad4ae7f7efd26ae80f56a0223be0324c8">More...</a><br /></td></tr>
-<tr class="separator:ad4ae7f7efd26ae80f56a0223be0324c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd50c79b6d45d0fed770638879c7359e"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#afd50c79b6d45d0fed770638879c7359e">getHighIndegreeProperties</a> (String resourceIRI)</td></tr>
-<tr class="memdesc:afd50c79b6d45d0fed770638879c7359e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00672.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs.  <a href="#afd50c79b6d45d0fed770638879c7359e">More...</a><br /></td></tr>
-<tr class="separator:afd50c79b6d45d0fed770638879c7359e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbe9e94afdedf6be6979247520906444"><td class="memItemLeft" align="right" valign="top">Map&lt; Property, Integer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#acbe9e94afdedf6be6979247520906444">getHighOutdegreeProperties</a> (String resourceIRI)</td></tr>
-<tr class="memdesc:acbe9e94afdedf6be6979247520906444"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="a00672.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs.  <a href="#acbe9e94afdedf6be6979247520906444">More...</a><br /></td></tr>
-<tr class="separator:acbe9e94afdedf6be6979247520906444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memItemLeft" align="right" valign="top">Model&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#a24260bc730afdd0c68fa8f7f5e0b600f">listPropertyValues</a> (String resourceIRI, Property property, boolean isInverse)</td></tr>
-<tr class="memdesc:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a subgraph of the data source.  <a href="#a24260bc730afdd0c68fa8f7f5e0b600f">More...</a><br /></td></tr>
-<tr class="separator:a24260bc730afdd0c68fa8f7f5e0b600f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0b2ac78c4b45ecc590342abe84c24af"><td class="memItemLeft" align="right" valign="top">List&lt; Resource &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#af0b2ac78c4b45ecc590342abe84c24af">getIndex</a> ()</td></tr>
-<tr class="memdesc:af0b2ac78c4b45ecc590342abe84c24af"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of IRI resources described in this data source.  <a href="#af0b2ac78c4b45ecc590342abe84c24af">More...</a><br /></td></tr>
-<tr class="separator:af0b2ac78c4b45ecc590342abe84c24af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8f6bc3de3dd60e86da9296226cecd8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00704.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt; <a class="el" href="a00732.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#ae8f6bc3de3dd60e86da9296226cecd8c">getLabelIndex</a> ()</td></tr>
-<tr class="separator:ae8f6bc3de3dd60e86da9296226cecd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memItemLeft" align="right" valign="top">static final int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00672.html#a5d100ac468e8e0551f96450f5bbba1b2">MAX_INDEX_SIZE</a> = 1000000</td></tr>
-<tr class="separator:a5d100ac468e8e0551f96450f5bbba1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A source of RDF data intended for publication through the server. </p>
-<p>TODO: describeResource and getHighXxxdegreeProperties should be combined into a single method with a complex result so that implementations can better mess with the high-degree stuff while keeping responses consistent between methods </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1681b51a4d9b94752fc6668c82729236"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1681b51a4d9b94752fc6668c82729236">&#9670;&nbsp;</a></span>canDescribe()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">boolean canDescribe </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Indicates whether this data source may have some information about a given IRI. </p>
-<p>If this is <code>false</code>, a client should not bother to call <a class="el" href="a00672.html#ab085365476c05945218492b31028610a">describeResource(String)</a>. This method is to allow for optimizations and should respond very fast.</p>
-<p>It is also used by the UI to decide whether a click on a resource should go to a Pubby page (if <code>true</code>) or out to the Web (if <code>false</code>).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">absoluteIRI</td><td>The IRI of a resource to be described </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this data source might have something about it </dd></dl>
-
-<p>Implemented in <a class="el" href="a00692.html#a1681b51a4d9b94752fc6668c82729236">RemoteSPARQLDataSource</a>, <a class="el" href="a00696.html#a1681b51a4d9b94752fc6668c82729236">RewrittenDataSource</a>, <a class="el" href="a00684.html#a1681b51a4d9b94752fc6668c82729236">MergeDataSource</a>, <a class="el" href="a00688.html#a1681b51a4d9b94752fc6668c82729236">ModelDataSource</a>, <a class="el" href="a00676.html#a76346f12873afab70aafac6a443c5f04">FilteredDataSource</a>, and <a class="el" href="a00680.html#a1681b51a4d9b94752fc6668c82729236">IndexDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00680.html#a1681b51a4d9b94752fc6668c82729236">IndexDataSource.canDescribe()</a>, <a class="el" href="a00696.html#a1681b51a4d9b94752fc6668c82729236">RewrittenDataSource.canDescribe()</a>, and <a class="el" href="a00768.html#a1a984f4cb4d41188c130813c505063fb">VocabularyStore.ValueCache&lt; Integer &gt;.get()</a>.</p>
-
-</div>
-</div>
-<a id="ab085365476c05945218492b31028610a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab085365476c05945218492b31028610a">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Model describeResource </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>absoluteIRI</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a subgraph of the data source describing one resource. </p>
-<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
-
-<p>Implemented in <a class="el" href="a00692.html#ab894bdc30c94ed2c7df302b41c4d3f42">RemoteSPARQLDataSource</a>, <a class="el" href="a00684.html#a88ba0769e10f0ece3e983e61e031dbbc">MergeDataSource</a>, <a class="el" href="a00696.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource</a>, <a class="el" href="a00688.html#ab894bdc30c94ed2c7df302b41c4d3f42">ModelDataSource</a>, <a class="el" href="a00676.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource</a>, and <a class="el" href="a00680.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00340.html#ab53ea1dc8508fc4b3ba182b0af9e27a7">Configuration.buildDataSource()</a>, <a class="el" href="a00340.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00680.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, <a class="el" href="a00676.html#a88ba0769e10f0ece3e983e61e031dbbc">FilteredDataSource.describeResource()</a>, <a class="el" href="a00696.html#a88ba0769e10f0ece3e983e61e031dbbc">RewrittenDataSource.describeResource()</a>, <a class="el" href="a00768.html#a1a984f4cb4d41188c130813c505063fb">VocabularyStore.ValueCache&lt; Integer &gt;.get()</a>, <a class="el" href="a00536.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>, and <a class="el" href="a00696.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
-
-</div>
-</div>
-<a id="ad4ae7f7efd26ae80f56a0223be0324c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4ae7f7efd26ae80f56a0223be0324c8">&#9670;&nbsp;</a></span>describeResource() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Model describeResource </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>absoluteIRI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>language</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a subgraph of the data source describing one resource. </p>
-<p>This should include both incoming and outgoing triples. However, it should exclude outgoing arcs where the property is a high-outdegree property, and it should exclude incoming arcs where the property is a high-indegree property. If labels for other resources are included in the result, then they will be used. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">absoluteIRI</td><td>The IRI of the resource to be described </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source describing the resource. </dd></dl>
-
-<p>Implemented in <a class="el" href="a00692.html#ad4ae7f7efd26ae80f56a0223be0324c8">RemoteSPARQLDataSource</a>, <a class="el" href="a00696.html#ad4ae7f7efd26ae80f56a0223be0324c8">RewrittenDataSource</a>, <a class="el" href="a00688.html#ad4ae7f7efd26ae80f56a0223be0324c8">ModelDataSource</a>, <a class="el" href="a00684.html#aee8a51772d6673be0a741b47678df946">MergeDataSource</a>, and <a class="el" href="a00680.html#aee8a51772d6673be0a741b47678df946">IndexDataSource</a>.</p>
-
-</div>
-</div>
-<a id="afd50c79b6d45d0fed770638879c7359e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd50c79b6d45d0fed770638879c7359e">&#9670;&nbsp;</a></span>getHighIndegreeProperties()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Map&lt;Property, Integer&gt; getHighIndegreeProperties </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If <a class="el" href="a00672.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high indegree, then those properties must be returned here with the count of arcs. </p>
-<p>If high-indegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A map containing high-indegree properties with number of arcs for the resource </dd></dl>
-
-<p>Implemented in <a class="el" href="a00692.html#a73de8154ca0a0f9528cf8e2632e40868">RemoteSPARQLDataSource</a>, <a class="el" href="a00684.html#afd50c79b6d45d0fed770638879c7359e">MergeDataSource</a>, <a class="el" href="a00696.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource</a>, <a class="el" href="a00680.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource</a>, <a class="el" href="a00688.html#a73de8154ca0a0f9528cf8e2632e40868">ModelDataSource</a>, and <a class="el" href="a00676.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00676.html#afd50c79b6d45d0fed770638879c7359e">FilteredDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00680.html#afd50c79b6d45d0fed770638879c7359e">IndexDataSource.getHighIndegreeProperties()</a>, <a class="el" href="a00696.html#afd50c79b6d45d0fed770638879c7359e">RewrittenDataSource.getHighIndegreeProperties()</a>, and <a class="el" href="a00536.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>.</p>
-
-</div>
-</div>
-<a id="acbe9e94afdedf6be6979247520906444"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbe9e94afdedf6be6979247520906444">&#9670;&nbsp;</a></span>getHighOutdegreeProperties()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Map&lt;Property, Integer&gt; getHighOutdegreeProperties </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>resourceIRI</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If <a class="el" href="a00672.html#ab085365476c05945218492b31028610a">describeResource(String)</a> omits properties of high outdegree, then those properties must be returned here with the count of arcs. </p>
-<p>If high-outdegree properties are not omitted, or the resource doesn't have any, then an empty map or null may be returned. Entries with value 0 will be ignored. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceIRI</td><td>The IRI of the resource to be described </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A map containing high-outdegree properties with number of arcs for the resource </dd></dl>
-
-<p>Implemented in <a class="el" href="a00692.html#adee4ed3932a18a60beea0c5e234fe5fc">RemoteSPARQLDataSource</a>, <a class="el" href="a00684.html#acbe9e94afdedf6be6979247520906444">MergeDataSource</a>, <a class="el" href="a00696.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource</a>, <a class="el" href="a00680.html#acbe9e94afdedf6be6979247520906444">IndexDataSource</a>, <a class="el" href="a00688.html#adee4ed3932a18a60beea0c5e234fe5fc">ModelDataSource</a>, and <a class="el" href="a00676.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00676.html#acbe9e94afdedf6be6979247520906444">FilteredDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00680.html#acbe9e94afdedf6be6979247520906444">IndexDataSource.getHighOutdegreeProperties()</a>, <a class="el" href="a00696.html#acbe9e94afdedf6be6979247520906444">RewrittenDataSource.getHighOutdegreeProperties()</a>, and <a class="el" href="a00536.html#a6cf2b400f7faea2de00e78577de543e7">HypermediaControls.getResourceDescription()</a>.</p>
-
-</div>
-</div>
-<a id="af0b2ac78c4b45ecc590342abe84c24af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0b2ac78c4b45ecc590342abe84c24af">&#9670;&nbsp;</a></span>getIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;Resource&gt; getIndex </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A list of IRI resources described in this data source. </p>
-<p>Ordering is implementation-defined. Usually a reasonable limit should be applied to the number of resources returned. </p>
-
-<p>Implemented in <a class="el" href="a00692.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource</a>, <a class="el" href="a00696.html#af0b2ac78c4b45ecc590342abe84c24af">RewrittenDataSource</a>, <a class="el" href="a00684.html#af0b2ac78c4b45ecc590342abe84c24af">MergeDataSource</a>, <a class="el" href="a00680.html#af0b2ac78c4b45ecc590342abe84c24af">IndexDataSource</a>, <a class="el" href="a00688.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource</a>, and <a class="el" href="a00676.html#af0b2ac78c4b45ecc590342abe84c24af">FilteredDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00340.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00680.html#a88ba0769e10f0ece3e983e61e031dbbc">IndexDataSource.describeResource()</a>, <a class="el" href="a00676.html#af0b2ac78c4b45ecc590342abe84c24af">FilteredDataSource.getIndex()</a>, <a class="el" href="a00680.html#af0b2ac78c4b45ecc590342abe84c24af">IndexDataSource.getIndex()</a>, and <a class="el" href="a00696.html#af0b2ac78c4b45ecc590342abe84c24af">RewrittenDataSource.getIndex()</a>.</p>
-
-</div>
-</div>
-<a id="ae8f6bc3de3dd60e86da9296226cecd8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8f6bc3de3dd60e86da9296226cecd8c">&#9670;&nbsp;</a></span>getLabelIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00704.html">de.fuberlin.wiwiss.pubby.util.AutocompleteEngine</a>&lt;<a class="el" href="a00732.html">SearchRecord</a>&gt; getLabelIndex </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="a00692.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource</a>, <a class="el" href="a00696.html#ae8f6bc3de3dd60e86da9296226cecd8c">RewrittenDataSource</a>, <a class="el" href="a00684.html#ae8f6bc3de3dd60e86da9296226cecd8c">MergeDataSource</a>, <a class="el" href="a00680.html#ae8f6bc3de3dd60e86da9296226cecd8c">IndexDataSource</a>, <a class="el" href="a00688.html#ae8f6bc3de3dd60e86da9296226cecd8c">ModelDataSource</a>, and <a class="el" href="a00676.html#a2dbc188988204c9931d77a3f36128e50">FilteredDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00340.html#ad8098244377dad7decf91ed550808165">Configuration.Configuration()</a>, <a class="el" href="a00644.html#ade0f373e0ee60161c36c160bd5a04a9c">SearchServlet.doGet()</a>, <a class="el" href="a00676.html#a2dbc188988204c9931d77a3f36128e50">FilteredDataSource.getLabelIndex()</a>, <a class="el" href="a00680.html#ae8f6bc3de3dd60e86da9296226cecd8c">IndexDataSource.getLabelIndex()</a>, and <a class="el" href="a00696.html#ae8f6bc3de3dd60e86da9296226cecd8c">RewrittenDataSource.getLabelIndex()</a>.</p>
-
-</div>
-</div>
-<a id="a24260bc730afdd0c68fa8f7f5e0b600f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24260bc730afdd0c68fa8f7f5e0b600f">&#9670;&nbsp;</a></span>listPropertyValues()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Model listPropertyValues </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>resourceIRI</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Property&#160;</td>
-          <td class="paramname"><em>property</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>isInverse</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a subgraph of the data source. </p>
-<p>It lists the values of a particular property of a particular resource. Where values are blank nodes, a complete description of these anonymous resources must be included. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">resourceIRI</td><td>The resource to be examined </td></tr>
-    <tr><td class="paramname">property</td><td>The property we're interested in </td></tr>
-    <tr><td class="paramname">isInverse</td><td>Are we interested in outgoing arcs (<code>false</code>) or incoming (<code>true</code>)? </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A subgraph of the data source. </dd></dl>
-
-<p>Implemented in <a class="el" href="a00692.html#a660b961c4b18f651d595cfd867143f79">RemoteSPARQLDataSource</a>, <a class="el" href="a00684.html#a24260bc730afdd0c68fa8f7f5e0b600f">MergeDataSource</a>, <a class="el" href="a00696.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource</a>, <a class="el" href="a00680.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource</a>, <a class="el" href="a00688.html#a660b961c4b18f651d595cfd867143f79">ModelDataSource</a>, and <a class="el" href="a00676.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00656.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesDataURLServlet.doGet()</a>, <a class="el" href="a00660.html#a4c69ab4acf538f0dc8fb8f7482629e85">ValuesURLServlet.doGet()</a>, <a class="el" href="a00764.html#a1c247553b46f28035a0d8cd5173a165a">VocabularyStore.CachedPropertyCollection.get()</a>, <a class="el" href="a00676.html#a24260bc730afdd0c68fa8f7f5e0b600f">FilteredDataSource.listPropertyValues()</a>, <a class="el" href="a00680.html#a24260bc730afdd0c68fa8f7f5e0b600f">IndexDataSource.listPropertyValues()</a>, and <a class="el" href="a00696.html#a24260bc730afdd0c68fa8f7f5e0b600f">RewrittenDataSource.listPropertyValues()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5d100ac468e8e0551f96450f5bbba1b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d100ac468e8e0551f96450f5bbba1b2">&#9670;&nbsp;</a></span>MAX_INDEX_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">final int MAX_INDEX_SIZE = 1000000</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00688.html#af0b2ac78c4b45ecc590342abe84c24af">ModelDataSource.getIndex()</a>, <a class="el" href="a00692.html#af0b2ac78c4b45ecc590342abe84c24af">RemoteSPARQLDataSource.getIndex()</a>, <a class="el" href="a00688.html#ae8f6bc3de3dd60e86da9296226cecd8c">ModelDataSource.getLabelIndex()</a>, and <a class="el" href="a00692.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>This is the complete list of members for <a class="el" href="a00675.html">WebURIServlet</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00623.html#aafab682dd7935049291522510d9a62ba">addDocumentMetadata</a>(Model model, HypermediaControls controller, String documentURL, String title)</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00623.html#abcab14ade69d9eff8f17b4405b29f6e4">addPageMetadata</a>(Context context, HypermediaControls controller, PrefixMapping prefixes)</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00623.html#a235314820d427b745d7a08f1819176eb">addQueryString</a>(String dataURL, HttpServletRequest request)</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00675.html#ade0f373e0ee60161c36c160bd5a04a9c">doGet</a>(String relativeURI, HttpServletRequest request, HttpServletResponse response, Configuration config)</td><td class="entry"><a class="el" href="a00675.html">WebURIServlet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00623.html#a1a499993fcbc802bf7f39ff4e8185050">de::fuberlin::wiwiss::pubby::servlets::BaseServlet.doGet</a>(HttpServletRequest request, HttpServletResponse response)</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00623.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a>()</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00623.html#a3208dcc642a59d12778ba619395eec47">send404</a>(HttpServletResponse response, String resourceURI)</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00623.html#a37f74add6038c113368344fbb9210f8e">sendInitialization500</a>(HttpServletResponse response, String message)</td><td class="entry"><a class="el" href="a00623.html">BaseServlet</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00675.html#a3238d314ecdee14d2966760945d00c3b">serialVersionUID</a></td><td class="entry"><a class="el" href="a00675.html">WebURIServlet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00318.html">de</a></li><li class="navelem"><a class="el" href="a00319.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00320.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00317.html">pubby</a></li><li class="navelem"><a class="el" href="a00328.html">sources</a></li><li class="navelem"><a class="el" href="a00672.html">DataSource</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

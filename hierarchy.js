@@ -1,163 +1,164 @@
 var hierarchy =
 [
-    [ "ContentTypeNegotiator.AcceptHeaderOverride", "a00580.html", null ],
-    [ "AllTests", "a00812.html", null ],
-    [ "AutocompleteEngine< T extends Indexable >", "a00704.html", null ],
-    [ "AutocompleteEngine< de.fuberlin.wiwiss.pubby.util.SearchRecord >", "a00704.html", null ],
-    [ "AutocompleteEngine< T extends Indexable >.Builder< T extends Indexable >", "a00708.html", null ],
-    [ "VocabularyStore.CachedPropertyCollection", "a00764.html", null ],
-    [ "Comparable", "a01668.html", [
-      [ "ResourceDescription.ResourceProperty", "a00600.html", null ],
-      [ "ResourceDescription.Value", "a00608.html", null ],
-      [ "Tuple< T, T2 >", "a00740.html", null ]
+    [ "ContentTypeNegotiator.AcceptHeaderOverride", "a00587.html", null ],
+    [ "AllTests", "a00819.html", null ],
+    [ "AutocompleteEngine< T extends Indexable >", "a00711.html", null ],
+    [ "AutocompleteEngine< de.fuberlin.wiwiss.pubby.util.SearchRecord >", "a00711.html", null ],
+    [ "AutocompleteEngine< T extends Indexable >.Builder< T extends Indexable >", "a00715.html", null ],
+    [ "VocabularyStore.CachedPropertyCollection", "a00771.html", null ],
+    [ "Comparable", "a01675.html", [
+      [ "ResourceDescription.ResourceProperty", "a00607.html", null ],
+      [ "ResourceDescription.Value", "a00615.html", null ],
+      [ "Tuple< T, T2 >", "a00747.html", null ]
     ] ],
-    [ "CONF", "a00744.html", null ],
-    [ "ContentTypeNegotiator", "a00568.html", null ],
-    [ "COV", "a00748.html", null ],
-    [ "DataSource", "a00672.html", [
-      [ "FilteredDataSource", "a00676.html", null ],
-      [ "IndexDataSource", "a00680.html", null ],
-      [ "MergeDataSource", "a00684.html", null ],
-      [ "ModelDataSource", "a00688.html", null ],
-      [ "RemoteSPARQLDataSource", "a00692.html", null ],
-      [ "RewrittenDataSource", "a00696.html", null ]
+    [ "CONF", "a00751.html", null ],
+    [ "ContentTypeNegotiator", "a00575.html", null ],
+    [ "COV", "a00755.html", null ],
+    [ "DataSource", "a00679.html", [
+      [ "FilteredDataSource", "a00683.html", null ],
+      [ "IndexDataSource", "a00687.html", null ],
+      [ "MergeDataSource", "a00691.html", null ],
+      [ "ModelDataSource", "a00695.html", null ],
+      [ "RemoteSPARQLDataSource", "a00699.html", null ],
+      [ "RewrittenDataSource", "a00703.html", null ]
     ] ],
-    [ "GEO", "a00752.html", null ],
-    [ "GeobufEncoder", "a00712.html", null ],
-    [ "GeoProvider", "a00624.html", null ],
-    [ "HexWKBRasterWriter", "a00360.html", null ],
-    [ "HypermediaControls", "a00536.html", null ],
-    [ "HypermediaResource", "a00540.html", null ],
-    [ "IRIEncoder", "a00544.html", null ],
-    [ "IRIRewriter", "a00548.html", [
-      [ "PubbyIRIEscaper", "a00592.html", null ]
+    [ "GEO", "a00759.html", null ],
+    [ "GeobufEncoder", "a00719.html", null ],
+    [ "GeoProvider", "a00631.html", null ],
+    [ "HexWKBRasterWriter", "a00363.html", null ],
+    [ "HypermediaControls", "a00543.html", null ],
+    [ "HypermediaResource", "a00547.html", null ],
+    [ "IRIEncoder", "a00551.html", null ],
+    [ "IRIRewriter", "a00555.html", [
+      [ "PubbyIRIEscaper", "a00599.html", null ]
     ] ],
-    [ "MappedResource", "a00552.html", null ],
-    [ "MediaRangeSpec", "a00584.html", null ],
-    [ "META", "a00756.html", null ],
-    [ "ModelResponse", "a00560.html", null ],
-    [ "ModelUtil", "a00564.html", null ],
-    [ "ModelWriter", "a00388.html", [
-      [ "CoverageModelWriter", "a00376.html", null ],
-      [ "GeoModelWriter", "a00380.html", [
-        [ "AbstractGeoJSONWriter", "a00352.html", [
-          [ "X3DWriter", "a00368.html", null ],
-          [ "JSONPWriter", "a00384.html", null ],
-          [ "CypherWriter", "a00392.html", null ],
-          [ "CSVWriter", "a00424.html", null ],
-          [ "EXIJSONWriter", "a00436.html", null ],
-          [ "GeobufWriter", "a00440.html", null ],
-          [ "GeoJSONLDWriter", "a00448.html", null ],
-          [ "GeoJSONWriterr", "a00452.html", null ],
-          [ "GRASSVectorASCIIWriter", "a00472.html", null ],
-          [ "SHPWriter", "a00500.html", null ],
-          [ "YAMLWriter", "a00532.html", null ]
+    [ "MappedResource", "a00559.html", null ],
+    [ "MediaRangeSpec", "a00591.html", null ],
+    [ "META", "a00763.html", null ],
+    [ "ModelResponse", "a00567.html", null ],
+    [ "ModelUtil", "a00571.html", null ],
+    [ "ModelWriter", "a00391.html", [
+      [ "CoverageModelWriter", "a00379.html", null ],
+      [ "GeoModelWriter", "a00383.html", [
+        [ "AbstractGeoJSONWriter", "a00355.html", [
+          [ "X3DWriter", "a00371.html", null ],
+          [ "JSONPWriter", "a00387.html", null ],
+          [ "CypherWriter", "a00395.html", null ],
+          [ "CSVWriter", "a00431.html", null ],
+          [ "EXIJSONWriter", "a00443.html", null ],
+          [ "GeobufWriter", "a00447.html", null ],
+          [ "GeoJSONLDWriter", "a00455.html", null ],
+          [ "GeoJSONWriterr", "a00459.html", null ],
+          [ "GRASSVectorASCIIWriter", "a00479.html", null ],
+          [ "SHPWriter", "a00507.html", null ],
+          [ "YAMLWriter", "a00539.html", null ]
         ] ],
-        [ "CoverageJSONWriter", "a00356.html", null ],
-        [ "WKBRasterWriter", "a00364.html", null ],
-        [ "XYZASCIIWriter", "a00372.html", null ],
-        [ "GraphMLWriter", "a00396.html", null ],
-        [ "HexTuplesWriter", "a00400.html", null ],
-        [ "LDWriter", "a00404.html", null ],
-        [ "RDFEXIWriter", "a00408.html", null ],
-        [ "ESRIJSONWriter", "a00428.html", null ],
-        [ "EWKTWriter", "a00432.html", null ],
-        [ "GeoHashWriter", "a00444.html", null ],
-        [ "GeoURIWriter", "a00456.html", null ],
-        [ "GMLWriter", "a00460.html", null ],
-        [ "GoogleMapsLinkWriter", "a00464.html", null ],
-        [ "GPXWriter", "a00468.html", null ],
-        [ "KMLWriter", "a00476.html", null ],
-        [ "LatLonTextWriter", "a00480.html", null ],
-        [ "MapMLWriter", "a00484.html", null ],
-        [ "OpenLocationCodeWriter", "a00488.html", null ],
-        [ "OSMLinkWriter", "a00492.html", null ],
-        [ "OSMWriter", "a00496.html", null ],
-        [ "SVGWriter", "a00504.html", null ],
-        [ "TopoJSONWriter", "a00508.html", null ],
-        [ "TWKBWriterr", "a00512.html", null ],
-        [ "WKBWriterr", "a00516.html", null ],
-        [ "WKTWriter", "a00520.html", null ],
-        [ "XLSWriter", "a00524.html", null ],
-        [ "XLSXWriter", "a00528.html", null ]
+        [ "CoverageJSONWriter", "a00359.html", null ],
+        [ "WKBRasterWriter", "a00367.html", null ],
+        [ "XYZASCIIWriter", "a00375.html", null ],
+        [ "GraphMLWriter", "a00399.html", null ],
+        [ "HexTuplesWriter", "a00403.html", null ],
+        [ "LDWriter", "a00407.html", null ],
+        [ "RDFEXIWriter", "a00411.html", null ],
+        [ "TGFWriter", "a00415.html", null ],
+        [ "ESRIJSONWriter", "a00435.html", null ],
+        [ "EWKTWriter", "a00439.html", null ],
+        [ "GeoHashWriter", "a00451.html", null ],
+        [ "GeoURIWriter", "a00463.html", null ],
+        [ "GMLWriter", "a00467.html", null ],
+        [ "GoogleMapsLinkWriter", "a00471.html", null ],
+        [ "GPXWriter", "a00475.html", null ],
+        [ "KMLWriter", "a00483.html", null ],
+        [ "LatLonTextWriter", "a00487.html", null ],
+        [ "MapMLWriter", "a00491.html", null ],
+        [ "OpenLocationCodeWriter", "a00495.html", null ],
+        [ "OSMLinkWriter", "a00499.html", null ],
+        [ "OSMWriter", "a00503.html", null ],
+        [ "SVGWriter", "a00511.html", null ],
+        [ "TopoJSONWriter", "a00515.html", null ],
+        [ "TWKBWriterr", "a00519.html", null ],
+        [ "WKBWriterr", "a00523.html", null ],
+        [ "WKTWriter", "a00527.html", null ],
+        [ "XLSWriter", "a00531.html", null ],
+        [ "XLSXWriter", "a00535.html", null ]
       ] ]
     ] ],
-    [ "ContentTypeNegotiator.Negotiation", "a00576.html", null ],
-    [ "TWKBReader.PrecisionReader", "a00788.html", [
-      [ "TWKBReader.ExtendedPrecisionReader", "a00792.html", null ]
+    [ "ContentTypeNegotiator.Negotiation", "a00583.html", null ],
+    [ "TWKBReader.PrecisionReader", "a00795.html", [
+      [ "TWKBReader.ExtendedPrecisionReader", "a00799.html", null ]
     ] ],
-    [ "TWKBWriter.PrecisionWriter", "a00804.html", [
-      [ "TWKBWriter.ExtendedPrecisionWriter", "a00808.html", null ]
+    [ "TWKBWriter.PrecisionWriter", "a00811.html", [
+      [ "TWKBWriter.ExtendedPrecisionWriter", "a00815.html", null ]
     ] ],
-    [ "ResourceDescription.PropertyBuilder", "a00604.html", null ],
-    [ "PubbyNegotiator", "a00588.html", null ],
-    [ "ReprojectionUtils", "a00720.html", null ],
-    [ "RequestParamHandler", "a00632.html", null ],
-    [ "ResourceDescription", "a00596.html", null ],
-    [ "ResourceReader", "a00612.html", [
-      [ "Configuration", "a00340.html", null ],
-      [ "Dataset", "a00348.html", null ],
-      [ "MetadataConfiguration", "a00556.html", null ]
+    [ "ResourceDescription.PropertyBuilder", "a00611.html", null ],
+    [ "PubbyNegotiator", "a00595.html", null ],
+    [ "ReprojectionUtils", "a00727.html", null ],
+    [ "RequestParamHandler", "a00639.html", null ],
+    [ "ResourceDescription", "a00603.html", null ],
+    [ "ResourceReader", "a00619.html", [
+      [ "Configuration", "a00343.html", null ],
+      [ "Dataset", "a00351.html", null ],
+      [ "MetadataConfiguration", "a00563.html", null ]
     ] ],
-    [ "ResultStyleFormatter", "a00420.html", [
-      [ "GeoJSONCSSFormatter", "a00412.html", null ],
-      [ "KMLStyleFormatter", "a00416.html", null ]
+    [ "ResultStyleFormatter", "a00427.html", [
+      [ "GeoJSONCSSFormatter", "a00419.html", null ],
+      [ "KMLStyleFormatter", "a00423.html", null ]
     ] ],
-    [ "Runnable", "a01672.html", [
-      [ "Reloader", "a00716.html", null ]
+    [ "Runnable", "a01679.html", [
+      [ "Reloader", "a00723.html", null ]
     ] ],
-    [ "RuntimeException", "a01676.html", [
-      [ "ConfigurationException", "a00344.html", null ]
+    [ "RuntimeException", "a01683.html", [
+      [ "ConfigurationException", "a00347.html", null ]
     ] ],
-    [ "SearchIndexInstance", "a00728.html", null ],
-    [ "StyleObject", "a00736.html", null ],
-    [ "TWKBReader", "a00780.html", null ],
-    [ "TWKBUtils", "a00796.html", null ],
-    [ "TWKBWriter", "a00800.html", null ],
-    [ "URIPrefixer", "a00700.html", null ],
-    [ "VocabularyStore.ValueCache< K >", "a00768.html", null ],
-    [ "VocabularyStore.ValueCache< Collection< Literal > >", "a00768.html", [
-      [ "VocabularyStore.I18nStringValueCache", "a00772.html", null ]
+    [ "SearchIndexInstance", "a00735.html", null ],
+    [ "StyleObject", "a00743.html", null ],
+    [ "TWKBReader", "a00787.html", null ],
+    [ "TWKBUtils", "a00803.html", null ],
+    [ "TWKBWriter", "a00807.html", null ],
+    [ "URIPrefixer", "a00707.html", null ],
+    [ "VocabularyStore.ValueCache< K >", "a00775.html", null ],
+    [ "VocabularyStore.ValueCache< Collection< Literal > >", "a00775.html", [
+      [ "VocabularyStore.I18nStringValueCache", "a00779.html", null ]
     ] ],
-    [ "VocabularyStore.ValueCache< Integer >", "a00768.html", [
-      [ "VocabularyStore.IntegerValueCache", "a00776.html", null ]
+    [ "VocabularyStore.ValueCache< Integer >", "a00775.html", [
+      [ "VocabularyStore.IntegerValueCache", "a00783.html", null ]
     ] ],
-    [ "ContentTypeNegotiator.VariantSpec", "a00572.html", null ],
-    [ "VelocityHelper", "a00664.html", null ],
-    [ "VocabularyStore", "a00760.html", null ],
+    [ "ContentTypeNegotiator.VariantSpec", "a00579.html", null ],
+    [ "VelocityHelper", "a00671.html", null ],
+    [ "VocabularyStore", "a00767.html", null ],
     [ "HttpServlet", null, [
-      [ "BaseServlet", "a00616.html", [
-        [ "DataURLServlet", "a00620.html", null ],
-        [ "PageURLServlet", "a00628.html", null ],
-        [ "RootServlet", "a00640.html", null ],
-        [ "SearchServlet", "a00644.html", null ],
-        [ "ValuesBaseServlet", "a00652.html", [
-          [ "ValuesDataURLServlet", "a00656.html", null ],
-          [ "ValuesURLServlet", "a00660.html", null ]
+      [ "BaseServlet", "a00623.html", [
+        [ "DataURLServlet", "a00627.html", null ],
+        [ "PageURLServlet", "a00635.html", null ],
+        [ "RootServlet", "a00647.html", null ],
+        [ "SearchServlet", "a00651.html", null ],
+        [ "ValuesBaseServlet", "a00659.html", [
+          [ "ValuesDataURLServlet", "a00663.html", null ],
+          [ "ValuesURLServlet", "a00667.html", null ]
         ] ],
-        [ "WebURIServlet", "a00668.html", null ]
+        [ "WebURIServlet", "a00675.html", null ]
       ] ]
     ] ],
     [ "HttpServletRequestWrapper", null, [
-      [ "RequestParamHandler.WrappedRequest", "a00636.html", null ]
+      [ "RequestParamHandler.WrappedRequest", "a00643.html", null ]
     ] ],
     [ "Indexable", null, [
-      [ "SearchRecord", "a00732.html", null ]
+      [ "SearchRecord", "a00739.html", null ]
     ] ],
-    [ "Indexable", "a01536.html", null ],
-    [ "Indexable", "a01536.html", null ],
+    [ "Indexable", "a01543.html", null ],
+    [ "Indexable", "a01543.html", null ],
     [ "IndexAdapter", null, [
-      [ "SearchAdapter", "a00724.html", null ]
+      [ "SearchAdapter", "a00731.html", null ]
     ] ],
     [ "InputStream", null, [
-      [ "TWKBReader.ByteBufferInputStream", "a00784.html", null ]
+      [ "TWKBReader.ByteBufferInputStream", "a00791.html", null ]
     ] ],
     [ "ServletContextListener", null, [
-      [ "ServletContextInitializer", "a00648.html", null ]
+      [ "ServletContextInitializer", "a00655.html", null ]
     ] ],
     [ "TestCase", null, [
-      [ "ContentTypeNegotiatorTest", "a00816.html", null ],
-      [ "MediaRangeSpecTest", "a00820.html", null ],
-      [ "PubbyNegotiatorTest", "a00824.html", null ]
+      [ "ContentTypeNegotiatorTest", "a00823.html", null ],
+      [ "MediaRangeSpecTest", "a00827.html", null ],
+      [ "PubbyNegotiatorTest", "a00831.html", null ]
     ] ]
 ];

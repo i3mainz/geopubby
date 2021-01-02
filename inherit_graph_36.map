@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$a00612.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="5,56,125,83"/>
-<area shape="rect" id="node2" href="$a00340.html" title="The server&#39;s configuration. " alt="" coords="201,5,299,32"/>
-<area shape="rect" id="node3" href="$a00348.html" title="A dataset block in the server&#39;s configuration. " alt="" coords="216,56,284,83"/>
-<area shape="rect" id="node4" href="$a00556.html" title="MetadataConfiguration" alt="" coords="173,107,327,133"/>
+<area shape="rect" id="node1" href="$a00619.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="5,56,125,83"/>
+<area shape="rect" id="node2" href="$a00343.html" title="The server&#39;s configuration. " alt="" coords="201,5,299,32"/>
+<area shape="rect" id="node3" href="$a00351.html" title="A dataset block in the server&#39;s configuration. " alt="" coords="216,56,284,83"/>
+<area shape="rect" id="node4" href="$a00563.html" title="MetadataConfiguration" alt="" coords="173,107,327,133"/>
 </map>
