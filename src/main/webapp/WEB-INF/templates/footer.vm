@@ -14,6 +14,7 @@ var definitionlinks={
 "geouri":"https://tools.ietf.org/html/rfc5870",
 "gml":"https://www.ogc.org/standards/gml",
 "gpx":"https://www.topografix.com/gpx.asp",
+"graphml":"http://graphml.graphdrawing.org",
 "hdt":"https://www.w3.org/Submission/2011/03/",
 "hextuples":"https://github.com/ontola/hextuples",
 "html":"https://html.spec.whatwg.org",

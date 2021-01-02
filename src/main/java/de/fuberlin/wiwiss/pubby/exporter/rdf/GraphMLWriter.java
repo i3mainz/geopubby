@@ -1,6 +1,7 @@
 package de.fuberlin.wiwiss.pubby.exporter.rdf;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,9 +37,11 @@ public class GraphMLWriter extends GeoModelWriter {
                         resources.add(object.asResource());
                     }
         });
+        Integer literalcounter=0;
+        StringWriter strwriter=new StringWriter();
 		XMLOutputFactory factory = XMLOutputFactory.newInstance();
 		try {
-			XMLStreamWriter writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(response.getWriter()));
+			XMLStreamWriter writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(strwriter));
 			writer.writeStartDocument();
 	        writer.writeStartElement("graphml");
 	        writer.writeAttribute("xmlns", "http://graphml.graphdrawing.org/xmlns");
@@ -66,10 +69,12 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("id",curst.getPredicate().getURI());
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
 						writer.writeAttribute("name",curst.getPredicate().getLocalName());
+						writer.writeAttribute("source", curst.getSubject().getURI());
+						writer.writeAttribute("target", curst.getObject().asResource().getURI());
 						writer.writeEndElement();
 	        		}else if(curst.getObject().isLiteral()) {
 						writer.writeStartElement("node");
-						writer.writeAttribute("id",curst.getObject().asLiteral().getValue().toString());
+						writer.writeAttribute("id","literal"+literalcounter);
 						writer.writeAttribute("name",res.getLocalName());
 						writer.writeAttribute("uri", res.getURI());
 						writer.writeEndElement();
@@ -77,7 +82,10 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("id",curst.getPredicate().getURI());
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
 						writer.writeAttribute("name",curst.getPredicate().getLocalName());
+						writer.writeAttribute("source", curst.getSubject().getURI());
+						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeEndElement();
+						literalcounter++;
 	        		}
 	        	}
 	        }
@@ -85,9 +93,11 @@ public class GraphMLWriter extends GeoModelWriter {
 			writer.writeEndElement();
 			writer.writeEndDocument();
 			writer.flush();
+			strwriter.flush();
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
+		response.getWriter().write(strwriter.toString());
 		response.getWriter().close();
 		return null;
 	}
