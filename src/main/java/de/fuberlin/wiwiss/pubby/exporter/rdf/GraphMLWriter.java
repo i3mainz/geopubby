@@ -73,6 +73,13 @@ public class GraphMLWriter extends GeoModelWriter {
 						literalcounter++;
 						writer.writeStartElement("y:ShapeNode");
 						writer.writeStartElement("y:NodeLabel");
+						writer.writeAttribute("alignment", "center");
+						writer.writeAttribute("autoSizePolicy", "content");
+						writer.writeAttribute("fontSize", "12");
+						writer.writeAttribute("fontStyle", "plain");
+						writer.writeAttribute("hasText", "true");
+						writer.writeAttribute("visible", "true");
+						writer.writeAttribute("width", "4.0");
 						writer.writeCharacters(curst.getObject().asResource().getLocalName().toString());
 						writer.writeEndElement();
 						writer.writeEndElement();
@@ -92,6 +99,13 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("key", "val"+valcounter);
 							writer.writeStartElement("y:ShapeNode");
 							writer.writeStartElement("y:NodeLabel");
+							writer.writeAttribute("alignment", "center");
+							writer.writeAttribute("autoSizePolicy", "content");
+							writer.writeAttribute("fontSize", "12");
+							writer.writeAttribute("fontStyle", "plain");
+							writer.writeAttribute("hasText", "true");
+							writer.writeAttribute("visible", "true");
+							writer.writeAttribute("width", "4.0");
 							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString());
 							writer.writeEndElement();
 							writer.writeEndElement();
