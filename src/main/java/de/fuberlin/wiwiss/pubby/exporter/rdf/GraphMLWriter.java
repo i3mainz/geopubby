@@ -173,6 +173,8 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeStartElement("edge");
 						writer.writeAttribute("id","e"+edgecounter++);
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
+						writer.writeAttribute("source", curst.getSubject().getURI());
+						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeStartElement("data");
 						writer.writeAttribute("key", "nodekey");
 						literalcounter++;
@@ -196,8 +198,6 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndElement();
-						writer.writeAttribute("source", curst.getSubject().getURI());
-						writer.writeAttribute("target", "literal"+literalcounter);
 						writer.writeEndElement();
 						literalcounter++;
 	        		}
