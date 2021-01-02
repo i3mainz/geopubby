@@ -82,6 +82,12 @@ public class GraphMLWriter extends GeoModelWriter {
 				writer.writeAttribute("hasText", "true");
 				writer.writeAttribute("visible", "true");
 				writer.writeAttribute("width", "4.0");
+				String subprefix=res.getModel().getNsURIPrefix(res.getNameSpace());
+				if(subprefix!=null) {
+					writer.writeCharacters(subprefix+":"+res.getLocalName());							
+				}else {
+					writer.writeCharacters(res.getLocalName());
+				}
 				writer.writeCharacters(res.getLocalName());
 				writer.writeEndElement();
 				writer.writeEndElement();
@@ -103,6 +109,16 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("shape", "rectangle");
 						writer.writeEndElement();
 						writer.writeStartElement("y:Fill");
+						if(curst.getPredicate().getURI()!=null 
+								&& 
+								(curst.getPredicate().getURI().equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")
+								|| curst.getPredicate().getURI().equals("http://www.w3.org/2000/01/rdf-schema#subClassOf"))) {
+							writer.writeAttribute("color", "#008000");	
+						}else if(curst.getPredicate().getURI()!=null && curst.getPredicate().getURI().startsWith("http://www.w3.org/2000/01/rdf-schema#")){
+							writer.writeAttribute("color", "#F08080");	
+						}else {
+							writer.writeAttribute("color", "#ffa500");								
+						}
 						writer.writeAttribute("color", "#ffa500");
 						writer.writeAttribute("transparent", "false");
 						writer.writeEndElement();
@@ -114,7 +130,12 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("hasText", "true");
 						writer.writeAttribute("visible", "true");
 						writer.writeAttribute("width", "4.0");
-						writer.writeCharacters(curst.getObject().asResource().getLocalName().toString());
+						subprefix=curst.getObject().asResource().getModel().getNsURIPrefix(curst.getObject().asResource().getNameSpace());
+						if(subprefix!=null) {
+							writer.writeCharacters(subprefix+":"+curst.getObject().asResource().getLocalName());							
+						}else {
+							writer.writeCharacters(curst.getObject().asResource().getLocalName());
+						}
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndElement();
@@ -136,11 +157,7 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("shape", "rectangle");
 							writer.writeEndElement();
 							writer.writeStartElement("y:Fill");
-							if(curst.getPredicate().getURI()!=null && curst.getPredicate().getURI().equals("http://www.w3.org/1999/02/22-rdf-syntax-ns#type")) {
-								writer.writeAttribute("color", "#008000");	
-							}else {
-								writer.writeAttribute("color", "#800080");								
-							}
+							writer.writeAttribute("color", "#800080");								
 							writer.writeAttribute("transparent", "false");
 							writer.writeEndElement();
 							writer.writeStartElement("y:NodeLabel");
@@ -151,7 +168,7 @@ public class GraphMLWriter extends GeoModelWriter {
 							writer.writeAttribute("hasText", "true");
 							writer.writeAttribute("visible", "true");
 							writer.writeAttribute("width", "4.0");
-							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString()+" ("+curst.getObject().asLiteral().getDatatype().toString()+")");
+							writer.writeCharacters(curst.getObject().asLiteral().getValue().toString()+" (xsd:"+curst.getObject().asLiteral().getDatatype().getURI().substring(curst.getObject().asLiteral().getDatatype().getURI().lastIndexOf('#')+1)+")");
 							writer.writeEndElement();
 							writer.writeEndElement();
 							writer.writeEndElement();
@@ -186,15 +203,20 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeAttribute("color", "#ffa500");
 						writer.writeAttribute("transparent", "false");
 						writer.writeEndElement();
-						writer.writeStartElement("y:NodeLabel");
+						writer.writeStartElement("y:EdgeLabel");
 						writer.writeAttribute("alignment", "center");
-						writer.writeAttribute("autoSizePolicy", "content");
+						writer.writeAttribute("configuration", "AutoFlippingLabel");
 						writer.writeAttribute("fontSize", "12");
 						writer.writeAttribute("fontStyle", "plain");
 						writer.writeAttribute("hasText", "true");
 						writer.writeAttribute("visible", "true");
 						writer.writeAttribute("width", "4.0");
-						writer.writeCharacters(curst.getPredicate().getLocalName());
+						subprefix=curst.getPredicate().asResource().getModel().getNsURIPrefix(curst.getPredicate().asResource().getNameSpace());
+						if(subprefix!=null) {
+							writer.writeCharacters(subprefix+":"+curst.getPredicate().getLocalName());							
+						}else {
+							writer.writeCharacters(curst.getPredicate().getLocalName());
+						}
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndElement();
