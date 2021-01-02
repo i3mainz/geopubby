@@ -77,6 +77,7 @@ public class GraphMLWriter extends GeoModelWriter {
 						writer.writeEndElement();
 						writer.writeEndElement();
 						writer.writeEndElement();
+						writer.writeEndElement();
 						writer.writeStartElement("edge");
 						writer.writeAttribute("id","e"+edgecounter++);
 						writer.writeAttribute("uri",curst.getPredicate().getURI());
