@@ -96,7 +96,6 @@ public class GraphMLWriter extends GeoModelWriter {
 					} else {
 						writer.writeCharacters(res.getLocalName());
 					}
-					writer.writeCharacters(res.getLocalName());
 					writer.writeEndElement();
 					writer.writeEndElement();
 					writer.writeEndElement();
