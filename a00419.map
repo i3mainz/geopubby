@@ -1,6 +1,4 @@
-<map id="ESRIJSONWriter" name="ESRIJSONWriter">
-<area shape="rect" id="node2" href="$a00377.html" title="GeoModelWriter" alt="" coords="1077,329,1193,356"/>
-<area shape="rect" id="node3" href="$a00385.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="823,31,915,57"/>
-<area shape="rect" id="node9" href="$a00729.html" title="An object containing style definitions to apply on geospatial objects. " alt="" coords="824,329,915,356"/>
-<area shape="rect" id="node10" href="$a00413.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="796,397,943,424"/>
+<map id="ResultStyleFormatter" name="ResultStyleFormatter">
+<area shape="rect" id="node2" href="$a00412.html" title="Reads an ontological style description and formats it to GeoJSONCSS. " alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node3" href="$a00416.html" title="Reads an ontological style description and formats it to KML Styles. " alt="" coords="196,80,331,107"/>
 </map>
