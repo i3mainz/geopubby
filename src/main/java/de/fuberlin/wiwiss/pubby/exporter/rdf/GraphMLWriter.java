@@ -119,7 +119,6 @@ public class GraphMLWriter extends GeoModelWriter {
 						}else {
 							writer.writeAttribute("color", "#ffa500");								
 						}
-						writer.writeAttribute("color", "#ffa500");
 						writer.writeAttribute("transparent", "false");
 						writer.writeEndElement();
 						writer.writeStartElement("y:NodeLabel");
