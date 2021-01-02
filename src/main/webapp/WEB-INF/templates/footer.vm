@@ -9,6 +9,7 @@ var definitionlinks={
 "esrijson":"https://doc.arcgis.com/de/iot/ingest/esrijson.htm",
 "geohash":"http://geohash.org",
 "json":"https://geojson.org",
+"gdf":"https://www.cs.nmsu.edu/~joemsong/software/ChiNet/GDF.pdf",
 "geojsonld":"http://geojson.org/geojson-ld/",
 "geojsonseq":"https://tools.ietf.org/html/rfc8142",
 "geouri":"https://tools.ietf.org/html/rfc5870",
@@ -68,6 +69,7 @@ function download2(link){
         <option value="cipher">Cypher Neo4J (Cypher)</option>
         <option value="esrijson">ESRIJSON</option>
         <option value="exijson">EXI4JSON</option>
+        <option value="gdf">Graph Definition File (GDF)</option>
         <option value="geohash">GeoHash</option>
         <option value="geojson">(Geo)JSON</option>
         <option value="geojsonld">GeoJSON-LD</option>
@@ -112,6 +114,7 @@ function download2(link){
       	<option value="csv">Comma Separated Values (CSV)</option>
       	<option value="cipher">Cypher Neo4J (Cypher)</option>
       	<option value="exijson">EXI4JSON</option>
+      	<option value="gdf">Graph Definition File (GDF)</option>
       	<option value="geojson">(Geo)JSON</option>
       	<option value="graphml">GraphML</option>
       	<option value="json">JSON-LD</option>

@@ -77,6 +77,7 @@ public class PubbyNegotiator {
 		pubbyNegotiator.addVariant("text/twkb;q=0.95");
 		pubbyNegotiator.addVariant("text/vnd.yaml;q=0.95");
 		pubbyNegotiator.addVariant("text/wkb;q=0.95");
+		pubbyNegotiator.addVariant("text/gdf;q=0.95");
 		pubbyNegotiator.addVariant("text/gpx;q=0.95")
 			.addAliasMediaType("application/gpx;q=0.8");
 		pubbyNegotiator.addVariant("application/javascript;q=0.95");
@@ -103,6 +104,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("model/x3d+xml;q=0.95");
 		dataNegotiator.addVariant("text/esrijson;q=0.95");
 		dataNegotiator.addVariant("text/geohash;q=0.95");
+		dataNegotiator.addVariant("text/gdf;q=0.95");
 		dataNegotiator.addVariant("text/graphml;q=0.95");
 		dataNegotiator.addVariant("application/prs.coverage+json;q=0.95");
 		dataNegotiator.addVariant("text/rdf+n3;charset=utf-8")

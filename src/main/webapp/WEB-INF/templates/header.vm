@@ -162,6 +162,7 @@ function closeNav() {
         <option value="cipher">Cypher Neo4J (Cypher)</option>
         <option value="esrijson">ESRIJSON</option>
         <option value="exijson">EXI4JSON</option>
+        <option value="gdf">Graph Definition File (GDF)</option>
         <option value="geohash">GeoHash</option>
         <option value="geojson">(Geo)JSON</option>
         <option value="geojsonld">GeoJSON-LD</option>
@@ -206,6 +207,7 @@ function closeNav() {
       	<option value="csv">Comma Separated Values (CSV)</option>
       	<option value="cipher">Cypher Neo4J (Cypher)</option>
       	<option value="exijson">EXI4JSON</option>
+        <option value="gdf">Graph Definition File (GDF)</option>
       	<option value="geojson">(Geo)JSON</option>
       	<option value="graphml">GraphML</option>
       	<option value="json">JSON-LD</option>
