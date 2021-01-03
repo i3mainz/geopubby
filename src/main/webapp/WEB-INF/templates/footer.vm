@@ -17,6 +17,7 @@ var definitionlinks={
 "gml":"https://www.ogc.org/standards/gml",
 "gpx":"https://www.topografix.com/gpx.asp",
 "graphml":"http://graphml.graphdrawing.org",
+"gxl":"http://www.gupro.de/GXL/Introduction/intro.html",
 "hdt":"https://www.w3.org/Submission/2011/03/",
 "hextuples":"https://github.com/ontola/hextuples",
 "html":"https://html.spec.whatwg.org",
@@ -82,6 +83,7 @@ function download2(link){
         <option value="gpx">GPS Exchange Format (GPX)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
         <option value="grass">GRASS Vector ASCII Format (GRASS)</option>
+        <option value="gxl">Graph Exchange Language (GXL)</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
        	<option value="hextuples">HexTuples RDF</option>
@@ -121,6 +123,7 @@ function download2(link){
       	<option value="geojson">(Geo)JSON</option>
         <option value="gexf">Graph Exchange XML Format (GEXF)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
+        <option value="gxl">Graph Exchange Language (GXL)</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
       	<option value="hextuples">HexTuples RDF</option>

@@ -173,6 +173,7 @@ function closeNav() {
         <option value="gpx">GPS Exchange Format (GPX)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
         <option value="grass">GRASS Vector ASCII Format (GRASS)</option>
+        <option value="gxl">Graph Exchange Language (GXL)</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
        	<option value="hextuples">HexTuples RDF</option>
@@ -212,6 +213,7 @@ function closeNav() {
       	<option value="geojson">(Geo)JSON</option>
       	<option value="gexf">Graph Exchange XML Format (GEXF)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
+        <option value="gxl">Graph Exchange Language (GXL)</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
       	<option value="hextuples">HexTuples RDF</option>
