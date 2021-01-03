@@ -100,7 +100,7 @@ public class GEXFWriter extends GeoModelWriter {
 			}
 			writer.writeEndElement();
 			writer.flush();
-			strwriter.write(builder.toString());
+			strwriter.write(builder.toString()+"</edges>"+System.lineSeparator());
 			strwriter.flush();
 			writer.writeEndElement();
 			writer.writeEndDocument();
