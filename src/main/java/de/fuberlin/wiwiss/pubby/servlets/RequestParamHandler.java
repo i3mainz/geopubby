@@ -62,6 +62,8 @@ public class RequestParamHandler {
 		mimeTypes.put("x3d", "model/x3d+xml");
 		mimeTypes.put("jsonp", "application/javascript");
 		mimeTypes.put("gml", "text/gml");
+		mimeTypes.put("gxl", "text/gxl");
+		mimeTypes.put("gexf", "text/gexf");
 		mimeTypes.put("mapml", "text/mapml");
 		mimeTypes.put("cipher", "text/cipher");
 		mimeTypes.put("rt", "application/rt");
