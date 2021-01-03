@@ -23,6 +23,7 @@ import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.RDFEXIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.TGFWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.TLPWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.CSVWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.ESRIJSONWriter;
 import de.fuberlin.wiwiss.pubby.exporter.vector.EWKTWriter;
@@ -236,6 +237,9 @@ public class ModelResponse {
 		}
 		if ("text/tgf".equals(mediaType)) {
 			return new TGFWriter(crs);
+		}
+		if ("text/tlp".equals(mediaType)) {
+			return new TLPWriter(crs);
 		}
 		if ("text/gdf".equals(mediaType)) {
 			return new GDFWriter(crs);
