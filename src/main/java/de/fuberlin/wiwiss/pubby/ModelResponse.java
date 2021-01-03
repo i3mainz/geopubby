@@ -16,6 +16,7 @@ import de.fuberlin.wiwiss.pubby.exporter.coverage.X3DWriter;
 import de.fuberlin.wiwiss.pubby.exporter.coverage.XYZASCIIWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.CypherWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.GDFWriter;
+import de.fuberlin.wiwiss.pubby.exporter.rdf.GEXFWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.GraphMLWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.HexTuplesWriter;
 import de.fuberlin.wiwiss.pubby.exporter.rdf.LDWriter;
@@ -171,6 +172,9 @@ public class ModelResponse {
 		}
 		if ("application/gml".equals(mediaType)) {
 			return new GMLWriter(crs);
+		}
+		if ("text/gexf".equals(mediaType)) {
+			return new GEXFWriter(crs);
 		}
 		if ("application/prs.coverage+json".equals(mediaType)) {
 			return new CoverageJSONWriter(crs);

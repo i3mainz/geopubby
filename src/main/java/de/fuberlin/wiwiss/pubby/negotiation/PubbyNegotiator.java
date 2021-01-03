@@ -43,6 +43,7 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/trix;q=0.5");
 		pubbyNegotiator.addVariant("text/cipher;q=0.95");
 		pubbyNegotiator.addVariant("text/tgf;q=0.95");
+		pubbyNegotiator.addVariant("text/gexf;q=0.95");
 		pubbyNegotiator.addVariant("text/graphml;q=0.95");
 		pubbyNegotiator.addVariant("text/esrijson;q=0.95");
 		pubbyNegotiator.addVariant("text/geohash;q=0.95");
@@ -106,6 +107,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("text/geohash;q=0.95");
 		dataNegotiator.addVariant("text/gdf;q=0.95");
 		dataNegotiator.addVariant("text/graphml;q=0.95");
+		dataNegotiator.addVariant("text/gexf;q=0.95");
 		dataNegotiator.addVariant("application/prs.coverage+json;q=0.95");
 		dataNegotiator.addVariant("text/rdf+n3;charset=utf-8")
 				.addAliasMediaType("text/n3;q=0.5")

@@ -166,12 +166,13 @@ function closeNav() {
         <option value="geohash">GeoHash</option>
         <option value="geojson">(Geo)JSON</option>
         <option value="geojsonld">GeoJSON-LD</option>
-        <option value="gml">Geography Markup Language (GML)</option>
         <option value="geouri">GeoURI</option> 
+        <option value="gexf">Graph Exchange XML Format (GEXF)</option>
+        <option value="gml">Geography Markup Language (GML)</option>
         <option value="googlemapslink">Google Maps Link</option>
         <option value="gpx">GPS Exchange Format (GPX)</option>
+        <option value="graphml">Graph Markup Language (GraphML)</option>
         <option value="grass">GRASS Vector ASCII Format (GRASS)</option>
-        <option value="graphml">GraphML</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
        	<option value="hextuples">HexTuples RDF</option>
@@ -209,7 +210,8 @@ function closeNav() {
       	<option value="exijson">EXI4JSON</option>
         <option value="gdf">Graph Definition File (GDF)</option>
       	<option value="geojson">(Geo)JSON</option>
-      	<option value="graphml">GraphML</option>
+      	<option value="gexf">Graph Exchange XML Format (GEXF)</option>
+        <option value="graphml">Graph Markup Language (GraphML)</option>
       	<option value="json">JSON-LD</option>
       	<option value="jsonp">JSONP</option>
       	<option value="hextuples">HexTuples RDF</option>
