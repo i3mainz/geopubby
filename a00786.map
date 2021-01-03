@@ -1,9 +1,0 @@
-<map id="VocabularyStore" name="VocabularyStore">
-<area shape="rect" id="node3" href="$a00792.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,61,1400,102"/>
-<area shape="rect" id="node7" href="$a00804.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,129,1389,170"/>
-<area shape="rect" id="node8" href="$a00796.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,131,1016,173"/>
-<area shape="rect" id="node9" href="$a00796.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,179,629,205"/>
-<area shape="rect" id="node15" href="$a00796.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,206,1016,247"/>
-<area shape="rect" id="node14" href="$a00800.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,207,1383,249"/>
-<area shape="rect" id="node16" href="$a00700.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,277,1337,304"/>
-</map>

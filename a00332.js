@@ -1,4 +1,25 @@
 var a00332 =
 [
-    [ "pubby", "a00329.html", "a00329" ]
+    [ "exporter", "a00336.html", "a00336" ],
+    [ "negotiation", "a00341.html", "a00341" ],
+    [ "servlets", "a00342.html", "a00342" ],
+    [ "sources", "a00343.html", "a00343" ],
+    [ "util", "a00344.html", "a00344" ],
+    [ "vocab", "a00345.html", "a00345" ],
+    [ "Configuration", "a00355.html", "a00355" ],
+    [ "ConfigurationException", "a00359.html", "a00359" ],
+    [ "Dataset", "a00363.html", "a00363" ],
+    [ "HypermediaControls", "a00571.html", "a00571" ],
+    [ "HypermediaResource", "a00575.html", "a00575" ],
+    [ "IRIEncoder", "a00579.html", "a00579" ],
+    [ "IRIRewriter", "a00583.html", "a00583" ],
+    [ "MappedResource", "a00587.html", "a00587" ],
+    [ "MetadataConfiguration", "a00591.html", "a00591" ],
+    [ "ModelResponse", "a00595.html", "a00595" ],
+    [ "ModelUtil", "a00599.html", "a00599" ],
+    [ "PubbyIRIEscaper", "a00627.html", "a00627" ],
+    [ "ResourceDescription", "a00631.html", "a00631" ],
+    [ "ResourceReader", "a00647.html", "a00647" ],
+    [ "URIPrefixer", "a00735.html", "a00735" ],
+    [ "VocabularyStore", "a00795.html", "a00795" ]
 ];

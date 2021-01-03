@@ -1,347 +1,350 @@
 var files =
 [
     [ "AbstractGeoJSONWriter.java", "a00011.html", [
-      [ "AbstractGeoJSONWriter", "a00364.html", "a00364" ]
+      [ "AbstractGeoJSONWriter", "a00367.html", "a00367" ]
     ] ],
-    [ "AllTests.java", "a00317.html", [
-      [ "AllTests", "a00840.html", "a00840" ]
+    [ "AllTests.java", "a00320.html", [
+      [ "AllTests", "a00847.html", "a00847" ]
     ] ],
-    [ "AutocompleteEngine.java", "a00266.html", [
-      [ "AutocompleteEngine", "a00732.html", "a00732" ],
-      [ "Builder", "a00736.html", "a00736" ]
+    [ "AutocompleteEngine.java", "a00269.html", [
+      [ "AutocompleteEngine", "a00739.html", "a00739" ],
+      [ "Builder", "a00743.html", "a00743" ]
     ] ],
-    [ "BaseServlet.java", "a00203.html", [
-      [ "BaseServlet", "a00644.html", "a00644" ]
+    [ "BaseServlet.java", "a00206.html", [
+      [ "BaseServlet", "a00651.html", "a00651" ]
     ] ],
-    [ "CONF.java", "a00293.html", [
-      [ "CONF", "a00772.html", "a00772" ]
+    [ "CONF.java", "a00296.html", [
+      [ "CONF", "a00779.html", "a00779" ]
     ] ],
     [ "Configuration.java", "a00002.html", [
-      [ "Configuration", "a00352.html", "a00352" ]
+      [ "Configuration", "a00355.html", "a00355" ]
     ] ],
     [ "ConfigurationException.java", "a00005.html", [
-      [ "ConfigurationException", "a00356.html", "a00356" ]
+      [ "ConfigurationException", "a00359.html", "a00359" ]
     ] ],
-    [ "ContentTypeNegotiator.java", "a00185.html", [
-      [ "ContentTypeNegotiator", "a00596.html", "a00596" ],
-      [ "VariantSpec", "a00600.html", "a00600" ],
-      [ "Negotiation", "a00604.html", "a00604" ],
-      [ "AcceptHeaderOverride", "a00608.html", "a00608" ]
+    [ "ContentTypeNegotiator.java", "a00188.html", [
+      [ "ContentTypeNegotiator", "a00603.html", "a00603" ],
+      [ "VariantSpec", "a00607.html", "a00607" ],
+      [ "Negotiation", "a00611.html", "a00611" ],
+      [ "AcceptHeaderOverride", "a00615.html", "a00615" ]
     ] ],
-    [ "ContentTypeNegotiatorTest.java", "a00320.html", [
-      [ "ContentTypeNegotiatorTest", "a00844.html", "a00844" ]
+    [ "ContentTypeNegotiatorTest.java", "a00323.html", [
+      [ "ContentTypeNegotiatorTest", "a00851.html", "a00851" ]
     ] ],
-    [ "COV.java", "a00296.html", [
-      [ "COV", "a00776.html", "a00776" ]
+    [ "COV.java", "a00299.html", [
+      [ "COV", "a00783.html", "a00783" ]
     ] ],
     [ "CoverageJSONWriter.java", "a00014.html", [
-      [ "CoverageJSONWriter", "a00368.html", "a00368" ]
+      [ "CoverageJSONWriter", "a00371.html", "a00371" ]
     ] ],
     [ "CoverageModelWriter.java", "a00029.html", [
-      [ "CoverageModelWriter", "a00388.html", "a00388" ]
+      [ "CoverageModelWriter", "a00391.html", "a00391" ]
     ] ],
-    [ "CSVWriter.java", "a00077.html", [
-      [ "CSVWriter", "a00452.html", "a00452" ]
+    [ "CSVWriter.java", "a00080.html", [
+      [ "CSVWriter", "a00459.html", "a00459" ]
     ] ],
     [ "CypherWriter.java", "a00041.html", [
-      [ "CypherWriter", "a00404.html", "a00404" ]
+      [ "CypherWriter", "a00407.html", "a00407" ]
     ] ],
     [ "Dataset.java", "a00008.html", [
-      [ "Dataset", "a00360.html", "a00360" ]
+      [ "Dataset", "a00363.html", "a00363" ]
     ] ],
-    [ "DataSource.java", "a00242.html", [
-      [ "DataSource", "a00700.html", "a00700" ]
+    [ "DataSource.java", "a00245.html", [
+      [ "DataSource", "a00707.html", "a00707" ]
     ] ],
-    [ "DataURLServlet.java", "a00206.html", [
-      [ "DataURLServlet", "a00648.html", "a00648" ]
+    [ "DataURLServlet.java", "a00209.html", [
+      [ "DataURLServlet", "a00655.html", "a00655" ]
     ] ],
-    [ "ESRIJSONWriter.java", "a00080.html", [
-      [ "ESRIJSONWriter", "a00456.html", "a00456" ]
+    [ "ESRIJSONWriter.java", "a00083.html", [
+      [ "ESRIJSONWriter", "a00463.html", "a00463" ]
     ] ],
-    [ "EWKTWriter.java", "a00083.html", [
-      [ "EWKTWriter", "a00460.html", "a00460" ]
+    [ "EWKTWriter.java", "a00086.html", [
+      [ "EWKTWriter", "a00467.html", "a00467" ]
     ] ],
-    [ "EXIJSONWriter.java", "a00086.html", [
-      [ "EXIJSONWriter", "a00464.html", "a00464" ]
+    [ "EXIJSONWriter.java", "a00089.html", [
+      [ "EXIJSONWriter", "a00471.html", "a00471" ]
     ] ],
-    [ "FilteredDataSource.java", "a00245.html", [
-      [ "FilteredDataSource", "a00704.html", "a00704" ]
+    [ "FilteredDataSource.java", "a00248.html", [
+      [ "FilteredDataSource", "a00711.html", "a00711" ]
     ] ],
     [ "GDFWriter.java", "a00044.html", [
-      [ "GDFWriter", "a00408.html", "a00408" ]
+      [ "GDFWriter", "a00411.html", "a00411" ]
     ] ],
-    [ "GEO.java", "a00299.html", [
-      [ "GEO", "a00780.html", "a00780" ]
+    [ "GEO.java", "a00302.html", [
+      [ "GEO", "a00787.html", "a00787" ]
     ] ],
-    [ "GeobufEncoder.java", "a00269.html", [
-      [ "GeobufEncoder", "a00740.html", "a00740" ]
+    [ "GeobufEncoder.java", "a00272.html", [
+      [ "GeobufEncoder", "a00747.html", "a00747" ]
     ] ],
-    [ "GeobufWriter.java", "a00089.html", [
-      [ "GeobufWriter", "a00468.html", "a00468" ]
+    [ "GeobufWriter.java", "a00092.html", [
+      [ "GeobufWriter", "a00475.html", "a00475" ]
     ] ],
-    [ "GeoHashWriter.java", "a00092.html", [
-      [ "GeoHashWriter", "a00472.html", "a00472" ]
+    [ "GeoHashWriter.java", "a00095.html", [
+      [ "GeoHashWriter", "a00479.html", "a00479" ]
     ] ],
-    [ "GeoJSONCSSFormatter.java", "a00068.html", [
-      [ "GeoJSONCSSFormatter", "a00440.html", "a00440" ]
+    [ "GeoJSONCSSFormatter.java", "a00071.html", [
+      [ "GeoJSONCSSFormatter", "a00447.html", "a00447" ]
     ] ],
-    [ "GeoJSONLDWriter.java", "a00095.html", [
-      [ "GeoJSONLDWriter", "a00476.html", "a00476" ]
+    [ "GeoJSONLDWriter.java", "a00098.html", [
+      [ "GeoJSONLDWriter", "a00483.html", "a00483" ]
     ] ],
-    [ "GeoJSONWriterr.java", "a00098.html", [
-      [ "GeoJSONWriterr", "a00480.html", "a00480" ]
+    [ "GeoJSONWriterr.java", "a00101.html", [
+      [ "GeoJSONWriterr", "a00487.html", "a00487" ]
     ] ],
     [ "GeoModelWriter.java", "a00032.html", [
-      [ "GeoModelWriter", "a00392.html", "a00392" ]
+      [ "GeoModelWriter", "a00395.html", "a00395" ]
     ] ],
-    [ "GeoProvider.java", "a00209.html", [
-      [ "GeoProvider", "a00652.html", "a00652" ]
+    [ "GeoProvider.java", "a00212.html", [
+      [ "GeoProvider", "a00659.html", "a00659" ]
     ] ],
-    [ "GeoURIWriter.java", "a00101.html", [
-      [ "GeoURIWriter", "a00484.html", "a00484" ]
+    [ "GeoURIWriter.java", "a00104.html", [
+      [ "GeoURIWriter", "a00491.html", "a00491" ]
     ] ],
     [ "GEXFWriter.java", "a00047.html", [
-      [ "GEXFWriter", "a00412.html", "a00412" ]
+      [ "GEXFWriter", "a00415.html", "a00415" ]
     ] ],
-    [ "GMLWriter.java", "a00104.html", [
-      [ "GMLWriter", "a00488.html", "a00488" ]
+    [ "GMLWriter.java", "a00107.html", [
+      [ "GMLWriter", "a00495.html", "a00495" ]
     ] ],
-    [ "GoogleMapsLinkWriter.java", "a00107.html", [
-      [ "GoogleMapsLinkWriter", "a00492.html", "a00492" ]
+    [ "GoogleMapsLinkWriter.java", "a00110.html", [
+      [ "GoogleMapsLinkWriter", "a00499.html", "a00499" ]
     ] ],
-    [ "GPXWriter.java", "a00110.html", [
-      [ "GPXWriter", "a00496.html", "a00496" ]
+    [ "GPXWriter.java", "a00113.html", [
+      [ "GPXWriter", "a00503.html", "a00503" ]
     ] ],
     [ "GraphMLWriter.java", "a00050.html", [
-      [ "GraphMLWriter", "a00416.html", "a00416" ]
+      [ "GraphMLWriter", "a00419.html", "a00419" ]
     ] ],
-    [ "GRASSVectorASCIIWriter.java", "a00113.html", [
-      [ "GRASSVectorASCIIWriter", "a00500.html", "a00500" ]
+    [ "GRASSVectorASCIIWriter.java", "a00116.html", [
+      [ "GRASSVectorASCIIWriter", "a00507.html", "a00507" ]
     ] ],
     [ "GXLWriter.java", "a00053.html", [
-      [ "GXLWriter", "a00420.html", "a00420" ]
+      [ "GXLWriter", "a00423.html", "a00423" ]
     ] ],
     [ "HexTuplesWriter.java", "a00056.html", [
-      [ "HexTuplesWriter", "a00424.html", "a00424" ]
+      [ "HexTuplesWriter", "a00427.html", "a00427" ]
     ] ],
     [ "HexWKBRasterWriter.java", "a00017.html", [
-      [ "HexWKBRasterWriter", "a00372.html", null ]
+      [ "HexWKBRasterWriter", "a00375.html", null ]
     ] ],
-    [ "HypermediaControls.java", "a00161.html", [
-      [ "HypermediaControls", "a00564.html", "a00564" ]
+    [ "HypermediaControls.java", "a00164.html", [
+      [ "HypermediaControls", "a00571.html", "a00571" ]
     ] ],
-    [ "HypermediaResource.java", "a00164.html", [
-      [ "HypermediaResource", "a00568.html", "a00568" ]
+    [ "HypermediaResource.java", "a00167.html", [
+      [ "HypermediaResource", "a00575.html", "a00575" ]
     ] ],
-    [ "IndexDataSource.java", "a00248.html", [
-      [ "IndexDataSource", "a00708.html", "a00708" ]
+    [ "IndexDataSource.java", "a00251.html", [
+      [ "IndexDataSource", "a00715.html", "a00715" ]
     ] ],
-    [ "IRIEncoder.java", "a00167.html", [
-      [ "IRIEncoder", "a00572.html", "a00572" ]
+    [ "IRIEncoder.java", "a00170.html", [
+      [ "IRIEncoder", "a00579.html", "a00579" ]
     ] ],
-    [ "IRIRewriter.java", "a00170.html", [
-      [ "IRIRewriter", "a00576.html", "a00576" ]
+    [ "IRIRewriter.java", "a00173.html", [
+      [ "IRIRewriter", "a00583.html", "a00583" ]
     ] ],
     [ "JSONPWriter.java", "a00035.html", [
-      [ "JSONPWriter", "a00396.html", "a00396" ]
+      [ "JSONPWriter", "a00399.html", "a00399" ]
     ] ],
-    [ "KMLStyleFormatter.java", "a00071.html", [
-      [ "KMLStyleFormatter", "a00444.html", "a00444" ]
+    [ "KMLStyleFormatter.java", "a00074.html", [
+      [ "KMLStyleFormatter", "a00451.html", "a00451" ]
     ] ],
-    [ "KMLWriter.java", "a00116.html", [
-      [ "KMLWriter", "a00504.html", "a00504" ]
+    [ "KMLWriter.java", "a00119.html", [
+      [ "KMLWriter", "a00511.html", "a00511" ]
     ] ],
-    [ "LatLonTextWriter.java", "a00119.html", [
-      [ "LatLonTextWriter", "a00508.html", "a00508" ]
+    [ "LatLonTextWriter.java", "a00122.html", [
+      [ "LatLonTextWriter", "a00515.html", "a00515" ]
     ] ],
     [ "LDWriter.java", "a00059.html", [
-      [ "LDWriter", "a00428.html", "a00428" ]
+      [ "LDWriter", "a00431.html", "a00431" ]
     ] ],
-    [ "MapMLWriter.java", "a00122.html", [
-      [ "MapMLWriter", "a00512.html", "a00512" ]
+    [ "MapMLWriter.java", "a00125.html", [
+      [ "MapMLWriter", "a00519.html", "a00519" ]
     ] ],
-    [ "MappedResource.java", "a00173.html", [
-      [ "MappedResource", "a00580.html", "a00580" ]
+    [ "MappedResource.java", "a00176.html", [
+      [ "MappedResource", "a00587.html", "a00587" ]
     ] ],
-    [ "MediaRangeSpec.java", "a00188.html", [
-      [ "MediaRangeSpec", "a00612.html", "a00612" ]
+    [ "MediaRangeSpec.java", "a00191.html", [
+      [ "MediaRangeSpec", "a00619.html", "a00619" ]
     ] ],
-    [ "MediaRangeSpecTest.java", "a00323.html", [
-      [ "MediaRangeSpecTest", "a00848.html", "a00848" ]
+    [ "MediaRangeSpecTest.java", "a00326.html", [
+      [ "MediaRangeSpecTest", "a00855.html", "a00855" ]
     ] ],
-    [ "MergeDataSource.java", "a00251.html", [
-      [ "MergeDataSource", "a00712.html", "a00712" ]
+    [ "MergeDataSource.java", "a00254.html", [
+      [ "MergeDataSource", "a00719.html", "a00719" ]
     ] ],
-    [ "META.java", "a00302.html", [
-      [ "META", "a00784.html", "a00784" ]
+    [ "META.java", "a00305.html", [
+      [ "META", "a00791.html", "a00791" ]
     ] ],
-    [ "MetadataConfiguration.java", "a00176.html", [
-      [ "MetadataConfiguration", "a00584.html", "a00584" ]
+    [ "MetadataConfiguration.java", "a00179.html", [
+      [ "MetadataConfiguration", "a00591.html", "a00591" ]
     ] ],
-    [ "ModelDataSource.java", "a00254.html", [
-      [ "ModelDataSource", "a00716.html", "a00716" ]
+    [ "ModelDataSource.java", "a00257.html", [
+      [ "ModelDataSource", "a00723.html", "a00723" ]
     ] ],
-    [ "ModelResponse.java", "a00179.html", [
-      [ "ModelResponse", "a00588.html", "a00588" ]
+    [ "ModelResponse.java", "a00182.html", [
+      [ "ModelResponse", "a00595.html", "a00595" ]
     ] ],
-    [ "ModelUtil.java", "a00182.html", [
-      [ "ModelUtil", "a00592.html", "a00592" ]
+    [ "ModelUtil.java", "a00185.html", [
+      [ "ModelUtil", "a00599.html", "a00599" ]
     ] ],
     [ "ModelWriter.java", "a00038.html", [
-      [ "ModelWriter", "a00400.html", "a00400" ]
+      [ "ModelWriter", "a00403.html", "a00403" ]
     ] ],
-    [ "OpenLocationCodeWriter.java", "a00125.html", [
-      [ "OpenLocationCodeWriter", "a00516.html", "a00516" ]
+    [ "OpenLocationCodeWriter.java", "a00128.html", [
+      [ "OpenLocationCodeWriter", "a00523.html", "a00523" ]
     ] ],
-    [ "OSMLinkWriter.java", "a00128.html", [
-      [ "OSMLinkWriter", "a00520.html", "a00520" ]
+    [ "OSMLinkWriter.java", "a00131.html", [
+      [ "OSMLinkWriter", "a00527.html", "a00527" ]
     ] ],
-    [ "OSMWriter.java", "a00131.html", [
-      [ "OSMWriter", "a00524.html", "a00524" ]
+    [ "OSMWriter.java", "a00134.html", [
+      [ "OSMWriter", "a00531.html", "a00531" ]
     ] ],
-    [ "PageURLServlet.java", "a00212.html", [
-      [ "PageURLServlet", "a00656.html", "a00656" ]
+    [ "PageURLServlet.java", "a00215.html", [
+      [ "PageURLServlet", "a00663.html", "a00663" ]
     ] ],
-    [ "PubbyIRIEscaper.java", "a00194.html", [
-      [ "PubbyIRIEscaper", "a00620.html", "a00620" ]
+    [ "PubbyIRIEscaper.java", "a00197.html", [
+      [ "PubbyIRIEscaper", "a00627.html", "a00627" ]
     ] ],
-    [ "PubbyNegotiator.java", "a00191.html", [
-      [ "PubbyNegotiator", "a00616.html", "a00616" ]
+    [ "PubbyNegotiator.java", "a00194.html", [
+      [ "PubbyNegotiator", "a00623.html", "a00623" ]
     ] ],
-    [ "PubbyNegotiatorTest.java", "a00326.html", [
-      [ "PubbyNegotiatorTest", "a00852.html", "a00852" ]
+    [ "PubbyNegotiatorTest.java", "a00329.html", [
+      [ "PubbyNegotiatorTest", "a00859.html", "a00859" ]
     ] ],
     [ "RDFEXIWriter.java", "a00062.html", [
-      [ "RDFEXIWriter", "a00432.html", "a00432" ]
+      [ "RDFEXIWriter", "a00435.html", "a00435" ]
     ] ],
-    [ "Reloader.java", "a00272.html", [
-      [ "Reloader", "a00744.html", "a00744" ]
+    [ "Reloader.java", "a00275.html", [
+      [ "Reloader", "a00751.html", "a00751" ]
     ] ],
-    [ "RemoteSPARQLDataSource.java", "a00257.html", [
-      [ "RemoteSPARQLDataSource", "a00720.html", "a00720" ]
+    [ "RemoteSPARQLDataSource.java", "a00260.html", [
+      [ "RemoteSPARQLDataSource", "a00727.html", "a00727" ]
     ] ],
-    [ "ReprojectionUtils.java", "a00275.html", [
-      [ "ReprojectionUtils", "a00748.html", "a00748" ]
+    [ "ReprojectionUtils.java", "a00278.html", [
+      [ "ReprojectionUtils", "a00755.html", "a00755" ]
     ] ],
-    [ "RequestParamHandler.java", "a00215.html", [
-      [ "RequestParamHandler", "a00660.html", "a00660" ],
-      [ "WrappedRequest", "a00664.html", "a00664" ]
+    [ "RequestParamHandler.java", "a00218.html", [
+      [ "RequestParamHandler", "a00667.html", "a00667" ],
+      [ "WrappedRequest", "a00671.html", "a00671" ]
     ] ],
-    [ "ResourceDescription.java", "a00197.html", [
-      [ "ResourceDescription", "a00624.html", "a00624" ],
-      [ "ResourceProperty", "a00628.html", "a00628" ],
-      [ "PropertyBuilder", "a00632.html", "a00632" ],
-      [ "Value", "a00636.html", "a00636" ]
+    [ "ResourceDescription.java", "a00200.html", [
+      [ "ResourceDescription", "a00631.html", "a00631" ],
+      [ "ResourceProperty", "a00635.html", "a00635" ],
+      [ "PropertyBuilder", "a00639.html", "a00639" ],
+      [ "Value", "a00643.html", "a00643" ]
     ] ],
-    [ "ResourceReader.java", "a00200.html", [
-      [ "ResourceReader", "a00640.html", "a00640" ]
+    [ "ResourceReader.java", "a00203.html", [
+      [ "ResourceReader", "a00647.html", "a00647" ]
     ] ],
-    [ "ResultStyleFormatter.java", "a00074.html", [
-      [ "ResultStyleFormatter", "a00448.html", "a00448" ]
+    [ "ResultStyleFormatter.java", "a00077.html", [
+      [ "ResultStyleFormatter", "a00455.html", "a00455" ]
     ] ],
-    [ "RewrittenDataSource.java", "a00260.html", [
-      [ "RewrittenDataSource", "a00724.html", "a00724" ]
+    [ "RewrittenDataSource.java", "a00263.html", [
+      [ "RewrittenDataSource", "a00731.html", "a00731" ]
     ] ],
-    [ "RootServlet.java", "a00218.html", [
-      [ "RootServlet", "a00668.html", "a00668" ]
+    [ "RootServlet.java", "a00221.html", [
+      [ "RootServlet", "a00675.html", "a00675" ]
     ] ],
-    [ "SearchAdapter.java", "a00278.html", [
-      [ "SearchAdapter", "a00752.html", "a00752" ]
+    [ "SearchAdapter.java", "a00281.html", [
+      [ "SearchAdapter", "a00759.html", "a00759" ]
     ] ],
-    [ "SearchIndexInstance.java", "a00281.html", [
-      [ "SearchIndexInstance", "a00756.html", "a00756" ]
+    [ "SearchIndexInstance.java", "a00284.html", [
+      [ "SearchIndexInstance", "a00763.html", "a00763" ]
     ] ],
-    [ "SearchRecord.java", "a00284.html", [
-      [ "SearchRecord", "a00760.html", "a00760" ]
+    [ "SearchRecord.java", "a00287.html", [
+      [ "SearchRecord", "a00767.html", "a00767" ]
     ] ],
-    [ "SearchServlet.java", "a00221.html", [
-      [ "SearchServlet", "a00672.html", "a00672" ]
+    [ "SearchServlet.java", "a00224.html", [
+      [ "SearchServlet", "a00679.html", "a00679" ]
     ] ],
-    [ "ServletContextInitializer.java", "a00224.html", [
-      [ "ServletContextInitializer", "a00676.html", "a00676" ]
+    [ "ServletContextInitializer.java", "a00227.html", [
+      [ "ServletContextInitializer", "a00683.html", "a00683" ]
     ] ],
-    [ "SHPWriter.java", "a00134.html", [
-      [ "SHPWriter", "a00528.html", "a00528" ]
+    [ "SHPWriter.java", "a00137.html", [
+      [ "SHPWriter", "a00535.html", "a00535" ]
     ] ],
-    [ "StyleObject.java", "a00287.html", [
-      [ "StyleObject", "a00764.html", "a00764" ]
+    [ "StyleObject.java", "a00290.html", [
+      [ "StyleObject", "a00771.html", "a00771" ]
     ] ],
-    [ "SVGWriter.java", "a00137.html", [
-      [ "SVGWriter", "a00532.html", "a00532" ]
+    [ "SVGWriter.java", "a00140.html", [
+      [ "SVGWriter", "a00539.html", "a00539" ]
     ] ],
     [ "TGFWriter.java", "a00065.html", [
-      [ "TGFWriter", "a00436.html", "a00436" ]
+      [ "TGFWriter", "a00439.html", "a00439" ]
     ] ],
-    [ "TopoJSONWriter.java", "a00140.html", [
-      [ "TopoJSONWriter", "a00536.html", "a00536" ]
+    [ "TLPWriter.java", "a00068.html", [
+      [ "TLPWriter", "a00443.html", "a00443" ]
     ] ],
-    [ "Tuple.java", "a00290.html", [
-      [ "Tuple", "a00768.html", "a00768" ]
+    [ "TopoJSONWriter.java", "a00143.html", [
+      [ "TopoJSONWriter", "a00543.html", "a00543" ]
     ] ],
-    [ "TWKBReader.java", "a00308.html", [
-      [ "TWKBReader", "a00808.html", "a00808" ],
-      [ "ByteBufferInputStream", "a00812.html", "a00812" ],
-      [ "PrecisionReader", "a00816.html", "a00816" ],
-      [ "ExtendedPrecisionReader", "a00820.html", "a00820" ]
+    [ "Tuple.java", "a00293.html", [
+      [ "Tuple", "a00775.html", "a00775" ]
     ] ],
-    [ "TWKBUtils.java", "a00311.html", [
-      [ "TWKBUtils", "a00824.html", "a00824" ]
+    [ "TWKBReader.java", "a00311.html", [
+      [ "TWKBReader", "a00815.html", "a00815" ],
+      [ "ByteBufferInputStream", "a00819.html", "a00819" ],
+      [ "PrecisionReader", "a00823.html", "a00823" ],
+      [ "ExtendedPrecisionReader", "a00827.html", "a00827" ]
     ] ],
-    [ "TWKBWriter.java", "a00314.html", [
-      [ "TWKBWriter", "a00828.html", "a00828" ],
-      [ "PrecisionWriter", "a00832.html", "a00832" ],
-      [ "ExtendedPrecisionWriter", "a00836.html", "a00836" ]
+    [ "TWKBUtils.java", "a00314.html", [
+      [ "TWKBUtils", "a00831.html", "a00831" ]
     ] ],
-    [ "TWKBWriterr.java", "a00143.html", [
-      [ "TWKBWriterr", "a00540.html", "a00540" ]
+    [ "TWKBWriter.java", "a00317.html", [
+      [ "TWKBWriter", "a00835.html", "a00835" ],
+      [ "PrecisionWriter", "a00839.html", "a00839" ],
+      [ "ExtendedPrecisionWriter", "a00843.html", "a00843" ]
     ] ],
-    [ "URIPrefixer.java", "a00263.html", [
-      [ "URIPrefixer", "a00728.html", "a00728" ]
+    [ "TWKBWriterr.java", "a00146.html", [
+      [ "TWKBWriterr", "a00547.html", "a00547" ]
     ] ],
-    [ "ValuesBaseServlet.java", "a00227.html", [
-      [ "ValuesBaseServlet", "a00680.html", "a00680" ]
+    [ "URIPrefixer.java", "a00266.html", [
+      [ "URIPrefixer", "a00735.html", "a00735" ]
     ] ],
-    [ "ValuesDataURLServlet.java", "a00230.html", [
-      [ "ValuesDataURLServlet", "a00684.html", "a00684" ]
+    [ "ValuesBaseServlet.java", "a00230.html", [
+      [ "ValuesBaseServlet", "a00687.html", "a00687" ]
     ] ],
-    [ "ValuesURLServlet.java", "a00233.html", [
-      [ "ValuesURLServlet", "a00688.html", "a00688" ]
+    [ "ValuesDataURLServlet.java", "a00233.html", [
+      [ "ValuesDataURLServlet", "a00691.html", "a00691" ]
     ] ],
-    [ "VelocityHelper.java", "a00236.html", [
-      [ "VelocityHelper", "a00692.html", "a00692" ]
+    [ "ValuesURLServlet.java", "a00236.html", [
+      [ "ValuesURLServlet", "a00695.html", "a00695" ]
     ] ],
-    [ "VocabularyStore.java", "a00305.html", [
-      [ "VocabularyStore", "a00788.html", "a00788" ],
-      [ "CachedPropertyCollection", "a00792.html", "a00792" ],
-      [ "ValueCache", "a00796.html", "a00796" ],
-      [ "I18nStringValueCache", "a00800.html", "a00800" ],
-      [ "IntegerValueCache", "a00804.html", "a00804" ]
+    [ "VelocityHelper.java", "a00239.html", [
+      [ "VelocityHelper", "a00699.html", "a00699" ]
     ] ],
-    [ "WebURIServlet.java", "a00239.html", [
-      [ "WebURIServlet", "a00696.html", "a00696" ]
+    [ "VocabularyStore.java", "a00308.html", [
+      [ "VocabularyStore", "a00795.html", "a00795" ],
+      [ "CachedPropertyCollection", "a00799.html", "a00799" ],
+      [ "ValueCache", "a00803.html", "a00803" ],
+      [ "I18nStringValueCache", "a00807.html", "a00807" ],
+      [ "IntegerValueCache", "a00811.html", "a00811" ]
+    ] ],
+    [ "WebURIServlet.java", "a00242.html", [
+      [ "WebURIServlet", "a00703.html", "a00703" ]
     ] ],
     [ "WKBRasterWriter.java", "a00020.html", [
-      [ "WKBRasterWriter", "a00376.html", "a00376" ]
+      [ "WKBRasterWriter", "a00379.html", "a00379" ]
     ] ],
-    [ "WKBWriterr.java", "a00146.html", [
-      [ "WKBWriterr", "a00544.html", "a00544" ]
+    [ "WKBWriterr.java", "a00149.html", [
+      [ "WKBWriterr", "a00551.html", "a00551" ]
     ] ],
-    [ "WKTWriter.java", "a00149.html", [
-      [ "WKTWriter", "a00548.html", "a00548" ]
+    [ "WKTWriter.java", "a00152.html", [
+      [ "WKTWriter", "a00555.html", "a00555" ]
     ] ],
     [ "X3DWriter.java", "a00023.html", [
-      [ "X3DWriter", "a00380.html", "a00380" ]
+      [ "X3DWriter", "a00383.html", "a00383" ]
     ] ],
-    [ "XLSWriter.java", "a00152.html", [
-      [ "XLSWriter", "a00552.html", "a00552" ]
+    [ "XLSWriter.java", "a00155.html", [
+      [ "XLSWriter", "a00559.html", "a00559" ]
     ] ],
-    [ "XLSXWriter.java", "a00155.html", [
-      [ "XLSXWriter", "a00556.html", "a00556" ]
+    [ "XLSXWriter.java", "a00158.html", [
+      [ "XLSXWriter", "a00563.html", "a00563" ]
     ] ],
     [ "XYZASCIIWriter.java", "a00026.html", [
-      [ "XYZASCIIWriter", "a00384.html", "a00384" ]
+      [ "XYZASCIIWriter", "a00387.html", "a00387" ]
     ] ],
-    [ "YAMLWriter.java", "a00158.html", [
-      [ "YAMLWriter", "a00560.html", "a00560" ]
+    [ "YAMLWriter.java", "a00161.html", [
+      [ "YAMLWriter", "a00567.html", "a00567" ]
     ] ]
 ];
