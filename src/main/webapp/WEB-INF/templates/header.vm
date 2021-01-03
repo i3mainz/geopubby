@@ -169,6 +169,7 @@ function closeNav() {
         <option value="geouri">GeoURI</option> 
         <option value="gexf">Graph Exchange XML Format (GEXF)</option>
         <option value="gml">Geography Markup Language (GML)</option>
+        <option value="gml2">Graph Modeling Language (GML)</option>
         <option value="googlemapslink">Google Maps Link</option>
         <option value="gpx">GPS Exchange Format (GPX)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
@@ -213,6 +214,7 @@ function closeNav() {
         <option value="gdf">Graph Definition File (GDF)</option>
       	<option value="geojson">(Geo)JSON</option>
       	<option value="gexf">Graph Exchange XML Format (GEXF)</option>
+      	<option value="gml2">Graph Modeling Language (GML)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
         <option value="gxl">Graph Exchange Language (GXL)</option>
       	<option value="json">JSON-LD</option>

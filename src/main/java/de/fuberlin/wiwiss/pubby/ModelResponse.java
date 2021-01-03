@@ -175,6 +175,9 @@ public class ModelResponse {
 		if ("application/gml".equals(mediaType)) {
 			return new GMLWriter(crs);
 		}
+		if ("application/gml2".equals(mediaType)) {
+			return new de.fuberlin.wiwiss.pubby.exporter.rdf.GMLWriter(crs);
+		}
 		if ("text/gexf".equals(mediaType)) {
 			return new GEXFWriter(crs);
 		}

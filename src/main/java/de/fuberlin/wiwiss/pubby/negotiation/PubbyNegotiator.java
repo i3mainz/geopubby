@@ -70,6 +70,8 @@ public class PubbyNegotiator {
 				.addAliasMediaType("text/kml;q=0.8");
 		pubbyNegotiator.addVariant("application/gml;q=0.95")
 				.addAliasMediaType("text/gml;q=0.8");
+		pubbyNegotiator.addVariant("application/gml2;q=0.95")
+		.addAliasMediaType("text/gml2;q=0.8");
 		pubbyNegotiator.addVariant("application/osm+xml;q=0.95");
 		pubbyNegotiator.addVariant("text/googlemapslink;q=0.95");
 		pubbyNegotiator.addVariant("text/osmlink;q=0.95");
@@ -139,6 +141,7 @@ public class PubbyNegotiator {
 		dataNegotiator.addVariant("text/latlon;q=0.95");
 		dataNegotiator.addVariant("text/googlemapslink;q=0.95");
 		dataNegotiator.addVariant("text/osmlink;q=0.95");
+		dataNegotiator.addVariant("application/gml2;q=0.95").addAliasMediaType("text/gml2;q=0.8");
 		dataNegotiator.addVariant("application/gml;q=0.95").addAliasMediaType("text/gml;q=0.8");
 		dataNegotiator.addVariant("text/mapml;q=0.95");
 		dataNegotiator.addVariant("application/javascript;q=0.95");

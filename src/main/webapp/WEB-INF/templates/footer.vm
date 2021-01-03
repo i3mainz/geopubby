@@ -15,6 +15,7 @@ var definitionlinks={
 "geouri":"https://tools.ietf.org/html/rfc5870",
 "gexf":"https://gephi.org/gexf/format/",
 "gml":"https://www.ogc.org/standards/gml",
+"gml2":"https://gephi.org/users/supported-graph-formats/gml-format/",
 "gpx":"https://www.topografix.com/gpx.asp",
 "graphml":"http://graphml.graphdrawing.org",
 "gxl":"http://www.gupro.de/GXL/Introduction/intro.html",
@@ -80,6 +81,7 @@ function download2(link){
         <option value="geouri">GeoURI</option> 
         <option value="gexf">Graph Exchange XML Format (GEXF)</option>
         <option value="gml">Geography Markup Language (GML)</option>
+        <option value="gml2">Graph Modeling Language (GML)</option>
         <option value="googlemapslink">Google Maps Link</option>
         <option value="gpx">GPS Exchange Format (GPX)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
@@ -124,6 +126,7 @@ function download2(link){
       	<option value="gdf">Graph Definition File (GDF)</option>
       	<option value="geojson">(Geo)JSON</option>
         <option value="gexf">Graph Exchange XML Format (GEXF)</option>
+        <option value="gml2">Graph Modeling Language (GML)</option>
         <option value="graphml">Graph Markup Language (GraphML)</option>
         <option value="gxl">Graph Exchange Language (GXL)</option>
       	<option value="json">JSON-LD</option>
