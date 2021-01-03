@@ -1,8 +1,12 @@
 var a00747 =
 [
-    [ "[static initializer]", "a00747.html#a2e87c5ede6b7235170d287cd2e254454", null ],
-    [ "convertCoordinate", "a00747.html#afb1ac8bca7412e8a2b496efd46e335d2", null ],
-    [ "e", "a00747.html#a4b70113dbb18029e996b5a23f60e81e5", null ],
-    [ "geomMap", "a00747.html#a6367c2cff3bec857b8b03228b66a386d", null ],
-    [ "maxPrecision", "a00747.html#aaecd562a8d1cf1978fe5edd2436d51d2", null ]
+    [ "Builder", "a00747.html#a4c5b1b5b658880619647b859000724fc", null ],
+    [ "build", "a00747.html#a1e4fbf697357d25c5f3112daf2c9abee", null ],
+    [ "setAnalyzer", "a00747.html#a75be2b67c84e6582fc763413aa9c95bb", null ],
+    [ "setAnalyzers", "a00747.html#a5b046f779187f94e1d872748badcb092", null ],
+    [ "setComparator", "a00747.html#a80d4cfc5257a34d5573ee59eccfac025", null ],
+    [ "setIndex", "a00747.html#ac67f216229a795a817b7136c9b7bc188", null ],
+    [ "analyzer", "a00747.html#ab68f7dcfc065da0fd4295b518c820c87", null ],
+    [ "comparator", "a00747.html#aac9e41375776a2145cdf5025fd4dd947", null ],
+    [ "index", "a00747.html#abce4b54107ea8e7233ebeb0a9a67383a", null ]
 ];

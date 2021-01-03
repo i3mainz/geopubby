@@ -1,6 +1,6 @@
 var a00499 =
 [
-    [ "GoogleMapsLinkWriter", "a00499.html#a696b9d86a6ca3995fb62e7506aae2a4d", null ],
+    [ "GMLWriter", "a00499.html#a10a439ceb7a10d4e059b6f2c8f3cf46a", null ],
     [ "handleGeometry", "a00499.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00499.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00499.html#abbc00390b9b4242b525b35c95441cc68", null ],

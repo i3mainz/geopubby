@@ -1,17 +1,14 @@
 var a00715 =
 [
-    [ "IndexDataSource", "a00715.html#a0a636d916caafddba3d8927d5e8c7395", null ],
-    [ "canDescribe", "a00715.html#a1681b51a4d9b94752fc6668c82729236", null ],
+    [ "FilteredDataSource", "a00715.html#a3a14265e1444808215ea4d2a7c99b199", null ],
+    [ "canDescribe", "a00715.html#a76346f12873afab70aafac6a443c5f04", null ],
     [ "describeResource", "a00715.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
-    [ "describeResource", "a00715.html#aee8a51772d6673be0a741b47678df946", null ],
+    [ "describeResource", "a00715.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
     [ "getHighIndegreeProperties", "a00715.html#afd50c79b6d45d0fed770638879c7359e", null ],
     [ "getHighOutdegreeProperties", "a00715.html#acbe9e94afdedf6be6979247520906444", null ],
     [ "getIndex", "a00715.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
-    [ "getLabelIndex", "a00715.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
+    [ "getLabelIndex", "a00715.html#a2dbc188988204c9931d77a3f36128e50", null ],
     [ "listPropertyValues", "a00715.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
-    [ "indexIRI", "a00715.html#a46ccf3d3cc14002ea252d960b3a9b95a", null ],
     [ "MAX_INDEX_SIZE", "a00715.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
-    [ "SIOC_NS", "a00715.html#a50553be5572548a1ddda089e2392557b", null ],
-    [ "siocContainerOf", "a00715.html#ae47ed8d5d5ece30da541b5a67c0d8031", null ],
     [ "wrapped", "a00715.html#a47d718ee92a3e8f0141906f457e76e5e", null ]
 ];

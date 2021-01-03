@@ -1,19 +1,14 @@
 var a00459 =
 [
-    [ "CSVWriter", "a00459.html#a07bdacf368bee7bde13bb37ced8cb792", null ],
-    [ "handleGeometry", "a00459.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00459.html#a301db8de4752de90f7541eb5e7b869cb", null ],
-    [ "prepareGeoJSONString", "a00459.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
-    [ "write", "a00459.html#abbc00390b9b4242b525b35c95441cc68", null ],
-    [ "contextMapper", "a00459.html#ae7316c0c7550712f915cc3cd353cd981", null ],
-    [ "cov", "a00459.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
-    [ "epsg", "a00459.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
-    [ "geom", "a00459.html#a986ad099513be1127d32ade506e5fa4c", null ],
-    [ "lat", "a00459.html#af3ee7b62aaf174d3551c77990a8f7dc9", null ],
-    [ "lon", "a00459.html#a9f38292d4c9d61b3702f7c243f7515fe", null ],
-    [ "reader", "a00459.html#ae8b1e194dbc193fe759f7e517807e668", null ],
-    [ "sourceCRS", "a00459.html#a29f7567e6745fe87158905295092ad7c", null ],
-    [ "styleformatter", "a00459.html#a642e338a4dd781605dd3b0ca82fbd940", null ],
-    [ "styleObject", "a00459.html#a0d7650d405dea5c541f2b685573eb079", null ],
-    [ "usedProperty", "a00459.html#ac95bc57d28343d34023e72f916cb9b75", null ]
+    [ "[static initializer]", "a00459.html#a2e87c5ede6b7235170d287cd2e254454", null ],
+    [ "formatFooter", "a00459.html#af149b280d2c9bcc76f05c6a1c291d30f", null ],
+    [ "formatGeometry", "a00459.html#a3770f80b7c98a8315479f697590303a3", null ],
+    [ "formatHeader", "a00459.html#abaa077ed79fcfd5a2279597e3f324c64", null ],
+    [ "formatter", "a00459.html#aa231f1de0281037224372f0afb1f0fe1", null ],
+    [ "getFormatter", "a00459.html#a91715aa5eef12ebcf3ea95d7493b9084", null ],
+    [ "exposedType", "a00459.html#aa6a844c9b01d97aca583be867a1c5413", null ],
+    [ "lastQueriedElemCount", "a00459.html#a1ce6ef499b64cec5981912a236baa199", null ],
+    [ "mimeType", "a00459.html#a09c78e464072ccab667894f0d179fbdf", null ],
+    [ "resultMap", "a00459.html#a54c9d791b2138017b960a7cf457b5fd2", null ],
+    [ "styleAttribute", "a00459.html#a8e9232fc24a04d17c4a31141d78cb0ca", null ]
 ];

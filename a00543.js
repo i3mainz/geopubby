@@ -1,6 +1,6 @@
 var a00543 =
 [
-    [ "TopoJSONWriter", "a00543.html#acef498ff3b01a494ab78a733a3a307c2", null ],
+    [ "SVGWriter", "a00543.html#a36dd16a9af63e1a2db3f4bd1528374cf", null ],
     [ "handleGeometry", "a00543.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00543.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00543.html#abbc00390b9b4242b525b35c95441cc68", null ],

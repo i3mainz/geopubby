@@ -1,11 +1,9 @@
 var a00567 =
 [
-    [ "YAMLWriter", "a00567.html#ab844d64196ffbe76b98e2f30e97dc8e8", null ],
+    [ "XLSXWriter", "a00567.html#a473ac5f2952a61129afc7ab3992dd584", null ],
     [ "handleGeometry", "a00567.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00567.html#a301db8de4752de90f7541eb5e7b869cb", null ],
-    [ "prepareGeoJSONString", "a00567.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00567.html#abbc00390b9b4242b525b35c95441cc68", null ],
-    [ "contextMapper", "a00567.html#ae7316c0c7550712f915cc3cd353cd981", null ],
     [ "cov", "a00567.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00567.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00567.html#a986ad099513be1127d32ade506e5fa4c", null ],

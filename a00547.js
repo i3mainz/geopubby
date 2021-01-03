@@ -1,6 +1,6 @@
 var a00547 =
 [
-    [ "TWKBWriterr", "a00547.html#a6e8a5fab128df3006a82f20d807e0bd3", null ],
+    [ "TopoJSONWriter", "a00547.html#acef498ff3b01a494ab78a733a3a307c2", null ],
     [ "handleGeometry", "a00547.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00547.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00547.html#abbc00390b9b4242b525b35c95441cc68", null ],

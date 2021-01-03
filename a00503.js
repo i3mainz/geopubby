@@ -1,6 +1,6 @@
 var a00503 =
 [
-    [ "GPXWriter", "a00503.html#a82c02b1ac791adc55c01ea2a8361d291", null ],
+    [ "GoogleMapsLinkWriter", "a00503.html#a696b9d86a6ca3995fb62e7506aae2a4d", null ],
     [ "handleGeometry", "a00503.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00503.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00503.html#abbc00390b9b4242b525b35c95441cc68", null ],

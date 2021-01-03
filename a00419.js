@@ -1,7 +1,6 @@
 var a00419 =
 [
-    [ "GraphMLWriter", "a00419.html#a90313ba617a6d89eff24b2b4be0c19d7", null ],
-    [ "getColorForResource", "a00419.html#a11f24c8b76db17deb180c181887ce92e", null ],
+    [ "GMLWriter", "a00419.html#a10a439ceb7a10d4e059b6f2c8f3cf46a", null ],
     [ "handleGeometry", "a00419.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00419.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00419.html#abbc00390b9b4242b525b35c95441cc68", null ],

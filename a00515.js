@@ -1,7 +1,6 @@
 var a00515 =
 [
-    [ "LatLonTextWriter", "a00515.html#a407bc12bfc5133bb23a9764e12311951", null ],
-    [ "convertDecimalToLatLonText", "a00515.html#a4de262c8cc5abdbadbdd425520b98ef1", null ],
+    [ "KMLWriter", "a00515.html#a3df01d724721d381015db2cfe2eafc67", null ],
     [ "handleGeometry", "a00515.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00515.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00515.html#abbc00390b9b4242b525b35c95441cc68", null ],

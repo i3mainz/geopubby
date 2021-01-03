@@ -1,6 +1,6 @@
 var a00527 =
 [
-    [ "OSMLinkWriter", "a00527.html#a7c2dcfdd11630176e626ce9a541f7d3a", null ],
+    [ "OpenLocationCodeWriter", "a00527.html#aaf092825802067201650e208ef16fd53", null ],
     [ "handleGeometry", "a00527.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00527.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00527.html#abbc00390b9b4242b525b35c95441cc68", null ],

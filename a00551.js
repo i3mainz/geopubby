@@ -1,6 +1,6 @@
 var a00551 =
 [
-    [ "WKBWriterr", "a00551.html#a08f0bdcef17eca36fc3abfdbfd625720", null ],
+    [ "TWKBWriterr", "a00551.html#a6e8a5fab128df3006a82f20d807e0bd3", null ],
     [ "handleGeometry", "a00551.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00551.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00551.html#abbc00390b9b4242b525b35c95441cc68", null ],

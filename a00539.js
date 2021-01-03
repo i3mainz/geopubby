@@ -1,9 +1,11 @@
 var a00539 =
 [
-    [ "SVGWriter", "a00539.html#a36dd16a9af63e1a2db3f4bd1528374cf", null ],
+    [ "SHPWriter", "a00539.html#a522f56256949a6f7999271834054fd51", null ],
     [ "handleGeometry", "a00539.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00539.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "prepareGeoJSONString", "a00539.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00539.html#abbc00390b9b4242b525b35c95441cc68", null ],
+    [ "contextMapper", "a00539.html#ae7316c0c7550712f915cc3cd353cd981", null ],
     [ "cov", "a00539.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00539.html#ae984b1b4178b56b80cdb7a80eac64541", null ],
     [ "geom", "a00539.html#a986ad099513be1127d32ade506e5fa4c", null ],

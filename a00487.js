@@ -1,6 +1,6 @@
 var a00487 =
 [
-    [ "GeoJSONWriterr", "a00487.html#a6533575ecdbfa041b3888f9535c27d94", null ],
+    [ "GeoJSONLDWriter", "a00487.html#adc26ae606b9c1f5b269e4ae2bbc0e887", null ],
     [ "handleGeometry", "a00487.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00487.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "prepareGeoJSONString", "a00487.html#a858e5df55c2876a07b0fb69e77b30e09", null ],

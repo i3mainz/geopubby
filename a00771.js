@@ -1,17 +1,9 @@
 var a00771 =
 [
-    [ "toHTML", "a00771.html#add850f03e24411f6d9e46e4e07a02727", null ],
-    [ "toJSON", "a00771.html#a693608dec873ba750e1bf45f50d81817", null ],
-    [ "toString", "a00771.html#ad146fa8579a5f8a876c4688cc5a68520", null ],
-    [ "toXML", "a00771.html#a1123f91ca59c943e426493e42cb61108", null ],
-    [ "hatch", "a00771.html#ab280196b35e8fb195755480f7b6bba1c", null ],
-    [ "lineStringImage", "a00771.html#ac5ffd3d17c1fd4d95bdf3423d8d95102", null ],
-    [ "lineStringImageStyle", "a00771.html#a124c238dd7f1a8e8b30588868bf3f809", null ],
-    [ "lineStringStyle", "a00771.html#ae1748922a6f7b626b0c88fcd21f48392", null ],
-    [ "pointImage", "a00771.html#a5d0c401b8996e35a911e178227081b32", null ],
-    [ "pointStyle", "a00771.html#a87e7ed2ad089c7ba8db7857efa15befa", null ],
-    [ "polygonImage", "a00771.html#a3877196bb534272431a59e7ecb4d5338", null ],
-    [ "polygonStyle", "a00771.html#a27511b5779d69b4e26b4ed7737d5de2e", null ],
-    [ "popupStyle", "a00771.html#ae93d83f6c0fc3f2b141fe82729631cd8", null ],
-    [ "styleName", "a00771.html#ac1612ef6d046b45bf698d7c2c284e0ca", null ]
+    [ "SearchRecord", "a00771.html#a4ac7197cdb811ab9e27ad8b390355ce6", null ],
+    [ "getFields", "a00771.html#a0cce3babb743f2fc916f7c2bd20d965e", null ],
+    [ "getLabel", "a00771.html#a86ad2cb533724ac728e0f96b2323cceb", null ],
+    [ "getResource", "a00771.html#afe4a3e88052dbc8b12e217669d8dac77", null ],
+    [ "label", "a00771.html#ac3f915eab3b535426bb9794989e9ea2e", null ],
+    [ "res", "a00771.html#a952d2a362956d26b604846d09847e970", null ]
 ];

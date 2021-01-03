@@ -1,12 +1,15 @@
 var a00607 =
 [
-    [ "VariantSpec", "a00607.html#af223ff6ba5b8696e16f8ee8b27ff88cd", null ],
-    [ "addAliasMediaType", "a00607.html#aa2d81e13e9a4a2a0af4bd745e32b6d33", null ],
-    [ "getAliases", "a00607.html#af1b3dcecf5ae229a8040fafa561d7965", null ],
-    [ "getMediaType", "a00607.html#ac4bbe03a1bc52b401de4879167744078", null ],
-    [ "isDefault", "a00607.html#ae3f05aca3daea26995d96e90f3bbbe82", null ],
-    [ "makeDefault", "a00607.html#af4e07f8baa718d621334f3fe8885f09d", null ],
-    [ "aliases", "a00607.html#a23309f1e90ac1097d00b096cb967736a", null ],
-    [ "isDefault", "a00607.html#ae197a87f8d9ca5c0397b5bfba8741409", null ],
-    [ "type", "a00607.html#a61d144ec147b2c9f0dba3a7964814df8", null ]
+    [ "AcceptHeaderOverride", "a00619.html", "a00619" ],
+    [ "Negotiation", "a00615.html", "a00615" ],
+    [ "VariantSpec", "a00611.html", "a00611" ],
+    [ "addUserAgentOverride", "a00607.html#af83bf4d6bf77cdd31256ecc83186a558", null ],
+    [ "addVariant", "a00607.html#a3953da5ad43555a9edc37e48b7f6e4ab", null ],
+    [ "getBestMatch", "a00607.html#ab23b79e631120fc8ce51d40c7c314e62", null ],
+    [ "getBestMatch", "a00607.html#a1afbe15fddec9b99e5780a94774044c7", null ],
+    [ "setDefaultAccept", "a00607.html#a7652b7c00c4cf54490dfe3535cc70cf2", null ],
+    [ "toAcceptRanges", "a00607.html#a37345f6b468bd509ef8896b6c546e1ac", null ],
+    [ "defaultAcceptRanges", "a00607.html#a9d851118500a4017a2591587200cd953", null ],
+    [ "userAgentOverrides", "a00607.html#a248e951c7087641970d6701f1b7ec536", null ],
+    [ "variantSpecs", "a00607.html#a2391e088d7d831c6b5bd35986487becf", null ]
 ];

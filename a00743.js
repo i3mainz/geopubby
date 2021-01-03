@@ -1,12 +1,17 @@
 var a00743 =
 [
-    [ "Builder", "a00743.html#a4c5b1b5b658880619647b859000724fc", null ],
-    [ "build", "a00743.html#a1e4fbf697357d25c5f3112daf2c9abee", null ],
-    [ "setAnalyzer", "a00743.html#a75be2b67c84e6582fc763413aa9c95bb", null ],
-    [ "setAnalyzers", "a00743.html#a5b046f779187f94e1d872748badcb092", null ],
-    [ "setComparator", "a00743.html#a80d4cfc5257a34d5573ee59eccfac025", null ],
-    [ "setIndex", "a00743.html#ac67f216229a795a817b7136c9b7bc188", null ],
-    [ "analyzer", "a00743.html#ab68f7dcfc065da0fd4295b518c820c87", null ],
-    [ "comparator", "a00743.html#aac9e41375776a2145cdf5025fd4dd947", null ],
-    [ "index", "a00743.html#abce4b54107ea8e7233ebeb0a9a67383a", null ]
+    [ "Builder", "a00747.html", "a00747" ],
+    [ "AutocompleteEngine", "a00743.html#ab29978a4e02531946ff90e23b2e58b03", null ],
+    [ "add", "a00743.html#a2e4d243958874ed92e4705efd514ec8a", null ],
+    [ "addAll", "a00743.html#aedc4b037549f29df48c94d2432b56f21", null ],
+    [ "getAll", "a00743.html#aba85b697482a87be7652f4cbbfe3ede1", null ],
+    [ "remove", "a00743.html#af924252f2d0e180388cdd6136293a91a", null ],
+    [ "removeAll", "a00743.html#a9be7b1de1b31af20288221beb6fc5140", null ],
+    [ "search", "a00743.html#a9b69034ee356599aba4cb389f97ad7c7", null ],
+    [ "search", "a00743.html#afd22691123368089b69314d5a08a7a1f", null ],
+    [ "analyzer", "a00743.html#adf32c4c95815598002112d2c04c748fc", null ],
+    [ "comparator", "a00743.html#a5fc8d2f44284ae06708e6168ac53a831", null ],
+    [ "index", "a00743.html#a2dab6da7542b85c04c4a01b1ffb1abce", null ],
+    [ "read", "a00743.html#aefb6a09436e031db6f196ce971ee825d", null ],
+    [ "write", "a00743.html#afdd303d9d2a2a62c4038d77278a09cf3", null ]
 ];

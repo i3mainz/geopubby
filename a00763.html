@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: SearchIndexInstance Class Reference</title>
+<title>GeoPubby: SearchAdapter Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,43 +61,118 @@ $(document).ready(function(){initNavTree('a00763.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="a00760.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SearchIndexInstance Class Reference</div>  </div>
+<div class="title">SearchAdapter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Search adapter defining a String distance metric between search records.  
+ <a href="a00763.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for SearchIndexInstance:</div>
+Inheritance diagram for SearchAdapter:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00761.png" border="0" usemap="#SearchIndexInstance_coll__map" alt="Collaboration graph"/></div>
-<map name="SearchIndexInstance_coll__map" id="SearchIndexInstance_coll__map">
-<area shape="rect" id="node2" href="a00739.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="289,332,492,388"/>
-<area shape="rect" id="node3" href="a00739.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="309,213,473,255"/>
-<area shape="rect" id="node10" href="a01571.html" title="Indexable" alt="" coords="538,102,617,129"/>
+<div class="center"><img src="a00762.png" border="0" usemap="#SearchAdapter_inherit__map" alt="Inheritance graph"/></div>
+<map name="SearchAdapter_inherit__map" id="SearchAdapter_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for SearchAdapter:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00761.png" border="0" usemap="#SearchAdapter_coll__map" alt="Collaboration graph"/></div>
+<map name="SearchAdapter_coll__map" id="SearchAdapter_coll__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5201c10f1db44765b41ecdfaab21af05"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00739.html">AutocompleteEngine</a>&lt; <a class="el" href="a00767.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#a5201c10f1db44765b41ecdfaab21af05">getInstance</a> ()</td></tr>
-<tr class="separator:a5201c10f1db44765b41ecdfaab21af05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9695d4a4855959f9b00390c9f08d9cd5"><td class="memItemLeft" align="right" valign="top">Collection&lt; ScoredObject&lt; <a class="el" href="a00771.html">SearchRecord</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#a9695d4a4855959f9b00390c9f08d9cd5">get</a> (String token)</td></tr>
+<tr class="separator:a9695d4a4855959f9b00390c9f08d9cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad55ad95418061ae37fe65df7493e6e84"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#ad55ad95418061ae37fe65df7493e6e84">put</a> (String token, <a class="el" href="a00771.html">SearchRecord</a> value)</td></tr>
+<tr class="separator:ad55ad95418061ae37fe65df7493e6e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcd1ee780b50b35c60ef427449266bb"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#a3dcd1ee780b50b35c60ef427449266bb">remove</a> (<a class="el" href="a00771.html">SearchRecord</a> value)</td></tr>
+<tr class="separator:a3dcd1ee780b50b35c60ef427449266bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a98b72b6a62d583c628d4389a8c6c547d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#a98b72b6a62d583c628d4389a8c6c547d">SearchIndexInstance</a> ()</td></tr>
-<tr class="separator:a98b72b6a62d583c628d4389a8c6c547d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a9318571cc719efafe318742a05eaf173"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00739.html">AutocompleteEngine</a>&lt; <a class="el" href="a00767.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#a9318571cc719efafe318742a05eaf173">globalIndex</a> =null</td></tr>
-<tr class="separator:a9318571cc719efafe318742a05eaf173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4aeec757e2fc5d6bce4a2617b976858b"><td class="memItemLeft" align="right" valign="top">FuzzyIndex&lt; <a class="el" href="a00771.html">SearchRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a> = new PatriciaTrie&lt;&gt;()</td></tr>
+<tr class="separator:a4aeec757e2fc5d6bce4a2617b976858b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a98b72b6a62d583c628d4389a8c6c547d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98b72b6a62d583c628d4389a8c6c547d">&#9670;&nbsp;</a></span>SearchIndexInstance()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Search adapter defining a String distance metric between search records. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9695d4a4855959f9b00390c9f08d9cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9695d4a4855959f9b00390c9f08d9cd5">&#9670;&nbsp;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Collection&lt;ScoredObject&lt;<a class="el" href="a00771.html">SearchRecord</a>&gt; &gt; get </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>token</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                        {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 <span class="comment">// Set threshold according to the token length</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">double</span> threshold = Math.log(Math.max(token.length() - 1, 1));</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.getAny(<span class="keyword">new</span> EditDistanceAutomaton(token, threshold));</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="ttc" id="a00763_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad55ad95418061ae37fe65df7493e6e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55ad95418061ae37fe65df7493e6e84">&#9670;&nbsp;</a></span>put()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean put </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00771.html">SearchRecord</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                             {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.put(token, value);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="ttc" id="a00763_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3dcd1ee780b50b35c60ef427449266bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcd1ee780b50b35c60ef427449266bb">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean remove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00771.html">SearchRecord</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                  {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">index</a>.remove(value);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="a00763_html_a4aeec757e2fc5d6bce4a2617b976858b"><div class="ttname"><a href="a00763.html#a4aeec757e2fc5d6bce4a2617b976858b">de.fuberlin.wiwiss.pubby.util.SearchAdapter.index</a></div><div class="ttdeci">FuzzyIndex&lt; SearchRecord &gt; index</div><div class="ttdef"><b>Definition:</b> SearchAdapter.java:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4aeec757e2fc5d6bce4a2617b976858b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aeec757e2fc5d6bce4a2617b976858b">&#9670;&nbsp;</a></span>index</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -106,10 +181,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00763.html">SearchIndexInstance</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">FuzzyIndex&lt;<a class="el" href="a00771.html">SearchRecord</a>&gt; index = new PatriciaTrie&lt;&gt;()</td>
         </tr>
       </table>
   </td>
@@ -118,63 +190,6 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                      {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <a class="code" href="a00763.html#a9318571cc719efafe318742a05eaf173">globalIndex</a>= <span class="keyword">new</span> AutocompleteEngine.Builder&lt;SearchRecord&gt;()</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                    .setIndex(<span class="keyword">new</span> SearchAdapter())</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                    .setAnalyzers(<span class="keyword">new</span> LowerCaseTransformer(), <span class="keyword">new</span> WordTokenizer())</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                    .build();</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div><div class="ttc" id="a00763_html_a9318571cc719efafe318742a05eaf173"><div class="ttname"><a href="a00763.html#a9318571cc719efafe318742a05eaf173">de.fuberlin.wiwiss.pubby.util.SearchIndexInstance.globalIndex</a></div><div class="ttdeci">static AutocompleteEngine&lt; SearchRecord &gt; globalIndex</div><div class="ttdef"><b>Definition:</b> SearchIndexInstance.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5201c10f1db44765b41ecdfaab21af05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5201c10f1db44765b41ecdfaab21af05">&#9670;&nbsp;</a></span>getInstance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="a00739.html">AutocompleteEngine</a>&lt;<a class="el" href="a00767.html">SearchRecord</a>&gt; getInstance </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="a00763.html#a9318571cc719efafe318742a05eaf173">SearchIndexInstance.globalIndex</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="a00723.html#ae8f6bc3de3dd60e86da9296226cecd8c">ModelDataSource.getLabelIndex()</a>, <a class="el" href="a00719.html#ae8f6bc3de3dd60e86da9296226cecd8c">MergeDataSource.getLabelIndex()</a>, and <a class="el" href="a00727.html#a2dbc188988204c9931d77a3f36128e50">RemoteSPARQLDataSource.getLabelIndex()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                                     {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="a00763.html#a9318571cc719efafe318742a05eaf173">globalIndex</a>!=null) {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="a00763.html#a9318571cc719efafe318742a05eaf173">globalIndex</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                }</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <a class="code" href="a00763.html#a9318571cc719efafe318742a05eaf173">globalIndex</a>= <span class="keyword">new</span> AutocompleteEngine.Builder&lt;SearchRecord&gt;()</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    .setIndex(<span class="keyword">new</span> SearchAdapter())</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    .setAnalyzers(<span class="keyword">new</span> LowerCaseTransformer(), <span class="keyword">new</span> WordTokenizer())</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    .build();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00763.html#a9318571cc719efafe318742a05eaf173">globalIndex</a>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="a00763_html_a9318571cc719efafe318742a05eaf173"><div class="ttname"><a href="a00763.html#a9318571cc719efafe318742a05eaf173">de.fuberlin.wiwiss.pubby.util.SearchIndexInstance.globalIndex</a></div><div class="ttdeci">static AutocompleteEngine&lt; SearchRecord &gt; globalIndex</div><div class="ttdef"><b>Definition:</b> SearchIndexInstance.java:8</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9318571cc719efafe318742a05eaf173"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9318571cc719efafe318742a05eaf173">&#9670;&nbsp;</a></span>globalIndex</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="a00739.html">AutocompleteEngine</a>&lt;<a class="el" href="a00767.html">SearchRecord</a>&gt; globalIndex =null</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="a00763.html#a5201c10f1db44765b41ecdfaab21af05">SearchIndexInstance.getInstance()</a>.</p>
 
 </div>
 </div>
@@ -184,7 +199,7 @@ Static Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00333.html">de</a></li><li class="navelem"><a class="el" href="a00334.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00335.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00332.html">pubby</a></li><li class="navelem"><a class="el" href="a00344.html">util</a></li><li class="navelem"><a class="el" href="a00763.html">SearchIndexInstance</a></li>
+    <li class="navelem"><a class="el" href="a00333.html">de</a></li><li class="navelem"><a class="el" href="a00334.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00335.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00332.html">pubby</a></li><li class="navelem"><a class="el" href="a00344.html">util</a></li><li class="navelem"><a class="el" href="a00763.html">SearchAdapter</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

@@ -1,15 +1,18 @@
 var a00723 =
 [
-    [ "ModelDataSource", "a00723.html#ab11134323eb87ad5eb2e4856602987d0", null ],
+    [ "MergeDataSource", "a00723.html#a74f758efa3079900db48f8754211da31", null ],
+    [ "MergeDataSource", "a00723.html#ac43c266de35dd1ce3208606609ec6e6b", null ],
+    [ "MergeDataSource", "a00723.html#ac3df88e80e7f98ac638de9e1ef351824", null ],
+    [ "addIntegerMaps", "a00723.html#af53abc20ddd2cc1f91869175d013a2b1", null ],
     [ "canDescribe", "a00723.html#a1681b51a4d9b94752fc6668c82729236", null ],
-    [ "describeResource", "a00723.html#ab894bdc30c94ed2c7df302b41c4d3f42", null ],
-    [ "describeResource", "a00723.html#ad4ae7f7efd26ae80f56a0223be0324c8", null ],
-    [ "getHighIndegreeProperties", "a00723.html#a73de8154ca0a0f9528cf8e2632e40868", null ],
-    [ "getHighOutdegreeProperties", "a00723.html#adee4ed3932a18a60beea0c5e234fe5fc", null ],
+    [ "describeResource", "a00723.html#aee8a51772d6673be0a741b47678df946", null ],
+    [ "describeResource", "a00723.html#a88ba0769e10f0ece3e983e61e031dbbc", null ],
+    [ "getHighIndegreeProperties", "a00723.html#afd50c79b6d45d0fed770638879c7359e", null ],
+    [ "getHighOutdegreeProperties", "a00723.html#acbe9e94afdedf6be6979247520906444", null ],
     [ "getIndex", "a00723.html#af0b2ac78c4b45ecc590342abe84c24af", null ],
     [ "getLabelIndex", "a00723.html#ae8f6bc3de3dd60e86da9296226cecd8c", null ],
-    [ "listPropertyValues", "a00723.html#a660b961c4b18f651d595cfd867143f79", null ],
-    [ "engine", "a00723.html#a4ca40e85c7ac7b0956e57235172f94fe", null ],
+    [ "listPropertyValues", "a00723.html#a24260bc730afdd0c68fa8f7f5e0b600f", null ],
     [ "MAX_INDEX_SIZE", "a00723.html#a5d100ac468e8e0551f96450f5bbba1b2", null ],
-    [ "model", "a00723.html#aa7373a131d63421e546eaa40689df69d", null ]
+    [ "mustHavePrefixes", "a00723.html#a208888ad59e85ab5bdcf5a54677ec0ab", null ],
+    [ "sources", "a00723.html#a85908e02842d3176be283f47c7aa7c44", null ]
 ];

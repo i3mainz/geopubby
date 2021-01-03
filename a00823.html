@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: TWKBReader.PrecisionReader Class Reference</title>
+<title>GeoPubby: TWKBReader.ByteBufferInputStream Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,104 +62,144 @@ $(document).ready(function(){initNavTree('a00823.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="a00820.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">TWKBReader.PrecisionReader Class Reference</div>  </div>
+<div class="title">TWKBReader.ByteBufferInputStream Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for TWKBReader.PrecisionReader:</div>
+Inheritance diagram for TWKBReader.ByteBufferInputStream:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00822.png" border="0" usemap="#TWKBReader_8PrecisionReader_inherit__map" alt="Inheritance graph"/></div>
-<map name="TWKBReader_8PrecisionReader_inherit__map" id="TWKBReader_8PrecisionReader_inherit__map">
-<area shape="rect" id="node2" href="a00827.html" title="TWKBReader.ExtendedPrecision\lReader" alt="" coords="5,80,221,121"/>
+<div class="center"><img src="a00822.png" border="0" usemap="#TWKBReader_8ByteBufferInputStream_inherit__map" alt="Inheritance graph"/></div>
+<map name="TWKBReader_8ByteBufferInputStream_inherit__map" id="TWKBReader_8ByteBufferInputStream_inherit__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for TWKBReader.PrecisionReader:</div>
+Collaboration diagram for TWKBReader.ByteBufferInputStream:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00821.png" border="0" usemap="#TWKBReader_8PrecisionReader_coll__map" alt="Collaboration graph"/></div>
-<map name="TWKBReader_8PrecisionReader_coll__map" id="TWKBReader_8PrecisionReader_coll__map">
+<div class="center"><img src="a00821.png" border="0" usemap="#TWKBReader_8ByteBufferInputStream_coll__map" alt="Collaboration graph"/></div>
+<map name="TWKBReader_8ByteBufferInputStream_coll__map" id="TWKBReader_8ByteBufferInputStream_coll__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af4edc5e5b8d78201415bc23188bf2978"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#af4edc5e5b8d78201415bc23188bf2978">PrecisionReader</a> (final int precision)</td></tr>
-<tr class="separator:af4edc5e5b8d78201415bc23188bf2978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04d3647950410c96c47734decf0e12b5"><td class="memItemLeft" align="right" valign="top">Coordinate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a04d3647950410c96c47734decf0e12b5">readPoint</a> (final DataInput input)  throws IOException </td></tr>
-<tr class="separator:a04d3647950410c96c47734decf0e12b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bbf2e471d2964af19292437ad42729b"><td class="memItemLeft" align="right" valign="top">Coordinate []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a1bbf2e471d2964af19292437ad42729b">readPointArray</a> (final DataInput input)  throws IOException </td></tr>
-<tr class="separator:a1bbf2e471d2964af19292437ad42729b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e3ebcf56fe2e78f77d9ddda8485fa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a45e3ebcf56fe2e78f77d9ddda8485fa0">ByteBufferInputStream</a> (final ByteBuffer <a class="el" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>)</td></tr>
+<tr class="separator:a45e3ebcf56fe2e78f77d9ddda8485fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab5dab5b969a87f538242e524431637"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#aaab5dab5b969a87f538242e524431637">read</a> ()  throws IOException </td></tr>
+<tr class="separator:aaab5dab5b969a87f538242e524431637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248e13ef5029818776308e269fa7900e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a248e13ef5029818776308e269fa7900e">read</a> (final byte[] bytes, final int offset, final int length)  throws IOException </td></tr>
+<tr class="separator:a248e13ef5029818776308e269fa7900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4549a76725f2e4c013e4d57018366109"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a4549a76725f2e4c013e4d57018366109">available</a> ()  throws IOException </td></tr>
+<tr class="separator:a4549a76725f2e4c013e4d57018366109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a9aa85be4ec02c28a05cb552845fe08eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">precisionMultiplier</a></td></tr>
-<tr class="separator:a9aa85be4ec02c28a05cb552845fe08eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acb7716c09c3c94749ca0b1613ecfae6a"><td class="memItemLeft" align="right" valign="top">final ByteBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a></td></tr>
+<tr class="separator:acb7716c09c3c94749ca0b1613ecfae6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af4edc5e5b8d78201415bc23188bf2978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4edc5e5b8d78201415bc23188bf2978">&#9670;&nbsp;</a></span>PrecisionReader()</h2>
+<a id="a45e3ebcf56fe2e78f77d9ddda8485fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e3ebcf56fe2e78f77d9ddda8485fa0">&#9670;&nbsp;</a></span>ByteBufferInputStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00823.html">PrecisionReader</a> </td>
+          <td class="memname"><a class="el" href="a00823.html">ByteBufferInputStream</a> </td>
           <td>(</td>
-          <td class="paramtype">final int&#160;</td>
-          <td class="paramname"><em>precision</em></td><td>)</td>
+          <td class="paramtype">final ByteBuffer&#160;</td>
+          <td class="paramname"><em>byteBuffer</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                               {</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;     <a class="code" href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">precisionMultiplier</a> = Math.pow(10, precision);</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;   }</div><div class="ttc" id="a00823_html_a9aa85be4ec02c28a05cb552845fe08eb"><div class="ttname"><a href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">org.locationtech.geowave.core.geotime.util.TWKBReader.PrecisionReader.precisionMultiplier</a></div><div class="ttdeci">double precisionMultiplier</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:232</div></div>
+
+<p class="reference">References <a class="el" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">TWKBReader.ByteBufferInputStream.byteBuffer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="a00819.html#a4dc57ab77430b9455e05befca4bab869">TWKBReader.read()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                             {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;     this.<a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a> = <a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   }</div><div class="ttc" id="a00823_html_acb7716c09c3c94749ca0b1613ecfae6a"><div class="ttname"><a href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">org.locationtech.geowave.core.geotime.util.TWKBReader.ByteBufferInputStream.byteBuffer</a></div><div class="ttdeci">final ByteBuffer byteBuffer</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:34</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a04d3647950410c96c47734decf0e12b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04d3647950410c96c47734decf0e12b5">&#9670;&nbsp;</a></span>readPoint()</h2>
+<a id="a4549a76725f2e4c013e4d57018366109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4549a76725f2e4c013e4d57018366109">&#9670;&nbsp;</a></span>available()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Coordinate readPoint </td>
+          <td class="memname">int available </td>
           <td>(</td>
-          <td class="paramtype">final DataInput&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> throws IOException</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                                                         {</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;     <span class="keywordflow">return</span> <span class="keyword">new</span> Coordinate(</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;         (Varint.readSignedVarLong(input)) / <a class="code" href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">precisionMultiplier</a>,</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;         (Varint.readSignedVarLong(input)) / <a class="code" href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">precisionMultiplier</a>);</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;   }</div><div class="ttc" id="a00823_html_a9aa85be4ec02c28a05cb552845fe08eb"><div class="ttname"><a href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">org.locationtech.geowave.core.geotime.util.TWKBReader.PrecisionReader.precisionMultiplier</a></div><div class="ttdeci">double precisionMultiplier</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:232</div></div>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                             {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;     <span class="keywordflow">return</span> <a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>.remaining();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   }</div><div class="ttc" id="a00823_html_acb7716c09c3c94749ca0b1613ecfae6a"><div class="ttname"><a href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">org.locationtech.geowave.core.geotime.util.TWKBReader.ByteBufferInputStream.byteBuffer</a></div><div class="ttdeci">final ByteBuffer byteBuffer</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:34</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a1bbf2e471d2964af19292437ad42729b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bbf2e471d2964af19292437ad42729b">&#9670;&nbsp;</a></span>readPointArray()</h2>
+<a id="aaab5dab5b969a87f538242e524431637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab5dab5b969a87f538242e524431637">&#9670;&nbsp;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Coordinate [] readPointArray </td>
+          <td class="memname">int read </td>
           <td>(</td>
-          <td class="paramtype">final DataInput&#160;</td>
-          <td class="paramname"><em>input</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> throws IOException</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                                                {</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;     <span class="keyword">final</span> <span class="keywordtype">int</span> numCoordinates = Varint.readUnsignedVarInt(input);</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;     <span class="keyword">final</span> Coordinate[] coordinates = <span class="keyword">new</span> Coordinate[numCoordinates];</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;     <span class="keywordtype">long</span> lastX = 0;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;     <span class="keywordtype">long</span> lastY = 0;</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; numCoordinates; i++) {</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;       lastX = Varint.readSignedVarLong(input) + lastX;</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;       lastY = Varint.readSignedVarLong(input) + lastY;</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;       coordinates[i] =</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;           <span class="keyword">new</span> Coordinate((lastX) / <a class="code" href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">precisionMultiplier</a>, (lastY) / <a class="code" href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">precisionMultiplier</a>);</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;     }</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;     <span class="keywordflow">return</span> coordinates;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;   }</div><div class="ttc" id="a00823_html_a9aa85be4ec02c28a05cb552845fe08eb"><div class="ttname"><a href="a00823.html#a9aa85be4ec02c28a05cb552845fe08eb">org.locationtech.geowave.core.geotime.util.TWKBReader.PrecisionReader.precisionMultiplier</a></div><div class="ttdeci">double precisionMultiplier</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:232</div></div>
+
+<p class="reference">Referenced by <a class="el" href="a00819.html#a4dc57ab77430b9455e05befca4bab869">TWKBReader.read()</a>, and <a class="el" href="a00819.html#ab4d4478c3bf2e64323326c692fc8423c">TWKBReader.readGeometryCollection()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                        {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     <span class="keywordflow">if</span> (!<a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>.hasRemaining()) {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;       <span class="keywordflow">return</span> -1;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;     }</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;     <span class="keywordflow">return</span> <a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>.get() &amp; 0xFF;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   }</div><div class="ttc" id="a00823_html_acb7716c09c3c94749ca0b1613ecfae6a"><div class="ttname"><a href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">org.locationtech.geowave.core.geotime.util.TWKBReader.ByteBufferInputStream.byteBuffer</a></div><div class="ttdeci">final ByteBuffer byteBuffer</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:34</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a248e13ef5029818776308e269fa7900e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248e13ef5029818776308e269fa7900e">&#9670;&nbsp;</a></span>read() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read </td>
+          <td>(</td>
+          <td class="paramtype">final byte []&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">final int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">final int&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws IOException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                                              {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;     <span class="keywordflow">if</span> (length == 0) {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;       <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;     }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;     <span class="keyword">final</span> <span class="keywordtype">int</span> count = Math.min(<a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>.remaining(), length);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;     <span class="keywordflow">if</span> (count == 0) {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;       <span class="keywordflow">return</span> -1;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;     }</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;     <a class="code" href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">byteBuffer</a>.get(bytes, offset, count);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;     <span class="keywordflow">return</span> count;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;   }</div><div class="ttc" id="a00823_html_acb7716c09c3c94749ca0b1613ecfae6a"><div class="ttname"><a href="a00823.html#acb7716c09c3c94749ca0b1613ecfae6a">org.locationtech.geowave.core.geotime.util.TWKBReader.ByteBufferInputStream.byteBuffer</a></div><div class="ttdeci">final ByteBuffer byteBuffer</div><div class="ttdef"><b>Definition:</b> TWKBReader.java:34</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9aa85be4ec02c28a05cb552845fe08eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aa85be4ec02c28a05cb552845fe08eb">&#9670;&nbsp;</a></span>precisionMultiplier</h2>
+<a id="acb7716c09c3c94749ca0b1613ecfae6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7716c09c3c94749ca0b1613ecfae6a">&#9670;&nbsp;</a></span>byteBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,15 +208,17 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double precisionMultiplier</td>
+          <td class="memname">final ByteBuffer byteBuffer</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00823.html#a45e3ebcf56fe2e78f77d9ddda8485fa0">TWKBReader.ByteBufferInputStream.ByteBufferInputStream()</a>.</p>
 
 </div>
 </div>
@@ -186,7 +228,7 @@ Protected Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00347.html">org</a></li><li class="navelem"><a class="el" href="a00348.html">locationtech</a></li><li class="navelem"><a class="el" href="a00349.html">geowave</a></li><li class="navelem"><a class="el" href="a00350.html">core</a></li><li class="navelem"><a class="el" href="a00351.html">geotime</a></li><li class="navelem"><a class="el" href="a00346.html">util</a></li><li class="navelem"><a class="el" href="a00815.html">TWKBReader</a></li><li class="navelem"><a class="el" href="a00823.html">PrecisionReader</a></li>
+    <li class="navelem"><a class="el" href="a00347.html">org</a></li><li class="navelem"><a class="el" href="a00348.html">locationtech</a></li><li class="navelem"><a class="el" href="a00349.html">geowave</a></li><li class="navelem"><a class="el" href="a00350.html">core</a></li><li class="navelem"><a class="el" href="a00351.html">geotime</a></li><li class="navelem"><a class="el" href="a00346.html">util</a></li><li class="navelem"><a class="el" href="a00819.html">TWKBReader</a></li><li class="navelem"><a class="el" href="a00823.html">ByteBufferInputStream</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

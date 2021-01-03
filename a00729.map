@@ -1,4 +1,7 @@
-<map id="RewrittenDataSource" name="RewrittenDataSource">
-<area shape="rect" id="node2" href="$a00707.html" title="A source of RDF data intended for publication through the server. " alt="" coords="5,95,96,121"/>
-<area shape="rect" id="node4" href="$a00583.html" title="Rewrites IRI in an 1:1 fashion. " alt="" coords="122,95,211,121"/>
+<map id="RemoteSPARQLDataSource" name="RemoteSPARQLDataSource">
+<area shape="rect" id="node2" href="$a00711.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1045,14,1136,40"/>
+<area shape="rect" id="node7" href="$a00803.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="983,293,1199,334"/>
+<area shape="rect" id="node14" href="$a00743.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="989,460,1192,516"/>
+<area shape="rect" id="node15" href="$a00743.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="599,468,763,509"/>
+<area shape="rect" id="node22" href="$a01575.html" title="Indexable" alt="" coords="343,574,422,600"/>
 </map>

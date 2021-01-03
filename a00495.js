@@ -1,6 +1,6 @@
 var a00495 =
 [
-    [ "GMLWriter", "a00495.html#a10a439ceb7a10d4e059b6f2c8f3cf46a", null ],
+    [ "GeoURIWriter", "a00495.html#a08ca9cd80b14097e1cab4661feb2f6c8", null ],
     [ "handleGeometry", "a00495.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00495.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00495.html#abbc00390b9b4242b525b35c95441cc68", null ],

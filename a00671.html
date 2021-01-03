@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GeoPubby: RequestParamHandler.WrappedRequest Class Reference</title>
+<title>GeoPubby: RequestParamHandler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,45 +61,103 @@ $(document).ready(function(){initNavTree('a00671.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pac-methods">Package Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pac-static-methods">Static Package Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="a00668.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">RequestParamHandler.WrappedRequest Class Reference</div>  </div>
+<div class="title">RequestParamHandler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Analyzes an HttpServletRequest to check for the presence of an ?output=n3 or =ttl or =rdfxml request parameter in the URI.  
+ <a href="a00671.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for RequestParamHandler.WrappedRequest:</div>
+Collaboration diagram for RequestParamHandler:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00670.png" border="0" usemap="#RequestParamHandler_8WrappedRequest_inherit__map" alt="Inheritance graph"/></div>
-<map name="RequestParamHandler_8WrappedRequest_inherit__map" id="RequestParamHandler_8WrappedRequest_inherit__map">
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for RequestParamHandler.WrappedRequest:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00669.png" border="0" usemap="#RequestParamHandler_8WrappedRequest_coll__map" alt="Collaboration graph"/></div>
-<map name="RequestParamHandler_8WrappedRequest_coll__map" id="RequestParamHandler_8WrappedRequest_coll__map">
+<div class="center"><img src="a00669.png" border="0" usemap="#RequestParamHandler_coll__map" alt="Collaboration graph"/></div>
+<map name="RequestParamHandler_coll__map" id="RequestParamHandler_coll__map">
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00675.html">WrappedRequest</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8c4a9eee7e040bbf45fcc4b6e5150911"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a8c4a9eee7e040bbf45fcc4b6e5150911">getHeader</a> (String name)</td></tr>
-<tr class="separator:a8c4a9eee7e040bbf45fcc4b6e5150911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54f1fecac0b1956e8d4934853f1290fd"><td class="memItemLeft" align="right" valign="top">Enumeration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a54f1fecac0b1956e8d4934853f1290fd">getHeaderNames</a> ()</td></tr>
-<tr class="separator:a54f1fecac0b1956e8d4934853f1290fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c475c3afb57959ee3bf12817402ec17"><td class="memItemLeft" align="right" valign="top">Enumeration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a1c475c3afb57959ee3bf12817402ec17">getHeaders</a> (String name)</td></tr>
-<tr class="separator:a1c475c3afb57959ee3bf12817402ec17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ddf90d954b28fddd8107d28222c31e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a78ddf90d954b28fddd8107d28222c31e">RequestParamHandler</a> (HttpServletRequest <a class="el" href="a00671.html#ad632242c9a97c676da2987811ea46e83">request</a>)</td></tr>
+<tr class="separator:a78ddf90d954b28fddd8107d28222c31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a700fbc74b6d65d9f10230245f852f"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a33a700fbc74b6d65d9f10230245f852f">isMatchingRequest</a> ()</td></tr>
+<tr class="separator:a33a700fbc74b6d65d9f10230245f852f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4a2fc72dd4dc4202f74244b5750ca9"><td class="memItemLeft" align="right" valign="top">HttpServletRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a8a4a2fc72dd4dc4202f74244b5750ca9">getModifiedRequest</a> ()</td></tr>
+<tr class="separator:a8a4a2fc72dd4dc4202f74244b5750ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-methods"></a>
-Package Functions</h2></td></tr>
-<tr class="memitem:a8aa2f7741ee468ab8cdfc01666a96115"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a8aa2f7741ee468ab8cdfc01666a96115">WrappedRequest</a> ()</td></tr>
-<tr class="separator:a8aa2f7741ee468ab8cdfc01666a96115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aac8e0c252a2aa3a037e32b1c139da1d5"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#aac8e0c252a2aa3a037e32b1c139da1d5">removeOutputRequestParam</a> (String uri)</td></tr>
+<tr class="memdesc:aac8e0c252a2aa3a037e32b1c139da1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the "output=foobar" part of a URI if present.  <a href="#aac8e0c252a2aa3a037e32b1c139da1d5">More...</a><br /></td></tr>
+<tr class="separator:aac8e0c252a2aa3a037e32b1c139da1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-static-methods"></a>
+Static Package Functions</h2></td></tr>
+<tr class="memitem:a2e87c5ede6b7235170d287cd2e254454"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a2e87c5ede6b7235170d287cd2e254454">[static initializer]</a></td></tr>
+<tr class="separator:a2e87c5ede6b7235170d287cd2e254454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a787a7136420b59f91d860e9acda556b1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a787a7136420b59f91d860e9acda556b1">identifyRequestedType</a> (String parameterValue)</td></tr>
+<tr class="separator:a787a7136420b59f91d860e9acda556b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad632242c9a97c676da2987811ea46e83"><td class="memItemLeft" align="right" valign="top">final HttpServletRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#ad632242c9a97c676da2987811ea46e83">request</a></td></tr>
+<tr class="separator:ad632242c9a97c676da2987811ea46e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053eb9bde998fd324ba1d3c9178b9d4c"><td class="memItemLeft" align="right" valign="top">final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a></td></tr>
+<tr class="separator:a053eb9bde998fd324ba1d3c9178b9d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:ad985604e395e1ac08a77a4c2e2b2b267"><td class="memItemLeft" align="right" valign="top">static final String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#ad985604e395e1ac08a77a4c2e2b2b267">ATTRIBUTE_NAME_IS_HANDLED</a></td></tr>
+<tr class="separator:ad985604e395e1ac08a77a4c2e2b2b267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354bb05992ad3230abb0504d5b255d9e"><td class="memItemLeft" align="right" valign="top">static final Map&lt; String, String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00671.html#a354bb05992ad3230abb0504d5b255d9e">mimeTypes</a> = new HashMap&lt;String,String&gt;()</td></tr>
+<tr class="separator:a354bb05992ad3230abb0504d5b255d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8aa2f7741ee468ab8cdfc01666a96115"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8aa2f7741ee468ab8cdfc01666a96115">&#9670;&nbsp;</a></span>WrappedRequest()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Analyzes an HttpServletRequest to check for the presence of an ?output=n3 or =ttl or =rdfxml request parameter in the URI. </p>
+<p>If present, returns a modified HttpServletRequest that has the appropriate MIME type in the Accept: header. This request can then be fed into the rest of our content negotiation based tooling. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a78ddf90d954b28fddd8107d28222c31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ddf90d954b28fddd8107d28222c31e">&#9670;&nbsp;</a></span>RequestParamHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00671.html">RequestParamHandler</a> </td>
+          <td>(</td>
+          <td class="paramtype">HttpServletRequest&#160;</td>
+          <td class="paramname"><em>request</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="a00671.html#a787a7136420b59f91d860e9acda556b1">RequestParamHandler.identifyRequestedType()</a>, and <a class="el" href="a00671.html#ad632242c9a97c676da2987811ea46e83">RequestParamHandler.request</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                               {</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                this.<a class="code" href="a00671.html#ad632242c9a97c676da2987811ea46e83">request</a> = <a class="code" href="a00671.html#ad632242c9a97c676da2987811ea46e83">request</a>;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="a00671.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a> = <a class="code" href="a00671.html#a787a7136420b59f91d860e9acda556b1">identifyRequestedType</a>(<a class="code" href="a00671.html#ad632242c9a97c676da2987811ea46e83">request</a>.getParameter(<span class="stringliteral">&quot;output&quot;</span>));</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div><div class="ttc" id="a00671_html_a053eb9bde998fd324ba1d3c9178b9d4c"><div class="ttname"><a href="a00671.html#a053eb9bde998fd324ba1d3c9178b9d4c">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.requestedType</a></div><div class="ttdeci">final String requestedType</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:104</div></div>
+<div class="ttc" id="a00671_html_a787a7136420b59f91d860e9acda556b1"><div class="ttname"><a href="a00671.html#a787a7136420b59f91d860e9acda556b1">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.identifyRequestedType</a></div><div class="ttdeci">String identifyRequestedType(String parameterValue)</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:122</div></div>
+<div class="ttc" id="a00671_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00671.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:103</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2e87c5ede6b7235170d287cd2e254454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e87c5ede6b7235170d287cd2e254454">&#9670;&nbsp;</a></span>[static initializer]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -108,7 +166,7 @@ Package Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00671.html">WrappedRequest</a> </td>
+          <td class="memname">[static initializer] </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -116,70 +174,200 @@ Package Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">package</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                 {</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        super(<a class="code" href="a00667.html#ad632242c9a97c676da2987811ea46e83">request</a>);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        setAttribute(<a class="code" href="a00667.html#ad985604e395e1ac08a77a4c2e2b2b267">ATTRIBUTE_NAME_IS_HANDLED</a>, <span class="stringliteral">&quot;true&quot;</span>);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                }</div><div class="ttc" id="a00667_html_ad985604e395e1ac08a77a4c2e2b2b267"><div class="ttname"><a href="a00667.html#ad985604e395e1ac08a77a4c2e2b2b267">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.ATTRIBUTE_NAME_IS_HANDLED</a></div><div class="ttdeci">static final String ATTRIBUTE_NAME_IS_HANDLED</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:20</div></div>
-<div class="ttc" id="a00667_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00667.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:102</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8c4a9eee7e040bbf45fcc4b6e5150911"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c4a9eee7e040bbf45fcc4b6e5150911">&#9670;&nbsp;</a></span>getHeader()</h2>
+<a id="a8a4a2fc72dd4dc4202f74244b5750ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4a2fc72dd4dc4202f74244b5750ca9">&#9670;&nbsp;</a></span>getModifiedRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">String getHeader </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                                                     {</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;accept&quot;</span>.equals(name.toLowerCase())) {</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                <span class="keywordflow">return</span> (String) <a class="code" href="a00667.html#a354bb05992ad3230abb0504d5b255d9e">mimeTypes</a>.get(<a class="code" href="a00667.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a>);</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                        }</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                        <span class="keywordflow">return</span> super.getHeader(name);</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                }</div><div class="ttc" id="a00667_html_a354bb05992ad3230abb0504d5b255d9e"><div class="ttname"><a href="a00667.html#a354bb05992ad3230abb0504d5b255d9e">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.mimeTypes</a></div><div class="ttdeci">static final Map&lt; String, String &gt; mimeTypes</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:22</div></div>
-<div class="ttc" id="a00667_html_a053eb9bde998fd324ba1d3c9178b9d4c"><div class="ttname"><a href="a00667.html#a053eb9bde998fd324ba1d3c9178b9d4c">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.requestedType</a></div><div class="ttdeci">final String requestedType</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:103</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a54f1fecac0b1956e8d4934853f1290fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54f1fecac0b1956e8d4934853f1290fd">&#9670;&nbsp;</a></span>getHeaderNames()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Enumeration getHeaderNames </td>
+          <td class="memname">HttpServletRequest getModifiedRequest </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                                    {</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        <span class="keyword">final</span> Enumeration realHeaders = super.getHeaderNames();</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> Enumeration() {</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                <span class="keyword">private</span> String prefetched = null;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                <span class="keyword">public</span> <span class="keywordtype">boolean</span> hasMoreElements() {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                        <span class="keywordflow">while</span> (prefetched == null &amp;&amp; realHeaders.hasMoreElements()) {</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                String next = (String) realHeaders.nextElement();</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                <span class="keywordflow">if</span> (!<span class="stringliteral">&quot;accept&quot;</span>.equals(next.toLowerCase())) {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                        prefetched = next;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                }</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                        }</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                        <span class="keywordflow">return</span> (prefetched != null);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                }</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                <span class="keyword">public</span> Object nextElement() {</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                        <span class="keywordflow">return</span> prefetched;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                }</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        };</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                }</div></div><!-- fragment -->
+
+<p class="reference">Referenced by <a class="el" href="a00599.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                                                       {</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> WrappedRequest();</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
-<a id="a1c475c3afb57959ee3bf12817402ec17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c475c3afb57959ee3bf12817402ec17">&#9670;&nbsp;</a></span>getHeaders()</h2>
+<a id="a787a7136420b59f91d860e9acda556b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787a7136420b59f91d860e9acda556b1">&#9670;&nbsp;</a></span>identifyRequestedType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String identifyRequestedType </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>parameterValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00671.html#a78ddf90d954b28fddd8107d28222c31e">RequestParamHandler.RequestParamHandler()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                                                    {</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="a00671.html#a354bb05992ad3230abb0504d5b255d9e">mimeTypes</a>.containsKey(parameterValue)) {</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        <span class="keywordflow">return</span> parameterValue;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                }</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">return</span> null;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div><div class="ttc" id="a00671_html_a354bb05992ad3230abb0504d5b255d9e"><div class="ttname"><a href="a00671.html#a354bb05992ad3230abb0504d5b255d9e">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.mimeTypes</a></div><div class="ttdeci">static final Map&lt; String, String &gt; mimeTypes</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:22</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a33a700fbc74b6d65d9f10230245f852f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a700fbc74b6d65d9f10230245f852f">&#9670;&nbsp;</a></span>isMatchingRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Enumeration getHeaders </td>
+          <td class="memname">boolean isMatchingRequest </td>
           <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                           {</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;accept&quot;</span>.equals(name.toLowerCase())) {</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                Vector&lt;Object&gt; v = <span class="keyword">new</span> Vector&lt;Object&gt;();</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                v.add(<a class="code" href="a00671.html#a8c4a9eee7e040bbf45fcc4b6e5150911">getHeader</a>(name));</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                <span class="keywordflow">return</span> v.elements();</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        }</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                        <span class="keywordflow">return</span> super.getHeaders(name);</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                }</div><div class="ttc" id="a00671_html_a8c4a9eee7e040bbf45fcc4b6e5150911"><div class="ttname"><a href="a00671.html#a8c4a9eee7e040bbf45fcc4b6e5150911">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.WrappedRequest.getHeader</a></div><div class="ttdeci">String getHeader(String name)</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:135</div></div>
+
+<p class="reference">Referenced by <a class="el" href="a00599.html#af9fec765daa76a2aff37534d00fe0e31">ModelResponse.ModelResponse()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                           {</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.equals(<a class="code" href="a00671.html#ad632242c9a97c676da2987811ea46e83">request</a>.getAttribute(<a class="code" href="a00671.html#ad985604e395e1ac08a77a4c2e2b2b267">ATTRIBUTE_NAME_IS_HANDLED</a>))) {</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="a00671.html#a053eb9bde998fd324ba1d3c9178b9d4c">requestedType</a> != null;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div><div class="ttc" id="a00671_html_a053eb9bde998fd324ba1d3c9178b9d4c"><div class="ttname"><a href="a00671.html#a053eb9bde998fd324ba1d3c9178b9d4c">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.requestedType</a></div><div class="ttdeci">final String requestedType</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:104</div></div>
+<div class="ttc" id="a00671_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00671.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:103</div></div>
+<div class="ttc" id="a00671_html_ad985604e395e1ac08a77a4c2e2b2b267"><div class="ttname"><a href="a00671.html#ad985604e395e1ac08a77a4c2e2b2b267">de.fuberlin.wiwiss.pubby.servlets.RequestParamHandler.ATTRIBUTE_NAME_IS_HANDLED</a></div><div class="ttdeci">static final String ATTRIBUTE_NAME_IS_HANDLED</div><div class="ttdef"><b>Definition:</b> RequestParamHandler.java:20</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aac8e0c252a2aa3a037e32b1c139da1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8e0c252a2aa3a037e32b1c139da1d5">&#9670;&nbsp;</a></span>removeOutputRequestParam()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static String removeOutputRequestParam </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>uri</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the "output=foobar" part of a URI if present. </p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                                  {</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="comment">// Remove the param: output=[a-z0-9]*</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment">// There are two cases. The param can occur at the end of the URI,</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="comment">// this is matched by the first part: [?&amp;]param$</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="comment">// Or it can occur elsewhere, then it&#39;s matched by param&amp; with a</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">// lookbehind that requires [?&amp;] to occur before the pattern.</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> uri.replaceFirst(<span class="stringliteral">&quot;([?&amp;]output=[a-z0-9]*$)|((?&lt;=[?&amp;])output=[a-z0-9]*&amp;)&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad985604e395e1ac08a77a4c2e2b2b267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad985604e395e1ac08a77a4c2e2b2b267">&#9670;&nbsp;</a></span>ATTRIBUTE_NAME_IS_HANDLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String ATTRIBUTE_NAME_IS_HANDLED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">                <span class="stringliteral">&quot;OutputRequestParamHandler.isHandled&quot;</span></div></div><!-- fragment -->
+</div>
+</div>
+<a id="a354bb05992ad3230abb0504d5b255d9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354bb05992ad3230abb0504d5b255d9e">&#9670;&nbsp;</a></span>mimeTypes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final Map&lt;String,String&gt; mimeTypes = new HashMap&lt;String,String&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad632242c9a97c676da2987811ea46e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad632242c9a97c676da2987811ea46e83">&#9670;&nbsp;</a></span>request</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final HttpServletRequest request</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="a00671.html#a78ddf90d954b28fddd8107d28222c31e">RequestParamHandler.RequestParamHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a053eb9bde998fd324ba1d3c9178b9d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053eb9bde998fd324ba1d3c9178b9d4c">&#9670;&nbsp;</a></span>requestedType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">final String requestedType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 </div><!-- contents -->
@@ -188,7 +376,7 @@ Package Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00333.html">de</a></li><li class="navelem"><a class="el" href="a00334.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00335.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00332.html">pubby</a></li><li class="navelem"><a class="el" href="a00342.html">servlets</a></li><li class="navelem"><a class="el" href="a00667.html">RequestParamHandler</a></li><li class="navelem"><a class="el" href="a00671.html">WrappedRequest</a></li>
+    <li class="navelem"><a class="el" href="a00333.html">de</a></li><li class="navelem"><a class="el" href="a00334.html">fuberlin</a></li><li class="navelem"><a class="el" href="a00335.html">wiwiss</a></li><li class="navelem"><a class="el" href="a00332.html">pubby</a></li><li class="navelem"><a class="el" href="a00342.html">servlets</a></li><li class="navelem"><a class="el" href="a00671.html">RequestParamHandler</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

@@ -1,16 +1,15 @@
 var a00579 =
 [
-    [ "appendOctet", "a00579.html#acfdbbfd7aed40b41c8c9aca994a66c14", null ],
-    [ "decode", "a00579.html#afd4859a4f02722bf3a685a838b4a555b", null ],
-    [ "getBytesInSequence", "a00579.html#a4ca72c78b1625ba976db313ae47c8284", null ],
-    [ "isContinuationOctet", "a00579.html#a35fd34a472ef86ad621bd606cb9918fc", null ],
-    [ "isUnreservedASCII", "a00579.html#a76335106e7863f31084d5e2ed66767f7", null ],
-    [ "toByte", "a00579.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8", null ],
-    [ "toByte", "a00579.html#aece1ebe6e7522d7baf8ca765166cedbb", null ],
-    [ "toBytes", "a00579.html#a529e9f1a833424046e5c1dc916f91580", null ],
-    [ "toCharacter", "a00579.html#ab2c6b324020d93bdda6aa0d5a1f9593c", null ],
-    [ "toIRI", "a00579.html#a28910c5e808e547d940cc2f604f5cc91", null ],
-    [ "toURI", "a00579.html#aa9aeab48a7535d6d446c3e7b99d71503", null ],
-    [ "hexDigits", "a00579.html#a24d7e0fcb082c35388ff0e58345c1eb4", null ],
-    [ "percentEncoding", "a00579.html#ad5c79bfeae4228c7bee82125fc969c93", null ]
+    [ "HypermediaResource", "a00579.html#a1ce7630a38c4245b651f576fdb7bf7b1", null ],
+    [ "getAbsoluteIRI", "a00579.html#a8cc99e23b8d0876ba37f67895ab17ab7", null ],
+    [ "getDataURL", "a00579.html#a6a843740749f1c282376668464eecc55", null ],
+    [ "getInversePathDataURL", "a00579.html#a6fbcecf2989453571d87ddb025131fcf", null ],
+    [ "getInversePathPageURL", "a00579.html#ab2b8590228ee89faa93dcd5ea8d359e5", null ],
+    [ "getPageURL", "a00579.html#aa1dda0b0dedb5fddbf92718a8d8bad29", null ],
+    [ "getPathDataURL", "a00579.html#ae1726fa7e5ad0c3c6f3d8592c99b37cc", null ],
+    [ "getPathPageURL", "a00579.html#a7c5ceed65176a05dcdfb84569947e530", null ],
+    [ "getPathURL", "a00579.html#a732091dc66ebcd3ea19ef3ecc35724c4", null ],
+    [ "getRelativeIRI", "a00579.html#a67c8d978450e3800d1d25a3cf0a820ef", null ],
+    [ "config", "a00579.html#ae9dc406bdd1efad232eaf625a5714fc9", null ],
+    [ "relativeIRI", "a00579.html#ac642b03d4d18a90a1d593cdcc09d20ac", null ]
 ];

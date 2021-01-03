@@ -1,6 +1,6 @@
 var a00563 =
 [
-    [ "XLSXWriter", "a00563.html#a473ac5f2952a61129afc7ab3992dd584", null ],
+    [ "XLSWriter", "a00563.html#a34cd55a8521686d69db766dd69e7248a", null ],
     [ "handleGeometry", "a00563.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00563.html#a301db8de4752de90f7541eb5e7b869cb", null ],
     [ "write", "a00563.html#abbc00390b9b4242b525b35c95441cc68", null ],
