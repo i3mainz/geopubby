@@ -1,12 +1,12 @@
 var a00335 =
 [
-    [ "AutocompleteEngine", "a00718.html", "a00718" ],
-    [ "GeobufEncoder", "a00726.html", "a00726" ],
-    [ "Reloader", "a00730.html", "a00730" ],
-    [ "ReprojectionUtils", "a00734.html", "a00734" ],
-    [ "SearchAdapter", "a00738.html", "a00738" ],
-    [ "SearchIndexInstance", "a00742.html", "a00742" ],
-    [ "SearchRecord", "a00746.html", "a00746" ],
-    [ "StyleObject", "a00750.html", "a00750" ],
-    [ "Tuple", "a00754.html", "a00754" ]
+    [ "CypherWriter", "a00404.html", "a00404" ],
+    [ "GDFWriter", "a00408.html", "a00408" ],
+    [ "GEXFWriter", "a00412.html", "a00412" ],
+    [ "GraphMLWriter", "a00416.html", "a00416" ],
+    [ "GXLWriter", "a00420.html", "a00420" ],
+    [ "HexTuplesWriter", "a00424.html", "a00424" ],
+    [ "LDWriter", "a00428.html", "a00428" ],
+    [ "RDFEXIWriter", "a00432.html", "a00432" ],
+    [ "TGFWriter", "a00436.html", "a00436" ]
 ];

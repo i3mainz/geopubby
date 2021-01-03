@@ -1,0 +1,19 @@
+<map id="MappedResource" name="MappedResource">
+<area shape="rect" id="node2" href="$a00360.html" title="A dataset block in the server&#39;s configuration. " alt="" coords="2441,733,2509,760"/>
+<area shape="rect" id="node3" href="$a00640.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="1810,87,1930,113"/>
+<area shape="rect" id="node27" href="$a00584.html" title="MetadataConfiguration" alt="" coords="2144,471,2297,497"/>
+<area shape="rect" id="node29" href="$a00352.html" title="The server&#39;s configuration. " alt="" coords="2171,1096,2270,1123"/>
+<area shape="rect" id="node11" href="$a00792.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1324,713,1540,754"/>
+<area shape="rect" id="node8" href="$a00720.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol. " alt="" coords="1775,471,1965,497"/>
+<area shape="rect" id="node28" href="$a00564.html" title="The hypermedia interface to a specific resource. " alt="" coords="2404,1012,2545,1039"/>
+<area shape="rect" id="node30" href="$a00788.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1811,1220,1929,1247"/>
+<area shape="rect" id="node6" href="$a00700.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1387,1116,1477,1143"/>
+<area shape="rect" id="node33" href="$a00796.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="491,1489,717,1516"/>
+<area shape="rect" id="node17" href="$a00732.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="1331,199,1533,255"/>
+<area shape="rect" id="node18" href="$a00732.html" title="Facade for indexing and searching Indexable elements. " alt="" coords="925,174,1089,215"/>
+<area shape="rect" id="node25" href="$a01564.html" title="Indexable" alt="" coords="565,232,643,259"/>
+<area shape="rect" id="node31" href="$a00804.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1335,1427,1529,1469"/>
+<area shape="rect" id="node32" href="$a00796.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="911,1461,1104,1502"/>
+<area shape="rect" id="node38" href="$a00796.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="911,1383,1104,1425"/>
+<area shape="rect" id="node37" href="$a00800.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1341,1362,1523,1403"/>
+</map>

@@ -1,10 +1,25 @@
 var a00329 =
 [
-    [ "CypherWriter", "a00398.html", "a00398" ],
-    [ "GDFWriter", "a00402.html", "a00402" ],
-    [ "GraphMLWriter", "a00406.html", "a00406" ],
-    [ "HexTuplesWriter", "a00410.html", "a00410" ],
-    [ "LDWriter", "a00414.html", "a00414" ],
-    [ "RDFEXIWriter", "a00418.html", "a00418" ],
-    [ "TGFWriter", "a00422.html", "a00422" ]
+    [ "exporter", "a00333.html", "a00333" ],
+    [ "negotiation", "a00338.html", "a00338" ],
+    [ "servlets", "a00339.html", "a00339" ],
+    [ "sources", "a00340.html", "a00340" ],
+    [ "util", "a00341.html", "a00341" ],
+    [ "vocab", "a00342.html", "a00342" ],
+    [ "Configuration", "a00352.html", "a00352" ],
+    [ "ConfigurationException", "a00356.html", "a00356" ],
+    [ "Dataset", "a00360.html", "a00360" ],
+    [ "HypermediaControls", "a00564.html", "a00564" ],
+    [ "HypermediaResource", "a00568.html", "a00568" ],
+    [ "IRIEncoder", "a00572.html", "a00572" ],
+    [ "IRIRewriter", "a00576.html", "a00576" ],
+    [ "MappedResource", "a00580.html", "a00580" ],
+    [ "MetadataConfiguration", "a00584.html", "a00584" ],
+    [ "ModelResponse", "a00588.html", "a00588" ],
+    [ "ModelUtil", "a00592.html", "a00592" ],
+    [ "PubbyIRIEscaper", "a00620.html", "a00620" ],
+    [ "ResourceDescription", "a00624.html", "a00624" ],
+    [ "ResourceReader", "a00640.html", "a00640" ],
+    [ "URIPrefixer", "a00728.html", "a00728" ],
+    [ "VocabularyStore", "a00788.html", "a00788" ]
 ];

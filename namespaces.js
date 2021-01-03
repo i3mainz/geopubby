@@ -1,5 +1,5 @@
 var namespaces =
 [
-    [ "de", "a00324.html", "a00324" ],
-    [ "org", "a00338.html", "a00338" ]
+    [ "de", "a00330.html", "a00330" ],
+    [ "org", "a00344.html", "a00344" ]
 ];
