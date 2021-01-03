@@ -59,7 +59,7 @@ public class GMLWriter extends GeoModelWriter {
         			}else {
         				objnodeid=nodecounter;
         				uriToNodeId.put(curst.getObject().asResource().getURI(),objnodeid);
-            			response.getWriter().write("node [ "+curst.getObject().asResource().getURI()+System.lineSeparator()+"label \""+curst.getObject().asResource().getLocalName()+"\" ]"+System.lineSeparator());
+            			response.getWriter().write("node [ id "+curst.getObject().asResource().getURI()+System.lineSeparator()+"label \""+curst.getObject().asResource().getLocalName()+"\" ]"+System.lineSeparator());
         			}
         			edgebuilder.append(resnodeid+" "+objnodeid+" "+curst.getPredicate().getURI()+System.lineSeparator());
         		}else if(curst.getObject().isLiteral()) {
