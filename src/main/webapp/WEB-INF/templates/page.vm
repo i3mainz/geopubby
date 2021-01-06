@@ -6,14 +6,6 @@
     <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
     </div>
 #end
-
-#if (!$geoms.isEmpty())
-<a name="geo"></a>
-<div id="map" style="height:500px;z-index: 0;">
-</div>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-<script type="text/javascript" src="${server_base}static/Leaflet.geojsoncss.min.js"></script>
 <script>
 function getClassHierarchy(classeswithinstances){
 console.log(JSON.stringify(classeswithinstances))
@@ -221,6 +213,13 @@ function remoteSPARQLQuery(endpoint,query){
                 }});
 }
 </script>
+#if (!$geoms.isEmpty())
+<a name="geo"></a>
+<div id="map" style="height:500px;z-index: 0;">
+</div>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script type="text/javascript" src="${server_base}static/Leaflet.geojsoncss.min.js"></script>
 <script type="text/javascript">
 var overlayMaps={}
 var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
