@@ -3,6 +3,7 @@ var a00791 =
     [ "ASGEOJSON", "a00791.html#afc6375b31a4b188e127ee01b9ee0a544", null ],
     [ "ASGML", "a00791.html#a7d05011f10f73bdb11355876136c7957", null ],
     [ "ASHEXWKB", "a00791.html#a3a0c1e4c302c2c3afba7dbb9d34dc9a3", null ],
+    [ "ASKML", "a00791.html#a12c0a5ede8ae1b1b262089e775b39ee4", null ],
     [ "ASWKB", "a00791.html#a7b0e15c8279602eea669deb1c66f137b", null ],
     [ "ASWKT", "a00791.html#af3b39bf8d8c41f1b00a9c91c00034c73", null ],
     [ "EPSG", "a00791.html#a0fc2d65d7e1c8d618abd44757c1f5f70", null ],

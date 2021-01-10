@@ -103,10 +103,10 @@ var files =
     [ "GEXFWriter.java", "a00047.html", [
       [ "GEXFWriter", "a00415.html", "a00415" ]
     ] ],
-    [ "rdf/GMLWriter.java", "a01716.html", [
+    [ "rdf/GMLWriter.java", "a01720.html", [
       [ "GMLWriter", "a00419.html", "a00419" ]
     ] ],
-    [ "vector/GMLWriter.java", "a01719.html", [
+    [ "vector/GMLWriter.java", "a01723.html", [
       [ "GMLWriter", "a00499.html", "a00499" ]
     ] ],
     [ "GoogleMapsLinkWriter.java", "a00110.html", [
