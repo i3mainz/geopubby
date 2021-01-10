@@ -60,8 +60,10 @@ public class GEO {
 	public static final Property P625 = model.createProperty( WIKIDATANS + "P625" );
 	
 	public static final Property GEORSSPOINT= model.createProperty("http://www.georss.org/georss/point");
+
+	public static final Property ASKML = model.createProperty( GEOSPARQLNS + "asKML" );
 	
-	public static List<Property> geomprops=Arrays.asList(new Property[] {P_LONG,P_LAT,P_GEOMETRY,LOCATION,HASGEOMETRY,ASWKT,ASGML,ASWKB,ASHEXWKB,ASGEOJSON,P625,GEORSSPOINT});
+	public static List<Property> geomprops=Arrays.asList(new Property[] {P_LONG,P_LAT,P_GEOMETRY,LOCATION,HASGEOMETRY,ASWKT,ASKML,ASGML,ASWKB,ASHEXWKB,ASGEOJSON,P625,GEORSSPOINT});
 
 	
 	
