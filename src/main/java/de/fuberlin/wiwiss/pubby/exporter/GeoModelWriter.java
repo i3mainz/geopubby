@@ -13,6 +13,7 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKBReader;
 import org.locationtech.jts.io.gml2.GMLReader;
+import org.locationtech.jts.io.kml.KMLReader;
 import org.wololo.jts2geojson.GeoJSONReader;
 import org.xml.sax.SAXException;
 
@@ -100,6 +101,22 @@ public class GeoModelWriter extends ModelWriter {
 				if(this.epsg!=null) {
 					ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
 					geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+				}
+			}
+			handled=true;
+		} else if (GEO.ASKML.getURI().equals(curst.getPredicate().getURI().toString())
+				&& this.epsg != null) {
+			if (curst.getObject().asLiteral().getString() != null) {
+				KMLReader read = new KMLReader();
+				try {
+					geom = read.read(curst.getObject().asLiteral().getString());
+					if(this.epsg!=null) {
+						ind.addProperty(GEO.EPSG, model.createTypedLiteral(this.epsg));
+						geom = ReprojectionUtils.reproject(geom, sourceCRS, epsg);
+					}
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 			handled=true;
