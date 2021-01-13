@@ -7,6 +7,8 @@
     </div>
 #end
 <script>
+var webbase="$webbase"
+var datasetbase="$sourceURLs"
 function getClassHierarchy(classeswithinstances){
 console.log(JSON.stringify(classeswithinstances))
 // ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
