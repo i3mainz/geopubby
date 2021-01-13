@@ -53,7 +53,7 @@ public class PageURLServlet extends BaseServlet {
 		context.put("showLabels", config.showLabels());
 		context.put("geoms",description.getGeoms());
 		context.put("epsg",description.getEPSG());
-		context.put("style",new GeoJSONCSSFormatter().formatForWebView(description.getStyle()).toString().replace("\"", "'"));
+		context.put("styleWithHtml",new GeoJSONCSSFormatter().formatForWebView(description.getStyle()).toString());
 		addPageMetadata(context, controller, description.getModel());
 	
 		template.renderXHTML("page.vm");

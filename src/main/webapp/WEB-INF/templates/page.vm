@@ -9,7 +9,7 @@
 <script>
 var webbase="$server_base"
 var datasetbase="$sourceURLs"
-var styles=$style
+var styles=$styleWithHtml
 function getClassHierarchy(classeswithinstances){
 console.log(JSON.stringify(classeswithinstances))
 // ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
