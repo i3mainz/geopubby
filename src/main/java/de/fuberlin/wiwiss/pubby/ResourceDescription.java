@@ -34,6 +34,8 @@ import org.apache.jena.vocabulary.RDFS;
 import org.apache.jena.vocabulary.XSD;
 
 import de.fuberlin.wiwiss.pubby.VocabularyStore.CachedPropertyCollection;
+import de.fuberlin.wiwiss.pubby.exporter.GeoModelWriter;
+import de.fuberlin.wiwiss.pubby.util.StyleObject;
 import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
@@ -213,6 +215,20 @@ public class ResourceDescription {
 	        return s.getObject().asLiteral().getString();
 	    }
 	    return "";
+	}
+	
+	/**
+	 * Gets the EPSG code from a statement if it is annotated using an EPSG statement. 
+	 * @return The EPSG code as String
+	 */
+	public StyleObject getStyle(){
+	    StmtIterator it= resource.listProperties(GEO.STYLE);
+	    if(it.hasNext()){
+	        Statement s = it.nextStatement();
+	        StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());
+	        return obj;
+	    }
+	    return null;
 	}
 
 	public ResourceDescription(HypermediaControls controller, Model model, 

@@ -47,7 +47,7 @@ public class GeoModelWriter extends ModelWriter {
 		super();
 	}
 	
-	protected StyleObject handleStyle(Resource res) {
+	public static StyleObject handleStyle(Resource res) {
 		StyleObject result=new StyleObject();
 		if(res.hasProperty(GEO.POINTSTYLE)){
 			result.pointStyle=res.getProperty(GEO.POINTSTYLE).getLiteral().getString();

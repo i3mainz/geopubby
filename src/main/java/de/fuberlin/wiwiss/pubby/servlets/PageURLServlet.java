@@ -13,6 +13,7 @@ import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
+import de.fuberlin.wiwiss.pubby.exporter.style.GeoJSONCSSFormatter;
 
 /**
  * A servlet for serving the HTML page describing a resource.
@@ -52,6 +53,7 @@ public class PageURLServlet extends BaseServlet {
 		context.put("showLabels", config.showLabels());
 		context.put("geoms",description.getGeoms());
 		context.put("epsg",description.getEPSG());
+		context.put("style",new GeoJSONCSSFormatter().formatForWebView(description.getStyle()).toString());
 		addPageMetadata(context, controller, description.getModel());
 	
 		template.renderXHTML("page.vm");

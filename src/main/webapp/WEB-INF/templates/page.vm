@@ -7,8 +7,9 @@
     </div>
 #end
 <script>
-var webbase="$webbase"
+var webbase="$server_base"
 var datasetbase="$sourceURLs"
+var styles=$style
 function getClassHierarchy(classeswithinstances){
 console.log(JSON.stringify(classeswithinstances))
 // ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
@@ -299,7 +300,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               #end
 			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
 			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
-	            feature=convertGeoJSON(feature,epsgdefs[epsg])
+	            feature=convertGeoJSON(feature,epsgdefs[epsg],styles)
 	            console.log(feature);
               }
               layerr=L.geoJSON.css(feature,{

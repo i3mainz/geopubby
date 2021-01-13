@@ -1,15 +1,21 @@
 var epsgdefs={"EPSG:4326":"+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs","EPSG:3048":"proj=utm +zone=36 +ellps=GRS80 +units=m +no_defs","EPSG:3587":"+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs","EPSG:3912":"proj=tmerc +lat_0=0 +lon_0=15 +k=0.9999 +x_0=500000 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +units=m +no_defs","EPSG:25832":"+proj=utm +zone=32 +ellps=GRS80 +units=m +no_defs","EPSG:25833":"+proj=utm +zone=33 +ellps=GRS80 +units=m +no_defs","EPSG:31467":"+proj=tmerc +lat_0=0 +lon_0=9 +k=1 +x_0=3500000 +y_0=0 +ellps=bessel +datum=potsdam +units=m +no_defs"}
 var wgs84dest = new proj4.Proj('EPSG:4326'); 
 
-function convertGeoJSON(geojson,from){
+function convertGeoJSON(geojson,from,styles){
 	if("features" in geojson){
 		for(feature in geojson["features"]){
 			coords=geojson["features"][feature]["geometry"]["coordinates"]
 			geojson["features"][feature]["geometry"]=exportConvert(coords,from,geojson["features"][feature]["geometry"]["type"],false)
+			if(geojson["features"][feature]["geometry"]["type"] in styles){
+				geojson["features"][feature]["style"]=styles[geojson["features"][feature]["geometry"]["type"]]
+			}
 		}
 	}else{
 		coords=geojson["geometry"]["coordinates"]
 		geojson["geometry"]=exportConvert(coords,from,geojson["geometry"]["type"],false)
+		if(geojson["geometry"]["type"] in styles){
+			geojson["style"]=styles[geojson["geometry"]["type"]]
+		}
 	}
 	console.log(geojson);
 	return geojson;
