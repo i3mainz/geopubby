@@ -66,6 +66,8 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 
 	@Override
 	public String formatGeometry(String geometrytype,StyleObject styleobj) {
+		if(styleobj==null)
+			return "{}";
 		if(geometrytype.contains("Point")) {
 		    JSONObject props=cssLiteralToJSON(styleobj.pointStyle);
 		    if(styleobj.pointImage!=null) {
