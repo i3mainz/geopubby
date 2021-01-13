@@ -2,7 +2,7 @@ var a00535 =
 [
     [ "OSMWriter", "a00535.html#a46d9618696e719cb2584c78a1c0f5ca6", null ],
     [ "handleGeometry", "a00535.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00535.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00535.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00535.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00535.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00535.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

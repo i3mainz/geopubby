@@ -2,7 +2,7 @@ var a00555 =
 [
     [ "WKBWriterr", "a00555.html#a08f0bdcef17eca36fc3abfdbfd625720", null ],
     [ "handleGeometry", "a00555.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00555.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00555.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00555.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00555.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00555.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

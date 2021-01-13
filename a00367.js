@@ -2,7 +2,7 @@ var a00367 =
 [
     [ "AbstractGeoJSONWriter", "a00367.html#a24f2ee3707e784452d5770ac014fb2ea", null ],
     [ "handleGeometry", "a00367.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00367.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00367.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "prepareGeoJSONString", "a00367.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00367.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "contextMapper", "a00367.html#ae7316c0c7550712f915cc3cd353cd981", null ],

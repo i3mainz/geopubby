@@ -2,7 +2,7 @@ var a00511 =
 [
     [ "GRASSVectorASCIIWriter", "a00511.html#a57d105a2f1ab3c32bb91c69ab68c9404", null ],
     [ "handleGeometry", "a00511.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00511.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00511.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "prepareGeoJSONString", "a00511.html#a858e5df55c2876a07b0fb69e77b30e09", null ],
     [ "write", "a00511.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "contextMapper", "a00511.html#ae7316c0c7550712f915cc3cd353cd981", null ],

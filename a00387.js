@@ -2,7 +2,7 @@ var a00387 =
 [
     [ "XYZASCIIWriter", "a00387.html#aa8de0ac3d739fe7639f2d6bd762abb23", null ],
     [ "handleGeometry", "a00387.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00387.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00387.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00387.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00387.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00387.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

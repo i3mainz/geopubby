@@ -2,7 +2,7 @@ var a00507 =
 [
     [ "GPXWriter", "a00507.html#a82c02b1ac791adc55c01ea2a8361d291", null ],
     [ "handleGeometry", "a00507.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00507.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00507.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00507.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00507.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00507.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

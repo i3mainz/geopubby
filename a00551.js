@@ -2,7 +2,7 @@ var a00551 =
 [
     [ "TWKBWriterr", "a00551.html#a6e8a5fab128df3006a82f20d807e0bd3", null ],
     [ "handleGeometry", "a00551.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00551.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00551.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00551.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00551.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00551.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

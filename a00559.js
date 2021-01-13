@@ -2,7 +2,7 @@ var a00559 =
 [
     [ "WKTWriter", "a00559.html#adcd08455d6de396d49f8deb4515b27c1", null ],
     [ "handleGeometry", "a00559.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
-    [ "handleStyle", "a00559.html#a301db8de4752de90f7541eb5e7b869cb", null ],
+    [ "handleStyle", "a00559.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00559.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00559.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
     [ "epsg", "a00559.html#ae984b1b4178b56b80cdb7a80eac64541", null ],

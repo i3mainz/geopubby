@@ -4,6 +4,7 @@ var a00451 =
     [ "[static initializer]", "a00451.html#a2e87c5ede6b7235170d287cd2e254454", null ],
     [ "cssLiteralToJSON", "a00451.html#a67699ff82e77f0268956c5f37cc52c7b", null ],
     [ "formatFooter", "a00451.html#af149b280d2c9bcc76f05c6a1c291d30f", null ],
+    [ "formatForWebView", "a00451.html#a5d6a80a5da000ba1a12874296798129f", null ],
     [ "formatGeometry", "a00451.html#a399873993b7ab0c34a034702639a6cad", null ],
     [ "formatHeader", "a00451.html#abaa077ed79fcfd5a2279597e3f324c64", null ],
     [ "formatter", "a00451.html#a6561dcf48f63c199d693d5ed6c739dc0", null ],
