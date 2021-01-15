@@ -10,6 +10,7 @@
 var webbase="$server_base"
 var datasetbase="$sourceURLs"
 var stylestring="$styleWithHtml".replace("&quot;","\"")
+console.log(stylestring)
 var styles=JSON.parse(stylestring)
 function getClassHierarchy(classeswithinstances){
 console.log(JSON.stringify(classeswithinstances))
