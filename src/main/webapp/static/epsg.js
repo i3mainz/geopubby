@@ -21,6 +21,22 @@ function convertGeoJSON(geojson,from,styles){
 	return geojson;
 }
 
+function applyStyle(geojson,styles){
+	if("features" in geojson){
+		for(feature in geojson["features"]){
+			if(geojson["features"][feature]["geometry"]["type"].replace("Multi","") in styles){
+				geojson["features"][feature]["style"]=styles[geojson["features"][feature]["geometry"]["type"].replace("Multi","")]
+			}
+		}
+	}else{
+		if(geojson["geometry"]["type"].replace("Multi","") in styles){
+			geojson["style"]=styles[geojson["geometry"]["type"].replace("Multi","")]
+		}
+	}
+	console.log(geojson);
+	return geojson;
+}
+
 function exportConvert(coordinates,from,geomtype,switchlatlong){
     console.log("ExportConvert")
     coords=convertit(coordinates,from,epsgdefs["EPSG:4326"],switchlatlong)

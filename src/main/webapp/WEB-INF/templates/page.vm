@@ -304,7 +304,10 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
 	            feature=convertGeoJSON(feature,epsgdefs[epsg],styles)
 	            console.log(feature);
+              }else{
+              	feature=applyStyle(feature,styles)
               }
+              console.log(feature);
               layerr=L.geoJSON.css(feature,{
                    pointToLayer: function(feature, latlng){
                   var greenIcon = new L.Icon({
