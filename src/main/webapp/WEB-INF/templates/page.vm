@@ -6,6 +6,7 @@
     <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
     </div>
 #end
+${style}
 <script>
 var webbase="$server_base"
 var datasetbase="$sourceURLs"
