@@ -35,7 +35,8 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 		JSONObject styleproperties=new JSONObject();
 		if(cssString==null)
 			return styleproperties;
-		cssString=cssString.substring(0,cssString.indexOf("^^"));
+		if(cssString.contains("^^"))
+			cssString=cssString.substring(0,cssString.indexOf("^^"));
 		if(cssString.contains(";")) {
 			for(String statement:cssString.split(";")) {
 				String[] split=statement.split(":");
