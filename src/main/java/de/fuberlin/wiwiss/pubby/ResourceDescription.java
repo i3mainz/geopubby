@@ -225,10 +225,10 @@ public class ResourceDescription {
 	    StmtIterator it= resource.listProperties(GEO.STYLE);
 	    if(it.hasNext()){
 	        Statement s = it.nextStatement();
-	        if(s.getObject().isResource()) {
-		        StyleObject obj=GeoModelWriter.handleStyle(s.getObject().asResource());
+	        //if(s.getObject().isResource()) {
+		        StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());
 		        return obj;	        	
-	        }
+	        //}
 	    }
 	    return null;
 	}
