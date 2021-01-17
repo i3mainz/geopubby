@@ -1,8 +1,8 @@
 var annotated_dup =
 [
-    [ "de", "a00333.html", "a00333" ],
-    [ "org", "a00347.html", "a00347" ],
-    [ "Comparable", "a01711.html", null ],
-    [ "Runnable", "a01715.html", null ],
-    [ "RuntimeException", "a01719.html", null ]
+    [ "de", "a00339.html", "a00339" ],
+    [ "org", "a00353.html", "a00353" ],
+    [ "Comparable", "a01749.html", null ],
+    [ "Runnable", "a01753.html", null ],
+    [ "RuntimeException", "a01757.html", null ]
 ];

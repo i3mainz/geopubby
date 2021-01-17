@@ -1,10 +1,8 @@
 var a00343 =
 [
-    [ "DataSource", "a00711.html", "a00711" ],
-    [ "FilteredDataSource", "a00715.html", "a00715" ],
-    [ "IndexDataSource", "a00719.html", "a00719" ],
-    [ "MergeDataSource", "a00723.html", "a00723" ],
-    [ "ModelDataSource", "a00727.html", "a00727" ],
-    [ "RemoteSPARQLDataSource", "a00731.html", "a00731" ],
-    [ "RewrittenDataSource", "a00735.html", "a00735" ]
+    [ "CoverageJSONWriter", "a00377.html", "a00377" ],
+    [ "HexWKBRasterWriter", "a00381.html", null ],
+    [ "WKBRasterWriter", "a00385.html", "a00385" ],
+    [ "X3DWriter", "a00389.html", "a00389" ],
+    [ "XYZASCIIWriter", "a00393.html", "a00393" ]
 ];
