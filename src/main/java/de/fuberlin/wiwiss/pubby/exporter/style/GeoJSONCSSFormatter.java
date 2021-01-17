@@ -35,7 +35,8 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 		JSONObject styleproperties=new JSONObject();
 		if(cssString==null)
 			return styleproperties;
-		cssString=cssString.substring(0,cssString.indexOf("^^"));
+		if(cssString.contains("^^"))
+			cssString=cssString.substring(0,cssString.indexOf("^^"));
 		if(cssString.contains(";")) {
 			for(String statement:cssString.split(";")) {
 				String[] split=statement.split(":");
@@ -60,7 +61,7 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 		JSONObject result=new JSONObject();
 		result.put("Point", new JSONObject(formatGeometry("Point",obj)));
 		result.put("LineString", new JSONObject(formatGeometry("LineString",obj)));
-		result.put("Polyon", new JSONObject(formatGeometry("Polygon",obj)));
+		result.put("Polygon", new JSONObject(formatGeometry("Polygon",obj)));
 		return result;
 	}
 

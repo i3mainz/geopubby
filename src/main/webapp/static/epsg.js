@@ -6,15 +6,31 @@ function convertGeoJSON(geojson,from,styles){
 		for(feature in geojson["features"]){
 			coords=geojson["features"][feature]["geometry"]["coordinates"]
 			geojson["features"][feature]["geometry"]=exportConvert(coords,from,geojson["features"][feature]["geometry"]["type"],false)
-			if(geojson["features"][feature]["geometry"]["type"] in styles){
-				geojson["features"][feature]["style"]=styles[geojson["features"][feature]["geometry"]["type"]]
+			if(geojson["features"][feature]["geometry"]["type"].replace("Multi","") in styles){
+				geojson["features"][feature]["style"]=styles[geojson["features"][feature]["geometry"]["type"].replace("Multi","")]
 			}
 		}
 	}else{
 		coords=geojson["geometry"]["coordinates"]
 		geojson["geometry"]=exportConvert(coords,from,geojson["geometry"]["type"],false)
-		if(geojson["geometry"]["type"] in styles){
-			geojson["style"]=styles[geojson["geometry"]["type"]]
+		if(geojson["geometry"]["type"].replace("Multi","") in styles){
+			geojson["style"]=styles[geojson["geometry"]["type"].replace("Multi","")]
+		}
+	}
+	console.log(geojson);
+	return geojson;
+}
+
+function applyStyle(geojson,styles){
+	if("features" in geojson){
+		for(feature in geojson["features"]){
+			if(geojson["features"][feature]["geometry"]["type"].replace("Multi","") in styles){
+				geojson["features"][feature]["style"]=styles[geojson["features"][feature]["geometry"]["type"].replace("Multi","")]
+			}
+		}
+	}else{
+		if(geojson["geometry"]["type"].replace("Multi","") in styles){
+			geojson["style"]=styles[geojson["geometry"]["type"].replace("Multi","")]
 		}
 	}
 	console.log(geojson);
