@@ -106,11 +106,37 @@ public class StyleObject {
 		return result.toString(2);
 	}
 	
-	public OntModel toRDF() {
+	public String toRDF() {
 		Set<String> ttl=new HashSet<String>();
-		OntModel model=ModelFactory.createOntologyModel();
-		
-		return model;
+		ttl.add("geo:"+this.styleName+" rdf:type geo:Style . ");
+		if(pointStyle!=null) {
+			ttl.add("geo:pointStyle geo:pointStyle \""+this.pointStyle+"\"^^geo:cssLiteral . ");
+		}
+		if(pointImage!=null) {
+			ttl.add("geo:"+this.styleName+" geo:pointImage \""+this.pointImage+"\"^^geo:svgLiteral . ");
+		}
+		if(lineStringStyle!=null) {
+			ttl.add("geo:"+this.styleName+" geo:lineStringStyle \""+this.lineStringStyle+"\"^^geo:svgLiteral . ");
+		}
+		if(lineStringImage!=null) {
+			ttl.add("geo:"+this.styleName+" geo:lineStringImage \""+this.lineStringImage+"\"^^geo:svgLiteral . ");
+		}
+		if(lineStringImageStyle!=null) {
+			ttl.add("geo:"+this.styleName+" geo:lineStringImageStyle \""+this.lineStringImageStyle+"\"^^geo:cssLiteral . ");
+		}
+		if(polygonStyle!=null) {
+			ttl.add("geo:"+this.styleName+" geo:polygonStyle \""+this.polygonStyle+"\"^^geo:cssLiteral . ");
+		}
+		if(polygonImage!=null) {
+			ttl.add("geo:"+this.styleName+" geo:polygonImage \""+this.polygonImage+"\"^^geo:svgLiteral . ");
+		}
+		if(hatch!=null) {
+			ttl.add("geo:"+this.styleName+" geo:hatch \""+this.hatch+"\"^^geo:svgLiteral . ");
+		}
+		if(popupStyle!=null) {
+			ttl.add("geo:"+this.popupStyle+" geo:hatch \""+this.popupStyle+"\"^^geo:cssLiteral . ");
+		}
+		return ttl.toString();
 	}
 	
 	public String conditionsToSHACL() {
