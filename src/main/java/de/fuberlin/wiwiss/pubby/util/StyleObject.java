@@ -1,12 +1,18 @@
 package de.fuberlin.wiwiss.pubby.util;
 
 import java.io.StringWriter;
+
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.List;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.json.JSONObject;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
@@ -68,14 +74,11 @@ public class StyleObject {
 	public String styleDescription;
 	
 	/**
-	 * A description of a given style.
-	 */
-	public Map<String,String> conditions;
-	
-	/**
 	 * A style definition for the map popup.
 	 */
 	public String popupStyle;
+	
+	public List<List<Condition>> conditions;
 
 	@Override
 	public String toString() {
@@ -101,6 +104,27 @@ public class StyleObject {
 		result.put("hatch",(hatch!=null?hatch.replace("\"","").replace("\\",""):null));
 		result.put("styleName",styleName);
 		return result.toString(2);
+	}
+	
+	public OntModel toRDF() {
+		Set<String> ttl=new HashSet<String>();
+		OntModel model=ModelFactory.createOntologyModel();
+		
+		return model;
+	}
+	
+	public String conditionsToSHACL() {
+		return "";
+	}
+	
+	public String mapToCSS(Map<String,String> map){
+		StringBuilder result=new StringBuilder();
+		result.append("\"");
+		for(String key:map.keySet()) {
+			result.append(key+":"+map.get(key)+";");
+		}
+		result.append("\"");
+		return result.toString();
 	}
 	
 	/**

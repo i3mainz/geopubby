@@ -7,6 +7,11 @@ import java.util.Map;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParserFactory;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.ext.DefaultHandler2;
@@ -17,7 +22,7 @@ public class SLDParser extends DefaultHandler2 {
 	
 	Boolean featureTypeStyle=false;
 	
-	Boolean filter=false,rule=false,polygon=false,linestring=false,point=false,name=false;
+	Boolean filter=false,rule=false,polygon=false,linestring=false,point=false,name=false,and=false,or=false;
 	
 	Boolean svgParameter=false;
 	
@@ -27,6 +32,7 @@ public class SLDParser extends DefaultHandler2 {
 	
 	String svgParamName,ruleName;
 	
+	StyleObject currentStyle;
 	
 	public SLDParser() {
 		this.model=ModelFactory.createOntologyModel();
@@ -34,30 +40,30 @@ public class SLDParser extends DefaultHandler2 {
 	
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-		// TODO Auto-generated method stub
-		super.startElement(uri, localName, qName, attributes);
+		System.out.println(qName);
 		switch(qName) {
-			case "PolygonSymbolizer":
+			case "se:PolygonSymbolizer":
 				polygon=true;
 				break;
-			case "LineStringSymbolizer":
+			case "se:LineStringSymbolizer":
 				linestring=true;
 				break;
-			case "PointSymbolizer":
+			case "se:PointSymbolizer":
 				point=true;
 				break;
-			case "SvgParameter":
+			case "se:SvgParameter":
 				this.svgParameter=true;
 				this.svgParamName=attributes.getValue("name");
 				break;
-			case "CssParameter":
+			case "se:CssParameter":
 				this.svgParameter=true;
 				this.svgParamName=attributes.getValue("name");
 				break;
-			case "Rule":
+			case "se:Rule":
 				this.rule=true;
+				this.currentStyle=new StyleObject();
 				break;
-			case "Name":
+			case "se:Name":
 				this.name=true;
 				break;
 		}
@@ -76,34 +82,40 @@ public class SLDParser extends DefaultHandler2 {
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 		switch(qName) {
-		case "SvgParameter":
+		case "se:SvgParameter":
 			this.svgParameter=false;
 			break;
-		case "CssParameter":
+		case "se:CssParameter":
 			this.svgParameter=false;
 			break;
-		case "PolygonSymbolizer":
+		case "se:PolygonSymbolizer":
 			polygon=false;
+			this.currentStyle.polygonStyle=this.currentStyle.mapToCSS(this.svgInstance);
 			break;
-		case "LineStringSymbolizer":
+		case "se:LineStringSymbolizer":
 			linestring=false;
+			this.currentStyle.lineStringStyle=this.currentStyle.mapToCSS(this.svgInstance);
 			break;
-		case "PointSymbolizer":
+		case "se:PointSymbolizer":
 			point=false;
+			this.currentStyle.pointStyle=this.currentStyle.mapToCSS(this.svgInstance);
 			break;
-		case "Rule":
+		case "se:Rule":
 			this.rule=false;
+			this.styles.add(currentStyle);
 			break;
-		case "Name":
+		case "se:Name":
 			this.name=false;
 			break;
 		}
 	}
-	
-	public static void main(String[] args) {
-		
-	}
-	
-	
+
+
+public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
+	SLDParser parser=new SLDParser();
+	SAXParserFactory.newInstance().newSAXParser().parse("test.sld", parser);
+	System.out.println(parser.styles);
+	System.out.println(parser.styles.get(0).toJSON());
+}
 	
 }

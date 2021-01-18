@@ -80,6 +80,7 @@
         # Multiple queries can be specified, results will be merged.
 		conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o . ?p <http://www.w3.org/2000/01/rdf-schema#label> ?label . ?o <http://www.w3.org/2000/01/rdf-schema#label> ?olabel .} WHERE { ?__this__ ?p ?o . OPTIONAL {?p  <http://www.w3.org/2000/01/rdf-schema#label> ?label . } OPTIONAL {?o  <http://www.w3.org/2000/01/rdf-schema#label> ?olabel . } }";
         conf:resourceDescriptionQuery "CONSTRUCT { ?s ?p ?__this__ } WHERE { ?s ?p ?__this__ }";
+        conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o.  } WHERE { VALUES ?p { <http://www.opengis.net/ont/geosparql#polygonStyle> <http://www.opengis.net/ont/geosparql#polygonImage> <http://www.opengis.net/ont/geosparql#pointStyle> <http://www.opengis.net/ont/geosparql#pointImage> <http://www.opengis.net/ont/geosparql#lineStringStyle> <http://www.opengis.net/ont/geosparql#lineStringImage> <http://www.opengis.net/ont/geosparql#lineStringImageStyle> <http://www.opengis.net/ont/geosparql#hatch> } . ?__this__ <http://www.opengis.net/ont/geosparql#style> ?geo . ?geo ?p ?o . }";
         conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o . ?p  <http://www.w3.org/2000/01/rdf-schema#label> ?label . } WHERE { VALUES ?p { <http://www.opengis.net/ont/geosparql#asWKT> <http://www.opengis.net/ont/geosparql#epsg> <http://www.opengis.net/ont/geosparql#asGML> } . ?__this__ <http://www.opengis.net/ont/geosparql#hasGeometry> ?geo . ?geo ?p ?o . OPTIONAL {?p  <http://www.w3.org/2000/01/rdf-schema#label> ?label . } }";
 
 		      
