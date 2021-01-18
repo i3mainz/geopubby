@@ -1,12 +1,12 @@
 <map id="ResourceDescription.ResourceProperty" name="ResourceDescription.ResourceProperty">
-<area shape="rect" id="node2" href="$a01757.html" title="Comparable\&lt; ResourceProperty \&gt;" alt="" coords="1633,5,1855,32"/>
+<area shape="rect" id="node2" href="$a01753.html" title="Comparable\&lt; ResourceProperty \&gt;" alt="" coords="1633,5,1855,32"/>
 <area shape="rect" id="node5" href="$a00745.html" title="Helper class that splits URIs into prefix and local name according to a Jena PrefixMapping. " alt="" coords="1699,239,1789,265"/>
-<area shape="rect" id="node9" href="$a00813.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1685,431,1803,457"/>
-<area shape="rect" id="node10" href="$a00817.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,365,1400,406"/>
-<area shape="rect" id="node15" href="$a00821.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,459,629,485"/>
-<area shape="rect" id="node13" href="$a00829.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,517,1389,558"/>
-<area shape="rect" id="node14" href="$a00821.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,517,1016,558"/>
-<area shape="rect" id="node20" href="$a00821.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,451,1016,493"/>
-<area shape="rect" id="node19" href="$a00825.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,451,1383,493"/>
-<area shape="rect" id="node21" href="$a00717.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,583,1337,609"/>
+<area shape="rect" id="node9" href="$a00813.html" title="A store for labels, descriptions and other metadata of classes and properties. " alt="" coords="1685,405,1803,432"/>
+<area shape="rect" id="node10" href="$a00817.html" title="VocabularyStore.CachedProperty\lCollection" alt="" coords="1184,361,1400,402"/>
+<area shape="rect" id="node15" href="$a00821.html" title="VocabularyStore.ValueCache\&lt; K \&gt;" alt="" coords="403,473,629,500"/>
+<area shape="rect" id="node13" href="$a00829.html" title="VocabularyStore.IntegerValue\lCache" alt="" coords="1195,431,1389,473"/>
+<area shape="rect" id="node14" href="$a00821.html" title="VocabularyStore.ValueCache\l\&lt; Integer \&gt;" alt="" coords="823,433,1016,474"/>
+<area shape="rect" id="node20" href="$a00821.html" title="VocabularyStore.ValueCache\l\&lt; Collection\&lt; Literal \&gt; \&gt;" alt="" coords="823,507,1016,549"/>
+<area shape="rect" id="node19" href="$a00825.html" title="VocabularyStore.I18nString\lValueCache" alt="" coords="1201,513,1383,554"/>
+<area shape="rect" id="node21" href="$a00717.html" title="A source of RDF data intended for publication through the server. " alt="" coords="1247,580,1337,607"/>
 </map>

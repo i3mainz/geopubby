@@ -1,6 +1,7 @@
 var a00789 =
 [
     [ "conditionsToSHACL", "a00789.html#a333d7474f5ccc6fc06fa5df23d66aab2", null ],
+    [ "mapToCSS", "a00789.html#a4b5940a5d70b406c4909400387f85742", null ],
     [ "toHTML", "a00789.html#add850f03e24411f6d9e46e4e07a02727", null ],
     [ "toJSON", "a00789.html#a693608dec873ba750e1bf45f50d81817", null ],
     [ "toRDF", "a00789.html#af6d8f2845feb2ab6368398c74985c764", null ],
