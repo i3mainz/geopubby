@@ -28,7 +28,6 @@ public class SLDParser extends DefaultHandler2 {
 	String svgParamName,ruleName;
 	
 	
-	
 	public SLDParser() {
 		this.model=ModelFactory.createOntologyModel();
 	}
@@ -48,6 +47,10 @@ public class SLDParser extends DefaultHandler2 {
 				point=true;
 				break;
 			case "SvgParameter":
+				this.svgParameter=true;
+				this.svgParamName=attributes.getValue("name");
+				break;
+			case "CssParameter":
 				this.svgParameter=true;
 				this.svgParamName=attributes.getValue("name");
 				break;
@@ -76,6 +79,9 @@ public class SLDParser extends DefaultHandler2 {
 		case "SvgParameter":
 			this.svgParameter=false;
 			break;
+		case "CssParameter":
+			this.svgParameter=false;
+			break;
 		case "PolygonSymbolizer":
 			polygon=false;
 			break;
@@ -92,6 +98,10 @@ public class SLDParser extends DefaultHandler2 {
 			this.name=false;
 			break;
 		}
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 	
 	
