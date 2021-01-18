@@ -1,6 +1,7 @@
 package de.fuberlin.wiwiss.pubby.util;
 
 import java.io.StringWriter;
+import java.util.Map;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -60,6 +61,16 @@ public class StyleObject {
 	 * An identifier of a given style.
 	 */
 	public String styleName;
+	
+	/**
+	 * A description of a given style.
+	 */
+	public String styleDescription;
+	
+	/**
+	 * A description of a given style.
+	 */
+	public Map<String,String> conditions;
 	
 	/**
 	 * A style definition for the map popup.
