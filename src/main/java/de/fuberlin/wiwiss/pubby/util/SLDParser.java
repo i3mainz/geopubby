@@ -1,96 +1,113 @@
 package de.fuberlin.wiwiss.pubby.util;
 
-import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.rdf.model.ModelFactory;
+import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.apache.jena.query.Query;
-import org.apache.jena.query.QueryFactory;
-import org.apache.jena.query.QuerySolution;
-import org.apache.jena.query.ResultSet;
-import org.apache.jena.sparql.engine.http.QueryEngineHTTP;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.ext.DefaultHandler2;
 
 public class SLDParser extends DefaultHandler2 {
-public boolean rule,and,svgParameter,filter,name,or,polygon,linestring,point;
 
-List<StyleObject> styles;
-
-StyleObject currentStyle;
-
-@Override
+	OntModel model;
+	
+	Boolean featureTypeStyle=false;
+	
+	Boolean filter=false,rule=false,polygon=false,linestring=false,point=false,name=false,and=false,or=false;
+	
+	Boolean svgParameter=false;
+	
+	Map<String,String> svgInstance=new HashMap<String,String>();
+	
+	List<StyleObject> styles=new LinkedList<StyleObject>();
+	
+	String svgParamName,ruleName;
+	
+	StyleObject currentStyle;
+	
+	public SLDParser() {
+		this.model=ModelFactory.createOntologyModel();
+	}
+	
+	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+		System.out.println(qName);
 		switch(qName) {
-		case "Rule":
-			currentStyle=new StyleObject();
-			break;
-		case "SVGParameter":
-			this.svgParameter=true;
-			break;
-		case "CSSParameter":
-			this.svgParameter=true;
-			break;
-		case "Filter":
-			this.filter=true;
-			break;
-		case "PolygonSymbolizser":
-			this.polygon=true;
-			break;
-		case "And":
-			this.and=true;
-			break;
-		case "Or":
-			this.or=true;
-			break;
-		case "Name":
-			this.name=true;
-			break;
+			case "se:PolygonSymbolizer":
+				polygon=true;
+				break;
+			case "se:LineSymbolizer":
+				linestring=true;
+				break;
+			case "se:PointSymbolizer":
+				point=true;
+				break;
+			case "se:SvgParameter":
+				this.svgParameter=true;
+				this.svgParamName=attributes.getValue("name");
+				break;
+			case "se:CssParameter":
+				this.svgParameter=true;
+				this.svgParamName=attributes.getValue("name");
+				break;
+			case "se:Rule":
+				this.rule=true;
+				this.currentStyle=new StyleObject();
+				break;
+			case "se:Name":
+				this.name=true;
+				break;
 		}
 	}
-
-@Override
+	
+	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		if(name) {
-			
-		}
 		if(svgParameter) {
-			
+			this.svgInstance.put(this.svgParamName, new String(ch,start,length));
+		}
+		if(this.name) {
+			this.ruleName=new String(ch,start,length);
 		}
 	}
-
-@Override
+	
+	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
-	switch(qName) {
-	case "Rule":
-		this.styles.add(currentStyle);
-		break;
-	case "SVGParameter":
-		this.svgParameter=true;
-		
-		break;
-	case "CSSParameter":
-		this.svgParameter=true;
-		break;
-	case "Filter":
-		this.filter=true;
-		break;
-	case "PolygonSymbolizser":
-		this.polygon=true;
-		break;
-	case "And":
-		this.and=true;
-		break;
-	case "Or":
-		this.or=true;
-		break;
-	case "Name":
-		this.name=true;
-		break;
-	}
+		switch(qName) {
+		case "se:SvgParameter":
+			this.svgParameter=false;
+			break;
+		case "se:CssParameter":
+			this.svgParameter=false;
+			break;
+		case "se:PolygonSymbolizer":
+			polygon=false;
+			this.currentStyle.polygonStyle=this.currentStyle.mapToCSS(this.svgInstance);
+			break;
+		case "se:LineSymbolizer":
+			linestring=false;
+			this.currentStyle.lineStringStyle=this.currentStyle.mapToCSS(this.svgInstance);
+			break;
+		case "se:PointSymbolizer":
+			point=false;
+			this.currentStyle.pointStyle=this.currentStyle.mapToCSS(this.svgInstance);
+			break;
+		case "se:Rule":
+			this.rule=false;
+			this.styles.add(currentStyle);
+			break;
+		case "se:Name":
+			this.name=false;
+			break;
+		}
 	}
 
 
@@ -98,37 +115,7 @@ public static void main(String[] args) throws SAXException, IOException, ParserC
 	SLDParser parser=new SLDParser();
 	SAXParserFactory.newInstance().newSAXParser().parse("test.sld", parser);
 	System.out.println(parser.styles);
+	System.out.println(parser.styles.get(0).toJSON());
 }
-
-/*
-public static void main(String[] args) {
-	String query="PREFIX my: <http://example.org/ApplicationSchema#>\n"
-			+ "PREFIX geo: <http://www.opengis.net/ont/geosparql#>\n"
-			+ "PREFIX geof: <http://www.opengis.net/def/function/geosparql/>\n"
-			+ "SELECT ?union\n"
-			+ "WHERE {\n"
-			+ "  my:A geo:hasDefaultGeometry ?aGeom .\n"
-			+ "  ?aGeom geo:asGML ?aGML .\n"
-			+ "  my:B geo:hasDefaultGeometry ?bGeom .\n"
-			+ "  ?bGeom geo:asGML ?bGML .\n"
-			+ "  BIND (geof:union(?aGML, ?bGML) as ?union)\n"
-			+ "}\n"
-			+ "";
-	Query q = QueryFactory.create(query);
-
-	QueryEngineHTTP qexec =new QueryEngineHTTP("http://localhost:3030/ds", q);
-	qexec.addParam("format", "json");
-	        try {
-	            ResultSet results = qexec.execSelect();
-	            while(results.hasNext()) {
-	            	QuerySolution solu=results.next();
-	            	System.out.println(solu.toString());
-	            }
-
-	        } catch (Exception ex) {
-	            System.out.println(ex.getMessage());
-	        }
-	        qexec.close();
-}*/
 	
 }
