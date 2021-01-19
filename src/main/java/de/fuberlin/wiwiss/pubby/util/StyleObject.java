@@ -78,13 +78,13 @@ public class StyleObject {
 	 */
 	public String popupStyle;
 	
-	public List<List<Condition>> conditions;
+	public List<Condition> conditions;
 
 	@Override
 	public String toString() {
-		return "StyleObject [pointStyle=" + pointStyle + ", pointImage=" + pointImage + ", lineStringStyle="
-				+ lineStringStyle + ", lineStringImage=" + lineStringImage + ", polygonStyle=" + polygonStyle
-				+", popupStyle=" + popupStyle +", polygonImage=" + polygonImage + ", hatch=" + hatch + "]";
+		return "StyleObject [pointStyle=" + pointStyle + ""+System.lineSeparator()+", pointImage=" + pointImage + ""+System.lineSeparator()+", lineStringStyle="
+				+ lineStringStyle + ""+System.lineSeparator()+", lineStringImage=" + lineStringImage + ""+System.lineSeparator()+", polygonStyle=" + polygonStyle
+				+""+System.lineSeparator()+", popupStyle=" + popupStyle +""+System.lineSeparator()+", polygonImage=" + polygonImage + ""+System.lineSeparator()+", hatch=" + hatch + ","+System.lineSeparator()+" conditions: "+this.conditions+"]"+System.lineSeparator();
 	}
 	
 	/**
@@ -108,7 +108,7 @@ public class StyleObject {
 	
 	public String toRDF() {
 		Set<String> ttl=new HashSet<String>();
-		ttl.add("geo:"+this.styleName+" rdf:type geo:Style . ");
+		ttl.add("geo:"+this.styleName+" rdf:type geo:Style, rdfs:Class, sh:NodeShape . ");
 		if(pointStyle!=null) {
 			ttl.add("geo:pointStyle geo:pointStyle \""+this.pointStyle+"\"^^geo:cssLiteral . ");
 		}
@@ -136,15 +136,21 @@ public class StyleObject {
 		if(popupStyle!=null) {
 			ttl.add("geo:"+this.popupStyle+" geo:hatch \""+this.popupStyle+"\"^^geo:cssLiteral . ");
 		}
+		ttl.add(this.conditionsToSHACL());
 		return ttl.toString();
 	}
 	
 	public String conditionsToSHACL() {
+		if(conditions.isEmpty())
+			return "";
 		StringBuilder builder=new StringBuilder();
-		for(List<Condition> condlist:this.conditions) {
-			for(Condition cond:condlist) {
-				
-			}
+		builder.append("sh:rule ["+System.lineSeparator());
+		builder.append("a sh:TripleRule ;");
+		builder.append("sh:subject sh:this ;");
+		builder.append("sh:predicate geo:style ;");
+		builder.append("sh:object "+this.styleName+" ;");
+		for(Condition cond:conditions) {
+			builder.append(cond.toSHACL());
 		}
 		return builder.toString();
 	}
@@ -175,6 +181,7 @@ public class StyleObject {
 		result.append("<tr><td>polygonImage</td><td>"+(polygonImage!=null?polygonImage.replace("\"","").replace("\\",""):"")+"</td></tr>");
 		result.append("<tr><td>popupStyle</td><td>"+(popupStyle!=null?popupStyle.replace("\"","").replace("\\",""):"")+"</td></tr>");
 		result.append("<tr><td>hatch</td><td>"+(hatch!=null?hatch.replace("\"","").replace("\\",""):"")+"</td></tr>");
+		result.append("<tr><td>styleDescription</td><td>"+styleDescription+"</td></tr>");
 		result.append("<tr><td>styleName</td><td>"+styleName+"</td></tr></table>");
 		return result.toString();
 	}
