@@ -27,5 +27,6 @@ var a00785 =
     [ "styles", "a00785.html#ac072056dd41ec0e608eff027a2ae1177", null ],
     [ "svgInstance", "a00785.html#a60e556ddcd232d25ae5fdfd037fee23d", null ],
     [ "svgParameter", "a00785.html#a5e8874f3059f65f915d0ae1b558d7d50", null ],
-    [ "svgParamName", "a00785.html#ab58bac9618a87600f815a3aa6a021df6", null ]
+    [ "svgParamName", "a00785.html#ab58bac9618a87600f815a3aa6a021df6", null ],
+    [ "wellKnownNameToSVG", "a00785.html#a3c7348549223c2154d2773a98bb5bf26", null ]
 ];
