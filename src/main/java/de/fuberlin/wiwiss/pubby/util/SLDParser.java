@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -40,8 +41,29 @@ public class SLDParser extends DefaultHandler2 {
 
 	private boolean propertyName,literal,gmlgeometry;
 	
+	Map<String,String> wellKnownNameToSVG=new TreeMap<>();
+	
 	public SLDParser() {
 		this.model=ModelFactory.createOntologyModel();
+		this.wellKnownNameToSVG.put("circle", "");
+		this.wellKnownNameToSVG.put("square", "");
+		this.wellKnownNameToSVG.put("triangle", "");
+		this.wellKnownNameToSVG.put("star", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"255\" height=\"240\" viewBox=\"0 0 51 48\">\r\n"
+				+ "<title>Five Pointed Star</title>\r\n"
+				+ "<path fill=\"none\" stroke=\"#000\" d=\"m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z\"/>\r\n"
+				+ "</svg>");
+		this.wellKnownNameToSVG.put("cross", "");
+		this.wellKnownNameToSVG.put("x", "");
+		this.wellKnownNameToSVG.put("vertline", "");
+		this.wellKnownNameToSVG.put("horline", "");
+		this.wellKnownNameToSVG.put("slash", "");
+		this.wellKnownNameToSVG.put("backslash", "");
+		this.wellKnownNameToSVG.put("dot", "");
+		this.wellKnownNameToSVG.put("plus", "");
+		this.wellKnownNameToSVG.put("times", "");
+		this.wellKnownNameToSVG.put("oarrow", "");
+		this.wellKnownNameToSVG.put("carrow", "");
+		
 	}
 	
 	@Override
@@ -78,6 +100,9 @@ public class SLDParser extends DefaultHandler2 {
 				break;
 			case "ogc:PropertyName":
 				this.propertyName=true;
+				break;
+			case "ogc:Point":
+				this.literal=true;
 				break;
 			case "ogc:Literal":
 				this.literal=true;
