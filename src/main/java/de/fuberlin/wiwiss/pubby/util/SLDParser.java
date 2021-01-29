@@ -8,6 +8,9 @@ import java.util.TreeMap;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -42,6 +45,10 @@ public class SLDParser extends DefaultHandler2 {
 	private boolean propertyName,literal,gmlgeometry;
 	
 	Map<String,String> wellKnownNameToSVG=new TreeMap<>();
+
+	private boolean userstyle;
+
+	private String styleId;
 	
 	public SLDParser() {
 		this.model=ModelFactory.createOntologyModel();
@@ -94,6 +101,9 @@ public class SLDParser extends DefaultHandler2 {
 				this.rule=true;
 				this.currentStyle=new StyleObject();
 				this.curcondlist=new LinkedList<>();
+				break;
+			case "UserStyle":
+				this.userstyle=true;
 				break;
 			case "se:Name":
 				this.name=true;
@@ -215,8 +225,17 @@ public class SLDParser extends DefaultHandler2 {
 		if(svgParameter) {
 			this.svgInstance.put(this.svgParamName, new String(ch,start,length));
 		}
-		if(this.name) {
+		if(this.name && this.userstyle && !this.rule) {
+			System.out.println(new String(ch,start,length).replace(" ", "_"));
+			this.styleId=new String(ch,start,length).replace(" ", "_");
+		}
+		if(this.name)
+			System.out.println("CHaracters: "+new String(ch,start,length)+" "+this.userstyle+" "+this.rule);
+		if(this.name && this.userstyle && this.rule) {
 			this.ruleName=new String(ch,start,length);
+			System.out.println(new String(ch,start,length));
+			this.currentStyle.styleName=new String(ch,start,length);
+			this.currentStyle.styleId=this.styleId;
 		}
 		if(this.propertyName) {
 			this.currentCondition.property=new String(ch,start,length);
@@ -260,6 +279,9 @@ public class SLDParser extends DefaultHandler2 {
 		case "se:Name":
 			this.name=false;
 			break;
+		case "UserStyle":
+			this.userstyle=false;
+			break;
 		case "ogc:PropertyName":
 			this.propertyName=false;
 			break;
@@ -278,7 +300,7 @@ public class SLDParser extends DefaultHandler2 {
 		case "ogc:PropertyIsLessThanOrEqualTo":
 			this.condition=false;
 			break;
-		case "ogc:PropertyIsGreaterThan":
+		case "ogc:PropertyIsGreaterThan":	
 			this.condition=false;
 			break;
 		case "ogc:PropertyIsGreaterThanOrEqualTo":
@@ -335,7 +357,13 @@ public static void main(String[] args) throws SAXException, IOException, ParserC
 	SAXParserFactory.newInstance().newSAXParser().parse("test.sld", parser);
 	System.out.println(parser.styles);
 	System.out.println(parser.styles.size());
-	System.out.println(parser.styles.get(0).toJSON());
+	StringBuilder builder=new StringBuilder();
+	for(StyleObject stl:parser.styles) {
+		builder.append(stl.toRDF());
+	}
+	FileWriter writer=new FileWriter(new File("rules.ttl"));
+	writer.write(builder.toString());
+	writer.close();
 }
 	
 }

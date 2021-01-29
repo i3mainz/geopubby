@@ -68,6 +68,8 @@ public class StyleObject {
 	 */
 	public String styleName;
 	
+	public String styleId;
+	
 	/**
 	 * A description of a given style.
 	 */
@@ -82,7 +84,7 @@ public class StyleObject {
 
 	@Override
 	public String toString() {
-		return "StyleObject [pointStyle=" + pointStyle + ""+System.lineSeparator()+", pointImage=" + pointImage + ""+System.lineSeparator()+", lineStringStyle="
+		return "StyleObject [styleId=" +styleId+","+System.lineSeparator()+" styleName=\" "+styleName+"\","+System.lineSeparator()+" pointStyle=" + pointStyle + ""+System.lineSeparator()+", pointImage=" + pointImage + ""+System.lineSeparator()+", lineStringStyle="
 				+ lineStringStyle + ""+System.lineSeparator()+", lineStringImage=" + lineStringImage + ""+System.lineSeparator()+", polygonStyle=" + polygonStyle
 				+""+System.lineSeparator()+", popupStyle=" + popupStyle +""+System.lineSeparator()+", polygonImage=" + polygonImage + ""+System.lineSeparator()+", hatch=" + hatch + ","+System.lineSeparator()+" conditions: "+this.conditions+"]"+System.lineSeparator();
 	}
@@ -107,36 +109,39 @@ public class StyleObject {
 	}
 	
 	public String toRDF() {
-		Set<String> ttl=new HashSet<String>();
-		ttl.add("geo:"+this.styleName+" rdf:type geo:Style, rdfs:Class, sh:NodeShape . ");
+		StringBuilder ttl=new StringBuilder();
+		String curstyleid=this.styleId+"_"+this.styleName.replace(" ", "_");
+		ttl.append("geo:"+curstyleid+" rdf:type geo:Style, rdfs:Class, sh:NodeShape . "+System.lineSeparator());
+		ttl.append("geo:"+curstyleid+" rdfs:label \""+this.styleName+"\"@en . "+System.lineSeparator());
+		ttl.append("geo:"+curstyleid+" rdfs:comment \""+this.styleName+"\"@en . "+System.lineSeparator());
 		if(pointStyle!=null) {
-			ttl.add("geo:pointStyle geo:pointStyle \""+this.pointStyle+"\"^^geo:cssLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:pointStyle \""+this.pointStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(pointImage!=null) {
-			ttl.add("geo:"+this.styleName+" geo:pointImage \""+this.pointImage+"\"^^geo:svgLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:pointImage \""+this.pointImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
 		}
 		if(lineStringStyle!=null) {
-			ttl.add("geo:"+this.styleName+" geo:lineStringStyle \""+this.lineStringStyle+"\"^^geo:svgLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:lineStringStyle \""+this.lineStringStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(lineStringImage!=null) {
-			ttl.add("geo:"+this.styleName+" geo:lineStringImage \""+this.lineStringImage+"\"^^geo:svgLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:lineStringImage \""+this.lineStringImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
 		}
 		if(lineStringImageStyle!=null) {
-			ttl.add("geo:"+this.styleName+" geo:lineStringImageStyle \""+this.lineStringImageStyle+"\"^^geo:cssLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:lineStringImageStyle \""+this.lineStringImageStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(polygonStyle!=null) {
-			ttl.add("geo:"+this.styleName+" geo:polygonStyle \""+this.polygonStyle+"\"^^geo:cssLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:polygonStyle \""+this.polygonStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(polygonImage!=null) {
-			ttl.add("geo:"+this.styleName+" geo:polygonImage \""+this.polygonImage+"\"^^geo:svgLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:polygonImage \""+this.polygonImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
 		}
 		if(hatch!=null) {
-			ttl.add("geo:"+this.styleName+" geo:hatch \""+this.hatch+"\"^^geo:svgLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:hatch \""+this.hatch+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(popupStyle!=null) {
-			ttl.add("geo:"+this.popupStyle+" geo:hatch \""+this.popupStyle+"\"^^geo:cssLiteral . ");
+			ttl.append("geo:"+curstyleid+" geost:popupStyle \""+this.popupStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
-		ttl.add(this.conditionsToSHACL());
+		ttl.append(this.conditionsToSHACL());
 		return ttl.toString();
 	}
 	
@@ -145,13 +150,14 @@ public class StyleObject {
 			return "";
 		StringBuilder builder=new StringBuilder();
 		builder.append("sh:rule ["+System.lineSeparator());
-		builder.append("a sh:TripleRule ;");
-		builder.append("sh:subject sh:this ;");
-		builder.append("sh:predicate geo:style ;");
-		builder.append("sh:object "+this.styleName+" ;");
+		builder.append("a sh:TripleRule ;"+System.lineSeparator());
+		builder.append("sh:subject sh:this ;"+System.lineSeparator());
+		builder.append("sh:predicate geo:style ;"+System.lineSeparator());
+		builder.append("sh:object "+this.styleId+"_"+this.styleName.replace(" ","_")+" ;"+System.lineSeparator());
 		for(Condition cond:conditions) {
 			builder.append(cond.toSHACL());
 		}
+		builder.append("];"+System.lineSeparator());
 		return builder.toString();
 	}
 	
