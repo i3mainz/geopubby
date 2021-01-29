@@ -24,9 +24,11 @@ var a00785 =
     [ "propertyName", "a00785.html#abd3dee49c179ace38df5dc3fc931d5f3", null ],
     [ "rule", "a00785.html#a1abe3cc58f00713b34bcaeeaf5bfc311", null ],
     [ "ruleName", "a00785.html#a380cd016485973d28c856a9fed57e793", null ],
+    [ "styleId", "a00785.html#a489184e7790e8d01069c23dc8e35bd3d", null ],
     [ "styles", "a00785.html#ac072056dd41ec0e608eff027a2ae1177", null ],
     [ "svgInstance", "a00785.html#a60e556ddcd232d25ae5fdfd037fee23d", null ],
     [ "svgParameter", "a00785.html#a5e8874f3059f65f915d0ae1b558d7d50", null ],
     [ "svgParamName", "a00785.html#ab58bac9618a87600f815a3aa6a021df6", null ],
+    [ "userstyle", "a00785.html#afc30648103d7aa8b5980fb9c800dd808", null ],
     [ "wellKnownNameToSVG", "a00785.html#a3c7348549223c2154d2773a98bb5bf26", null ]
 ];

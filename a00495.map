@@ -1,7 +1,7 @@
 <map id="GeoJSONWriterr" name="GeoJSONWriterr">
-<area shape="rect" id="node2" href="$a00373.html" title="AbstractGeoJSONWriter" alt="" coords="1257,492,1424,519"/>
-<area shape="rect" id="node3" href="$a00401.html" title="GeoModelWriter" alt="" coords="1092,340,1208,367"/>
-<area shape="rect" id="node4" href="$a00409.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="834,56,926,83"/>
-<area shape="rect" id="node10" href="$a00789.html" title="An object containing style definitions to apply on geospatial objects. " alt="" coords="835,312,925,339"/>
-<area shape="rect" id="node13" href="$a00465.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="807,420,953,447"/>
+<area shape="rect" id="node2" href="$a00373.html" title="AbstractGeoJSONWriter" alt="" coords="1367,492,1540,519"/>
+<area shape="rect" id="node3" href="$a00401.html" title="GeoModelWriter" alt="" coords="1191,340,1317,367"/>
+<area shape="rect" id="node4" href="$a00409.html" title="A model class for exporting RDF in several downlift formats. " alt="" coords="912,56,1012,83"/>
+<area shape="rect" id="node10" href="$a00789.html" title="An object containing style definitions to apply on geospatial objects. " alt="" coords="913,312,1011,339"/>
+<area shape="rect" id="node13" href="$a00465.html" title="Abstract class to describe a class applying a style to a downlifted dataset. " alt="" coords="883,420,1041,447"/>
 </map>
