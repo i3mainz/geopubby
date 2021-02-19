@@ -4,9 +4,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.ModelFactory;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -40,8 +44,33 @@ public class SLDParser extends DefaultHandler2 {
 
 	private boolean propertyName,literal,gmlgeometry;
 	
+	Map<String,String> wellKnownNameToSVG=new TreeMap<>();
+
+	private boolean userstyle;
+
+	private String styleId;
+	
 	public SLDParser() {
 		this.model=ModelFactory.createOntologyModel();
+		this.wellKnownNameToSVG.put("circle", "");
+		this.wellKnownNameToSVG.put("square", "");
+		this.wellKnownNameToSVG.put("triangle", "");
+		this.wellKnownNameToSVG.put("star", "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"255\" height=\"240\" viewBox=\"0 0 51 48\">\r\n"
+				+ "<title>Five Pointed Star</title>\r\n"
+				+ "<path fill=\"none\" stroke=\"#000\" d=\"m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z\"/>\r\n"
+				+ "</svg>");
+		this.wellKnownNameToSVG.put("cross", "");
+		this.wellKnownNameToSVG.put("x", "");
+		this.wellKnownNameToSVG.put("vertline", "");
+		this.wellKnownNameToSVG.put("horline", "");
+		this.wellKnownNameToSVG.put("slash", "");
+		this.wellKnownNameToSVG.put("backslash", "");
+		this.wellKnownNameToSVG.put("dot", "");
+		this.wellKnownNameToSVG.put("plus", "");
+		this.wellKnownNameToSVG.put("times", "");
+		this.wellKnownNameToSVG.put("oarrow", "");
+		this.wellKnownNameToSVG.put("carrow", "");
+		
 	}
 	
 	@Override
@@ -73,11 +102,17 @@ public class SLDParser extends DefaultHandler2 {
 				this.currentStyle=new StyleObject();
 				this.curcondlist=new LinkedList<>();
 				break;
+			case "UserStyle":
+				this.userstyle=true;
+				break;
 			case "se:Name":
 				this.name=true;
 				break;
 			case "ogc:PropertyName":
 				this.propertyName=true;
+				break;
+			case "ogc:Point":
+				this.literal=true;
 				break;
 			case "ogc:Literal":
 				this.literal=true;
@@ -190,8 +225,17 @@ public class SLDParser extends DefaultHandler2 {
 		if(svgParameter) {
 			this.svgInstance.put(this.svgParamName, new String(ch,start,length));
 		}
-		if(this.name) {
+		if(this.name && this.userstyle && !this.rule) {
+			System.out.println(new String(ch,start,length).replace(" ", "_"));
+			this.styleId=new String(ch,start,length).replace(" ", "_");
+		}
+		if(this.name)
+			System.out.println("CHaracters: "+new String(ch,start,length)+" "+this.userstyle+" "+this.rule);
+		if(this.name && this.userstyle && this.rule) {
 			this.ruleName=new String(ch,start,length);
+			System.out.println(new String(ch,start,length));
+			this.currentStyle.styleName=new String(ch,start,length);
+			this.currentStyle.styleId=this.styleId;
 		}
 		if(this.propertyName) {
 			this.currentCondition.property=new String(ch,start,length);
@@ -235,6 +279,9 @@ public class SLDParser extends DefaultHandler2 {
 		case "se:Name":
 			this.name=false;
 			break;
+		case "UserStyle":
+			this.userstyle=false;
+			break;
 		case "ogc:PropertyName":
 			this.propertyName=false;
 			break;
@@ -253,7 +300,7 @@ public class SLDParser extends DefaultHandler2 {
 		case "ogc:PropertyIsLessThanOrEqualTo":
 			this.condition=false;
 			break;
-		case "ogc:PropertyIsGreaterThan":
+		case "ogc:PropertyIsGreaterThan":	
 			this.condition=false;
 			break;
 		case "ogc:PropertyIsGreaterThanOrEqualTo":
@@ -310,7 +357,13 @@ public static void main(String[] args) throws SAXException, IOException, ParserC
 	SAXParserFactory.newInstance().newSAXParser().parse("test.sld", parser);
 	System.out.println(parser.styles);
 	System.out.println(parser.styles.size());
-	System.out.println(parser.styles.get(0).toJSON());
+	StringBuilder builder=new StringBuilder();
+	for(StyleObject stl:parser.styles) {
+		builder.append(stl.toRDF());
+	}
+	FileWriter writer=new FileWriter(new File("rules.ttl"));
+	writer.write(builder.toString());
+	writer.close();
 }
 	
 }

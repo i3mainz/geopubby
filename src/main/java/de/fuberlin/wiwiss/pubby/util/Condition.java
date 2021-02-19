@@ -14,45 +14,45 @@ public class Condition {
 		switch(operator) {
 		case "PropertyIsEqualTo":
 			if(value.startsWith("http")) {
-				builder.append("sh:equals "+value+";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:equals "+value+";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}else {
-				builder.append("sh:equals \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:pattern \"^"+value+"$\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsNotEqualTo":
 			if(value.startsWith("http")) {
-				builder.append("sh:disjoint "+value+";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:disjoint "+value+";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}else {
-				builder.append("sh:disjoint \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:disjoint \""+value+"\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsLessThan":
 			if(value.startsWith("http")) {
-				builder.append("sh:lessThan "+value+";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:lessThan "+value+";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}else {
-				builder.append("sh:maxExclusive \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:maxExclusive \""+value+"\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsLessThanOrEqualTo":
 			if(value.startsWith("http")) {
-				builder.append("sh:lessThanOrEquals "+value+";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:lessThanOrEquals "+value+";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}else {
-				builder.append("sh:maxInclusive \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:maxInclusive \""+value+"\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsGreaterThan":
 			if(value.startsWith("http"))  {
-				builder.append("sh:minExclusive \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:minExclusive \""+value+"\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsGreaterThanOrEqualTo":
 			if(value.startsWith("http"))  {
-				builder.append("sh:minInclusive \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:minInclusive \""+value+"\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsLike":
 			if(value.startsWith("http"))  {
-				builder.append("sh:pattern \""+value+"\";"+System.lineSeparator()+"]"+System.lineSeparator()+"]");
+				builder.append("sh:pattern \""+value+"\";"+System.lineSeparator()+"];"+System.lineSeparator()+"];"+System.lineSeparator());
 			}
 			return builder.toString();
 		case "PropertyIsNull":
