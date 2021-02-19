@@ -1,3 +1,5 @@
 <map id="PageURLServlet" name="PageURLServlet">
-<area shape="rect" id="node2" href="$a00661.html" title="An abstract base servlet for servlets that manage a namespace of resources. " alt="" coords="18,80,118,107"/>
+<area shape="rect" id="node1" title="A servlet for serving the HTML page describing a resource." alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node2" href="$a00661.html" title="An abstract base servlet for servlets that manage a namespace of resources." alt="" coords="18,80,118,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="20,5,116,32"/>
 </map>

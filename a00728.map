@@ -1,3 +1,4 @@
 <map id="MergeDataSource" name="MergeDataSource">
-<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server. " alt="" coords="25,5,123,32"/>
+<area shape="rect" id="node1" title="A DataSource that presents an RDF merge of multiple other data sources." alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server." alt="" coords="26,5,123,32"/>
 </map>

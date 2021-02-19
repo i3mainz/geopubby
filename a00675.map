@@ -1,2 +1,7 @@
 <map id="RequestParamHandler" name="RequestParamHandler">
+<area shape="rect" id="node1" title="Analyzes an HttpServletRequest to check for the presence of an ?output=n3 or =ttl or =rdfxml request ..." alt="" coords="120,213,287,240"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,95,65,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="129,95,278,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="303,95,467,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="359,5,410,32"/>
 </map>

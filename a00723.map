@@ -1,3 +1,7 @@
 <map id="IndexDataSource" name="IndexDataSource">
-<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server. " alt="" coords="5,95,103,121"/>
+<area shape="rect" id="node1" title="A DataSource that wraps another data source and adds an index of the resources in that data source." alt="" coords="59,199,193,225"/>
+<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server." alt="" coords="5,95,103,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="35,5,73,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="143,95,203,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="227,95,305,121"/>
 </map>

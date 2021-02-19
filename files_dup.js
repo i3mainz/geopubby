@@ -1,4 +1,4 @@
-var files =
+var files_dup =
 [
     [ "AbstractGeoJSONWriter.java", "a00011.html", [
       [ "AbstractGeoJSONWriter", "a00373.html", "a00373" ]
@@ -106,10 +106,10 @@ var files =
     [ "GEXFWriter.java", "a00047.html", [
       [ "GEXFWriter", "a00421.html", "a00421" ]
     ] ],
-    [ "rdf/GMLWriter.java", "a01766.html", [
+    [ "rdf/GMLWriter.java", "a01758.html", [
       [ "GMLWriter", "a00425.html", "a00425" ]
     ] ],
-    [ "vector/GMLWriter.java", "a01769.html", [
+    [ "vector/GMLWriter.java", "a01761.html", [
       [ "GMLWriter", "a00505.html", "a00505" ]
     ] ],
     [ "GoogleMapsLinkWriter.java", "a00110.html", [

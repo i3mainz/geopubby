@@ -1,11 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$a00661.html" title="An abstract base servlet for servlets that manage a namespace of resources. " alt="" coords="149,132,249,159"/>
-<area shape="rect" id="node3" href="$a00665.html" title="Servlet for serving RDF documents containing a description of a given resource. " alt="" coords="306,5,431,32"/>
-<area shape="rect" id="node4" href="$a00673.html" title="A servlet for serving the HTML page describing a resource. " alt="" coords="306,56,431,83"/>
-<area shape="rect" id="node5" href="$a00685.html" title="A catch&#45;all servlet managing the URI space of the web application. " alt="" coords="320,107,417,133"/>
-<area shape="rect" id="node6" href="$a00689.html" title="Servlet for searching in GeoPubby concepts. " alt="" coords="313,157,425,184"/>
-<area shape="rect" id="node7" href="$a00697.html" title="Abstract base servlet for servlets that handle a property of a given resource. " alt="" coords="297,208,440,235"/>
-<area shape="rect" id="node10" href="$a00713.html" title="Servlet that handles the public URIs of mapped resources. " alt="" coords="309,259,428,285"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,101,159"/>
+<area shape="rect" id="node2" href="$a00661.html" title="An abstract base servlet for servlets that manage a namespace of resources." alt="" coords="149,132,249,159"/>
+<area shape="rect" id="node3" href="$a00665.html" title="Servlet for serving RDF documents containing a description of a given resource." alt="" coords="306,5,431,32"/>
+<area shape="rect" id="node4" href="$a00673.html" title="A servlet for serving the HTML page describing a resource." alt="" coords="306,56,431,83"/>
+<area shape="rect" id="node5" href="$a00685.html" title="A catch&#45;all servlet managing the URI space of the web application." alt="" coords="319,107,418,133"/>
+<area shape="rect" id="node6" href="$a00689.html" title="Servlet for searching in GeoPubby concepts." alt="" coords="313,157,425,184"/>
+<area shape="rect" id="node7" href="$a00697.html" title="Abstract base servlet for servlets that handle a property of a given resource." alt="" coords="297,208,440,235"/>
+<area shape="rect" id="node10" href="$a00713.html" title="Servlet that handles the public URIs of mapped resources." alt="" coords="309,259,428,285"/>
 <area shape="rect" id="node8" href="$a00701.html" title="A servlet for serving an RDF document describing resources related to a given resource via a given pr..." alt="" coords="488,183,656,209"/>
 <area shape="rect" id="node9" href="$a00705.html" title="A servlet for rendering an HTML page listing resources related to a given resource via a given proper..." alt="" coords="503,233,641,260"/>
 </map>

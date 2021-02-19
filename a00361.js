@@ -1,6 +1,14 @@
 var a00361 =
 [
     [ "Configuration", "a00361.html#ad8098244377dad7decf91ed550808165", null ],
+    [ "assertHasOneValue", "a00361.html#a7dc785667d0555e79074603fe6382e9a", null ],
+    [ "assertIRIValue", "a00361.html#ae06627e42f3850fc0fcf25eb52fd554c", null ],
+    [ "assertIRIValue", "a00361.html#a6f9d06cadd4199bbb7d491b6535b3914", null ],
+    [ "assertLiteralValue", "a00361.html#a1cbdaec743e02455e4ee20b80d8f4fb7", null ],
+    [ "assertLiteralValue", "a00361.html#a40ba251facbb9a5ccdb91d819d2e7a03", null ],
+    [ "assertResourceValue", "a00361.html#a1f6bc1194e195efe8945429c4aae7fa7", null ],
+    [ "assertResourceValue", "a00361.html#ac9dd5d21c13d759d1da283c7dd7e1e0c", null ],
+    [ "assertString", "a00361.html#a006aa5f7ae468981df236d2fa535639d", null ],
     [ "buildDataSource", "a00361.html#ab53ea1dc8508fc4b3ba182b0af9e27a7", null ],
     [ "create", "a00361.html#a3b5db867479f0dffeee2f31b99272a2d", null ],
     [ "getBoolean", "a00361.html#a79fa63fc0f4b0d63ef2665de0145b8a4", null ],
@@ -34,6 +42,10 @@ var a00361 =
     [ "hasProperty", "a00361.html#a7cfbe4f43c76bd92d49d696c22b225ef", null ],
     [ "hasType", "a00361.html#a4ac2c0271bb4e8e09fb8f64efc0dfccf", null ],
     [ "isBrowsable", "a00361.html#a03f7674006f0c7da8479243f81da8802", null ],
+    [ "pretty", "a00361.html#a64ed2c6219589f398739fc4047ac6f73", null ],
+    [ "pretty", "a00361.html#a641226a19af9fdcde51820302a653cf1", null ],
+    [ "raiseMissingProperty", "a00361.html#a5bb6c88fec5ea7a6eb8bd42547d41c88", null ],
+    [ "raiseUnexpectedDatatype", "a00361.html#a1575e7cd378c98d7fee040b9c14dfb01", null ],
     [ "requireExactlyOneOf", "a00361.html#adf26b0b91cec0117f511bf59481b523c", null ],
     [ "showLabels", "a00361.html#a2ae484239eb2164bccf5922765ddd51d", null ],
     [ "allBrowsableNamespaces", "a00361.html#a0425bcc5d26f545af2c96303611a3469", null ],
@@ -44,6 +56,7 @@ var a00361 =
     [ "indexIRI", "a00361.html#a46ccf3d3cc14002ea252d960b3a9b95a", null ],
     [ "labelProperties", "a00361.html#a2ae6a3c3600db1f041ec0287f46d5e3b", null ],
     [ "prefixes", "a00361.html#a5dfe5db7aca7d5cd55b45a8abe22decc", null ],
+    [ "resource", "a00361.html#a965b8a7998787959ad4196e807743f5d", null ],
     [ "vocabularyStore", "a00361.html#a93feb4ada3ad710e05a7b121b432ec9b", null ],
     [ "webBase", "a00361.html#a4e5fdf15c36c5bedd6eed89716ae3f41", null ]
 ];

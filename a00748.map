@@ -1,4 +1,5 @@
 <map id="AutocompleteEngine&lt; T extends Indexable &gt;" name="AutocompleteEngine&lt; T extends Indexable &gt;">
-<area shape="rect" id="node3" href="$a00749.html" title="AutocompleteEngine\l\&lt; de.fuberlin.wiwiss.pubby.util.\lSearchRecord \&gt;" alt="" coords="5,213,232,269"/>
-<area shape="rect" id="node2" href="$a01613.html" title="Indexable" alt="" coords="75,5,162,32"/>
+<area shape="rect" id="node1" title="Facade for indexing and searching Indexable elements." alt="" coords="27,95,211,136"/>
+<area shape="rect" id="node3" href="$a00749.html" title=" " alt="" coords="5,213,232,269"/>
+<area shape="rect" id="node2" href="$a01689.html" title=" " alt="" coords="75,5,162,32"/>
 </map>

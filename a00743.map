@@ -1,2 +1,5 @@
 <map id="URIPrefixer" name="URIPrefixer">
+<area shape="rect" id="node1" title="Helper class that splits URIs into prefix and local name according to a Jena PrefixMapping." alt="" coords="39,109,133,136"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,65,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="95,5,178,32"/>
 </map>

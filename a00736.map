@@ -1,3 +1,4 @@
 <map id="RemoteSPARQLDataSource" name="RemoteSPARQLDataSource">
-<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server. " alt="" coords="55,5,153,32"/>
+<area shape="rect" id="node1" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol." alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server." alt="" coords="56,5,153,32"/>
 </map>

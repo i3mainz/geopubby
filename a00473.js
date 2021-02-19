@@ -1,8 +1,8 @@
 var a00473 =
 [
     [ "ESRIJSONWriter", "a00473.html#a641d42f513ebd323500f883dfa9725d2", null ],
-    [ "handleGeometry", "a00473.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleGeometry", "a00473.html#a0583ae975bb799ae1f8b733938eda3fb", null ],
+    [ "handleGeometry", "a00473.html#a43095d9fd65543513e8ecb1eb2db272c", null ],
     [ "handleStyle", "a00473.html#abebffb0cb9e17de413fffc66358450f4", null ],
     [ "write", "a00473.html#abbc00390b9b4242b525b35c95441cc68", null ],
     [ "cov", "a00473.html#ae46fa35c884a8b26e022dedba4ba1350", null ],
