@@ -3,16 +3,13 @@ package de.fuberlin.wiwiss.pubby.util;
 import java.io.StringWriter;
 
 import java.util.Map;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.TreeMap;
 import java.util.List;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.rdf.model.ModelFactory;
 import org.json.JSONObject;
 
 import com.sun.xml.txw2.output.IndentingXMLStreamWriter;
@@ -64,6 +61,13 @@ public class StyleObject {
 	public String lineStringImageStyle;
 	
 	/**
+	 * A style definition of an image which is applied to a raster.
+	 */
+	public String rasterStyle;
+	
+	public Map<String,String> rasterColorMap=new TreeMap<String,String>();
+	
+	/**
 	 * An identifier of a given style.
 	 */
 	public String styleName;
@@ -80,13 +84,56 @@ public class StyleObject {
 	 */
 	public String popupStyle;
 	
+	/**
+	 * A style definition for the map popup.
+	 */
+	public String textStyle;
+	
 	public List<Condition> conditions;
+
+	private String propertyNamespace="";
+
+	public StyleObject() {
+		this("");
+	}
+	
+	public StyleObject(String propertyNamespace) {
+		this.propertyNamespace=propertyNamespace;
+	}
 
 	@Override
 	public String toString() {
-		return "StyleObject [styleId=" +styleId+","+System.lineSeparator()+" styleName=\" "+styleName+"\","+System.lineSeparator()+" pointStyle=" + pointStyle + ""+System.lineSeparator()+", pointImage=" + pointImage + ""+System.lineSeparator()+", lineStringStyle="
-				+ lineStringStyle + ""+System.lineSeparator()+", lineStringImage=" + lineStringImage + ""+System.lineSeparator()+", polygonStyle=" + polygonStyle
-				+""+System.lineSeparator()+", popupStyle=" + popupStyle +""+System.lineSeparator()+", polygonImage=" + polygonImage + ""+System.lineSeparator()+", hatch=" + hatch + ","+System.lineSeparator()+" conditions: "+this.conditions+"]"+System.lineSeparator();
+		StringBuilder builder=new StringBuilder();
+		builder.append("StyleObject [styleId=" +styleId+","+System.lineSeparator()+" styleName=\""+styleName+"\","+System.lineSeparator());
+		if(pointStyle!=null) {
+			builder.append(" pointStyle=" + pointStyle+System.lineSeparator());
+		}
+		if(pointImage!=null) {
+			builder.append(" pointImage=" + pointImage+System.lineSeparator());
+		}
+		if(lineStringStyle!=null) {
+			builder.append(" lineStringStyle=" + lineStringStyle+System.lineSeparator());
+		}
+		if(lineStringImage!=null) {
+			builder.append(" lineStringImage=" + lineStringImage+System.lineSeparator());
+		}
+		if(polygonStyle!=null) {
+			builder.append(" polygonStyle=" + polygonStyle+System.lineSeparator());
+		}
+		if(polygonImage!=null) {
+			builder.append(" polygonImage=" + polygonImage+System.lineSeparator());
+		}
+		if(hatch!=null) {
+			builder.append(" hatch=" + hatch+System.lineSeparator());
+		}
+		if(popupStyle!=null) {
+			builder.append(" popupStyle=" + popupStyle+System.lineSeparator());
+		}
+		if(rasterColorMap!=null) {
+			builder.append(" rasterColorMap=" + rasterColorMap+System.lineSeparator());
+		}
+		builder.append(" conditions: "+this.conditions+"]"+System.lineSeparator());
+		return builder.toString();
 	}
 	
 	/**
@@ -108,10 +155,35 @@ public class StyleObject {
 		return result.toString(2);
 	}
 	
+	public String getCommonPrefixes() {
+		StringBuilder builder=new StringBuilder();
+		builder.append("@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ."+System.lineSeparator());
+		builder.append("@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> ."+System.lineSeparator());
+		builder.append("@prefix geo: <http://www.opengis.net/ont/geosparql#> ."+System.lineSeparator());
+		builder.append("@prefix geost: <http://www.opengis.net/ont/geosparql/style#> ."+System.lineSeparator());
+		builder.append("@prefix sh: <http://www.w3.org/ns/shacl#> ."+System.lineSeparator());				
+		return builder.toString();
+	}
+
 	public String toRDF() {
+		return toRDF(null);
+	}
+	
+	
+	public String toRDF(String target) {
 		StringBuilder ttl=new StringBuilder();
+		if(this.styleId==null || this.styleName==null)
+			return "";
 		String curstyleid=this.styleId+"_"+this.styleName.replace(" ", "_");
-		ttl.append("geo:"+curstyleid+" rdf:type geo:Style, rdfs:Class, sh:NodeShape . "+System.lineSeparator());
+		if(target==null && propertyNamespace!=null && !propertyNamespace.isEmpty()) {
+			target="<"+propertyNamespace+curstyleid+">";
+		}else if(target==null){
+			target="geo:"+curstyleid;
+		}else if(target.startsWith("http")) {
+			target="<"+target+">";
+		}
+		ttl.append(target+" rdf:type rdfs:Class, sh:NodeShape . "+System.lineSeparator());
+		ttl.append("geo:"+curstyleid+" rdf:type geo:Style . "+System.lineSeparator());
 		ttl.append("geo:"+curstyleid+" rdfs:label \""+this.styleName+"\"@en . "+System.lineSeparator());
 		ttl.append("geo:"+curstyleid+" rdfs:comment \""+this.styleName+"\"@en . "+System.lineSeparator());
 		if(pointStyle!=null) {
@@ -141,23 +213,23 @@ public class StyleObject {
 		if(popupStyle!=null) {
 			ttl.append("geo:"+curstyleid+" geost:popupStyle \""+this.popupStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
-		ttl.append(this.conditionsToSHACL());
-		return ttl.toString();
+		ttl.append(this.conditionsToSHACL(target,"geo:"+curstyleid));
+		return ttl.toString().replace("\"\"", "\"");
 	}
 	
-	public String conditionsToSHACL() {
+	public String conditionsToSHACL(String curind,String targetStyle) {
 		if(conditions.isEmpty())
 			return "";
 		StringBuilder builder=new StringBuilder();
-		builder.append("sh:rule ["+System.lineSeparator());
+		builder.append(curind+" sh:rule ["+System.lineSeparator());
 		builder.append("a sh:TripleRule ;"+System.lineSeparator());
 		builder.append("sh:subject sh:this ;"+System.lineSeparator());
 		builder.append("sh:predicate geo:style ;"+System.lineSeparator());
-		builder.append("sh:object "+this.styleId+"_"+this.styleName.replace(" ","_")+" ;"+System.lineSeparator());
+		builder.append("sh:object "+targetStyle+" ; "+System.lineSeparator());
 		for(Condition cond:conditions) {
 			builder.append(cond.toSHACL());
 		}
-		builder.append("];"+System.lineSeparator());
+		builder.append("]."+System.lineSeparator());
 		return builder.toString();
 	}
 	

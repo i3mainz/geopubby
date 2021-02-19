@@ -15,6 +15,8 @@ public class GEO {
 	
 	public static final String GEOSPARQLNS = "http://www.opengis.net/ont/geosparql#";
 	
+	public static final String GEOSPARQLSTYLENS = "http://www.opengis.net/ont/geosparql/style#";
+	
 	public static final String WIKIDATANS = "http://www.wikidata.org/prop/direct/";
 
 	public static final Property P_LONG = model.createProperty( WGS84GEONS + "long" );
@@ -56,13 +58,37 @@ public class GEO {
 	public static final Property HATCH=model.createProperty(GEOSPARQLNS+"hatch");
 	
 	public static final Property LINESTRINGIMAGESTYLE=model.createProperty(GEOSPARQLNS+"lineStringImageStyle");
+
+	public static final Property POPUPSTYLE = model.createProperty( GEOSPARQLNS + "popupStyle" );
+	
+	public static final Property TEXTSTYLE = model.createProperty( GEOSPARQLNS + "textStyle" );
+
+	public static final Property LINESTRINGSTYLE2=model.createProperty(GEOSPARQLSTYLENS+"lineStringStyle");
+	
+	public static final Property LINESTRINGIMAGE2=model.createProperty(GEOSPARQLSTYLENS+"lineStringImage");
+	
+	public static final Property POINTSTYLE2=model.createProperty(GEOSPARQLSTYLENS+"pointStyle");
+	
+	public static final Property POINTIMAGE2=model.createProperty(GEOSPARQLSTYLENS+"pointImage");
+	
+	public static final Property POLYGONSTYLE2=model.createProperty(GEOSPARQLSTYLENS+"polygonStyle");	
+	
+	public static final Property POLYGONIMAGE2=model.createProperty(GEOSPARQLSTYLENS+"polygonImage");
+	
+	public static final Property HATCH2=model.createProperty(GEOSPARQLSTYLENS+"hatch");
+	
+	public static final Property LINESTRINGIMAGESTYLE2=model.createProperty(GEOSPARQLSTYLENS+"lineStringImageStyle");
+
+	public static final Property POPUPSTYLE2 = model.createProperty( GEOSPARQLSTYLENS + "popupStyle" );
+	
+	public static final Property TEXTSTYLE2 = model.createProperty( GEOSPARQLSTYLENS + "textStyle" );
 	
 	public static final Property P625 = model.createProperty( WIKIDATANS + "P625" );
 	
 	public static final Property GEORSSPOINT= model.createProperty("http://www.georss.org/georss/point");
 
 	public static final Property ASKML = model.createProperty( GEOSPARQLNS + "asKML" );
-	
+
 	public static List<Property> geomprops=Arrays.asList(new Property[] {P_LONG,P_LAT,P_GEOMETRY,LOCATION,HASGEOMETRY,ASWKT,ASKML,ASGML,ASWKB,ASHEXWKB,ASGEOJSON,P625,GEORSSPOINT});
 
 	
