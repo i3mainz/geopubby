@@ -1,10 +1,14 @@
 var a00789 =
 [
-    [ "conditionsToSHACL", "a00789.html#a333d7474f5ccc6fc06fa5df23d66aab2", null ],
+    [ "StyleObject", "a00789.html#a891caea1e372a362f6b3eb01f682b2d6", null ],
+    [ "StyleObject", "a00789.html#aa55c255b2a0a6806eb796f02735abc90", null ],
+    [ "conditionsToSHACL", "a00789.html#aa2dd194c0c438d66054ae7be725845c3", null ],
+    [ "getCommonPrefixes", "a00789.html#a319c93351fa0cf61164148b179fdb361", null ],
     [ "mapToCSS", "a00789.html#a4b5940a5d70b406c4909400387f85742", null ],
     [ "toHTML", "a00789.html#add850f03e24411f6d9e46e4e07a02727", null ],
     [ "toJSON", "a00789.html#a693608dec873ba750e1bf45f50d81817", null ],
     [ "toRDF", "a00789.html#af592f663cc28c9359f773cad5d5ee51a", null ],
+    [ "toRDF", "a00789.html#a6d7050e0ace03d492ffa04f3c79de749", null ],
     [ "toString", "a00789.html#ad146fa8579a5f8a876c4688cc5a68520", null ],
     [ "toXML", "a00789.html#a1123f91ca59c943e426493e42cb61108", null ],
     [ "conditions", "a00789.html#af6ecb7f9426c84de7167125efa901557", null ],
@@ -17,7 +21,11 @@ var a00789 =
     [ "polygonImage", "a00789.html#a3877196bb534272431a59e7ecb4d5338", null ],
     [ "polygonStyle", "a00789.html#a27511b5779d69b4e26b4ed7737d5de2e", null ],
     [ "popupStyle", "a00789.html#ae93d83f6c0fc3f2b141fe82729631cd8", null ],
+    [ "propertyNamespace", "a00789.html#abfc8563a456e863f1d4f62c5f1c5ad75", null ],
+    [ "rasterColorMap", "a00789.html#aca99784c02f7311f2a71691d78b75675", null ],
+    [ "rasterStyle", "a00789.html#a68f79cbe6f4e4bfbbd34287aedb252c3", null ],
     [ "styleDescription", "a00789.html#aefb67789e5761d078cd7bd1891dcdb8c", null ],
     [ "styleId", "a00789.html#a489184e7790e8d01069c23dc8e35bd3d", null ],
-    [ "styleName", "a00789.html#ac1612ef6d046b45bf698d7c2c284e0ca", null ]
+    [ "styleName", "a00789.html#ac1612ef6d046b45bf698d7c2c284e0ca", null ],
+    [ "textStyle", "a00789.html#a4e91b5000db6271934c784de7ba6db7a", null ]
 ];

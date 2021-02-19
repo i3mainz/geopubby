@@ -1,6 +1,8 @@
 <map id="StyleObject" name="StyleObject">
-<area shape="rect" id="node1" title="An object containing style definitions to apply on geospatial objects." alt="" coords="65,360,163,387"/>
+<area shape="rect" id="node1" title="An object containing style definitions to apply on geospatial objects." alt="" coords="165,360,263,387"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,117,65,143"/>
 <area shape="rect" id="node3" title=" " alt="" coords="89,109,339,151"/>
 <area shape="rect" id="node4" title=" " alt="" coords="191,5,237,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="363,117,527,143"/>
+<area shape="rect" id="node6" title=" " alt="" coords="419,5,470,32"/>
 </map>

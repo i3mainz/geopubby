@@ -1,8 +1,8 @@
 <map id="GEO" name="GEO">
-<area shape="rect" id="node1" title=" " alt="" coords="234,331,285,357"/>
+<area shape="rect" id="node1" title=" " alt="" coords="273,331,323,357"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,95,65,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="125,95,202,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="324,95,387,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="411,95,542,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="454,5,499,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="163,95,241,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="363,95,425,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="450,95,581,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="493,5,538,32"/>
 </map>
