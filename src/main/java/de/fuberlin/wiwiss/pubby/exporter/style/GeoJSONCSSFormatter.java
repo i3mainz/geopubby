@@ -40,18 +40,18 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 		if(cssString.contains(";")) {
 			for(String statement:cssString.split(";")) {
 				String[] split=statement.split(":");
-				styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim(),
+				styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim().replace("fill","color"),
 						split[1].replace("\\","").replace("\"","").replace("{","").replace("}","").trim());
 			}
 		}else if(cssString.contains(",")) {
 			for(String statement:cssString.split(",")) {
 				String[] split=statement.split(":");
-				styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim(),
+				styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim().replace("fill","color"),
 						split[1].replace("\\","").replace("\"","").replace("{","").replace("}","").trim());
 			}
 		}else {
 			String[] split=cssString.split(":");
-			styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim(),
+			styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim().replace("fill","color"),
 					split[1].replace("\\","").replace("\"","").replace("{","").replace("}","").trim());
 		}
 		return styleproperties;
