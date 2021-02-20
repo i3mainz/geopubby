@@ -9,6 +9,7 @@ var a00457 =
     [ "formatHeader", "a00457.html#abaa077ed79fcfd5a2279597e3f324c64", null ],
     [ "formatter", "a00457.html#a6561dcf48f63c199d693d5ed6c739dc0", null ],
     [ "getFormatter", "a00457.html#a91715aa5eef12ebcf3ea95d7493b9084", null ],
+    [ "attributeMap", "a00457.html#a45875ef1fbf9a79331b11cf6c6d36012", null ],
     [ "exposedType", "a00457.html#aa6a844c9b01d97aca583be867a1c5413", null ],
     [ "lastQueriedElemCount", "a00457.html#a1ce6ef499b64cec5981912a236baa199", null ],
     [ "mimeType", "a00457.html#a09c78e464072ccab667894f0d179fbdf", null ],
