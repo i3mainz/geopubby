@@ -1,5 +1,8 @@
 package de.fuberlin.wiwiss.pubby.exporter.style;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 import javax.xml.stream.XMLStreamException;
 
 import org.apache.jena.query.ResultSet;
@@ -14,17 +17,25 @@ import de.fuberlin.wiwiss.pubby.util.StyleObject;
  */
 public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 
+	Map<String,String> attributeMap;
+	
 	/**
 	 * Constructor for this class.
 	 */
 	public GeoJSONCSSFormatter() {
 		this.styleAttribute="style";
+		this.attributeMap=new TreeMap<>();
+		this.attributeMap.put("fill", "fillColor");
+		this.attributeMap.put("stroke", "color");
+		this.attributeMap.put("stroke-width", "weight");	
 	}
 	
 	@Override
 	public String formatter(ResultSet results,String featuretype) throws XMLStreamException {
 		return null;
 	}
+	
+	
 	
 	/**
 	 * Converts a CSS literal given in the ontology to a JSON representation.
@@ -40,18 +51,30 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 		if(cssString.contains(";")) {
 			for(String statement:cssString.split(";")) {
 				String[] split=statement.split(":");
-				styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim().replace("fill","color"),
+				String key=split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim();
+				if(this.attributeMap.containsKey(key)) {
+					key=this.attributeMap.get(key);
+				}
+				styleproperties.put(key,
 						split[1].replace("\\","").replace("\"","").replace("{","").replace("}","").trim());
 			}
 		}else if(cssString.contains(",")) {
 			for(String statement:cssString.split(",")) {
 				String[] split=statement.split(":");
-				styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim().replace("fill","color"),
+				String key=split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim();
+				if(this.attributeMap.containsKey(key)) {
+					key=this.attributeMap.get(key);
+				}
+				styleproperties.put(key,
 						split[1].replace("\\","").replace("\"","").replace("{","").replace("}","").trim());
 			}
 		}else {
 			String[] split=cssString.split(":");
-			styleproperties.put(split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim().replace("fill","color"),
+			String key=split[0].replace("\\","").replace("\"","").replace("{","").replace("}","").trim();
+			if(this.attributeMap.containsKey(key)) {
+				key=this.attributeMap.get(key);
+			}
+			styleproperties.put(key,
 					split[1].replace("\\","").replace("\"","").replace("{","").replace("}","").trim());
 		}
 		return styleproperties;
