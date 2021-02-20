@@ -28,6 +28,7 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 		this.attributeMap.put("fill", "fillColor");
 		this.attributeMap.put("stroke", "color");
 		this.attributeMap.put("stroke-width", "weight");	
+		this.attributeMap.put("stroke-linejoin", "lineJoin");	
 	}
 	
 	@Override
