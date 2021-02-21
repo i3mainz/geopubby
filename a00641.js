@@ -23,7 +23,7 @@ var a00641 =
     [ "getPrefixes", "a00641.html#a7efe267095eabc79a122458a21d65f5e", null ],
     [ "getProperties", "a00641.html#a725847b167a0ed39c9161e485a1139de", null ],
     [ "getProperty", "a00641.html#a5021268a9be7e4b67cb91849543084fd", null ],
-    [ "getStyle", "a00641.html#ab6326461688c1057e9f8e7d64b7ffeda", null ],
+    [ "getStyle", "a00641.html#acc56b3baaf8987cbe52a8d57b354a164", null ],
     [ "getTitle", "a00641.html#a888f94790c968e3f0b5de17e509098aa", null ],
     [ "getURI", "a00641.html#ad9fb16b36dd4ccc533d4f05ff94646e3", null ],
     [ "getValuesFromMultipleProperties", "a00641.html#a1b8c55ed50b89a217b4f5abb93afdcea", null ],
