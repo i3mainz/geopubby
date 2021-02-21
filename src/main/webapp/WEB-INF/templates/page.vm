@@ -338,8 +338,8 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			  function addGeometryLayer(){
 			  	if((typeof layerr) !== 'undefined'){
 			  		map.removeLayer(layerr);
+			  		feature=applyStyle(feature,$('#styleselect').val())
 			  	}
-			  	feature=applyStyle(feature,$('#styleselect').val())
 			  	layerr=L.geoJSON.css(feature,{
                    pointToLayer: function(feature, latlng){
                   var greenIcon = new L.Icon({
