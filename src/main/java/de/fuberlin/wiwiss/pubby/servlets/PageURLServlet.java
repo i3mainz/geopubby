@@ -56,14 +56,14 @@ public class PageURLServlet extends BaseServlet {
 		context.put("geoms",description.getGeoms());
 		context.put("epsg",description.getEPSG());
 		GeoJSONCSSFormatter form=new GeoJSONCSSFormatter();
+		JSONArray htmlArray=new JSONArray();
 		if(description.getStyle()!=null && !description.getStyle().isEmpty()) {
-			JSONArray htmlArray=new JSONArray();
 			for(StyleObject obj:description.getStyle()) {
 				context.put("style", obj.toHTML());				
 				htmlArray.put(form.formatForWebView(obj));
 			}
-			context.put("styleWithHtml",htmlArray.toString());
 		}
+		context.put("styleWithHtml",htmlArray.toString());
 		addPageMetadata(context, controller, description.getModel());
 		template.renderXHTML("page.vm");
 		return true;
