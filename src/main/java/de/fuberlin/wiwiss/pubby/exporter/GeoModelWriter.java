@@ -71,7 +71,43 @@ public class GeoModelWriter extends ModelWriter {
 			result.polygonImage=res.getProperty(GEO.POLYGONIMAGE).getLiteral().getString();
 		}
 		if(res.hasProperty(GEO.HATCH)){
-			result.polygonImage=res.getProperty(GEO.HATCH).getLiteral().getString();
+			result.hatch=res.getProperty(GEO.HATCH).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POPUPSTYLE)){
+			result.hatch=res.getProperty(GEO.POPUPSTYLE).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.TEXTSTYLE2)){
+			result.hatch=res.getProperty(GEO.TEXTSTYLE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POINTSTYLE2)){
+			result.pointStyle=res.getProperty(GEO.POINTSTYLE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POINTIMAGE2)){
+			result.pointImage=res.getProperty(GEO.POINTIMAGE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.LINESTRINGSTYLE2)){
+			result.lineStringStyle=res.getProperty(GEO.LINESTRINGSTYLE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.LINESTRINGIMAGE2)){
+			result.lineStringImage=res.getProperty(GEO.LINESTRINGIMAGE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.LINESTRINGIMAGESTYLE2)){
+			result.lineStringImageStyle=res.getProperty(GEO.LINESTRINGIMAGESTYLE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POLYGONSTYLE2)){
+			result.polygonStyle=res.getProperty(GEO.POLYGONSTYLE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POLYGONIMAGE2)){
+			result.polygonImage=res.getProperty(GEO.POLYGONIMAGE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.HATCH2)){
+			result.hatch=res.getProperty(GEO.HATCH2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.POPUPSTYLE2)){
+			result.hatch=res.getProperty(GEO.POPUPSTYLE2).getLiteral().getString();
+		}
+		if(res.hasProperty(GEO.TEXTSTYLE2)){
+			result.hatch=res.getProperty(GEO.TEXTSTYLE2).getLiteral().getString();
 		}
 		return result;
 	}
