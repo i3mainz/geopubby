@@ -258,7 +258,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
     			}
     		}
     		div.innerHTML = addhtml+"</select>";
-    		//div.firstChild.onclick=
+    		$('#styleselect').click(addGeometryLayer());
     		return div;
 		};
 		legend.addTo(map);	
@@ -319,6 +319,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                   #set($x = $x+1)
               #end
 			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
+			  var layerr;
 			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
 			  	if(styles.length==0){
 			  		feature=convertGeoJSON(feature,epsgdefs[epsg],{"Point":{},"LineString":{},"Polygon":{}})
@@ -334,7 +335,12 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                 }
               }
               console.log(feature);
-              layerr=L.geoJSON.css(feature,{
+			  function addGeometryLayer(){
+			  	if((typeof layerr) === 'undefined'){
+			  		map.removeLayer(layerr);
+			  	}
+			  	feature=applyStyle(feature,$('#styleselect').val())
+			  	layerr=L.geoJSON.css(feature,{
                    pointToLayer: function(feature, latlng){
                   var greenIcon = new L.Icon({
                     iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
@@ -347,7 +353,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
                 return L.marker(latlng, {icon: greenIcon});
               },
               onEachFeature: function (feature, layer) {
-              		var popup="<b><a href=\"$uri\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
+              		var popup="<b><a href=\""+feature.id+"\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
                     for(prop in feature.properties){
                         if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && feature.properties[prop].length>0 && "proplabel" in feature.properties[prop][0] &&  feature.properties[prop][0]["proplabel"]!=='undefined'){
                             popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+feature.properties[prop][0]["proplabel"]+"</a> - "
@@ -420,6 +426,8 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               layerr.addTo(map)
               var layerBounds = layerr.getBounds();
               bounds.extend(layerBounds);
+			  }
+			  addGeometryLayer();       
         #end
         map.fitBounds(bounds);
 </script>
