@@ -528,7 +528,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">new</span> String(bytes, <span class="stringliteral">&quot;utf-8&quot;</span>).charAt(0);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                } <span class="keywordflow">catch</span> (UnsupportedEncodingException ex) {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <span class="comment">// Can&#39;t happen</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01753.html">RuntimeException</a>(ex);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01757.html">RuntimeException</a>(ex);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -678,7 +678,6 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa01753_html"><div class="ttname"><a href="a01753.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00589_html_ad5c79bfeae4228c7bee82125fc969c93"><div class="ttname"><a href="a00589.html#ad5c79bfeae4228c7bee82125fc969c93">de.fuberlin.wiwiss.pubby.IRIEncoder.percentEncoding</a></div><div class="ttdeci">static final Pattern percentEncoding</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:29</div></div>
 <div class="ttc" id="aa00589_html_a2e3cb1ce7dfd57e9abb28cca9bc4edc8"><div class="ttname"><a href="a00589.html#a2e3cb1ce7dfd57e9abb28cca9bc4edc8">de.fuberlin.wiwiss.pubby.IRIEncoder.toByte</a></div><div class="ttdeci">static int toByte(char hex1, char hex2)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:167</div></div>
 <div class="ttc" id="aa00589_html_a4ca72c78b1625ba976db313ae47c8284"><div class="ttname"><a href="a00589.html#a4ca72c78b1625ba976db313ae47c8284">de.fuberlin.wiwiss.pubby.IRIEncoder.getBytesInSequence</a></div><div class="ttdeci">static int getBytesInSequence(int octet)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:127</div></div>
@@ -688,6 +687,7 @@ Static Private Attributes</h2></td></tr>
 <div class="ttc" id="aa00589_html_a529e9f1a833424046e5c1dc916f91580"><div class="ttname"><a href="a00589.html#a529e9f1a833424046e5c1dc916f91580">de.fuberlin.wiwiss.pubby.IRIEncoder.toBytes</a></div><div class="ttdeci">static int[] toBytes(String percentEncoded)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:158</div></div>
 <div class="ttc" id="aa00589_html_a76335106e7863f31084d5e2ed66767f7"><div class="ttname"><a href="a00589.html#a76335106e7863f31084d5e2ed66767f7">de.fuberlin.wiwiss.pubby.IRIEncoder.isUnreservedASCII</a></div><div class="ttdeci">static boolean isUnreservedASCII(char c)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:152</div></div>
 <div class="ttc" id="aa00589_html_acfdbbfd7aed40b41c8c9aca994a66c14"><div class="ttname"><a href="a00589.html#acfdbbfd7aed40b41c8c9aca994a66c14">de.fuberlin.wiwiss.pubby.IRIEncoder.appendOctet</a></div><div class="ttdeci">static void appendOctet(StringBuffer sb, byte octet)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:121</div></div>
+<div class="ttc" id="aa01757_html"><div class="ttname"><a href="a01757.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00589_html_ab2c6b324020d93bdda6aa0d5a1f9593c"><div class="ttname"><a href="a00589.html#ab2c6b324020d93bdda6aa0d5a1f9593c">de.fuberlin.wiwiss.pubby.IRIEncoder.toCharacter</a></div><div class="ttdeci">static char toCharacter(int[] octets, int offset, int length)</div><div class="ttdef"><b>Definition:</b> IRIEncoder.java:139</div></div>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

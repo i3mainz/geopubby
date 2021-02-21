@@ -284,7 +284,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> out.toByteArray();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">final</span> IOException e) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01753.html">RuntimeException</a>(<span class="stringliteral">&quot;Error writing TWKB geometry.&quot;</span>, e);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01757.html">RuntimeException</a>(<span class="stringliteral">&quot;Error writing TWKB geometry.&quot;</span>, e);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
 </div><!-- fragment -->
@@ -750,7 +750,6 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aa00853_html_af88d38f76bbfee7f7c150d79b818e156"><div class="ttname"><a href="a00853.html#af88d38f76bbfee7f7c150d79b818e156">org.locationtech.geowave.core.geotime.util.TWKBWriter.writeMultiPolygon</a></div><div class="ttdeci">void writeMultiPolygon(final MultiPolygon multiPolygon, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:138</div></div>
-<div class="ttc" id="aa01753_html"><div class="ttname"><a href="a01753.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00853_html_a9e135bc7dac9b9305e7183a27ab0e55d"><div class="ttname"><a href="a00853.html#a9e135bc7dac9b9305e7183a27ab0e55d">org.locationtech.geowave.core.geotime.util.TWKBWriter.writeLineString</a></div><div class="ttdeci">void writeLineString(final LineString line, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:103</div></div>
 <div class="ttc" id="aa00853_html_a226242e33fa2ddb80db6f65fea7e88d5"><div class="ttname"><a href="a00853.html#a226242e33fa2ddb80db6f65fea7e88d5">org.locationtech.geowave.core.geotime.util.TWKBWriter.write</a></div><div class="ttdeci">byte[] write(final Geometry geom)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:38</div></div>
 <div class="ttc" id="aa00853_html_a409eb1e30fb4f2a447147b6644ed96df"><div class="ttname"><a href="a00853.html#a409eb1e30fb4f2a447147b6644ed96df">org.locationtech.geowave.core.geotime.util.TWKBWriter.writeMultiLineString</a></div><div class="ttdeci">void writeMultiLineString(final MultiLineString multiLine, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:128</div></div>
@@ -760,6 +759,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aa00853_html_af6ac6c1ca84de00107ff33acf010fb56"><div class="ttname"><a href="a00853.html#af6ac6c1ca84de00107ff33acf010fb56">org.locationtech.geowave.core.geotime.util.TWKBWriter.getType</a></div><div class="ttdeci">byte getType(final Geometry geom)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:174</div></div>
 <div class="ttc" id="aa00853_html_a97d9c7da786fbc6decfc325d9b2058fe"><div class="ttname"><a href="a00853.html#a97d9c7da786fbc6decfc325d9b2058fe">org.locationtech.geowave.core.geotime.util.TWKBWriter.writePolygon</a></div><div class="ttdeci">void writePolygon(final Polygon polygon, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:110</div></div>
 <div class="ttc" id="aa00853_html_a2513e591488b85a0a4ffae1f192e48d1"><div class="ttname"><a href="a00853.html#a2513e591488b85a0a4ffae1f192e48d1">org.locationtech.geowave.core.geotime.util.TWKBWriter.getTypeAndPrecisionByte</a></div><div class="ttdeci">byte getTypeAndPrecisionByte(final byte type, final int precision)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:168</div></div>
+<div class="ttc" id="aa01757_html"><div class="ttname"><a href="a01757.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00853_html_ae1a496e7018e949f3af9aa1ec261a4a3"><div class="ttname"><a href="a00853.html#ae1a496e7018e949f3af9aa1ec261a4a3">org.locationtech.geowave.core.geotime.util.TWKBWriter.writeMultiPoint</a></div><div class="ttdeci">void writeMultiPoint(final MultiPoint multiPoint, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:121</div></div>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
