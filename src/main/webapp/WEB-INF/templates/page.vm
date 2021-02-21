@@ -246,7 +246,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	imperial: false
 	}).addTo(map);
 	if(styles.length>-1){
-		var legend = L.control({position: 'bottomright'});
+		var legend = L.control({position: 'bottomleft'});
 		legend.onAdd = function (map) {
     		var div = L.DomUtil.create('div', 'info legend');
     		addhtml="Select style:<select id=\"style\"></select>"
@@ -316,10 +316,18 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               #end
 			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
 			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
-	            feature=convertGeoJSON(feature,epsgdefs[epsg],styles[0])
+			  	if(styles.length==0){
+			  		feature=convertGeoJSON(feature,epsgdefs[epsg],{"Point":{},"LineString":{},"Polygon":{}})
+			  	}else{
+	            	feature=convertGeoJSON(feature,epsgdefs[epsg],styles[0])			  	
+			  	}
 	            console.log(feature);
               }else{
-              	feature=applyStyle(feature,styles[0])
+                if(styles.length==0){
+                	feature=applyStyle(feature,{"Point":{},"LineString":{},"Polygon":{}})
+                }else{
+              		feature=applyStyle(feature,styles[0])                
+                }
               }
               console.log(feature);
               layerr=L.geoJSON.css(feature,{
