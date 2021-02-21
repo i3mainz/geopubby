@@ -249,7 +249,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 		var legend = L.control({position: 'bottomleft'});
 		legend.onAdd = function (map) {
     		var div = L.DomUtil.create('div', 'info legend');
-    		addhtml="Select map style: <select id=\"styleselect\">"
+    		addhtml="Select map style: <select id=\"styleselect\" onclick=\"addGeometryLayer()\">"
     		for(obj in styles){
     			if("id" in styles[obj]){
     				addhtml+="<option value=\""+obj+"\">"+styles[obj]["id"]+"</option>"    				
@@ -258,7 +258,6 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
     			}
     		}
     		div.innerHTML = addhtml+"</select>";
-    		$('#styleselect').click(addGeometryLayer());
     		return div;
 		};
 		legend.addTo(map);	
