@@ -424,11 +424,13 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               }
               })
               layerr.addTo(map)
-              var layerBounds = layerr.getBounds();
-              bounds.extend(layerBounds);
+
 			  }
 			  addGeometryLayer();       
+
         #end
+              var layerBounds = layerr.getBounds();
+              bounds.extend(layerBounds);
         map.fitBounds(bounds);
 </script>
 #else
