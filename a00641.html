@@ -1192,11 +1192,11 @@ Static Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                           {</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                List&lt;StyleObject&gt; result=<span class="keyword">new</span> LinkedList&lt;StyleObject&gt;();</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            StmtIterator it= <a class="code" href="a00641.html#a965b8a7998787959ad4196e807743f5d">resource</a>.listProperties(GEO.STYLE);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">if</span>(it.hasNext()){</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">while</span>(it.hasNext()){</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                Statement s = it.nextStatement();</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="comment">//if(s.getObject().isResource()) {</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        result.add(obj);        </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    result.add(obj);            </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="comment">//}</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            }</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">return</span> result;</div>
