@@ -228,7 +228,7 @@ public class ResourceDescription {
 	    while(it.hasNext()){
 	        Statement s = it.nextStatement();
 	        //if(s.getObject().isResource()) {
-		    StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());
+		    StyleObject obj=GeoModelWriter.handleStyle(s.getObject().asResource());
 		    result.add(obj);       	
 	        //}
 	    }

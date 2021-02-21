@@ -51,11 +51,11 @@ public class GeoModelWriter extends ModelWriter {
 	
 	public static StyleObject handleStyle(Resource res) {
 		StyleObject result=new StyleObject();
-		if(res.hasProperty(GEO.STYLE)){
-			result.styleId=res.getProperty(GEO.STYLE).getObject().asResource().getURI().toString();
+		if(res.isURIResource()){
+			result.styleId=res.getURI().toString();
 		}
-		if(res.hasProperty(GEO.STYLE) && res.getProperty(GEO.STYLE).getObject().asResource().hasProperty(RDFS.label)){
-			result.styleName= res.getProperty(GEO.STYLE).getObject().asResource().getProperty(RDFS.label).getLiteral().getString();
+		if(res.hasProperty(RDFS.label)){
+			result.styleName= res.getProperty(RDFS.label).getLiteral().getString();
 		}
 		if(res.hasProperty(GEO.POINTSTYLE)){
 			result.pointStyle=res.getProperty(GEO.POINTSTYLE).getLiteral().getString();
