@@ -249,12 +249,16 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 		var legend = L.control({position: 'bottomleft'});
 		legend.onAdd = function (map) {
     		var div = L.DomUtil.create('div', 'info legend');
-    		addhtml="Select style:<select id=\"style\"></select>"
+    		addhtml="Select style:<select id=\"styleselect\"></select>"
     		for(obj in styles){
-    			addhtml="<option value=\"1\">obj</option>"
+    			if("id" in styles[obj]){
+    				addhtml+="<option value=\""+obj"\">"+styles[obj]["id"]+"</option>"    				
+    			}else{
+    				addhtml+="<option value=\""+obj"\">Style "+obj+"</option>"  
+    			}
     		}
     		div.innerHTML = addhtml;
-    		//div.firstChild.onmousedown = div.firstChild.ondblclick = L.DomEvent.stopPropagation;
+    		//div.firstChild.onclick=
     		return div;
 		};
 		legend.addTo(map);	
