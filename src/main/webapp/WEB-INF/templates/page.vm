@@ -336,7 +336,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               }
               console.log(feature);
 			  function addGeometryLayer(){
-			  	if((typeof layerr) === 'undefined'){
+			  	if((typeof layerr) !== 'undefined'){
 			  		map.removeLayer(layerr);
 			  	}
 			  	feature=applyStyle(feature,$('#styleselect').val())
