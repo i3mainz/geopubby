@@ -245,7 +245,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 	position: 'bottomright',
 	imperial: false
 	}).addTo(map);
-	if(styles.length>-1){
+	if(styles.length>1){
 		var legend = L.control({position: 'bottomleft'});
 		legend.onAdd = function (map) {
     		var div = L.DomUtil.create('div', 'info legend');
