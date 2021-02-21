@@ -59,6 +59,8 @@ public class GeoJSONCSSFormatter extends ResultStyleFormatter {
 	
 	public JSONObject formatForWebView(StyleObject obj) {
 		JSONObject result=new JSONObject();
+		result.put("name", obj.styleName);
+		result.put("id", obj.styleId);
 		result.put("Point", new JSONObject(formatGeometry("Point",obj)));
 		result.put("LineString", new JSONObject(formatGeometry("LineString",obj)));
 		result.put("Polygon", new JSONObject(formatGeometry("Polygon",obj)));

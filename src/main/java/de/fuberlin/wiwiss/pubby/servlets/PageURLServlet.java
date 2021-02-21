@@ -8,12 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.velocity.context.Context;
+import org.json.JSONArray;
 
 import de.fuberlin.wiwiss.pubby.Configuration;
 import de.fuberlin.wiwiss.pubby.Dataset;
 import de.fuberlin.wiwiss.pubby.HypermediaControls;
 import de.fuberlin.wiwiss.pubby.ResourceDescription;
 import de.fuberlin.wiwiss.pubby.exporter.style.GeoJSONCSSFormatter;
+import de.fuberlin.wiwiss.pubby.util.StyleObject;
 
 /**
  * A servlet for serving the HTML page describing a resource.
@@ -53,11 +55,16 @@ public class PageURLServlet extends BaseServlet {
 		context.put("showLabels", config.showLabels());
 		context.put("geoms",description.getGeoms());
 		context.put("epsg",description.getEPSG());
-		if(description.getStyle()!=null)
-			context.put("style", description.getStyle().toHTML());
-		context.put("styleWithHtml",new GeoJSONCSSFormatter().formatForWebView(description.getStyle()).toString());
+		GeoJSONCSSFormatter form=new GeoJSONCSSFormatter();
+		if(description.getStyle()!=null && !description.getStyle().isEmpty()) {
+			JSONArray htmlArray=new JSONArray();
+			for(StyleObject obj:description.getStyle()) {
+				context.put("style", obj.toHTML());				
+				htmlArray.put(form.formatForWebView(obj));
+			}
+			context.put("styleWithHtml",htmlArray.toString());
+		}
 		addPageMetadata(context, controller, description.getModel());
-	
 		template.renderXHTML("page.vm");
 		return true;
 	}
