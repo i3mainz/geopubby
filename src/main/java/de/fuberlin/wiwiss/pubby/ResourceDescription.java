@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -221,16 +222,17 @@ public class ResourceDescription {
 	 * Gets the EPSG code from a statement if it is annotated using an EPSG statement. 
 	 * @return The EPSG code as String
 	 */
-	public StyleObject getStyle(){
+	public List<StyleObject> getStyle(){
+		List<StyleObject> result=new LinkedList<StyleObject>();
 	    StmtIterator it= resource.listProperties(GEO.STYLE);
 	    if(it.hasNext()){
 	        Statement s = it.nextStatement();
 	        //if(s.getObject().isResource()) {
 		        StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());
-		        return obj;	        	
+		        result.add(obj);       	
 	        //}
 	    }
-	    return null;
+	    return result;
 	}
 
 	public ResourceDescription(HypermediaControls controller, Model model, 
