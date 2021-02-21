@@ -225,11 +225,11 @@ public class ResourceDescription {
 	public List<StyleObject> getStyle(){
 		List<StyleObject> result=new LinkedList<StyleObject>();
 	    StmtIterator it= resource.listProperties(GEO.STYLE);
-	    if(it.hasNext()){
+	    while(it.hasNext()){
 	        Statement s = it.nextStatement();
 	        //if(s.getObject().isResource()) {
-		        StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());
-		        result.add(obj);       	
+		    StyleObject obj=GeoModelWriter.handleStyle(s.getSubject());
+		    result.add(obj);       	
 	        //}
 	    }
 	    return result;
