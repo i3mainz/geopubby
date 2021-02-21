@@ -251,7 +251,9 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
     		var div = L.DomUtil.create('div', 'info legend');
     		addhtml="Select map style: <select id=\"styleselect\" onclick=\"addGeometryLayer()\">"
     		for(obj in styles){
-    			if("id" in styles[obj]){
+    			if("name" in styles[obj]){
+    				addhtml+="<option value=\""+obj+"\">"+styles[obj]["name"]+"</option>" 
+    			}else if("id" in styles[obj]){
     				addhtml+="<option value=\""+obj+"\">"+styles[obj]["id"]+"</option>"    				
     			}else{
     				addhtml+="<option value=\""+obj+"\">Style "+obj+"</option>"  
