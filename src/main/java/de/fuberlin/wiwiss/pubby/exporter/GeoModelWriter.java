@@ -7,6 +7,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.riot.thrift.wire.RDF_StreamRow;
+import org.apache.jena.vocabulary.RDFS;
 import org.apache.sis.coverage.grid.GridCoverage;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -49,6 +51,12 @@ public class GeoModelWriter extends ModelWriter {
 	
 	public static StyleObject handleStyle(Resource res) {
 		StyleObject result=new StyleObject();
+		if(res.isURIResource()){
+			result.styleId=res.getURI().toString();
+		}
+		if(res.hasProperty(RDFS.label)){
+			result.styleName=res.getProperty(RDFS.label).getLiteral().getString();
+		}
 		if(res.hasProperty(GEO.POINTSTYLE)){
 			result.pointStyle=res.getProperty(GEO.POINTSTYLE).getLiteral().getString();
 		}
