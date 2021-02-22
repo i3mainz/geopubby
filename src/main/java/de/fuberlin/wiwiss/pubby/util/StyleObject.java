@@ -92,7 +92,11 @@ public class StyleObject {
 	public List<Condition> conditions;
 
 	private String propertyNamespace="";
+	
+	public String sldString="";
 
+	public String qmlString="";
+	
 	public StyleObject() {
 		this("");
 	}
@@ -175,6 +179,7 @@ public class StyleObject {
 		if(this.styleId==null || this.styleName==null)
 			return "";
 		String curstyleid=this.styleId+"_"+this.styleName.replace(" ", "_");
+		String curstyleind="geo:"+curstyleid;
 		if(target==null && propertyNamespace!=null && !propertyNamespace.isEmpty()) {
 			target="<"+propertyNamespace+curstyleid+">";
 		}else if(target==null){
@@ -182,38 +187,51 @@ public class StyleObject {
 		}else if(target.startsWith("http")) {
 			target="<"+target+">";
 		}
+		if(propertyNamespace!=null && !propertyNamespace.isEmpty()) {
+			curstyleind="<"+propertyNamespace+curstyleid+">";
+		}
 		ttl.append(target+" rdf:type rdfs:Class, sh:NodeShape . "+System.lineSeparator());
-		ttl.append("geo:"+curstyleid+" rdf:type geo:Style . "+System.lineSeparator());
-		ttl.append("geo:"+curstyleid+" rdfs:label \""+this.styleName+"\"@en . "+System.lineSeparator());
-		ttl.append("geo:"+curstyleid+" rdfs:comment \""+this.styleName+"\"@en . "+System.lineSeparator());
+		ttl.append(curstyleind+" rdf:type geo:Style . "+System.lineSeparator());
+		if(!sldString.isEmpty()) {
+			ttl.append(curstyleind+" geost:asSLD \""+this.sldString.replace("\"", "'")+"\"^^geost:sldLiteral . "+System.lineSeparator());
+		}
+		if(!qmlString.isEmpty()) {
+			ttl.append(curstyleind+" geost:asQML \""+this.sldString.replace("\"", "'")+"\"^^geost:qmlLiteral . "+System.lineSeparator());
+		}
+		ttl.append(curstyleind+" rdfs:label \""+this.styleName+"\"@en . "+System.lineSeparator());
+		ttl.append(curstyleind+" rdfs:comment \""+this.styleName+"\"@en . "+System.lineSeparator());
 		if(pointStyle!=null) {
-			ttl.append("geo:"+curstyleid+" geost:pointStyle \""+this.pointStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:pointStyle \""+this.pointStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(pointImage!=null) {
-			ttl.append("geo:"+curstyleid+" geost:pointImage \""+this.pointImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:pointImage \""+this.pointImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
 		}
 		if(lineStringStyle!=null) {
-			ttl.append("geo:"+curstyleid+" geost:lineStringStyle \""+this.lineStringStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:lineStringStyle \""+this.lineStringStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(lineStringImage!=null) {
-			ttl.append("geo:"+curstyleid+" geost:lineStringImage \""+this.lineStringImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:lineStringImage \""+this.lineStringImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
 		}
 		if(lineStringImageStyle!=null) {
-			ttl.append("geo:"+curstyleid+" geost:lineStringImageStyle \""+this.lineStringImageStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:lineStringImageStyle \""+this.lineStringImageStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(polygonStyle!=null) {
-			ttl.append("geo:"+curstyleid+" geost:polygonStyle \""+this.polygonStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:polygonStyle \""+this.polygonStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(polygonImage!=null) {
-			ttl.append("geo:"+curstyleid+" geost:polygonImage \""+this.polygonImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:polygonImage \""+this.polygonImage+"\"^^geost:svgLiteral . "+System.lineSeparator());
 		}
 		if(hatch!=null) {
-			ttl.append("geo:"+curstyleid+" geost:hatch \""+this.hatch+"\"^^geost:cssLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:hatch \""+this.hatch+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
 		if(popupStyle!=null) {
-			ttl.append("geo:"+curstyleid+" geost:popupStyle \""+this.popupStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
+			ttl.append(curstyleind+" geost:popupStyle \""+this.popupStyle+"\"^^geost:cssLiteral . "+System.lineSeparator());
 		}
-		ttl.append(this.conditionsToSHACL(target,"geo:"+curstyleid));
+		if(propertyNamespace!=null && !propertyNamespace.isEmpty()) {
+			ttl.append(this.conditionsToSHACL(target,"<"+propertyNamespace+curstyleid+">"));			
+		}else {
+			ttl.append(this.conditionsToSHACL(target,"geo:"+curstyleid));			
+		}
 		return ttl.toString().replace("\"\"", "\"");
 	}
 	
