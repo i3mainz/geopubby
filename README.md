@@ -1,11 +1,7 @@
-This is a Linked Data server that adds an HTML interface and
+This is a Linked Data server forked from [Pubby](http://www4.wiwiss.fu-berlin.de/pubby/) that adds an HTML interface and
 dereferenceable URLs on top of RDF data that sits in a SPARQL
-store.
-
+store. 
 ![GeoPubby Architecture](geopubby.png)
-
-See [the Pubby website](http://www4.wiwiss.fu-berlin.de/pubby/)
-for details and instructions.
 
 ## Features
 
@@ -33,3 +29,30 @@ In addition to Pubby, GeoPubby supports the following features:
 ## Sample Screen
 
 ![GeoPubby Architecture](pubbyexample.png)
+
+## Installation instructions
+
+### Deployment using Apache Tomcat
+
+GeoPubby can be deployed on an Apache Tomcat webserver. 
+
+To so so:
+
+* Clone this repository
+* Build the GeoPubby .war application using maven
+* Deploy the warfile on an Apache Tomcat Webserver 
+
+### Deployment using Docker
+
+GeoPubby can be deployed using Docker.
+
+To do so:
+
+* Clone this repository
+* Build the Docker container using the Dockerfile included in this repository
+
+## GeoPubby configuration
+
+GeoPubby can be configured using the same configuration options included in [Pubby](http://www4.wiwiss.fu-berlin.de/pubby/).
+
+Please consult the [Pubby homepage](http://www4.wiwiss.fu-berlin.de/pubby/) for further information.
