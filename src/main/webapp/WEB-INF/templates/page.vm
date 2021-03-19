@@ -171,6 +171,12 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
             $('#jstree').jstree("destroy");
         }catch(err){}
         $('#jstree').jstree(tree);
+        $("#jstree").bind("select_node.jstree", function(event, data) {
+            var evt =  window.event || event;
+            var button = evt.which || evt.button;
+            if( button != 1 && ( typeof button != "undefined")) return false; 
+			return true;
+        });
         $('#jstree').bind("dblclick.jstree", function (event) {
    			var node = $(event.target).closest("li");
    			var data = node[0].id
