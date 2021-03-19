@@ -1,7 +1,4 @@
-<map id="GeobufEncoder" name="GeobufEncoder">
-<area shape="rect" id="node1" title=" " alt="" coords="103,184,224,211"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,95,73,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="129,95,197,121"/>
-<area shape="rect" id="node4" title=" " alt="" coords="221,95,393,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="282,5,333,32"/>
+<map id="AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;" name="AutocompleteEngine&lt; T extends Indexable &gt;.Builder&lt; T extends Indexable &gt;">
+<area shape="rect" id="node1" title="Builder for constructing AutocompleteEngine instances." alt="" coords="5,95,175,165"/>
+<area shape="rect" id="node2" href="$a01700.html" title=" " alt="" coords="47,5,133,32"/>
 </map>

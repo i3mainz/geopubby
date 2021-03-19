@@ -1,9 +1,5 @@
-<map id="GeoJSONCSSFormatter" name="GeoJSONCSSFormatter">
-<area shape="rect" id="node1" title="Reads an ontological style description and formats it to GeoJSONCSS." alt="" coords="1096,123,1265,149"/>
-<area shape="rect" id="node2" href="$a00465.html" title="Abstract class to describe a class applying a style to a downlifted dataset." alt="" coords="887,80,1047,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="460,20,520,47"/>
-<area shape="rect" id="node4" title=" " alt="" coords="456,71,524,97"/>
-<area shape="rect" id="node5" title=" " alt="" coords="305,122,675,163"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,165,56,192"/>
-<area shape="rect" id="node7" title=" " alt="" coords="699,173,863,200"/>
+<map id="TLPWriter" name="TLPWriter">
+<area shape="rect" id="node1" title=" " alt="" coords="27,155,112,181"/>
+<area shape="rect" id="node2" href="$a00404.html" title=" " alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node3" href="$a00412.html" title="A model class for exporting RDF in several downlift formats." alt="" coords="18,5,121,32"/>
 </map>

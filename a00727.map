@@ -1,8 +1,4 @@
-<map id="MergeDataSource" name="MergeDataSource">
-<area shape="rect" id="node1" title="A DataSource that presents an RDF merge of multiple other data sources." alt="" coords="218,213,357,240"/>
-<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server." alt="" coords="5,117,103,143"/>
-<area shape="rect" id="node3" title=" " alt="" coords="35,5,73,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="127,109,447,151"/>
-<area shape="rect" id="node5" title=" " alt="" coords="244,5,331,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="471,117,586,143"/>
+<map id="FilteredDataSource" name="FilteredDataSource">
+<area shape="rect" id="node1" title="A DataSource that wraps another data source in such a way that the resulting data source is only capa..." alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node2" href="$a00724.html" title="A source of RDF data intended for publication through the server." alt="" coords="30,5,127,32"/>
 </map>

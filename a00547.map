@@ -1,19 +1,6 @@
-<map id="SVGWriter" name="SVGWriter">
-<area shape="rect" id="node1" title="Writes a GeoPubby instance as SVG." alt="" coords="1357,251,1447,277"/>
-<area shape="rect" id="node2" href="$a00401.html" title=" " alt="" coords="1180,251,1308,277"/>
-<area shape="rect" id="node3" href="$a00409.html" title="A model class for exporting RDF in several downlift formats." alt="" coords="902,31,1005,57"/>
-<area shape="rect" id="node4" title=" " alt="" coords="441,56,539,83"/>
-<area shape="rect" id="node5" title=" " alt="" coords="451,5,529,32"/>
-<area shape="rect" id="node6" title=" " alt="" coords="919,81,987,108"/>
-<area shape="rect" id="node7" title=" " alt="" coords="460,329,520,356"/>
-<area shape="rect" id="node9" href="$a00789.html" title="An object containing style definitions to apply on geospatial objects." alt="" coords="905,341,1002,368"/>
-<area shape="rect" id="node14" href="$a00465.html" title="Abstract class to describe a class applying a style to a downlifted dataset." alt="" coords="873,404,1033,431"/>
-<area shape="rect" id="node8" title=" " alt="" coords="910,251,997,277"/>
-<area shape="rect" id="node10" title=" " alt="" coords="365,425,615,466"/>
-<area shape="rect" id="node11" title=" " alt="" coords="8,432,53,459"/>
-<area shape="rect" id="node12" title=" " alt="" coords="408,491,572,517"/>
-<area shape="rect" id="node13" title=" " alt="" coords="5,521,56,548"/>
-<area shape="rect" id="node16" title=" " alt="" coords="305,542,675,583"/>
-<area shape="rect" id="node15" title=" " alt="" coords="456,608,524,635"/>
-<area shape="rect" id="node17" title=" " alt="" coords="898,455,1009,481"/>
+<map id="SHPWriter" name="SHPWriter">
+<area shape="rect" id="node1" title=" " alt="" coords="49,229,137,256"/>
+<area shape="rect" id="node2" href="$a00376.html" title=" " alt="" coords="5,155,180,181"/>
+<area shape="rect" id="node3" href="$a00404.html" title=" " alt="" coords="29,80,157,107"/>
+<area shape="rect" id="node4" href="$a00412.html" title="A model class for exporting RDF in several downlift formats." alt="" coords="41,5,144,32"/>
 </map>

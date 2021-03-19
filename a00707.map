@@ -1,7 +1,6 @@
-<map id="VelocityHelper" name="VelocityHelper">
-<area shape="rect" id="node1" title="A facade class that simplifies using a custom Velocity engine from a servlet." alt="" coords="238,95,355,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,137,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="189,5,263,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="287,5,445,32"/>
-<area shape="rect" id="node5" title=" " alt="" coords="469,5,588,32"/>
+<map id="ValuesDataURLServlet" name="ValuesDataURLServlet">
+<area shape="rect" id="node1" title="A servlet for serving an RDF document describing resources related to a given resource via a given pr..." alt="" coords="5,229,173,256"/>
+<area shape="rect" id="node2" href="$a00704.html" title="Abstract base servlet for servlets that handle a property of a given resource." alt="" coords="18,155,161,181"/>
+<area shape="rect" id="node3" href="$a00664.html" title="An abstract base servlet for servlets that manage a namespace of resources." alt="" coords="39,80,139,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="41,5,137,32"/>
 </map>

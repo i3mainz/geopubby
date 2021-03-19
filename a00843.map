@@ -1,6 +1,4 @@
-<map id="TWKBReader.ExtendedPrecisionReader" name="TWKBReader.ExtendedPrecisionReader">
-<area shape="rect" id="node1" title=" " alt="" coords="169,201,399,243"/>
-<area shape="rect" id="node2" href="$a00841.html" title=" " alt="" coords="177,96,391,123"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,72,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="416,96,491,123"/>
+<map id="TWKBReader.ByteBufferInputStream" name="TWKBReader.ByteBufferInputStream">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,217,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="60,5,163,32"/>
 </map>

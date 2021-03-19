@@ -1,7 +1,9 @@
-<map id="IndexDataSource" name="IndexDataSource">
-<area shape="rect" id="node1" title="A DataSource that wraps another data source and adds an index of the resources in that data source." alt="" coords="59,199,193,225"/>
-<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server." alt="" coords="5,95,103,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="35,5,73,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="143,95,203,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="227,95,305,121"/>
+<map id="DataSource" name="DataSource">
+<area shape="rect" id="node1" title="A source of RDF data intended for publication through the server." alt="" coords="5,132,103,159"/>
+<area shape="rect" id="node2" href="$a00728.html" title="A DataSource that wraps another data source in such a way that the resulting data source is only capa..." alt="" coords="177,5,323,32"/>
+<area shape="rect" id="node3" href="$a00732.html" title="A DataSource that wraps another data source and adds an index of the resources in that data source." alt="" coords="183,56,317,83"/>
+<area shape="rect" id="node4" href="$a00736.html" title="A DataSource that presents an RDF merge of multiple other data sources." alt="" coords="181,107,319,133"/>
+<area shape="rect" id="node5" href="$a00740.html" title="A data source backed by a Jena model." alt="" coords="181,157,319,184"/>
+<area shape="rect" id="node6" href="$a00744.html" title="A data source backed by a SPARQL endpoint accessed through the SPARQL protocol." alt="" coords="151,208,349,235"/>
+<area shape="rect" id="node7" href="$a00748.html" title="Wraps a DataSource by applying a IRIRewriter." alt="" coords="170,259,330,285"/>
 </map>

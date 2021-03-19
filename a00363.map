@@ -1,5 +1,4 @@
-<map id="ConfigurationException" name="ConfigurationException">
-<area shape="rect" id="node1" title=" " alt="" coords="67,95,240,121"/>
-<area shape="rect" id="node2" href="$a01757.html" title=" " alt="" coords="5,5,147,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="171,5,293,32"/>
+<map id="Configuration" name="Configuration">
+<area shape="rect" id="node1" title="The server&#39;s configuration." alt="" coords="15,80,124,107"/>
+<area shape="rect" id="node2" href="$a00660.html" title="Convenience superclass for classes that read properties of an RDF resource, intended for making the r..." alt="" coords="5,5,133,32"/>
 </map>

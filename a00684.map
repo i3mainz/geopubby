@@ -1,5 +1,0 @@
-<map id="RootServlet" name="RootServlet">
-<area shape="rect" id="node1" title="A catch&#45;all servlet managing the URI space of the web application." alt="" coords="6,155,105,181"/>
-<area shape="rect" id="node2" href="$a00661.html" title="An abstract base servlet for servlets that manage a namespace of resources." alt="" coords="5,80,105,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="7,5,103,32"/>
-</map>

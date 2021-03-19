@@ -1,5 +1,6 @@
-<map id="ModelWriter" name="ModelWriter">
-<area shape="rect" id="node1" title="A model class for exporting RDF in several downlift formats." alt="" coords="59,95,161,121"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,5,103,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="127,5,205,32"/>
+<map id="JSONPWriter" name="JSONPWriter">
+<area shape="rect" id="node1" title=" " alt="" coords="41,229,144,256"/>
+<area shape="rect" id="node2" href="$a00376.html" title=" " alt="" coords="5,155,180,181"/>
+<area shape="rect" id="node3" href="$a00404.html" title=" " alt="" coords="29,80,157,107"/>
+<area shape="rect" id="node4" href="$a00412.html" title="A model class for exporting RDF in several downlift formats." alt="" coords="41,5,144,32"/>
 </map>

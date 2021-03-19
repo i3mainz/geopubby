@@ -1,4 +1,4 @@
 var a00356 =
 [
-    [ "geotime", "a00357.html", "a00357" ]
+    [ "locationtech", "a00357.html", "a00357" ]
 ];

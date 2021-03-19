@@ -1,15 +1,4 @@
-<map id="ModelDataSource" name="ModelDataSource">
-<area shape="rect" id="node1" title="A data source backed by a Jena model." alt="" coords="189,451,326,477"/>
-<area shape="rect" id="node2" href="$a00717.html" title="A source of RDF data intended for publication through the server." alt="" coords="105,347,202,373"/>
-<area shape="rect" id="node3" title=" " alt="" coords="134,221,173,247"/>
-<area shape="rect" id="node4" title=" " alt="" coords="226,347,289,373"/>
-<area shape="rect" id="node5" href="$a00749.html" title=" " alt="" coords="313,332,540,388"/>
-<area shape="rect" id="node6" href="$a00749.html" title="Facade for indexing and searching Indexable elements." alt="" coords="335,213,519,255"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,95,205,136"/>
-<area shape="rect" id="node8" title=" " alt="" coords="56,5,155,32"/>
-<area shape="rect" id="node9" title=" " alt="" coords="229,102,376,129"/>
-<area shape="rect" id="node10" title=" " alt="" coords="248,5,357,32"/>
-<area shape="rect" id="node11" title=" " alt="" coords="401,102,453,129"/>
-<area shape="rect" id="node12" title=" " alt="" coords="477,102,555,129"/>
-<area shape="rect" id="node13" href="$a01693.html" title=" " alt="" coords="579,102,666,129"/>
+<map id="IndexDataSource" name="IndexDataSource">
+<area shape="rect" id="node1" title="A DataSource that wraps another data source and adds an index of the resources in that data source." alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node2" href="$a00724.html" title="A source of RDF data intended for publication through the server." alt="" coords="23,5,121,32"/>
 </map>
