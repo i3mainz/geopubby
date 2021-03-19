@@ -74,6 +74,17 @@
     <servlet-name>SearchServlet</servlet-name>
     <url-pattern>/search/*</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>GeoBrowserServlet</servlet-name>
+    <servlet-class>de.fuberlin.wiwiss.pubby.servlets.GeoBrowserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>GeoBrowserServlet</servlet-name>
+    <url-pattern>/geobrowser/*</url-pattern>
+  </servlet-mapping>
+  
 
   <servlet>
     <servlet-name>RootServlet</servlet-name>

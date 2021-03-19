@@ -74,8 +74,6 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
             clsMap[cls]=true;
             if(cls in ress && "super" in ress[cls]){
             	superMap[ress[cls]["super"]]=true;
-            }else{
-            	ress[cls]["super"]="#"
             }
 			if(cls.includes("_:") || !(cls.startsWith("http"))){
 				continue;
@@ -90,29 +88,30 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					/*	result+="<option value=\""+results[res]["cls"]+"\">"+((results[res]["clsLabel"]!=null && results[res]["clsLabel"]!=null)?
 						addpref+results[res]["clsLabel"]:addpref+results[res]["cls"].substring(results[res]["cls"].lastIndexOf('#')+1))+"</option>"
 						resultlist[results[res]["cls"]]=true*/
-					console.log(cls+" - "+(ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http"))?"#":ress[cls]["super"]))
+					if(cls in ress && "super" in ress[cls]){
+						console.log(cls+" - "+(ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http"))?"#":ress[cls]["super"]))
+					}
 					textcut=addpref
-					if(ress[cls]["label"]!=""){
+					if(cls in ress && "label" in ress[cls] && ress[cls]["label"]!=""){
 						textcut=ress[cls]["label"]+" ("
 						if(cls.includes("#")){
-						textcut+=cls.substring(cls.lastIndexOf('#')+1)+(ress[cls]["count"]!=""?"("+ress[cls]["count"]+")":"")
+						textcut+=cls.substring(cls.lastIndexOf('#')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}else if(cls.startsWith("http")){
-							textcut+=cls.substring(cls.lastIndexOf('/')+1)+(ress[cls]["count"]!=""?"("+ress[cls]["count"]+")":"")
+							textcut+=cls.substring(cls.lastIndexOf('/')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}else{
-							textcut+=cls+(ress[cls]["count"]!=""?"("+ress[cls]["count"]+")":"")
+							textcut+=cls+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}
 						textcut+=")"
-					}else{
+					}else if(cls in ress){
 						if(cls.includes("#")){
-							textcut=cls.substring(cls.lastIndexOf('#')+1)+(ress[cls]["count"]!=""?"("+ress[cls]["count"]+")":"")
+							textcut=cls.substring(cls.lastIndexOf('#')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}else if(cls.startsWith("http")){
-							textcut=cls.substring(cls.lastIndexOf('/')+1)+(ress[cls]["count"]!=""?"("+ress[cls]["count"]+")":"")
+							textcut=cls.substring(cls.lastIndexOf('/')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}else{
-							textcut=cls+(ress[cls]["count"]!=""?"("+ress[cls]["count"]+")":"")
+							textcut=cls+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}
-					}
-					
-					if(cls!=ress[cls]["super"]){
+					}					
+					if(cls in ress && "super" in ress[cls] && cls!=ress[cls]["super"]){
 						tree["core"]["data"].push({ "id" : cls, "parent" : ((ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http")))?"#":ress[cls]["super"]), 
 						"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif", 
 					"text" : textcut })
@@ -145,7 +144,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                     console.log(node)
                                     console.log("Show instances in GeoPubby")  
                                     if(node.id.includes("${server_base.toString()}")){
-                                        var win = window.open(0,"${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.substring(node.id.lastIndexOf('/')))+""+node.id.substring(node.id.substring(node.id.lastIndexOf('/')+1)), '_blank');
+                                        var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.substring(node.id.lastIndexOf('/')))+""+node.id.substring(node.id.substring(node.id.lastIndexOf('/')+1)), '_blank');
 										win.focus(); 
                                     }                                
                                 }
@@ -156,7 +155,9 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "label": "Show instances in Map View",
                                 "action": function (obj) {
                                     console.log(node)
-                                    console.log("Show instances in map view")                                    
+                                    console.log("Show instances in map view")  
+                                    var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.substring(node.id.lastIndexOf('/')))+""+node.id.substring(node.id.substring(node.id.lastIndexOf('/')+1)), '_blank');
+									win.focus();                                   
                                 }
                             },
 							"lookupdefinition": {
