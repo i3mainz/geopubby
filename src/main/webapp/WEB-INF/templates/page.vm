@@ -133,15 +133,26 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 		tree["contextmenu"]={}
 		tree["contextmenu"]["items"]=function (node) {
                         return {
-                            "addfeaturetype": {
+                            "showinstances": {
                                 "separator_before": false,
                                 "separator_after": false,
-                                "label": "Add as feature type",
+                                "label": "Show instances in GeoPubby",
                                 "action": function (obj) {
                                     console.log(node)
-									if (confirm('Add "'+node.id+' as a feature type "?'))
-										console.log("Adding feature type to the SemanticWFS")
-                                    console.log("Add Feature Type")                                    
+                                    console.log("Show instances in GeoPubby")  
+                                    if(node.id.includes("${server_base.toString()}")){
+                                        var win = window.open(0,"${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.substring(node.id.lastIndexOf('/')))+""+node.id.substring(node.id.substring(node.id.lastIndexOf('/')+1)), '_blank');
+										win.focus(); 
+                                    }                                
+                                }
+                            },
+                            "show in map view": {
+                                "separator_before": false,
+                                "separator_after": false,
+                                "label": "Show instances in Map View",
+                                "action": function (obj) {
+                                    console.log(node)
+                                    console.log("Show instances in map view")                                    
                                 }
                             },
 							"lookupdefinition": {
@@ -165,6 +176,9 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
    			var data = node[0].id
    			console.log(data)
    			console.log(node)
+   			if(data.includes()){
+   			https://digits.mainzed.org/cuneiform/pubby/values/-rdf:type/Tablet
+   			}
    			window.open(data, '_blank');
 		});
 		var to = false;
