@@ -86,6 +86,7 @@ body {
 #jstree {
 	font-size: 12px;
 	background-color:white;
+	z-index: 2;
 }
 
 @media screen and (max-height: 450px) {
