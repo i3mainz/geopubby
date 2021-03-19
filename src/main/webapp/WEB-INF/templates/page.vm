@@ -72,7 +72,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
             	cls=cls.replace(prefixurl,"$server_base");
             }
             clsMap[cls]=true;
-            superMap[ress[cls]["super"]]=true;
+            if(cls in ress && "super" in ress[cls]){
+            	superMap[ress[cls]["super"]]=true;
+            }else{
+            	ress[cls]["super"]="#"
+            }
 			if(cls.includes("_:") || !(cls.startsWith("http"))){
 				continue;
 			}
