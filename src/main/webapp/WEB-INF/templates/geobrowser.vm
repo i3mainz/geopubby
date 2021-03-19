@@ -159,7 +159,7 @@ console.log(JSON.stringify(classeswithinstances))
 //?subject a owl:Class . } UNION 
 // (COUNT(?individual) AS ?individualc )
 query=""
-if(){
+if(!($('#endpointselect').val() in endpoints)){
 query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
 +"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
