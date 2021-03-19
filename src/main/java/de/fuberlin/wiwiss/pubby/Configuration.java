@@ -26,6 +26,7 @@ import de.fuberlin.wiwiss.pubby.sources.IndexDataSource;
 import de.fuberlin.wiwiss.pubby.sources.MergeDataSource;
 import de.fuberlin.wiwiss.pubby.sources.ModelDataSource;
 import de.fuberlin.wiwiss.pubby.vocab.CONF;
+import de.fuberlin.wiwiss.pubby.vocab.GEO;
 
 /**
  * The server's configuration.
@@ -44,6 +45,9 @@ public class Configuration extends ResourceReader {
 	private final PrefixMapping prefixes;
 	private final String webBase;
 	private final Collection<Property> labelProperties;
+	private final Collection<Property> typeProperties;
+	private final Collection<Property> geoProperties;
+	private final Collection<Property> crsProperties;
 	private final Collection<Property> commentProperties;
 	private final Collection<Property> imageProperties;
 	private final ArrayList<Dataset> datasets = new ArrayList<Dataset>();
@@ -81,6 +85,22 @@ public class Configuration extends ResourceReader {
 			labelProperties.add(DCTerms.title);
 			labelProperties.add(FOAF.name);
 		}
+		
+		typeProperties = getProperties(CONF.typeProperty);
+		if (typeProperties.isEmpty()) {
+			typeProperties.add(RDF.type);
+		}
+		
+		geoProperties = getProperties(CONF.geoProperty);
+		if (geoProperties.isEmpty()) {
+			geoProperties.add(GEO.HASGEOMETRY);
+		}
+		
+		crsProperties = getProperties(CONF.crsProperty);
+		if (crsProperties.isEmpty()) {
+			crsProperties.add(GEO.EPSG);
+		}
+		
 		commentProperties = getProperties(CONF.commentProperty);
 		if (commentProperties.isEmpty()) {
 			commentProperties.add(RDFS.comment);
@@ -206,6 +226,18 @@ public class Configuration extends ResourceReader {
 		return labelProperties;
 	}
 	
+	public Collection<Property> getGeoProperties() {
+		return geoProperties;
+	}
+	
+	public Collection<Property> getCrsProperties() {
+		return crsProperties;
+	}
+	
+	public Collection<Property> getTypeProperties() {
+		return typeProperties;
+	}
+	
 	public Collection<Property> getCommentProperties() {
 		return commentProperties;
 	}
@@ -267,4 +299,5 @@ public class Configuration extends ResourceReader {
 		}
 		return false;
 	}
+
 }

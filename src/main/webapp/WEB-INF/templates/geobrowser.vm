@@ -73,17 +73,32 @@ function closeWaitingDialog() {
 
 
 function getGeoClasses(){
-    query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
+query=""
+if(!($('#endpointselect').val() in endpoints)){
+    query="PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
 +"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
 +"SELECT DISTINCT ?subject ?label ?supertype \n"
 +"WHERE {\n"
-+"    ?subject <"+endpoints[$('#endpointselect').val()]["type"]+"> owl:Class . \n"
-+"    ?ind <"+endpoints[$('#endpointselect').val()]["type"]+"> ?subject .\n"
++"    ?subject rdf:type owl:Class . \n"
++"    ?ind rdf:type ?subject .\n"
++"   	OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
++"      OPTIONAL { ?subject rdfs:label ?label "+"} .\n"
++"      ?ind <http://www.opengis.net/ont/geosparql#hasGeometry> ?geo . \n"
++"} ORDER BY ?subject"
+}else{
+    query="PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
++"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
++"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
++"SELECT DISTINCT ?subject ?label ?supertype \n"
++"WHERE {\n"
++"    ?subject rdf:type owl:Class . \n"
++"    ?ind rdf:type ?subject .\n"
 +"   	OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
 +"      OPTIONAL { ?subject <"+endpoints[$('#endpointselect').val()]["label"]+"> ?label "+"} .\n"
 +"      ?ind <"+endpoints[$('#endpointselect').val()]["geo"][0]+"> ?geo . \n"
 +"} ORDER BY ?subject"
+}
 console.log(query)
 const formData = new FormData();
 formData.append('query', query);
@@ -143,6 +158,32 @@ console.log(JSON.stringify(classeswithinstances))
 // ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
 //?subject a owl:Class . } UNION 
 // (COUNT(?individual) AS ?individualc )
+query=""
+if(){
+query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
++"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
++"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
++"SELECT DISTINCT ?subject ?label ?supertype\n"
++"WHERE {\n"
++"   { ?subject rdf:type owl:Class . } UNION { ?individual rdf:type ?subject . } .\n"
++"   OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
++"   OPTIONAL { ?subject rdfs:label ?label }.\n"
++"    FILTER (\n"
++"        (\n"
++"        ?subject != owl:Class &&\n"
++"        ?subject != rdf:List &&\n"
++"        ?subject != rdf:Property &&\n"
++"        ?subject != rdfs:Class &&\n"
++"        ?subject != rdfs:Datatype &&\n"
++"        ?subject != rdfs:ContainerMembershipProperty &&\n"
++"        ?subject != owl:DatatypeProperty &&\n"
++"        ?subject != owl:AnnotationProperty &&\n"
++"        ?subject != owl:Restriction &&\n"
++"        ?subject != owl:ObjectProperty &&\n"
++"        ?subject != owl:NamedIndividual &&\n"
++"        ?subject != owl:Ontology) )\n"
++"}\n"
+}else{
 query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
 +"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
@@ -166,6 +207,8 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"        ?subject != owl:NamedIndividual &&\n"
 +"        ?subject != owl:Ontology) )\n"
 +"}\n"
+}
+
 console.log(query)
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
        console.log(results)

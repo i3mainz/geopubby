@@ -31,6 +31,10 @@ public class GeoBrowserServlet extends BaseServlet {
 			sourceURLs.add(ds.datasetBase);
 		}
 		context.put("endpoint", sources);
+		context.put("labelprops", config.getLabelProperties());
+		context.put("typeprops", config.getTypeProperties());
+		context.put("geoprops", config.getGeoProperties());
+		context.put("crsprops", config.getCrsProperties());
 		context.put("sourceURLs", sourceURLs);
 		context.put("server_base", config.getWebApplicationBaseURI());
 		template.renderXHTML("geobrowser.vm");

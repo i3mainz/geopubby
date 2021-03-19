@@ -19,6 +19,9 @@ public class CONF {
 	public static final Property webBase = m.createProperty(NS + "webBase"); 
 	public static final Property usePrefixesFrom = m.createProperty(NS + "usePrefixesFrom");
 	public static final Property labelProperty = m.createProperty(NS + "labelProperty");
+	public static final Property geoProperty = m.createProperty(NS + "geoProperty");
+	public static final Property crsProperty = m.createProperty(NS + "crsProperty");
+	public static final Property typeProperty = m.createProperty(NS + "typeProperty");
 	public static final Property commentProperty = m.createProperty(NS + "commentProperty");
 	public static final Property imageProperty = m.createProperty(NS + "imageProperty");
 	public static final Property defaultLanguage = m.createProperty(NS + "defaultLanguage");
@@ -59,4 +62,5 @@ public class CONF {
 	public static final Property pluralLabel = m.createProperty(NS + "pluralLabel");
 	public static final Resource HighOutdregreeProperty = m.createResource(NS + "HighOutdegreeProperty");
 	public static final Resource HighIndregreeProperty = m.createResource(NS + "HighIndegreeProperty");
+
 }
