@@ -176,8 +176,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
    			var data = node[0].id
    			console.log(data)
    			console.log(node)
-   			if(data.includes("${server_base.toString()}"){
-   				"https://digits.mainzed.org/cuneiform/pubby/values/-rdf:type/Tablet"
+   			if(data.includes("${server_base.toString()}")){
    			}
    			window.open(data, '_blank');
 		});
