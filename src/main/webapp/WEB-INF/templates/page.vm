@@ -144,7 +144,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                     console.log(node)
                                     console.log("Show instances in GeoPubby")  
                                     if(node.id.includes("${server_base.toString()}")){
-                                        var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.substring(node.id.lastIndexOf('/')))+""+node.id.substring(node.id.substring(node.id.lastIndexOf('/')+1)), '_blank');
+                                        var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
 										win.focus(); 
                                     }                                
                                 }
@@ -156,7 +156,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "action": function (obj) {
                                     console.log(node)
                                     console.log("Show instances in map view")  
-                                    var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.substring(node.id.lastIndexOf('/')))+""+node.id.substring(node.id.substring(node.id.lastIndexOf('/')+1)), '_blank');
+                                    var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
 									win.focus();                                   
                                 }
                             },
@@ -463,6 +463,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 #else
 <script>
 var espg="EPSG:4326";
+getClassHierarchy([]);
 </script>
 #end
 </div>

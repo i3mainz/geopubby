@@ -667,16 +667,12 @@ function handleResults(results,start){
 			}
 		}
 		geojson=TTLToGeoJSON(curQueryResultTTL,"geojson","")
-		if(endpoints[$('#endpointselect').val()]["epsg"]!=4326 && $('#endpointselect').val()!="https://ld.gdi-de.org/graphdb/repositories/xplanungtest"){
+		if($('#endpointselect').val() in endpoints && endpoints[$('#endpointselect').val()]["epsg"]!=4326 && $('#endpointselect').val()!="https://ld.gdi-de.org/graphdb/repositories/xplanungtest"){
             //console.log(geojson)
             //console.log("EPSG:"+endpoints[$('#endpointselect').val()]["epsg"])
             geojson=convertGeoJSON(geojson,epsgdefs["EPSG:"+endpoints[$('#endpointselect').val()]["epsg"]])
             //console.log(geojson);
         }
-		if($('#endpointselect').val()=="https://ld.gdi-de.org/graphdb/repositories/xplanungtest")
-			invertXY=true
-		else
-			invertXY=false
         colormap={}
 		//console.log("RELLABELS!!!!")
 		console.log(geojson)
