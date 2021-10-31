@@ -144,7 +144,7 @@
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-core</artifactId>
-      <version>3.14.0</version>
+      <version>4.2.0</version>
     </dependency>
     
     <!-- https://mvnrepository.com/artifact/org.locationtech.proj4j/proj4j -->
