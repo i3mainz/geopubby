@@ -71,6 +71,13 @@
     <version>1.18.12</version>
     <scope>provided</scope>
 </dependency>
+<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+<dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.15</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/com.google.openlocationcode/openlocationcode -->
 <dependency>
     <groupId>com.google.openlocationcode</groupId>
@@ -84,11 +91,12 @@
     <version>1.4.0</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.apache.sis.storage/sis-storage -->
+<!--
 <dependency>
     <groupId>org.apache.sis.storage</groupId>
     <artifactId>sis-storage</artifactId>
     <version>2.0-M0070</version>
-</dependency>
+</dependency>-->
 <!-- https://mvnrepository.com/artifact/com.clearspring.analytics/stream -->
 <dependency>
     <groupId>com.clearspring.analytics</groupId>
@@ -167,7 +175,7 @@
     <dependency>
       <groupId>org.apache.jena</groupId>
       <artifactId>jena-arq</artifactId>
-      <version>3.14.0</version>
+      <version>4.2.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.velocity</groupId>

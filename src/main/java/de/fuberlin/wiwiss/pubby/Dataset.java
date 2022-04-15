@@ -4,13 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import org.apache.jena.riot.system.IRIResolver;
-import org.apache.jena.iri.IRI;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.shared.JenaException;
-import org.apache.jena.util.FileManager;
 
 import de.fuberlin.wiwiss.pubby.sources.DataSource;
 import de.fuberlin.wiwiss.pubby.sources.FilteredDataSource;
@@ -111,20 +109,24 @@ public class Dataset extends ResourceReader {
 				// If the location is a local file, then use webBase as base URI
 				// to resolve relative URIs in the file. Having file:/// URIs in
 				// there would likely not be useful to anyone.
-				fileName = IRIResolver.resolveFileURL(fileName);
+				//IRIResolver res=new IRIResolver();
+				//res.iriFactory().
+				//fileName = IRIResolver..resolveFileURL(fileName);
 				String base = (fileName.startsWith("file:/") ? 
 						configuration.getWebApplicationBaseURI() : fileName);
 
 				try {
-					Model m = FileManager.get().loadModel(fileName, base, null);
+					Model m = RDFDataMgr.loadModel(fileName);
 					data.add(m);
 				
 					// We'd like to do simply data.setNsPrefix(m), but that leaves relative
 					// namespace URIs like <#> unresolved, so we do a big dance to make them
 					// absolute.
 					for (String prefix: m.getNsPrefixMap().keySet()) {
-						IRI uri = IRIResolver.resolve(m.getNsPrefixMap().get(prefix), base);
-						data.setNsPrefix(prefix, uri.toString());
+						String uri=m.getNsPrefixMap().get("prefix");
+						if(uri.contains("file:/")) {
+							data.setNsPrefix(prefix, uri.toString().replace("file:/", base));	
+						}
 					}
 				} catch (JenaException ex) {
 					throw new ConfigurationException("Error reading <" + fileName + ">: " + ex.getMessage());

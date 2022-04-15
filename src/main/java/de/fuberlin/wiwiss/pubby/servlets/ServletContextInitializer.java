@@ -12,6 +12,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.shared.JenaException;
 import org.apache.jena.util.FileManager;
 
@@ -41,10 +42,10 @@ public class ServletContextInitializer implements ServletContextListener {
 			String url = configFile.getAbsoluteFile().toURI().toString();
 			System.out.println("SPARQL Endpoint: "+url);
 			try {
-				System.out.println("Resetting cache...");
-				FileManager.get().resetCache();
+				//System.out.println("Resetting cache...");
+				//FileManager.get().resetCache();
 				System.out.println("Loading model...");
-				Model m = FileManager.get().loadModel(url);
+				Model m = RDFDataMgr.loadModel(url);
 				System.out.println("Creating configuration...");
 				Configuration conf = Configuration.create(m);
 				System.out.println("Saving configuration...");
