@@ -7,6 +7,32 @@
     </div>
 #end
 <script>
+var namespaces={"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","xsd":"http://www.w3.org/2001/XMLSchema#","geo":"http://www.opengis.net/ont/geosparql#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","owl":"http://www.w3.org/2002/07/owl#","dc":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#"}
+var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
+var geoproperties={
+                   "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#asKML": "DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#asGeoJSON": "DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
+                   "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
+                   "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
+                   "http://www.georss.org/georss/point": "DatatypeProperty",
+                   "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
+                   "http://www.w3.org/2003/01/geo/wgs84_pos#lat":"DatatypeProperty",
+                   "http://www.w3.org/2003/01/geo/wgs84_pos#long": "DatatypeProperty",
+                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
+                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
+                   "http://schema.org/geo": "ObjectProperty",
+                   "http://geovocab.org/geometry#geometry": "ObjectProperty",
+                   "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
+                   "http://rdfs.co/juso/geometry": "ObjectProperty",
+                   "http://www.wikidata.org/prop/direct/P625":"DatatypeProperty",
+                   "https://database.factgrid.de/prop/direct/P48": "DatatypeProperty",
+                   "http://database.factgrid.de/prop/direct/P48":"DatatypeProperty",
+                   "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
+}
+
 var webbase="$server_base"
 var datasetbase="$sourceURLs"
 var stylestring="$styleWithHtml".replace(/&quot;/g, '\"');
@@ -24,6 +50,7 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"WHERE {\n"
 +"   { ?subject rdf:type owl:Class . } UNION { ?individual rdf:type ?subject . } .\n"
 +"   OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
++"   OPTIONAL { ?subject rdfs:label ?label. filter(langMatches(lang(?label),\"en\")) }"
 +"   OPTIONAL { ?subject rdfs:label ?label }.\n"
 +"    FILTER (\n"
 +"        (\n"
@@ -113,11 +140,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					}					
 					if(cls in ress && "super" in ress[cls] && cls!=ress[cls]["super"]){
 						tree["core"]["data"].push({ "id" : cls, "parent" : ((ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http")))?"#":ress[cls]["super"]), 
-						"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif", 
+						"icon" : baseurl+"static/icons/class.png", 
 					"text" : textcut })
 					}else{
 						tree["core"]["data"].push({ "id" : cls, "parent" : "#", 
-						"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif", 
+						"icon" : baseurl+"static/icons/class.png", 
 					"text" : textcut })
 					}
 					
@@ -127,26 +154,40 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                 if(!(cls in clsMap)){
                         console.log("Not defined superClass: "+cls)
                         tree["core"]["data"].push({ "id" : cls, "parent" : "#", 
-						"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif", 
+						"icon" : baseurl+"static/icons/class.png", 
 					"text" : cls })
                 }
         }
-        tree["core"]["types"]={"file" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif"},"default" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","valid_children" : ["default"]}}
+        tree["core"]["types"]={"file" : {"icon" : baseurl+"static/icons/class.png"},"default" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","valid_children" : ["default"]}}
         tree["plugins"]=["search","sort","state","types","contextmenu"]
 		tree["contextmenu"]={}
 		tree["contextmenu"]["items"]=function (node) {
                         return {
+                            "instancecount": {
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"static/icons/instancecount.png",
+                                "label": "Check instance count",
+                                "action": function (obj) {
+                                	getInstanceCount(node)      
+                                }
+                            },
                             "showinstances": {
                                 "separator_before": false,
                                 "separator_after": false,
                                 "label": "Show instances in GeoPubby",
+                                "icon": baseurl+"static/icons/queryinstances.png",
                                 "action": function (obj) {
-                                    console.log(node)
-                                    console.log("Show instances in GeoPubby")  
-                                    if(node.id.includes("${server_base.toString()}")){
-                                        var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
-										win.focus(); 
-                                    }                                
+                                    getInstances(node)                              
+                                }
+                            },
+                            "querydataschema": {
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"static/icons/classschema.png",
+                                "label": "Query data schema",
+                                "action": function (obj) {
+                                	getDatasetSchema(node.id)      
                                 }
                             },
                             "show in map view": {
@@ -164,6 +205,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "separator_before": false,
                                 "separator_after": false,
                                 "label": "Lookup definition",
+                                "icon": baseurl+"static/icons/classlink.png",
                                 "action": function (obj) {
 									var win = window.open(node.id, '_blank');
 									win.focus();                                 
@@ -197,9 +239,126 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 });
 }
 
+function getInstanceCount(node){
+	concept=node.id
+	if(!node.text.includes("[")){
+		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
+			//node.text=node.text+"["+results[0]["amount"]["value"]+"]"
+			$('#jstree').jstree('rename_node',node,node.text+"["+results[0]["amount"]["value"]+"]")
+		});
+	}
+}
+
+function loadSamples(concept,relation,relationtd){
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT (COUNT(?val) as ?amount) ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con <" +relation+ "> ?val } GROUP BY ?val LIMIT 100").then((results)=>{
+			counter=0
+			result=""
+			for(res in results){
+				if(counter>10){
+					break;
+				}
+				if(results[res]["val"].startswith("http")){
+					result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">results[res]["val"]+"</a> " 				
+				}else{
+					result+=results[res]["val"]+" " 				
+				}
+				counter+=1		
+			}
+			$('#'+relationtd).html(result)
+		});
+}
+
+function getInstances(node){
+	concept=node.id
+	//if(!node.text.includes("[")){
+		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
+			for(res in results){
+				if("label" in results[res]){
+					$('#jstree').jstree(true).create_node(node.id,{
+						"id": results[res]["con"]["value"],
+						"text": results[res]["label"]["value"],
+						"icon": baseurl+"static/icons/instance.png",
+					});
+				}else{
+					$('#jstree').jstree(true).create_node(node.id,{
+						"id":results[res]["con"]["value"],
+						"text": shortenURI(results[res]["con"]["value"]),
+						"icon": baseurl+"static/icons/instance.png",
+					});				
+				}
+			}
+		});
+	//}	
+}
+
+   
+
+function getDatasetSchema(concept){
+	document.getElementById("datasetDialog").show()
+	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
+	$('#datasettablebody').html("<tr><td colspan=3>Loading dataset schema....</td></tr>")
+	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+		result="";
+		maxcons=1
+		first=true
+		for(res in results){
+			if(first){
+				maxcons=results[res]["countcon"]		
+				first=false
+			}
+			result+="<tr>"
+			if(typeof(results[res]["valtype"])=="undefined"){
+				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
+					result+="<td><img src=\""+baseurl+"static/icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
+				}else{
+					result+="<td><img src=\""+baseurl+"static/icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
+				}			
+			}else{
+				finished=false
+				for(ns in annotationnamespaces){
+					if(results[res]["rel"].includes(annotationnamespaces[ns])){
+						result+="<td><img src=\""+baseurl+"static/icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
+						finished=true
+					}
+				}
+				if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
+					result+="<td><img src=\""+baseurl+"static/icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
+				}else if(!finished){
+					result+="<td><img src=\""+baseurl+"static/icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
+				}
+			}
+			result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a> ["+((parseInt(results[res]["countrel"])/maxcons)*100).toFixed(2)+"%]</td>"
+			if(typeof(results[res]["valtype"])=="undefined"){
+				result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]+"','"+shortenURI(results[res]["rel"])+"')\">Click to load samples...</button> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
+			}else{
+				result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]+"','"+shortenURI(results[res]["rel"])+"')\">Click to load samples...</button> [<a href=\""+results[res]["valtype"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"])+"</a>]</td></tr>"
+			}	
+		}
+		$('#datasettablebody').html(result)
+	});
+}
+
+function shortenURI(uri){
+	prefix=""
+	if(typeof(uri)!="undefined"){
+		for(namespace in namespaces){
+			if(uri.includes(namespaces[namespace])){
+				prefix=namespace+":"
+				break
+			}
+		}
+	}
+	if(typeof(uri)!= "undefined" && uri.includes("#")){
+		return prefix+uri.substring(uri.lastIndexOf('#')+1)
+	}
+	if(typeof(uri)!= "undefined" && uri.includes("/")){
+		return prefix+uri.substring(uri.lastIndexOf("/")+1)
+	}
+	return uri
+}
 
 function getAllClasses(){
-    d3.sparql($('#endpointselect').val(), prefixList+" SELECT DISTINCT ?cls ?clsLabel  WHERE {?ind rdf:type ?cls . ?ind ?rel ?geo. ?geo geo:asWKT ?wkt  . ?cls rdf:type owl:Class . OPTIONAL{?cls rdfs:label ?clsLabel. }} ORDER BY ?cls").then((results) => {
+    d3.sparql($('#endpointselect').val(), prefixList+" SELECT DISTINCT ?cls ?clsLabel  WHERE {?ind <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?cls . ?ind ?rel ?geo. ?geo geo:asWKT ?wkt  . ?cls rdf:type owl:Class . OPTIONAL{?cls rdfs:label ?clsLabel. }} ORDER BY ?cls").then((results) => {
 	//currdfstore.execute(, function(success,results){ 
         //console.log(success,results)
 		result="";
@@ -459,6 +618,7 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               var layerBounds = layerr.getBounds();
               bounds.extend(layerBounds);
         map.fitBounds(bounds);
+getClassHierarchy([]);
 </script>
 #else
 <script>

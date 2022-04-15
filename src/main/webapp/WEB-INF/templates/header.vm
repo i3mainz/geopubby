@@ -4,6 +4,7 @@
   #foreach($end in $endpoint)
   	<option value="${end}">$end</option>  	
   #end
+  <!--
   <option value="https://digits.mainzed.org/osi/sparql">OSI</option>
   <option value="https://ld.gdi-de.org/graphdb/repositories/lod1test">GDI-DE LOD1</option>
   <option value="https://ld.gdi-de.org/graphdb/repositories/gdischools">GDI-DE Schulen</option>
@@ -21,6 +22,7 @@
   <option value="https://digits.mainzed.org/squirrels/sparql">Squirrels</option>
   <option value="https://ld.gdi-de.org/graphdb/repositories/poi">GDI-DE POI</option>
   <option value="https://ld.gdi-de.org/graphdb/repositories/dlmtest">GDI-DE DLM</option>
+  -->
   </select><br/>
   GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
   Search:<input type="text" id="classsearch"><br/>
@@ -78,6 +80,7 @@
 		}
      </style>
   <script>
+  var baseurl="${server_base}"
   var srcurls=[
   #foreach ($ur in $sourceURLs)
  	"$ur", 	
@@ -167,6 +170,7 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
 </script>
     <div class="search">
     Search: <input id="search" size="50">
@@ -260,3 +264,10 @@ CRS:<select id="crs"></select>
 <button id="downloadButton" onclick="download()">Download</button><br/>
 #end
     </div>
+<dialog id="datasetDialog" style="left:0px">
+<h3 id="datasettitle">Dataset</h3>
+<table id="datasettable" style="overflow-y:scroll"><thead id="datasettablehead"><tr><th>Property Type</th><th>Property</th><th>Samples</th></tr></thead>
+<tbody id="datasettablebody"></tbody>
+</table>
+<button id="datasetDialogCloseButton" onclick="document.getElementById('datasetDialog').close()">Close</button>
+</dialog>
