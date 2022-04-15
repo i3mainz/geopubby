@@ -284,7 +284,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> out.toByteArray();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">final</span> IOException e) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01764.html">RuntimeException</a>(<span class="stringliteral">&quot;Error writing TWKB geometry.&quot;</span>, e);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01756.html">RuntimeException</a>(<span class="stringliteral">&quot;Error writing TWKB geometry.&quot;</span>, e);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
 </div><!-- fragment -->
@@ -759,7 +759,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aa00860_html_a226242e33fa2ddb80db6f65fea7e88d5"><div class="ttname"><a href="a00860.html#a226242e33fa2ddb80db6f65fea7e88d5">org.locationtech.geowave.core.geotime.util.TWKBWriter.write</a></div><div class="ttdeci">byte[] write(final Geometry geom)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:38</div></div>
 <div class="ttc" id="aa00860_html_a97d9c7da786fbc6decfc325d9b2058fe"><div class="ttname"><a href="a00860.html#a97d9c7da786fbc6decfc325d9b2058fe">org.locationtech.geowave.core.geotime.util.TWKBWriter.writePolygon</a></div><div class="ttdeci">void writePolygon(final Polygon polygon, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:110</div></div>
 <div class="ttc" id="aa00860_html_a2513e591488b85a0a4ffae1f192e48d1"><div class="ttname"><a href="a00860.html#a2513e591488b85a0a4ffae1f192e48d1">org.locationtech.geowave.core.geotime.util.TWKBWriter.getTypeAndPrecisionByte</a></div><div class="ttdeci">byte getTypeAndPrecisionByte(final byte type, final int precision)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:168</div></div>
-<div class="ttc" id="aa01764_html"><div class="ttname"><a href="a01764.html">RuntimeException</a></div></div>
+<div class="ttc" id="aa01756_html"><div class="ttname"><a href="a01756.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00860_html_a9e135bc7dac9b9305e7183a27ab0e55d"><div class="ttname"><a href="a00860.html#a9e135bc7dac9b9305e7183a27ab0e55d">org.locationtech.geowave.core.geotime.util.TWKBWriter.writeLineString</a></div><div class="ttdeci">void writeLineString(final LineString line, final PrecisionWriter precision, final DataOutput output)</div><div class="ttdef"><b>Definition:</b> TWKBWriter.java:103</div></div>
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

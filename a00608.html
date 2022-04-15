@@ -420,7 +420,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <a class="code" href="a00608.html#ad11c019b4ed835885005ab44cd318c25">doResponseModel</a>();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                } <span class="keywordflow">catch</span> (IOException ioEx) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01764.html">RuntimeException</a>(ioEx);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01756.html">RuntimeException</a>(ioEx);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                } <span class="keywordflow">catch</span> (JenaException jEx) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                <a class="code" href="a00608.html#a8acf5478a5097f4a2ccb8021c167dd8f">response</a>.sendError(</div>
@@ -428,7 +428,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                <span class="stringliteral">&quot;JenaException: &quot;</span> + jEx.getMessage());</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                jEx.printStackTrace();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01764.html">RuntimeException</a>(e);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="a01756.html">RuntimeException</a>(e);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
@@ -522,9 +522,9 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aa00608_html_ad632242c9a97c676da2987811ea46e83"><div class="ttname"><a href="a00608.html#ad632242c9a97c676da2987811ea46e83">de.fuberlin.wiwiss.pubby.ModelResponse.request</a></div><div class="ttdeci">final HttpServletRequest request</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:66</div></div>
 <div class="ttc" id="aa00347_html"><div class="ttname"><a href="a00347.html">de.fuberlin.wiwiss.pubby.exporter.rdf</a></div><div class="ttdef"><b>Definition:</b> CypherWriter.java:1</div></div>
 <div class="ttc" id="aa00608_html_a8acf5478a5097f4a2ccb8021c167dd8f"><div class="ttname"><a href="a00608.html#a8acf5478a5097f4a2ccb8021c167dd8f">de.fuberlin.wiwiss.pubby.ModelResponse.response</a></div><div class="ttdeci">final HttpServletResponse response</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:67</div></div>
+<div class="ttc" id="aa01756_html"><div class="ttname"><a href="a01756.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00343_html"><div class="ttname"><a href="a00343.html">de.fuberlin</a></div></div>
 <div class="ttc" id="aa00341_html"><div class="ttname"><a href="a00341.html">de.fuberlin.wiwiss.pubby</a></div><div class="ttdef"><b>Definition:</b> Configuration.java:1</div></div>
-<div class="ttc" id="aa01764_html"><div class="ttname"><a href="a01764.html">RuntimeException</a></div></div>
 <div class="ttc" id="aa00608_html_aa8bb17b56c84b64f02a105efae6e2c6a"><div class="ttname"><a href="a00608.html#aa8bb17b56c84b64f02a105efae6e2c6a">de.fuberlin.wiwiss.pubby.ModelResponse.getWriter</a></div><div class="ttdeci">ModelWriter getWriter(String mediaType, String crs)</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:123</div></div>
 <div class="ttc" id="aa00608_html_a356df7b1948e33881b8730f379d137a8"><div class="ttname"><a href="a00608.html#a356df7b1948e33881b8730f379d137a8">de.fuberlin.wiwiss.pubby.ModelResponse.model</a></div><div class="ttdeci">final Model model</div><div class="ttdef"><b>Definition:</b> ModelResponse.java:65</div></div>
 <div class="ttc" id="aa00428_html"><div class="ttname"><a href="a00428.html">de.fuberlin.wiwiss.pubby.exporter.rdf.GMLWriter</a></div><div class="ttdef"><b>Definition:</b> rdf/GMLWriter.java:20</div></div>

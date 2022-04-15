@@ -6,7 +6,7 @@ var hierarchy =
     [ "AutocompleteEngine< de.fuberlin.wiwiss.pubby.util.SearchRecord >", "a00756.html", null ],
     [ "AutocompleteEngine< T extends Indexable >.Builder< T extends Indexable >", "a00760.html", null ],
     [ "VocabularyStore.CachedPropertyCollection", "a00824.html", null ],
-    [ "Comparable", "a01760.html", [
+    [ "Comparable", "a01752.html", [
       [ "ResourceDescription.ResourceProperty", "a00648.html", null ],
       [ "ResourceDescription.Value", "a00656.html", null ],
       [ "Tuple< T, T2 >", "a00800.html", null ]
@@ -110,10 +110,10 @@ var hierarchy =
       [ "GeoJSONCSSFormatter", "a00460.html", null ],
       [ "KMLStyleFormatter", "a00464.html", null ]
     ] ],
-    [ "Runnable", "a01768.html", [
+    [ "Runnable", "a01760.html", [
       [ "Reloader", "a00772.html", null ]
     ] ],
-    [ "RuntimeException", "a01764.html", [
+    [ "RuntimeException", "a01756.html", [
       [ "ConfigurationException", "a00368.html", null ]
     ] ],
     [ "SearchIndexInstance", "a00784.html", null ],
@@ -155,8 +155,8 @@ var hierarchy =
     [ "Indexable", null, [
       [ "SearchRecord", "a00788.html", null ]
     ] ],
-    [ "Indexable", "a01700.html", null ],
-    [ "Indexable", "a01700.html", null ],
+    [ "Indexable", "a01692.html", null ],
+    [ "Indexable", "a01692.html", null ],
     [ "IndexAdapter", null, [
       [ "SearchAdapter", "a00780.html", null ]
     ] ],

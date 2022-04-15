@@ -109,10 +109,10 @@ var files_dup =
     [ "GEXFWriter.java", "a00047.html", [
       [ "GEXFWriter", "a00424.html", "a00424" ]
     ] ],
-    [ "rdf/GMLWriter.java", "a01769.html", [
+    [ "rdf/GMLWriter.java", "a01761.html", [
       [ "GMLWriter", "a00428.html", "a00428" ]
     ] ],
-    [ "vector/GMLWriter.java", "a01772.html", [
+    [ "vector/GMLWriter.java", "a01764.html", [
       [ "GMLWriter", "a00508.html", "a00508" ]
     ] ],
     [ "GoogleMapsLinkWriter.java", "a00110.html", [
