@@ -258,7 +258,7 @@ function loadSamples(concept,relation,relationtd){
 					break;
 				}
 				if(results[res]["val"].startswith("http")){
-					result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">results[res]["val"]+"</a> " 				
+					result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> " 				
 				}else{
 					result+=results[res]["val"]+" " 				
 				}

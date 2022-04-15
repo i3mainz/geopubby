@@ -1,6 +1,6 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  Endpoint: <select id="endpointselect" onclick="getClassHierarchy([])">
+  Endpoint: <select id="endpointselect"><button id="loadclasses" onclick="getClassHierarchy([])">Load</button>
   #foreach($end in $endpoint)
   	<option value="${end}">$end</option>  	
   #end
