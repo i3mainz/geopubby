@@ -316,6 +316,10 @@ function getInstances(node){
 function getInstanceData(node){
 	concept=node.id
 	document.getElementById("datasetDialog").show()
+	try{
+		$('#datasettable').DataTable().destroy();	
+	}catch(e){
+	}
 	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
 	$('#datasettablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	$('#samplehead').html("Value")
@@ -350,12 +354,17 @@ function getInstanceData(node){
 				}	
 			}
 		$('#datasettablebody').html(result)
+		$('#datasettable').DataTable({"scrollX":true,"scrollY":true});
 	});
 }
 
 function getDatasetSchema(node){
 	concept=node.id
 	document.getElementById("datasetDialog").show()
+	try{
+		$('#datasettable').DataTable().destroy();	
+	}catch(e){
+	}
 	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
 	$('#datasettablebody').html("<tr><td colspan=3>Loading dataset schema....</td></tr>")
 	$('#samplehead').html("Samples")
@@ -397,6 +406,7 @@ function getDatasetSchema(node){
 			}	
 		}
 		$('#datasettablebody').html(result)
+		$('#datasettable').DataTable({"scrollX":true,"scrollY":true});
 	});
 }
 
