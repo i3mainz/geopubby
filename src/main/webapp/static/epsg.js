@@ -13,7 +13,7 @@ function convertGeoJSON(geojson,from,styles){
 	}else{
 		coords=geojson["geometry"]["coordinates"]
 		geojson["geometry"]=exportConvert(coords,from,geojson["geometry"]["type"],false)
-		if(geojson["geometry"]["type"].replace("Multi","") in styles){
+		if(typeof(styles)!='undefined' && geojson["geometry"]["type"].replace("Multi","") in styles){
 			geojson["style"]=styles[geojson["geometry"]["type"].replace("Multi","")]
 		}
 	}
@@ -29,7 +29,7 @@ function applyStyle(geojson,styles){
 			}
 		}
 	}else{
-		if(geojson["geometry"]["type"].replace("Multi","") in styles){
+		if(typeof(styles)!='undefined' && geojson["geometry"]["type"].replace("Multi","") in styles){
 			geojson["style"]=styles[geojson["geometry"]["type"].replace("Multi","")]
 		}
 	}

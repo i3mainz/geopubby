@@ -44,6 +44,8 @@ public abstract class BaseServlet extends HttpServlet {
 			if(config==null){
 					initError = (String) getServletContext().getAttribute(
 					ServletContextInitializer.ERROR_MESSAGE);
+			}else {
+				initError=null;
 			}
 	}
 	

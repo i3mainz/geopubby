@@ -75,15 +75,22 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
         }
         ress={}
-        var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {}, "core": { "data" :[]}}
-        tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","parent" : "#", "text" : "owl:Thing" })
+        var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {},
+        "types":{
+        	"class":{"icon":baseurl+"static/icons/class.png"},
+        	"geoclass":{"icon":baseurl+"static/icons/geoclass.png"},
+        	"instance":{"icon": baseurl+"static/icons/instance.png"},
+        	"geoinstance":{"icon":baseurl+"static/icons/geoinstance.png"}
+        },
+         "core": { "check_callback":true, "data" :[]}}
+        tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : baseurl+"static/icons/class.png","parent" : "#", "type":"class", "text" : "owl:Thing" })
         for(res in results){
             //console.log(results[res])
 			//console.log(res)
             //if("value" in results[res]["subject"])
              //   console.log(results[res]["subject"])
             if(!(results[res]["subject"].includes("_:")) && results[res]["subject"].startsWith("http") && (typeof results[res]["subject"]["individual"] ==='undefined')){
-                        ress[results[res]["subject"]]={"super":(("supertype" in results[res] &&  results[res]["supertype"]!=null && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http"))?results[res]["supertype"]:"http://www.w3.org/2002/07/owl#Thing"),"count":"","label":(results[res]["label"]!=null?results[res]["label"]:"")}//results[res]["indidivualc"]}
+                        ress[results[res]["subject"]]={"super":(("supertype" in results[res] &&  results[res]["supertype"]!=null && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http"))?results[res]["supertype"]:"http://www.w3.org/2002/07/owl#Thing"),"count":"","type":"class","label":(results[res]["label"]!=null?results[res]["label"]:"")}//results[res]["indidivualc"]}
 			if(results[res]["supertype"]!=null && !(results[res]["supertype"] in classeswithinstances) && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http") ){
                                 classeswithinstances[results[res]["supertype"]]=true
                         }
@@ -140,10 +147,12 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					}					
 					if(cls in ress && "super" in ress[cls] && cls!=ress[cls]["super"]){
 						tree["core"]["data"].push({ "id" : cls, "parent" : ((ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http")))?"#":ress[cls]["super"]), 
+						"type":"class",
 						"icon" : baseurl+"static/icons/class.png", 
 					"text" : textcut })
 					}else{
 						tree["core"]["data"].push({ "id" : cls, "parent" : "#", 
+						"type":"class",
 						"icon" : baseurl+"static/icons/class.png", 
 					"text" : textcut })
 					}
@@ -154,11 +163,12 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                 if(!(cls in clsMap)){
                         console.log("Not defined superClass: "+cls)
                         tree["core"]["data"].push({ "id" : cls, "parent" : "#", 
+						"type":"class",
 						"icon" : baseurl+"static/icons/class.png", 
 					"text" : cls })
                 }
         }
-        tree["core"]["types"]={"file" : {"icon" : baseurl+"static/icons/class.png"},"default" : {"icon" : "https://raw.githubusercontent.com/protegeproject/protege/master/protege-editor-owl/src/main/resources/Classes.gif","valid_children" : ["default"]}}
+        tree["core"]["types"]={"file" : {"icon" : baseurl+"static/icons/class.png"},"default" : {"icon" : baseurl+"static/icons/class.png","valid_children" : ["default"]}}
         tree["plugins"]=["search","sort","state","types","contextmenu"]
 		tree["contextmenu"]={}
 		tree["contextmenu"]["items"]=function (node) {
@@ -185,9 +195,13 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "separator_before": false,
                                 "separator_after": false,
                                 "icon": baseurl+"static/icons/classschema.png",
-                                "label": "Query data schema",
+                                "label": "Query data (schema)",
                                 "action": function (obj) {
-                                	getDatasetSchema(node.id)      
+                                	if(node.icon.includes("class.png")){
+                                		getDatasetSchema(node)                                  	
+                                	}else if(node.icon.includes("instance.png")){
+                                	    getInstanceData(node)  
+                                	}
                                 }
                             },
                             "show in map view": {
@@ -241,10 +255,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 
 function getInstanceCount(node){
 	concept=node.id
-	if(!node.text.includes("[")){
+	ref=$('#jstree').jstree(true)
+	if(node.icon.includes("class.png") && !node.text.includes("[")){
 		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
-			//node.text=node.text+"["+results[0]["amount"]["value"]+"]"
-			$('#jstree').jstree('rename_node',node,node.text+"["+results[0]["amount"]["value"]+"]")
+			//node.text=node.text+" ["+results[0]["amount"]["value"]+"]"
+			ref.rename_node(node,node.text+" ["+results[0]["amount"]+"]")
 		});
 	}
 }
@@ -257,7 +272,10 @@ function loadSamples(concept,relation,relationtd){
 				if(counter>10){
 					break;
 				}
-				if(results[res]["val"].startswith("http")){
+				if(counter%3==0){
+					result+="<br/>"
+				}
+				if(results[res]["val"].startsWith("http")){
 					result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> " 				
 				}else{
 					result+=results[res]["val"]+" " 				
@@ -270,33 +288,77 @@ function loadSamples(concept,relation,relationtd){
 
 function getInstances(node){
 	concept=node.id
-	//if(!node.text.includes("[")){
+	ref=$('#jstree').jstree(true)
+	if(node.icon.includes("class.png")){
 		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
+			ref=$('#jstree').jstree(true)
 			for(res in results){
 				if("label" in results[res]){
-					$('#jstree').jstree(true).create_node(node.id,{
+					newnode=ref.create_node(node,{
 						"id": results[res]["con"]["value"],
 						"text": results[res]["label"]["value"],
+						"type": "instance",
 						"icon": baseurl+"static/icons/instance.png",
-					});
+					},0,null,true);
 				}else{
-					$('#jstree').jstree(true).create_node(node.id,{
-						"id":results[res]["con"]["value"],
-						"text": shortenURI(results[res]["con"]["value"]),
+					newnode=ref.create_node(node.id,{
+						"id":results[res]["con"],
+						"type":"instance",
+						"text": shortenURI(results[res]["con"]),
 						"icon": baseurl+"static/icons/instance.png",
-					});				
+					},0,null,true);				
 				}
 			}
 		});
-	//}	
+	}	
 }
 
-   
+function getInstanceData(node){
+	concept=node.id
+	document.getElementById("datasetDialog").show()
+	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
+	$('#datasettablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
+	$('#samplehead').html("Value")
+	d3.sparql($('#endpointselect').val(), "SELECT ?rel ?val\n WHERE { <"+concept+"> ?rel ?val . }\n ORDER BY DESC(?rel)").then((results)=>{
+		result="";
+		for(res in results){
+				result+="<tr>"
+				console.log(results[res]["rel"])
+				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
+					result+="<td><img src=\""+baseurl+"static/icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
+				}else if("rel" in results[res] && results[res]["rel"].startsWith("http")){
+					result+="<td><img src=\""+baseurl+"static/icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
+				}else{
+					finished=false
+					for(ns in annotationnamespaces){
+						if(results[res]["rel"].includes(annotationnamespaces[ns])){
+							result+="<td><img src=\""+baseurl+"static/icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
+							finished=true
+						}
+					}
+					if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
+						result+="<td><img src=\""+baseurl+"static/icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
+					}else if(!finished){
+						result+="<td><img src=\""+baseurl+"static/icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
+					}
+				}
+				result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a></td>"
+				if(typeof(results[res]["valtype"])=="undefined"){
+					result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
+				}else{
+					result+="<td id=\""+shortenURI(results[res]["rel"])+"\">"+results[res]["val"]+" [<a href=\""+results[res]["valtype"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"])+"</a>]</td></tr>"
+				}	
+			}
+		$('#datasettablebody').html(result)
+	});
+}
 
-function getDatasetSchema(concept){
+function getDatasetSchema(node){
+	concept=node.id
 	document.getElementById("datasetDialog").show()
 	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
 	$('#datasettablebody').html("<tr><td colspan=3>Loading dataset schema....</td></tr>")
+	$('#samplehead').html("Samples")
 	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
 		result="";
 		maxcons=1
