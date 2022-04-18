@@ -25,7 +25,7 @@ public class RootServlet extends BaseServlet {
 			throws IOException, ServletException {
 		
 		// static/ directory handled by default servlet
-		if (relativeURI.startsWith("static/")) {
+		if (relativeURI.contains("static/")) {
 			getServletContext().getNamedDispatcher("default").forward(request, response);
 			return true;
 		}
