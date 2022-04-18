@@ -48,7 +48,7 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
 +"SELECT DISTINCT ?subject ?label ?supertype\n"
 +"WHERE {\n"
-+"   { ?subject rdf:type owl:Class . } UNION { ?individual rdf:type ?subject . } .\n"
++"   { ?individual rdf:type ?subject . } UNION { ?subject rdf:type owl:Class . } .\n"
 +"   OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
 +"   OPTIONAL { ?subject rdfs:label ?label. filter(langMatches(lang(?label),\"en\")) }"
 +"   OPTIONAL { ?subject rdfs:label ?label }.\n"
@@ -70,6 +70,7 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 console.log(query)
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
        console.log(results)
+       //processTreeResults(results)
         prefixurl=""
         if($('#endpointselect').prop('selectedIndex')<srcurls.length){
         	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
@@ -102,19 +103,17 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         superMap={}
         for(clss in ress){
             cls=clss
-            if(prefixurl!=""){
-            	cls=cls.replace(prefixurl,"$server_base");
-            }
+            /*
             clsMap[cls]=true;
             if(cls in ress && "super" in ress[cls]){
             	superMap[ress[cls]["super"]]=true;
-            }
+            }*/
 			if(cls.includes("_:") || !(cls.startsWith("http"))){
 				continue;
 			}
             //if(Object.keys(classeswithinstances).length==0 || (Object.keys(classeswithinstances).length>0 && cls in classeswithinstances)){
 					prefix=cls.substring(0,cls.lastIndexOf('#')+1);
-					console.log("PREFIX: "+prefix)
+					//console.log("PREFIX: "+prefix)
 					addpref=""
 					if(prefix in prefixMap){
 						addpref=prefixMap[prefix]+":"
@@ -122,9 +121,9 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					/*	result+="<option value=\""+results[res]["cls"]+"\">"+((results[res]["clsLabel"]!=null && results[res]["clsLabel"]!=null)?
 						addpref+results[res]["clsLabel"]:addpref+results[res]["cls"].substring(results[res]["cls"].lastIndexOf('#')+1))+"</option>"
 						resultlist[results[res]["cls"]]=true*/
-					if(cls in ress && "super" in ress[cls]){
+					/*if(cls in ress && "super" in ress[cls]){
 						console.log(cls+" - "+(ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http"))?"#":ress[cls]["super"]))
-					}
+					}*/
 					textcut=addpref
 					if(cls in ress && "label" in ress[cls] && ress[cls]["label"]!=""){
 						textcut=ress[cls]["label"]+" ("
@@ -144,9 +143,13 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 						}else{
 							textcut=cls+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
 						}
-					}					
+					}		
+					if(textcut==""){
+						textcut=shortenURI(cls)
+					}			
 					if(cls in ress && "super" in ress[cls] && cls!=ress[cls]["super"]){
-						tree["core"]["data"].push({ "id" : cls, "parent" : ((ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http")))?"#":ress[cls]["super"]), 
+						tree["core"]["data"].push({ "id" : cls, 
+						"parent" : ress[cls]["super"], 
 						"type":"class",
 						"icon" : baseurl+"static/icons/class.png", 
 					"text" : textcut })
@@ -155,8 +158,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 						"type":"class",
 						"icon" : baseurl+"static/icons/class.png", 
 					"text" : textcut })
-					}
-					
+					}				
             //}
         }
         for(cls in superMap){
@@ -168,7 +170,8 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					"text" : cls })
                 }
         }
-        tree["core"]["types"]={"file" : {"icon" : baseurl+"static/icons/class.png"},"default" : {"icon" : baseurl+"static/icons/class.png","valid_children" : ["default"]}}
+        tree["core"]["types"]={"file" : {"icon" : baseurl+"static/icons/class.png"},
+        "default" : {"icon" : baseurl+"static/icons/class.png","valid_children" : ["default"]}}
         tree["plugins"]=["search","sort","state","types","contextmenu"]
 		tree["contextmenu"]={}
 		tree["contextmenu"]["items"]=function (node) {
@@ -252,6 +255,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
   });
 });
 }
+
 
 function getInstanceCount(node){
 	concept=node.id
