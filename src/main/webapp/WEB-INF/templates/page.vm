@@ -24,6 +24,9 @@ var geoproperties={
                    "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
                    "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
                    "http://schema.org/geo": "ObjectProperty",
+                   "http://schema.org/polygon": "DatatypeProperty",
+                   "https://schema.org/geo": "ObjectProperty",
+                   "https://schema.org/polygon": "DatatypeProperty",
                    "http://geovocab.org/geometry#geometry": "ObjectProperty",
                    "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
                    "http://rdfs.co/juso/geometry": "ObjectProperty",
@@ -70,7 +73,6 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 console.log(query)
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
        console.log(results)
-       //processTreeResults(results)
         prefixurl=""
         if($('#endpointselect').prop('selectedIndex')<srcurls.length){
         	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
@@ -86,10 +88,6 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
          "core": { "check_callback":true, "data" :[]}}
         tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : baseurl+"static/icons/class.png","parent" : "#", "type":"class", "text" : "owl:Thing" })
         for(res in results){
-            //console.log(results[res])
-			//console.log(res)
-            //if("value" in results[res]["subject"])
-             //   console.log(results[res]["subject"])
             if(!(results[res]["subject"].includes("_:")) && results[res]["subject"].startsWith("http") && (typeof results[res]["subject"]["individual"] ==='undefined')){
                         ress[results[res]["subject"]]={"super":(("supertype" in results[res] &&  results[res]["supertype"]!=null && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http"))?results[res]["supertype"]:"http://www.w3.org/2002/07/owl#Thing"),"count":"","type":"class","label":(results[res]["label"]!=null?results[res]["label"]:"")}//results[res]["indidivualc"]}
 			if(results[res]["supertype"]!=null && !(results[res]["supertype"] in classeswithinstances) && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http") ){
@@ -103,11 +101,6 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         superMap={}
         for(clss in ress){
             cls=clss
-            /*
-            clsMap[cls]=true;
-            if(cls in ress && "super" in ress[cls]){
-            	superMap[ress[cls]["super"]]=true;
-            }*/
 			if(cls.includes("_:") || !(cls.startsWith("http"))){
 				continue;
 			}
@@ -118,12 +111,6 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 					if(prefix in prefixMap){
 						addpref=prefixMap[prefix]+":"
 					}
-					/*	result+="<option value=\""+results[res]["cls"]+"\">"+((results[res]["clsLabel"]!=null && results[res]["clsLabel"]!=null)?
-						addpref+results[res]["clsLabel"]:addpref+results[res]["cls"].substring(results[res]["cls"].lastIndexOf('#')+1))+"</option>"
-						resultlist[results[res]["cls"]]=true*/
-					/*if(cls in ress && "super" in ress[cls]){
-						console.log(cls+" - "+(ress[cls]["super"].includes("_:") || !(results[res]["subject"].startsWith("http"))?"#":ress[cls]["super"]))
-					}*/
 					textcut=addpref
 					if(cls in ress && "label" in ress[cls] && ress[cls]["label"]!=""){
 						textcut=ress[cls]["label"]+" ("
@@ -175,8 +162,9 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         tree["plugins"]=["search","sort","state","types","contextmenu"]
 		tree["contextmenu"]={}
 		tree["contextmenu"]["items"]=function (node) {
-                        return {
-                            "instancecount": {
+						menuitems={}
+						if(node.icon.includes("class.png")){
+                        	menuitems["instancecount"]={
                                 "separator_before": false,
                                 "separator_after": false,
                                 "icon": baseurl+"static/icons/instancecount.png",
@@ -184,8 +172,8 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "action": function (obj) {
                                 	getInstanceCount(node)      
                                 }
-                            },
-                            "showinstances": {
+                            }
+                            menuitems["showinstances"]={
                                 "separator_before": false,
                                 "separator_after": false,
                                 "label": "Show instances in GeoPubby",
@@ -193,43 +181,51 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "action": function (obj) {
                                     getInstances(node)                              
                                 }
-                            },
-                            "querydataschema": {
+                            }
+                            menuitems["querydataschema"]={
                                 "separator_before": false,
                                 "separator_after": false,
                                 "icon": baseurl+"static/icons/classschema.png",
                                 "label": "Query data (schema)",
                                 "action": function (obj) {
-                                	if(node.icon.includes("class.png")){
                                 		getDatasetSchema(node)                                  	
-                                	}else if(node.icon.includes("instance.png")){
-                                	    getInstanceData(node)  
-                                	}
                                 }
-                            },
-                            "show in map view": {
+                             }
+                        }else if(node.icon.includes("instance")){
+                            menuitems["querydataschema"]={
                                 "separator_before": false,
                                 "separator_after": false,
-                                "label": "Show instances in Map View",
+                                "icon": baseurl+"static/icons/instance.png",
+                                "label": "Query instance data",
                                 "action": function (obj) {
-                                    console.log(node)
-                                    console.log("Show instances in map view")  
-                                    var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
-									win.focus();                                   
-                                }
-                            },
-							"lookupdefinition": {
-                                "separator_before": false,
-                                "separator_after": false,
-                                "label": "Lookup definition",
-                                "icon": baseurl+"static/icons/classlink.png",
-                                "action": function (obj) {
-									var win = window.open(node.id, '_blank');
-									win.focus();                                 
+                                	getInstanceData(node)                                  	
                                 }
                             }
-                        };
-		}
+                        }
+                        menuitems["show in map view"]= {
+                            "separator_before": false,
+                            "separator_after": false,
+                            "label": "Show instances in Map View",
+                            "action": function (obj) {
+                                console.log(node)
+                                console.log("Show instances in map view")  
+                                var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
+								win.focus();                                   
+                            }
+                        }
+						menuitems["lookupdefinition"]= {
+                            "separator_before": false,
+                            "separator_after": false,
+                            "label": "Lookup definition",
+                            "icon": baseurl+"static/icons/classlink.png",
+                            "action": function (obj) {
+								var win = window.open(node.id, '_blank');
+								win.focus();                                 
+                            }
+                        }
+                        return menuitems
+                  };
+		
 		console.log(JSON.stringify(tree))
        try{
             $('#jstree').jstree("destroy");
@@ -256,13 +252,20 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 });
 }
 
+function getRelatedConcepts(node){
+	concept=node.id
+	if(node.icon.includes("class.png")){
+		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
+			ref.rename_node(node,node.text+" ["+results[0]["amount"]+"]")
+		});
+	}	
+}
 
 function getInstanceCount(node){
 	concept=node.id
 	ref=$('#jstree').jstree(true)
 	if(node.icon.includes("class.png") && !node.text.includes("[")){
 		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
-			//node.text=node.text+" ["+results[0]["amount"]["value"]+"]"
 			ref.rename_node(node,node.text+" ["+results[0]["amount"]+"]")
 		});
 	}
@@ -296,6 +299,7 @@ function getInstances(node){
 	if(node.icon.includes("class.png")){
 		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
 			ref=$('#jstree').jstree(true)
+			amountofinstances=results.length
 			for(res in results){
 				if("label" in results[res]){
 					newnode=ref.create_node(node,{
@@ -312,6 +316,9 @@ function getInstances(node){
 						"icon": baseurl+"static/icons/instance.png",
 					},0,null,true);				
 				}
+			}
+			if(!node.text.includes("[") && !node.text.includes("]")){
+				ref.rename_node(node,node.text+" ["+amountofinstances+"]")
 			}
 		});
 	}	

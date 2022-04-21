@@ -267,11 +267,18 @@ CRS:<select id="crs"></select>
 <button id="downloadButton" onclick="download()">Download</button><br/>
 #end
     </div>
-<dialog id="datasetDialog" style="float:left;float:top;top:0px;left:0px;position:fixed;z-index:4;height:75%">
+<dialog id="datasetDialog" style="float:left;float:top;top:0px;left:0px;position:fixed;z-index:4;">
 <h3 id="datasettitle">Dataset</h3>
-<table id="datasettable"><thead id="datasettablehead"><tr><th>Property Type</th>
+<table id="datasettable" width="100%"><thead id="datasettablehead"><tr><th>Property Type</th>
 <th>Property</th><th id="samplehead">Samples</th></tr></thead>
 <tbody id="datasettablebody"></tbody>
 </table>
 <button id="datasetDialogCloseButton" onclick="document.getElementById('datasetDialog').close()" style="right:0px">Close</button>
+</dialog>
+<dialog id="relationDialog" style="float:left;float:top;top:0px;left:0px;position:fixed;z-index:5;">
+<table id="relationtable" width="100%"><thead id="relationtablehead"><tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th>
+</tr></thead>
+<tbody id="datasettablebody"></tbody>
+</table>
+<button id="relationDialogCloseButton" onclick="document.getElementById('relationDialog').close()" style="right:0px">Close</button>
 </dialog>
