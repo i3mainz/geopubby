@@ -191,6 +191,15 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 		getDatasetSchema(node)                                  	
                                 }
                              }
+                            menuitems["classrelations"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"static/icons/class.png",
+                                "label": "Get related concepts",
+                                "action": function (obj) {
+                                	getRelatedConcepts(node)                                  	
+                                }
+                             }
                         }else if(node.icon.includes("instance")){
                             menuitems["querydataschema"]={
                                 "separator_before": false,
@@ -254,9 +263,40 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 
 function getRelatedConcepts(node){
 	concept=node.id
+	document.getElementById("relationDialog").show()
+	try{
+		$('#relationtable').DataTable().destroy();	
+	}catch(e){
+	}
+	$('#relationtitle').html("Relations of Class <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(node.icon.includes("class.png")){
-		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
-			ref.rename_node(node,node.text+" ["+results[0]["amount"]+"]")
+		$('#relationtablebody')
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?tocon <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . ?tocon ?rel ?con . ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . }").then((results)=>{
+			$('#relationtablebody').html("")
+			for(result in results){
+				toappend="<tr><td><img src=\""+baseurl+"static/icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td>"
+				if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
+					toappend+="<td><img src=\""+baseurl+"static/icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
+				}else{
+					toappend+="<td><img src=\""+baseurl+"static/icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
+				}
+				toappend+="<td><img src=\""+baseurl+"static/icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
+				$('#relationtablebody').append(toappend)
+			}
+			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . ?con ?rel ?item . OPTIONAL { ?item  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . } }").then((results)=>{
+				for(result in results){
+					toappend="<tr><td></td><td></td><td><img src=\""+baseurl+"static/icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
+					if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
+						toappend+="<td><img src=\""+baseurl+"static/icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
+					}else{
+						toappend+="<td><img src=\""+baseurl+"static/icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
+					}
+					toappend+="<td><img src=\""+baseurl+"static/icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td></tr>"
+					$('#relationtablebody').append(toappend)
+				}
+				$('#relationsettable').DataTable({"scrollX":true,"scrollY":true});
+			});
 		});
 	}	
 }

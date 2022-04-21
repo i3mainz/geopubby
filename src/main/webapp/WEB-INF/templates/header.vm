@@ -276,9 +276,10 @@ CRS:<select id="crs"></select>
 <button id="datasetDialogCloseButton" onclick="document.getElementById('datasetDialog').close()" style="right:0px">Close</button>
 </dialog>
 <dialog id="relationDialog" style="float:left;float:top;top:0px;left:0px;position:fixed;z-index:5;">
+<h3 id="relationtitle">Relationview</h3>
 <table id="relationtable" width="100%"><thead id="relationtablehead"><tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th>
 </tr></thead>
-<tbody id="datasettablebody"></tbody>
+<tbody id="relationtablebody"></tbody>
 </table>
 <button id="relationDialogCloseButton" onclick="document.getElementById('relationDialog').close()" style="right:0px">Close</button>
 </dialog>
