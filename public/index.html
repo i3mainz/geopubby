@@ -100,7 +100,7 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
       });
   } );
   </script>
-      <script type="text/javascript" src="${server_base}static/script.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body onLoad="init();">
     <div id="header">
@@ -926,18 +926,25 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
 			  }
 			  addGeometryLayer();       
 
-        #end
               var layerBounds = layerr.getBounds();
               bounds.extend(layerBounds);
         map.fitBounds(bounds);
 getClassHierarchy([]);
 </script>
-#else
 <script>
 var espg="EPSG:4326";
 getClassHierarchy([]);
 </script>
-#end
+</div>
+## Renders a set of ResourceProperties, given in $properties, as a property-value table
+<div class="row-fluid">
+    <table id="proptable" class="description table table-bordered table-hover" about="$uri">
+	<thead id="proptablehead">
+      <tr><th>Property</th><th>Value</th></tr>
+     </thead>
+     <tbody id="proptablebody"> 
+     </tbody>
+    </table>
 </div>
 </div>
     <div id="footer">
