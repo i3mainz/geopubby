@@ -1,0 +1,1021 @@
+<div id="mySidenav" class="sidenav" style="overflow:auto;">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  Endpoint: <select id="endpointselect">
+  <option value="https://digits.mainzed.org/atlantgis/sparql">DBPedia</option>
+  </select><button id="loadclasses" onclick="getClassHierarchy([])">Load Navigation</button><br/>
+  Preferred Label Language:<select id="labellang"><option value="en">English</option><option value="de">German</option><option value="fr">French</option></select><br/>
+  GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
+  Search:<input type="text" id="classsearch"><br/>
+  <div id="jstree"></div>
+</div>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <title>GeoPubby JS</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/themes/default/style.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.min.js"></script>
+    <script type="text/javascript" src="js/epsg.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.6/wicket.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="js/d3sparql.js"></script>
+  <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 40px 0;}
+      .jstree-contextmenu {
+    	z-index: 9999999 !important;
+		}
+      .search {
+    	z-index: 9999999 !important;
+		}
+     </style>
+  <script>
+  var baseurl="${server_base}"
+  var srcurls=[
+  ]
+  var ttlprefixList="@prefix wd: <http://www.wikidata.org/entity/> . \n @prefix foaf: <http://xmlns.com/foaf/0.1/> . \n @prefix owl: <http://www.w3.org/2002/07/owl#> . \n @prefix geo: <http://www.opengis.net/ont/geosparql#> . \n @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . \n @prefix xml: <http://www.w3.org/XML/1998/namespace> . \n @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . \n @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . \n @prefix kml: <http://www.opengis.net/kml/2.2#> . \n @prefix gml: <http://www.opengis.net/gml/3.2#> . \n @prefix xplan5: <http://www.xplanung.de/xplangml/5/0#> . \n "
+var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/ont/geosparql#":"geo" 
+, "http://www.wikidata.org/entity/":"wd", "http://xmlns.com/foaf/0.1/":"foaf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#":"rdf", 
+"http://www.w3.org/XML/1998/namespace":"xml", "http://www.w3.org/2001/XMLSchema#":"xsd", "http://www.w3.org/2000/01/rdf-schema#":"rdfs" ,
+ "http://www.xerleben.de/schema/2.0_1#":"xerl", "http://www.xplanung.de/xplangml/5/0#":"xplan5", "http://www.opengis.net/gml/3.2":"gml", 
+ "http://www.opengis.net/kml/2.2#":"kml" }; 
+  $( function() {
+    function split( val ) {
+      return val.split( /,\s*/ );
+    }
+    function extractLast( term ) {
+      return split( term ).pop();
+    }
+ 
+    $( "#search" )
+      // don't navigate away from the field on tab when selecting an item
+      .on( "keydown", function( event ) {
+        if ( event.keyCode === $.ui.keyCode.TAB &&
+            $( this ).autocomplete( "instance" ).menu.active ) {
+          event.preventDefault();
+        }
+      })
+      .autocomplete({
+        source: function( request, response ) {
+          $.getJSON( "${server_base}search", {
+            search: extractLast( request.term ),
+            limit: 10
+          }, response );
+        },
+        search: function() {
+          // custom minLength
+          var term = extractLast( this.value );
+          if ( term.length < 2 ) {
+            return false;
+          }
+        },
+        focus: function() {
+          // prevent value inserted on focus
+          return false;
+        },
+        select: function( event, ui ) {
+          window.location.href=ui.item.value
+          return false;
+        }
+      });
+  } );
+  </script>
+      <script type="text/javascript" src="${server_base}static/script.js"></script>
+  </head>
+  <body onLoad="init();">
+    <div id="header">
+        <h1 id="title">Title</h1>
+        <div id="homelink">at <a href="$project_link" target="_blank">My Project</a></div>
+</div>
+
+      <div class="page-resource-uri">Viewer <b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby JS" target="_blank">GeoPubby JS<img src="${server_base}static/geopubby_logo.png" alt="GeoPubby" /></a></b></div>
+      </div>
+      <div id="rdficon"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
+    </div>
+    <script>
+function loadClasses(){
+	if($('#geoclasses').prop('checked')){
+		getAllClasses();
+	}else{
+		getClassHierarchy([]);
+	}
+}
+function openNav() {
+  document.getElementById("mySidenav").style.width = "400px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+</script>
+    <div class="search">
+    Search: <input id="search" size="50">
+<b>Download Options:</b>&nbsp;Format:<select id="format" onchange="changeDefLink()">
+    <option value="ttl">Turtle (TTL)</option>
+</select>
+<a id="formatlink" href="#" target="_blank"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></a>&nbsp;
+CRS:<select id="crs"></select>
+
+<button id="downloadButton" onclick="download()">Download</button><br/>
+    </div>
+<dialog id="datasetDialog" style="float:left;float:top;top:0px;left:0px;position:fixed;z-index:4;">
+<h3 id="datasettitle">Dataset</h3>
+<table id="datasettable" width="100%"><thead id="datasettablehead"><tr><th>Property Type</th>
+<th>Property</th><th id="samplehead">Samples</th></tr></thead>
+<tbody id="datasettablebody"></tbody>
+</table>
+<button id="datasetDialogCloseButton" onclick="document.getElementById('datasetDialog').close()" style="right:0px">Close</button>
+</dialog>
+<dialog id="relationDialog" style="float:left;float:top;top:0px;left:0px;position:fixed;z-index:5;">
+<h3 id="relationtitle">Relationview</h3>
+<table id="relationtable" width="100%"><thead id="relationtablehead"><tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th>
+</tr></thead>
+<tbody id="relationtablebody"></tbody>
+</table>
+<button id="relationDialogCloseButton" onclick="document.getElementById('relationDialog').close()" style="right:0px">Close</button>
+</dialog>
+<div class="container-fluid">
+<div class="row-fluid" id="main-wrapper">
+    <div class="image">
+    <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
+    </div>
+<script>
+var namespaces={"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","xsd":"http://www.w3.org/2001/XMLSchema#","geo":"http://www.opengis.net/ont/geosparql#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","owl":"http://www.w3.org/2002/07/owl#","dc":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#"}
+var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
+var geoproperties={
+                   "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#asKML": "DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#asGeoJSON": "DatatypeProperty",
+                   "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
+                   "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
+                   "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
+                   "http://www.georss.org/georss/point": "DatatypeProperty",
+                   "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
+                   "http://www.w3.org/2003/01/geo/wgs84_pos#lat":"DatatypeProperty",
+                   "http://www.w3.org/2003/01/geo/wgs84_pos#long": "DatatypeProperty",
+                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
+                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
+                   "http://schema.org/geo": "ObjectProperty",
+                   "http://schema.org/polygon": "DatatypeProperty",
+                   "https://schema.org/geo": "ObjectProperty",
+                   "https://schema.org/polygon": "DatatypeProperty",
+                   "http://geovocab.org/geometry#geometry": "ObjectProperty",
+                   "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
+                   "http://rdfs.co/juso/geometry": "ObjectProperty",
+                   "http://www.wikidata.org/prop/direct/P625":"DatatypeProperty",
+                   "https://database.factgrid.de/prop/direct/P48": "DatatypeProperty",
+                   "http://database.factgrid.de/prop/direct/P48":"DatatypeProperty",
+                   "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
+}
+
+var webbase="$server_base"
+var datasetbase="$sourceURLs"
+var stylestring="$styleWithHtml".replace(/&quot;/g, '\"');
+console.log(stylestring)
+var styles=JSON.parse(stylestring)
+function getClassHierarchy(classeswithinstances){
+console.log(JSON.stringify(classeswithinstances))
+// ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
+//?subject a owl:Class . } UNION 
+// (COUNT(?individual) AS ?individualc )
+query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
++"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
++"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
++"SELECT DISTINCT ?subject ?label ?supertype\n"
++"WHERE {\n"
++"   { ?individual rdf:type ?subject . } UNION { ?subject rdf:type owl:Class . } .\n"
++"   OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
++"   OPTIONAL { ?subject rdfs:label ?label. filter(langMatches(lang(?label),\"en\")) }"
++"   OPTIONAL { ?subject rdfs:label ?label }.\n"
++"    FILTER (\n"
++"        (\n"
++"        ?subject != owl:Class &&\n"
++"        ?subject != rdf:List &&\n"
++"        ?subject != rdf:Property &&\n"
++"        ?subject != rdfs:Class &&\n"
++"        ?subject != rdfs:Datatype &&\n"
++"        ?subject != rdfs:ContainerMembershipProperty &&\n"
++"        ?subject != owl:DatatypeProperty &&\n"
++"        ?subject != owl:AnnotationProperty &&\n"
++"        ?subject != owl:Restriction &&\n"
++"        ?subject != owl:ObjectProperty &&\n"
++"        ?subject != owl:NamedIndividual &&\n"
++"        ?subject != owl:Ontology) )\n"
++"}\n"
+console.log(query)
+d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
+       console.log(results)
+        prefixurl=""
+        if($('#endpointselect').prop('selectedIndex')<srcurls.length){
+        	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
+        }
+        ress={}
+        var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {},
+        "types":{
+        	"class":{"icon":baseurl+"icons/class.png"},
+        	"geoclass":{"icon":baseurl+"icons/geoclass.png"},
+        	"instance":{"icon": baseurl+"icons/instance.png"},
+        	"geoinstance":{"icon":baseurl+"icons/geoinstance.png"}
+        },
+         "core": { "check_callback":true, "data" :[]}}
+        tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : baseurl+"icons/class.png","parent" : "#", "type":"class", "text" : "owl:Thing" })
+        for(res in results){
+            if(!(results[res]["subject"].includes("_:")) && results[res]["subject"].startsWith("http") && (typeof results[res]["subject"]["individual"] ==='undefined')){
+                        ress[results[res]["subject"]]={"super":(("supertype" in results[res] &&  results[res]["supertype"]!=null && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http"))?results[res]["supertype"]:"http://www.w3.org/2002/07/owl#Thing"),"count":"","type":"class","label":(results[res]["label"]!=null?results[res]["label"]:"")}//results[res]["indidivualc"]}
+			if(results[res]["supertype"]!=null && !(results[res]["supertype"] in classeswithinstances) && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http") ){
+                                classeswithinstances[results[res]["supertype"]]=true
+                        }
+           }
+        }
+
+        console.log(classeswithinstances)
+        clsMap={}
+        superMap={}
+        for(clss in ress){
+            cls=clss
+			if(cls.includes("_:") || !(cls.startsWith("http"))){
+				continue;
+			}
+            //if(Object.keys(classeswithinstances).length==0 || (Object.keys(classeswithinstances).length>0 && cls in classeswithinstances)){
+					prefix=cls.substring(0,cls.lastIndexOf('#')+1);
+					//console.log("PREFIX: "+prefix)
+					addpref=""
+					if(prefix in prefixMap){
+						addpref=prefixMap[prefix]+":"
+					}
+					textcut=addpref
+					if(cls in ress && "label" in ress[cls] && ress[cls]["label"]!=""){
+						textcut=ress[cls]["label"]+" ("
+						if(cls.includes("#")){
+						textcut+=cls.substring(cls.lastIndexOf('#')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
+						}else if(cls.startsWith("http")){
+							textcut+=cls.substring(cls.lastIndexOf('/')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
+						}else{
+							textcut+=cls+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
+						}
+						textcut+=")"
+					}else if(cls in ress){
+						if(cls.includes("#")){
+							textcut=cls.substring(cls.lastIndexOf('#')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
+						}else if(cls.startsWith("http")){
+							textcut=cls.substring(cls.lastIndexOf('/')+1)+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
+						}else{
+							textcut=cls+((cls in ress && "count" in ress[cls] && ress[cls]["count"]!="")?"("+ress[cls]["count"]+")":"")
+						}
+					}		
+					if(textcut==""){
+						textcut=shortenURI(cls)
+					}			
+					if(cls in ress && "super" in ress[cls] && cls!=ress[cls]["super"]){
+						tree["core"]["data"].push({ "id" : cls, 
+						"parent" : ress[cls]["super"], 
+						"type":"class",
+						"icon" : baseurl+"icons/class.png", 
+					"text" : textcut })
+					}else{
+						tree["core"]["data"].push({ "id" : cls, "parent" : "#", 
+						"type":"class",
+						"icon" : baseurl+"icons/class.png", 
+					"text" : textcut })
+					}				
+            //}
+        }
+        for(cls in superMap){
+                if(!(cls in clsMap)){
+                        console.log("Not defined superClass: "+cls)
+                        tree["core"]["data"].push({ "id" : cls, "parent" : "#", 
+						"type":"class",
+						"icon" : baseurl+"icons/class.png", 
+					"text" : cls })
+                }
+        }
+        tree["core"]["types"]={"file" : {"icon" : baseurl+"icons/class.png"},
+        "default" : {"icon" : baseurl+"icons/class.png","valid_children" : ["default"]}}
+        tree["plugins"]=["search","sort","state","types","contextmenu"]
+		tree["contextmenu"]={}
+		tree["contextmenu"]["items"]=function (node) {
+						menuitems={}
+						if(node.icon.includes("class.png")){
+                        	menuitems["instancecount"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"icons/instancecount.png",
+                                "label": "Check instance count",
+                                "action": function (obj) {
+                                	getInstanceCount(node)      
+                                }
+                            }
+                            menuitems["showinstances"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "label": "Show instances in GeoPubby",
+                                "icon": baseurl+"icons/queryinstances.png",
+                                "action": function (obj) {
+                                    getInstances(node)                              
+                                }
+                            }
+                            menuitems["querydataschema"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"icons/classschema.png",
+                                "label": "Query data (schema)",
+                                "action": function (obj) {
+                                		getDatasetSchema(node)                                  	
+                                }
+                             }
+                            menuitems["classrelations"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"icons/class.png",
+                                "label": "Get related concepts",
+                                "action": function (obj) {
+                                	getRelatedConcepts(node)                                  	
+                                }
+                             }
+                        }else if(node.icon.includes("instance")){
+                            menuitems["querydataschema"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"icons/instance.png",
+                                "label": "Query instance data",
+                                "action": function (obj) {
+                                	getInstanceData(node)                                  	
+                                }
+                            }
+                            menuitems["updateTableInstance"]={
+                                "separator_before": false,
+                                "separator_after": false,
+                                "icon": baseurl+"icons/instance.png",
+                                "label": "Change to instance",
+                                "action": function (obj) {
+                                	updateTableFromInstance(node)                                  	
+                                }
+                            }
+                        }
+                        menuitems["show in map view"]= {
+                            "separator_before": false,
+                            "separator_after": false,
+                            "label": "Show instances in Map View",
+                            "action": function (obj) {
+                                console.log(node)
+                                console.log("Show instances in map view")  
+                                var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
+								win.focus();                                   
+                            }
+                        }
+						menuitems["lookupdefinition"]= {
+                            "separator_before": false,
+                            "separator_after": false,
+                            "label": "Lookup definition",
+                            "icon": baseurl+"icons/classlink.png",
+                            "action": function (obj) {
+								var win = window.open(node.id, '_blank');
+								win.focus();                                 
+                            }
+                        }
+                        return menuitems
+                  };
+		
+		console.log(JSON.stringify(tree))
+       try{
+            $('#jstree').jstree("destroy");
+        }catch(err){}
+        $('#jstree').jstree(tree);
+        $('#jstree').bind("dblclick.jstree", function (event) {
+   			var node = $(event.target).closest("li");
+   			var data = node[0].id
+   			console.log(data)
+   			console.log(node)
+   			if(data.includes("${server_base.toString()}")){
+   			}
+   			window.open(data, '_blank');
+		});
+		var to = false;
+		$('#classsearch').keyup(function () {
+		console.log("KEY UP")
+    if(to) { clearTimeout(to); }
+    to = setTimeout(function () {
+      var v = $('#classsearch').val();
+      $('#jstree').jstree(true).search(v,false,true);
+    }, 250);
+  });
+});
+}
+
+function updateTableFromInstance(node){
+concept=node.id
+$('#title').html(shortenURI(concept))
+d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+concept+"> ?rel ?val . }").then((results)=>{
+		tablecontent=""
+		var even=true
+		for(result in results){
+			tablecontent+="<tr "
+			if(even){
+				tablecontent+="class=\"even\" property=\""+results[result]["rel"]+"\">"
+				even=!even
+			}else{
+				tablecontent+="class=\"odd\" property=\""+results[result]["rel"]+"\">"
+				even=!even
+			}
+			tablecontent+="<td class=\"property\"><a class=\"uri\" href=\""+results[result]["rel"]+"\" title=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td><td><ul class=\"property-values\">"
+			if(results[result]["val"].includes("http")){
+				tablecontent+="<li><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></li></ul></td></tr>"
+			}else{
+				tablecontent+="<li>"+results[result]["val"]+"</li></ul></td></tr>"
+			}
+		}
+		$('#proptablebody').html(tablecontent)
+});	
+}
+
+function getRelatedConcepts(node){
+	concept=node.id
+	document.getElementById("relationDialog").show()
+	try{
+		$('#relationtable').DataTable().destroy();	
+	}catch(e){
+	}
+	$('#relationtitle').html("Relations of Class <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
+	if(node.icon.includes("class.png")){
+		$('#relationtablebody')
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?tocon <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . ?tocon ?rel ?con . ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . }").then((results)=>{
+			$('#relationtablebody').html("")
+			for(result in results){
+				toappend="<tr><td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td>"
+				if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
+					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
+				}else{
+					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
+				}
+				toappend+="<td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
+				$('#relationtablebody').append(toappend)
+			}
+			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . ?con ?rel ?item . ?item  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . }").then((results)=>{
+				for(result in results){
+					toappend="<tr><td></td><td></td><td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
+					if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
+						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
+					}else{
+						toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
+					}
+					toappend+="<td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td></tr>"
+					$('#relationtablebody').append(toappend)
+				}
+				$('#relationtable').DataTable({"scrollX":true,"scrollY":true});
+			});
+		});
+	}	
+}
+
+function getInstanceCount(node){
+	concept=node.id
+	ref=$('#jstree').jstree(true)
+	if(node.icon.includes("class.png") && !node.text.includes("[")){
+		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
+			ref.rename_node(node,node.text+" ["+results[0]["amount"]+"]")
+		});
+	}
+}
+
+function loadSamples(concept,relation,relationtd){
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT (COUNT(?val) as ?amount) ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con <" +relation+ "> ?val } GROUP BY ?val LIMIT 100").then((results)=>{
+			counter=0
+			result=""
+			for(res in results){
+				if(counter>10){
+					break;
+				}
+				if(counter%3==0){
+					result+="<br/>"
+				}
+				if(results[res]["val"].startsWith("http")){
+					result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> " 				
+				}else{
+					result+=results[res]["val"]+" " 				
+				}
+				counter+=1		
+			}
+			$('#'+relationtd).html(result)
+		});
+}
+
+function getInstances(node){
+	concept=node.id
+	ref=$('#jstree').jstree(true)
+	if(node.icon.includes("class.png")){
+		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
+			ref=$('#jstree').jstree(true)
+			amountofinstances=results.length
+			for(res in results){
+				if("label" in results[res]){
+					newnode=ref.create_node(node,{
+						"id": results[res]["con"]["value"],
+						"text": results[res]["label"]["value"],
+						"type": "instance",
+						"icon": baseurl+"icons/instance.png",
+					},0,null,true);
+				}else{
+					newnode=ref.create_node(node.id,{
+						"id":results[res]["con"],
+						"type":"instance",
+						"text": shortenURI(results[res]["con"]),
+						"icon": baseurl+"icons/instance.png",
+					},0,null,true);				
+				}
+			}
+			if(!node.text.includes("[") && !node.text.includes("]")){
+				ref.rename_node(node,node.text+" ["+amountofinstances+"]")
+			}
+		});
+	}	
+}
+
+function getInstanceData(node){
+	concept=node.id
+	document.getElementById("datasetDialog").show()
+	try{
+		$('#datasettable').DataTable().destroy();	
+	}catch(e){
+	}
+	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
+	$('#datasettablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
+	$('#samplehead').html("Value")
+	d3.sparql($('#endpointselect').val(), "SELECT ?rel ?val\n WHERE { <"+concept+"> ?rel ?val . }\n ORDER BY DESC(?rel)").then((results)=>{
+		result="";
+		for(res in results){
+				result+="<tr>"
+				console.log(results[res]["rel"])
+				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
+					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
+				}else if("rel" in results[res] && results[res]["rel"].startsWith("http")){
+					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
+				}else{
+					finished=false
+					for(ns in annotationnamespaces){
+						if(results[res]["rel"].includes(annotationnamespaces[ns])){
+							result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
+							finished=true
+						}
+					}
+					if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
+						result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
+					}else if(!finished){
+						result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
+					}
+				}
+				result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a></td>"
+				if(typeof(results[res]["valtype"])=="undefined"){
+					result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
+				}else{
+					result+="<td id=\""+shortenURI(results[res]["rel"])+"\">"+results[res]["val"]+" [<a href=\""+results[res]["valtype"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"])+"</a>]</td></tr>"
+				}	
+			}
+		$('#datasettablebody').html(result)
+		$('#datasettable').DataTable({"scrollX":true,"scrollY":true});
+	});
+}
+
+function getDatasetSchema(node){
+	concept=node.id
+	document.getElementById("datasetDialog").show()
+	try{
+		$('#datasettable').DataTable().destroy();	
+	}catch(e){
+	}
+	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
+	$('#datasettablebody').html("<tr><td colspan=3>Loading dataset schema....</td></tr>")
+	$('#samplehead').html("Samples")
+	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+		result="";
+		maxcons=1
+		first=true
+		for(res in results){
+			if(first){
+				maxcons=results[res]["countcon"]		
+				first=false
+			}
+			result+="<tr>"
+			if(typeof(results[res]["valtype"])=="undefined"){
+				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
+					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
+				}else{
+					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
+				}			
+			}else{
+				finished=false
+				for(ns in annotationnamespaces){
+					if(results[res]["rel"].includes(annotationnamespaces[ns])){
+						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
+						finished=true
+					}
+				}
+				if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
+					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
+				}else if(!finished){
+					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
+				}
+			}
+			result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a> ["+((parseInt(results[res]["countrel"])/maxcons)*100).toFixed(2)+"%]</td>"
+			if(typeof(results[res]["valtype"])=="undefined"){
+				result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]+"','"+shortenURI(results[res]["rel"])+"')\">Click to load samples...</button> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
+			}else{
+				result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]+"','"+shortenURI(results[res]["rel"])+"')\">Click to load samples...</button> [<a href=\""+results[res]["valtype"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"])+"</a>]</td></tr>"
+			}	
+		}
+		$('#datasettablebody').html(result)
+		$('#datasettable').DataTable({"scrollX":true,"scrollY":true});
+	});
+}
+
+function shortenURI(uri){
+	prefix=""
+	if(typeof(uri)!="undefined"){
+		for(namespace in namespaces){
+			if(uri.includes(namespaces[namespace])){
+				prefix=namespace+":"
+				break
+			}
+		}
+	}
+	if(typeof(uri)!= "undefined" && uri.includes("#")){
+		return prefix+uri.substring(uri.lastIndexOf('#')+1)
+	}
+	if(typeof(uri)!= "undefined" && uri.includes("/")){
+		return prefix+uri.substring(uri.lastIndexOf("/")+1)
+	}
+	return uri
+}
+
+function getAllClasses(){
+    d3.sparql($('#endpointselect').val(), prefixList+" SELECT DISTINCT ?cls ?clsLabel  WHERE {?ind <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?cls . ?ind ?rel ?geo. ?geo geo:asWKT ?wkt  . ?cls rdf:type owl:Class . OPTIONAL{?cls rdfs:label ?clsLabel. }} ORDER BY ?cls").then((results) => {
+	//currdfstore.execute(, function(success,results){ 
+        //console.log(success,results)
+		result="";
+		resultlist={}
+				for(res in results){
+					if(!results[res]["cls"].startsWith("_")){
+					prefix=results[res]["cls"].substring(0,results[res]["cls"].lastIndexOf('#')+1);
+					addpref=""
+					if(prefix in prefixMap){
+						addpref=prefixMap[prefix]+":"
+					}
+						result+="<option value=\""+results[res]["cls"]+"\">"+((results[res]["clsLabel"]!=null && results[res]["clsLabel"]!=null)?
+						addpref+results[res]["clsLabel"]:addpref+results[res]["cls"].substring(results[res]["cls"].lastIndexOf('#')+1))+"</option>"
+						resultlist[results[res]["cls"]]=true
+					}
+				}
+		getClassHierarchy(resultlist)		
+		//$('#classeslist').html(result);
+		$('#classeslist2').html("<option value=\"?\">?</option>"+result);
+		$('#classeslist3').html(result);
+		$('#classeslist4').html(result);
+                
+	});
+
+}
+function remoteSPARQLQuery(endpoint,query){
+            $.ajax({
+                url: endpoint,
+                accepts: {json: "application/sparql-results+json"},
+                data: {query: query},
+                dataType: "json", success: function(result){
+				console.log(result)
+				handleResults(result)
+                }});
+}
+</script>
+#if (!$geoms.isEmpty())
+<a name="geo"></a>
+<div id="map" style="height:500px;z-index: 0;">
+</div>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script>
+/**
+ * Leaflet.geojsonCSS
+ * @author Alexander Burtsev, http://burtsev.me, 2014
+ * @license MIT
+ */
+!function(a){a.L&&L.GeoJSON&&(L.GeoJSON.CSS=L.GeoJSON.extend({initialize:function(a,b){var c=L.extend({},b,{onEachFeature:function(a,c){b&&b.onEachFeature&&b.onEachFeature(a,c);var d=a.style,e=a.popupTemplate;d&&(c instanceof L.Marker?d.icon&&c.setIcon(L.icon(d.icon)):c.setStyle(d)),e&&a.properties&&c.bindPopup(L.Util.template(e,a.properties))}});L.setOptions(this,c),this._layers={},a&&this.addData(a)}}),L.geoJson.css=function(a,b){return new L.GeoJSON.CSS(a,b)})}(window,document);
+</script>
+<!--<script type="text/javascript" src="${server_base}static/Leaflet.geojsoncss.min.js"></script>-->
+<script type="text/javascript">
+var overlayMaps={}
+var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
+	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	});
+	var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
+		layers: 'web',
+		format: 'image/png',
+ 			transparent: true,
+			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
+		});
+	var baseMaps = {
+        "OSM": layer
+	};
+	baseMaps["OSM"].addTo(map);
+	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+	}).addTo(map);
+	if(styles.length>0){
+		var legend = L.control({position: 'bottomleft'});
+		legend.onAdd = function (map) {
+    		var div = L.DomUtil.create('div', 'info legend');
+    		addhtml="Select map style: <select id=\"styleselect\" onchange=\"addGeometryLayer()\">"
+    		for(obj in styles){
+    			if("name" in styles[obj]){
+    				addhtml+="<option value=\""+obj+"\">"+styles[obj]["name"]+"</option>" 
+    			}else if("id" in styles[obj]){
+    				addhtml+="<option value=\""+obj+"\">"+styles[obj]["id"]+"</option>"    				
+    			}else{
+    				addhtml+="<option value=\""+obj+"\">Style "+obj+"</option>"  
+    			}
+    		}
+    		div.innerHTML = addhtml+"</select>";
+    		return div;
+		};
+		legend.addTo(map);	
+	}
+	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
+	var bounds = L.latLngBounds([]);
+        #foreach($i in $geoms)
+              var wkt_geom = "${i}";
+              var sridepsg="${i.getSRID()}";
+              var globalepsg="${epsg}";
+              var epsg="EPSG:4326";
+              if(sridepsg!="0"){
+                  var epsg="EPSG:${i.getSRID()}"
+              }else if(sridepsg=="0" && globalepsg!="null" && globalepsg!=""){
+                  var epsg="EPSG:${epsg}"
+              }
+			  var wicket = new Wkt.Wkt();
+              wicket.read(wkt_geom);
+              props={}
+              #set($x = 0)
+              #foreach ($property in $properties)
+                  #if($x < 10)
+                     props["${property.BrowsableURL}"]=[
+                     #foreach ($propval in $property.SimpleValues)
+                        #if ($propval.Node.isURI())
+                            {"uri":"${propval.BrowsableURL}","proplabel":
+                            #if ($showLabels && $property.label)
+                                "$property.label"
+                            #elseif($property.hasPrefix())
+                                "$property.Prefix:$property.LocalName"
+                            #else
+                                "?:$property.LocalName"
+                            #end
+                            ,"vallabel":
+                            #if ($showLabels && $propval.label)
+                                "$propval.label"
+                            #elseif($propval.hasPrefix())
+                                "$propval.Prefix:$propval.LocalName"
+                            #else
+                                "?:$propval.LocalName"
+                            #end
+                            }
+                        #elseif ($propval.Node.isLiteral())
+                            {"uri":"${propval.Node.LiteralLexicalForm}","proplabel":
+                            #if ($showLabels && $property.label)
+                                "$property.label"
+                            #elseif($property.hasPrefix())
+                                "$property.Prefix:$property.LocalName"
+                            #else
+                                "?:$property.LocalName"
+                            #end
+                            }
+                        #end
+                        #if( $foreach.hasNext ),#end
+                     #end
+                    ]
+                  #end
+                  #set($x = $x+1)
+              #end
+			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
+			  var layerr;
+			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
+			  	if(styles.length==0){
+			  		feature=convertGeoJSON(feature,epsgdefs[epsg],{"Point":{},"LineString":{},"Polygon":{}})
+			  	}else{
+	            	feature=convertGeoJSON(feature,epsgdefs[epsg],styles[0])			  	
+			  	}
+	            console.log(feature);
+              }else{
+                if(styles.length==0){
+                	feature=applyStyle(feature,{"Point":{},"LineString":{},"Polygon":{}})
+                }else{
+              		feature=applyStyle(feature,styles[0])                
+                }
+              }
+              console.log(feature);
+			  function addGeometryLayer(){
+			  	if((typeof layerr) !== 'undefined'){
+			  		map.removeLayer(layerr);
+			  		feature=applyStyle(feature,styles[$('#styleselect').val()])
+			  	}
+			  	layerr=L.geoJSON.css(feature,{
+                   pointToLayer: function(feature, latlng){
+                  var greenIcon = new L.Icon({
+                    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+                return L.marker(latlng, {icon: greenIcon});
+              },
+              onEachFeature: function (feature, layer) {
+              		var popup="<b><a href=\""+feature.id+"\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
+                    for(prop in feature.properties){
+                        if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && feature.properties[prop].length>0 && "proplabel" in feature.properties[prop][0] &&  feature.properties[prop][0]["proplabel"]!=='undefined'){
+                            popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+feature.properties[prop][0]["proplabel"]+"</a> - "
+                        }else if((typeof prop !== 'undefined') && prop.includes("http")){
+                        	popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
+                        }else{
+                        	popup+="<li>"+prop+" - "
+                        }
+                        if(feature.properties[prop].length==1){
+                            if((typeof feature.properties[prop][0] !== 'undefined') && "uri" in feature.properties[prop][0] && feature.properties[prop][0]["uri"].startsWith("http")){
+                        	        popup+="<a href=\""+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][0]){
+                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][0]["uri"].substring(feature.properties[prop][0]["uri"].lastIndexOf('/')+1)+"</a></li>"
+                                    }
+                            }else if((typeof feature.properties[prop][0]["uri"] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("www.")){
+                                    popup+="<a href=\"http://"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][0]){
+                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][0]["uri"]+"</a></li>"
+                                    }
+                            }else if((typeof feature.properties[prop][0]["uri"] !== 'undefined') && feature.properties[prop][0]["uri"].includes("@")){
+                                    popup+="<a href=\"mailto:"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][0]){
+                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][0]["uri"]+"</a></li>"
+                                    }
+                            }else{
+                        	        popup+=feature.properties[prop][0]["uri"]+"</li>"
+                            }
+                        }else if(feature.properties[prop].length>1){
+                            popup+="<ul>"
+                            for(val in feature.properties[prop]){
+                                popup+="<li>"
+                                if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].startsWith("http")){
+                        	        popup+="<a href=\""+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                        	        if("vallabel" in feature.properties[prop][val]){
+                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][val]["uri"].substring(feature.properties[prop][val]["uri"].lastIndexOf('/')+1)+"</a></li>"
+                                    }
+                                }else if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].startsWith("www.")){
+                                    popup+="<a href=\"http://"+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][val]){
+                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][val]["uri"]+"</a></li>"
+                                    }
+                                }else if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].includes("@")){
+                                    popup+="<a href=\"mailto:"+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+                                    if("vallabel" in feature.properties[prop][val]){
+                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+                                    }else{
+                                        popup+=feature.properties[prop][val]["uri"]+"</a></li>"
+                                    }
+                                }else{
+                        	        popup+=feature.properties[prop][val]["uri"]+"</li>"
+                                }
+                            }
+                            popup+="</ul></li>"
+                        }
+                    }
+                    popup+="</ul>"
+                    layer.bindPopup(popup)
+              }
+              })
+              layerr.addTo(map)
+
+			  }
+			  addGeometryLayer();       
+
+        #end
+              var layerBounds = layerr.getBounds();
+              bounds.extend(layerBounds);
+        map.fitBounds(bounds);
+getClassHierarchy([]);
+</script>
+#else
+<script>
+var espg="EPSG:4326";
+getClassHierarchy([]);
+</script>
+#end
+</div>
+</div>
+    <div id="footer">
+     <div class="container-fluid">
+<script>
+var definitionlinks={
+"covjson":"https://covjson.org",
+"csv":"https://tools.ietf.org/html/rfc4180",
+"cipher":"https://neo4j.com/docs/cypher-manual/current/",
+"esrijson":"https://doc.arcgis.com/de/iot/ingest/esrijson.htm",
+"geohash":"http://geohash.org",
+"json":"https://geojson.org",
+"gdf":"https://www.cs.nmsu.edu/~joemsong/software/ChiNet/GDF.pdf",
+"geojsonld":"http://geojson.org/geojson-ld/",
+"geojsonseq":"https://tools.ietf.org/html/rfc8142",
+"geouri":"https://tools.ietf.org/html/rfc5870",
+"gexf":"https://gephi.org/gexf/format/",
+"gml":"https://www.ogc.org/standards/gml",
+"gml2":"https://gephi.org/users/supported-graph-formats/gml-format/",
+"gpx":"https://www.topografix.com/gpx.asp",
+"graphml":"http://graphml.graphdrawing.org",
+"gxl":"http://www.gupro.de/GXL/Introduction/intro.html",
+"hdt":"https://www.w3.org/Submission/2011/03/",
+"hextuples":"https://github.com/ontola/hextuples",
+"html":"https://html.spec.whatwg.org",
+"jsonld":"https://json-ld.org",
+"jsonn":"",
+"jsonp":"http://jsonp.eu",
+"jsonseq":"https://tools.ietf.org/html/rfc7464",
+"kml":"https://www.ogc.org/standards/kml",
+"latlon":"",
+"mapml":"https://maps4html.org/MapML/spec/",
+"mvt":"https://docs.mapbox.com/vector-tiles/reference/",
+"n3":"https://www.w3.org/TeamSubmission/n3/",
+"nq":"https://www.w3.org/TR/n-quads/",
+"nt":"https://www.w3.org/TR/n-triples/",
+"olc":"https://github.com/google/open-location-code/blob/master/docs/specification.md",
+"osm":"https://wiki.openstreetmap.org/wiki/OSM_XML",
+"osmlink":"",
+"rdfxml":"https://www.w3.org/TR/rdf-syntax-grammar/",
+"rdfjson":"https://www.w3.org/TR/rdf-json/",
+"rt":"https://afs.github.io/rdf-thrift/rdf-binary-thrift.html",
+"svg":"https://www.w3.org/TR/SVG11/",
+"tgf":"https://docs.yworks.com/yfiles/doc/developers-guide/tgf.html",
+"tlp":"https://tulip.labri.fr/TulipDrupal/?q=tlp-file-format",
+"trig":"https://www.w3.org/TR/trig/",
+"trix":"https://www.hpl.hp.com/techreports/2004/HPL-2004-56.html",
+"ttl":"https://www.w3.org/TR/turtle/",
+"wkb":"https://www.iso.org/standard/40114.html",
+"wkt":"https://www.iso.org/standard/40114.html",
+"xls":"http://www.openoffice.org/sc/excelfileformat.pdf",
+"xlsx":"http://www.openoffice.org/sc/excelfileformat.pdf",
+"xyz":"https://gdal.org/drivers/raster/xyz.html",
+"yaml":"https://yaml.org"
+};
+function changeDefLink(){
+	$('#formatlink').attr('href',definitionlinks[$('#format').val()]);
+}
+function download(link){
+	window.open("${rdf_link}?output="+$('#format').val()+"&crs="+$('#crs').val(),'_blank');
+}
+function changeDefLink2(){
+	$('#formatlink2').attr('href',definitionlinks[$('#format2').val()]);
+}
+function download2(link){
+	window.open("${rdf_link}?output="+$('#format2').val()+"&crs="+$('#crs').val(),'_blank');
+}
+</script>
+<b>Download Options:</b>&nbsp;Format:<select id="format2" onchange="changeDefLink2()">		
+      	<option value="ttl">Turtle (TTL)</option>
+</select><a id="formatlink2" href="#" target="_blank"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg></a>&nbsp;
+CRS:<select id="crs2"></select>
+<button id="downloadButton" onclick="download2()">Download</button><br/>
+</div>
+    </div>
+<script> 
+$.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs2').html(data); $('#crs2').val(epsg);$('#crs').html(data); $('#crs').val(epsg);}});
+</script>
+  </body>
+</html>
+
