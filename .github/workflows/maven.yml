@@ -20,6 +20,9 @@ jobs:
       run: |
          sudo apt-get install doxygen graphviz -y
          cd docs
+         mkdir html
+         mkdir html/geopubbyjs
+         cp -R ../public/* html/geopubbyjs/
          doxygen Doxyfile
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
