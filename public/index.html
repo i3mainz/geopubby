@@ -108,7 +108,7 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
         <div id="homelink">at <a href="$project_link" target="_blank">My Project</a></div>
 </div>
 
-      <div class="page-resource-uri">Viewer <b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby JS" target="_blank">GeoPubby JS<img src="icons/geopubby_logo.png" alt="GeoPubby" /></a></b></div>
+      <div class="page-resource-uri">Viewer <b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby JS" target="_blank">GeoPubby JS<img src="icons/geopubby_logo.png" alt="GeoPubby" height="30" width="30" /></a></b></div>
       </div>
       <div id="rdficon"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
     </div>
@@ -707,7 +707,6 @@ function remoteSPARQLQuery(endpoint,query){
                 }});
 }
 </script>
-#if (!$geoms.isEmpty())
 <a name="geo"></a>
 <div id="map" style="height:500px;z-index: 0;">
 </div>
@@ -936,7 +935,6 @@ var espg="EPSG:4326";
 getClassHierarchy([]);
 </script>
 </div>
-## Renders a set of ResourceProperties, given in $properties, as a property-value table
 <div class="row-fluid">
     <table id="proptable" class="description table table-bordered table-hover" about="$uri">
 	<thead id="proptablehead">
