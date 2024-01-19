@@ -6,7 +6,7 @@ var hierarchy =
     [ "AutocompleteEngine< de.fuberlin.wiwiss.pubby.util.SearchRecord >", "a00756.html", null ],
     [ "AutocompleteEngine< T extends Indexable >.Builder< T extends Indexable >", "a00760.html", null ],
     [ "VocabularyStore.CachedPropertyCollection", "a00824.html", null ],
-    [ "Comparable", "a01752.html", [
+    [ "Comparable", "a01764.html", [
       [ "ResourceDescription.ResourceProperty", "a00648.html", null ],
       [ "ResourceDescription.Value", "a00656.html", null ],
       [ "Tuple< T, T2 >", "a00800.html", null ]
@@ -42,15 +42,15 @@ var hierarchy =
       [ "CoverageModelWriter", "a00400.html", null ],
       [ "GeoModelWriter", "a00404.html", [
         [ "AbstractGeoJSONWriter", "a00376.html", [
-          [ "X3DWriter", "a00392.html", null ],
           [ "JSONPWriter", "a00408.html", null ],
+          [ "X3DWriter", "a00392.html", null ],
           [ "CypherWriter", "a00416.html", null ],
           [ "CSVWriter", "a00472.html", null ],
           [ "EXIJSONWriter", "a00484.html", null ],
-          [ "GeobufWriter", "a00488.html", null ],
+          [ "GRASSVectorASCIIWriter", "a00520.html", null ],
           [ "GeoJSONLDWriter", "a00496.html", null ],
           [ "GeoJSONWriterr", "a00500.html", null ],
-          [ "GRASSVectorASCIIWriter", "a00520.html", null ],
+          [ "GeobufWriter", "a00488.html", null ],
           [ "SHPWriter", "a00548.html", null ],
           [ "YAMLWriter", "a00580.html", null ]
         ] ],
@@ -60,8 +60,8 @@ var hierarchy =
         [ "GDFWriter", "a00420.html", null ],
         [ "GEXFWriter", "a00424.html", null ],
         [ "GMLWriter", "a00428.html", null ],
-        [ "GraphMLWriter", "a00432.html", null ],
         [ "GXLWriter", "a00436.html", null ],
+        [ "GraphMLWriter", "a00432.html", null ],
         [ "HexTuplesWriter", "a00440.html", null ],
         [ "LDWriter", "a00444.html", null ],
         [ "RDFEXIWriter", "a00448.html", null ],
@@ -69,20 +69,20 @@ var hierarchy =
         [ "TLPWriter", "a00456.html", null ],
         [ "ESRIJSONWriter", "a00476.html", null ],
         [ "EWKTWriter", "a00480.html", null ],
+        [ "GMLWriter", "a00508.html", null ],
+        [ "GPXWriter", "a00516.html", null ],
         [ "GeoHashWriter", "a00492.html", null ],
         [ "GeoURIWriter", "a00504.html", null ],
-        [ "GMLWriter", "a00508.html", null ],
         [ "GoogleMapsLinkWriter", "a00512.html", null ],
-        [ "GPXWriter", "a00516.html", null ],
         [ "KMLWriter", "a00524.html", null ],
         [ "LatLonTextWriter", "a00528.html", null ],
         [ "MapMLWriter", "a00532.html", null ],
-        [ "OpenLocationCodeWriter", "a00536.html", null ],
         [ "OSMLinkWriter", "a00540.html", null ],
         [ "OSMWriter", "a00544.html", null ],
+        [ "OpenLocationCodeWriter", "a00536.html", null ],
         [ "SVGWriter", "a00552.html", null ],
-        [ "TopoJSONWriter", "a00556.html", null ],
         [ "TWKBWriterr", "a00560.html", null ],
+        [ "TopoJSONWriter", "a00556.html", null ],
         [ "WKBWriterr", "a00564.html", null ],
         [ "WKTWriter", "a00568.html", null ],
         [ "XLSWriter", "a00572.html", null ],
@@ -110,10 +110,10 @@ var hierarchy =
       [ "GeoJSONCSSFormatter", "a00460.html", null ],
       [ "KMLStyleFormatter", "a00464.html", null ]
     ] ],
-    [ "Runnable", "a01760.html", [
+    [ "Runnable", "a01768.html", [
       [ "Reloader", "a00772.html", null ]
     ] ],
-    [ "RuntimeException", "a01756.html", [
+    [ "RuntimeException", "a01760.html", [
       [ "ConfigurationException", "a00368.html", null ]
     ] ],
     [ "SearchIndexInstance", "a00784.html", null ],
@@ -155,8 +155,7 @@ var hierarchy =
     [ "Indexable", null, [
       [ "SearchRecord", "a00788.html", null ]
     ] ],
-    [ "Indexable", "a01692.html", null ],
-    [ "Indexable", "a01692.html", null ],
+    [ "Indexable", "a01720.html", null ],
     [ "IndexAdapter", null, [
       [ "SearchAdapter", "a00780.html", null ]
     ] ],

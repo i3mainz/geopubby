@@ -1,5 +1,21 @@
 var namespaces_dup =
 [
-    [ "de", "a00342.html", "a00342" ],
-    [ "org", "a00356.html", "a00356" ]
+    [ "de", null, [
+      [ "fuberlin", null, [
+        [ "wiwiss", null, [
+          [ "pubby", "a00341.html", "a00341" ]
+        ] ]
+      ] ]
+    ] ],
+    [ "org", null, [
+      [ "locationtech", null, [
+        [ "geowave", null, [
+          [ "core", null, [
+            [ "geotime", null, [
+              [ "util", "a00355.html", "a00355" ]
+            ] ]
+          ] ]
+        ] ]
+      ] ]
+    ] ]
 ];
