@@ -440,7 +440,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				even=!even
 			}
 			tablecontent+="<td class=\"property\"><a class=\"uri\" href=\""+results[result]["rel"]+"\" title=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td><td><ul class=\"property-values\">"
-			if(results[result]["val"].includes("http")){
+			if("val" in results[result] && results[result]["val"].includes("http")){
 				tablecontent+="<li><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></li></ul></td></tr>"
 			}else{
 				tablecontent+="<li>"+results[result]["val"]+"</li></ul></td></tr>"
