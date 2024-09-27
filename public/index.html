@@ -620,22 +620,22 @@ function getDatasetSchema(node){
 			result+="<tr>"
 			if(typeof(results[res]["valtype"])=="undefined"){
 				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+res+"','"+detpropicon+"')\">[x]</a></td>"
 				}else{
-					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+res+"','"+detpropicon+"')\">[x]</a></td>"
 				}			
 			}else{
 				finished=false
 				for(ns in annotationnamespaces){
 					if(results[res]["rel"].includes(annotationnamespaces[ns])){
-						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
+						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property <a href=\"#\" onclick=\"getPropRelationDialog('"+res+"','"+detpropicon+"')\">[x]</a></td>"
 						finished=true
 					}
 				}
 				if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+res+"','"+detpropicon+"')\">[x]</a></td>"
 				}else if(!finished){
-					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+res+"','"+detpropicon+"')\">[x]</a></td>"
 				}
 			}
 			result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a> ["+((parseInt(results[res]["countrel"])/maxcons)*100).toFixed(2)+"%]</td>"
