@@ -17,7 +17,7 @@
 	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/themes/default/style.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"/>
@@ -52,6 +52,7 @@
      </style>
   <script>
   var baseurl=window.location.href
+  var geopubbyjs
   var srcurls=[
   ]
   var ttlprefixList="@prefix wd: <http://www.wikidata.org/entity/> . \n @prefix foaf: <http://xmlns.com/foaf/0.1/> . \n @prefix owl: <http://www.w3.org/2002/07/owl#> . \n @prefix geo: <http://www.opengis.net/ont/geosparql#> . \n @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . \n @prefix xml: <http://www.w3.org/XML/1998/namespace> . \n @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . \n @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . \n @prefix kml: <http://www.opengis.net/kml/2.2#> . \n @prefix gml: <http://www.opengis.net/gml/3.2#> . \n @prefix xplan5: <http://www.xplanung.de/xplangml/5/0#> . \n "
@@ -352,7 +353,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "icon": baseurl+"icons/class.png",
                                 "label": "Get related concepts",
                                 "action": function (obj) {
-                                	getRelatedConcepts(node)                                  	
+                                	getClassRelationDialog(node)                                  	
                                 }
                              }
                         }else if(node.icon.includes("instance")){
@@ -441,7 +442,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				even=!even
 			}
 			tablecontent+="<td class=\"property\"><a class=\"uri\" href=\""+results[result]["rel"]+"\" title=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td><td><ul class=\"property-values\">"
-			if(results[result]["val"].includes("http")){
+			if("val" in results[result] && results[result]["val"].includes("http")){
 				tablecontent+="<li><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></li></ul></td></tr>"
 			}else{
 				tablecontent+="<li>"+results[result]["val"]+"</li></ul></td></tr>"
@@ -451,7 +452,9 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 });	
 }
 
-function getRelatedConcepts(node){
+
+
+function getClassRelationDialog(node){
 	concept=node.id
 	document.getElementById("relationDialog").show()
 	try{
@@ -465,24 +468,24 @@ function getRelatedConcepts(node){
 		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?tocon <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . ?tocon ?rel ?con . ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . }").then((results)=>{
 			$('#relationtablebody').html("")
 			for(result in results){
-				toappend="<tr><td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td>"
+				toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td>"
 				if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
 					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
 				}else{
 					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
 				}
-				toappend+="<td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
+				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
 				$('#relationtablebody').append(toappend)
 			}
 			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . ?con ?rel ?item . ?item  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . }").then((results)=>{
 				for(result in results){
-					toappend="<tr><td></td><td></td><td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
+					toappend="<tr><td></td><td></td><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
 					if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
 						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
 					}else{
 						toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
 					}
-					toappend+="<td><img src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td></tr>"
+					toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td></tr>"
 					$('#relationtablebody').append(toappend)
 				}
 				$('#relationtable').DataTable({"scrollX":true,"scrollY":true});
@@ -490,6 +493,7 @@ function getRelatedConcepts(node){
 		});
 	}	
 }
+
 
 function getInstanceCount(node){
 	concept=node.id
@@ -621,22 +625,22 @@ function getDatasetSchema(node){
 			result+="<tr>"
 			if(typeof(results[res]["valtype"])=="undefined"){
 				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','')\">[x]</a></td>"
 				}else{
-					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/objectproperty.png')\">[x]</a></td>"
 				}			
 			}else{
 				finished=false
 				for(ns in annotationnamespaces){
 					if(results[res]["rel"].includes(annotationnamespaces[ns])){
-						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
+						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/annotationproperty.png')\">[x]</a></td>"
 						finished=true
 					}
 				}
 				if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/geodatatypeproperty.png')\">[x]</a></td>"
 				}else if(!finished){
-					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
+					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/datatypeproperty.png')\">[x]</a></td>"
 				}
 			}
 			result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a> ["+((parseInt(results[res]["countrel"])/maxcons)*100).toFixed(2)+"%]</td>"
@@ -650,6 +654,7 @@ function getDatasetSchema(node){
 		$('#datasettable').DataTable({"scrollX":true,"scrollY":true});
 	});
 }
+
 
 function shortenURI(uri){
 	prefix=""
@@ -929,11 +934,11 @@ var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {positi
               var layerBounds = layerr.getBounds();
               bounds.extend(layerBounds);
         map.fitBounds(bounds);
-getClassHierarchy([]);
+//getClassHierarchy([]);
 </script>
 <script>
 var espg="EPSG:4326";
-getClassHierarchy([]);
+//getClassHierarchy([]);
 </script>
 </div>
 <div class="row-fluid">
