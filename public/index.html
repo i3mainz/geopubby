@@ -461,7 +461,7 @@ function getClassRelationDialog(node){
 		$('#relationtable').DataTable().destroy();	
 	}catch(e){
 	}
-	$('#relationtitle').html("<img src=\""+baseurl+"icons/"+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	$('#relationtitle').html("<img src=\""+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(node.icon.includes("class.png")){
 		$('#relationtablebody').html("")
