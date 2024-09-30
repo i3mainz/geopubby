@@ -654,7 +654,9 @@ function getDatasetSchema(node){
 				first=false
 			}
 			result+="<tr>"
-			if("valtype" in results[res] && typeof(results[res]["valtype"]["value"])=="undefined"){
+			console.log("VALTYPE: ")
+			console.log(results[res])
+			if(!("valtype" in results[res]) || typeof(results[res]["valtype"]["value"])=="undefined"){
 				if(results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="ObjectProperty"){
 					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','')\">[x]</a></td>"
 				}else{
@@ -675,7 +677,7 @@ function getDatasetSchema(node){
 				}
 			}
 			result+="<td><a href=\""+results[res]["rel"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"]["value"])+"</a> ["+((parseInt(results[res]["countrel"]["value"])/maxcons)*100).toFixed(2)+"%]</td>"
-			if(typeof(results[res]["valtype"])=="undefined"){
+			if(!("valtype" in results[res]) || typeof(results[res]["valtype"])=="undefined"){
 				result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]["value"]+"','"+shortenURI(results[res]["rel"]["value"])+"')\">Click to load samples...</button> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
 			}else{
 				result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]["value"]+"','"+shortenURI(results[res]["rel"]["value"])+"')\">Click to load samples...</button> [<a href=\""+results[res]["valtype"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"]["value"])+"</a>]</td></tr>"
