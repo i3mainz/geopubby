@@ -162,7 +162,6 @@ CRS:<select id="crs"></select>
 <div class="container-fluid">
 <div class="row-fluid" id="main-wrapper">
     <div class="image">
-    <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
     </div>
 <script>
 var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
@@ -459,6 +458,8 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 			lastrel=results[result]["rel"]["value"]
 		}
 		$('#proptablebody').html(tablecontent)
+		$('#proptable').css("visibility","visible")
+		$('#map').css("display","none")
 	});	
 }
 
@@ -479,9 +480,9 @@ function formatValue(uri){
 	}else if("datatype" in uri){
 		shortenuri=shortenURI(uri["value"])
 		dsuri=shortenURI(uri["datatype"])
-		return shortenuri+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+uri["xml:lang"]+"\">(iso6391:"+uri["xml:lang"]+")</a>"
+		return shortenuri+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"
 	}
-	return uri
+	return uri["value"]+" <a class=\"uri\" href=\"http://www.w3.org/2001/XMLSchema#string\"><span style=\"color: #666;\">(xsd:string)</span></a>"
 }
 
 
@@ -759,7 +760,7 @@ function remoteSPARQLQuery(endpoint,query){
 }
 </script>
 <a name="geo"></a>
-<div id="map" style="height:500px;z-index: 0;">
+<div id="map" style="height:500px;z-index: 0;display:none">
 </div>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
@@ -987,7 +988,7 @@ var espg="EPSG:4326";
 </script>
 </div>
 <div class="row-fluid">
-    <table id="proptable" class="description table table-bordered table-hover" about="$uri">
+    <table id="proptable" class="description table table-bordered table-hover" style="visibility:hidden">
 	<thead id="proptablehead">
       <tr><th>Property</th><th>Value</th></tr>
      </thead>
