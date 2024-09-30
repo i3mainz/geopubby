@@ -238,8 +238,12 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         "types":{
         	"class":{"icon":baseurl+"icons/class.png"},
         	"geoclass":{"icon":baseurl+"icons/geoclass.png"},
+        	"halfgeoclass":{"icon":baseurl+"icons/halfgeoclass.png"},
         	"instance":{"icon": baseurl+"icons/instance.png"},
-        	"geoinstance":{"icon":baseurl+"icons/geoinstance.png"}
+        	"geoinstance":{"icon":baseurl+"icons/geoinstance.png"},
+        	"collectionclass":{"icon":baseurl+"icons/collectionclass.png"},
+        	"geocollection":{"icon":baseurl+"icons/geometrycollection.png"},
+        	"featurecollection":{"icon":baseurl+"icons/featurecollection.png"}
         },
          "core": { "themes": {"responsive": true},"check_callback":true, "data" :[]}}
         tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : baseurl+"icons/class.png","parent" : "#", "type":"class", "text" : "owl:Thing" })
@@ -376,17 +380,6 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 }
                             }
                         }
-                        menuitems["show in map view"]= {
-                            "separator_before": false,
-                            "separator_after": false,
-                            "label": "Show instances in Map View",
-                            "action": function (obj) {
-                                console.log(node)
-                                console.log("Show instances in map view")  
-                                var win = window.open("${server_base.toString()}"+"values/-rdf:type/"+node.id.substring(node.id.lastIndexOf('/')+1), '_blank');
-								win.focus();                                   
-                            }
-                        }
 						menuitems["lookupdefinition"]= {
                             "separator_before": false,
                             "separator_after": false,
@@ -410,9 +403,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
    			var data = node[0].id
    			console.log(data)
    			console.log(node)
-   			if(data.includes("${server_base.toString()}")){
-   			}
-   			window.open(data, '_blank');
+			if(node[0].type=="instance" || node[0].type=="geoinstance"){
+				updateTableFromInstance(node)
+			}else{
+				window.open(data, '_blank');
+			}			
 		});
 		var to = false;
 		$('#classsearch').keyup(function () {
@@ -572,14 +567,14 @@ function getInstances(node){
 						"id": results[res]["con"]["value"],
 						"text": results[res]["label"]["value"],
 						"type": "instance",
-						"icon": baseurl+"icons/instance.png",
+						"icon": baseurl+"icons/instance.png"
 					},0,null,true);
 				}else{
 					newnode=ref.create_node(node.id,{
 						"id":results[res]["con"]["value"],
 						"type":"instance",
 						"text": shortenURI(results[res]["con"]["value"]),
-						"icon": baseurl+"icons/instance.png",
+						"icon": baseurl+"icons/instance.png"
 					},0,null,true);				
 				}
 			}
