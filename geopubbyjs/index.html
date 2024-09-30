@@ -245,10 +245,10 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
          "core": { "themes": {"responsive": true},"check_callback":true, "data" :[]}}
         tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : baseurl+"icons/class.png","parent" : "#", "type":"class", "text" : "owl:Thing" })
         for(res in results){
-            if(!(results[res]["subject"].includes("_:")) && results[res]["subject"].startsWith("http") && (typeof results[res]["subject"]["individual"] ==='undefined')){
-                        ress[results[res]["subject"]]={"super":(("supertype" in results[res] &&  results[res]["supertype"]!=null && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http"))?results[res]["supertype"]:"http://www.w3.org/2002/07/owl#Thing"),"count":"","type":"class","label":(results[res]["label"]!=null?results[res]["label"]:"")}//results[res]["indidivualc"]}
-			if(results[res]["supertype"]!=null && !(results[res]["supertype"] in classeswithinstances) && !(results[res]["supertype"].includes("_:")) && results[res]["supertype"].startsWith("http") ){
-                                classeswithinstances[results[res]["supertype"]]=true
+            if(!(results[res]["subject"]["value"].includes("_:")) && results[res]["subject"]["value"].startsWith("http") && (typeof results[res]["subject"]["value"]["individual"] ==='undefined')){
+                        ress[results[res]["subject"]["value"]]={"super":(("supertype" in results[res] &&  results[res]["supertype"]["value"]!=null && !(results[res]["supertype"]["value"].includes("_:")) && results[res]["supertype"]["value"].startsWith("http"))?results[res]["supertype"]["value"]:"http://www.w3.org/2002/07/owl#Thing"),"count":"","type":"class","label":("label" in results[res] && results[res]["label"]["value"]!=null?results[res]["label"]["value"]:"")}//results[res]["indidivualc"]}
+			if("supertype" in results[res] && results[res]["supertype"]["value"]!=null && !(results[res]["supertype"]["value"] in classeswithinstances) && !(results[res]["supertype"]["value"].includes("_:")) && results[res]["supertype"]["value"].startsWith("http") ){
+                                classeswithinstances[results[res]["supertype"]["value"]]=true
                         }
            }
         }
@@ -438,16 +438,16 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		for(result in results){
 			//console.log(result)
 			//console.log(results[result])
-			if(lastrel!=results[result]["rel"]){
+			if(lastrel!=results[result]["rel"]["value"]){
 				if(!first){
 					tablecontent+="</ul></td></tr>"
 				}
 				tablecontent+="<tr "
 				if(even){
-					tablecontent+="class=\"even\" property=\""+results[result]["rel"]+"\">"
+					tablecontent+="class=\"even\" property=\""+results[result]["rel"]["value"]+"\">"
 					even=!even
 				}else{
-					tablecontent+="class=\"odd\" property=\""+results[result]["rel"]+"\">"
+					tablecontent+="class=\"odd\" property=\""+results[result]["rel"]["value"]+"\">"
 					even=!even
 				}
 				tablecontent+="<td class=\"property\">"+formatValue(results[result]["rel"])+"</td><td><ul class=\"property-values\">"
@@ -456,25 +456,30 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 			}else{
 				tablecontent+="<li>"+formatValue(results[result]["val"])+"</li>"
 			}
-			lastrel=results[result]["rel"]
+			lastrel=results[result]["rel"]["value"]
 		}
 		$('#proptablebody').html(tablecontent)
 	});	
 }
 
-function formatValue(uri,lang=""){
+function formatValue(uri){
 	//console.log("URI: "+uri)
 	//console.log("URIVAL:"+uri["value"])
 	//console.log(uri["type"])
-	if(uri.startsWith("http")){
-		shortenuri=shortenURI(uri)
+	if(uri["value"].startsWith("http")){
+		shortenuri=shortenURI(uri["value"])
 		if(shortenuri.includes(":")){	
-			return "<a class=\"uri\" href=\""+uri+"\">"+labelFromURI(uri)+" <span style=\"color: #666;\">("+shortenuri+")</span></a>"
+			return "<a class=\"uri\" href=\""+uri["value"]+"\">"+labelFromURI(uri["value"])+" <span style=\"color: #666;\">("+shortenuri+")</span></a>"
 		}else{
-			return "<a class=\"uri\" href=\""+uri+"\">"+shortenuri+"</a>"
+			return "<a class=\"uri\" href=\""+uri["value"]+"\">"+shortenuri+"</a>"
 		}
-	}else if(lang!=""){
-		return shortenuri+" <a class=\"uri\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\"><span style=\"color: #666;\">(rdf:langString)</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+lang+"\">(iso6391:"+lang+")</a>"
+	}else if("xml:lang" in uri){
+		shortenuri=shortenURI(uri["value"])
+		return shortenuri+" <a class=\"uri\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\"><span style=\"color: #666;\">(rdf:langString)</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+uri["xml:lang"]+"\">(iso6391:"+uri["xml:lang"]+")</a>"
+	}else if("datatype" in uri){
+		shortenuri=shortenURI(uri["value"])
+		dsuri=shortenURI(uri["datatype"])
+		return shortenuri+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+uri["xml:lang"]+"\">(iso6391:"+uri["xml:lang"]+")</a>"
 	}
 	return uri
 }
@@ -495,21 +500,21 @@ function getClassRelationDialog(node){
 		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . ?con ?rel ?item . ?item  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . }").then((results)=>{
 			for(result in results){
 				toappend="<tr><td></td><td></td><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
-				if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
-					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
+				if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
+					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
 				}else{
-					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
+					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
 				}
-				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td></tr>"
+				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td></tr>"
 				$('#relationtablebody').append(toappend)
 			}
 			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?tocon <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . ?tocon ?rel ?con . ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . }").then((results)=>{
 				for(result in results){
-					toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></td>"
-					if(results[result]["rel"] in geoproperties && geoproperties[results[result]["rel"]]=="ObjectProperty"){
-						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"
+					toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td>"
+					if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
+						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
 					}else{
-						toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td>"				
+						toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
 					}
 					toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
 					$('#relationtablebody').append(toappend)
@@ -526,7 +531,7 @@ function getInstanceCount(node){
 	ref=$('#jstree').jstree(true)
 	if(node.icon.includes("class.png") && !node.text.includes("[")){
 		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
-			ref.rename_node(node,node.text+" ["+results[0]["amount"]+"]")
+			ref.rename_node(node,node.text+" ["+results[0]["amount"]["value"]+"]")
 		});
 	}
 }
@@ -543,9 +548,9 @@ function loadSamples(concept,relation,relationtd){
 				result+="<br/>"
 			}
 			if(results[res]["val"].startsWith("http")){
-				result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> " 				
+				result+="<a href=\""+results[res]["val"]["value"]+"\" target=\"_blank\">"+results[res]["val"]["value"]+"</a> " 				
 			}else{
-				result+=results[res]["val"]+" " 				
+				result+=results[res]["val"]["value"]+" " 				
 			}
 			counter+=1		
 		}
@@ -570,9 +575,9 @@ function getInstances(node){
 					},0,null,true);
 				}else{
 					newnode=ref.create_node(node.id,{
-						"id":results[res]["con"],
+						"id":results[res]["con"]["value"],
 						"type":"instance",
-						"text": shortenURI(results[res]["con"]),
+						"text": shortenURI(results[res]["con"]["value"]),
 						"icon": baseurl+"icons/instance.png",
 					},0,null,true);				
 				}
@@ -599,29 +604,29 @@ function getInstanceData(node){
 		for(res in results){
 				result+="<tr>"
 				console.log(results[res]["rel"])
-				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
+				if(results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="ObjectProperty"){
 					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property</td>"
-				}else if("rel" in results[res] && results[res]["rel"].startsWith("http")){
+				}else if("rel" in results[res] && results[res]["rel"]["value"].startsWith("http")){
 					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property</td>"
 				}else{
 					finished=false
 					for(ns in annotationnamespaces){
-						if(results[res]["rel"].includes(annotationnamespaces[ns])){
+						if(results[res]["rel"]["value"].includes(annotationnamespaces[ns])){
 							result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property</td>"
 							finished=true
 						}
 					}
-					if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
+					if(!finished && results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="DatatypeProperty"){
 						result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property</td>"
 					}else if(!finished){
 						result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property</td>"
 					}
 				}
-				result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a></td>"
+				result+="<td><a href=\""+results[res]["rel"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"]["value"])+"</a></td>"
 				if(typeof(results[res]["valtype"])=="undefined"){
-					result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
+					result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\"><a href=\""+results[res]["val"]["value"]+"\" target=\"_blank\">"+results[res]["val"]["value"]+"</a> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
 				}else{
-					result+="<td id=\""+shortenURI(results[res]["rel"])+"\">"+results[res]["val"]+" [<a href=\""+results[res]["valtype"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"])+"</a>]</td></tr>"
+					result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\">"+results[res]["val"]["value"]+" [<a href=\""+results[res]["valtype"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"]["value"])+"</a>]</td></tr>"
 				}	
 			}
 		$('#datasettablebody').html(result)
@@ -645,35 +650,35 @@ function getDatasetSchema(node){
 		first=true
 		for(res in results){
 			if(first){
-				maxcons=results[res]["countcon"]		
+				maxcons=results[res]["countcon"]["value"]		
 				first=false
 			}
 			result+="<tr>"
-			if(typeof(results[res]["valtype"])=="undefined"){
-				if(results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="ObjectProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','')\">[x]</a></td>"
+			if("valtype" in results[res] && typeof(results[res]["valtype"]["value"])=="undefined"){
+				if(results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="ObjectProperty"){
+					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','')\">[x]</a></td>"
 				}else{
-					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/objectproperty.png')\">[x]</a></td>"
+					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\">[x]</a></td>"
 				}			
 			}else{
 				finished=false
 				for(ns in annotationnamespaces){
-					if(results[res]["rel"].includes(annotationnamespaces[ns])){
-						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/annotationproperty.png')\">[x]</a></td>"
+					if(results[res]["rel"]["value"].includes(annotationnamespaces[ns])){
+						result+="<td><img src=\""+baseurl+"icons/annotationproperty.png\" height=\"25\" width=\"25\" alt=\"Annotation Property\"/>Annotation Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/annotationproperty.png')\">[x]</a></td>"
 						finished=true
 					}
 				}
-				if(!finished && results[res]["rel"] in geoproperties && geoproperties[results[res]["rel"]]=="DatatypeProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/geodatatypeproperty.png')\">[x]</a></td>"
+				if(!finished && results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="DatatypeProperty"){
+					result+="<td><img src=\""+baseurl+"icons/geodatatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Geo Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/geodatatypeproperty.png')\">[x]</a></td>"
 				}else if(!finished){
-					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]+"','"+baseurl+"icons/datatypeproperty.png')\">[x]</a></td>"
+					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/datatypeproperty.png')\">[x]</a></td>"
 				}
 			}
-			result+="<td><a href=\""+results[res]["rel"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"])+"</a> ["+((parseInt(results[res]["countrel"])/maxcons)*100).toFixed(2)+"%]</td>"
+			result+="<td><a href=\""+results[res]["rel"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"]["value"])+"</a> ["+((parseInt(results[res]["countrel"]["value"])/maxcons)*100).toFixed(2)+"%]</td>"
 			if(typeof(results[res]["valtype"])=="undefined"){
-				result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]+"','"+shortenURI(results[res]["rel"])+"')\">Click to load samples...</button> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
+				result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]["value"]+"','"+shortenURI(results[res]["rel"]["value"])+"')\">Click to load samples...</button> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
 			}else{
-				result+="<td id=\""+shortenURI(results[res]["rel"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]+"','"+shortenURI(results[res]["rel"])+"')\">Click to load samples...</button> [<a href=\""+results[res]["valtype"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"])+"</a>]</td></tr>"
+				result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]["value"]+"','"+shortenURI(results[res]["rel"]["value"])+"')\">Click to load samples...</button> [<a href=\""+results[res]["valtype"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["valtype"]["value"])+"</a>]</td></tr>"
 			}	
 		}
 		$('#datasettablebody').html(result)
@@ -719,15 +724,15 @@ function getAllClasses(){
 		result="";
 		resultlist={}
 				for(res in results){
-					if(!results[res]["cls"].startsWith("_")){
-					prefix=results[res]["cls"].substring(0,results[res]["cls"].lastIndexOf('#')+1);
+					if(!results[res]["cls"]["value"].startsWith("_")){
+					prefix=results[res]["cls"]["value"].substring(0,results[res]["cls"]["value"].lastIndexOf('#')+1);
 					addpref=""
 					if(prefix in prefixMap){
 						addpref=prefixMap[prefix]+":"
 					}
-						result+="<option value=\""+results[res]["cls"]+"\">"+((results[res]["clsLabel"]!=null && results[res]["clsLabel"]!=null)?
-						addpref+results[res]["clsLabel"]:addpref+results[res]["cls"].substring(results[res]["cls"].lastIndexOf('#')+1))+"</option>"
-						resultlist[results[res]["cls"]]=true
+						result+="<option value=\""+results[res]["cls"]["value"]+"\">"+((results[res]["clsLabel"]["value"]!=null && results[res]["clsLabel"]["value"]!=null)?
+						addpref+results[res]["clsLabel"]["value"]:addpref+results[res]["cls"]["value"].substring(results[res]["cls"].lastIndexOf('#')+1))+"</option>"
+						resultlist[results[res]["cls"]["value"]]=true
 					}
 				}
 		getClassHierarchy(resultlist)		
