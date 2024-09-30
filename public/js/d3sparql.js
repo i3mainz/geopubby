@@ -49,7 +49,7 @@
     return body.results.bindings.map(function (row) {
       var rowObject = {};
       Object.keys(row).forEach(function (column) {
-        rowObject[column] = dataTypeToJS(row[column]);
+        rowObject[column] = row[column]//dataTypeToJS(row[column]);
       });
       return rowObject
     })
