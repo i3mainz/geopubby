@@ -399,11 +399,11 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         }catch(err){}
         $('#jstree').jstree(tree);
         $('#jstree').bind("dblclick.jstree", function (event) {
-   			var node = $(event.target).closest("li");
-   			var data = node[0].id
-   			console.log(data)
+   			//var node = $(event.target).closest("li");
+			var tre = $('#jstree').jstree(true) 			
+			var node = tre.get_node(event.target);
    			console.log(node)
-			if(node[0].type=="instance" || node[0].type=="geoinstance"){
+			if(node.type=="instance"){
 				updateTableFromInstance(node)
 			}else{
 				window.open(data, '_blank');
