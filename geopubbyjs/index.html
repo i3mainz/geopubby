@@ -235,14 +235,14 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
         	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
         }
         ress={}
-        var tree={ "plugins": ["search", "types","sort","contextmenu"],"search": {},
+        var tree={ "plugins": ["search","defaults","state", "types","sort","contextmenu"],"search": {"show_only_matches": true},
         "types":{
         	"class":{"icon":baseurl+"icons/class.png"},
         	"geoclass":{"icon":baseurl+"icons/geoclass.png"},
         	"instance":{"icon": baseurl+"icons/instance.png"},
         	"geoinstance":{"icon":baseurl+"icons/geoinstance.png"}
         },
-         "core": { "check_callback":true, "data" :[]}}
+         "core": { "themes": {"responsive": true},"check_callback":true, "data" :[]}}
         tree["core"]["data"].push({ "id" : "http://www.w3.org/2002/07/owl#Thing", "icon" : baseurl+"icons/class.png","parent" : "#", "type":"class", "text" : "owl:Thing" })
         for(res in results){
             if(!(results[res]["subject"].includes("_:")) && results[res]["subject"].startsWith("http") && (typeof results[res]["subject"]["individual"] ==='undefined')){
