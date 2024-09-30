@@ -31,6 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="js/d3sparql.js"></script>
+	<script src="js/namespaces.js"></script>
   <style type="text/css">
       body {
         padding-top: 20px;
@@ -164,7 +165,6 @@ CRS:<select id="crs"></select>
     <img src="$image" style="max-width:500px;max-height:500px" alt="Depiction of $resource.label" title="Depiction of $title" />
     </div>
 <script>
-var namespaces={"rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#","xsd":"http://www.w3.org/2001/XMLSchema#","geo":"http://www.opengis.net/ont/geosparql#","rdfs":"http://www.w3.org/2000/01/rdf-schema#","owl":"http://www.w3.org/2002/07/owl#","dc":"http://purl.org/dc/terms/","skos":"http://www.w3.org/2004/02/skos/core#"}
 var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
 var geoproperties={
                    "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
@@ -433,24 +433,50 @@ $('#title').html(shortenURI(concept))
 d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+concept+"> ?rel ?val . }").then((results)=>{
 		tablecontent=""
 		var even=true
+		var lastrel=""
+		var first=true
 		for(result in results){
-			tablecontent+="<tr "
-			if(even){
-				tablecontent+="class=\"even\" property=\""+results[result]["rel"]+"\">"
-				even=!even
+			//console.log(result)
+			//console.log(results[result])
+			if(lastrel!=results[result]["rel"]){
+				if(!first){
+					tablecontent+="</ul></td></tr>"
+				}
+				tablecontent+="<tr "
+				if(even){
+					tablecontent+="class=\"even\" property=\""+results[result]["rel"]+"\">"
+					even=!even
+				}else{
+					tablecontent+="class=\"odd\" property=\""+results[result]["rel"]+"\">"
+					even=!even
+				}
+				tablecontent+="<td class=\"property\">"+formatValue(results[result]["rel"])+"</td><td><ul class=\"property-values\">"
+				tablecontent+="<li>"+formatValue(results[result]["val"])+"</li>"
+				first=false
 			}else{
-				tablecontent+="class=\"odd\" property=\""+results[result]["rel"]+"\">"
-				even=!even
+				tablecontent+="<li>"+formatValue(results[result]["val"])+"</li>"
 			}
-			tablecontent+="<td class=\"property\"><a class=\"uri\" href=\""+results[result]["rel"]+"\" title=\""+results[result]["rel"]+"\">"+shortenURI(results[result]["rel"])+"</a></td><td><ul class=\"property-values\">"
-			if("val" in results[result] && results[result]["val"].includes("http")){
-				tablecontent+="<li><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"])+"</a></li></ul></td></tr>"
-			}else{
-				tablecontent+="<li>"+results[result]["val"]+"</li></ul></td></tr>"
-			}
+			lastrel=results[result]["rel"]
 		}
 		$('#proptablebody').html(tablecontent)
-});	
+	});	
+}
+
+function formatValue(uri,lang=""){
+	//console.log("URI: "+uri)
+	//console.log("URIVAL:"+uri["value"])
+	//console.log(uri["type"])
+	if(uri.startsWith("http")){
+		shortenuri=shortenURI(uri)
+		if(shortenuri.includes(":")){	
+			return "<a class=\"uri\" href=\""+uri+"\">"+labelFromURI(uri)+" <span style=\"color: #666;\">("+shortenuri+")</span></a>"
+		}else{
+			return "<a class=\"uri\" href=\""+uri+"\">"+shortenuri+"</a>"
+		}
+	}else if(lang!=""){
+		return shortenuri+" <a class=\"uri\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\"><span style=\"color: #666;\">(rdf:langString)</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+lang+"\">(iso6391:"+lang+")</a>"
+	}
+	return uri
 }
 
 
@@ -506,25 +532,25 @@ function getInstanceCount(node){
 }
 
 function loadSamples(concept,relation,relationtd){
-		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT (COUNT(?val) as ?amount) ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con <" +relation+ "> ?val } GROUP BY ?val LIMIT 100").then((results)=>{
-			counter=0
-			result=""
-			for(res in results){
-				if(counter>10){
-					break;
-				}
-				if(counter%3==0){
-					result+="<br/>"
-				}
-				if(results[res]["val"].startsWith("http")){
-					result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> " 				
-				}else{
-					result+=results[res]["val"]+" " 				
-				}
-				counter+=1		
+	d3.sparql($('#endpointselect').val(), "SELECT DISTINCT (COUNT(?val) as ?amount) ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con <" +relation+ "> ?val } GROUP BY ?val LIMIT 100").then((results)=>{
+		counter=0
+		result=""
+		for(res in results){
+			if(counter>10){
+				break;
 			}
-			$('#'+relationtd).html(result)
-		});
+			if(counter%3==0){
+				result+="<br/>"
+			}
+			if(results[res]["val"].startsWith("http")){
+				result+="<a href=\""+results[res]["val"]+"\" target=\"_blank\">"+results[res]["val"]+"</a> " 				
+			}else{
+				result+=results[res]["val"]+" " 				
+			}
+			counter+=1		
+		}
+		$('#'+relationtd).html(result)
+	});
 }
 
 function getInstances(node){
@@ -675,6 +701,17 @@ function shortenURI(uri){
 	return uri
 }
 
+function labelFromURI(uri){
+	if(typeof(uri)!= "undefined" && uri.includes("#")){
+		return uri.substring(uri.lastIndexOf('#')+1)
+	}
+	if(typeof(uri)!= "undefined" && uri.includes("/")){
+		return uri.substring(uri.lastIndexOf("/")+1)
+	}
+	return uri
+}
+
+
 function getAllClasses(){
     d3.sparql($('#endpointselect').val(), prefixList+" SELECT DISTINCT ?cls ?clsLabel  WHERE {?ind <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?cls . ?ind ?rel ?geo. ?geo geo:asWKT ?wkt  . ?cls rdf:type owl:Class . OPTIONAL{?cls rdfs:label ?clsLabel. }} ORDER BY ?cls").then((results) => {
 	//currdfstore.execute(, function(success,results){ 
@@ -703,14 +740,15 @@ function getAllClasses(){
 
 }
 function remoteSPARQLQuery(endpoint,query){
-            $.ajax({
-                url: endpoint,
-                accepts: {json: "application/sparql-results+json"},
-                data: {query: query},
-                dataType: "json", success: function(result){
-				console.log(result)
-				handleResults(result)
-                }});
+	$.ajax({
+		url: endpoint,
+		accepts: {json: "application/sparql-results+json"},
+		data: {query: query},
+		dataType: "json", success: function(result){
+		console.log(result)
+		handleResults(result)
+		}
+	});
 }
 </script>
 <a name="geo"></a>
