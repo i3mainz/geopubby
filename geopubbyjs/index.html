@@ -192,6 +192,18 @@ CRS:<select id="crs"></select>
     </div>
 <script>
 var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
+var labelproperties = {
+	"http://www.w3.org/2004/02/skos/core#prefLabel": "DatatypeProperty",
+	"http://www.w3.org/2004/02/skos/core#prefSymbol": "DatatypeProperty",
+	"http://www.w3.org/2004/02/skos/core#altLabel": "DatatypeProperty",
+	"https://schema.org/name": "DatatypeProperty",
+	"https://schema.org/alternateName": "DatatypeProperty",
+	"http://purl.org/dc/terms/title": "DatatypeProperty",
+	"http://purl.org/dc/elements/1.1/title": "DatatypeProperty",
+	"http://www.w3.org/2004/02/skos/core#altSymbol": "DatatypeProperty",
+	"http://www.w3.org/2004/02/skos/core#hiddenLabel": "DatatypeProperty",
+	"http://www.w3.org/2000/01/rdf-schema#label": "DatatypeProperty"
+}
 var geoproperties={
                    "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
                    "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
@@ -457,12 +469,16 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		var lastrel=""
 		var seengeoprops={}
 		var seenmedia={}
+		var label=""
 		var resultjson={}
 		for(result in results){
 			if(!(results[result]["rel"]["value"] in resultjson)){
 				resultjson[results[result]["rel"]["value"]]=[]
 				if(results[result]["rel"]["value"] in geoproperties){
 					seengeoprops[results[result]["rel"]["value"]]=true
+				}
+				if(results[result]["rel"]["value"] in labelproperties){
+					label=results[result]["val"]["value"]
 				}
 				if(results[result]["rel"]["value"].includes(".")){
 					splitted=results[result]["rel"]["value"].split(".")
@@ -499,6 +515,11 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				}
 				tablecontent+="</ul>"
 			}
+		}
+		if(label!=""){
+			$('#title').html(label)
+		}else{
+			$('#title').html(shortenURI(node.id))
 		}
 		$('#proptablebody').html(tablecontent)
 		$('#proptable').css("visibility","visible")
