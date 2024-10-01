@@ -57,6 +57,33 @@
   var geopubbyjs
   var srcurls=[
   ]
+  var fileextensionmap = {
+        ".apng": "image",
+        ".bmp": "image",
+        ".cur": "image",
+        ".ico": "image",
+        ".jpg": "image",
+        ".jpeg": "image",
+        ".png": "image",
+        ".gif": "image",
+        ".tif": "image",
+        ".svg": "image",
+        "<svg": "image",
+        ".ply": "mesh",
+        ".nxs": "mesh",
+        ".nxz": "mesh",
+        ".gltf": "mesh",
+        ".obj": "mesh",
+        ".avi": "video",
+        ".mp4": "video",
+        ".ogv": "video",
+        ".aac": "audio",
+        ".mp3": "audio",
+        ".mkv": "audio",
+        ".ogg": "audio",
+        ".opus": "audio",
+        ".wav": "audio"
+    }
   var ttlprefixList="@prefix wd: <http://www.wikidata.org/entity/> . \n @prefix foaf: <http://xmlns.com/foaf/0.1/> . \n @prefix owl: <http://www.w3.org/2002/07/owl#> . \n @prefix geo: <http://www.opengis.net/ont/geosparql#> . \n @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . \n @prefix xml: <http://www.w3.org/XML/1998/namespace> . \n @prefix xsd: <http://www.w3.org/2001/XMLSchema#> . \n @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . \n @prefix kml: <http://www.opengis.net/kml/2.2#> . \n @prefix gml: <http://www.opengis.net/gml/3.2#> . \n @prefix xplan5: <http://www.xplanung.de/xplangml/5/0#> . \n "
 var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/ont/geosparql#":"geo" 
 , "http://www.wikidata.org/entity/":"wd", "http://xmlns.com/foaf/0.1/":"foaf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#":"rdf", 
@@ -428,29 +455,50 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		tablecontent=""
 		var even=true
 		var lastrel=""
-		var first=true
+		var seengeoprops={}
+		var seenmedia={}
+		var resultjson={}
 		for(result in results){
-			//console.log(result)
-			//console.log(results[result])
-			if(lastrel!=results[result]["rel"]["value"]){
-				if(!first){
-					tablecontent+="</ul></td></tr>"
+			if(!(results[result]["rel"]["value"] in resultjson)){
+				resultjson[results[result]["rel"]["value"]]=[]
+				if(results[result]["rel"]["value"] in geoproperties){
+					seengeoprops[results[result]["rel"]["value"]]=true
 				}
-				tablecontent+="<tr "
-				if(even){
-					tablecontent+="class=\"even\" property=\""+results[result]["rel"]["value"]+"\">"
-					even=!even
-				}else{
-					tablecontent+="class=\"odd\" property=\""+results[result]["rel"]["value"]+"\">"
-					even=!even
+				if(results[result]["rel"]["value"].includes(".")){
+					splitted=results[result]["rel"]["value"].split(".")
+					if(splitted[1] in fileextensionmap && fileextensionmap[splitted[1]]=="image"){
+						seenmedia[results[result]["rel"]["value"]]="image"
+					}
 				}
-				tablecontent+="<td class=\"property\">"+formatValue(results[result]["rel"])+"</td><td><ul class=\"property-values\">"
-				tablecontent+="<li>"+formatValue(results[result]["val"])+"</li>"
-				first=false
-			}else{
-				tablecontent+="<li>"+formatValue(results[result]["val"])+"</li>"
 			}
-			lastrel=results[result]["rel"]["value"]
+			resultjson[results[result]["rel"]["value"]].push(results[result]["val"])
+		}
+		for(result in resultjson){
+			tablecontent+="<tr "
+			if(even){
+				tablecontent+="class=\"even\" property=\""+result+"\">"
+				even=!even
+			}else{
+				tablecontent+="class=\"odd\" property=\""+result+"\">"
+				even=!even
+			}
+			tablecontent+="<td class=\"property\">"+formatValue({"value":result})+"</td><td>"
+			console.log(resultjson[result])
+			if(resultjson[result].length==1){
+				tablecontent+="<span>"+formatValue(resultjson[result][0])+"</span>"
+			}else if(resultjson[result].length>1){
+				tablecontent+="<ul class=\"property-values\">"
+				if(resultjson[result].length>50){
+					tablecontent+="<details>"
+				}
+				for(entry in resultjson[result]){
+					tablecontent+="<li>"+formatValue(resultjson[result][entry])+"</li>"
+				}
+				if(resultjson[result].length>50){
+					tablecontent+="</details>"
+				}
+				tablecontent+="</ul>"
+			}
 		}
 		$('#proptablebody').html(tablecontent)
 		$('#proptable').css("visibility","visible")
