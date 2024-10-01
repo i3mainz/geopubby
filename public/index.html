@@ -148,7 +148,7 @@ var prefixMap={"http://www.w3.org/2002/07/owl#":"owl", "http://www.opengis.net/o
   <body onLoad="init();">
     <div id="header">
         <h1 id="title">Title</h1>
-        <div id="homelink">at <a href="$project_link" target="_blank">My Project</a></div>
+        <div id="homelink">at <a id="projectlink" href="$project_link" target="_blank">My Project</a></div>
 </div>
 
       <div class="page-resource-uri">Viewer <b>powered by <a href="https://github.com/i3mainz/geopubby" title="GeoPubby JS" target="_blank">GeoPubby JS<img src="icons/geopubby_logo.png" alt="GeoPubby" height="30" width="30" /></a></b></div>
@@ -273,6 +273,8 @@ query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"        ?subject != owl:Ontology) )\n"
 +"}\n"
 console.log(query)
+$('#projectlink').attr("href",$('#endpointselect').val())
+$('#projectlink').html($('#endpointselect option:selected').text())
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
        console.log(results)
         prefixurl=""
@@ -449,8 +451,10 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 			var tre = $('#jstree').jstree(true) 			
 			var node = tre.get_node(event.target);
    			console.log(node)
-			if(node.type=="instance"){
+			if(node.type.includes("instance")){
 				updateTableFromInstance(node)
+			}else if(node.type.includes("class")){
+				updateTableFromClass(node)
 			}else{
 				window.open(data, '_blank');
 			}			
@@ -464,6 +468,41 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
       $('#jstree').jstree(true).search(v,false,true);
     }, 250);
   });
+});
+}
+
+function updateTableFromClass(node){
+concept=node.id
+$('#title').html(shortenURI(concept))
+even=true
+d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
+	console.log(results.length)
+	tablecontent="<tr "
+	if(even){
+		tablecontent+="class=\"even\" property=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\">"
+		even=!even
+	}else{
+		tablecontent+="class=\"odd\" property=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\">"
+		even=!even
+	}
+	tablecontent+="<td class=\"property\">"+formatValue({"value":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"})+"</td><td><ul class=\"property-values\">"
+	if(results.length>50){
+		tablecontent+="<details><summary>"+results.length+" values</summary>"
+	}
+	for(result in results){
+		if("label" in results[result]){
+			tablecontent+="<li><a href=\""+results[result]["sub"]["value"]+"\">"+results[result]["label"]["value"]+" <span style=\"color: #666;\">("+shortenURI(results[result]["sub"]["value"])+")</span></a></li>"	
+		}else{
+			tablecontent+="<li>"+formatValue(results[result]["sub"])+"</li>"
+		}		
+	}
+	if(results.length>50){
+		tablecontent+="</details>"
+	}
+	tablecontent+="</ul></td></tr>"
+	$('#proptablebody').html(tablecontent)
+	$('#proptable').css("visibility","visible")
+	$('#map').css("display","none")
 });
 }
 
@@ -509,9 +548,9 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 			if(resultjson[result].length==1){
 				tablecontent+="<span>"+formatValue(resultjson[result][0])+"</span>"
 			}else if(resultjson[result].length>1){
-				tablecontent+="<ul class=\"property-values\">"
+				tablecontent+="<ul class=\"property-values\">" 
 				if(resultjson[result].length>50){
-					tablecontent+="<details>"
+					tablecontent+="<details><summary>"+results.length+" values</summary>"
 				}
 				for(entry in resultjson[result]){
 					tablecontent+="<li>"+formatValue(resultjson[result][entry])+"</li>"
@@ -521,6 +560,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				}
 				tablecontent+="</ul>"
 			}
+			tablecontent+="</td></tr>"
 		}
 		if(seengeoprops!={}){
 			for(geoprop in seengeoprops){
