@@ -14,8 +14,10 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoPubby JS</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
-	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" rel="stylesheet" />
+	<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet" >
+	<link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel='stylesheet' />
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -25,11 +27,21 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.2/proj4.min.js"></script>
-    <script type="text/javascript" src="js/epsg.js"></script>
+    <script type="text/javascript" src="js/epsgdefs.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.6/wicket.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script>
+/**
+ * Leaflet.geojsonCSS
+ * @author Alexander Burtsev, http://burtsev.me, 2014
+ * @license MIT
+ */
+!function(a){a.L&&L.GeoJSON&&(L.GeoJSON.CSS=L.GeoJSON.extend({initialize:function(a,b){var c=L.extend({},b,{onEachFeature:function(a,c){b&&b.onEachFeature&&b.onEachFeature(a,c);var d=a.style,e=a.popupTemplate;d&&(c instanceof L.Marker?d.icon&&c.setIcon(L.icon(d.icon)):c.setStyle(d)),e&&a.properties&&c.bindPopup(L.Util.template(e,a.properties))}});L.setOptions(this,c),this._layers={},a&&this.addData(a)}}),L.geoJson.css=function(a,b){return new L.GeoJSON.CSS(a,b)})}(window,document);
+</script>
     <script src="js/d3sparql.js"></script>
 	<script src="js/namespaces.js"></script>
   <style type="text/css">
@@ -188,7 +200,7 @@ CRS:<select id="crs"></select>
 </dialog>
 <div class="container-fluid">
 <div class="row-fluid" id="main-wrapper">
-    <div class="image">
+    <div id="image">
     </div>
 <script>
 var annotationnamespaces=["http://www.w3.org/2004/02/skos/core#","http://www.w3.org/2000/01/rdf-schema#","http://purl.org/dc/terms/"]
@@ -231,11 +243,6 @@ var geoproperties={
                    "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
 }
 
-var webbase="$server_base"
-var datasetbase="$sourceURLs"
-var stylestring="$styleWithHtml".replace(/&quot;/g, '\"');
-console.log(stylestring)
-var styles=JSON.parse(stylestring)
 function getClassHierarchy(classeswithinstances){
 console.log(JSON.stringify(classeswithinstances))
 // ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
@@ -499,7 +506,6 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				even=!even
 			}
 			tablecontent+="<td class=\"property\">"+formatValue({"value":result})+"</td><td>"
-			console.log(resultjson[result])
 			if(resultjson[result].length==1){
 				tablecontent+="<span>"+formatValue(resultjson[result][0])+"</span>"
 			}else if(resultjson[result].length>1){
@@ -516,16 +522,31 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				tablecontent+="</ul>"
 			}
 		}
-		for(geoprop in seengeoprops){
-			if(geoprop.includes("http")){
-				d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
-					for(result in results){
-						if(results[result]["rel"]["value"] in geoproperties){
-							console.log("GEOMETRY: "+results[result]["val"]["value"])
+		if(seengeoprops!={}){
+			for(geoprop in seengeoprops){
+				if(geoprop.includes("http")){
+					d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
+						for(result in results){
+							if(results[result]["rel"]["value"] in geoproperties){
+								if("datatype" in results[result]["val"] && results[result]["val"]["datatype"].toLowerCase().includes("wkt")){
+									gjson=wktToGeoJSON(results[result]["val"]["value"])
+									feature={"type":"FeatureCollection","features":[{"type":"Feature","properties":resultjson,"geometry":gjson}]}
+									//generateMapView()
+									layerr=addGeometryLayer(feature,map)
+									$('#map').css("display","block")
+									//var bounds = L.latLngBounds([]);
+									//var layerBounds = layerr.getBounds();
+									//bounds.extend(layerBounds);
+									//map.fitBounds(bounds);
+									break;							
+								}
+							}
 						}
-					}
-				});
+					});
+				}
 			}
+		}else{
+			$('#map').css("display","none")
 		}
 		if(label!=""){
 			$('#title').html(label)
@@ -835,231 +856,179 @@ function remoteSPARQLQuery(endpoint,query){
 }
 </script>
 <a name="geo"></a>
-<div id="map" style="height:500px;z-index: 0;display:none">
+<div id="map" style="height:500px;z-index: 0;">
 </div>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
-<script>
-/**
- * Leaflet.geojsonCSS
- * @author Alexander Burtsev, http://burtsev.me, 2014
- * @license MIT
- */
-!function(a){a.L&&L.GeoJSON&&(L.GeoJSON.CSS=L.GeoJSON.extend({initialize:function(a,b){var c=L.extend({},b,{onEachFeature:function(a,c){b&&b.onEachFeature&&b.onEachFeature(a,c);var d=a.style,e=a.popupTemplate;d&&(c instanceof L.Marker?d.icon&&c.setIcon(L.icon(d.icon)):c.setStyle(d)),e&&a.properties&&c.bindPopup(L.Util.template(e,a.properties))}});L.setOptions(this,c),this._layers={},a&&this.addData(a)}}),L.geoJson.css=function(a,b){return new L.GeoJSON.CSS(a,b)})}(window,document);
-</script>
+
 <!--<script type="text/javascript" src="${server_base}static/Leaflet.geojsoncss.min.js"></script>-->
 <script type="text/javascript">
-var overlayMaps={}
-var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
-	var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	});
-	var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
-		layers: 'web',
-		format: 'image/png',
- 			transparent: true,
-			attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
-		});
-	var baseMaps = {
-        "OSM": layer
-	};
-	baseMaps["OSM"].addTo(map);
-	L.control.scale({
-	position: 'bottomright',
-	imperial: false
-	}).addTo(map);
-	if(styles.length>0){
-		var legend = L.control({position: 'bottomleft'});
-		legend.onAdd = function (map) {
-    		var div = L.DomUtil.create('div', 'info legend');
-    		addhtml="Select map style: <select id=\"styleselect\" onchange=\"addGeometryLayer()\">"
-    		for(obj in styles){
-    			if("name" in styles[obj]){
-    				addhtml+="<option value=\""+obj+"\">"+styles[obj]["name"]+"</option>" 
-    			}else if("id" in styles[obj]){
-    				addhtml+="<option value=\""+obj+"\">"+styles[obj]["id"]+"</option>"    				
-    			}else{
-    				addhtml+="<option value=\""+obj+"\">Style "+obj+"</option>"  
-    			}
-    		}
-    		div.innerHTML = addhtml+"</select>";
-    		return div;
-		};
-		legend.addTo(map);	
+var addedlayers=[]
+function addGeometryLayer(feature,map,label,node){
+	for(lay of addedlayers){
+		map.removeLayer(lay)
 	}
-	layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
-	var bounds = L.latLngBounds([]);
-        #foreach($i in $geoms)
-              var wkt_geom = "${i}";
-              var sridepsg="${i.getSRID()}";
-              var globalepsg="${epsg}";
-              var epsg="EPSG:4326";
-              if(sridepsg!="0"){
-                  var epsg="EPSG:${i.getSRID()}"
-              }else if(sridepsg=="0" && globalepsg!="null" && globalepsg!=""){
-                  var epsg="EPSG:${epsg}"
-              }
-			  var wicket = new Wkt.Wkt();
-              wicket.read(wkt_geom);
-              props={}
-              #set($x = 0)
-              #foreach ($property in $properties)
-                  #if($x < 10)
-                     props["${property.BrowsableURL}"]=[
-                     #foreach ($propval in $property.SimpleValues)
-                        #if ($propval.Node.isURI())
-                            {"uri":"${propval.BrowsableURL}","proplabel":
-                            #if ($showLabels && $property.label)
-                                "$property.label"
-                            #elseif($property.hasPrefix())
-                                "$property.Prefix:$property.LocalName"
-                            #else
-                                "?:$property.LocalName"
-                            #end
-                            ,"vallabel":
-                            #if ($showLabels && $propval.label)
-                                "$propval.label"
-                            #elseif($propval.hasPrefix())
-                                "$propval.Prefix:$propval.LocalName"
-                            #else
-                                "?:$propval.LocalName"
-                            #end
-                            }
-                        #elseif ($propval.Node.isLiteral())
-                            {"uri":"${propval.Node.LiteralLexicalForm}","proplabel":
-                            #if ($showLabels && $property.label)
-                                "$property.label"
-                            #elseif($property.hasPrefix())
-                                "$property.Prefix:$property.LocalName"
-                            #else
-                                "?:$property.LocalName"
-                            #end
-                            }
-                        #end
-                        #if( $foreach.hasNext ),#end
-                     #end
-                    ]
-                  #end
-                  #set($x = $x+1)
-              #end
-			  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
-			  var layerr;
-			  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
-			  	if(styles.length==0){
-			  		feature=convertGeoJSON(feature,epsgdefs[epsg],{"Point":{},"LineString":{},"Polygon":{}})
-			  	}else{
-	            	feature=convertGeoJSON(feature,epsgdefs[epsg],styles[0])			  	
-			  	}
-	            console.log(feature);
-              }else{
-                if(styles.length==0){
-                	feature=applyStyle(feature,{"Point":{},"LineString":{},"Polygon":{}})
-                }else{
-              		feature=applyStyle(feature,styles[0])                
-                }
-              }
-              console.log(feature);
-			  function addGeometryLayer(){
-			  	if((typeof layerr) !== 'undefined'){
-			  		map.removeLayer(layerr);
-			  		feature=applyStyle(feature,styles[$('#styleselect').val()])
-			  	}
-			  	layerr=L.geoJSON.css(feature,{
-                   pointToLayer: function(feature, latlng){
-                  var greenIcon = new L.Icon({
-                    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                    iconSize: [25, 41],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [1, -34],
-                    shadowSize: [41, 41]
-                });
-                return L.marker(latlng, {icon: greenIcon});
-              },
-              onEachFeature: function (feature, layer) {
-              		var popup="<b><a href=\""+feature.id+"\" class=\"footeruri\" target=\"_blank\">$title</a></b><br/><ul>"
-                    for(prop in feature.properties){
-                        if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && feature.properties[prop].length>0 && "proplabel" in feature.properties[prop][0] &&  feature.properties[prop][0]["proplabel"]!=='undefined'){
-                            popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+feature.properties[prop][0]["proplabel"]+"</a> - "
-                        }else if((typeof prop !== 'undefined') && prop.includes("http")){
-                        	popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+prop.substring(prop.lastIndexOf('/')+1)+"</a> - "
-                        }else{
-                        	popup+="<li>"+prop+" - "
-                        }
-                        if(feature.properties[prop].length==1){
-                            if((typeof feature.properties[prop][0] !== 'undefined') && "uri" in feature.properties[prop][0] && feature.properties[prop][0]["uri"].startsWith("http")){
-                        	        popup+="<a href=\""+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
-                                    if("vallabel" in feature.properties[prop][0]){
-                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
-                                    }else{
-                                        popup+=feature.properties[prop][0]["uri"].substring(feature.properties[prop][0]["uri"].lastIndexOf('/')+1)+"</a></li>"
-                                    }
-                            }else if((typeof feature.properties[prop][0]["uri"] !== 'undefined') && feature.properties[prop][0]["uri"].startsWith("www.")){
-                                    popup+="<a href=\"http://"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
-                                    if("vallabel" in feature.properties[prop][0]){
-                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
-                                    }else{
-                                        popup+=feature.properties[prop][0]["uri"]+"</a></li>"
-                                    }
-                            }else if((typeof feature.properties[prop][0]["uri"] !== 'undefined') && feature.properties[prop][0]["uri"].includes("@")){
-                                    popup+="<a href=\"mailto:"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
-                                    if("vallabel" in feature.properties[prop][0]){
-                                        popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
-                                    }else{
-                                        popup+=feature.properties[prop][0]["uri"]+"</a></li>"
-                                    }
-                            }else{
-                        	        popup+=feature.properties[prop][0]["uri"]+"</li>"
-                            }
-                        }else if(feature.properties[prop].length>1){
-                            popup+="<ul>"
-                            for(val in feature.properties[prop]){
-                                popup+="<li>"
-                                if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].startsWith("http")){
-                        	        popup+="<a href=\""+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
-                        	        if("vallabel" in feature.properties[prop][val]){
-                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
-                                    }else{
-                                        popup+=feature.properties[prop][val]["uri"].substring(feature.properties[prop][val]["uri"].lastIndexOf('/')+1)+"</a></li>"
-                                    }
-                                }else if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].startsWith("www.")){
-                                    popup+="<a href=\"http://"+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
-                                    if("vallabel" in feature.properties[prop][val]){
-                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
-                                    }else{
-                                        popup+=feature.properties[prop][val]["uri"]+"</a></li>"
-                                    }
-                                }else if((typeof feature.properties[prop][val]["uri"] !== 'undefined') && feature.properties[prop][val]["uri"].includes("@")){
-                                    popup+="<a href=\"mailto:"+feature.properties[prop][val]["uri"]+"\" class=\"uri\" target=\"_blank\">"
-                                    if("vallabel" in feature.properties[prop][val]){
-                                        popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
-                                    }else{
-                                        popup+=feature.properties[prop][val]["uri"]+"</a></li>"
-                                    }
-                                }else{
-                        	        popup+=feature.properties[prop][val]["uri"]+"</li>"
-                                }
-                            }
-                            popup+="</ul></li>"
-                        }
-                    }
-                    popup+="</ul>"
-                    layer.bindPopup(popup)
-              }
-              })
-              layerr.addTo(map)
+	var layerr=L.geoJSON.css(feature,{
+	   pointToLayer: function(feature, latlng){
+	  var greenIcon = new L.Icon({
+		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+		iconSize: [25, 41],
+		iconAnchor: [12, 41],
+		popupAnchor: [1, -34],
+		shadowSize: [41, 41]
+	});
+	return L.marker(latlng, {icon: greenIcon});
+	},
+	onEachFeature: function (feature, layer) {
+		var popup="<b><a href=\""+feature.id+"\" class=\"footeruri\" target=\"_blank\">"
+		if(label!=""){
+			popup+=label
+		}else{
+			popup+=shortenURI(node.id)
+		}
+		popup+="</a></b><br/><ul>"
+		for(prop in feature.properties){
+			if((typeof prop !== 'undefined') && feature.properties[prop]!=='undefined' && feature.properties[prop].length>0 && "proplabel" in feature.properties[prop][0] &&  feature.properties[prop][0]["proplabel"]!=='undefined'){
+				popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+feature.properties[prop][0]["proplabel"]+"</a> - "
+			}else if((typeof prop !== 'undefined') && prop.includes("http")){
+				popup+="<li><a href=\""+prop+"\" target=\"_blank\" class=\"uri\">"+shortenURI(prop)+"</a> - "
+			}else{
+				popup+="<li>"+prop+" - "
+			}
+			if(feature.properties[prop].length==1){
+				if((typeof feature.properties[prop][0] !== 'undefined') && "value" in feature.properties[prop][0] && feature.properties[prop][0]["value"].startsWith("http")){
+						popup+="<a href=\""+feature.properties[prop][0]["value"]+"\" class=\"uri\" target=\"_blank\">"
+						if("vallabel" in feature.properties[prop][0]){
+							popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+						}else{
+							popup+=feature.properties[prop][0]["value"].substring(feature.properties[prop][0]["value"].lastIndexOf('/')+1)+"</a></li>"
+						}
+				}else if((typeof feature.properties[prop][0]["value"] !== 'undefined') && feature.properties[prop][0]["value"].startsWith("www.")){
+						popup+="<a href=\"http://"+feature.properties[prop][0]["uri"]+"\" class=\"uri\" target=\"_blank\">"
+						if("vallabel" in feature.properties[prop][0]){
+							popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+						}else{
+							popup+=feature.properties[prop][0]["value"]+"</a></li>"
+						}
+				}else if((typeof feature.properties[prop][0]["value"] !== 'undefined') && feature.properties[prop][0]["value"].includes("@")){
+						popup+="<a href=\"mailto:"+feature.properties[prop][0]["value"]+"\" class=\"uri\" target=\"_blank\">"
+						if("vallabel" in feature.properties[prop][0]){
+							popup+=feature.properties[prop][0]["vallabel"]+"</a></li>"
+						}else{
+							popup+=feature.properties[prop][0]["value"]+"</a></li>"
+						}
+				}else{
+						popup+=feature.properties[prop][0]["value"]+"</li>"
+				}
+			}else if(feature.properties[prop].length>1){
+				popup+="<ul>"
+				for(val in feature.properties[prop]){
+					popup+="<li>"
+					if((typeof feature.properties[prop][val]["value"] !== 'undefined') && feature.properties[prop][val]["value"].startsWith("http")){
+						popup+="<a href=\""+feature.properties[prop][val]["value"]+"\" class=\"uri\" target=\"_blank\">"
+						if("vallabel" in feature.properties[prop][val]){
+							popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+						}else{
+							popup+=feature.properties[prop][val]["value"].substring(feature.properties[prop][val]["value"].lastIndexOf('/')+1)+"</a></li>"
+						}
+					}else if((typeof feature.properties[prop][val]["value"] !== 'undefined') && feature.properties[prop][val]["value"].startsWith("www.")){
+						popup+="<a href=\"http://"+feature.properties[prop][val]["value"]+"\" class=\"uri\" target=\"_blank\">"
+						if("vallabel" in feature.properties[prop][val]){
+							popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+						}else{
+							popup+=feature.properties[prop][val]["value"]+"</a></li>"
+						}
+					}else if((typeof feature.properties[prop][val]["value"] !== 'undefined') && feature.properties[prop][val]["value"].includes("@")){
+						popup+="<a href=\"mailto:"+feature.properties[prop][val]["value"]+"\" class=\"uri\" target=\"_blank\">"
+						if("vallabel" in feature.properties[prop][val]){
+							popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
+						}else{
+							popup+=feature.properties[prop][val]["value"]+"</a></li>"
+						}
+					}else{
+						popup+=feature.properties[prop][val]["value"]+"</li>"
+					}
+				}
+				popup+="</ul></li>"
+			}
+		}
+		popup+="</ul>"
+		layer.bindPopup(popup)
+	}
+	})
+	console.log(layerr)
+	addedlayers.push(layerr)
+	layerr.addTo(map)
+	var bounds = layerr.getBounds()
+	// Fit the map to the polygon bounds
+	map.fitBounds(bounds)
+	return layerr
+}
 
-			  }
-			  addGeometryLayer();       
 
-              var layerBounds = layerr.getBounds();
-              bounds.extend(layerBounds);
-        map.fitBounds(bounds);
-//getClassHierarchy([]);
-</script>
-<script>
+var map = L.map('map',{fullscreenControl: true,fullscreenControlOptions: {position: 'topleft'}}).setView([51.505, -0.09], 13);
+//function generateMapView(){
+var overlayMaps={}
+
+var layer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+var wmsLayer = L.tileLayer.wms('https://sgx.geodatenzentrum.de/wms_topplus_web_open', {
+	layers: 'web',
+	format: 'image/png',
+		transparent: true,
+		attribution: '&copy; Bundesamt f&uuml;r Kartographie und Geod&auml;sie 2017, <a href="http://sg.geodatenzentrum.de/web_public/Datenquellen_TopPlus_Open.pdf">Datenquellen</a>'
+	});
+var baseMaps = {
+	"OSM": layer
+};
+baseMaps["OSM"].addTo(map);
+L.control.scale({
+position: 'bottomright',
+imperial: false
+}).addTo(map);
+layercontrol=L.control.layers(baseMaps,overlayMaps).addTo(map);
+$('#map').css("display","none")
+//}
+
+
+/*var bounds = L.latLngBounds([]);
+	#foreach($i in $geoms)
+		  var wkt_geom = "${i}";
+		  var sridepsg="${i.getSRID()}";
+		  var globalepsg="${epsg}";
+		  var epsg="EPSG:4326";
+		  if(sridepsg!="0"){
+			  var epsg="EPSG:${i.getSRID()}"
+		  }else if(sridepsg=="0" && globalepsg!="null" && globalepsg!=""){
+			  var epsg="EPSG:${epsg}"
+		  }
+		  var wicket = new Wkt.Wkt();
+		  wicket.read(wkt_geom);
+		  props={}
+		  var feature = { "type": "Feature", 'properties': props, "geometry": wicket.toJson() };
+		  var layerr;
+		  if(epsg!="" && epsg!="EPSG:4326" && epsg in epsgdefs){
+			if(styles.length==0){
+				feature=convertGeoJSON(feature,epsgdefs[epsg],{"Point":{},"LineString":{},"Polygon":{}})
+			}else{
+				feature=convertGeoJSON(feature,epsgdefs[epsg],styles[0])			  	
+			}
+			console.log(feature);
+		  }else{
+			if(styles.length==0){
+				feature=applyStyle(feature,{"Point":{},"LineString":{},"Polygon":{}})
+			}else{
+				feature=applyStyle(feature,styles[0])                
+			}
+		  }
+		  console.log(feature);
+
+		  addGeometryLayer();       
+
+		  var layerBounds = layerr.getBounds();
+		  bounds.extend(layerBounds);
+	map.fitBounds(bounds);*/
 var espg="EPSG:4326";
-//getClassHierarchy([]);
 </script>
 </div>
 <div class="row-fluid">
