@@ -532,7 +532,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 									gjson=wktToGeoJSON(results[result]["val"]["value"])
 									feature={"type":"FeatureCollection","features":[{"type":"Feature","properties":resultjson,"geometry":gjson}]}
 									//generateMapView()
-									layerr=addGeometryLayer(feature,map)
+									layerr=addGeometryLayer(feature,map,label,node)
 									$('#map').css("display","block")
 									//var bounds = L.latLngBounds([]);
 									//var layerBounds = layerr.getBounds();
@@ -928,7 +928,7 @@ function addGeometryLayer(feature,map,label,node){
 						if("vallabel" in feature.properties[prop][val]){
 							popup+=feature.properties[prop][val]["vallabel"]+"</a></li>"
 						}else{
-							popup+=feature.properties[prop][val]["value"].substring(feature.properties[prop][val]["value"].lastIndexOf('/')+1)+"</a></li>"
+							popup+=shortenURI(feature.properties[prop][val]["value"])+"</a></li>"
 						}
 					}else if((typeof feature.properties[prop][val]["value"] !== 'undefined') && feature.properties[prop][val]["value"].startsWith("www.")){
 						popup+="<a href=\"http://"+feature.properties[prop][val]["value"]+"\" class=\"uri\" target=\"_blank\">"
@@ -952,7 +952,7 @@ function addGeometryLayer(feature,map,label,node){
 			}
 		}
 		popup+="</ul>"
-		layer.bindPopup(popup)
+		layer.bindPopup(popup,{maxWidth : 560})
 	}
 	})
 	console.log(layerr)
