@@ -475,8 +475,12 @@ function updateTableFromClass(node){
 concept=node.id
 $('#title').html(shortenURI(concept))
 even=true
+ref=$('#jstree').jstree(true)
 d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
 	console.log(results.length)
+	if((!node.text.includes("["))){
+		ref.rename_node(node,node.text+" ["+results.length+"]")
+	}
 	tablecontent="<tr "
 	if(even){
 		tablecontent+="class=\"even\" property=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#type\">"
