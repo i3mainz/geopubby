@@ -475,7 +475,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 			if(!(results[result]["rel"]["value"] in resultjson)){
 				resultjson[results[result]["rel"]["value"]]=[]
 				if(results[result]["rel"]["value"] in geoproperties){
-					seengeoprops[results[result]["rel"]["value"]]=true
+					seengeoprops[results[result]["rel"]["value"]]=results[result]["val"]["value"]
 				}
 				if(results[result]["rel"]["value"] in labelproperties){
 					label=results[result]["val"]["value"]
@@ -514,6 +514,17 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 					tablecontent+="</details>"
 				}
 				tablecontent+="</ul>"
+			}
+		}
+		for(geoprop in seengeoprops){
+			if(geoprop.includes("http")){
+				d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
+					for(result in results){
+						if(results[result]["rel"]["value"] in geoproperties){
+							console.log("GEOMETRY: "+results[result]["val"]["value"])
+						}
+					}
+				});
 			}
 		}
 		if(label!=""){
