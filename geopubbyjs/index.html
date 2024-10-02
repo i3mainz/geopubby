@@ -907,6 +907,7 @@ function remoteSPARQLQuery(endpoint,query){
 <script type="text/javascript">
 var addedlayers=[]
 function addGeometryLayer(feature,map,label,node){
+	console.log(feature)
 	for(lay of addedlayers){
 		map.removeLayer(lay)
 	}
