@@ -652,7 +652,7 @@ function navigateToURIInTripleStore(uri){
 
 function getClassRelationDialog(node){
 	concept=node.id
-	document.getElementById("relationDialog").show()
+	document.getElementById("relationDialog").showModal()
 	try{
 		$('#relationtable').DataTable().destroy();	
 	}catch(e){
@@ -755,7 +755,7 @@ function getInstances(node){
 
 function getInstanceData(node){
 	concept=node.id
-	document.getElementById("datasetDialog").show()
+	document.getElementById("datasetDialog").showModal()
 	try{
 		$('#datasettable').DataTable().destroy();	
 	}catch(e){
@@ -800,7 +800,7 @@ function getInstanceData(node){
 
 function getDatasetSchema(node){
 	concept=node.id
-	document.getElementById("datasetDialog").show()
+	document.getElementById("datasetDialog").showModal()
 	try{
 		$('#datasettable').DataTable().destroy();	
 	}catch(e){
