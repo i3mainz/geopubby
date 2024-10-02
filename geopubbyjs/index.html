@@ -495,9 +495,9 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 	}
 	for(result in results){
 		if("label" in results[result]){
-			tablecontent+="<li><a href=\""+results[result]["sub"]["value"]+"\">"+results[result]["label"]["value"]+" <span style=\"color: #666;\">("+shortenURI(results[result]["sub"]["value"])+")</span></a></li>"	
+			tablecontent+="<li><a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+results[result]["sub"]["value"]+"')\" class=\"uri\">"+results[result]["label"]["value"]+"</a> <a class=\"uri\" target=\"_blank\" href=\""+results[result]["sub"]["value"]+"\"><span style=\"color: #666;\">("+shortenURI(results[result]["sub"]["value"])+")</span></a></li>"	
 		}else{
-			tablecontent+="<li>"+formatValue(results[result]["sub"])+"</li>"
+			tablecontent+="<li>"+formatValue({"value":results[result]["sub"]})+"</li>"
 		}		
 	}
 	if(results.length>50){
@@ -635,7 +635,7 @@ function navigateToURIInTripleStore(uri){
 			thenode=ref.get_node(uri)
 			console.log(thenode)
 			if(thenode){		
-				if(thenode.data.type.includes("class")){
+				if(thenode.type.includes("class")){
 					updateTableFromClass(thenode)
 				}else{
 					updateTableFromInstance(thenode)
