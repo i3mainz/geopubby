@@ -5,7 +5,7 @@
   <option value="https://database.factgrid.de/sparql">DBPedia</option>
   </select><button id="loadclasses" onclick="getClassHierarchy([])">Load Navigation</button><br/>
   Preferred Label Language:<select id="labellang"><option value="en">English</option><option value="de">German</option><option value="fr">French</option></select><br/>
-  GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
+  GeoClasses: <input type="checkbox" id="geoclasses"/><button id="loadclasses" onclick="document.getElementById('addsparqlendpoint').showModal()">New Endpoint</button><br/>
   Search:<input type="text" id="classsearch"><br/>
   <div id="jstree">Loading...</div>
 </div>
@@ -171,6 +171,15 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
+function testSPARQLEndpoint(){
+	label=$('#endpointlabel').val()
+	url=$('#endpointurl').val()
+	d3.sparql($('#endpointurl').val(), "SELECT ?a ?b ?c WHERE { ?a ?b ?c . } LIMIT 1").then((results)=>{
+		$('#endpointselect').append($('<option>', {value: url,text: label}));
+		document.getElementById('addsparqlendpoint').close()
+	}).catch(function(e) { throw e; });
+}
+
 </script>
     <div class="search">
     Search: <input id="search" size="50">
@@ -181,7 +190,15 @@ function closeNav() {
 CRS:<select id="crs"></select>
 
 <button id="downloadButton" onclick="download()">Download</button><br/>
-    </div>
+</div>
+<dialog id="addsparqlendpoint" width="300" height="300" modal="true">
+<h3 id="addsparqlendpointtitle">Add SPARQL Endpoint</h3>
+<span id="errortext"></span><br/>
+Label: <input type="text" id="endpointlabel"/><br/>
+Endpoint URL:<input type="url" id="endpointurl"/><br/>
+<button id="addsparqlendpointButton" onclick="testSPARQLEndpoint()" style="float:left">Add Endpoint</button>
+<button id="addsparqlendpointDialogCloseButton" onclick="document.getElementById('addsparqlendpoint').close()" style="float:right">Close</button>
+</dialog>
 <dialog id="datasetDialog" width="500" height="500" modal="true">
 <h3 id="datasettitle">Dataset</h3>
 <table id="datasettable" width="100%"><thead id="datasettablehead"><tr><th>Property Type</th>
@@ -497,7 +514,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 		if("label" in results[result]){
 			tablecontent+="<li><a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+results[result]["sub"]["value"]+"')\" class=\"uri\">"+results[result]["label"]["value"]+"</a> <a class=\"uri\" target=\"_blank\" href=\""+results[result]["sub"]["value"]+"\"><span style=\"color: #666;\">("+shortenURI(results[result]["sub"]["value"])+")</span></a></li>"	
 		}else{
-			tablecontent+="<li>"+formatValue({"value":results[result]["sub"]})+"</li>"
+			tablecontent+="<li>"+formatValue(results[result]["sub"])+"</li>"
 		}		
 	}
 	if(results.length>50){
@@ -608,6 +625,7 @@ var svglinkicon='<svg width="12" height="12" viewBox="0 0 1792 1792"><path trans
 function formatValue(uri){
 	//console.log("URI: "+uri)
 	console.log("URIVAL:"+uri["value"])
+	console.log(uri["value"])
 	//console.log(uri["type"])
 	if(uri["value"].startsWith("http")){
 		shortenuri=shortenURI(uri["value"])
@@ -620,17 +638,16 @@ function formatValue(uri){
 		shortenuri=shortenURI(uri["value"])
 		return shortenuri+" <a class=\"uri\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\"><span style=\"color: #666;\">(rdf:langString)</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+uri["xml:lang"]+"\">(iso6391:"+uri["xml:lang"]+")</a>"
 	}else if("datatype" in uri){
-		shortenuri=shortenURI(uri["value"])
 		dsuri=shortenURI(uri["datatype"])
-		return shortenuri+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"
+		return uri["value"]+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"
 	}
 	return uri["value"]+" <a class=\"uri\" href=\"http://www.w3.org/2001/XMLSchema#string\"><span style=\"color: #666;\">(xsd:string)</span></a>"
 } 
 
 function navigateToURIInTripleStore(uri){
-	d3.sparql($('#endpointselect').val(), "SELECT COUNT(?pred) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
+	d3.sparql($('#endpointselect').val(), "SELECT  (COUNT(?pred) AS ?res) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
 		ref=$('#jstree').jstree(true)
-		if(results.length>0 && ".1" in results[0] && results[0][".1"]["value"]>0){
+		if(results.length>0 && "res" in results[0] && results[0]["res"]["value"]>0){
 			console.log(uri)
 			thenode=ref.get_node(uri)
 			console.log(thenode)
