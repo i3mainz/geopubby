@@ -4850,28 +4850,9 @@ function geometryToGeoJSON(geomtype,coordinates){
 }
 
 function wktToGeoJSON(wktstring){
-	var geomtype=wktstring.split("(")[0].trim()
-	var coordinatestr=wktstring.replaceAll("(","").replaceAll(")","")
-	var coordinates=[]
-	if(coordinatestr.includes(",")){
-		for(coord of coordinatestr.replace(geomtype,"").split(",")){
-			//console.log(coord)
-			spl=coord.split(" ")
-			coordinates.push([parseFloat(spl[0]),parseFloat(spl[1])])
-		}
-		if(geomtype.toLowerCase().includes("polygon")){
-			coordinates=[coordinates]
-		}			
-	}else{
-		spl=coordinatestr.replace(geomtype,"").split(" ")
-		coordinates=[parseFloat(spl[0]),parseFloat(spl[1])]
-	}
-	if(geomtype.toLowerCase().includes("multi")){
-		geomtype=geomtype.toLowerCase().replace("multi","")	
-	}
-	geomtype=geomtype.substring(0,1).toUpperCase()+geomtype.substring(1,geomtype.length).toLowerCase()
-	return {"type":geomtype,"coordinates":coordinates}
-
+	var wicket = new Wkt.Wkt();
+    wicket.read(wktstring);
+	return wicket.toJson();
 }
 
 function convertit(coordinates,source,dest,switchlatlong){

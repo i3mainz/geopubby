@@ -1,13 +1,13 @@
 <div id="mySidenav" class="sidenav" style="overflow:auto;">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   Endpoint: <select id="endpointselect">
-  <option value="https://database.factgrid.de/sparql">DBPedia</option>
   <option value="https://graph.nfdi4objects.net/api/sparql">NFDI4Objects</option>
+  <option value="https://database.factgrid.de/sparql">DBPedia</option>
   </select><button id="loadclasses" onclick="getClassHierarchy([])">Load Navigation</button><br/>
   Preferred Label Language:<select id="labellang"><option value="en">English</option><option value="de">German</option><option value="fr">French</option></select><br/>
   GeoClasses: <input type="checkbox" id="geoclasses"/><br/>
   Search:<input type="text" id="classsearch"><br/>
-  <div id="jstree"></div>
+  <div id="jstree">Loading...</div>
 </div>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
@@ -182,7 +182,7 @@ CRS:<select id="crs"></select>
 
 <button id="downloadButton" onclick="download()">Download</button><br/>
     </div>
-<dialog id="datasetDialog" width="500" height="500">
+<dialog id="datasetDialog" width="500" height="500" modal="true">
 <h3 id="datasettitle">Dataset</h3>
 <table id="datasettable" width="100%"><thead id="datasettablehead"><tr><th>Property Type</th>
 <th>Property</th><th id="samplehead">Samples</th></tr></thead>
@@ -190,7 +190,7 @@ CRS:<select id="crs"></select>
 </table>
 <button id="datasetDialogCloseButton" onclick="document.getElementById('datasetDialog').close()" style="float:right">Close</button>
 </dialog>
-<dialog id="relationDialog" width="500" height="500">
+<dialog id="relationDialog" width="500" height="500" modal="true">
 <h3 id="relationtitle">Relationview</h3>
 <table id="relationtable" width="100%"><thead id="relationtablehead"><tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th>
 </tr></thead>
@@ -473,7 +473,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 
 function updateTableFromClass(node){
 concept=node.id
-$('#title').html(shortenURI(concept))
+$('#title').html("<a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 even=true
 ref=$('#jstree').jstree(true)
 d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
@@ -495,9 +495,9 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 	}
 	for(result in results){
 		if("label" in results[result]){
-			tablecontent+="<li><a href=\""+results[result]["sub"]["value"]+"\">"+results[result]["label"]["value"]+" <span style=\"color: #666;\">("+shortenURI(results[result]["sub"]["value"])+")</span></a></li>"	
+			tablecontent+="<li><a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+results[result]["sub"]["value"]+"')\" class=\"uri\">"+results[result]["label"]["value"]+"</a> <a class=\"uri\" target=\"_blank\" href=\""+results[result]["sub"]["value"]+"\"><span style=\"color: #666;\">("+shortenURI(results[result]["sub"]["value"])+")</span></a></li>"	
 		}else{
-			tablecontent+="<li>"+formatValue(results[result]["sub"])+"</li>"
+			tablecontent+="<li>"+formatValue({"value":results[result]["sub"]})+"</li>"
 		}		
 	}
 	if(results.length>50){
@@ -512,7 +512,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 
 function updateTableFromInstance(node){
 concept=node.id
-$('#title').html(shortenURI(concept))
+$('#title').html("<a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+concept+"> ?rel ?val . }").then((results)=>{
 		tablecontent=""
 		var even=true
@@ -593,9 +593,9 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 			$('#map').css("display","none")
 		}
 		if(label!=""){
-			$('#title').html(label)
+			$('#title').html("<a href=\""+node.id+"\" target=\"_blank\">"+label+"</a>")
 		}else{
-			$('#title').html(shortenURI(node.id))
+			$('#title').html("<a href=\""+node.id+"\" target=\"_blank\">"+shortenURI(node.id)+"</a>")
 		}
 		$('#proptablebody').html(tablecontent)
 		$('#proptable').css("visibility","visible")
@@ -603,16 +603,18 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 	});	
 }
 
+var svglinkicon='<svg width="12" height="12" viewBox="0 0 1792 1792"><path transform="scale(1,-1) translate(0,-1536)" d="M1408 608v-320q0 -119 -84.5 -203.5t-203.5 -84.5h-832q-119 0 -203.5 84.5t-84.5 203.5v832q0 119 84.5 203.5t203.5 84.5h704q14 0 23 -9t9 -23v-64q0 -14 -9 -23t-23 -9h-704q-66 0 -113 -47t-47 -113v-832q0 -66 47 -113t113 -47h832q66 0 113 47t47 113v320q0 14 9 23t23 9h64q14 0 23 -9t9 -23zM1792 1472v-512q0 -26 -19 -45t-45 -19t-45 19l-176 176l-652 -652q-10 -10 -23 -10t-23 10l-114 114q-10 10 -10 23t10 23l652 652l-176 176q-19 19 -19 45t19 45t45 19h512q26 0 45 -19t19 -45z"></path></svg>'
+
 function formatValue(uri){
 	//console.log("URI: "+uri)
-	//console.log("URIVAL:"+uri["value"])
+	console.log("URIVAL:"+uri["value"])
 	//console.log(uri["type"])
 	if(uri["value"].startsWith("http")){
 		shortenuri=shortenURI(uri["value"])
 		if(shortenuri.includes(":")){	
-			return "<a class=\"uri\" href=\""+uri["value"]+"\">"+labelFromURI(uri["value"])+" <span style=\"color: #666;\">("+shortenuri+")</span></a>"
+			return "<a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+uri["value"]+"')\" class=\"uri\">"+labelFromURI(uri["value"])+"</a> <a class=\"uri\" target=\"_blank\" href=\""+uri["value"]+"\"><span style=\"color: #666;\">("+shortenuri+")</span></a>"
 		}else{
-			return "<a class=\"uri\" href=\""+uri["value"]+"\">"+shortenuri+"</a>"
+			return "<a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+uri["value"]+"')\" class=\"uri\">"+shortenuri+"</a> <a target=\"_blank\" href=\""+uri["value"]+"\">"+svglinkicon+"</a>"
 		}
 	}else if("xml:lang" in uri){
 		shortenuri=shortenURI(uri["value"])
@@ -623,13 +625,34 @@ function formatValue(uri){
 		return shortenuri+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"
 	}
 	return uri["value"]+" <a class=\"uri\" href=\"http://www.w3.org/2001/XMLSchema#string\"><span style=\"color: #666;\">(xsd:string)</span></a>"
+} 
+
+function navigateToURIInTripleStore(uri){
+	d3.sparql($('#endpointselect').val(), "SELECT COUNT(?pred) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
+		ref=$('#jstree').jstree(true)
+		if(results.length>0 && ".1" in results[0] && results[0][".1"]["value"]>0){
+			console.log(uri)
+			thenode=ref.get_node(uri)
+			console.log(thenode)
+			if(thenode){		
+				if(thenode.type.includes("class")){
+					updateTableFromClass(thenode)
+				}else{
+					updateTableFromInstance(thenode)
+				}
+			}else{
+				updateTableFromInstance({"id":uri})
+			}
+			
+		}
+	});
 }
 
 
 
 function getClassRelationDialog(node){
 	concept=node.id
-	document.getElementById("relationDialog").show()
+	document.getElementById("relationDialog").showModal()
 	try{
 		$('#relationtable').DataTable().destroy();	
 	}catch(e){
@@ -732,7 +755,7 @@ function getInstances(node){
 
 function getInstanceData(node){
 	concept=node.id
-	document.getElementById("datasetDialog").show()
+	document.getElementById("datasetDialog").showModal()
 	try{
 		$('#datasettable').DataTable().destroy();	
 	}catch(e){
@@ -777,7 +800,7 @@ function getInstanceData(node){
 
 function getDatasetSchema(node){
 	concept=node.id
-	document.getElementById("datasetDialog").show()
+	document.getElementById("datasetDialog").showModal()
 	try{
 		$('#datasettable').DataTable().destroy();	
 	}catch(e){
@@ -1074,6 +1097,7 @@ $('#map').css("display","none")
 		  bounds.extend(layerBounds);
 	map.fitBounds(bounds);*/
 var espg="EPSG:4326";
+getClassHierarchy([])
 </script>
 </div>
 <div class="row-fluid">
