@@ -403,7 +403,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
                                 "separator_after": false,
                                 "label": "Show instances in GeoPubby",
                                 "icon": baseurl+"icons/queryinstances.png",
-                                "action": function (obj) {
+                                "action": function (obj) {							
                                     getInstances(node)                              
                                 }
                             }
@@ -473,7 +473,7 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 			}else if(node.type.includes("class")){
 				updateTableFromClass(node)
 			}else{
-				window.open(data, '_blank');
+				window.open(node.id, '_blank');
 			}			
 		});
 		var to = false;
@@ -741,8 +741,8 @@ function loadSamples(concept,relation,relationtd){
 
 function getInstances(node){
 	concept=node.id
-	ref=$('#jstree').jstree(true)
-	if(node.icon.includes("class.png")){
+	ref=$('#jstree').jstree(true)	
+	if(node.children.length==0 && node.icon.includes("class.png")){
 		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
 			ref=$('#jstree').jstree(true)
 			amountofinstances=results.length
