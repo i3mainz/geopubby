@@ -639,7 +639,10 @@ function formatValue(uri){
 		return shortenuri+" <a class=\"uri\" href=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString\"><span style=\"color: #666;\">(rdf:langString)</span></a> <a href=\"http://www.lexvo.org/page/iso639-1/"+uri["xml:lang"]+"\">(iso6391:"+uri["xml:lang"]+")</a>"
 	}else if("datatype" in uri){
 		dsuri=shortenURI(uri["datatype"])
-		return uri["value"]+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"
+		if(uri["value"].length>150){
+			return "<details><summary style=\"list-style-type: none;\">"+uri["value"].substring(0,150)+" (...)</summary>"+uri["value"].substring(150)+"</details><a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"
+		}
+		return uri["value"]+" <a class=\"uri\" href=\""+uri["datatype"]+"\"><span style=\"color: #666;\">("+dsuri+")</span></a>"	
 	}
 	return uri["value"]+" <a class=\"uri\" href=\"http://www.w3.org/2001/XMLSchema#string\"><span style=\"color: #666;\">(xsd:string)</span></a>"
 } 
