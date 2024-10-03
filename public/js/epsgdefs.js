@@ -4857,19 +4857,19 @@ function wktToGeoJSON(wktstring){
 		for(coord of coordinatestr.replace(geomtype,"").split(",")){
 			//console.log(coord)
 			spl=coord.split(" ")
-			coordinates.push([spl[0],spl[1]])
+			coordinates.push([parseFloat(spl[0]),parseFloat(spl[1])])
 		}
 		if(geomtype.toLowerCase().includes("polygon")){
 			coordinates=[coordinates]
 		}			
 	}else{
 		spl=coordinatestr.replace(geomtype,"").split(" ")
-		coordinates=[spl[0],spl[1]]
+		coordinates=[parseFloat(spl[0]),parseFloat(spl[1])]
 	}
 	if(geomtype.toLowerCase().includes("multi")){
-		geomtype=geomtype.toLowerCase().replace("multi","")
-		geomtype=geomtype.substring(0,1).toUpperCase()+geomtype.substring(1,geomtype.length).toLowerCase()
+		geomtype=geomtype.toLowerCase().replace("multi","")	
 	}
+	geomtype=geomtype.substring(0,1).toUpperCase()+geomtype.substring(1,geomtype.length).toLowerCase()
 	return {"type":geomtype,"coordinates":coordinates}
 
 }
