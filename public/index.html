@@ -646,6 +646,11 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 						layerr=addGeometryLayer(features,map,label,node)
 						$('#map').css("display","block")
 					});
+				}else{
+					gjson=wktToGeoJSON(geoprop)
+					features["features"].push({"type":"Feature","id":shortenURI(concept),"properties":resultjson,"geometry":gjson})
+					layerr=addGeometryLayer(features,map,label,node)
+					$('#map').css("display","block")
 				}
 			}
 		}else{
