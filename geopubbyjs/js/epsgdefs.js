@@ -4850,7 +4850,7 @@ function geometryToGeoJSON(geomtype,coordinates){
 }
 
 function wktToGeoJSON(wktstring){
-	console.log(wktstring)
+	//console.log(wktstring)
 	var wicket = new Wkt.Wkt();
 	if(wktstring.trim().startsWith("<http")){
 		wicket.read(wktstring.substring(wktstring.indexOf(">")+1));
