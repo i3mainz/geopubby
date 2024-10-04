@@ -625,7 +625,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		}
 		if(seengeoprops!={}){
 			for(geoprop in seengeoprops){
-				if(geoprop.startsWith("http")){
+				if(seengeoprops[geoprop].startsWith("http")){
 					d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
 						features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 						for(result in results){
@@ -647,7 +647,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 						$('#map').css("display","block")
 					});
 				}else{
-					gjson=wktToGeoJSON(geoprop)
+					gjson=wktToGeoJSON(seengeoprops[geoprop])
 					features["features"].push({"type":"Feature","id":shortenURI(concept),"properties":resultjson,"geometry":gjson})
 					layerr=addGeometryLayer(features,map,label,node)
 					$('#map').css("display","block")
@@ -666,7 +666,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 				if(!(results2[result2]["rel"]["value"] in resultjson2)){
 					resultjson2[results2[result2]["rel"]["value"]]=[]
 					if(results2[result2]["rel"]["value"] in geoproperties){
-						seengeoprops[results2[result2]["rel"]["value"]]=results2[result]["val"]["value"]
+						seengeoprops[results2[result2]["rel"]["value"]]=results2[result2]["val"]["value"]
 					}
 					if(results2[result2]["rel"]["value"] in labelproperties){
 						label=results2[result2]["val"]["value"]
