@@ -577,6 +577,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		var seenmedia={}
 		var label=""
 		var resultjson={}
+		var resultjson2={}
 		for(result in results){
 			if(!(results[result]["rel"]["value"] in resultjson)){
 				resultjson[results[result]["rel"]["value"]]=[]
@@ -655,15 +656,63 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		}else{
 			$('#title').html("<a href=\""+node.id+"\" target=\"_blank\">"+shortenURI(node.id)+"</a>")
 		}
-		$('#proptablebody').html(tablecontent)
-		$('#proptable').css("visibility","visible")
-		$('#map').css("display","none")
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?val ?rel <"+concept+"> . }").then((results2)=>{
+			for(result2 in results2){
+				if(!(results2[result2]["rel"]["value"] in resultjson2)){
+					resultjson2[results2[result2]["rel"]["value"]]=[]
+					if(results2[result2]["rel"]["value"] in geoproperties){
+						seengeoprops[results2[result2]["rel"]["value"]]=results2[result]["val"]["value"]
+					}
+					if(results2[result2]["rel"]["value"] in labelproperties){
+						label=results2[result2]["val"]["value"]
+					}
+					if(results2[result2]["rel"]["value"].includes(".")){
+						splitted=results2[result2]["rel"]["value"].split(".")
+						if(splitted[1] in fileextensionmap && fileextensionmap[splitted[1]]=="image"){
+							seenmedia[results2[result2]["rel"]["value"]]="image"
+						}
+					}
+				}
+				resultjson2[results2[result2]["rel"]["value"]].push(results2[result2]["val"])
+			}
+			for(result2 in resultjson2){
+				tablecontent+="<tr "
+				if(even){
+					tablecontent+="class=\"even\" property=\""+result2+"\">"
+					even=!even
+				}else{
+					tablecontent+="class=\"odd\" property=\""+result2+"\">"
+					even=!even
+				}
+				tablecontent+="<td class=\"property\">"+formatValue({"value":result2},true)+"</td><td>"
+				if(resultjson2[result2].length==1){
+					tablecontent+="<span>"+formatValue(resultjson2[result2][0])+"</span>"
+				}else if(resultjson2[result2].length>1){
+					tablecontent+="<ul class=\"property-values\">" 
+					if(resultjson2[result2].length>50){
+						tablecontent+="<details><summary>"+results2.length+" values</summary>"
+					}
+					for(entry in resultjson2[result2]){
+						tablecontent+="<li>"+formatValue(resultjson2[result2][entry])+"</li>"
+					}
+					if(resultjson2[result2].length>50){
+						tablecontent+="</details>"
+					}
+					tablecontent+="</ul>"
+				}
+				tablecontent+="</td></tr>"
+			}
+			$('#proptablebody').html(tablecontent)
+			$('#proptable').css("visibility","visible")
+			//$('#map').css("display","none")
+		});
+
 	});	
 }
 
 var svglinkicon='<svg width="12" height="12" viewBox="0 0 1792 1792"><path transform="scale(1,-1) translate(0,-1536)" d="M1408 608v-320q0 -119 -84.5 -203.5t-203.5 -84.5h-832q-119 0 -203.5 84.5t-84.5 203.5v832q0 119 84.5 203.5t203.5 84.5h704q14 0 23 -9t9 -23v-64q0 -14 -9 -23t-23 -9h-704q-66 0 -113 -47t-47 -113v-832q0 -66 47 -113t113 -47h832q66 0 113 47t47 113v320q0 14 9 23t23 9h64q14 0 23 -9t9 -23zM1792 1472v-512q0 -26 -19 -45t-45 -19t-45 19l-176 176l-652 -652q-10 -10 -23 -10t-23 10l-114 114q-10 10 -10 23t10 23l652 652l-176 176q-19 19 -19 45t19 45t45 19h512q26 0 45 -19t19 -45z"></path></svg>'
 
-function formatValue(uri){
+function formatValue(uri,reverse=false){
 	//console.log("URI: "+uri)
 	console.log("URIVAL:"+uri["value"])
 	console.log(uri["value"])
@@ -671,9 +720,22 @@ function formatValue(uri){
 	if(uri["value"].startsWith("http")){
 		shortenuri=shortenURI(uri["value"])
 		if(shortenuri.includes(":")){	
-			return "<a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+uri["value"]+"')\" class=\"uri\">"+labelFromURI(uri["value"])+"</a> <a class=\"uri\" target=\"_blank\" href=\""+uri["value"]+"\"><span style=\"color: #666;\">("+shortenuri+")</span></a>"
+			ret=""
+			if(reverse)
+				ret+="Is "
+			ret+="<a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+uri["value"]+"')\" class=\"uri\">"+labelFromURI(uri["value"])+"</a>"			
+			ret+=" <a class=\"uri\" target=\"_blank\" href=\""+uri["value"]+"\"><span style=\"color: #666;\">("+shortenuri+")</span></a>"
+			if(reverse)
+				return ret+" of"
+			return ret
 		}else{
-			return "<a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+uri["value"]+"')\" class=\"uri\">"+shortenuri+"</a> <a target=\"_blank\" href=\""+uri["value"]+"\">"+svglinkicon+"</a>"
+			ret=""
+			if(reverse)
+				ret+="Is "
+			ret+="<a href=\"#\" style=\"color:#007bff;\" onclick=\"navigateToURIInTripleStore('"+uri["value"]+"')\" class=\"uri\">"+shortenuri+"</a> <a target=\"_blank\" href=\""+uri["value"]+"\">"+svglinkicon+"</a>"
+			if(reverse)
+				return ret+" of"
+			return ret
 		}
 	}else if("xml:lang" in uri){
 		shortenuri=shortenURI(uri["value"])
