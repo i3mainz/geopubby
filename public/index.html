@@ -234,30 +234,30 @@ var labelproperties = {
 	"http://www.w3.org/2000/01/rdf-schema#label": "DatatypeProperty"
 }
 var geoproperties={
-                   "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#asKML": "DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#asGeoJSON": "DatatypeProperty",
-                   "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
-                   "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
-                   "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
-                   "http://www.georss.org/georss/point": "DatatypeProperty",
-                   "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
-                   "http://www.w3.org/2003/01/geo/wgs84_pos#lat":"DatatypeProperty",
-                   "http://www.w3.org/2003/01/geo/wgs84_pos#long": "DatatypeProperty",
-                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
-                   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
-                   "http://schema.org/geo": "ObjectProperty",
-                   "http://schema.org/polygon": "DatatypeProperty",
-                   "https://schema.org/geo": "ObjectProperty",
-                   "https://schema.org/polygon": "DatatypeProperty",
-                   "http://geovocab.org/geometry#geometry": "ObjectProperty",
-                   "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
-                   "http://rdfs.co/juso/geometry": "ObjectProperty",
-                   "http://www.wikidata.org/prop/direct/P625":"DatatypeProperty",
-                   "https://database.factgrid.de/prop/direct/P48": "DatatypeProperty",
-                   "http://database.factgrid.de/prop/direct/P48":"DatatypeProperty",
-                   "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
+   "http://www.opengis.net/ont/geosparql#asWKT":"DatatypeProperty",
+   "http://www.opengis.net/ont/geosparql#asGML": "DatatypeProperty",
+   "http://www.opengis.net/ont/geosparql#asKML": "DatatypeProperty",
+   "http://www.opengis.net/ont/geosparql#asGeoJSON": "DatatypeProperty",
+   "http://www.opengis.net/ont/geosparql#hasGeometry": "ObjectProperty",
+   "http://www.opengis.net/ont/geosparql#hasDefaultGeometry": "ObjectProperty",
+   "http://www.w3.org/2003/01/geo/wgs84_pos#geometry": "ObjectProperty",
+   "http://www.georss.org/georss/point": "DatatypeProperty",
+   "http://www.w3.org/2006/vcard/ns#hasGeo": "ObjectProperty",
+   "http://www.w3.org/2003/01/geo/wgs84_pos#lat":"DatatypeProperty",
+   "http://www.w3.org/2003/01/geo/wgs84_pos#long": "DatatypeProperty",
+   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLatitude": "DatatypeProperty",
+   "http://www.semanticweb.org/ontologies/2015/1/EPNet-ONTOP_Ontology#hasLongitude": "DatatypeProperty",
+   "http://schema.org/geo": "ObjectProperty",
+   "http://schema.org/polygon": "DatatypeProperty",
+   "https://schema.org/geo": "ObjectProperty",
+   "https://schema.org/polygon": "DatatypeProperty",
+   "http://geovocab.org/geometry#geometry": "ObjectProperty",
+   "http://www.w3.org/ns/locn#geometry": "ObjectProperty",
+   "http://rdfs.co/juso/geometry": "ObjectProperty",
+   "http://www.wikidata.org/prop/direct/P625":"DatatypeProperty",
+   "https://database.factgrid.de/prop/direct/P48": "DatatypeProperty",
+   "http://database.factgrid.de/prop/direct/P48":"DatatypeProperty",
+   "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
 }
 
 function getClassHierarchy(classeswithinstances){
@@ -293,7 +293,7 @@ console.log(query)
 $('#projectlink').attr("href",$('#endpointselect').val())
 $('#projectlink').html($('#endpointselect option:selected').text())
 d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => {
-       console.log(results)
+        console.log(results)
         prefixurl=""
         if($('#endpointselect').prop('selectedIndex')<srcurls.length){
         	prefixurl=srcurls[$('#endpointselect').prop('selectedIndex')]        
@@ -524,6 +524,45 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 	$('#proptablebody').html(tablecontent)
 	$('#proptable').css("visibility","visible")
 	$('#map').css("display","none")
+	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+		var seengeoprops={}
+		var seenmedia={}
+		for(res in results){
+			result+="<tr>"
+			console.log("VALTYPE: ")
+			console.log(results[res])
+			if(!("valtype" in results[res]) || typeof(results[res]["valtype"]["value"])=="undefined"){
+				if(results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="ObjectProperty"){
+					seengeoprops[results[res]["rel"]["value"]]="ObjectProperty"
+				}
+			}
+		}
+		for(geoprop in seengeoprops){
+			if(seengeoprops[geoprop]=="ObjectProperty"){
+				d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label ?rel ?val WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} ?sub <"+geoprop+"> ?geom . ?geom ?rel ?val . } ORDER BY ?label").then((results)=>{
+					features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
+					for(result in results){
+						if(results[result]["rel"]["value"] in geoproperties){
+							if("datatype" in results[result]["val"] && results[result]["val"]["datatype"].toLowerCase().includes("wkt")){
+								gjson=wktToGeoJSON(results[result]["val"]["value"])
+								features["features"].push({"type":"Feature","id":shortenURI(results[result]["sub"]["value"]),"properties":{},"geometry":gjson})
+								//feature={"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":gjson}]}
+								//generateMapView()
+								
+
+								//var bounds = L.latLngBounds([]);
+								//var layerBounds = layerr.getBounds();
+								//bounds.extend(layerBounds);
+								//map.fitBounds(bounds);						
+							}
+						}
+					}
+					addGeometryLayer(features,map,"",node)
+					$('#map').css("display","block")
+				});			
+			}
+		}
+	});
 });
 }
 
@@ -587,14 +626,14 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 			for(geoprop in seengeoprops){
 				if(geoprop.includes("http")){
 					d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
+						features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 						for(result in results){
 							if(results[result]["rel"]["value"] in geoproperties){
 								if("datatype" in results[result]["val"] && results[result]["val"]["datatype"].toLowerCase().includes("wkt")){
 									gjson=wktToGeoJSON(results[result]["val"]["value"])
-									feature={"type":"FeatureCollection","features":[{"type":"Feature","properties":resultjson,"geometry":gjson}]}
+									features["features"].push({"type":"Feature","id":shortenURI(concept),"properties":resultjson,"geometry":gjson})
 									//generateMapView()
-									layerr=addGeometryLayer(feature,map,label,node)
-									$('#map').css("display","block")
+
 									//var bounds = L.latLngBounds([]);
 									//var layerBounds = layerr.getBounds();
 									//bounds.extend(layerBounds);
@@ -603,6 +642,8 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 								}
 							}
 						}
+						layerr=addGeometryLayer(features,map,label,node)
+						$('#map').css("display","block")
 					});
 				}
 			}
@@ -949,29 +990,31 @@ function remoteSPARQLQuery(endpoint,query){
 <!--<script type="text/javascript" src="${server_base}static/Leaflet.geojsoncss.min.js"></script>-->
 <script type="text/javascript">
 var addedlayers=[]
-function addGeometryLayer(feature,map,label,node){
+function addGeometryLayer(feature,map,label,node,del=true){
 	console.log(feature)
-	for(lay of addedlayers){
-		map.removeLayer(lay)
+	if(del){
+		for(lay of addedlayers){
+			map.removeLayer(lay)
+		}
 	}
 	var layerr=L.geoJSON.css(feature,{
-	   pointToLayer: function(feature, latlng){
-	  var greenIcon = new L.Icon({
-		iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
-		shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-		iconSize: [25, 41],
-		iconAnchor: [12, 41],
-		popupAnchor: [1, -34],
-		shadowSize: [41, 41]
-	});
-	return L.marker(latlng, {icon: greenIcon});
+		pointToLayer: function(feature, latlng){
+		var greenIcon = new L.Icon({
+			iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+			iconSize: [25, 41],
+			iconAnchor: [12, 41],
+			popupAnchor: [1, -34],
+			shadowSize: [41, 41]
+		});
+		return L.marker(latlng, {icon: greenIcon});
 	},
 	onEachFeature: function (feature, layer) {
 		var popup="<b><a href=\""+feature.id+"\" class=\"footeruri\" target=\"_blank\">"
 		if(label!=""){
 			popup+=label
 		}else{
-			popup+=shortenURI(node.id)
+			popup+=shortenURI(feature.id)
 		}
 		popup+="</a></b><br/><ul>"
 		for(prop in feature.properties){
