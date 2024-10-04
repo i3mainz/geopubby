@@ -625,7 +625,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		}
 		if(seengeoprops!={}){
 			for(geoprop in seengeoprops){
-				if(geoprop.includes("http")){
+				if(geoprop.startsWith("http")){
 					d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
 						features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 						for(result in results){
