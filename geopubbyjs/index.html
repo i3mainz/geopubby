@@ -179,7 +179,7 @@ function testSPARQLEndpoint(endpoint=null,endpointLabel=null,concept=null){
 		label=$('#endpointlabel').val()
 		url=$('#endpointurl').val()	
 	}
-	console.log("URL: "+url)
+	//console.log("URL: "+url)
 	d3.sparql(url, "SELECT ?a ?b ?c WHERE { ?a ?b ?c . } LIMIT 1").then((results)=>{
 		$('#endpointselect').append($('<option>', {value: url,text: label}));
 		document.getElementById('addsparqlendpoint').close()
@@ -738,8 +738,8 @@ var svglinkicon='<svg width="12" height="12" viewBox="0 0 1792 1792"><path trans
 
 function formatValue(uri,reverse=false){
 	//console.log("URI: "+uri)
-	console.log("URIVAL:"+uri["value"])
-	console.log(uri["value"])
+	//console.log("URIVAL:"+uri["value"])
+	//console.log(uri["value"])
 	//console.log(uri["type"])
 	if(uri["value"].startsWith("http")){
 		shortenuri=shortenURI(uri["value"])
@@ -1264,13 +1264,13 @@ var espg="EPSG:4326";
 <script>
 const searchParams = new URL(document.location.toString()).searchParams;
 if(searchParams.has("endpoint")){
-    console.log(searchParams)
+    //console.log(searchParams)
 	endpoint=searchParams.get("endpoint")
 	endpointLabel=endpoint
 	concept=null
-	console.log(endpoint)
+	/*console.log(endpoint)
 	console.log(endpointLabel)
-	console.log(concept)
+	console.log(concept)*/
 	if(searchParams.has("endpointLabel")){	
 		endpointLabel=searchParams.get("endpointLabel")
 	}
