@@ -171,12 +171,22 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-function testSPARQLEndpoint(){
-	label=$('#endpointlabel').val()
-	url=$('#endpointurl').val()
-	d3.sparql($('#endpointurl').val(), "SELECT ?a ?b ?c WHERE { ?a ?b ?c . } LIMIT 1").then((results)=>{
+function testSPARQLEndpoint(endpoint=null,endpointLabel=null,concept=null){
+	if(endpoint!=null && endpointLabel!=null){
+		label=endpointLabel
+		url=endpoint
+	}else{
+		label=$('#endpointlabel').val()
+		url=$('#endpointurl').val()	
+	}
+	d3.sparql(url, "SELECT ?a ?b ?c WHERE { ?a ?b ?c . } LIMIT 1").then((results)=>{
 		$('#endpointselect').append($('<option>', {value: url,text: label}));
 		document.getElementById('addsparqlendpoint').close()
+		$('#endpointselect').val(url)
+		if(concept!=null){
+			updateTableFromInstance({"id":concept},url)
+			getClassHierarchy([])
+		}
 	}).catch(function(e) { throw e; });
 }
 
@@ -488,12 +498,16 @@ d3.sparql($('#endpointselect').val(), query,{method: 'POST'}).then((results) => 
 });
 }
 
-function updateTableFromClass(node){
+function updateTableFromClass(node,url=null){
 concept=node.id
+endp=$('#endpointselect').val()
+if(url!=null){
+	endp=url
+}
 $('#title').html("<a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 even=true
 ref=$('#jstree').jstree(true)
-d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
+d3.sparql(endp, "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
 	console.log(results.length)
 	if((!node.text.includes("["))){
 		ref.rename_node(node,node.text+" ["+results.length+"]")
@@ -524,7 +538,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 	$('#proptablebody').html(tablecontent)
 	$('#proptable').css("visibility","visible")
 	$('#map').css("display","none")
-	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+	d3.sparql(endp, "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
 		var seengeoprops={}
 		var seenmedia={}
 		for(res in results){
@@ -566,10 +580,14 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label WHERE { ?sub 
 });
 }
 
-function updateTableFromInstance(node){
+function updateTableFromInstance(node,url=null){
 concept=node.id
+endp=$('#endpointselect').val()
+if(url!=null){
+	endp=url
+}
 $('#title').html("<a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
-d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+concept+"> ?rel ?val . }").then((results)=>{
+d3.sparql(endp, "SELECT DISTINCT ?rel ?val WHERE { <"+concept+"> ?rel ?val . }").then((results)=>{
 		tablecontent=""
 		var even=true
 		var lastrel=""
@@ -626,7 +644,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		if(seengeoprops!={}){
 			for(geoprop in seengeoprops){
 				if(seengeoprops[geoprop].startsWith("http")){
-					d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
+					d3.sparql(endp, "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
 						features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 						for(result in results){
 							if(results[result]["rel"]["value"] in geoproperties){
@@ -661,7 +679,7 @@ d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { <"+conc
 		}else{
 			$('#title').html("<a href=\""+node.id+"\" target=\"_blank\">"+shortenURI(node.id)+"</a>")
 		}
-		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?val ?rel <"+concept+"> . }").then((results2)=>{
+		d3.sparql(endp, "SELECT DISTINCT ?rel ?val WHERE { ?val ?rel <"+concept+"> . }").then((results2)=>{
 			for(result2 in results2){
 				if(!(results2[result2]["rel"]["value"] in resultjson2)){
 					resultjson2[results2[result2]["rel"]["value"]]=[]
@@ -1227,7 +1245,7 @@ $('#map').css("display","none")
 		  bounds.extend(layerBounds);
 	map.fitBounds(bounds);*/
 var espg="EPSG:4326";
-getClassHierarchy([])
+
 </script>
 </div>
 <div class="row-fluid">
@@ -1243,6 +1261,21 @@ getClassHierarchy([])
     <div id="footer">
      <div class="container-fluid">
 <script>
+const searchParams = new URL(document.location.toString()).searchParams;
+if(searchParams.has("endpoint")){
+	endpoint=searchParams.get("endpoint")
+	endpointLabel=endpoint
+	concept=null
+	if(searchParams.has("endpointLabel")){	
+		endpointLabel=searchParams.get("endpointLabel")
+	}
+	if(searchParams.has("concept")){
+		concept=searchParams.get("concept")
+	}
+	testSPARQLEndpoint(endpoint,endpointLabel,concept)
+}else{
+	getClassHierarchy([])
+}
 var definitionlinks={
 "covjson":"https://covjson.org",
 "csv":"https://tools.ietf.org/html/rfc4180",
@@ -1314,7 +1347,7 @@ CRS:<select id="crs2"></select>
 </div>
     </div>
 <script> 
-$.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs2').html(data); $('#crs2').val(epsg);$('#crs').html(data); $('#crs').val(epsg);}});
+//$.ajax({url:'${server_base}static/epsg.txt',success: function (data){$('#crs2').html(data); $('#crs2').val(epsg);$('#crs').html(data); $('#crs').val(epsg);}});
 </script>
   </body>
 </html>
