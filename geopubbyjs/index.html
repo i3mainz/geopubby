@@ -1263,9 +1263,13 @@ var espg="EPSG:4326";
 <script>
 const searchParams = new URL(document.location.toString()).searchParams;
 if(searchParams.has("endpoint")){
+    console.log(searchParams)
 	endpoint=searchParams.get("endpoint")
 	endpointLabel=endpoint
 	concept=null
+	console.log(endpoint)
+	console.log(endpointLabel)
+	console.log(concept)
 	if(searchParams.has("endpointLabel")){	
 		endpointLabel=searchParams.get("endpointLabel")
 	}
