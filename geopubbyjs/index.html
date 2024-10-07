@@ -179,6 +179,7 @@ function testSPARQLEndpoint(endpoint=null,endpointLabel=null,concept=null){
 		label=$('#endpointlabel').val()
 		url=$('#endpointurl').val()	
 	}
+	console.log("URL: "+url)
 	d3.sparql(url, "SELECT ?a ?b ?c WHERE { ?a ?b ?c . } LIMIT 1").then((results)=>{
 		$('#endpointselect').append($('<option>', {value: url,text: label}));
 		document.getElementById('addsparqlendpoint').close()
