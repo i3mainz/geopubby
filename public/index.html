@@ -809,8 +809,13 @@ function formatValue(uri,reverse=false,label=""){
 } 
 
 function navigateToURIInTripleStore(uri){
-	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?pred) AS ?res) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
+	endp=$('#endpointselect').val()
+	d3.sparql(endp, "SELECT (COUNT(?pred) AS ?res) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
 		ref=$('#jstree').jstree(true)
+		const url = new URL(location.href);
+		url.searchParams.set("endpoint",endp)
+		url.searchParams.set("concept",uri)
+		history.pushState(null, '',url)
 		if(results.length>0 && "res" in results[0] && results[0]["res"]["value"]>0){
 			console.log(uri)
 			if(typeof(ref)!=='undefined' && typeof(ref.get_node)!=='undefined'){
