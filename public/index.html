@@ -852,14 +852,15 @@ function getClassRelationDialog(node){
 	if(endp in endpointToProps){
 		typeproperty=endpointToProps[endp]["typeproperty"]
 	}
-	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	thetitle="<img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+node.icon+"\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+node.text+"</a>"
+	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+node.text+"</a>")
 	$('#relationtablehead').html("<tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th></tr>")
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(node.icon.includes("class.png")){
 		$('#relationtablebody').html("")
 		d3.sparql(endp, "SELECT DISTINCT ?rel ?relLabel ?val ?valLabel WHERE { ?con <"+typeproperty+"> <"+concept+ "> . ?con ?rel ?item . ?item  <"+typeproperty+"> ?val .  OPTIONAL{?val <http://www.w3.org/2000/01/rdf-schema#label> ?valLabel . FILTER(lang(?valLabel)=\"en\") } {?prop wikibase:directClaim ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}").then((results)=>{
 			for(result in results){
-				toappend="<tr><td></td><td></td><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
+				toappend="<tr><td></td><td></td><td>"+thetitle+"</td>"
 				if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
 					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>"
 				}else{
@@ -910,7 +911,7 @@ function getClassRelationDialog(node){
 					}else{
 						toappend+="<a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a>"
 					}
-					toappend+="</td><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
+					toappend+="</td><td>"+thetitle+"</td><td></td><td></td></tr>"
 					$('#relationtablebody').append(toappend)
 				}
 				$('#relationtable').DataTable({"scrollX":true,"scrollY":true});
@@ -919,7 +920,7 @@ function getClassRelationDialog(node){
 	}	
 }
 
-function getPropRelationDialog(uri,icon){
+function getPropRelationDialog(uri,icon,label=""){
 	concept=uri
 	document.getElementById("relationDialog").showModal()
 	try{
@@ -1104,7 +1105,7 @@ function getDatasetSchema(node){
 	if(endp in endpointToProps){
 		typeproperty=endpointToProps[endp]["typeproperty"]
 	}
-	d3.sparql(endp, "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?relLabel ?valtype\n WHERE { ?con <"+typeproperty+"> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) {?prop wikibase:directClaim ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+	d3.sparql(endp, "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?relLabel ?valtype\n WHERE { ?con <"+typeproperty+"> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) {?prop wikibase:directClaim ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}\n  GROUP BY ?rel ?relLabel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
 		result="";
 		maxcons=1
 		first=true
@@ -1118,7 +1119,7 @@ function getDatasetSchema(node){
 			console.log(results[res])
 			if(!("valtype" in results[res]) || typeof(results[res]["valtype"]["value"])=="undefined"){
 				if(results[res]["rel"]["value"] in geoproperties && geoproperties[results[res]["rel"]["value"]]=="ObjectProperty"){
-					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','')\">[x]</a></td>"
+					result+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/>Geo Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/geoobjectproperty.png')\">[x]</a></td>"
 				}else{
 					result+="<td><img src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Object Property\"/>Object Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\">[x]</a></td>"
 				}			
@@ -1136,7 +1137,16 @@ function getDatasetSchema(node){
 					result+="<td><img src=\""+baseurl+"icons/datatypeproperty.png\" height=\"25\" width=\"25\" alt=\"Datatype Property\"/>Datatype Property <a href=\"#\" onclick=\"getPropRelationDialog('"+results[res]["rel"]["value"]+"','"+baseurl+"icons/datatypeproperty.png')\">[x]</a></td>"
 				}
 			}
-			result+="<td><a href=\""+results[res]["rel"]["value"]+"\" target=\"_blank\">"+shortenURI(results[res]["rel"]["value"])+"</a> ["+((parseInt(results[res]["countrel"]["value"])/maxcons)*100).toFixed(2)+"%]</td>"
+			result+="<td>"
+			suri=shortenURI(results[res]["rel"]["value"])
+			if("relLabel" in results[res]){
+				result+="<a href=\""+results[res]["rel"]["value"]+"\">"+results[res]["relLabel"]["value"]
+				result+=" ("+shortenURI(results[res]["rel"]["value"])+")"
+				result+="</a>"
+			}else{
+				result+="<a href=\""+results[res]["rel"]["value"]+"\">"+shortenURI(results[res]["rel"]["value"])+"</a>"
+			}
+			result+=" ["+((parseInt(results[res]["countrel"]["value"])/maxcons)*100).toFixed(2)+"%]</td>"
 			if(!("valtype" in results[res]) || typeof(results[res]["valtype"])=="undefined"){
 				result+="<td id=\""+shortenURI(results[res]["rel"]["value"])+"\"><button onclick=\"loadSamples('"+concept+"','"+results[res]["rel"]["value"]+"','"+shortenURI(results[res]["rel"]["value"])+"')\">Click to load samples...</button> [<a href=\"http://www.w3.org/2001/XMLSchema#anyURI\" target=\"_blank\">xsd:anyURI</a>]</td></tr>"
 			}else{
