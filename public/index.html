@@ -171,7 +171,7 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-function testSPARQLEndpoint(endpoint=null,endpointLabel=null,concept=null){
+function testSPARQLEndpoint(endpoint=null,endpointLabel=null,typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type",subclassproperty="http://www.w3.org/2000/01/rdf-schema#subClassOf",concept=null){
 	if(endpoint!=null && endpointLabel!=null){
 		label=endpointLabel
 		url=endpoint
@@ -186,7 +186,10 @@ function testSPARQLEndpoint(endpoint=null,endpointLabel=null,concept=null){
 		$('#endpointselect').val(url)
 		if(concept!=null){
 			updateTableFromInstance({"id":concept},url)
-			getClassHierarchy([])
+			if(!(url in endpointToProps)){
+				endpointToProps[url]={"typeproperty":typeproperty,"subclassproperty":subclassproperty}
+			}		
+			getClassHierarchy([],typeproperty,subclassproperty)
 		}
 	}).catch(function(e) { throw e; });
 }
@@ -207,6 +210,8 @@ CRS:<select id="crs"></select>
 <span id="errortext"></span><br/>
 Label: <input type="text" id="endpointlabel"/><br/>
 Endpoint URL:<input type="url" id="endpointurl"/><br/>
+Type Property:<input type="typepropdialog" id="endpointurl" value="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" /><br/>
+SubClass Property:<input type="subclasspropdialog" id="endpointurl" value="http://www.w3.org/2000/01/rdf-schema#subClassOf" /><br/>
 <button id="addsparqlendpointButton" onclick="testSPARQLEndpoint()" style="float:left">Add Endpoint</button>
 <button id="addsparqlendpointDialogCloseButton" onclick="document.getElementById('addsparqlendpoint').close()" style="float:right">Close</button>
 </dialog>
@@ -271,18 +276,23 @@ var geoproperties={
    "http://www.wikidata.org/prop/direct/P3896": "DatatypeProperty"
 }
 
-function getClassHierarchy(classeswithinstances){
+function getClassHierarchy(classeswithinstances,typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type",subclassproperty="http://www.w3.org/2000/01/rdf-schema#subClassOf"){
 console.log(JSON.stringify(classeswithinstances))
 // ?subject a owl:Class . NOT{ ?subject rdfs:subClassOf <http://www.xplanung.de/xplangml/5/0#> } .
 //?subject a owl:Class . } UNION 
 // (COUNT(?individual) AS ?individualc )
+endp=$('#endpointselect').val()
+if(endp in endpointToProps){
+	typeproperty=endpointToProps[endp]["typeproperty"]
+	subclassproperty=endpointToProps[endp]["subclassproperty"]
+} 
 query= "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n"
 +"PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"
 +"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
 +"SELECT DISTINCT ?subject ?label ?supertype\n"
 +"WHERE {\n"
-+"   { ?individual rdf:type ?subject . } UNION { ?subject rdf:type owl:Class . } .\n"
-+"   OPTIONAL { ?subject rdfs:subClassOf ?supertype } .\n"
++"   { ?individual <"+typeproperty+"> ?subject . } UNION { ?subject <"+typeproperty+"> owl:Class . } .\n"
++"   OPTIONAL { ?subject <"+subclassproperty+"> ?supertype } .\n"
 +"   OPTIONAL { ?subject rdfs:label ?label. filter(langMatches(lang(?label),\"en\")) }"
 +"   OPTIONAL { ?subject rdfs:label ?label }.\n"
 +"    FILTER (\n"
@@ -508,7 +518,11 @@ if(url!=null){
 $('#title').html("<a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 even=true
 ref=$('#jstree').jstree(true)
-d3.sparql(endp, "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
+typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+if(endp in endpointToProps){
+	typeproperty=endpointToProps[endp]["typeproperty"]
+}
+d3.sparql(endp, "SELECT DISTINCT ?sub ?label WHERE { ?sub <"+typeproperty+"> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
 	console.log(results.length)
 	if((!node.text.includes("["))){
 		ref.rename_node(node,node.text+" ["+results.length+"]")
@@ -554,7 +568,7 @@ d3.sparql(endp, "SELECT DISTINCT ?sub ?label WHERE { ?sub <http://www.w3.org/199
 		}
 		for(geoprop in seengeoprops){
 			if(seengeoprops[geoprop]=="ObjectProperty"){
-				d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label ?rel ?val WHERE { ?sub <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} ?sub <"+geoprop+"> ?geom . ?geom ?rel ?val . } ORDER BY ?label").then((results)=>{
+				d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?label ?rel ?val WHERE { ?sub <"+typeproperty+"> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} ?sub <"+geoprop+"> ?geom . ?geom ?rel ?val . } ORDER BY ?label").then((results)=>{
 					features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 					for(result in results){
 						if(results[result]["rel"]["value"] in geoproperties){
@@ -644,9 +658,9 @@ d3.sparql(endp, "SELECT DISTINCT ?rel ?val WHERE { <"+concept+"> ?rel ?val . }")
 		}
 		if(seengeoprops!={}){
 			for(geoprop in seengeoprops){
+				features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 				if(seengeoprops[geoprop].startsWith("http")){
 					d3.sparql(endp, "SELECT DISTINCT ?rel ?val WHERE { <"+seengeoprops[geoprop]+"> ?rel ?val . }").then((results)=>{
-						features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 						for(result in results){
 							if(results[result]["rel"]["value"] in geoproperties){
 								if("datatype" in results[result]["val"] && results[result]["val"]["datatype"].toLowerCase().includes("wkt")){
@@ -775,7 +789,7 @@ function formatValue(uri,reverse=false){
 } 
 
 function navigateToURIInTripleStore(uri){
-	d3.sparql($('#endpointselect').val(), "SELECT  (COUNT(?pred) AS ?res) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
+	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?pred) AS ?res) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
 		ref=$('#jstree').jstree(true)
 		if(results.length>0 && "res" in results[0] && results[0]["res"]["value"]>0){
 			console.log(uri)
@@ -804,12 +818,17 @@ function getClassRelationDialog(node){
 		$('#relationtable').DataTable().destroy();	
 	}catch(e){
 	}
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
 	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 	$('#relationtablehead').html("<tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th></tr>")
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(node.icon.includes("class.png")){
 		$('#relationtablebody').html("")
-		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . ?con ?rel ?item . ?item  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . }").then((results)=>{
+		d3.sparql(endp, "SELECT DISTINCT ?rel ?val ?valLabel WHERE { ?con <"+typeproperty+"> <"+concept+ "> . ?con ?rel ?item . ?item  <"+typeproperty+"> ?val . OPTIONAL{?val rdfs:label ?valLabel FILTER(lang(?valLabel)=\"en\") }}").then((results)=>{
 			for(result in results){
 				toappend="<tr><td></td><td></td><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
 				if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
@@ -817,12 +836,30 @@ function getClassRelationDialog(node){
 				}else{
 					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
 				}
-				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]["value"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td></tr>"
+				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/>"
+				suri=shortenURI(results[result]["val"]["value"])
+				if("valLabel" in results[result]){
+					toappend+="<a href=\""+results[result]["val"]["value"]+"\">"+results[result]["valLabel"]["value"]
+					toappend+=" ("+shortenURI(results[result]["val"]["value"])+")"
+					toappend+="</a>"
+				}else{
+					toappend+="<a href=\""+results[result]["val"]["value"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a>"
+				}
+				toappend+="</td></tr>"			
 				$('#relationtablebody').append(toappend)
 			}
-			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?tocon <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . ?tocon ?rel ?con . ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . }").then((results)=>{
+			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val ?valLabel WHERE { ?tocon <"+typeproperty+"> ?val . ?tocon ?rel ?con . ?con <"+typeproperty+"> <"+concept+ "> . OPTIONAL{?val rdfs:label ?valLabel FILTER(lang(?valLabel)=\"en\") }}").then((results)=>{
 				for(result in results){
-					toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]["value"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td>"
+					toappend+="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/>"
+					suri=shortenURI(results[result]["val"]["value"])
+					if("valLabel" in results[result]){
+						toappend+="<a href=\""+results[result]["val"]["value"]+"\">"+results[result]["valLabel"]["value"]
+						toappend+=" ("+shortenURI(results[result]["val"]["value"])+")"
+						toappend+="</a>"
+					}else{
+						toappend+="<a href=\""+results[result]["val"]["value"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a>"
+					}
+					toappend+="</td>"
 					if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
 						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
 					}else{
@@ -844,16 +881,39 @@ function getPropRelationDialog(uri,icon){
 		$('#relationtable').DataTable().destroy();	
 	}catch(e){
 	}
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
 	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 	$('#relationtablehead').html("<tr><th>Incoming Concept</th><th>Property</th><th>Outgoing Concept</th></tr>")
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(icon.includes("property")){
 		$('#relationtablebody').html("")
-		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?obj WHERE { ?subb <"+concept+"> ?objj . ?subb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?sub . ?objj <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?obj .}").then((results)=>{
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?obj ?subLabel ?objLabel WHERE { ?subb <"+concept+"> ?objj . ?subb <"+typeproperty+"> ?sub . ?objj <"+typeproperty+"> ?obj . OPTIONAL{?obj rdfs:label ?objLabel FILTER(lang(?objLabel)=\"en\") } OPTIONAL{?sub rdfs:label ?subLabel FILTER(lang(?subLabel)=\"en\") }}").then((results)=>{
 			for(result in results){
-				toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["sub"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["sub"]["value"]+"\">"+shortenURI(results[result]["sub"]["value"])+"</a></td>"
+				toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["sub"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/>"
+				suri=shortenURI(results[result]["sub"]["value"])
+				if("subLabel" in results[result]){
+					toappend+="<a href=\""+results[result]["sub"]["value"]+"\">"+results[result]["subLabel"]["value"]
+					toappend+=" ("+shortenURI(results[result]["sub"]["value"])+")"
+					toappend+="</a>"
+				}else{
+					toappend+="<a href=\""+results[result]["sub"]["value"]+"\">"+shortenURI(results[result]["sub"]["value"])+"</a>"
+				}
+				toappend+="</td>"
 				toappend+="<td><img width=\"25\" height=\"25\" src=\""+icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a></td>"
-				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["obj"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["obj"]["value"]+"\">"+shortenURI(results[result]["obj"]["value"])+"</a></td></tr>"
+				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["obj"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/>"
+				suri=shortenURI(results[result]["obj"]["value"])
+				if("objLabel" in results[result]){
+					toappend+="<a href=\""+results[result]["obj"]["value"]+"\">"+results[result]["objLabel"]["value"]
+					toappend+=" ("+shortenURI(results[result]["obj"]["value"])+")"
+					toappend+="</a>"
+				}else{
+					toappend+="<a href=\""+results[result]["obj"]["value"]+"\">"+shortenURI(results[result]["obj"]["value"])+"</a>"
+				}
+				toappend+="</td></tr>"
 				$('#relationtablebody').append(toappend)
 			}
 		});
@@ -864,15 +924,25 @@ function getPropRelationDialog(uri,icon){
 function getInstanceCount(node){
 	concept=node.id
 	ref=$('#jstree').jstree(true)
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
 	if(node.icon.includes("class.png") && !node.text.includes("[")){
-		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . }").then((results)=>{
+		d3.sparql($('#endpointselect').val(), "SELECT (COUNT(?con) as ?amount) WHERE { ?con <"+typeproperty+"> <"+concept+"> . }").then((results)=>{
 			ref.rename_node(node,node.text+" ["+results[0]["amount"]["value"]+"]")
 		});
 	}
 }
 
 function loadSamples(concept,relation,relationtd){
-	d3.sparql($('#endpointselect').val(), "SELECT DISTINCT (COUNT(?val) as ?amount) ?val WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con <" +relation+ "> ?val } GROUP BY ?val LIMIT 100").then((results)=>{
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
+	d3.sparql($('#endpointselect').val(), "SELECT DISTINCT (COUNT(?val) as ?amount) ?val WHERE { ?con <"+typeproperty+"> <"+concept+"> . ?con <" +relation+ "> ?val } GROUP BY ?val LIMIT 100").then((results)=>{
 		counter=0
 		result=""
 		for(res in results){
@@ -895,9 +965,14 @@ function loadSamples(concept,relation,relationtd){
 
 function getInstances(node){
 	concept=node.id
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
 	ref=$('#jstree').jstree(true)	
 	if(node.children.length==0 && node.icon.includes("class.png")){
-		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
+		d3.sparql($('#endpointselect').val(), "SELECT ?con ?label ?hasgeo WHERE { ?con <"+typeproperty+"> <"+concept+"> . OPTIONAL { ?con <http://www.w3.org/2000/01/rdf-schema#label> <"+concept+"> . } }").then((results)=>{
 			ref=$('#jstree').jstree(true)
 			amountofinstances=results.length
 			for(res in results){
@@ -979,7 +1054,12 @@ function getDatasetSchema(node){
 	$('#datasettitle').html("<a href=\""+concept+"\" target=\"\">"+shortenURI(concept)+"</a>")
 	$('#datasettablebody').html("<tr><td colspan=3>Loading dataset schema....</td></tr>")
 	$('#samplehead').html("Samples")
-	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
+	d3.sparql($('#endpointselect').val(), "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?valtype\n WHERE { ?con <"+typeproperty+"> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) }\n  GROUP BY ?rel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
 		result="";
 		maxcons=1
 		first=true
@@ -1055,7 +1135,12 @@ function labelFromURI(uri){
 
 
 function getAllClasses(){
-    d3.sparql($('#endpointselect').val(), prefixList+" SELECT DISTINCT ?cls ?clsLabel  WHERE {?ind <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?cls . ?ind ?rel ?geo. ?geo geo:asWKT ?wkt  . ?cls rdf:type owl:Class . OPTIONAL{?cls rdfs:label ?clsLabel. }} ORDER BY ?cls").then((results) => {
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	endp=$('#endpointselect').val()
+	if(endp in endpointToProps){
+		typeproperty=endpointToProps[endp]["typeproperty"]
+	}
+    d3.sparql($('#endpointselect').val(), prefixList+" SELECT DISTINCT ?cls ?clsLabel  WHERE {?ind <"+typeproperty+"> ?cls . ?ind ?rel ?geo. ?geo geo:asWKT ?wkt  . ?cls rdf:type owl:Class . OPTIONAL{?cls rdfs:label ?clsLabel. }} ORDER BY ?cls").then((results) => {
 	//currdfstore.execute(, function(success,results){ 
         //console.log(success,results)
 		result="";
@@ -1286,11 +1371,16 @@ var espg="EPSG:4326";
     <div id="footer">
      <div class="container-fluid">
 <script>
+var endpointToProps={
+"https://database.factgrid.de/sparql":{"typeproperty":"https://database.factgrid.de/prop/direct/P2","subclassproperty":"https://database.factgrid.de/prop/direct/P3"}
+}
 const searchParams = new URL(document.location.toString()).searchParams;
 if(searchParams.has("endpoint")){
     //console.log(searchParams)
 	endpoint=searchParams.get("endpoint")
 	endpointLabel=endpoint
+	typeproperty="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+	subclassproperty="http://www.w3.org/2000/01/rdf-schema#subClassOf"
 	concept=null
 	/*console.log(endpoint)
 	console.log(endpointLabel)
@@ -1301,7 +1391,13 @@ if(searchParams.has("endpoint")){
 	if(searchParams.has("concept")){
 		concept=searchParams.get("concept")
 	}
-	testSPARQLEndpoint(endpoint,endpointLabel,concept)
+	if(searchParams.has("typeprop")){
+		typeproperty=searchParams.get("typeprop")
+	}
+	if(searchParams.has("subclassprop")){
+		subclassproperty=searchParams.get("subclassprop")
+	}
+	testSPARQLEndpoint(endpoint,endpointLabel,typeproperty,subclassproperty,concept)
 }else{
 	getClassHierarchy([])
 }
