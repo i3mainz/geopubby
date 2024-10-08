@@ -661,7 +661,8 @@ d3.sparql(endp, "SELECT DISTINCT ?rel ?val ?valLabel WHERE { <"+concept+"> ?rel 
 			}
 			tablecontent+="</td></tr>"
 		}
-		if(seengeoprops!={}){
+		if(Object.keys(seengeoprops).length !== 0){
+			console.log(seengeoprops)
 			for(geoprop in seengeoprops){
 				features={"type":"FeatureCollection","id":shortenURI(concept),"features":[]}
 				if(seengeoprops[geoprop].startsWith("http")){
