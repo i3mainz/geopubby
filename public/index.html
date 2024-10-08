@@ -805,6 +805,7 @@ function getClassRelationDialog(node){
 	}catch(e){
 	}
 	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	$('#relationtablehead').html("<tr><th>Incoming Concept</th><th>Incoming Property</th><th>Concept</th><th>Outgoing Property</th><th>Outgoing Concept</th></tr>")
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(node.icon.includes("class.png")){
 		$('#relationtablebody').html("")
@@ -812,20 +813,20 @@ function getClassRelationDialog(node){
 			for(result in results){
 				toappend="<tr><td></td><td></td><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td>"
 				if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
-					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" onclick=\"getPropRelationDialog({\"id\":"+results[result]["rel"]["value"]+"})\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
+					toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
 				}else{
-					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" onclick=\"getPropRelationDialog({\"id\":"+results[result]["rel"]["value"]+"})\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
+					toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
 				}
-				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td></tr>"
+				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]["value"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td></tr>"
 				$('#relationtablebody').append(toappend)
 			}
 			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?val WHERE { ?tocon <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?val . ?tocon ?rel ?con . ?con <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"+concept+ "> . }").then((results)=>{
 				for(result in results){
-					toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td>"
+					toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["val"]["value"]+"\">"+shortenURI(results[result]["val"]["value"])+"</a></td>"
 					if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
-						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" onclick=\"getPropRelationDialog({\"id\":"+results[result]["rel"]["value"]+"})\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
+						toappend+="<td><img src=\""+baseurl+"icons/geoobjectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Geo Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"
 					}else{
-						toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" onclick=\"getPropRelationDialog({\"id\":"+results[result]["rel"]["value"]+"})\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
+						toappend+="<td><img src=\""+baseurl+"icons/objectproperty.png\" onclick=\"getPropRelationDialog('"+results[result]["rel"]["value"]+"','"+baseurl+"icons/objectproperty.png')\" height=\"25\" width=\"25\" alt=\"Object Property\"/><a href=\""+results[result]["rel"]["value"]+"\">"+shortenURI(results[result]["rel"]["value"])+"</a></td>"				
 					}
 					toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + concept + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+concept+"\">"+shortenURI(concept)+"</a></td><td></td><td></td></tr>"
 					$('#relationtablebody').append(toappend)
@@ -836,22 +837,23 @@ function getClassRelationDialog(node){
 	}	
 }
 
-function getPropRelationDialog(node){
-	concept=node.id
+function getPropRelationDialog(uri,icon){
+	concept=uri
 	document.getElementById("relationDialog").showModal()
 	try{
 		$('#relationtable').DataTable().destroy();	
 	}catch(e){
 	}
-	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+node.icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	$('#relationtitle').html("<img width=\"25\" height=\"25\" src=\""+icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
+	$('#relationtablehead').html("<tr><th>Incoming Concept</th><th>Property</th><th>Outgoing Concept</th></tr>")
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
-	if(node.icon.includes("class.png")){
+	if(icon.includes("property")){
 		$('#relationtablebody').html("")
-		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?obj WHERE { ?sub <"+concept+"> ?obj . }").then((results)=>{
+		d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?sub ?obj WHERE { ?subb <"+concept+"> ?objj . ?subb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?sub . ?objj <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?obj .}").then((results)=>{
 			for(result in results){
-				toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["sub"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["sub"]+"\">"+shortenURI(results[result]["sub"]["value"])+"</a></td>"
-				toappend="<td><img  src=\""+baseurl+"icons/objectproperty.png\" height=\"25\" width=\"25\" alt=\"Class\"/>
-				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["obj"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["obj"]+"\">"+shortenURI(results[result]["obj"]["value"])+"</a></td></tr>"
+				toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["sub"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["sub"]["value"]+"\">"+shortenURI(results[result]["sub"]["value"])+"</a></td>"
+				toappend+="<td><img width=\"25\" height=\"25\" src=\""+icon+"\" alt=\"Class\"/> <a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a></td>"
+				toappend+="<td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["obj"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/><a href=\""+results[result]["obj"]["value"]+"\">"+shortenURI(results[result]["obj"]["value"])+"</a></td></tr>"
 				$('#relationtablebody').append(toappend)
 			}
 		});
