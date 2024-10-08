@@ -858,7 +858,7 @@ function getClassRelationDialog(node){
 	$('#relationtablebody').html("<tr><td colspan=3>Loading instance data....</td></tr>")
 	if(node.icon.includes("class.png")){
 		$('#relationtablebody').html("")
-		d3.sparql(endp, "SELECT DISTINCT ?rel ?relLabel ?val ?valLabel WHERE { ?con <"+typeproperty+"> <"+concept+ "> . ?con ?rel ?item . ?item  <"+typeproperty+"> ?val .  OPTIONAL{?val <http://www.w3.org/2000/01/rdf-schema#label> ?valLabel . FILTER(lang(?valLabel)=\"en\") } {?prop wikibase:directClaim ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}").then((results)=>{
+		d3.sparql(endp, "SELECT DISTINCT ?rel ?relLabel ?val ?valLabel WHERE { ?con <"+typeproperty+"> <"+concept+ "> . ?con ?rel ?item . ?item  <"+typeproperty+"> ?val .  OPTIONAL{?val <http://www.w3.org/2000/01/rdf-schema#label> ?valLabel . FILTER(lang(?valLabel)=\"en\") } {?prop <http://wikiba.se/ontology#directClaim> ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}").then((results)=>{
 			for(result in results){
 				toappend="<tr><td></td><td></td><td>"+thetitle+"</td>"
 				if(results[result]["rel"]["value"] in geoproperties && geoproperties[results[result]["rel"]["value"]]=="ObjectProperty"){
@@ -886,7 +886,7 @@ function getClassRelationDialog(node){
 				toappend+="</td></tr>"			
 				$('#relationtablebody').append(toappend)
 			}
-			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?relLabel ?val ?valLabel WHERE { ?tocon <"+typeproperty+"> ?val . ?tocon ?rel ?con . ?con <"+typeproperty+"> <"+concept+ "> . OPTIONAL{?val <http://www.w3.org/2000/01/rdf-schema#label> ?valLabel FILTER(lang(?valLabel)=\"en\") } {?prop wikibase:directClaim ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}").then((results)=>{
+			d3.sparql($('#endpointselect').val(), "SELECT DISTINCT ?rel ?relLabel ?val ?valLabel WHERE { ?tocon <"+typeproperty+"> ?val . ?tocon ?rel ?con . ?con <"+typeproperty+"> <"+concept+ "> . OPTIONAL{?val <http://www.w3.org/2000/01/rdf-schema#label> ?valLabel FILTER(lang(?valLabel)=\"en\") } {?prop <http://wikiba.se/ontology#directClaim> ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}").then((results)=>{
 				for(result in results){
 					toappend="<tr><td><img onclick=\"getClassRelationDialog($('#jstree').jstree(true).get_node('" + results[result]["val"]["value"] + "'))\" src=\""+baseurl+"icons/class.png\" height=\"25\" width=\"25\" alt=\"Class\"/>"
 					suri=shortenURI(results[result]["val"]["value"])
@@ -1105,7 +1105,7 @@ function getDatasetSchema(node){
 	if(endp in endpointToProps){
 		typeproperty=endpointToProps[endp]["typeproperty"]
 	}
-	d3.sparql(endp, "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?relLabel ?valtype\n WHERE { ?con <"+typeproperty+"> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) {?prop wikibase:directClaim ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}\n  GROUP BY ?rel ?relLabel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
+	d3.sparql(endp, "SELECT (COUNT(distinct ?con) AS ?countcon) (COUNT(?rel) AS ?countrel) ?rel ?relLabel ?valtype\n WHERE { ?con <"+typeproperty+"> <"+concept+"> . ?con ?rel ?val .\n BIND( datatype(?val) AS ?valtype ) {?prop <http://wikiba.se/ontology#directClaim> ?rel . ?prop rdfs:label ?relLabel.  filter(lang(?relLabel) = \"en\").}UNION{?rel <http://www.w3.org/2000/01/rdf-schema#label> ?relLabel . FILTER(lang(?relLabel)=\"en\") }}\n  GROUP BY ?rel ?relLabel ?valtype\n ORDER BY DESC(?countrel)").then((results)=>{
 		result="";
 		maxcons=1
 		first=true
