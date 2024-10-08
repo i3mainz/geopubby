@@ -962,6 +962,7 @@ function getPropRelationDialog(uri,icon,label=""){
 				toappend+="</td></tr>"
 				$('#relationtablebody').append(toappend)
 			}
+			$('#relationtable').DataTable({"scrollX":true,"scrollY":true});
 		});
 	}	
 }
