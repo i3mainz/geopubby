@@ -524,6 +524,10 @@ if(endp in endpointToProps){
 }
 d3.sparql(endp, "SELECT DISTINCT ?sub ?label WHERE { ?sub <"+typeproperty+"> <"+concept+"> . OPTIONAL { ?sub <http://www.w3.org/2000/01/rdf-schema#label> ?label .} } ORDER BY ?label").then((results)=>{
 	console.log(results.length)
+	const url = new URL(location.href);
+	url.searchParams.set("endpoint",endp)
+	url.searchParams.set("concept",concept)
+	history.pushState(null, '',url)
 	if((!node.text.includes("["))){
 		ref.rename_node(node,node.text+" ["+results.length+"]")
 	}
@@ -603,6 +607,10 @@ if(url!=null){
 }
 $('#title').html("<a href=\""+concept+"\" target=\"_blank\">"+shortenURI(concept)+"</a>")
 d3.sparql(endp, "SELECT DISTINCT ?rel ?val ?valLabel WHERE { <"+concept+"> ?rel ?val . OPTIONAL{ ?val <http://www.w3.org/2000/01/rdf-schema#label> ?valLabel . FILTER(lang(?valLabel)=\"en\") }}").then((results)=>{
+		const url = new URL(location.href);
+		url.searchParams.set("endpoint",endp)
+		url.searchParams.set("concept",concept)
+		history.pushState(null, '',url)
 		tablecontent=""
 		var even=true
 		var lastrel=""
@@ -812,10 +820,6 @@ function navigateToURIInTripleStore(uri){
 	endp=$('#endpointselect').val()
 	d3.sparql(endp, "SELECT (COUNT(?pred) AS ?res) WHERE { VALUES (?s) { (<"+uri+">) } ?s ?pred ?obj . }").then((results)=>{
 		ref=$('#jstree').jstree(true)
-		const url = new URL(location.href);
-		url.searchParams.set("endpoint",endp)
-		url.searchParams.set("concept",uri)
-		history.pushState(null, '',url)
 		if(results.length>0 && "res" in results[0] && results[0]["res"]["value"]>0){
 			console.log(uri)
 			if(typeof(ref)!=='undefined' && typeof(ref.get_node)!=='undefined'){
